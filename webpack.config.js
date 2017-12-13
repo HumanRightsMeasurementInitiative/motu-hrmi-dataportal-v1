@@ -1,2 +1,6 @@
 const buildWebpackConfig = require('webpack-preset-accurapp')
-module.exports = buildWebpackConfig()
+const { css } = require('webpack-blocks')
+
+module.exports = buildWebpackConfig([
+  css.modules(),
+])

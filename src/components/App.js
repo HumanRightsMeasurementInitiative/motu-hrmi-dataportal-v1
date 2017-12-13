@@ -1,16 +1,10 @@
-import React from 'react'
+import { connect } from 'react-redux'
+import Layout from './Layout'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <h2>
-          React App
-        </h2>
-        <p>
-          To get started, edit <code>components/App.js</code> and save to reload.
-        </p>
-      </div>
-    )
+const mapStateToProps = (state) => (
+  {
+    router: state.router,
   }
-}
+)
+
+export default connect(mapStateToProps)(Layout)
