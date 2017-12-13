@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import TopNav from './TopNav/'
 
 export default class Layout extends React.Component {
   static propTypes = {
@@ -10,7 +11,7 @@ export default class Layout extends React.Component {
     const { router } = this.props
     return (
       <div>
-        HRMI
+        <TopNav />
       </div>
     )
   }

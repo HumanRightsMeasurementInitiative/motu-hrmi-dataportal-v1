@@ -8,7 +8,7 @@ export const joinClassName = (classNames, styles) => {
 
 export const urlToSegs = (url) => {
   const URL_RE = /\/(?:([\w-]+)(?:\/([\w-]+))?)?/
-  const [, language, exploreBy ] = url.match(URL_RE)
+  const [, language = 'EN', exploreBy] = url.match(URL_RE)
 
   return {
     language,
@@ -18,5 +18,17 @@ export const urlToSegs = (url) => {
 
 export const segsToUrl = (urlSegs) => {
   let url = '/'
+  const { language, exploreBy } = urlSegs
+  if (language === 'EN') {
+    if (exploreBy) {
+      url += exploreBy
+    }
+  } else {
+    if (exploreBy) {
+      url = '/' + language + '/' + exploreBy
+    } else {
+      url = '/' + language
+    }
+  }
   return url
 }

@@ -1,0 +1,16 @@
+.wrapper {
+  position: relative;
+}
+.options {
+  list-style: none;
+  padding: 0;
+  position: absolute;
+}
+.hide {
+  display: none;
+}
+.option {
+  padding: 10px 15px;
+  border: 1px solid black;
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.wrapper {
+  border-bottom: 1px solid blue;
+  position: relative;
+}
+.logo {
+  font-size: 28px;
+}
+.menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.menuItem {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 10px;
+}

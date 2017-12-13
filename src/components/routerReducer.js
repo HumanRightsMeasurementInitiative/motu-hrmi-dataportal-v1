@@ -2,7 +2,7 @@ export default function routerReducer(state = {
   pathname: '/',
   search: '',
   hash: '',
-  urlSegsIndex: {},
+  urlSegs: {},
 }, action) {
   switch (action.type) {
     case 'ROUTER/LOCATION_CHANGE':
