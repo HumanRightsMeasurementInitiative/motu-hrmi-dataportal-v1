@@ -1,15 +1,16 @@
 import { connect } from 'react-redux'
 import TopNav from './TopNav'
+import { updateDropdown } from '../actions.js'
 
 const mapStateToProps = (state) => (
   {
-    popupOpen: state.topNav.popupOpen,
+    currentDropdown: state.topNav.currentDropdown,
   }
 )
 
 const mapDispatchToProps = (dispatch) => (
   {
-    togglePopup: () => dispatch({ type: 'TOGGLE_POPUP' }),
+    updateDropdown: clickedMenu => dispatch(updateDropdown(clickedMenu)),
   }
 )
 

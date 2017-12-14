@@ -1,10 +1,9 @@
-export default function (state = { popupOpen: false }, action) {
+export default function (state = { currentDropdown: 'closed' }, action) {
   switch (action.type) {
-    case 'TOGGLE_POPUP':
-      const open = state.popupOpen
+    case 'UPDATE_DROPDOWN':
       return {
         ...state,
-        popupOpen: !open,
+        currentDropdown: action.payload,
       }
     default:
       return state

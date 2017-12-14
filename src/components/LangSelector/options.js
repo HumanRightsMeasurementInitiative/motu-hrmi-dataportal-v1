@@ -6,7 +6,6 @@ export default class DropdownOptions extends React.Component {
     children: PropTypes.node.isRequired,
     onSelect: PropTypes.func.isRequired,
     optionClassNames: PropTypes.string,
-
   }
 
   onClickHandler = () => {
