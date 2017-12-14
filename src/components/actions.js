@@ -34,3 +34,7 @@ export const locationChange = ({ pathname, search, hash, urlSegs }) => ({
 export const togglePopup = () => ({
   type: 'TOGGLE_POPUP',
 })
+
+export const closeStoryMode = () => ({
+  type: 'CLOSE_STORYMODE',
+})
