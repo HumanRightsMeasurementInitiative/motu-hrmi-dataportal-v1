@@ -15,3 +15,26 @@
   vertical-align: top;
   margin: 0 10px;
 }
+.hide {
+  display: none;
+}
+.menuDropdown {
+  position: absolute;
+  padding: 25px;
+  background: lightblue;
+}
+.menuDropdownList {
+  position: absolute;
+
+}
+.closeBtn {
+  text-align: right;
+}
+.dropdownUl {
+  list-style: none;
+  padding: 0;
+}
+.dropdownLi {
+  padding: 10px;
+  border: 1px solid blue;
+}
