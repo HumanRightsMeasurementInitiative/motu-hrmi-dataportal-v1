@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import DropdownOptions from './options'
+import LangOptions from './LangOptions'
 import { segsToUrl, joinClassName as jcn } from '../utils'
 import styles from './styles.css'
 
@@ -42,7 +42,13 @@ export default class LangSelector extends React.Component {
 
   optionList = () => {
     const languages = ['English', 'Spanish', 'Portuguese', 'French']
-    return languages.map((item, i) => <DropdownOptions key={i} optionClassNames={styles.option} onSelect={this.changeLanguage}>{item}</DropdownOptions>)
+    return languages.map((item, i) => {
+      const optionClassNames = jcn({
+        active: this.abbreviator(item) === this.props.urlSegs.language,
+        option: true,
+      }, styles)
+      return <LangOptions key={i} optionClassNames={optionClassNames} onSelect={this.changeLanguage}>{item}</LangOptions>
+    })
   }
 
   render() {
@@ -55,7 +61,7 @@ export default class LangSelector extends React.Component {
 
     return (
       <div className={styles.wrapper}>
-        <div onClick={this.toggleDropdown}><span>Language: </span><span>{language}</span></div>
+        <div onClick={this.toggleDropdown}><span>Language: </span><span className={styles.currentLang}>{language}</span></div>
         <ul className={optionsClassNames}>
           {this.optionList()}
         </ul>

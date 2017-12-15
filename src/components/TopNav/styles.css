@@ -1,16 +1,9 @@
-.wrapper {
-  border-bottom: 1px solid blue;
-  position: relative;
-}
-.logo {
-  font-size: 28px;
-}
-.menu {
+.nav {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 20px;
+  top: 40px;
 }
-.menuItem {
+.navItem {
   display: inline-block;
   vertical-align: top;
   margin: 0 10px;
@@ -20,12 +13,13 @@
 }
 .menuDropdown {
   position: absolute;
+  top: 40px;
   padding: 25px;
   background: lightblue;
 }
 .menuDropdownList {
   position: absolute;
-
+  top: 40px;
 }
 .closeBtn {
   text-align: right;
@@ -33,6 +27,7 @@
 .dropdownUl {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 .dropdownLi {
   padding: 10px;

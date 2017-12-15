@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import TopNav from './TopNav/'
+import TopMenu from './TopMenu/'
 import Landing from './Landing'
 
 export default class Layout extends React.Component {
@@ -12,7 +12,7 @@ export default class Layout extends React.Component {
     const { router } = this.props
     return (
       <div>
-        <TopNav />
+        <TopMenu />
         <Landing />
       </div>
     )
