@@ -4,6 +4,7 @@ import TopMenu from './TopMenu/'
 import Landing from './Landing'
 import GeoPage from './GeoPage'
 import RightsPage from './RightsPage'
+import styles from './common.css'
 
 export default class Layout extends React.Component {
   static propTypes = {
@@ -15,7 +16,7 @@ export default class Layout extends React.Component {
     const { urlSegs } = router
 
     return (
-      <div>
+      <div className={styles.layout}>
         <TopMenu />
         { !urlSegs.exploreBy && !urlSegs.exploreBy &&
           <Landing />

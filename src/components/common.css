@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #2f2ffb;
+}
+* {
+  box-sizing: border-box;
+}
+.layout {
+  height: 100vh;
+  width: 100vw;
+}
+
+:global(.row) {
+  display: flex;
+}
+:global(.column):first-child {
+  flex: none;
+  width: 20%;
+}
+:global(.column):nth-child(2) {
+  flex: 1;
+}
+:global(.column):last-child {
+  flex: none;
+  width: 20%;
+}
