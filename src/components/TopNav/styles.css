@@ -13,9 +13,10 @@
 }
 .menuDropdown {
   position: absolute;
+  z-index: 1;
   top: 40px;
   padding: 25px;
-  background: lightblue;
+  background: rgba(200, 200, 255, .8);
 }
 .menuDropdownList {
   position: absolute;

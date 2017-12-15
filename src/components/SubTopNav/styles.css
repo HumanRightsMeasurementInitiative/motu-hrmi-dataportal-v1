@@ -1,0 +1,70 @@
+.wrapper {
+  height: 60px;
+  position: relative;
+  padding: 20px 0 0;
+}
+.selectorWrapper {
+  font-size: 20px;
+}
+.btnHTR {
+  padding: 10px 20px;
+  color: #fff;
+  background: #2f2ffb;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  cursor: pointer;
+}
+.btnHTR span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.btnIcon {
+  margin: -4px 0 0 20px;
+}
+.hide {
+  display: none!important;
+}
+.dropdown {
+  max-width: 500px;
+  position: absolute;
+  right: 0;
+  padding: 20px 40px;
+  background: rgba(200, 200, 255, .8);
+}
+.graphTitle {
+  text-align: center;
+  margin: 30px 0 10px;
+}
+.graphSubtitle {
+  text-align: center;
+  margin: 0 0 30px;
+}
+.image1 {
+  margin: 0 auto;
+  height: 400px;
+  width: 400px;
+  border: 1px solid blue;
+}
+.image2 {
+  margin: 0 auto;
+  height: 100px;
+  width: 300px;
+  border: 1px solid blue;
+}
+.halfSplit {
+  display: inline-block;
+  width: 50%;
+}
+.image3 {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  border: 1px solid blue;
+}
+.image4 {
+  margin: 0 auto;
+  width: 150px;
+  height: 50px;
+  border: 1px solid blue;
+}
