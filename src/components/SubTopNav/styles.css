@@ -1,18 +1,19 @@
 .wrapper {
-  height: 60px;
+  height: 40px;
   position: relative;
-  padding: 20px 0 0;
 }
 .selectorWrapper {
-  font-size: 20px;
+  padding-top: 14px;
+  font-size: 18px;
 }
 .btnHTR {
-  padding: 10px 20px;
-  color: #fff;
-  background: #2f2ffb;
   position: absolute;
-  top: 10px;
+  top: 14px;
   right: 0;
+  padding: 0 25px;
+  background: #2f2ffb;
+  color: #fff;
+  line-height: 24px;
   cursor: pointer;
 }
 .btnHTR span {
@@ -20,7 +21,7 @@
   vertical-align: middle;
 }
 .btnIcon {
-  margin: -4px 0 0 20px;
+  margin: -2px 0 0 20px;
 }
 .hide {
   display: none!important;
