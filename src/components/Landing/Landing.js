@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import StoryPopup from '../StoryPopup'
+import SectionSelector from '../SectionSelector'
 
 export default class Landing extends React.Component {
   static propTypes = {
@@ -11,8 +12,7 @@ export default class Landing extends React.Component {
     const { isStoryOpen } = this.props
     return (
       <div>
-        <div>Explore all the dataset:</div>
-        <div>Expore by Rights , Explore by Geography</div>
+        <SectionSelector />
         { isStoryOpen &&
           <StoryPopup />
         }

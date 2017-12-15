@@ -8,11 +8,20 @@ export const joinClassName = (classNames, styles) => {
 
 export const urlToSegs = (url) => {
   const URL_RE = /\/(?:([\w-]+)(?:\/([\w-]+))?)?/
-  const [, language = 'EN', exploreBy] = url.match(URL_RE)
-
-  return {
-    language,
-    exploreBy,
+  const segsArr = url.match(URL_RE)
+  const langguages = ['ES', 'PT', 'FR']
+  if (langguages.indexOf(segsArr[1]) > -1) {
+    const [, language, exploreBy] = segsArr
+    return {
+      language,
+      exploreBy,
+    }
+  } else {
+    const [, exploreBy] = segsArr
+    return {
+      language: 'EN',
+      exploreBy,
+    }
   }
 }
 
