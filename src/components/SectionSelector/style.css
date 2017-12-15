@@ -1,0 +1,21 @@
+.secSelector {
+  text-align: center;
+  color: #2f2ffb;
+}
+.title {
+  margin: 2em 0;
+  font-size: 1em;
+}
+.secBtn {
+  display: inline-block;
+  margin: 0 2em;
+  padding: 2px 0;
+  font-size: .8em;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: border .2s;
+}
+.secBtn:hover,
+.secBtn.selected {
+  border-color: #2f2ffb;
+}

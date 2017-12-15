@@ -127,6 +127,11 @@
 .columnRight .section {
   position: relative;
 }
+.section:last-child {
+  padding: 20px 0 50px;
+  font-size: 14px;
+  text-align: center;
+}
 .columnRight .links {
   position: absolute;
   right: -160px;

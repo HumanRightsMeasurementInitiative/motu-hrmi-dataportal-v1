@@ -1,25 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { segsToUrl } from '../utils'
+import { segsToUrl, joinClassName as jcn } from '../utils'
+import styles from './style.css'
 
-export default class DatasetSelector extends React.Component {
+export default class SectionSelector extends React.Component {
   static propTypes = {
+    title: PropTypes.string,
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
   }
 
   changeUrl = (section) => {
-    console.log(segsToUrl({ ...this.props.urlSegs, exploreBy: section }))
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: section }))
   }
 
   render() {
+    const { title, urlSegs } = this.props
+
     return (
-      <div>
-        <div>Explore all the dataset:</div>
-        <div>
-          <SectionBtn onItemClick={this.changeUrl} exploreBy='Rights'>Explore by Rights</SectionBtn>
-          <SectionBtn onItemClick={this.changeUrl} exploreBy='Geography'>Explore by Geography</SectionBtn>
+      <div className={styles.secSelector}>
+        { title &&
+          <div className={styles.title}>{title}</div>
+        }
+        <div className={styles.btnContainer}>
+          <SectionBtn onItemClick={this.changeUrl} exploreBy='Rights' isSelected={urlSegs.exploreBy === 'Rights'}>Explore by Rights</SectionBtn>
+          <SectionBtn onItemClick={this.changeUrl} exploreBy='Geography' isSelected={urlSegs.exploreBy === 'Geography'}>Explore by Geography</SectionBtn>
         </div>
       </div>
     )
@@ -31,6 +36,7 @@ class SectionBtn extends React.Component {
     children: PropTypes.node.isRequired,
     onItemClick: PropTypes.func.isRequired,
     exploreBy: PropTypes.string.isRequired,
+    isSelected: PropTypes.bool.isRequired,
   }
 
   onItemClick = () => {
@@ -38,10 +44,15 @@ class SectionBtn extends React.Component {
   }
 
   render() {
-    const { children } = this.props
+    const { children, isSelected } = this.props
+    
+    const joinedClass = jcn({
+      secBtn: true,
+      selected: isSelected,
+    }, styles)
 
     return (
-      <div onClick={this.onItemClick}>{children}</div>
+      <div className={joinedClass} onClick={this.onItemClick}>{children}</div>
     )
   }
 }

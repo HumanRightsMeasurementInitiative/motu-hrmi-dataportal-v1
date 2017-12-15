@@ -69,8 +69,8 @@ export default class StoryPopup extends React.Component {
                   <p className={styles.paragraph}>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
                 </section>
                 <section className={styles.section}>
-                  <h5 className={styles.subtitle}>Right to education</h5>
-                  <SectionSelector />
+                  <h5 className={styles.subtitle}>This is end of the story</h5>
+                  <SectionSelector title='Explore all the dataset:' />
                 </section>
               </div>
             </div>
