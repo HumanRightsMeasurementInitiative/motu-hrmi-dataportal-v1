@@ -35,10 +35,10 @@ export default class StoryPopup extends React.Component {
                   <h4 className={styles.countryName}>Brunei</h4>
                   <p className={styles.countryIntro}>This is a story about rights in Brunei, one of our pilot countries for the Human Rights Measuerement Initiative.</p>
                   <p className={styles.countryIntro}>Here there will be a short introduction on the country and the general context, wich will be narrated in more detail in the long scroll on the right.</p>
-                    <div className='arrowLink'>
-                      <div className='text'>Explore all rights:</div>
-                      <div className='text underline'>in Brunei</div>
-                    </div>
+                  <div className='arrowLink'>
+                    <div className='text'>Explore all rights:</div>
+                    <div className='text underline'>in Brunei</div>
+                  </div>
                 </div>
               </div>
             </div>

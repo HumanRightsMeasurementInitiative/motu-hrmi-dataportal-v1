@@ -13,19 +13,19 @@ export const urlToSegs = (url) => {
   if (langguages.indexOf(segsArr[1]) > -1) {
     const [, language, exploreBy, region, right, country] = segsArr
     return {
+      right: right.replace(/-/g, ' '),
       language,
       exploreBy,
       region,
-      right,
       country,
     }
   } else {
     const [, exploreBy, region, right, country] = segsArr
     return {
+      right: right.replace(/-/g, ' '),
       language: 'EN',
       exploreBy,
       region,
-      right,
       country,
     }
   }
@@ -38,7 +38,7 @@ export const segsToUrl = (urlSegs) => {
     if (exploreBy) {
       region = region || 'OECD'
       if (right) {
-        url = '/' + exploreBy + '/' + region + '/' + right + (country ? ('/' + country) : '')
+        url = '/' + exploreBy + '/' + region + '/' + right.replace(/\s/g, '-') + (country ? ('/' + country) : '')
       } else {
         url = '/' + exploreBy + '/' + region + '/' + 'all'
       }
@@ -47,7 +47,7 @@ export const segsToUrl = (urlSegs) => {
     if (exploreBy) {
       region = region || 'OECD'
       if (right) {
-        url = '/' + language + '/' + exploreBy + '/' + region + '/' + right + (country ? ('/' + country) : '')
+        url = '/' + language + '/' + exploreBy + '/' + region + '/' + right.replace(/\s/g, '-') + (country ? ('/' + country) : '')
       } else {
         url = '/' + language + '/' + exploreBy + '/' + region + '/' + 'all'
       }

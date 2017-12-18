@@ -1,10 +1,21 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import SubTopNav from '../SubTopNav/'
+import { segsToUrl } from '../utils'
 import styles from './style.css'
 
 export default class CountryPage extends React.Component {
+  static propTypes = {
+    urlSegs: PropTypes.object.isRequired,
+    urlPush: PropTypes.func.isRequired,
+  }
+
   componentDidMount() {
     this.refs.content.style.height = this.refs.page.offsetHeight - 90 + 'px'
+  }
+
+  changeCountry = (country) => {
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, country: undefined, right: 'all' }))
   }
 
   render() {
@@ -15,7 +26,7 @@ export default class CountryPage extends React.Component {
           <div className='column'>
             <div className={styles.columnLeft}>
               <div className={styles.hintText}>Back to:</div>
-              <div className={styles.backLink}>
+              <div className={styles.backLink} onClick={this.changeCountry}>
                 Civic and Political Rights Pilot Countries
               </div>
               <ul className={styles.countriesList}>

@@ -1,62 +1,106 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import SubTopNav from '../SubTopNav/'
+import RegionItem from './RegionItem'
+import CountryItem from './CountryItem'
+import RightsItem from './RightsItem'
+import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
 
 export default class GeoPage extends React.Component {
+  static propTypes = {
+    data: PropTypes.object.isRequired,
+    urlSegs: PropTypes.object.isRequired,
+    urlPush: PropTypes.func.isRequired,
+  }
+
   componentDidMount() {
     this.refs.content.style.height = this.refs.page.offsetHeight - 90 + 'px'
   }
 
+  setRegion = (region) => {
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, region: region, right: 'all' }))
+  }
+
+  setCountry = (country) => {
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, country: country }))
+  }
+
+  setRight = (right) => {
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, right: right }))
+  }
+
+  setExploreBy = (right) => {
+    const { urlSegs } = this.props
+    this.props.urlPush(segsToUrl({ ...urlSegs, exploreBy: 'Rights' }))
+  }
+
   render() {
+    const { data, urlSegs } = this.props
+
+    const regions = Object.keys(data)
+    const contries = data[urlSegs.region]
+    const ESRs = ['Education', 'Food', 'Work', 'Housing', 'Health']
+    const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
+
+    const regionItems = regions.map((item, i) => (
+      <RegionItem key={i} code={item} onItemClick={this.setRegion} selected={item === urlSegs.region}>{getRegionName(item)}</RegionItem>
+    ))
+    const countryItem = contries.map((item, i) => (
+      <CountryItem key={i} country={item.name} onItemClick={this.setCountry}>{item.name}</CountryItem>
+    ))
+    const ESRItems = ESRs.filter((item, i) => (
+      urlSegs.right === item || urlSegs.right === 'all'
+    )).map((item, i) => (
+      <RightsItem key={i} right={item} onItemClick={this.setRight}>{item}</RightsItem>
+    ))
+    const CPRItems = CPRs.filter((item, i) => (
+      urlSegs.right === item || urlSegs.right === 'all'
+    )).map((item, i) => (
+      <RightsItem key={i} right={item} onItemClick={this.setRight}>{item}</RightsItem>
+    ))
+
     return (
       <div className={styles.geoPage} ref='page'>
         <SubTopNav />
         <div className='row' ref='content'>
           <div className='column'>
-            <div>
+            <div className={styles.columnLeft}>
               <input type="text" placeholder='Search Country' />
               <ul>
-                <li>High Income OECD Countries</li>
-                <li>Central and Eastern Europe and Central Asia</li>
-                <li>East Asia and the Pacific</li>
-                <li>Latin America and the Caribbean</li>
-                <li>Middle East and Northern Africa</li>
-                <li>Sub-Saharan Africa</li>
-                <li>Civil and Political Rights Pilot Countries</li>
+                {regionItems}
               </ul>
             </div>
           </div>
-          <div className='column'></div>
           <div className='column'>
-            <div>
-              <div>ESR</div>
-              <ul>
-                <li>Right to Education</li>
-                <li>Right to Food</li>
-                <li>Right to Work</li>
-                <li>Right to Housing</li>
-                <li>Right to Health</li>
+            <div className={styles.columnMiddle}>
+              <ul className={styles.countriesList}>
+                {countryItem}
               </ul>
-              <div>CPR</div>
+            </div>
+          </div>
+          <div className='column'>
+            <div className={styles.columnRight}>
+              { ESRItems.length !== 0 && <div>ESR</div> }
               <ul>
-                <li>Right to Opinion and Expression</li>
-                <li>Right to Assembly and Association</li>
-                <li>Right to Freedom from Execution</li>
-                <li>Right to Freedom from Torture</li>
-                <li>Right to Participate in Government</li>
-                <li>Right to Freedom from Arbitrary Arrest</li>
-                <li>Right to Freedom from Disappearance</li>
+                {ESRItems}
               </ul>
-              <div>
+              { CPRItems.length !== 0 && <div>CPR</div> }
+              <ul>
+                {CPRItems}
+              </ul>
+              { urlSegs.right !== 'all' &&
                 <div>
-                  <div>Right to Education</div>
-                  <div>Ecomonic and Social Rights</div>
+                  <div>
+                    <div>Right to {urlSegs.right}</div>
+                    <div>Ecomonic and Social Rights</div>
+                  </div>
+                  <div className='arrowLink'>
+                    <div className='text'>Explore this rights in:</div>
+                    <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
+                  </div>
                 </div>
-                <div className='arrowLink'>
-                  <div className='text'>Explore this rights in:</div>
-                  <div className='text underline'>HRMI Civic and Political Rights Pilot Countries</div>
-                </div>
-              </div>
+              }
             </div>
           </div>
         </div>

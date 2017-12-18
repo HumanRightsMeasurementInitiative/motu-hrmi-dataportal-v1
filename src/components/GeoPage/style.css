@@ -2,3 +2,27 @@
   padding-top: 50px;
   height: 100%;
 }
+
+.columnLeft,
+.columnMiddle,
+.columnRight {
+  padding: 0 24px;
+}
+
+.regionItem {
+  margin: 20px 0;
+  font-size: 14px;
+  border-bottom: 3px solid transparent;
+  cursor: default;
+}
+.regionItem.selected {
+  border-color: #2f2ffd;
+}
+
+.CountryItem {
+  display: inline-block;
+  flex: none;
+  width: 20%;
+  border: 1px solid #2f2ffd;
+  cursor: default;
+}

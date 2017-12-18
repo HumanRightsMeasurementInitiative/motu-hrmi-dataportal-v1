@@ -7,13 +7,13 @@ import dataSSA from '../data/data_SSA.json'
 import dataCPRP from '../data/data_CPRP.json'
 
 export default function dataReducer(state = {
-  data_OECD: dataOECD,
-  data_CEECA: dataCEECA,
-  data_EAP: dataEAP,
-  data_LAC: dataLAC,
-  data_MENA: dataMENA,
-  data_SSA: dataSSA,
-  data_CPRP: dataCPRP,
+  OECD: dataOECD,
+  CEECA: dataCEECA,
+  EAP: dataEAP,
+  LAC: dataLAC,
+  MENA: dataMENA,
+  SSA: dataSSA,
+  CPRP: dataCPRP,
 }, action) {
   switch (action.type) {
     case 'UPDATE_DATA':

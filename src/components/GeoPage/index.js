@@ -1,4 +1,18 @@
 import { connect } from 'react-redux'
 import GeoPage from './GeoPage'
+import { urlPush } from '../actions'
 
-export default connect()(GeoPage)
+const mapStateToProps = (state) => (
+  {
+    data: state.data,
+    urlSegs: state.router.urlSegs,
+  }
+)
+
+const mapDispatchToProps = (dispatch) => (
+  {
+    urlPush: url => dispatch(urlPush(url)),
+  }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(GeoPage)
