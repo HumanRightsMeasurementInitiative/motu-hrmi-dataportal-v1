@@ -13,7 +13,7 @@ export const urlToSegs = (url) => {
   if (langguages.indexOf(segsArr[1]) > -1) {
     const [, language, exploreBy, region, right, country] = segsArr
     return {
-      right: right.replace(/-/g, ' '),
+      right: right && right.replace(/-/g, ' '),
       language,
       exploreBy,
       region,
@@ -22,7 +22,7 @@ export const urlToSegs = (url) => {
   } else {
     const [, exploreBy, region, right, country] = segsArr
     return {
-      right: right.replace(/-/g, ' '),
+      right: right && right.replace(/-/g, ' '),
       language: 'EN',
       exploreBy,
       region,
