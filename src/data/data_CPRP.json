@@ -1,208 +1,1000 @@
 [{
   "name": "Australia",
   "code": "AUS",
-  "GDP2016": "46789.92724",
-  "population": "121.7",
+  "GDP2016": 46789.92724,
+  "population": 725.8,
   "rights": {
     "ESR": {
-      "Education": "27",
-      "Food": "69",
-      "Work": "55",
-      "Housing": "68",
-      "Health": "95"
+      "Education": {
+        "value": 44,
+        "maxValue": 53,
+        "minValue": 35,
+        "floatValue": 9
+      },
+      "Food": {
+        "value": 29,
+        "maxValue": 33,
+        "minValue": 25,
+        "floatValue": 4
+      },
+      "Work": {
+        "value": 25,
+        "maxValue": 29,
+        "minValue": 21,
+        "floatValue": 4
+      },
+      "Housing": {
+        "value": 54,
+        "maxValue": 60,
+        "minValue": 48,
+        "floatValue": 6
+      },
+      "Health": {
+        "value": 73,
+        "maxValue": 82,
+        "minValue": 64,
+        "floatValue": 9
+      }
     },
     "CPR": {
-      "Opinion and Expression": "7.7",
-      "Assembly and Association": "2.0",
-      "Freedom from Execution": "8.4",
-      "Freedom from Torture": "8.4",
-      "Participage in Government": "2.7",
-      "Freedom from Arbitrary Arrest": "9.2",
-      "Freedom from Disappearance": "0.1"
+      "Opinion and Expression": {
+        "value": 6.1,
+        "maxValue": 6.3,
+        "minValue": 5.9,
+        "floatValue": 0.2,
+        "splitValue": {
+          "Opinion": {
+            "value": 5.4,
+            "maxValue": 5.6,
+            "minValue": 5.2,
+            "floatValue": 0.2
+          },
+          "Expression": {
+            "value": 6.7,
+            "maxValue": 6.8,
+            "minValue": 6.6,
+            "floatValue": 0.1
+          }
+        }
+      },
+      "Assembly and Association": {
+        "value": 4.2,
+        "maxValue": 6.4,
+        "minValue": 2,
+        "floatValue": 2.2,
+        "splitValue": {
+          "Assembly": {
+            "value": 3.3,
+            "maxValue": 4.9,
+            "minValue": 1.7,
+            "floatValue": 1.6
+          },
+          "Association": {
+            "value": 5,
+            "maxValue": 7.8,
+            "minValue": 2.2,
+            "floatValue": 2.8
+          }
+        }
+      },
+      "Freedom from Execution": {
+        "value": 4.6,
+        "maxValue": 4.8,
+        "minValue": 4.4,
+        "floatValue": 0.2
+      },
+      "Freedom from Torture": {
+        "value": 6.5,
+        "maxValue": 7.3,
+        "minValue": 5.7,
+        "floatValue": 0.8
+      },
+      "Participage in Government": {
+        "value": 4,
+        "maxValue": 5.1,
+        "minValue": 2.9,
+        "floatValue": 1.1
+      },
+      "Freedom from Arbitrary Arrest": {
+        "value": 3.4,
+        "maxValue": 5.4,
+        "minValue": 1.4,
+        "floatValue": 2
+      },
+      "Freedom from Disappearance": {
+        "value": 6.6,
+        "maxValue": 6.8,
+        "minValue": 6.4,
+        "floatValue": 0.2
+      }
     }
   }
 }, {
   "name": "Cambodia",
   "code": "KHM",
-  "GDP2016": "3744.219333",
-  "population": "915.9",
+  "GDP2016": 3744.219333,
+  "population": 772.6,
   "rights": {
     "ESR": {
-      "Education": "90",
-      "Food": "73",
-      "Work": "56",
-      "Housing": "17",
-      "Health": "9"
+      "Education": {
+        "value": 30,
+        "maxValue": 33,
+        "minValue": 27,
+        "floatValue": 3
+      },
+      "Food": {
+        "value": 40,
+        "maxValue": 49,
+        "minValue": 31,
+        "floatValue": 9
+      },
+      "Work": {
+        "value": 86,
+        "maxValue": 91,
+        "minValue": 81,
+        "floatValue": 5
+      },
+      "Housing": {
+        "value": 25,
+        "maxValue": 29,
+        "minValue": 21,
+        "floatValue": 4
+      },
+      "Health": {
+        "value": 62,
+        "maxValue": 67,
+        "minValue": 57,
+        "floatValue": 5
+      }
     },
     "CPR": {
-      "Opinion and Expression": "5.4",
-      "Assembly and Association": "3.9",
-      "Freedom from Execution": "9.3",
-      "Freedom from Torture": "0.7",
-      "Participage in Government": "8.8",
-      "Freedom from Arbitrary Arrest": "0.5",
-      "Freedom from Disappearance": "5.8"
+      "Opinion and Expression": {
+        "value": 4.7,
+        "maxValue": 6.6,
+        "minValue": 2.8,
+        "floatValue": 1.9,
+        "splitValue": {
+          "Opinion": {
+            "value": 3.4,
+            "maxValue": 5.8,
+            "minValue": 1,
+            "floatValue": 2.4
+          },
+          "Expression": {
+            "value": 5.9,
+            "maxValue": 7.4,
+            "minValue": 4.4,
+            "floatValue": 1.5
+          }
+        }
+      },
+      "Assembly and Association": {
+        "value": 4.5,
+        "maxValue": 5.6,
+        "minValue": 3.4,
+        "floatValue": 1.1,
+        "splitValue": {
+          "Assembly": {
+            "value": 5,
+            "maxValue": 5.8,
+            "minValue": 4.2,
+            "floatValue": 0.8
+          },
+          "Association": {
+            "value": 4.1,
+            "maxValue": 5.4,
+            "minValue": 2.8,
+            "floatValue": 1.3
+          }
+        }
+      },
+      "Freedom from Execution": {
+        "value": 6.8,
+        "maxValue": 7.6,
+        "minValue": 6,
+        "floatValue": 0.8
+      },
+      "Freedom from Torture": {
+        "value": 6.6,
+        "maxValue": 7.4,
+        "minValue": 5.8,
+        "floatValue": 0.8
+      },
+      "Participage in Government": {
+        "value": 5.7,
+        "maxValue": 6.2,
+        "minValue": 5.2,
+        "floatValue": 0.5
+      },
+      "Freedom from Arbitrary Arrest": {
+        "value": 5.1,
+        "maxValue": 5.4,
+        "minValue": 4.8,
+        "floatValue": 0.3
+      },
+      "Freedom from Disappearance": {
+        "value": 6.3,
+        "maxValue": 7.6,
+        "minValue": 5,
+        "floatValue": 1.3
+      }
     }
   }
 }, {
   "name": "China",
   "code": "CHN",
-  "GDP2016": "15559.23135",
-  "population": "438.7",
+  "GDP2016": 15559.23135,
+  "population": 252.9,
   "rights": {
     "ESR": {
-      "Education": "10",
-      "Food": "56",
-      "Work": "59",
-      "Housing": "75",
-      "Health": "87"
+      "Education": {
+        "value": 56,
+        "maxValue": 65,
+        "minValue": 47,
+        "floatValue": 9
+      },
+      "Food": {
+        "value": 71,
+        "maxValue": 80,
+        "minValue": 62,
+        "floatValue": 9
+      },
+      "Work": {
+        "value": 23,
+        "maxValue": 25,
+        "minValue": 21,
+        "floatValue": 2
+      },
+      "Housing": {
+        "value": 74,
+        "maxValue": 83,
+        "minValue": 65,
+        "floatValue": 9
+      },
+      "Health": {
+        "value": 57,
+        "maxValue": 64,
+        "minValue": 50,
+        "floatValue": 7
+      }
     },
     "CPR": {
-      "Opinion and Expression": "4.8",
-      "Assembly and Association": "2.3",
-      "Freedom from Execution": "1.5",
-      "Freedom from Torture": "0.2",
-      "Participage in Government": "3.1",
-      "Freedom from Arbitrary Arrest": "3.8",
-      "Freedom from Disappearance": "2.4"
+      "Opinion and Expression": {
+        "value": 4.5,
+        "maxValue": 5.3,
+        "minValue": 3.7,
+        "floatValue": 0.8,
+        "splitValue": {
+          "Opinion": {
+            "value": 4.6,
+            "maxValue": 5.8,
+            "minValue": 3.4,
+            "floatValue": 1.2
+          },
+          "Expression": {
+            "value": 4.5,
+            "maxValue": 5,
+            "minValue": 4,
+            "floatValue": 0.5
+          }
+        }
+      },
+      "Assembly and Association": {
+        "value": 4.8,
+        "maxValue": 7.3,
+        "minValue": 2.3,
+        "floatValue": 2.5,
+        "splitValue": {
+          "Assembly": {
+            "value": 5.5,
+            "maxValue": 8.1,
+            "minValue": 2.9,
+            "floatValue": 2.6
+          },
+          "Association": {
+            "value": 4.1,
+            "maxValue": 6.5,
+            "minValue": 1.7,
+            "floatValue": 2.4
+          }
+        }
+      },
+      "Freedom from Execution": {
+        "value": 5.7,
+        "maxValue": 6.5,
+        "minValue": 4.9,
+        "floatValue": 0.8
+      },
+      "Freedom from Torture": {
+        "value": 6.2,
+        "maxValue": 8.9,
+        "minValue": 3.5,
+        "floatValue": 2.7
+      },
+      "Participage in Government": {
+        "value": 3.9,
+        "maxValue": 4.9,
+        "minValue": 2.9,
+        "floatValue": 1
+      },
+      "Freedom from Arbitrary Arrest": {
+        "value": 5.5,
+        "maxValue": 5.6,
+        "minValue": 5.4,
+        "floatValue": 0.1
+      },
+      "Freedom from Disappearance": {
+        "value": 5.2,
+        "maxValue": 8.1,
+        "minValue": 2.3,
+        "floatValue": 2.9
+      }
     }
   }
 }, {
   "name": "Fiji",
   "code": "FJI",
-  "GDP2016": "9127.637483",
-  "population": "87.1",
+  "GDP2016": 9127.637483,
+  "population": 505.6,
   "rights": {
     "ESR": {
-      "Education": "3",
-      "Food": "73",
-      "Work": "15",
-      "Housing": "34",
-      "Health": "26"
+      "Education": {
+        "value": 77,
+        "maxValue": 84,
+        "minValue": 70,
+        "floatValue": 7
+      },
+      "Food": {
+        "value": 76,
+        "maxValue": 85,
+        "minValue": 67,
+        "floatValue": 9
+      },
+      "Work": {
+        "value": 44,
+        "maxValue": 47,
+        "minValue": 41,
+        "floatValue": 3
+      },
+      "Housing": {
+        "value": 70,
+        "maxValue": 79,
+        "minValue": 61,
+        "floatValue": 9
+      },
+      "Health": {
+        "value": 83,
+        "maxValue": 90,
+        "minValue": 76,
+        "floatValue": 7
+      }
     },
     "CPR": {
-      "Opinion and Expression": "1.8",
-      "Assembly and Association": "8.3",
-      "Freedom from Execution": "7.0",
-      "Freedom from Torture": "8.8",
-      "Participage in Government": "7.5",
-      "Freedom from Arbitrary Arrest": "9.4",
-      "Freedom from Disappearance": "5.1"
+      "Opinion and Expression": {
+        "value": 6.3,
+        "maxValue": 7.7,
+        "minValue": 4.9,
+        "floatValue": 1.4,
+        "splitValue": {
+          "Opinion": {
+            "value": 5.6,
+            "maxValue": 6.3,
+            "minValue": 4.9,
+            "floatValue": 0.7
+          },
+          "Expression": {
+            "value": 6.9,
+            "maxValue": 9,
+            "minValue": 4.8,
+            "floatValue": 2.1
+          }
+        }
+      },
+      "Assembly and Association": {
+        "value": 3.8,
+        "maxValue": 4.7,
+        "minValue": 2.9,
+        "floatValue": 0.9,
+        "splitValue": {
+          "Assembly": {
+            "value": 3.4,
+            "maxValue": 3.6,
+            "minValue": 3.2,
+            "floatValue": 0.2
+          },
+          "Association": {
+            "value": 4.3,
+            "maxValue": 6,
+            "minValue": 2.6,
+            "floatValue": 1.7
+          }
+        }
+      },
+      "Freedom from Execution": {
+        "value": 6.7,
+        "maxValue": 8.5,
+        "minValue": 4.9,
+        "floatValue": 1.8
+      },
+      "Freedom from Torture": {
+        "value": 5,
+        "maxValue": 6.8,
+        "minValue": 3.2,
+        "floatValue": 1.8
+      },
+      "Participage in Government": {
+        "value": 4.5,
+        "maxValue": 4.9,
+        "minValue": 4.1,
+        "floatValue": 0.4
+      },
+      "Freedom from Arbitrary Arrest": {
+        "value": 6.2,
+        "maxValue": 8.2,
+        "minValue": 4.2,
+        "floatValue": 2
+      },
+      "Freedom from Disappearance": {
+        "value": 3.2,
+        "maxValue": 4.7,
+        "minValue": 1.7,
+        "floatValue": 1.5
+      }
     }
   }
 }, {
   "name": "Indonesia",
   "code": "IDN",
-  "GDP2016": "11631.5637",
-  "population": "143.9",
+  "GDP2016": 11631.5637,
+  "population": 340.8,
   "rights": {
     "ESR": {
-      "Education": "82",
-      "Food": "29",
-      "Work": "17",
-      "Housing": "80",
-      "Health": "63"
+      "Education": {
+        "value": 49,
+        "maxValue": 54,
+        "minValue": 44,
+        "floatValue": 5
+      },
+      "Food": {
+        "value": 82,
+        "maxValue": 90,
+        "minValue": 74,
+        "floatValue": 8
+      },
+      "Work": {
+        "value": 43,
+        "maxValue": 51,
+        "minValue": 35,
+        "floatValue": 8
+      },
+      "Housing": {
+        "value": 42,
+        "maxValue": 48,
+        "minValue": 36,
+        "floatValue": 6
+      },
+      "Health": {
+        "value": 71,
+        "maxValue": 78,
+        "minValue": 64,
+        "floatValue": 7
+      }
     },
     "CPR": {
-      "Opinion and Expression": "8.8",
-      "Assembly and Association": "6.8",
-      "Freedom from Execution": "4.4",
-      "Freedom from Torture": "9.9",
-      "Participage in Government": "4.7",
-      "Freedom from Arbitrary Arrest": "7.6",
-      "Freedom from Disappearance": "0.3"
+      "Opinion and Expression": {
+        "value": 5.4,
+        "maxValue": 8.1,
+        "minValue": 2.7,
+        "floatValue": 2.7,
+        "splitValue": {
+          "Opinion": {
+            "value": 5.1,
+            "maxValue": 7.8,
+            "minValue": 2.4,
+            "floatValue": 2.7
+          },
+          "Expression": {
+            "value": 5.7,
+            "maxValue": 8.4,
+            "minValue": 3,
+            "floatValue": 2.7
+          }
+        }
+      },
+      "Assembly and Association": {
+        "value": 5.8,
+        "maxValue": 7.2,
+        "minValue": 4.4,
+        "floatValue": 1.4,
+        "splitValue": {
+          "Assembly": {
+            "value": 5.2,
+            "maxValue": 7.2,
+            "minValue": 3.2,
+            "floatValue": 2
+          },
+          "Association": {
+            "value": 6.3,
+            "maxValue": 7.1,
+            "minValue": 5.5,
+            "floatValue": 0.8
+          }
+        }
+      },
+      "Freedom from Execution": {
+        "value": 3.2,
+        "maxValue": 3.7,
+        "minValue": 2.7,
+        "floatValue": 0.5
+      },
+      "Freedom from Torture": {
+        "value": 5.2,
+        "maxValue": 8.1,
+        "minValue": 2.3,
+        "floatValue": 2.9
+      },
+      "Participage in Government": {
+        "value": 4.6,
+        "maxValue": 5.8,
+        "minValue": 3.4,
+        "floatValue": 1.2
+      },
+      "Freedom from Arbitrary Arrest": {
+        "value": 4.8,
+        "maxValue": 7.8,
+        "minValue": 1.8,
+        "floatValue": 3
+      },
+      "Freedom from Disappearance": {
+        "value": 4.2,
+        "maxValue": 4.4,
+        "minValue": 4,
+        "floatValue": 0.2
+      }
     }
   }
 }, {
   "name": "Japan",
   "code": "JPN",
-  "GDP2016": "41476.3603",
-  "population": "138.4",
+  "GDP2016": 41476.3603,
+  "population": 693.2,
   "rights": {
     "ESR": {
-      "Education": "96",
-      "Food": "94",
-      "Work": "81",
-      "Housing": "86",
-      "Health": "13"
+      "Education": {
+        "value": 38,
+        "maxValue": 40,
+        "minValue": 36,
+        "floatValue": 2
+      },
+      "Food": {
+        "value": 57,
+        "maxValue": 63,
+        "minValue": 51,
+        "floatValue": 6
+      },
+      "Work": {
+        "value": 64,
+        "maxValue": 73,
+        "minValue": 55,
+        "floatValue": 9
+      },
+      "Housing": {
+        "value": 13,
+        "maxValue": 20,
+        "minValue": 6,
+        "floatValue": 7
+      },
+      "Health": {
+        "value": 60,
+        "maxValue": 69,
+        "minValue": 51,
+        "floatValue": 9
+      }
     },
     "CPR": {
-      "Opinion and Expression": "8.1",
-      "Assembly and Association": "0.2",
-      "Freedom from Execution": "7.3",
-      "Freedom from Torture": "2.6",
-      "Participage in Government": "3.4",
-      "Freedom from Arbitrary Arrest": "4.4",
-      "Freedom from Disappearance": "8.6"
+      "Opinion and Expression": {
+        "value": 4.5,
+        "maxValue": 6,
+        "minValue": 3,
+        "floatValue": 1.5,
+        "splitValue": {
+          "Opinion": {
+            "value": 5.4,
+            "maxValue": 7.2,
+            "minValue": 3.6,
+            "floatValue": 1.8
+          },
+          "Expression": {
+            "value": 3.5,
+            "maxValue": 4.6,
+            "minValue": 2.4,
+            "floatValue": 1.1
+          }
+        }
+      },
+      "Assembly and Association": {
+        "value": 4.6,
+        "maxValue": 4.9,
+        "minValue": 4.3,
+        "floatValue": 0.3,
+        "splitValue": {
+          "Assembly": {
+            "value": 4.9,
+            "maxValue": 5.3,
+            "minValue": 4.5,
+            "floatValue": 0.4
+          },
+          "Association": {
+            "value": 4.2,
+            "maxValue": 4.4,
+            "minValue": 4,
+            "floatValue": 0.2
+          }
+        }
+      },
+      "Freedom from Execution": {
+        "value": 4.1,
+        "maxValue": 6.6,
+        "minValue": 1.6,
+        "floatValue": 2.5
+      },
+      "Freedom from Torture": {
+        "value": 5.8,
+        "maxValue": 7.8,
+        "minValue": 3.8,
+        "floatValue": 2
+      },
+      "Participage in Government": {
+        "value": 5,
+        "maxValue": 6.1,
+        "minValue": 3.9,
+        "floatValue": 1.1
+      },
+      "Freedom from Arbitrary Arrest": {
+        "value": 5.5,
+        "maxValue": 8.2,
+        "minValue": 2.8,
+        "floatValue": 2.7
+      },
+      "Freedom from Disappearance": {
+        "value": 4.9,
+        "maxValue": 5.5,
+        "minValue": 4.3,
+        "floatValue": 0.6
+      }
     }
   }
 }, {
   "name": "Kiribati",
   "code": "KIR",
-  "GDP2016": "2112.630617",
-  "population": "706.6",
+  "GDP2016": 2112.630617,
+  "population": 737.9,
   "rights": {
     "ESR": {
-      "Education": "38",
-      "Food": "71",
-      "Work": "34",
-      "Housing": "10",
-      "Health": "26"
+      "Education": {
+        "value": 83,
+        "maxValue": 90,
+        "minValue": 76,
+        "floatValue": 7
+      },
+      "Food": {
+        "value": 40,
+        "maxValue": 46,
+        "minValue": 34,
+        "floatValue": 6
+      },
+      "Work": {
+        "value": 47,
+        "maxValue": 49,
+        "minValue": 45,
+        "floatValue": 2
+      },
+      "Housing": {
+        "value": 44,
+        "maxValue": 51,
+        "minValue": 37,
+        "floatValue": 7
+      },
+      "Health": {
+        "value": 63,
+        "maxValue": 72,
+        "minValue": 54,
+        "floatValue": 9
+      }
     },
     "CPR": {
-      "Opinion and Expression": "9.4",
-      "Assembly and Association": "0.2",
-      "Freedom from Execution": "2.4",
-      "Freedom from Torture": "1.2",
-      "Participage in Government": "2.9",
-      "Freedom from Arbitrary Arrest": "2.3",
-      "Freedom from Disappearance": "1.1"
+      "Opinion and Expression": {
+        "value": 5.1,
+        "maxValue": 7.5,
+        "minValue": 2.7,
+        "floatValue": 2.4,
+        "splitValue": {
+          "Opinion": {
+            "value": 3.6,
+            "maxValue": 5.7,
+            "minValue": 1.5,
+            "floatValue": 2.1
+          },
+          "Expression": {
+            "value": 6.6,
+            "maxValue": 9.3,
+            "minValue": 3.9,
+            "floatValue": 2.7
+          }
+        }
+      },
+      "Assembly and Association": {
+        "value": 6.2,
+        "maxValue": 7.6,
+        "minValue": 4.8,
+        "floatValue": 1.4,
+        "splitValue": {
+          "Assembly": {
+            "value": 6.2,
+            "maxValue": 6.8,
+            "minValue": 5.6,
+            "floatValue": 0.6
+          },
+          "Association": {
+            "value": 6.1,
+            "maxValue": 8.2,
+            "minValue": 4,
+            "floatValue": 2.1
+          }
+        }
+      },
+      "Freedom from Execution": {
+        "value": 3.1,
+        "maxValue": 5.9,
+        "minValue": 0.3,
+        "floatValue": 2.8
+      },
+      "Freedom from Torture": {
+        "value": 4.1,
+        "maxValue": 6.1,
+        "minValue": 2.1,
+        "floatValue": 2
+      },
+      "Participage in Government": {
+        "value": 5.1,
+        "maxValue": 6.8,
+        "minValue": 3.4,
+        "floatValue": 1.7
+      },
+      "Freedom from Arbitrary Arrest": {
+        "value": 4,
+        "maxValue": 5,
+        "minValue": 3,
+        "floatValue": 1
+      },
+      "Freedom from Disappearance": {
+        "value": 3.2,
+        "maxValue": 3.7,
+        "minValue": 2.7,
+        "floatValue": 0.5
+      }
     }
   }
 }, {
   "name": "Malaysia",
   "code": "MYS",
-  "GDP2016": "27736.34931",
-  "population": "441.2",
+  "GDP2016": 27736.34931,
+  "population": 469.8,
   "rights": {
     "ESR": {
-      "Education": "35",
-      "Food": "29",
-      "Work": "28",
-      "Housing": "40",
-      "Health": "52"
+      "Education": {
+        "value": 65,
+        "maxValue": 67,
+        "minValue": 63,
+        "floatValue": 2
+      },
+      "Food": {
+        "value": 42,
+        "maxValue": 48,
+        "minValue": 36,
+        "floatValue": 6
+      },
+      "Work": {
+        "value": 88,
+        "maxValue": 92,
+        "minValue": 84,
+        "floatValue": 4
+      },
+      "Housing": {
+        "value": 53,
+        "maxValue": 60,
+        "minValue": 46,
+        "floatValue": 7
+      },
+      "Health": {
+        "value": 26,
+        "maxValue": 27,
+        "minValue": 25,
+        "floatValue": 1
+      }
     },
     "CPR": {
-      "Opinion and Expression": "6.3",
-      "Assembly and Association": "4.7",
-      "Freedom from Execution": "8.8",
-      "Freedom from Torture": "8.3",
-      "Participage in Government": "9.1",
-      "Freedom from Arbitrary Arrest": "6.2",
-      "Freedom from Disappearance": "5.4"
+      "Opinion and Expression": {
+        "value": 5.2,
+        "maxValue": 6.2,
+        "minValue": 4.2,
+        "floatValue": 1,
+        "splitValue": {
+          "Opinion": {
+            "value": 6.7,
+            "maxValue": 6.9,
+            "minValue": 6.5,
+            "floatValue": 0.2
+          },
+          "Expression": {
+            "value": 3.6,
+            "maxValue": 5.4,
+            "minValue": 1.8,
+            "floatValue": 1.8
+          }
+        }
+      },
+      "Assembly and Association": {
+        "value": 6.8,
+        "maxValue": 9.1,
+        "minValue": 4.5,
+        "floatValue": 2.3,
+        "splitValue": {
+          "Assembly": {
+            "value": 6.5,
+            "maxValue": 8.2,
+            "minValue": 4.8,
+            "floatValue": 1.7
+          },
+          "Association": {
+            "value": 7,
+            "maxValue": 9.8,
+            "minValue": 4.2,
+            "floatValue": 2.8
+          }
+        }
+      },
+      "Freedom from Execution": {
+        "value": 4.4,
+        "maxValue": 5.7,
+        "minValue": 3.1,
+        "floatValue": 1.3
+      },
+      "Freedom from Torture": {
+        "value": 4.5,
+        "maxValue": 6.9,
+        "minValue": 2.1,
+        "floatValue": 2.4
+      },
+      "Participage in Government": {
+        "value": 6,
+        "maxValue": 6.2,
+        "minValue": 5.8,
+        "floatValue": 0.2
+      },
+      "Freedom from Arbitrary Arrest": {
+        "value": 4.6,
+        "maxValue": 5.6,
+        "minValue": 3.6,
+        "floatValue": 1
+      },
+      "Freedom from Disappearance": {
+        "value": 4.6,
+        "maxValue": 5.7,
+        "minValue": 3.5,
+        "floatValue": 1.1
+      }
     }
   }
 }, {
   "name": "Marshall Islands",
   "code": "MHL",
-  "GDP2016": "4030.788604",
-  "population": "978.5",
+  "GDP2016": 4030.788604,
+  "population": 618.3,
   "rights": {
     "ESR": {
-      "Education": "68",
-      "Food": "28",
-      "Work": "58",
-      "Housing": "22",
-      "Health": "46"
+      "Education": {
+        "value": 45,
+        "maxValue": 54,
+        "minValue": 36,
+        "floatValue": 9
+      },
+      "Food": {
+        "value": 10,
+        "maxValue": 19,
+        "minValue": 1,
+        "floatValue": 9
+      },
+      "Work": {
+        "value": 54,
+        "maxValue": 61,
+        "minValue": 47,
+        "floatValue": 7
+      },
+      "Housing": {
+        "value": 41,
+        "maxValue": 45,
+        "minValue": 37,
+        "floatValue": 4
+      },
+      "Health": {
+        "value": 66,
+        "maxValue": 73,
+        "minValue": 59,
+        "floatValue": 7
+      }
     },
     "CPR": {
-      "Opinion and Expression": "4.5",
-      "Assembly and Association": "10.0",
-      "Freedom from Execution": "9.9",
-      "Freedom from Torture": "3.6",
-      "Participage in Government": "3.1",
-      "Freedom from Arbitrary Arrest": "9.7",
-      "Freedom from Disappearance": "2.5"
+      "Opinion and Expression": {
+        "value": 4.4,
+        "maxValue": 5.2,
+        "minValue": 3.6,
+        "floatValue": 0.8,
+        "splitValue": {
+          "Opinion": {
+            "value": 4.3,
+            "maxValue": 4.9,
+            "minValue": 3.7,
+            "floatValue": 0.6
+          },
+          "Expression": {
+            "value": 4.6,
+            "maxValue": 5.6,
+            "minValue": 3.6,
+            "floatValue": 1
+          }
+        }
+      },
+      "Assembly and Association": {
+        "value": 4.2,
+        "maxValue": 4.9,
+        "minValue": 3.5,
+        "floatValue": 0.7,
+        "splitValue": {
+          "Assembly": {
+            "value": 4.6,
+            "maxValue": 4.7,
+            "minValue": 4.5,
+            "floatValue": 0.1
+          },
+          "Association": {
+            "value": 3.8,
+            "maxValue": 5,
+            "minValue": 2.6,
+            "floatValue": 1.2
+          }
+        }
+      },
+      "Freedom from Execution": {
+        "value": 6.2,
+        "maxValue": 8.4,
+        "minValue": 4,
+        "floatValue": 2.2
+      },
+      "Freedom from Torture": {
+        "value": 3.3,
+        "maxValue": 5.6,
+        "minValue": 1,
+        "floatValue": 2.3
+      },
+      "Participage in Government": {
+        "value": 7,
+        "maxValue": 8,
+        "minValue": 6,
+        "floatValue": 1
+      },
+      "Freedom from Arbitrary Arrest": {
+        "value": 5.5,
+        "maxValue": 7.3,
+        "minValue": 3.7,
+        "floatValue": 1.8
+      },
+      "Freedom from Disappearance": {
+        "value": 6.4,
+        "maxValue": 8.3,
+        "minValue": 4.5,
+        "floatValue": 1.9
+      }
     }
   }
 }]
