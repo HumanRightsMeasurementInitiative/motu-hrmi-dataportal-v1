@@ -2,3 +2,61 @@
   padding-top: 50px;
   height: 100%;
 }
+
+.columnLeft {
+  position: relative;
+  padding: 0 24px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.toggleSwitch {
+  position: relative;
+  font-size: 12px;
+  text-decoration: underline;
+  line-height: 1.4em;
+  cursor: pointer;
+}
+.toggleSwitch:after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  margin-left: 4px;
+  border-top: 8px solid #4848fb;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+.regionSelector.show .toggleSwitch:after {
+  border-top: none;
+  border-bottom: 8px solid #4848fb;
+}
+.regionDropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  margin: 0;
+  padding: 0 24px;
+  height: 100%;
+  width: 100%;
+  background: #2f2ffd;
+  color: #fff;
+}
+.regionSelector.show .regionDropdown{
+  display: block;
+}
+.regionItem {
+  margin: 30px 0;
+  max-width: 160px;
+  font-size: 14px;
+  border-bottom: 3px solid transparent;
+  line-height: 1.4em;
+  cursor: default;
+}
+.regionItem:hover,
+.regionItem.selected {
+  border-color: #fff;
+}
+
+.rightItem {
+  font-size: 12px;
+}

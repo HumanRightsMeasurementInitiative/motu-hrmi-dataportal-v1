@@ -35,7 +35,10 @@ export default class StoryPopup extends React.Component {
                   <h4 className={styles.countryName}>Brunei</h4>
                   <p className={styles.countryIntro}>This is a story about rights in Brunei, one of our pilot countries for the Human Rights Measuerement Initiative.</p>
                   <p className={styles.countryIntro}>Here there will be a short introduction on the country and the general context, wich will be narrated in more detail in the long scroll on the right.</p>
-                  <div className={styles.popupLink}>Explore all rights:<br/> in Brunei</div>
+                    <div className='arrowLink'>
+                      <div className='text'>Explore all rights:</div>
+                      <div className='text underline'>in Brunei</div>
+                    </div>
                 </div>
               </div>
             </div>
@@ -50,7 +53,10 @@ export default class StoryPopup extends React.Component {
                   <h5 className={styles.subtitle}>Right to education</h5>
                   <p className={styles.paragraph}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
                   <div className={styles.links}>
-                    <div className={styles.popupLink}>Explore all rights:<br/> in Brunei</div>
+                    <div className='arrowLink'>
+                      <div className='text'>Explore all rights:</div>
+                      <div className='text underline'>in East Asia and the Pacific</div>
+                    </div>
                   </div>
                 </section>
                 <section className={styles.section}>

@@ -1,0 +1,35 @@
+.countryPage {
+  padding-top: 50px;
+  height: 100%;
+}
+
+.columnLeft {
+  padding: 0 24px 0 30px;
+}
+
+.hintText {
+  font-size: 12px;
+  text-decoration: underline;
+}
+.backLink {
+  position: relative;
+  margin: 10px 0;
+  font-size: 14px;
+  border-bottom: 3px solid #2f2ffd;
+  cursor: pointer;
+}
+.backLink:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  margin-top: -6px;
+  border-right: 8px solid #4848fb;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+.countryItem {
+  margin: 2px 0;
+  font-size: 12px;
+}
