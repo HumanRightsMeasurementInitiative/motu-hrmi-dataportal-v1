@@ -1,0 +1,1036 @@
+[{
+  "name": "Angola",
+  "code": "AGO",
+  "GDP2016": "6466.665045",
+  "population": "301.4",
+  "rights": {
+    "ESR": {
+      "Education": "61",
+      "Food": "62",
+      "Work": "3",
+      "Housing": "15",
+      "Health": "46"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.9",
+      "Assembly and Association": "9.9",
+      "Freedom from Execution": "8.9",
+      "Freedom from Torture": "5.7",
+      "Participage in Government": "5.6",
+      "Freedom from Arbitrary Arrest": "2.7",
+      "Freedom from Disappearance": "7.8"
+    }
+  }
+}, {
+  "name": "Benin",
+  "code": "BEN",
+  "GDP2016": "2171.850956",
+  "population": "671.9",
+  "rights": {
+    "ESR": {
+      "Education": "65",
+      "Food": "89",
+      "Work": "82",
+      "Housing": "18",
+      "Health": "4"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.5",
+      "Assembly and Association": "5.6",
+      "Freedom from Execution": "6.3",
+      "Freedom from Torture": "5.4",
+      "Participage in Government": "1.9",
+      "Freedom from Arbitrary Arrest": "8.1",
+      "Freedom from Disappearance": "1.4"
+    }
+  }
+}, {
+  "name": "Botswana",
+  "code": "BWA",
+  "GDP2016": "16989.64355",
+  "population": "610.3",
+  "rights": {
+    "ESR": {
+      "Education": "76",
+      "Food": "99",
+      "Work": "85",
+      "Housing": "81",
+      "Health": "42"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.2",
+      "Assembly and Association": "5.3",
+      "Freedom from Execution": "0.7",
+      "Freedom from Torture": "7.7",
+      "Participage in Government": "7.7",
+      "Freedom from Arbitrary Arrest": "6.5",
+      "Freedom from Disappearance": "4.7"
+    }
+  }
+}, {
+  "name": "Burkina Faso",
+  "code": "BFA",
+  "GDP2016": "1774.453431",
+  "population": "615.2",
+  "rights": {
+    "ESR": {
+      "Education": "53",
+      "Food": "74",
+      "Work": "71",
+      "Housing": "30",
+      "Health": "25"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.1",
+      "Assembly and Association": "2.7",
+      "Freedom from Execution": "10.0",
+      "Freedom from Torture": "9.1",
+      "Participage in Government": "1.7",
+      "Freedom from Arbitrary Arrest": "8.6",
+      "Freedom from Disappearance": "3.6"
+    }
+  }
+}, {
+  "name": "Burundi",
+  "code": "BDI",
+  "GDP2016": "779.2627348",
+  "population": "912.6",
+  "rights": {
+    "ESR": {
+      "Education": "72",
+      "Food": "49",
+      "Work": "57",
+      "Housing": "64",
+      "Health": "97"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.1",
+      "Assembly and Association": "7.1",
+      "Freedom from Execution": "0.4",
+      "Freedom from Torture": "9.7",
+      "Participage in Government": "8.1",
+      "Freedom from Arbitrary Arrest": "6.7",
+      "Freedom from Disappearance": "7.0"
+    }
+  }
+}, {
+  "name": "Cameroon",
+  "code": "CMR",
+  "GDP2016": "3616.382624",
+  "population": "892.9",
+  "rights": {
+    "ESR": {
+      "Education": "88",
+      "Food": "49",
+      "Work": "22",
+      "Housing": "25",
+      "Health": "81"
+    },
+    "CPR": {
+      "Opinion and Expression": "3.1",
+      "Assembly and Association": "0.7",
+      "Freedom from Execution": "3.4",
+      "Freedom from Torture": "9.5",
+      "Participage in Government": "7.9",
+      "Freedom from Arbitrary Arrest": "1.2",
+      "Freedom from Disappearance": "1.1"
+    }
+  }
+}, {
+  "name": "Central African Republic",
+  "code": "CAF",
+  "GDP2016": "700.0630833",
+  "population": "57.7",
+  "rights": {
+    "ESR": {
+      "Education": "96",
+      "Food": "64",
+      "Work": "45",
+      "Housing": "24",
+      "Health": "97"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.6",
+      "Assembly and Association": "1.3",
+      "Freedom from Execution": "9.0",
+      "Freedom from Torture": "9.8",
+      "Participage in Government": "3.9",
+      "Freedom from Arbitrary Arrest": "4.9",
+      "Freedom from Disappearance": "1.1"
+    }
+  }
+}, {
+  "name": "Chad",
+  "code": "TCD",
+  "GDP2016": "1994.591336",
+  "population": "995.0",
+  "rights": {
+    "ESR": {
+      "Education": "69",
+      "Food": "53",
+      "Work": "6",
+      "Housing": "89",
+      "Health": "79"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.1",
+      "Assembly and Association": "3.7",
+      "Freedom from Execution": "6.9",
+      "Freedom from Torture": "4.0",
+      "Participage in Government": "2.0",
+      "Freedom from Arbitrary Arrest": "9.7",
+      "Freedom from Disappearance": "4.9"
+    }
+  }
+}, {
+  "name": "Comoros",
+  "code": "COM",
+  "GDP2016": "1524.811661",
+  "population": "820.5",
+  "rights": {
+    "ESR": {
+      "Education": "9",
+      "Food": "50",
+      "Work": "95",
+      "Housing": "44",
+      "Health": "68"
+    },
+    "CPR": {
+      "Opinion and Expression": "3.5",
+      "Assembly and Association": "5.9",
+      "Freedom from Execution": "2.1",
+      "Freedom from Torture": "4.9",
+      "Participage in Government": "1.5",
+      "Freedom from Arbitrary Arrest": "8.4",
+      "Freedom from Disappearance": "9.5"
+    }
+  }
+}, {
+  "name": "Cote d'Ivoire",
+  "code": "CIV",
+  "GDP2016": "3700.607128",
+  "population": "628.9",
+  "rights": {
+    "ESR": {
+      "Education": "16",
+      "Food": "32",
+      "Work": "89",
+      "Housing": "82",
+      "Health": "5"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.8",
+      "Assembly and Association": "0.4",
+      "Freedom from Execution": "5.8",
+      "Freedom from Torture": "0.7",
+      "Participage in Government": "5.6",
+      "Freedom from Arbitrary Arrest": "5.7",
+      "Freedom from Disappearance": "8.7"
+    }
+  }
+}, {
+  "name": "Djibouti",
+  "code": "DJI",
+  "GDP2016": "..",
+  "population": "318.1",
+  "rights": {
+    "ESR": {
+      "Education": "50",
+      "Food": "98",
+      "Work": "57",
+      "Housing": "35",
+      "Health": "65"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.7",
+      "Assembly and Association": "8.6",
+      "Freedom from Execution": "0.4",
+      "Freedom from Torture": "3.1",
+      "Participage in Government": "7.6",
+      "Freedom from Arbitrary Arrest": "1.0",
+      "Freedom from Disappearance": "3.4"
+    }
+  }
+}, {
+  "name": "Equatorial Guinea",
+  "code": "GNQ",
+  "GDP2016": "26108.66505",
+  "population": "324.1",
+  "rights": {
+    "ESR": {
+      "Education": "68",
+      "Food": "95",
+      "Work": "79",
+      "Housing": "16",
+      "Health": "32"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.7",
+      "Assembly and Association": "3.8",
+      "Freedom from Execution": "6.2",
+      "Freedom from Torture": "6.9",
+      "Participage in Government": "2.8",
+      "Freedom from Arbitrary Arrest": "4.0",
+      "Freedom from Disappearance": "4.6"
+    }
+  }
+}, {
+  "name": "Eritrea",
+  "code": "ERI",
+  "GDP2016": "..",
+  "population": "881.2",
+  "rights": {
+    "ESR": {
+      "Education": "90",
+      "Food": "26",
+      "Work": "78",
+      "Housing": "76",
+      "Health": "95"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.1",
+      "Assembly and Association": "6.7",
+      "Freedom from Execution": "0.9",
+      "Freedom from Torture": "2.5",
+      "Participage in Government": "3.3",
+      "Freedom from Arbitrary Arrest": "8.8",
+      "Freedom from Disappearance": "6.6"
+    }
+  }
+}, {
+  "name": "Ethiopia",
+  "code": "ETH",
+  "GDP2016": "1737.83126",
+  "population": "199.6",
+  "rights": {
+    "ESR": {
+      "Education": "82",
+      "Food": "16",
+      "Work": "99",
+      "Housing": "6",
+      "Health": "94"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.5",
+      "Assembly and Association": "7.3",
+      "Freedom from Execution": "3.1",
+      "Freedom from Torture": "5.3",
+      "Participage in Government": "6.0",
+      "Freedom from Arbitrary Arrest": "0.7",
+      "Freedom from Disappearance": "5.4"
+    }
+  }
+}, {
+  "name": "Gabon",
+  "code": "GAB",
+  "GDP2016": "18138.00604",
+  "population": "997.6",
+  "rights": {
+    "ESR": {
+      "Education": "47",
+      "Food": "69",
+      "Work": "68",
+      "Housing": "18",
+      "Health": "48"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.1",
+      "Assembly and Association": "8.3",
+      "Freedom from Execution": "8.3",
+      "Freedom from Torture": "5.4",
+      "Participage in Government": "1.1",
+      "Freedom from Arbitrary Arrest": "4.6",
+      "Freedom from Disappearance": "3.6"
+    }
+  }
+}, {
+  "name": "Ghana",
+  "code": "GHA",
+  "GDP2016": "4300.782005",
+  "population": "187.4",
+  "rights": {
+    "ESR": {
+      "Education": "69",
+      "Food": "39",
+      "Work": "72",
+      "Housing": "99",
+      "Health": "12"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.6",
+      "Assembly and Association": "5.0",
+      "Freedom from Execution": "1.7",
+      "Freedom from Torture": "4.5",
+      "Participage in Government": "0.4",
+      "Freedom from Arbitrary Arrest": "2.2",
+      "Freedom from Disappearance": "4.4"
+    }
+  }
+}, {
+  "name": "Guinea",
+  "code": "GIN",
+  "GDP2016": "1970.197101",
+  "population": "268.1",
+  "rights": {
+    "ESR": {
+      "Education": "12",
+      "Food": "31",
+      "Work": "54",
+      "Housing": "88",
+      "Health": "77"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.3",
+      "Assembly and Association": "3.2",
+      "Freedom from Execution": "4.1",
+      "Freedom from Torture": "8.6",
+      "Participage in Government": "7.3",
+      "Freedom from Arbitrary Arrest": "8.2",
+      "Freedom from Disappearance": "5.2"
+    }
+  }
+}, {
+  "name": "Guinea-Bissau",
+  "code": "GNB",
+  "GDP2016": "1611.827422",
+  "population": "837.2",
+  "rights": {
+    "ESR": {
+      "Education": "49",
+      "Food": "46",
+      "Work": "35",
+      "Housing": "16",
+      "Health": "57"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.7",
+      "Assembly and Association": "7.6",
+      "Freedom from Execution": "2.7",
+      "Freedom from Torture": "7.5",
+      "Participage in Government": "9.5",
+      "Freedom from Arbitrary Arrest": "5.8",
+      "Freedom from Disappearance": "8.4"
+    }
+  }
+}, {
+  "name": "Kenya",
+  "code": "KEN",
+  "GDP2016": "3161.239415",
+  "population": "12.3",
+  "rights": {
+    "ESR": {
+      "Education": "74",
+      "Food": "97",
+      "Work": "62",
+      "Housing": "7",
+      "Health": "91"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.9",
+      "Assembly and Association": "1.0",
+      "Freedom from Execution": "2.2",
+      "Freedom from Torture": "2.7",
+      "Participage in Government": "4.8",
+      "Freedom from Arbitrary Arrest": "7.0",
+      "Freedom from Disappearance": "1.8"
+    }
+  }
+}, {
+  "name": "Lesotho",
+  "code": "LSO",
+  "GDP2016": "2956.750833",
+  "population": "904.4",
+  "rights": {
+    "ESR": {
+      "Education": "17",
+      "Food": "11",
+      "Work": "2",
+      "Housing": "86",
+      "Health": "17"
+    },
+    "CPR": {
+      "Opinion and Expression": "5.8",
+      "Assembly and Association": "3.9",
+      "Freedom from Execution": "1.0",
+      "Freedom from Torture": "9.1",
+      "Participage in Government": "7.2",
+      "Freedom from Arbitrary Arrest": "0.7",
+      "Freedom from Disappearance": "7.3"
+    }
+  }
+}, {
+  "name": "Liberia",
+  "code": "LBR",
+  "GDP2016": "814.2516207",
+  "population": "26.5",
+  "rights": {
+    "ESR": {
+      "Education": "41",
+      "Food": "91",
+      "Work": "93",
+      "Housing": "18",
+      "Health": "24"
+    },
+    "CPR": {
+      "Opinion and Expression": "5.7",
+      "Assembly and Association": "4.6",
+      "Freedom from Execution": "5.2",
+      "Freedom from Torture": "10.0",
+      "Participage in Government": "1.2",
+      "Freedom from Arbitrary Arrest": "5.9",
+      "Freedom from Disappearance": "3.9"
+    }
+  }
+}, {
+  "name": "Madagascar",
+  "code": "MDG",
+  "GDP2016": "1509.162447",
+  "population": "380.0",
+  "rights": {
+    "ESR": {
+      "Education": "77",
+      "Food": "43",
+      "Work": "42",
+      "Housing": "61",
+      "Health": "65"
+    },
+    "CPR": {
+      "Opinion and Expression": "5.6",
+      "Assembly and Association": "3.1",
+      "Freedom from Execution": "3.3",
+      "Freedom from Torture": "6.2",
+      "Participage in Government": "4.5",
+      "Freedom from Arbitrary Arrest": "3.2",
+      "Freedom from Disappearance": "3.5"
+    }
+  }
+}, {
+  "name": "Malawi",
+  "code": "MWI",
+  "GDP2016": "1171.094714",
+  "population": "529.7",
+  "rights": {
+    "ESR": {
+      "Education": "44",
+      "Food": "50",
+      "Work": "41",
+      "Housing": "89",
+      "Health": "20"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.5",
+      "Assembly and Association": "4.8",
+      "Freedom from Execution": "8.9",
+      "Freedom from Torture": "1.2",
+      "Participage in Government": "7.1",
+      "Freedom from Arbitrary Arrest": "0.1",
+      "Freedom from Disappearance": "6.0"
+    }
+  }
+}, {
+  "name": "Mali",
+  "code": "MLI",
+  "GDP2016": "2129.842765",
+  "population": "95.3",
+  "rights": {
+    "ESR": {
+      "Education": "40",
+      "Food": "8",
+      "Work": "84",
+      "Housing": "15",
+      "Health": "39"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.8",
+      "Assembly and Association": "3.6",
+      "Freedom from Execution": "4.1",
+      "Freedom from Torture": "8.7",
+      "Participage in Government": "3.6",
+      "Freedom from Arbitrary Arrest": "7.0",
+      "Freedom from Disappearance": "8.0"
+    }
+  }
+}, {
+  "name": "Mauritania",
+  "code": "MRT",
+  "GDP2016": "3860.004969",
+  "population": "282.4",
+  "rights": {
+    "ESR": {
+      "Education": "73",
+      "Food": "48",
+      "Work": "47",
+      "Housing": "64",
+      "Health": "20"
+    },
+    "CPR": {
+      "Opinion and Expression": "0.7",
+      "Assembly and Association": "4.9",
+      "Freedom from Execution": "9.8",
+      "Freedom from Torture": "5.4",
+      "Participage in Government": "3.8",
+      "Freedom from Arbitrary Arrest": "7.7",
+      "Freedom from Disappearance": "3.7"
+    }
+  }
+}, {
+  "name": "Mauritius",
+  "code": "MUS",
+  "GDP2016": "21143.52618",
+  "population": "85.1",
+  "rights": {
+    "ESR": {
+      "Education": "48",
+      "Food": "76",
+      "Work": "33",
+      "Housing": "47",
+      "Health": "87"
+    },
+    "CPR": {
+      "Opinion and Expression": "4.3",
+      "Assembly and Association": "0.7",
+      "Freedom from Execution": "1.7",
+      "Freedom from Torture": "2.5",
+      "Participage in Government": "4.9",
+      "Freedom from Arbitrary Arrest": "4.4",
+      "Freedom from Disappearance": "4.1"
+    }
+  }
+}, {
+  "name": "Mozambique",
+  "code": "MOZ",
+  "GDP2016": "1219.154997",
+  "population": "286.0",
+  "rights": {
+    "ESR": {
+      "Education": "22",
+      "Food": "94",
+      "Work": "4",
+      "Housing": "46",
+      "Health": "45"
+    },
+    "CPR": {
+      "Opinion and Expression": "4.9",
+      "Assembly and Association": "6.8",
+      "Freedom from Execution": "7.1",
+      "Freedom from Torture": "1.3",
+      "Participage in Government": "8.6",
+      "Freedom from Arbitrary Arrest": "1.7",
+      "Freedom from Disappearance": "0.8"
+    }
+  }
+}, {
+  "name": "Namibia",
+  "code": "NAM",
+  "GDP2016": "10645.55372",
+  "population": "919.9",
+  "rights": {
+    "ESR": {
+      "Education": "70",
+      "Food": "74",
+      "Work": "77",
+      "Housing": "81",
+      "Health": "9"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.2",
+      "Assembly and Association": "3.6",
+      "Freedom from Execution": "6.2",
+      "Freedom from Torture": "2.0",
+      "Participage in Government": "2.1",
+      "Freedom from Arbitrary Arrest": "1.3",
+      "Freedom from Disappearance": "4.0"
+    }
+  }
+}, {
+  "name": "Niger",
+  "code": "NER",
+  "GDP2016": "988.1215242",
+  "population": "600.6",
+  "rights": {
+    "ESR": {
+      "Education": "58",
+      "Food": "68",
+      "Work": "47",
+      "Housing": "29",
+      "Health": "24"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.9",
+      "Assembly and Association": "9.2",
+      "Freedom from Execution": "9.1",
+      "Freedom from Torture": "7.7",
+      "Participage in Government": "0.7",
+      "Freedom from Arbitrary Arrest": "7.2",
+      "Freedom from Disappearance": "7.5"
+    }
+  }
+}, {
+  "name": "Nigeria",
+  "code": "NGA",
+  "GDP2016": "5872.468027",
+  "population": "747.0",
+  "rights": {
+    "ESR": {
+      "Education": "24",
+      "Food": "80",
+      "Work": "8",
+      "Housing": "14",
+      "Health": "53"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.0",
+      "Assembly and Association": "5.3",
+      "Freedom from Execution": "4.3",
+      "Freedom from Torture": "1.2",
+      "Participage in Government": "6.6",
+      "Freedom from Arbitrary Arrest": "5.8",
+      "Freedom from Disappearance": "1.0"
+    }
+  }
+}, {
+  "name": "Rwanda",
+  "code": "RWA",
+  "GDP2016": "1916.614775",
+  "population": "865.5",
+  "rights": {
+    "ESR": {
+      "Education": "96",
+      "Food": "93",
+      "Work": "51",
+      "Housing": "9",
+      "Health": "71"
+    },
+    "CPR": {
+      "Opinion and Expression": "3.2",
+      "Assembly and Association": "7.4",
+      "Freedom from Execution": "9.8",
+      "Freedom from Torture": "8.1",
+      "Participage in Government": "2.9",
+      "Freedom from Arbitrary Arrest": "2.9",
+      "Freedom from Disappearance": "3.9"
+    }
+  }
+}, {
+  "name": "Sao Tome and Principe",
+  "code": "STP",
+  "GDP2016": "3243.677425",
+  "population": "758.0",
+  "rights": {
+    "ESR": {
+      "Education": "24",
+      "Food": "48",
+      "Work": "41",
+      "Housing": "22",
+      "Health": "4"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.2",
+      "Assembly and Association": "2.9",
+      "Freedom from Execution": "5.7",
+      "Freedom from Torture": "6.7",
+      "Participage in Government": "4.6",
+      "Freedom from Arbitrary Arrest": "7.9",
+      "Freedom from Disappearance": "9.0"
+    }
+  }
+}, {
+  "name": "Senegal",
+  "code": "SEN",
+  "GDP2016": "2571.10089",
+  "population": "864.2",
+  "rights": {
+    "ESR": {
+      "Education": "45",
+      "Food": "54",
+      "Work": "86",
+      "Housing": "29",
+      "Health": "77"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.9",
+      "Assembly and Association": "5.8",
+      "Freedom from Execution": "9.7",
+      "Freedom from Torture": "7.6",
+      "Participage in Government": "2.6",
+      "Freedom from Arbitrary Arrest": "8.7",
+      "Freedom from Disappearance": "3.0"
+    }
+  }
+}, {
+  "name": "Seychelles",
+  "code": "SYC",
+  "GDP2016": "28438.99902",
+  "population": "757.9",
+  "rights": {
+    "ESR": {
+      "Education": "49",
+      "Food": "81",
+      "Work": "43",
+      "Housing": "64",
+      "Health": "87"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.7",
+      "Assembly and Association": "7.4",
+      "Freedom from Execution": "1.9",
+      "Freedom from Torture": "5.7",
+      "Participage in Government": "1.6",
+      "Freedom from Arbitrary Arrest": "8.8",
+      "Freedom from Disappearance": "4.5"
+    }
+  }
+}, {
+  "name": "Sierra Leone",
+  "code": "SLE",
+  "GDP2016": "1479.079553",
+  "population": "602.6",
+  "rights": {
+    "ESR": {
+      "Education": "44",
+      "Food": "20",
+      "Work": "40",
+      "Housing": "99",
+      "Health": "38"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.9",
+      "Assembly and Association": "2.8",
+      "Freedom from Execution": "8.2",
+      "Freedom from Torture": "9.8",
+      "Participage in Government": "7.6",
+      "Freedom from Arbitrary Arrest": "7.4",
+      "Freedom from Disappearance": "5.4"
+    }
+  }
+}, {
+  "name": "Somalia",
+  "code": "SOM",
+  "GDP2016": "..",
+  "population": "172.8",
+  "rights": {
+    "ESR": {
+      "Education": "51",
+      "Food": "15",
+      "Work": "63",
+      "Housing": "52",
+      "Health": "64"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.4",
+      "Assembly and Association": "9.2",
+      "Freedom from Execution": "6.2",
+      "Freedom from Torture": "0.8",
+      "Participage in Government": "9.0",
+      "Freedom from Arbitrary Arrest": "2.7",
+      "Freedom from Disappearance": "0.6"
+    }
+  }
+}, {
+  "name": "South Africa",
+  "code": "ZAF",
+  "GDP2016": "13247.64349",
+  "population": "575.1",
+  "rights": {
+    "ESR": {
+      "Education": "3",
+      "Food": "56",
+      "Work": "13",
+      "Housing": "74",
+      "Health": "59"
+    },
+    "CPR": {
+      "Opinion and Expression": "3.6",
+      "Assembly and Association": "6.2",
+      "Freedom from Execution": "4.8",
+      "Freedom from Torture": "0.4",
+      "Participage in Government": "6.0",
+      "Freedom from Arbitrary Arrest": "4.5",
+      "Freedom from Disappearance": "1.1"
+    }
+  }
+}, {
+  "name": "South Sudan",
+  "code": "SSD",
+  "GDP2016": "..",
+  "population": "133.5",
+  "rights": {
+    "ESR": {
+      "Education": "99",
+      "Food": "63",
+      "Work": "96",
+      "Housing": "17",
+      "Health": "82"
+    },
+    "CPR": {
+      "Opinion and Expression": "3.7",
+      "Assembly and Association": "6.3",
+      "Freedom from Execution": "9.7",
+      "Freedom from Torture": "9.6",
+      "Participage in Government": "2.8",
+      "Freedom from Arbitrary Arrest": "1.4",
+      "Freedom from Disappearance": "4.3"
+    }
+  }
+}, {
+  "name": "Sudan",
+  "code": "SDN",
+  "GDP2016": "4730.292058",
+  "population": "609.7",
+  "rights": {
+    "ESR": {
+      "Education": "17",
+      "Food": "95",
+      "Work": "54",
+      "Housing": "7",
+      "Health": "67"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.4",
+      "Assembly and Association": "1.0",
+      "Freedom from Execution": "8.4",
+      "Freedom from Torture": "0.6",
+      "Participage in Government": "8.9",
+      "Freedom from Arbitrary Arrest": "6.8",
+      "Freedom from Disappearance": "6.7"
+    }
+  }
+}, {
+  "name": "Swaziland",
+  "code": "SWZ",
+  "GDP2016": "8345.731095",
+  "population": "570.3",
+  "rights": {
+    "ESR": {
+      "Education": "14",
+      "Food": "68",
+      "Work": "46",
+      "Housing": "5",
+      "Health": "12"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.4",
+      "Assembly and Association": "1.2",
+      "Freedom from Execution": "8.9",
+      "Freedom from Torture": "4.8",
+      "Participage in Government": "6.3",
+      "Freedom from Arbitrary Arrest": "6.2",
+      "Freedom from Disappearance": "6.9"
+    }
+  }
+}, {
+  "name": "Tanzania",
+  "code": "TZA",
+  "GDP2016": "2786.666719",
+  "population": "793.6",
+  "rights": {
+    "ESR": {
+      "Education": "56",
+      "Food": "22",
+      "Work": "89",
+      "Housing": "44",
+      "Health": "95"
+    },
+    "CPR": {
+      "Opinion and Expression": "3.3",
+      "Assembly and Association": "2.7",
+      "Freedom from Execution": "1.0",
+      "Freedom from Torture": "2.3",
+      "Participage in Government": "7.6",
+      "Freedom from Arbitrary Arrest": "3.1",
+      "Freedom from Disappearance": "2.2"
+    }
+  }
+}, {
+  "name": "Togo",
+  "code": "TGO",
+  "GDP2016": "1493.429874",
+  "population": "492.7",
+  "rights": {
+    "ESR": {
+      "Education": "25",
+      "Food": "57",
+      "Work": "69",
+      "Housing": "94",
+      "Health": "2"
+    },
+    "CPR": {
+      "Opinion and Expression": "4.4",
+      "Assembly and Association": "7.5",
+      "Freedom from Execution": "4.8",
+      "Freedom from Torture": "6.5",
+      "Participage in Government": "8.2",
+      "Freedom from Arbitrary Arrest": "0.3",
+      "Freedom from Disappearance": "9.3"
+    }
+  }
+}, {
+  "name": "Uganda",
+  "code": "UGA",
+  "GDP2016": "1822.966493",
+  "population": "957.4",
+  "rights": {
+    "ESR": {
+      "Education": "58",
+      "Food": "39",
+      "Work": "52",
+      "Housing": "38",
+      "Health": "91"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.3",
+      "Assembly and Association": "0.5",
+      "Freedom from Execution": "8.8",
+      "Freedom from Torture": "9.8",
+      "Participage in Government": "6.8",
+      "Freedom from Arbitrary Arrest": "9.0",
+      "Freedom from Disappearance": "6.0"
+    }
+  }
+}, {
+  "name": "Zambia",
+  "code": "ZMB",
+  "GDP2016": "3940.701882",
+  "population": "491.2",
+  "rights": {
+    "ESR": {
+      "Education": "34",
+      "Food": "92",
+      "Work": "7",
+      "Housing": "42",
+      "Health": "43"
+    },
+    "CPR": {
+      "Opinion and Expression": "5.9",
+      "Assembly and Association": "0.3",
+      "Freedom from Execution": "1.4",
+      "Freedom from Torture": "9.5",
+      "Participage in Government": "4.0",
+      "Freedom from Arbitrary Arrest": "2.7",
+      "Freedom from Disappearance": "2.6"
+    }
+  }
+}, {
+  "name": "Zimbabwe",
+  "code": "ZWE",
+  "GDP2016": "2031.020179",
+  "population": "890.5",
+  "rights": {
+    "ESR": {
+      "Education": "11",
+      "Food": "91",
+      "Work": "53",
+      "Housing": "49",
+      "Health": "37"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.9",
+      "Assembly and Association": "9.1",
+      "Freedom from Execution": "6.9",
+      "Freedom from Torture": "6.7",
+      "Participage in Government": "1.9",
+      "Freedom from Arbitrary Arrest": "6.2",
+      "Freedom from Disappearance": "4.2"
+    }
+  }
+}]

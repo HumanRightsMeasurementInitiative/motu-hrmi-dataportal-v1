@@ -1,0 +1,599 @@
+[{
+  "name": "Antigua and Barbuda",
+  "code": "ATG",
+  "GDP2016": "22705.4822",
+  "population": "877.1",
+  "rights": {
+    "ESR": {
+      "Education": "78",
+      "Food": "72",
+      "Work": "58",
+      "Housing": "65",
+      "Health": "5"
+    },
+    "CPR": {
+      "Opinion and Expression": "5.4",
+      "Assembly and Association": "2.2",
+      "Freedom from Execution": "1.6",
+      "Freedom from Torture": "8.4",
+      "Participage in Government": "6.3",
+      "Freedom from Arbitrary Arrest": "4.1",
+      "Freedom from Disappearance": "9.4"
+    }
+  }
+}, {
+  "name": "Argentina",
+  "code": "ARG",
+  "GDP2016": "19978.64097",
+  "population": "446.9",
+  "rights": {
+    "ESR": {
+      "Education": "46",
+      "Food": "15",
+      "Work": "51",
+      "Housing": "48",
+      "Health": "59"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.0",
+      "Assembly and Association": "6.4",
+      "Freedom from Execution": "5.2",
+      "Freedom from Torture": "7.6",
+      "Participage in Government": "2.4",
+      "Freedom from Arbitrary Arrest": "1.6",
+      "Freedom from Disappearance": "1.5"
+    }
+  }
+}, {
+  "name": "Aruba",
+  "code": "ABW",
+  "GDP2016": "..",
+  "population": "927.6",
+  "rights": {
+    "ESR": {
+      "Education": "81",
+      "Food": "29",
+      "Work": "92",
+      "Housing": "7",
+      "Health": "60"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.3",
+      "Assembly and Association": "8.7",
+      "Freedom from Execution": "6.9",
+      "Freedom from Torture": "7.5",
+      "Participage in Government": "8.7",
+      "Freedom from Arbitrary Arrest": "0.5",
+      "Freedom from Disappearance": "4.5"
+    }
+  }
+}, {
+  "name": "Barbados",
+  "code": "BRB",
+  "GDP2016": "18099.67398",
+  "population": "503.1",
+  "rights": {
+    "ESR": {
+      "Education": "14",
+      "Food": "78",
+      "Work": "25",
+      "Housing": "77",
+      "Health": "89"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.3",
+      "Assembly and Association": "5.5",
+      "Freedom from Execution": "0.9",
+      "Freedom from Torture": "3.9",
+      "Participage in Government": "4.3",
+      "Freedom from Arbitrary Arrest": "1.6",
+      "Freedom from Disappearance": "7.3"
+    }
+  }
+}, {
+  "name": "Bolivia",
+  "code": "BOL",
+  "GDP2016": "7248.23928",
+  "population": "822.8",
+  "rights": {
+    "ESR": {
+      "Education": "61",
+      "Food": "34",
+      "Work": "92",
+      "Housing": "83",
+      "Health": "35"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.1",
+      "Assembly and Association": "4.4",
+      "Freedom from Execution": "9.6",
+      "Freedom from Torture": "7.2",
+      "Participage in Government": "0.3",
+      "Freedom from Arbitrary Arrest": "3.1",
+      "Freedom from Disappearance": "4.8"
+    }
+  }
+}, {
+  "name": "Brazil",
+  "code": "BRA",
+  "GDP2016": "15153.21056",
+  "population": "869.0",
+  "rights": {
+    "ESR": {
+      "Education": "70",
+      "Food": "3",
+      "Work": "56",
+      "Housing": "32",
+      "Health": "5"
+    },
+    "CPR": {
+      "Opinion and Expression": "0.9",
+      "Assembly and Association": "2.6",
+      "Freedom from Execution": "0.5",
+      "Freedom from Torture": "9.7",
+      "Participage in Government": "3.4",
+      "Freedom from Arbitrary Arrest": "2.4",
+      "Freedom from Disappearance": "9.9"
+    }
+  }
+}, {
+  "name": "British Virgin Islands",
+  "code": "VGB",
+  "GDP2016": "..",
+  "population": "46.7",
+  "rights": {
+    "ESR": {
+      "Education": "42",
+      "Food": "71",
+      "Work": "15",
+      "Housing": "64",
+      "Health": "63"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.8",
+      "Assembly and Association": "9.0",
+      "Freedom from Execution": "4.7",
+      "Freedom from Torture": "4.3",
+      "Participage in Government": "7.0",
+      "Freedom from Arbitrary Arrest": "9.7",
+      "Freedom from Disappearance": "5.5"
+    }
+  }
+}, {
+  "name": "Cayman Islands",
+  "code": "CYM",
+  "GDP2016": "..",
+  "population": "123.7",
+  "rights": {
+    "ESR": {
+      "Education": "68",
+      "Food": "9",
+      "Work": "21",
+      "Housing": "79",
+      "Health": "24"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.6",
+      "Assembly and Association": "7.8",
+      "Freedom from Execution": "8.0",
+      "Freedom from Torture": "9.1",
+      "Participage in Government": "0.8",
+      "Freedom from Arbitrary Arrest": "6.5",
+      "Freedom from Disappearance": "7.6"
+    }
+  }
+}, {
+  "name": "Chile",
+  "code": "CHL",
+  "GDP2016": "23960.27015",
+  "population": "90.4",
+  "rights": {
+    "ESR": {
+      "Education": "84",
+      "Food": "91",
+      "Work": "1",
+      "Housing": "5",
+      "Health": "13"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.3",
+      "Assembly and Association": "8.5",
+      "Freedom from Execution": "5.1",
+      "Freedom from Torture": "6.8",
+      "Participage in Government": "9.9",
+      "Freedom from Arbitrary Arrest": "7.8",
+      "Freedom from Disappearance": "2.8"
+    }
+  }
+}, {
+  "name": "Colombia",
+  "code": "COL",
+  "GDP2016": "14181.40552",
+  "population": "604.2",
+  "rights": {
+    "ESR": {
+      "Education": "4",
+      "Food": "83",
+      "Work": "87",
+      "Housing": "50",
+      "Health": "79"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.3",
+      "Assembly and Association": "1.9",
+      "Freedom from Execution": "7.7",
+      "Freedom from Torture": "2.2",
+      "Participage in Government": "5.3",
+      "Freedom from Arbitrary Arrest": "5.4",
+      "Freedom from Disappearance": "4.9"
+    }
+  }
+}, {
+  "name": "Cuba",
+  "code": "CUB",
+  "GDP2016": "..",
+  "population": "432.9",
+  "rights": {
+    "ESR": {
+      "Education": "87",
+      "Food": "4",
+      "Work": "60",
+      "Housing": "11",
+      "Health": "47"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.2",
+      "Assembly and Association": "3.6",
+      "Freedom from Execution": "0.9",
+      "Freedom from Torture": "0.2",
+      "Participage in Government": "3.3",
+      "Freedom from Arbitrary Arrest": "2.4",
+      "Freedom from Disappearance": "5.7"
+    }
+  }
+}, {
+  "name": "Dominica",
+  "code": "DMA",
+  "GDP2016": "10968.96843",
+  "population": "409.4",
+  "rights": {
+    "ESR": {
+      "Education": "70",
+      "Food": "41",
+      "Work": "50",
+      "Housing": "29",
+      "Health": "37"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.3",
+      "Assembly and Association": "4.7",
+      "Freedom from Execution": "9.3",
+      "Freedom from Torture": "3.2",
+      "Participage in Government": "1.6",
+      "Freedom from Arbitrary Arrest": "6.4",
+      "Freedom from Disappearance": "3.1"
+    }
+  }
+}, {
+  "name": "Dominican Republic",
+  "code": "DOM",
+  "GDP2016": "15234.45042",
+  "population": "644.8",
+  "rights": {
+    "ESR": {
+      "Education": "77",
+      "Food": "55",
+      "Work": "70",
+      "Housing": "6",
+      "Health": "17"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.5",
+      "Assembly and Association": "7.1",
+      "Freedom from Execution": "2.2",
+      "Freedom from Torture": "4.4",
+      "Participage in Government": "7.8",
+      "Freedom from Arbitrary Arrest": "3.1",
+      "Freedom from Disappearance": "0.6"
+    }
+  }
+}, {
+  "name": "Ecuador",
+  "code": "ECU",
+  "GDP2016": "11263.87216",
+  "population": "302.7",
+  "rights": {
+    "ESR": {
+      "Education": "11",
+      "Food": "51",
+      "Work": "42",
+      "Housing": "13",
+      "Health": "24"
+    },
+    "CPR": {
+      "Opinion and Expression": "5.0",
+      "Assembly and Association": "1.9",
+      "Freedom from Execution": "5.6",
+      "Freedom from Torture": "2.7",
+      "Participage in Government": "9.2",
+      "Freedom from Arbitrary Arrest": "5.3",
+      "Freedom from Disappearance": "3.7"
+    }
+  }
+}, {
+  "name": "Grenada",
+  "code": "GRD",
+  "GDP2016": "14227.57424",
+  "population": "680.1",
+  "rights": {
+    "ESR": {
+      "Education": "47",
+      "Food": "44",
+      "Work": "71",
+      "Housing": "36",
+      "Health": "81"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.6",
+      "Assembly and Association": "2.9",
+      "Freedom from Execution": "1.7",
+      "Freedom from Torture": "8.7",
+      "Participage in Government": "4.8",
+      "Freedom from Arbitrary Arrest": "1.0",
+      "Freedom from Disappearance": "8.9"
+    }
+  }
+}, {
+  "name": "Guyana",
+  "code": "GUY",
+  "GDP2016": "7851.592257",
+  "population": "155.3",
+  "rights": {
+    "ESR": {
+      "Education": "85",
+      "Food": "30",
+      "Work": "34",
+      "Housing": "74",
+      "Health": "1"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.5",
+      "Assembly and Association": "0.1",
+      "Freedom from Execution": "7.6",
+      "Freedom from Torture": "7.7",
+      "Participage in Government": "2.1",
+      "Freedom from Arbitrary Arrest": "2.4",
+      "Freedom from Disappearance": "6.5"
+    }
+  }
+}, {
+  "name": "Haiti",
+  "code": "HTI",
+  "GDP2016": "1787.177928",
+  "population": "214.3",
+  "rights": {
+    "ESR": {
+      "Education": "56",
+      "Food": "75",
+      "Work": "97",
+      "Housing": "49",
+      "Health": "25"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.5",
+      "Assembly and Association": "8.5",
+      "Freedom from Execution": "1.9",
+      "Freedom from Torture": "4.7",
+      "Participage in Government": "9.6",
+      "Freedom from Arbitrary Arrest": "4.9",
+      "Freedom from Disappearance": "4.7"
+    }
+  }
+}, {
+  "name": "Jamaica",
+  "code": "JAM",
+  "GDP2016": "8838.436599",
+  "population": "318.3",
+  "rights": {
+    "ESR": {
+      "Education": "82",
+      "Food": "57",
+      "Work": "16",
+      "Housing": "34",
+      "Health": "85"
+    },
+    "CPR": {
+      "Opinion and Expression": "4.7",
+      "Assembly and Association": "5.7",
+      "Freedom from Execution": "9.4",
+      "Freedom from Torture": "8.0",
+      "Participage in Government": "3.8",
+      "Freedom from Arbitrary Arrest": "9.3",
+      "Freedom from Disappearance": "1.4"
+    }
+  }
+}, {
+  "name": "Paraguay",
+  "code": "PRY",
+  "GDP2016": "9585.912592",
+  "population": "381.5",
+  "rights": {
+    "ESR": {
+      "Education": "53",
+      "Food": "14",
+      "Work": "6",
+      "Housing": "68",
+      "Health": "29"
+    },
+    "CPR": {
+      "Opinion and Expression": "5.4",
+      "Assembly and Association": "1.7",
+      "Freedom from Execution": "5.5",
+      "Freedom from Torture": "5.7",
+      "Participage in Government": "6.3",
+      "Freedom from Arbitrary Arrest": "0.3",
+      "Freedom from Disappearance": "9.5"
+    }
+  }
+}, {
+  "name": "Peru",
+  "code": "PER",
+  "GDP2016": "13043.88217",
+  "population": "286.5",
+  "rights": {
+    "ESR": {
+      "Education": "5",
+      "Food": "50",
+      "Work": "92",
+      "Housing": "22",
+      "Health": "92"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.1",
+      "Assembly and Association": "1.1",
+      "Freedom from Execution": "0.7",
+      "Freedom from Torture": "3.2",
+      "Participage in Government": "2.4",
+      "Freedom from Arbitrary Arrest": "9.0",
+      "Freedom from Disappearance": "4.0"
+    }
+  }
+}, {
+  "name": "Puerto Rico",
+  "code": "PRI",
+  "GDP2016": "..",
+  "population": "977.3",
+  "rights": {
+    "ESR": {
+      "Education": "48",
+      "Food": "52",
+      "Work": "38",
+      "Housing": "65",
+      "Health": "68"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.1",
+      "Assembly and Association": "9.6",
+      "Freedom from Execution": "9.2",
+      "Freedom from Torture": "0.5",
+      "Participage in Government": "6.8",
+      "Freedom from Arbitrary Arrest": "6.5",
+      "Freedom from Disappearance": "8.5"
+    }
+  }
+}, {
+  "name": "St. Kitts and Nevis",
+  "code": "KNA",
+  "GDP2016": "26434.00601",
+  "population": "307.8",
+  "rights": {
+    "ESR": {
+      "Education": "43",
+      "Food": "83",
+      "Work": "91",
+      "Housing": "22",
+      "Health": "74"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.0",
+      "Assembly and Association": "6.7",
+      "Freedom from Execution": "2.6",
+      "Freedom from Torture": "6.7",
+      "Participage in Government": "6.0",
+      "Freedom from Arbitrary Arrest": "9.3",
+      "Freedom from Disappearance": "4.9"
+    }
+  }
+}, {
+  "name": "Suriname",
+  "code": "SUR",
+  "GDP2016": "14995.76928",
+  "population": "939.7",
+  "rights": {
+    "ESR": {
+      "Education": "4",
+      "Food": "12",
+      "Work": "58",
+      "Housing": "7",
+      "Health": "27"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.6",
+      "Assembly and Association": "6.6",
+      "Freedom from Execution": "3.5",
+      "Freedom from Torture": "8.9",
+      "Participage in Government": "3.2",
+      "Freedom from Arbitrary Arrest": "8.0",
+      "Freedom from Disappearance": "2.6"
+    }
+  }
+}, {
+  "name": "Trinidad and Tobago",
+  "code": "TTO",
+  "GDP2016": "32918.50126",
+  "population": "815.8",
+  "rights": {
+    "ESR": {
+      "Education": "41",
+      "Food": "47",
+      "Work": "78",
+      "Housing": "1",
+      "Health": "65"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.1",
+      "Assembly and Association": "4.5",
+      "Freedom from Execution": "0.8",
+      "Freedom from Torture": "4.0",
+      "Participage in Government": "8.3",
+      "Freedom from Arbitrary Arrest": "3.0",
+      "Freedom from Disappearance": "8.2"
+    }
+  }
+}, {
+  "name": "Turks and Caicos Islands",
+  "code": "TCA",
+  "GDP2016": "..",
+  "population": "883.3",
+  "rights": {
+    "ESR": {
+      "Education": "71",
+      "Food": "80",
+      "Work": "2",
+      "Housing": "85",
+      "Health": "74"
+    },
+    "CPR": {
+      "Opinion and Expression": "4.6",
+      "Assembly and Association": "5.1",
+      "Freedom from Execution": "7.9",
+      "Freedom from Torture": "7.0",
+      "Participage in Government": "1.3",
+      "Freedom from Arbitrary Arrest": "1.5",
+      "Freedom from Disappearance": "0.5"
+    }
+  }
+}, {
+  "name": "Uruguay",
+  "code": "URY",
+  "GDP2016": "21661.57896",
+  "population": "406.2",
+  "rights": {
+    "ESR": {
+      "Education": "66",
+      "Food": "70",
+      "Work": "14",
+      "Housing": "34",
+      "Health": "85"
+    },
+    "CPR": {
+      "Opinion and Expression": "5.7",
+      "Assembly and Association": "8.0",
+      "Freedom from Execution": "3.8",
+      "Freedom from Torture": "1.3",
+      "Participage in Government": "4.9",
+      "Freedom from Arbitrary Arrest": "8.5",
+      "Freedom from Disappearance": "2.3"
+    }
+  }
+}]

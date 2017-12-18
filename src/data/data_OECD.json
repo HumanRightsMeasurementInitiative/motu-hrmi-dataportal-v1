@@ -1,0 +1,714 @@
+[{
+  "name": "Australia",
+  "code": "AUS",
+  "GDP2016": "46789.92724",
+  "population": "302.8",
+  "rights": {
+    "ESR": {
+      "Education": "86",
+      "Food": "22",
+      "Work": "78",
+      "Housing": "73",
+      "Health": "76"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.9",
+      "Assembly and Association": "5.1",
+      "Freedom from Execution": "3.7",
+      "Freedom from Torture": "7.2",
+      "Participage in Government": "6.8",
+      "Freedom from Arbitrary Arrest": "3.6",
+      "Freedom from Disappearance": "4.1"
+    }
+  }
+}, {
+  "name": "Austria",
+  "code": "AUT",
+  "GDP2016": "50644.43308",
+  "population": "910.1",
+  "rights": {
+    "ESR": {
+      "Education": "69",
+      "Food": "18",
+      "Work": "29",
+      "Housing": "99",
+      "Health": "7"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.7",
+      "Assembly and Association": "7.0",
+      "Freedom from Execution": "4.9",
+      "Freedom from Torture": "1.7",
+      "Participage in Government": "5.4",
+      "Freedom from Arbitrary Arrest": "8.2",
+      "Freedom from Disappearance": "10.0"
+    }
+  }
+}, {
+  "name": "Belgium",
+  "code": "BEL",
+  "GDP2016": "46541.37151",
+  "population": "871.4",
+  "rights": {
+    "ESR": {
+      "Education": "37",
+      "Food": "71",
+      "Work": "68",
+      "Housing": "19",
+      "Health": "23"
+    },
+    "CPR": {
+      "Opinion and Expression": "3.2",
+      "Assembly and Association": "7.4",
+      "Freedom from Execution": "6.8",
+      "Freedom from Torture": "8.6",
+      "Participage in Government": "5.6",
+      "Freedom from Arbitrary Arrest": "7.2",
+      "Freedom from Disappearance": "3.7"
+    }
+  }
+}, {
+  "name": "Canada",
+  "code": "CAN",
+  "GDP2016": "44025.18343",
+  "population": "21.0",
+  "rights": {
+    "ESR": {
+      "Education": "88",
+      "Food": "18",
+      "Work": "21",
+      "Housing": "61",
+      "Health": "20"
+    },
+    "CPR": {
+      "Opinion and Expression": "5.7",
+      "Assembly and Association": "3.6",
+      "Freedom from Execution": "8.5",
+      "Freedom from Torture": "3.0",
+      "Participage in Government": "3.8",
+      "Freedom from Arbitrary Arrest": "5.1",
+      "Freedom from Disappearance": "9.9"
+    }
+  }
+}, {
+  "name": "Chile",
+  "code": "CHL",
+  "GDP2016": "23960.27015",
+  "population": "985.0",
+  "rights": {
+    "ESR": {
+      "Education": "58",
+      "Food": "80",
+      "Work": "36",
+      "Housing": "25",
+      "Health": "92"
+    },
+    "CPR": {
+      "Opinion and Expression": "4.1",
+      "Assembly and Association": "9.4",
+      "Freedom from Execution": "3.8",
+      "Freedom from Torture": "3.1",
+      "Participage in Government": "9.9",
+      "Freedom from Arbitrary Arrest": "8.8",
+      "Freedom from Disappearance": "3.3"
+    }
+  }
+}, {
+  "name": "Czech Republic",
+  "code": "CZE",
+  "GDP2016": "35139.58444",
+  "population": "694.4",
+  "rights": {
+    "ESR": {
+      "Education": "51",
+      "Food": "32",
+      "Work": "38",
+      "Housing": "50",
+      "Health": "71"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.7",
+      "Assembly and Association": "5.5",
+      "Freedom from Execution": "5.1",
+      "Freedom from Torture": "8.9",
+      "Participage in Government": "3.5",
+      "Freedom from Arbitrary Arrest": "2.0",
+      "Freedom from Disappearance": "4.3"
+    }
+  }
+}, {
+  "name": "Denmark",
+  "code": "DNK",
+  "GDP2016": "49818.80471",
+  "population": "313.8",
+  "rights": {
+    "ESR": {
+      "Education": "28",
+      "Food": "23",
+      "Work": "31",
+      "Housing": "12",
+      "Health": "18"
+    },
+    "CPR": {
+      "Opinion and Expression": "0.8",
+      "Assembly and Association": "10.0",
+      "Freedom from Execution": "5.8",
+      "Freedom from Torture": "7.1",
+      "Participage in Government": "3.7",
+      "Freedom from Arbitrary Arrest": "6.1",
+      "Freedom from Disappearance": "2.4"
+    }
+  }
+}, {
+  "name": "Estonia",
+  "code": "EST",
+  "GDP2016": "29620.03678",
+  "population": "13.8",
+  "rights": {
+    "ESR": {
+      "Education": "70",
+      "Food": "16",
+      "Work": "61",
+      "Housing": "98",
+      "Health": "27"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.9",
+      "Assembly and Association": "8.1",
+      "Freedom from Execution": "4.8",
+      "Freedom from Torture": "7.7",
+      "Participage in Government": "2.8",
+      "Freedom from Arbitrary Arrest": "3.2",
+      "Freedom from Disappearance": "8.0"
+    }
+  }
+}, {
+  "name": "Finland",
+  "code": "FIN",
+  "GDP2016": "43365.07034",
+  "population": "136.0",
+  "rights": {
+    "ESR": {
+      "Education": "7",
+      "Food": "63",
+      "Work": "65",
+      "Housing": "21",
+      "Health": "3"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.5",
+      "Assembly and Association": "7.3",
+      "Freedom from Execution": "5.2",
+      "Freedom from Torture": "3.7",
+      "Participage in Government": "4.0",
+      "Freedom from Arbitrary Arrest": "2.2",
+      "Freedom from Disappearance": "7.0"
+    }
+  }
+}, {
+  "name": "France",
+  "code": "FRA",
+  "GDP2016": "41466.26571",
+  "population": "841.1",
+  "rights": {
+    "ESR": {
+      "Education": "48",
+      "Food": "30",
+      "Work": "30",
+      "Housing": "37",
+      "Health": "9"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.7",
+      "Assembly and Association": "1.0",
+      "Freedom from Execution": "4.8",
+      "Freedom from Torture": "1.4",
+      "Participage in Government": "5.8",
+      "Freedom from Arbitrary Arrest": "8.4",
+      "Freedom from Disappearance": "5.4"
+    }
+  }
+}, {
+  "name": "Germany",
+  "code": "DEU",
+  "GDP2016": "48884.76287",
+  "population": "304.9",
+  "rights": {
+    "ESR": {
+      "Education": "14",
+      "Food": "27",
+      "Work": "74",
+      "Housing": "33",
+      "Health": "56"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.7",
+      "Assembly and Association": "5.5",
+      "Freedom from Execution": "2.9",
+      "Freedom from Torture": "5.2",
+      "Participage in Government": "1.2",
+      "Freedom from Arbitrary Arrest": "5.4",
+      "Freedom from Disappearance": "3.3"
+    }
+  }
+}, {
+  "name": "Greece",
+  "code": "GRC",
+  "GDP2016": "26525.8972",
+  "population": "238.5",
+  "rights": {
+    "ESR": {
+      "Education": "31",
+      "Food": "59",
+      "Work": "45",
+      "Housing": "31",
+      "Health": "93"
+    },
+    "CPR": {
+      "Opinion and Expression": "3.8",
+      "Assembly and Association": "1.7",
+      "Freedom from Execution": "8.2",
+      "Freedom from Torture": "7.5",
+      "Participage in Government": "3.2",
+      "Freedom from Arbitrary Arrest": "0.2",
+      "Freedom from Disappearance": "9.5"
+    }
+  }
+}, {
+  "name": "Hungary",
+  "code": "HUN",
+  "GDP2016": "26996.80986",
+  "population": "679.5",
+  "rights": {
+    "ESR": {
+      "Education": "45",
+      "Food": "85",
+      "Work": "92",
+      "Housing": "17",
+      "Health": "56"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.0",
+      "Assembly and Association": "4.4",
+      "Freedom from Execution": "4.5",
+      "Freedom from Torture": "8.5",
+      "Participage in Government": "0.8",
+      "Freedom from Arbitrary Arrest": "9.0",
+      "Freedom from Disappearance": "6.6"
+    }
+  }
+}, {
+  "name": "Iceland",
+  "code": "ISL",
+  "GDP2016": "51398.92651",
+  "population": "873.1",
+  "rights": {
+    "ESR": {
+      "Education": "97",
+      "Food": "78",
+      "Work": "55",
+      "Housing": "44",
+      "Health": "74"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.8",
+      "Assembly and Association": "4.2",
+      "Freedom from Execution": "1.3",
+      "Freedom from Torture": "2.5",
+      "Participage in Government": "8.4",
+      "Freedom from Arbitrary Arrest": "3.5",
+      "Freedom from Disappearance": "1.3"
+    }
+  }
+}, {
+  "name": "Ireland",
+  "code": "IRL",
+  "GDP2016": "71404.70925",
+  "population": "976.1",
+  "rights": {
+    "ESR": {
+      "Education": "11",
+      "Food": "25",
+      "Work": "46",
+      "Housing": "47",
+      "Health": "96"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.4",
+      "Assembly and Association": "2.8",
+      "Freedom from Execution": "5.8",
+      "Freedom from Torture": "4.4",
+      "Participage in Government": "6.4",
+      "Freedom from Arbitrary Arrest": "9.1",
+      "Freedom from Disappearance": "0.5"
+    }
+  }
+}, {
+  "name": "Israel",
+  "code": "ISR",
+  "GDP2016": "37782.56908",
+  "population": "351.9",
+  "rights": {
+    "ESR": {
+      "Education": "42",
+      "Food": "90",
+      "Work": "56",
+      "Housing": "39",
+      "Health": "66"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.9",
+      "Assembly and Association": "5.8",
+      "Freedom from Execution": "5.1",
+      "Freedom from Torture": "1.5",
+      "Participage in Government": "9.3",
+      "Freedom from Arbitrary Arrest": "0.7",
+      "Freedom from Disappearance": "7.6"
+    }
+  }
+}, {
+  "name": "Italy",
+  "code": "ITA",
+  "GDP2016": "38345.1411",
+  "population": "742.0",
+  "rights": {
+    "ESR": {
+      "Education": "24",
+      "Food": "25",
+      "Work": "35",
+      "Housing": "87",
+      "Health": "46"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.8",
+      "Assembly and Association": "3.0",
+      "Freedom from Execution": "5.3",
+      "Freedom from Torture": "1.7",
+      "Participage in Government": "6.9",
+      "Freedom from Arbitrary Arrest": "0.8",
+      "Freedom from Disappearance": "7.0"
+    }
+  }
+}, {
+  "name": "Japan",
+  "code": "JPN",
+  "GDP2016": "41476.3603",
+  "population": "559.1",
+  "rights": {
+    "ESR": {
+      "Education": "19",
+      "Food": "23",
+      "Work": "53",
+      "Housing": "1",
+      "Health": "28"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.4",
+      "Assembly and Association": "3.1",
+      "Freedom from Execution": "9.2",
+      "Freedom from Torture": "9.0",
+      "Participage in Government": "6.8",
+      "Freedom from Arbitrary Arrest": "4.4",
+      "Freedom from Disappearance": "7.0"
+    }
+  }
+}, {
+  "name": "Latvia",
+  "code": "LVA",
+  "GDP2016": "25932.53923",
+  "population": "144.8",
+  "rights": {
+    "ESR": {
+      "Education": "46",
+      "Food": "74",
+      "Work": "35",
+      "Housing": "79",
+      "Health": "22"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.0",
+      "Assembly and Association": "8.9",
+      "Freedom from Execution": "8.3",
+      "Freedom from Torture": "8.2",
+      "Participage in Government": "3.0",
+      "Freedom from Arbitrary Arrest": "7.2",
+      "Freedom from Disappearance": "4.9"
+    }
+  }
+}, {
+  "name": "Luxembourg",
+  "code": "LUX",
+  "GDP2016": "103556.5912",
+  "population": "489.6",
+  "rights": {
+    "ESR": {
+      "Education": "24",
+      "Food": "15",
+      "Work": "46",
+      "Housing": "18",
+      "Health": "16"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.8",
+      "Assembly and Association": "5.9",
+      "Freedom from Execution": "4.1",
+      "Freedom from Torture": "3.1",
+      "Participage in Government": "4.2",
+      "Freedom from Arbitrary Arrest": "2.9",
+      "Freedom from Disappearance": "1.9"
+    }
+  }
+}, {
+  "name": "Mexico",
+  "code": "MEX",
+  "GDP2016": "17877.35784",
+  "population": "984.5",
+  "rights": {
+    "ESR": {
+      "Education": "87",
+      "Food": "65",
+      "Work": "6",
+      "Housing": "93",
+      "Health": "2"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.0",
+      "Assembly and Association": "2.6",
+      "Freedom from Execution": "6.7",
+      "Freedom from Torture": "9.4",
+      "Participage in Government": "4.6",
+      "Freedom from Arbitrary Arrest": "7.5",
+      "Freedom from Disappearance": "3.9"
+    }
+  }
+}, {
+  "name": "Netherlands",
+  "code": "NLD",
+  "GDP2016": "51319.51815",
+  "population": "606.3",
+  "rights": {
+    "ESR": {
+      "Education": "87",
+      "Food": "73",
+      "Work": "43",
+      "Housing": "82",
+      "Health": "9"
+    },
+    "CPR": {
+      "Opinion and Expression": "5.8",
+      "Assembly and Association": "8.1",
+      "Freedom from Execution": "2.4",
+      "Freedom from Torture": "7.6",
+      "Participage in Government": "2.9",
+      "Freedom from Arbitrary Arrest": "3.6",
+      "Freedom from Disappearance": "3.5"
+    }
+  }
+}, {
+  "name": "New Zealand",
+  "code": "NZL",
+  "GDP2016": "39048.52342",
+  "population": "956.8",
+  "rights": {
+    "ESR": {
+      "Education": "79",
+      "Food": "34",
+      "Work": "9",
+      "Housing": "51",
+      "Health": "51"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.4",
+      "Assembly and Association": "1.3",
+      "Freedom from Execution": "1.4",
+      "Freedom from Torture": "5.1",
+      "Participage in Government": "6.3",
+      "Freedom from Arbitrary Arrest": "8.3",
+      "Freedom from Disappearance": "1.2"
+    }
+  }
+}, {
+  "name": "Norway",
+  "code": "NOR",
+  "GDP2016": "59384.81172",
+  "population": "701.5",
+  "rights": {
+    "ESR": {
+      "Education": "85",
+      "Food": "68",
+      "Work": "83",
+      "Housing": "59",
+      "Health": "30"
+    },
+    "CPR": {
+      "Opinion and Expression": "4.1",
+      "Assembly and Association": "1.9",
+      "Freedom from Execution": "9.2",
+      "Freedom from Torture": "7.7",
+      "Participage in Government": "4.8",
+      "Freedom from Arbitrary Arrest": "3.8",
+      "Freedom from Disappearance": "0.7"
+    }
+  }
+}, {
+  "name": "Portugal",
+  "code": "PRT",
+  "GDP2016": "30664.87888",
+  "population": "338.2",
+  "rights": {
+    "ESR": {
+      "Education": "50",
+      "Food": "26",
+      "Work": "65",
+      "Housing": "3",
+      "Health": "96"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.3",
+      "Assembly and Association": "1.6",
+      "Freedom from Execution": "2.7",
+      "Freedom from Torture": "9.2",
+      "Participage in Government": "4.2",
+      "Freedom from Arbitrary Arrest": "1.1",
+      "Freedom from Disappearance": "1.5"
+    }
+  }
+}, {
+  "name": "Slovak Republic",
+  "code": "SVK",
+  "GDP2016": "30706.09974",
+  "population": "66.6",
+  "rights": {
+    "ESR": {
+      "Education": "58",
+      "Food": "85",
+      "Work": "96",
+      "Housing": "28",
+      "Health": "53"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.2",
+      "Assembly and Association": "8.5",
+      "Freedom from Execution": "9.7",
+      "Freedom from Torture": "6.4",
+      "Participage in Government": "5.0",
+      "Freedom from Arbitrary Arrest": "1.1",
+      "Freedom from Disappearance": "9.7"
+    }
+  }
+}, {
+  "name": "Slovenia",
+  "code": "SVN",
+  "GDP2016": "33421.2417",
+  "population": "118.2",
+  "rights": {
+    "ESR": {
+      "Education": "79",
+      "Food": "78",
+      "Work": "53",
+      "Housing": "79",
+      "Health": "34"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.3",
+      "Assembly and Association": "9.0",
+      "Freedom from Execution": "9.5",
+      "Freedom from Torture": "5.6",
+      "Participage in Government": "6.6",
+      "Freedom from Arbitrary Arrest": "3.3",
+      "Freedom from Disappearance": "8.7"
+    }
+  }
+}, {
+  "name": "Spain",
+  "code": "ESP",
+  "GDP2016": "36462.11178",
+  "population": "619.4",
+  "rights": {
+    "ESR": {
+      "Education": "68",
+      "Food": "31",
+      "Work": "49",
+      "Housing": "85",
+      "Health": "56"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.9",
+      "Assembly and Association": "1.3",
+      "Freedom from Execution": "1.9",
+      "Freedom from Torture": "2.3",
+      "Participage in Government": "5.3",
+      "Freedom from Arbitrary Arrest": "2.5",
+      "Freedom from Disappearance": "5.4"
+    }
+  }
+}, {
+  "name": "Turkey",
+  "code": "TUR",
+  "GDP2016": "24412.46256",
+  "population": "195.8",
+  "rights": {
+    "ESR": {
+      "Education": "95",
+      "Food": "40",
+      "Work": "40",
+      "Housing": "17",
+      "Health": "39"
+    },
+    "CPR": {
+      "Opinion and Expression": "3.3",
+      "Assembly and Association": "3.5",
+      "Freedom from Execution": "8.4",
+      "Freedom from Torture": "8.1",
+      "Participage in Government": "8.2",
+      "Freedom from Arbitrary Arrest": "0.4",
+      "Freedom from Disappearance": "8.1"
+    }
+  }
+}, {
+  "name": "United Kingdom",
+  "code": "GBR",
+  "GDP2016": "43080.9564",
+  "population": "841.0",
+  "rights": {
+    "ESR": {
+      "Education": "23",
+      "Food": "4",
+      "Work": "24",
+      "Housing": "2",
+      "Health": "43"
+    },
+    "CPR": {
+      "Opinion and Expression": "0.3",
+      "Assembly and Association": "5.9",
+      "Freedom from Execution": "7.3",
+      "Freedom from Torture": "4.8",
+      "Participage in Government": "8.1",
+      "Freedom from Arbitrary Arrest": "2.9",
+      "Freedom from Disappearance": "3.9"
+    }
+  }
+}, {
+  "name": "United States",
+  "code": "USA",
+  "GDP2016": "57638.15909",
+  "population": "284.8",
+  "rights": {
+    "ESR": {
+      "Education": "74",
+      "Food": "5",
+      "Work": "43",
+      "Housing": "89",
+      "Health": "6"
+    },
+    "CPR": {
+      "Opinion and Expression": "3.8",
+      "Assembly and Association": "3.8",
+      "Freedom from Execution": "6.2",
+      "Freedom from Torture": "7.6",
+      "Participage in Government": "2.1",
+      "Freedom from Arbitrary Arrest": "4.4",
+      "Freedom from Disappearance": "1.7"
+    }
+  }
+}]

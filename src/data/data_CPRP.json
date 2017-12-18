@@ -1,0 +1,208 @@
+[{
+  "name": "Australia",
+  "code": "AUS",
+  "GDP2016": "46789.92724",
+  "population": "121.7",
+  "rights": {
+    "ESR": {
+      "Education": "27",
+      "Food": "69",
+      "Work": "55",
+      "Housing": "68",
+      "Health": "95"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.7",
+      "Assembly and Association": "2.0",
+      "Freedom from Execution": "8.4",
+      "Freedom from Torture": "8.4",
+      "Participage in Government": "2.7",
+      "Freedom from Arbitrary Arrest": "9.2",
+      "Freedom from Disappearance": "0.1"
+    }
+  }
+}, {
+  "name": "Cambodia",
+  "code": "KHM",
+  "GDP2016": "3744.219333",
+  "population": "915.9",
+  "rights": {
+    "ESR": {
+      "Education": "90",
+      "Food": "73",
+      "Work": "56",
+      "Housing": "17",
+      "Health": "9"
+    },
+    "CPR": {
+      "Opinion and Expression": "5.4",
+      "Assembly and Association": "3.9",
+      "Freedom from Execution": "9.3",
+      "Freedom from Torture": "0.7",
+      "Participage in Government": "8.8",
+      "Freedom from Arbitrary Arrest": "0.5",
+      "Freedom from Disappearance": "5.8"
+    }
+  }
+}, {
+  "name": "China",
+  "code": "CHN",
+  "GDP2016": "15559.23135",
+  "population": "438.7",
+  "rights": {
+    "ESR": {
+      "Education": "10",
+      "Food": "56",
+      "Work": "59",
+      "Housing": "75",
+      "Health": "87"
+    },
+    "CPR": {
+      "Opinion and Expression": "4.8",
+      "Assembly and Association": "2.3",
+      "Freedom from Execution": "1.5",
+      "Freedom from Torture": "0.2",
+      "Participage in Government": "3.1",
+      "Freedom from Arbitrary Arrest": "3.8",
+      "Freedom from Disappearance": "2.4"
+    }
+  }
+}, {
+  "name": "Fiji",
+  "code": "FJI",
+  "GDP2016": "9127.637483",
+  "population": "87.1",
+  "rights": {
+    "ESR": {
+      "Education": "3",
+      "Food": "73",
+      "Work": "15",
+      "Housing": "34",
+      "Health": "26"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.8",
+      "Assembly and Association": "8.3",
+      "Freedom from Execution": "7.0",
+      "Freedom from Torture": "8.8",
+      "Participage in Government": "7.5",
+      "Freedom from Arbitrary Arrest": "9.4",
+      "Freedom from Disappearance": "5.1"
+    }
+  }
+}, {
+  "name": "Indonesia",
+  "code": "IDN",
+  "GDP2016": "11631.5637",
+  "population": "143.9",
+  "rights": {
+    "ESR": {
+      "Education": "82",
+      "Food": "29",
+      "Work": "17",
+      "Housing": "80",
+      "Health": "63"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.8",
+      "Assembly and Association": "6.8",
+      "Freedom from Execution": "4.4",
+      "Freedom from Torture": "9.9",
+      "Participage in Government": "4.7",
+      "Freedom from Arbitrary Arrest": "7.6",
+      "Freedom from Disappearance": "0.3"
+    }
+  }
+}, {
+  "name": "Japan",
+  "code": "JPN",
+  "GDP2016": "41476.3603",
+  "population": "138.4",
+  "rights": {
+    "ESR": {
+      "Education": "96",
+      "Food": "94",
+      "Work": "81",
+      "Housing": "86",
+      "Health": "13"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.1",
+      "Assembly and Association": "0.2",
+      "Freedom from Execution": "7.3",
+      "Freedom from Torture": "2.6",
+      "Participage in Government": "3.4",
+      "Freedom from Arbitrary Arrest": "4.4",
+      "Freedom from Disappearance": "8.6"
+    }
+  }
+}, {
+  "name": "Kiribati",
+  "code": "KIR",
+  "GDP2016": "2112.630617",
+  "population": "706.6",
+  "rights": {
+    "ESR": {
+      "Education": "38",
+      "Food": "71",
+      "Work": "34",
+      "Housing": "10",
+      "Health": "26"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.4",
+      "Assembly and Association": "0.2",
+      "Freedom from Execution": "2.4",
+      "Freedom from Torture": "1.2",
+      "Participage in Government": "2.9",
+      "Freedom from Arbitrary Arrest": "2.3",
+      "Freedom from Disappearance": "1.1"
+    }
+  }
+}, {
+  "name": "Malaysia",
+  "code": "MYS",
+  "GDP2016": "27736.34931",
+  "population": "441.2",
+  "rights": {
+    "ESR": {
+      "Education": "35",
+      "Food": "29",
+      "Work": "28",
+      "Housing": "40",
+      "Health": "52"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.3",
+      "Assembly and Association": "4.7",
+      "Freedom from Execution": "8.8",
+      "Freedom from Torture": "8.3",
+      "Participage in Government": "9.1",
+      "Freedom from Arbitrary Arrest": "6.2",
+      "Freedom from Disappearance": "5.4"
+    }
+  }
+}, {
+  "name": "Marshall Islands",
+  "code": "MHL",
+  "GDP2016": "4030.788604",
+  "population": "978.5",
+  "rights": {
+    "ESR": {
+      "Education": "68",
+      "Food": "28",
+      "Work": "58",
+      "Housing": "22",
+      "Health": "46"
+    },
+    "CPR": {
+      "Opinion and Expression": "4.5",
+      "Assembly and Association": "10.0",
+      "Freedom from Execution": "9.9",
+      "Freedom from Torture": "3.6",
+      "Participage in Government": "3.1",
+      "Freedom from Arbitrary Arrest": "9.7",
+      "Freedom from Disappearance": "2.5"
+    }
+  }
+}]

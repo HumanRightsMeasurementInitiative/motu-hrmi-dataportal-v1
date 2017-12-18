@@ -11,7 +11,15 @@ export default class SectionSelector extends React.Component {
   }
 
   changeUrl = (section) => {
-    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: section }))
+    if (this.props.urlSegs.right === 'all') {
+      this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: section, right: 'Food' }))
+    } else {
+      if (section === 'Geography') {
+        this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: section, right: 'all' }))
+      } else {
+        this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: section }))
+      }
+    }
   }
 
   render() {
@@ -45,7 +53,7 @@ class SectionBtn extends React.Component {
 
   render() {
     const { children, isSelected } = this.props
-    
+
     const joinedClass = jcn({
       secBtn: true,
       selected: isSelected,

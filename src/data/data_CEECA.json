@@ -1,0 +1,461 @@
+[{
+  "name": "Albania",
+  "code": "ALB",
+  "GDP2016": "11865.5014",
+  "population": "213.2",
+  "rights": {
+    "ESR": {
+      "Education": "77",
+      "Food": "83",
+      "Work": "81",
+      "Housing": "29",
+      "Health": "66"
+    },
+    "CPR": {
+      "Opinion and Expression": "3.9",
+      "Assembly and Association": "9.0",
+      "Freedom from Execution": "0.4",
+      "Freedom from Torture": "9.9",
+      "Participage in Government": "7.3",
+      "Freedom from Arbitrary Arrest": "10.0",
+      "Freedom from Disappearance": "2.9"
+    }
+  }
+}, {
+  "name": "Bosnia and Herzegovina",
+  "code": "BIH",
+  "GDP2016": "12330.38409",
+  "population": "931.0",
+  "rights": {
+    "ESR": {
+      "Education": "96",
+      "Food": "35",
+      "Work": "99",
+      "Housing": "69",
+      "Health": "57"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.3",
+      "Assembly and Association": "6.6",
+      "Freedom from Execution": "7.2",
+      "Freedom from Torture": "1.9",
+      "Participage in Government": "4.8",
+      "Freedom from Arbitrary Arrest": "4.9",
+      "Freedom from Disappearance": "4.7"
+    }
+  }
+}, {
+  "name": "Bulgaria",
+  "code": "BGR",
+  "GDP2016": "19508.97042",
+  "population": "15.3",
+  "rights": {
+    "ESR": {
+      "Education": "22",
+      "Food": "13",
+      "Work": "29",
+      "Housing": "9",
+      "Health": "45"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.9",
+      "Assembly and Association": "1.5",
+      "Freedom from Execution": "5.5",
+      "Freedom from Torture": "4.1",
+      "Participage in Government": "8.7",
+      "Freedom from Arbitrary Arrest": "7.2",
+      "Freedom from Disappearance": "0.5"
+    }
+  }
+}, {
+  "name": "Croatia",
+  "code": "HRV",
+  "GDP2016": "23731.77252",
+  "population": "760.8",
+  "rights": {
+    "ESR": {
+      "Education": "15",
+      "Food": "25",
+      "Work": "36",
+      "Housing": "6",
+      "Health": "18"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.4",
+      "Assembly and Association": "5.4",
+      "Freedom from Execution": "7.0",
+      "Freedom from Torture": "9.9",
+      "Participage in Government": "4.8",
+      "Freedom from Arbitrary Arrest": "3.9",
+      "Freedom from Disappearance": "0.3"
+    }
+  }
+}, {
+  "name": "Czech Republic",
+  "code": "CZE",
+  "GDP2016": "35139.58444",
+  "population": "232.9",
+  "rights": {
+    "ESR": {
+      "Education": "42",
+      "Food": "42",
+      "Work": "63",
+      "Housing": "74",
+      "Health": "82"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.3",
+      "Assembly and Association": "9.4",
+      "Freedom from Execution": "5.0",
+      "Freedom from Torture": "3.9",
+      "Participage in Government": "5.2",
+      "Freedom from Arbitrary Arrest": "1.6",
+      "Freedom from Disappearance": "0.4"
+    }
+  }
+}, {
+  "name": "Estonia",
+  "code": "EST",
+  "GDP2016": "29620.03678",
+  "population": "608.8",
+  "rights": {
+    "ESR": {
+      "Education": "46",
+      "Food": "57",
+      "Work": "32",
+      "Housing": "61",
+      "Health": "35"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.5",
+      "Assembly and Association": "6.8",
+      "Freedom from Execution": "1.9",
+      "Freedom from Torture": "8.5",
+      "Participage in Government": "9.2",
+      "Freedom from Arbitrary Arrest": "9.4",
+      "Freedom from Disappearance": "8.5"
+    }
+  }
+}, {
+  "name": "Germany",
+  "code": "DEU",
+  "GDP2016": "48884.76287",
+  "population": "848.1",
+  "rights": {
+    "ESR": {
+      "Education": "43",
+      "Food": "13",
+      "Work": "30",
+      "Housing": "73",
+      "Health": "34"
+    },
+    "CPR": {
+      "Opinion and Expression": "7.8",
+      "Assembly and Association": "1.0",
+      "Freedom from Execution": "5.2",
+      "Freedom from Torture": "1.4",
+      "Participage in Government": "3.0",
+      "Freedom from Arbitrary Arrest": "8.1",
+      "Freedom from Disappearance": "9.3"
+    }
+  }
+}, {
+  "name": "Hungary",
+  "code": "HUN",
+  "GDP2016": "26996.80986",
+  "population": "147.2",
+  "rights": {
+    "ESR": {
+      "Education": "14",
+      "Food": "86",
+      "Work": "63",
+      "Housing": "18",
+      "Health": "97"
+    },
+    "CPR": {
+      "Opinion and Expression": "5.1",
+      "Assembly and Association": "7.6",
+      "Freedom from Execution": "0.9",
+      "Freedom from Torture": "8.3",
+      "Participage in Government": "5.4",
+      "Freedom from Arbitrary Arrest": "9.2",
+      "Freedom from Disappearance": "0.2"
+    }
+  }
+}, {
+  "name": "Kazakhstan",
+  "code": "KAZ",
+  "GDP2016": "25331.2853",
+  "population": "833.3",
+  "rights": {
+    "ESR": {
+      "Education": "16",
+      "Food": "77",
+      "Work": "91",
+      "Housing": "28",
+      "Health": "17"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.3",
+      "Assembly and Association": "1.2",
+      "Freedom from Execution": "8.2",
+      "Freedom from Torture": "1.3",
+      "Participage in Government": "5.2",
+      "Freedom from Arbitrary Arrest": "9.0",
+      "Freedom from Disappearance": "7.1"
+    }
+  }
+}, {
+  "name": "Kosovo",
+  "code": "XKX",
+  "GDP2016": "10083.29566",
+  "population": "961.2",
+  "rights": {
+    "ESR": {
+      "Education": "80",
+      "Food": "22",
+      "Work": "39",
+      "Housing": "36",
+      "Health": "83"
+    },
+    "CPR": {
+      "Opinion and Expression": "1.5",
+      "Assembly and Association": "5.9",
+      "Freedom from Execution": "4.6",
+      "Freedom from Torture": "7.0",
+      "Participage in Government": "9.9",
+      "Freedom from Arbitrary Arrest": "8.6",
+      "Freedom from Disappearance": "9.4"
+    }
+  }
+}, {
+  "name": "Latvia",
+  "code": "LVA",
+  "GDP2016": "25932.53923",
+  "population": "10.4",
+  "rights": {
+    "ESR": {
+      "Education": "41",
+      "Food": "52",
+      "Work": "20",
+      "Housing": "57",
+      "Health": "17"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.6",
+      "Assembly and Association": "0.0",
+      "Freedom from Execution": "10.0",
+      "Freedom from Torture": "4.3",
+      "Participage in Government": "4.2",
+      "Freedom from Arbitrary Arrest": "6.2",
+      "Freedom from Disappearance": "5.7"
+    }
+  }
+}, {
+  "name": "Lithuania",
+  "code": "LTU",
+  "GDP2016": "29966.12707",
+  "population": "362.4",
+  "rights": {
+    "ESR": {
+      "Education": "58",
+      "Food": "61",
+      "Work": "83",
+      "Housing": "74",
+      "Health": "50"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.7",
+      "Assembly and Association": "1.1",
+      "Freedom from Execution": "3.2",
+      "Freedom from Torture": "6.9",
+      "Participage in Government": "1.7",
+      "Freedom from Arbitrary Arrest": "0.5",
+      "Freedom from Disappearance": "4.5"
+    }
+  }
+}, {
+  "name": "Montenegro",
+  "code": "MNE",
+  "GDP2016": "17665.05541",
+  "population": "213.1",
+  "rights": {
+    "ESR": {
+      "Education": "43",
+      "Food": "32",
+      "Work": "16",
+      "Housing": "14",
+      "Health": "33"
+    },
+    "CPR": {
+      "Opinion and Expression": "8.1",
+      "Assembly and Association": "0.2",
+      "Freedom from Execution": "0.7",
+      "Freedom from Torture": "6.8",
+      "Participage in Government": "4.4",
+      "Freedom from Arbitrary Arrest": "7.2",
+      "Freedom from Disappearance": "6.6"
+    }
+  }
+}, {
+  "name": "Poland",
+  "code": "POL",
+  "GDP2016": "27922.67986",
+  "population": "754.6",
+  "rights": {
+    "ESR": {
+      "Education": "14",
+      "Food": "94",
+      "Work": "2",
+      "Housing": "6",
+      "Health": "60"
+    },
+    "CPR": {
+      "Opinion and Expression": "0.4",
+      "Assembly and Association": "0.3",
+      "Freedom from Execution": "9.2",
+      "Freedom from Torture": "1.0",
+      "Participage in Government": "6.1",
+      "Freedom from Arbitrary Arrest": "6.9",
+      "Freedom from Disappearance": "6.6"
+    }
+  }
+}, {
+  "name": "Romania",
+  "code": "ROU",
+  "GDP2016": "23626.37274",
+  "population": "927.8",
+  "rights": {
+    "ESR": {
+      "Education": "28",
+      "Food": "9",
+      "Work": "59",
+      "Housing": "50",
+      "Health": "58"
+    },
+    "CPR": {
+      "Opinion and Expression": "2.2",
+      "Assembly and Association": "1.9",
+      "Freedom from Execution": "6.5",
+      "Freedom from Torture": "9.1",
+      "Participage in Government": "5.4",
+      "Freedom from Arbitrary Arrest": "3.7",
+      "Freedom from Disappearance": "5.5"
+    }
+  }
+}, {
+  "name": "Serbia",
+  "code": "SRB",
+  "GDP2016": "14725.07126",
+  "population": "853.8",
+  "rights": {
+    "ESR": {
+      "Education": "3",
+      "Food": "61",
+      "Work": "13",
+      "Housing": "27",
+      "Health": "34"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.1",
+      "Assembly and Association": "1.1",
+      "Freedom from Execution": "3.8",
+      "Freedom from Torture": "5.4",
+      "Participage in Government": "7.8",
+      "Freedom from Arbitrary Arrest": "1.5",
+      "Freedom from Disappearance": "3.1"
+    }
+  }
+}, {
+  "name": "Slovenia",
+  "code": "SVN",
+  "GDP2016": "33421.2417",
+  "population": "210.1",
+  "rights": {
+    "ESR": {
+      "Education": "84",
+      "Food": "3",
+      "Work": "58",
+      "Housing": "59",
+      "Health": "80"
+    },
+    "CPR": {
+      "Opinion and Expression": "9.1",
+      "Assembly and Association": "5.1",
+      "Freedom from Execution": "1.8",
+      "Freedom from Torture": "3.3",
+      "Participage in Government": "1.7",
+      "Freedom from Arbitrary Arrest": "8.3",
+      "Freedom from Disappearance": "0.1"
+    }
+  }
+}, {
+  "name": "Tajikistan",
+  "code": "TJK",
+  "GDP2016": "2985.094095",
+  "population": "470.4",
+  "rights": {
+    "ESR": {
+      "Education": "36",
+      "Food": "77",
+      "Work": "6",
+      "Housing": "53",
+      "Health": "64"
+    },
+    "CPR": {
+      "Opinion and Expression": "0.2",
+      "Assembly and Association": "7.3",
+      "Freedom from Execution": "0.8",
+      "Freedom from Torture": "5.1",
+      "Participage in Government": "5.2",
+      "Freedom from Arbitrary Arrest": "9.0",
+      "Freedom from Disappearance": "3.8"
+    }
+  }
+}, {
+  "name": "Turkmenistan",
+  "code": "TKM",
+  "GDP2016": "16908.74979",
+  "population": "428.2",
+  "rights": {
+    "ESR": {
+      "Education": "13",
+      "Food": "43",
+      "Work": "93",
+      "Housing": "55",
+      "Health": "57"
+    },
+    "CPR": {
+      "Opinion and Expression": "6.9",
+      "Assembly and Association": "0.7",
+      "Freedom from Execution": "5.4",
+      "Freedom from Torture": "3.1",
+      "Participage in Government": "2.0",
+      "Freedom from Arbitrary Arrest": "8.6",
+      "Freedom from Disappearance": "7.1"
+    }
+  }
+}, {
+  "name": "Uzbekistan",
+  "code": "UZB",
+  "GDP2016": "6525.263998",
+  "population": "692.5",
+  "rights": {
+    "ESR": {
+      "Education": "37",
+      "Food": "39",
+      "Work": "33",
+      "Housing": "54",
+      "Health": "24"
+    },
+    "CPR": {
+      "Opinion and Expression": "3.8",
+      "Assembly and Association": "1.7",
+      "Freedom from Execution": "2.3",
+      "Freedom from Torture": "7.6",
+      "Participage in Government": "4.7",
+      "Freedom from Arbitrary Arrest": "6.4",
+      "Freedom from Disappearance": "0.9"
+    }
+  }
+}]
