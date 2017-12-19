@@ -22,11 +22,11 @@ export default class CountryPage extends React.Component {
   }
 
   setCountry = (country) => {
-    if (country) {
-      this.props.urlPush(segsToUrl({ ...this.props.urlSegs, country: country }))
-    } else {
-      this.props.urlPush(segsToUrl({ ...this.props.urlSegs, country: undefined }))
-    }
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, country: country }))
+  }
+
+  resetCountry = () => {
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, country: undefined }))
   }
 
   render() {
@@ -47,9 +47,7 @@ export default class CountryPage extends React.Component {
           <div className='column'>
             <div className={styles.columnLeft}>
               <div className={styles.hintText}>Back to:</div>
-              <div>
-                <div className={styles.backLink} onClick={this.setCountry}>{getRegionName(urlSegs.region)}</div>
-              </div>
+              <div className={styles.backLink} onClick={this.resetCountry}>{getRegionName(urlSegs.region)}</div>
               <ul className={styles.countriesList}>
                 {countryItem}
               </ul>

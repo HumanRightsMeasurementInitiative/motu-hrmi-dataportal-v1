@@ -18,6 +18,7 @@ export default class RegionSelector extends React.Component {
   toggleRegionDropdown = () => {
     this.setState({ isRegionOpen: !this.state.isRegionOpen })
   }
+
   render() {
     const { data, urlSegs, onItemClick } = this.props
 

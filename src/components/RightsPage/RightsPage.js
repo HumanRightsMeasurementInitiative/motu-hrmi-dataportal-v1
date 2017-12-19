@@ -19,11 +19,11 @@ export default class RightsPage extends React.Component {
 
   setExploreBy = (right) => {
     const { urlSegs } = this.props
-    this.props.urlPush(segsToUrl({ ...urlSegs, exploreBy: 'Geography', right: 'all' }))
+    this.props.urlPush(segsToUrl({ ...urlSegs, exploreBy: 'Geography', right: 'all', country: undefined }))
   }
 
   setRegion = (region) => {
-    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, region: region }))
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, region: region, country: undefined }))
   }
 
   setRight = (right) => {
