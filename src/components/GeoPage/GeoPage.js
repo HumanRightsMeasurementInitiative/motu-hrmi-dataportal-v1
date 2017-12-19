@@ -23,11 +23,15 @@ export default class GeoPage extends React.Component {
   }
 
   setCountry = (country) => {
-    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, country: country }))
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, country: country, right: 'all' }))
   }
 
   setRight = (right) => {
-    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, right: right }))
+    if (right !== this.props.urlSegs.right) {
+      this.props.urlPush(segsToUrl({ ...this.props.urlSegs, right: right }))
+    } else {
+      this.props.urlPush(segsToUrl({ ...this.props.urlSegs, right: 'all' }))
+    }
   }
 
   setExploreBy = (right) => {

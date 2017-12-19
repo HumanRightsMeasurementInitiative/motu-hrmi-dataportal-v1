@@ -23,10 +23,12 @@ export default class RightsPage extends React.Component {
   }
 
   setRegion = (region) => {
+    // need to check if dataset of current right is available in current region
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, region: region, country: undefined }))
   }
 
   setRight = (right) => {
+    // need to check if dataset of current right is available in current region
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, right: right }))
   }
 

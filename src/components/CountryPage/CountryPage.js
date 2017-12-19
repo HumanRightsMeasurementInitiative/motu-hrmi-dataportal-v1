@@ -18,7 +18,7 @@ export default class CountryPage extends React.Component {
 
   setExploreBy = (right) => {
     const { urlSegs } = this.props
-    this.props.urlPush(segsToUrl({ ...urlSegs, exploreBy: 'Rights' }))
+    this.props.urlPush(segsToUrl({ ...urlSegs, exploreBy: 'Rights', country: undefined }))
   }
 
   setCountry = (country) => {
@@ -26,7 +26,7 @@ export default class CountryPage extends React.Component {
   }
 
   resetCountry = () => {
-    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, country: undefined }))
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, country: undefined, right: 'all' }))
   }
 
   render() {
