@@ -12,6 +12,7 @@
   text-decoration: underline;
 }
 .backLink {
+  display: inline-block;
   position: relative;
   margin: 10px 0;
   font-size: 14px;
@@ -29,7 +30,23 @@
   border-bottom: 6px solid transparent;
 }
 
+.countriesList {
+  margin: 5px 0;
+}
 .countryItem {
-  margin: 2px 0;
+  line-height: 16px;
+}
+.countryName {
+  display: inline-block;
   font-size: 12px;
+  border-bottom: 2px solid transparent;
+  line-height: 1em;
+  cursor: default;
+}
+.countryName.selected {
+  border-color: #2f2ffd;
+}
+
+.detailCountry {
+  text-transform: uppercase;
 }

@@ -19,7 +19,7 @@ export default class GeoPage extends React.Component {
   }
 
   setRegion = (region) => {
-    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, region: region, right: 'all' }))
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, region: region }))
   }
 
   setCountry = (country) => {
@@ -38,16 +38,14 @@ export default class GeoPage extends React.Component {
   render() {
     const { data, urlSegs } = this.props
 
-    const regions = Object.keys(data)
-    const contries = data[urlSegs.region]
-    const ESRs = ['Education', 'Food', 'Work', 'Housing', 'Health']
+    const ESRs = ['Food', 'Education', 'Work', 'Housing', 'Health']
     const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
 
-    const regionItems = regions.map((item, i) => (
+    const regionItems = Object.keys(data).map((item, i) => (
       <RegionItem key={i} code={item} onItemClick={this.setRegion} selected={item === urlSegs.region}>{getRegionName(item)}</RegionItem>
     ))
-    const countryItem = contries.map((item, i) => (
-      <CountryItem key={i} country={item.name} onItemClick={this.setCountry}>{item.name}</CountryItem>
+    const countryItem = data[urlSegs.region].map((item, i) => (
+      <CountryItem key={i} country={item.code} onItemClick={this.setCountry}>{item.name}</CountryItem>
     ))
     const ESRItems = ESRs.filter((item, i) => (
       urlSegs.right === item || urlSegs.right === 'all'

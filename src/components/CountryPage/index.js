@@ -4,6 +4,7 @@ import { urlPush } from '../actions'
 
 const mapStateToProps = (state) => (
   {
+    data: state.data,
     urlSegs: state.router.urlSegs,
   }
 )
