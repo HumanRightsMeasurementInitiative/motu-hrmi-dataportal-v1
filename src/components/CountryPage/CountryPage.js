@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SubTopNav from '../SubTopNav/'
 import CountryItem from './CountryItem'
+import BarChartESR from '../BarChartESR/'
+import BarChartCPR from '../BarChartCPR/'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
 
@@ -57,12 +59,14 @@ export default class CountryPage extends React.Component {
           <div className='column'>
             <div>
               <div className={styles.detailCountry}>{currCountry.name}</div>
-              <div>population</div>
-              <div>43.9(2016)</div>
-              <div>GDP/Capita(2016)</div>
-              <div>$$$</div>
+              <div>POPULATION (2016)</div>
+              <div>{currCountry.population} million</div>
+              <div>GDP/CAPITA (2016)</div>
+              <div>${Math.round(currCountry.GDP2016)} (current PPP dollars)</div>
               <div>ESR</div>
+              <BarChartESR data={currCountry.rights.ESR} width={280} height={100} />
               <div>CPR</div>
+              <BarChartCPR data={currCountry.rights.CPR} width={280} height={100} />
               { urlSegs.right !== 'all' &&
                 <div className='arrowLink'>
                   <div className='text'>Explore this rights in:</div>
