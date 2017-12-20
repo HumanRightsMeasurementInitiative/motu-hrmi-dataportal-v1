@@ -21,14 +21,22 @@ export default class NavItem extends React.Component {
 
   render() {
     const { label, currentDropdown, children } = this.props
+
     const dropdownClassNames = jcn({
       'hide': currentDropdown !== label,
       'menuDropdown': label === 'About the initiative' || label === 'Methodology',
       'menuDropdownList': label === 'How To Use' || label === 'Download Dataset',
     }, styles)
+
+    const labelClass = jcn({
+      'menuLabel': true,
+      'active':  currentDropdown === label,
+      'withArrow': label === 'How To Use' || label === 'Download Dataset',
+    }, styles)
+
     return (
       <div className={styles.navItem}>
-        <div className={styles.menuLabel} onClick={this.onClickHanlder}>{label}</div>
+        <div className={labelClass} onClick={this.onClickHanlder}>{label}</div>
         <div className={dropdownClassNames}>
           {children}
         </div>

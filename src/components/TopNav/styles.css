@@ -1,38 +1,111 @@
 .nav {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
-  font-size: 12px;
+  right: 0;
+  bottom: 0;
 }
+
 .navItem {
   display: inline-block;
   vertical-align: top;
-  margin: 0 10px;
+  margin: 0 5px;
+  color: #262261;
+  letter-spacing: .025em;
 }
 .hide {
   display: none;
 }
+
+.menuLabel {
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 30px;
+  cursor: pointer;
+}
+.menuLabel.active {
+  background: #262261;
+  color: #fff;
+}
+.withArrow {
+  padding-right: 20px;
+}
+.withArrow {
+  position: relative;
+  padding-right: 26px;
+}
+.withArrow:after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  margin-top: 12px;
+  border-top: 6px solid #25a9e0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
 .menuDropdown {
   position: absolute;
   z-index: 1;
-  top: 25px;
-  padding: 25px;
-  background: #eaeaff;
+  top: 30px;
+  padding: 40px 30px 20px;
+  max-width: 360px;
+  background: #262261;
+  color: #fff;
 }
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+}
+.menuDropdown .title {
+  margin-top: 0;
+  font-size: 20px;
+}
+.menuDropdown .para {
+  font-size: 14px;
+  line-height: 1.4em;
+}
+.menuDropdown .link {
+  position: relative;
+  margin-top: 30px;
+  padding-right: 16px;
+  font-size: 12px;
+  line-height: 1em;
+  text-align: right;
+}
+.menuDropdown .link:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  border-left: 8px solid #fff;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+.menuDropdown .link a {
+  color: #fff;
+}
+
 .menuDropdownList {
   position: absolute;
   background: #fff;
-  top: 25px;
+  top: 30px;
 }
-.closeBtn {
-  text-align: right;
+.navItem:last-child .menuDropdownList {
+  width: 155px;
 }
 .dropdownUl {
-  list-style: none;
+  position: relative;
   padding: 0;
   margin: 0;
 }
 .dropdownLi {
-  padding: 10px;
-  border: 1px solid blue;
+  padding: 0 10px;
+  border: 1px solid #262261;
+  border-top: none;
+  font-size: 12px;
+  line-height: 30px;
+}
+.dropdownLi:first-child {
+  border-top: 1px solid #262261;
 }

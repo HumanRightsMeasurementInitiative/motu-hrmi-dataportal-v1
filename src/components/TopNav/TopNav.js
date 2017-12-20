@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import LangSelector from '../LangSelector/'
+import CloseIcon from '../CloseIcon'
 import NavItem from './NavItem'
 import styles from './styles.css'
 
@@ -28,17 +29,17 @@ export default class TopNav extends React.Component {
       <div className={styles.nav}>
         <div className={styles.navItem}><LangSelector /></div>
         <NavItem label={'About the initiative'} onLabelClick={this.onNavItemClicked} currentDropdown={currentDropdown}>
-          <div className={styles.closeBtn} onClick={this.closeDropdown}>X</div>
-          <h2>About the iniative</h2>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-          <p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-          <a href="https://humanrightsmeasurement.org/" target="_blank">Read more about the HRMI iniative.</a>
+          <div className={styles.closeBtn} onClick={this.closeDropdown}><CloseIcon color='#fff' /></div>
+          <h2 className={styles.title}>About the iniative</h2>
+          <p className={styles.para}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+          <p className={styles.para}>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+          <div className={styles.link}><a href="https://humanrightsmeasurement.org/" target="_blank">Read more about the HRMI iniative</a></div>
         </NavItem>
         <NavItem label={'Methodology'} onLabelClick={this.onNavItemClicked} currentDropdown={currentDropdown}>
-          <div className={styles.closeBtn} onClick={this.closeDropdown}>X</div>
-          <h2>Methodology</h2>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzri delenit augue duis dolore te feugait nulla facilis.</p>
-          <a href="https://humanrightsmeasurement.org/" target="_blank">Read more about the HRMI iniative.</a>
+          <div className={styles.closeBtn} onClick={this.closeDropdown}><CloseIcon color='#fff' /></div>
+          <h2 className={styles.title}>Methodology</h2>
+          <p className={styles.para}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzri delenit augue duis dolore te feugait nulla facilis.</p>
+          <div className={styles.link}><a href="https://humanrightsmeasurement.org/" target="_blank">Read more about the HRMI methodology</a></div>
         </NavItem>
         <NavItem label={'How To Use'} onLabelClick={this.onNavItemClicked} currentDropdown={currentDropdown}>
           <ul className={styles.dropdownUl}>

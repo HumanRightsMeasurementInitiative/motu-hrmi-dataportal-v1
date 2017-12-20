@@ -8,8 +8,9 @@ export default class LangOptions extends React.Component {
     optionClassNames: PropTypes.string,
   }
 
-  onClickHandler = () => {
-    this.props.onSelect(this.props.children)
+  onClickHandler = (e) => {
+    e.stopPropagation()
+    this.props.onSelect(this.props.children, e)
   }
 
   render() {

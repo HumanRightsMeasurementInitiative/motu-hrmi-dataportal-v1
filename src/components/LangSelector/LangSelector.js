@@ -8,6 +8,7 @@ export default class LangSelector extends React.Component {
   static propTypes = {
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
+    updateDropdown: PropTypes.func.isRequired,
   }
 
   constructor() {
@@ -15,8 +16,33 @@ export default class LangSelector extends React.Component {
     this.state = { open: false }
   }
 
-  toggleDropdown = () => {
-    this.setState({ open: !this.state.open })
+  componentDidMount() {
+    document.addEventListener('click', this.onClick)
+    this.refs.toggleBtn.addEventListener('click', this.toggleDropdown)
+    this.refs.options.style.left = this.refs.text.offsetWidth + 10 + 'px'
+  }
+
+  componentWillUnMount() {
+    document.removeEventListener('click', this.onClick)
+    this.refs.toggleBtn.removeEventListener('click', this.toggleDropdown)
+  }
+
+  onClick = () => {
+    if (this.refs.toggleBtn) this.setState({ open: false })
+  }
+
+  toggleDropdown = (e) => {
+    e.stopPropagation()
+    this.props.updateDropdown('closed')
+    if (this.refs.toggleBtn) this.setState({ open: !this.state.open })
+  }
+
+  changeLanguage = (language, e) => {
+    const langabbr = this.abbreviator(language)
+    if (langabbr !== this.props.urlSegs.language) {
+      this.props.urlPush(segsToUrl({ ...this.props.urlSegs, language: langabbr }))
+    }
+    this.toggleDropdown(e)
   }
 
   abbreviator = (language) => {
@@ -30,14 +56,6 @@ export default class LangSelector extends React.Component {
       case 'French':
         return 'FR'
     }
-  }
-
-  changeLanguage = (language) => {
-    const langabbr = this.abbreviator(language)
-    if (langabbr !== this.props.urlSegs.language) {
-      this.props.urlPush(segsToUrl({ ...this.props.urlSegs, language: langabbr }))
-    }
-    this.toggleDropdown()
   }
 
   optionList = () => {
@@ -61,8 +79,8 @@ export default class LangSelector extends React.Component {
 
     return (
       <div className={styles.wrapper}>
-        <div onClick={this.toggleDropdown}><span>Language: </span><span className={styles.currentLang}>{language}</span></div>
-        <ul className={optionsClassNames}>
+        <div className={styles.toggleBtn} ref='toggleBtn' onClick={this.toggleDropdown}><span ref='text'>Language: </span><span className={styles.currentLang}>{language}</span></div>
+        <ul className={optionsClassNames} ref='options'>
           {this.optionList()}
         </ul>
       </div>
