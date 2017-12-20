@@ -1,57 +1,73 @@
 .wrapper {
-  height: 40px;
   position: relative;
+  z-index: 3000;
+  height: 50px;
+  padding: 12px;
 }
+
 .selectorWrapper {
-  padding-top: 14px;
-  font-size: 18px;
+  font-size: 20px;
 }
+
 .btnHTR {
   position: absolute;
-  top: 14px;
+  top: 12px;
   right: 0;
-  padding: 0 25px;
-  background: #2f2ffb;
-  color: #fff;
-  line-height: 25px;
+  padding: 0 38px 0 15px;
+  height: 26px;
+  background: #fff;
+  border: 1px solid #ef7d00;
+  border-right: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ef7d00;
+  line-height: 24px;
+  letter-spacing: .075em;
   cursor: pointer;
 }
-.btnHTR span {
-  display: inline-block;
-  vertical-align: middle;
+.active {
+  background: #ef7d00;
+  color: #fff;
 }
+
 .btnIcon {
-  margin: -2px 0 0 20px;
+  position: absolute;
+  right: 15px;
+  line-height: 24px;
 }
 .hide {
   display: none!important;
 }
+
 .dropdown {
   max-width: 500px;
   position: absolute;
   right: 0;
-  padding: 20px 40px;
-  background: rgba(200, 200, 255, .8);
+  padding: 16px 30px;
+  background: #fff;
+  border: 1px solid #ef7d00;
+  font-size: 14px;
+  overflow: auto;
 }
 .graphTitle {
+  margin: 25px 0 10px;
   text-align: center;
-  margin: 30px 0 10px;
 }
 .graphSubtitle {
-  text-align: center;
   margin: 0 0 30px;
+  text-align: center;
 }
 .image1 {
   margin: 0 auto;
-  height: 400px;
-  width: 400px;
-  border: 1px solid blue;
+  height: 200px;
+  width: 300px;
+  border: 1px solid #ef7d00;
 }
 .image2 {
   margin: 0 auto;
-  height: 100px;
-  width: 300px;
-  border: 1px solid blue;
+  height: 45px;
+  width: 180px;
+  border: 1px solid #ef7d00;
 }
 .halfSplit {
   display: inline-block;
@@ -61,11 +77,11 @@
   margin: 0 auto;
   width: 100px;
   height: 100px;
-  border: 1px solid blue;
+  border: 1px solid #ef7d00;
 }
 .image4 {
   margin: 0 auto;
   width: 150px;
   height: 50px;
-  border: 1px solid blue;
+  border: 1px solid #ef7d00;
 }

@@ -88,8 +88,8 @@
 
 .menuDropdownList {
   position: absolute;
-  background: #fff;
   top: 30px;
+  color: #fff;
 }
 .navItem:last-child .menuDropdownList {
   width: 155px;
@@ -101,11 +101,8 @@
 }
 .dropdownLi {
   padding: 0 10px;
-  border: 1px solid #262261;
-  border-top: none;
+  background: #262261;
+  border-top: 1px solid #fff;
   font-size: 12px;
   line-height: 30px;
-}
-.dropdownLi:first-child {
-  border-top: 1px solid #262261;
 }

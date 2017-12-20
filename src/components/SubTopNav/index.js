@@ -9,6 +9,10 @@ export default class SubTopNav extends React.Component {
     this.state = { open: false }
   }
 
+  componentDidMount() {
+    this.refs.HTRDropdown.style.height = window.innerHeight - 98 + 'px'
+  }
+
   onButtonClick = () => {
     this.setState({ open: !this.state.open })
   }
@@ -19,12 +23,17 @@ export default class SubTopNav extends React.Component {
       'dropdown': true,
     }, styles)
 
+    const btnHTRClass = jcn({
+      'btnHTR': true,
+      'active': this.state.open,
+    }, styles)
+
     return (
       <div className={styles.wrapper}>
         <div className={styles.selectorWrapper}><SectionSelector /></div>
-        <div className={styles.btnHTR} onClick={this.onButtonClick}><span>HOW TO READ </span><span className={this.state.open ? styles.hide : styles.btnIcon}>&#43;</span><span className={this.state.open ? styles.btnIcon : styles.hide}>&#8722;</span></div>
-        <div className={dropdownClassNames}>
-          <p>Each country is represented by a radar chart, formed by twelve axes. Each axis stands for a right. The longer the axis, the better the performance of the country on that right.</p>
+        <div className={btnHTRClass} onClick={this.onButtonClick}>HOW TO READ<span className={this.state.open ? styles.hide : styles.btnIcon}>&#43;</span><span className={this.state.open ? styles.btnIcon : styles.hide}>&#8722;</span></div>
+        <div className={dropdownClassNames} ref='HTRDropdown'>
+          <div>Each country is represented by a radar chart, formed by twelve axes. Each axis stands for a right. The longer the axis, the better the performance of the country on that right.</div>
           <h4 className={styles.graphTitle}>Economic and Social Rights (ESR)</h4>
           <div className={styles.image1}>image1</div>
           <h4 className={styles.graphTitle}>Civil and Political Rights (CPR)</h4>

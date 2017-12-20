@@ -15,7 +15,7 @@ export default class CountryPage extends React.Component {
   }
 
   componentDidMount() {
-    this.refs.content.style.height = this.refs.page.offsetHeight - 90 + 'px'
+    this.refs.content.style.height = this.refs.page.offsetHeight - 110 + 'px'
   }
 
   setExploreBy = (right) => {
