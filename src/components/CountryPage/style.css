@@ -68,7 +68,13 @@
 }
 
 .columnRight {
-  padding: 24px;
+  padding: 10px 16px;
+}
+.smallText {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  font-size: 12px;
 }
 .detailCountry {
   text-transform: uppercase;
@@ -81,17 +87,14 @@
 .smallTitle {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 12px;
   font-variant: small-caps;
   letter-spacing: 0.01em;
   color: #58595B;
   margin-top: 10px;
 }
-.smallText {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  letter-spacing: 0.01em;
+.smallText2 {
+  composes: smallText;
   color: #9B9B9D;
 }
 .subtitleESR {
@@ -100,7 +103,7 @@
   font-size: 19px;
   letter-spacing: 0.025em;
   color: #2E65A1;
-  margin: 20px 0 0;
+  margin: 15px 0 0;
 }
 .subtitleCPR {
   font-family: 'Source Sans Pro', sans-serif;
@@ -108,16 +111,13 @@
   font-size: 19px;
   letter-spacing: 0.025em;
   color: #00A551;
-  margin: 20px 0 0;
+  margin: 15px 0 0;
 }
 .barChartWrapper {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 .legend {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  letter-spacing: 0.01em;
+  composes: smallText;
   color: #FFA096;
 }
 .uncertaintyIcon {
@@ -141,7 +141,7 @@
   margin: 20px 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.025em;
   line-height: 15px;
   color: #58595B;

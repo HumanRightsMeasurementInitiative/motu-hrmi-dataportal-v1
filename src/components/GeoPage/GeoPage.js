@@ -94,8 +94,7 @@ export default class GeoPage extends React.Component {
               { urlSegs.right !== 'all' &&
                 <div>
                   <div>
-                    <div>Right to {urlSegs.right}</div>
-                    <div>Ecomonic and Social Rights</div>
+                    { ESRItems.length === 0 ? <div>Civil and Political Rights</div> : <div>Ecomonic and Social Rights</div> }
                   </div>
                   <div className='arrowLink'>
                     <div className='text'>Explore this rights in:</div>

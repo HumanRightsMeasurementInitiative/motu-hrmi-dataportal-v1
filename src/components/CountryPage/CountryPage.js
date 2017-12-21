@@ -62,14 +62,14 @@ export default class CountryPage extends React.Component {
             <div className={styles.columnRight}>
               <div className={styles.detailCountry}>{currCountry.name}</div>
               <div className={styles.smallTitle}>POPULATION (2016)</div>
-              <div className={styles.smallText}>{currCountry.population} million</div>
+              <div className={styles.smallText2}>{currCountry.population} million</div>
               <div className={styles.smallTitle}>GDP/CAPITA (2016)</div>
-              <div className={styles.smallText}>${Math.round(currCountry.GDP2016)} (current PPP dollars)</div>
+              <div className={styles.smallText2}>${Math.round(currCountry.GDP2016)} (current PPP dollars)</div>
               <div className={styles.subtitleESR}>ESR</div>
-              <div className={styles.smallText}>most recent data (2015 or earlier)</div>
+              <div className={styles.smallText2}>most recent data (2015 or earlier)</div>
               <div className={styles.barChartWrapper}><BarChartESR data={currCountry.rights.ESR} height={80} /></div>
               <div className={styles.subtitleCPR}>CPR</div>
-              <div className={styles.smallText}>data is for period january - june 2017</div>
+              <div className={styles.smallText2}>data is for period january - june 2017</div>
               <div className={styles.barChartWrapper}><BarChartCPR data={currCountry.rights.CPR} height={80} /></div>
               <div className={styles.legend}><div className={styles.uncertaintyIcon}></div> 95% UNCERTAINTY BAND</div>
               {
