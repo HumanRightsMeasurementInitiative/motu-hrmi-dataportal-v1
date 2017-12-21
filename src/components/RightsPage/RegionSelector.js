@@ -19,11 +19,16 @@ export default class RegionSelector extends React.Component {
     this.setState({ isRegionOpen: !this.state.isRegionOpen })
   }
 
+  onItemClick = (code) => {
+    this.props.onItemClick(code)
+    this.setState({ isRegionOpen: false })
+  }
+
   render() {
-    const { data, urlSegs, onItemClick } = this.props
+    const { data, urlSegs } = this.props
 
     const regions = Object.keys(data).map((item, i) => (
-      <RegionItem key={i} code={item} onItemClick={onItemClick} selected={item === urlSegs.region}>{getRegionName(item)}</RegionItem>
+      <RegionItem key={i} code={item} onItemClick={this.onItemClick} selected={item === urlSegs.region}>{getRegionName(item)}</RegionItem>
     ))
 
     const regionSelector = jcn({
