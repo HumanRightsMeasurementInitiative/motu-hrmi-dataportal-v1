@@ -52,11 +52,11 @@ export default class RightsPage extends React.Component {
           <div className='column'>
             <div className={styles.columnLeft}>
               <RegionSelector data={data} urlSegs={urlSegs} onItemClick={this.setRegion} />
-              <div>Economic and Social Rights</div>
+              <div className={styles.ESRTitle}>Economic and Social Rights</div>
               <ul>
                 {ESRItems}
               </ul>
-              <div>Civil and Political Rights</div>
+              <div className={styles.CPRTitle}>Civil and Political Rights</div>
               <ul>
                 {CPRItems}
               </ul>

@@ -3,48 +3,68 @@
   height: 100%;
 }
 
-.columnLeft {
-  padding: 0 24px 0 30px;
-}
-
-.hintText {
-  font-size: 12px;
-  text-decoration: underline;
-}
-.backLink {
+.backBtn {
   display: inline-block;
   position: relative;
-  margin: 10px 0;
-  font-size: 14px;
-  border-bottom: 3px solid #2f2ffd;
+  padding: 4px 10px 4px 30px;
+  width: 80%;
+  border: 1px solid #9b9b9d;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  color: #9b9b9d;
   cursor: pointer;
 }
-.backLink:before {
+.backBtn:hover,
+.backBtn:active {
+  background: #f6f7f7;
+  border-color: #58595b;
+}
+.backBtn:before {
   content: '';
   position: absolute;
   top: 50%;
-  left: -16px;
+  left: 12px;
   margin-top: -6px;
-  border-right: 8px solid #4848fb;
+  border-right: 8px solid #9b9b9d;
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
 }
+.backBtn:hover:before,
+.backBtn:active:before {
+  border-right-color: #58595b;
+}
+.hintText {
+  font-size: 12px;
+}
+.backLink {
+  font-size: 12px;
+  font-weight: 700;
+}
+.backBtn:hover .backLink,
+.backBtn:active .backLink {
+  color: #58595b;
+}
+
 
 .countriesList {
-  margin: 5px 0;
+  padding: 10px 0;
+  font-size: 12px;
+  letter-spacing: .025em;
+  color: #9b9b9d;
 }
 .countryItem {
-  line-height: 16px;
+  margin: 4px 0;
+  padding-left: 30px;
+  line-height: 1.2em;
 }
 .countryName {
   display: inline-block;
-  font-size: 12px;
-  border-bottom: 2px solid transparent;
   line-height: 1em;
   cursor: default;
 }
 .countryName.selected {
-  border-color: #2f2ffd;
+  font-weight: 700;
+  color: #58595b;
 }
 
 .detailCountry {

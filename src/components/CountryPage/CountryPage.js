@@ -48,8 +48,10 @@ export default class CountryPage extends React.Component {
         <div className='row' ref='content'>
           <div className='column'>
             <div className={styles.columnLeft}>
-              <div className={styles.hintText}>Back to:</div>
-              <div className={styles.backLink} onClick={this.resetCountry}>{getRegionName(urlSegs.region)}</div>
+              <div className={styles.backBtn}>
+                <div className={styles.hintText}>BACK TO</div>
+                <div className={styles.backLink} onClick={this.resetCountry}>{getRegionName(urlSegs.region)}</div>
+              </div>
               <ul className={styles.countriesList}>
                 {countryItem}
               </ul>

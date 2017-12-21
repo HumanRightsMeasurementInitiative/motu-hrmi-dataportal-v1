@@ -33,7 +33,7 @@ export default class RegionSelector extends React.Component {
 
     return (
       <div className={regionSelector}>
-        <div className={styles.toggleSwitch} onClick={this.toggleRegionDropdown}>Expore right: <br /> in a different region</div>
+        <div className={styles.toggleSwitch} onClick={this.toggleRegionDropdown}>Select Region</div>
         <ul className={styles.regionDropdown}>
           {regions}
         </ul>

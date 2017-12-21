@@ -25,7 +25,7 @@ export default class RightsItem extends React.Component {
     }, styles)
 
     return (
-      <li><div className={joinedClass} onClick={this.onClick}>Right to {children}</div></li>
+      <li className={joinedClass}><div className={styles.rightText} onClick={this.onClick}>Right to {children}</div></li>
     )
   }
 }
