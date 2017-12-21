@@ -67,6 +67,82 @@
   color: #58595b;
 }
 
+.columnRight {
+  padding: 24px;
+}
 .detailCountry {
   text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: 0.025em;
+  color: #58595B;
+}
+.smallTitle {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  font-variant: small-caps;
+  letter-spacing: 0.01em;
+  color: #58595B;
+  margin-top: 10px;
+}
+.smallText {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  color: #9B9B9D;
+}
+.subtitleESR {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: 0.025em;
+  color: #2E65A1;
+  margin: 20px 0 0;
+}
+.subtitleCPR {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: 0.025em;
+  color: #00A551;
+  margin: 20px 0 0;
+}
+.barChartWrapper {
+  margin-top: 15px;
+}
+.legend {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  color: #FFA096;
+}
+.uncertaintyIcon {
+  display: inline-block;
+  height: 10px;
+  width: 25px;
+  border-left: 2px solid #FFA096;
+  border-right: 2px solid #FFA096;
+  margin-right: 10px;
+}
+.uncertaintyIcon:before {
+  display: block;
+  width: 100%;
+  content: '';
+  border-top: 2px solid #FFA096;
+  margin-top: 4px;
+}
+
+.link {
+  display: block;
+  margin: 20px 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.025em;
+  line-height: 15px;
+  color: #58595B;
 }
