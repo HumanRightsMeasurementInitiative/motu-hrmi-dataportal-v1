@@ -11,6 +11,12 @@ export default class RightsItem extends React.Component {
     selected: PropTypes.bool.isRequired,
   }
 
+  componentDidMount() {
+    const width = this.refs.borderLine.offsetLeft
+    this.refs.borderLine.style.display = 'block'
+    this.refs.borderLine.style.width = width - 25 + 'px'
+  }
+
   onClick = () => {
     const { right, onItemClick } = this.props
     onItemClick(right)
@@ -25,7 +31,10 @@ export default class RightsItem extends React.Component {
     }, styles)
 
     return (
-      <li className={joinedClass}><div className={styles.rightText} onClick={this.onClick}>Right to {children}</div></li>
+      <li className={joinedClass} onClick={this.onClick}>
+        Right to {children}
+        <span className={styles.borderLine} ref='borderLine'></span>
+      </li>
     )
   }
 }

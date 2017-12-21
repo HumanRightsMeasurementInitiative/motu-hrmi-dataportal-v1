@@ -60,6 +60,19 @@ class RegionItem extends React.Component {
     onItemClick(code)
   }
 
+  createBorderLine = () => {
+    const { borderLine } = this.refs
+    if (this.timer) clearTimeout(this.timer)
+    if (borderLine && borderLine.style.display !== 'block') {
+      this.timer = setTimeout(function () {
+        const width = borderLine.offsetLeft
+        borderLine.style.display = 'block'
+        borderLine.style.width = width - 25 + 'px'
+      }, 100)
+    }
+    return ''
+  }
+
   render() {
     const { children, selected } = this.props
 
@@ -69,7 +82,10 @@ class RegionItem extends React.Component {
     }, styles)
 
     return (
-      <li className={joinedClass} onClick={this.onClick}>{children}</li>
+      <li className={joinedClass} onClick={this.onClick}>
+        {children}
+        <span className={styles.rightBorder} ref='borderLine'>{this.createBorderLine()}</span>
+      </li>
     )
   }
 }
