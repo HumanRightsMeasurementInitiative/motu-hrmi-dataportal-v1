@@ -16,7 +16,7 @@ export default class CountryPage extends React.Component {
 
   constructor() {
     super()
-    this.state = { currRight: null }
+    this.state = { currRight: 'all' }
   }
 
   componentDidMount() {
@@ -40,7 +40,7 @@ export default class CountryPage extends React.Component {
     if (right !== this.state.currRight) {
       this.setState({ currRight: right })
     } else {
-      this.setState({ currRight: null })
+      this.setState({ currRight: 'all' })
     }
   }
 
@@ -48,7 +48,8 @@ export default class CountryPage extends React.Component {
     const { data, urlSegs } = this.props
 
     const contries = data[urlSegs.region]
-    const Rights = ['Food', 'Education', 'Work', 'Housing', 'Health', 'Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
+    const ESRs = ['Food', 'Education', 'Work', 'Housing', 'Health']
+    const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
 
     let currCountry
     const countryItem = contries.map((item, i) => {
@@ -57,7 +58,10 @@ export default class CountryPage extends React.Component {
     })
 
     // TODO modify
-    const rightList = Rights.map((item, i) => {
+    const ESRList = ESRs.map((item, i) => {
+      return <RightsItem key={i} right={item} onItemClick={this.setCurrRight}>Right to {item}</RightsItem>
+    })
+    const CPRList = CPRs.map((item, i) => {
       return <RightsItem key={i} right={item} onItemClick={this.setCurrRight}>Right to {item}</RightsItem>
     })
     // TODO end
@@ -79,25 +83,36 @@ export default class CountryPage extends React.Component {
           </div>
           <div className='column'>
             <ul>
-              {rightList}
+              {ESRList}
+              {CPRList}
             </ul>
           </div>
           <div className='column'>
             <div className={styles.columnRight}>
-              <div className={styles.detailCountry}>{currCountry.name}</div>
-              <div className={styles.smallTitle}>POPULATION (2016)</div>
-              <div className={styles.smallText2}>{currCountry.population} million</div>
-              <div className={styles.smallTitle}>GDP/CAPITA (2016)</div>
-              <div className={styles.smallText2}>${Math.round(currCountry.GDP2016)} (current PPP dollars)</div>
-              <div className={styles.subtitleESR}>ESR</div>
-              <div className={styles.smallText2}>most recent data (2015 or earlier)</div>
-              <div className={styles.barChartWrapper}><BarChartESR data={currCountry.rights.ESR} height={80} /></div>
-              <div className={styles.subtitleCPR}>CPR</div>
-              <div className={styles.smallText2}>data is for period january - june 2017</div>
-              <div className={styles.barChartWrapper}><BarChartCPR data={currCountry.rights.CPR} height={80} /></div>
-              <div className={styles.legend}><div className={styles.uncertaintyIcon}></div> 95% UNCERTAINTY BAND</div>
+              <div>
+                <div className={styles.detailCountry}>{currCountry.name}</div>
+                <div className={styles.smallTitle}>POPULATION (2016)</div>
+                <div className={styles.smallText2}>{currCountry.population} million</div>
+                <div className={styles.smallTitle}>GDP/CAPITA (2016)</div>
+                <div className={styles.smallText2}>${Math.round(currCountry.GDP2016)} (current PPP dollars)</div>
+              </div>
+              { CPRs.indexOf(this.state.currRight) === -1 &&
+                <div>
+                  <div className={styles.subtitleESR}>ESR</div>
+                  <div className={styles.smallText2}>most recent data (2015 or earlier)</div>
+                  <div className={styles.barChartWrapper}><BarChartESR data={currCountry.rights.ESR} height={80} /></div>
+                </div>
+              }
+              { ESRs.indexOf(this.state.currRight) === -1 &&
+                <div>
+                  <div className={styles.subtitleCPR}>CPR</div>
+                  <div className={styles.smallText2}>data is for period january - june 2017</div>
+                  <div className={styles.barChartWrapper}><BarChartCPR data={currCountry.rights.CPR} height={80} /></div>
+                  <div className={styles.legend}><div className={styles.uncertaintyIcon}></div> 95% UNCERTAINTY BAND</div>
+                </div>
+              }
               {
-                urlSegs.right === 'all'
+                this.state.currRight === 'all'
                 ? <div>
                   <a className={styles.link} href="">Why are the two types of metrics not on the same scale?</a>
                   <a className={styles.link} href="">Why are the two sets of metrics not for the same year?</a>
