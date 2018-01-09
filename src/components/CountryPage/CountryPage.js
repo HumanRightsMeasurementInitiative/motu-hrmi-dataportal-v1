@@ -21,6 +21,9 @@ export default class CountryPage extends React.Component {
 
   componentDidMount() {
     this.refs.content.style.height = this.refs.page.offsetHeight - 110 + 'px'
+    this.refs.countriesList.style.height = this.refs.content.offsetHeight - this.refs.backBtn.offsetHeight + 'px'
+    this.refs.countryChart.style.height = this.refs.content.offsetHeight - this.refs.countryHeader.offsetHeight - this.refs.countryFooter.offsetHeight + 'px'
+    this.refs.rightInfo.style.height = this.refs.content.offsetHeight - this.refs.countryInfo.offsetHeight + 'px'
   }
 
   setExploreBy = (right) => {
@@ -72,57 +75,61 @@ export default class CountryPage extends React.Component {
         <div className='row' ref='content'>
           <div className='column'>
             <div className={styles.columnLeft}>
-              <div className={styles.backBtn}>
+              <div className={styles.backBtn} ref="backBtn">
                 <div className={styles.hintText}>BACK TO</div>
                 <div className={styles.backLink} onClick={this.resetCountry}>{getRegionName(urlSegs.region)}</div>
               </div>
-              <ul className={styles.countriesList}>
+              <ul className={styles.countriesList} ref="countriesList">
                 {countryItem}
               </ul>
             </div>
           </div>
           <div className='column'>
-            <ul>
+            <div ref="countryHeader">Compare with Change assessment standard: Core</div>
+            <ul ref="countryChart">
               {ESRList}
               {CPRList}
             </ul>
+            <div ref="countryFooter">EachAxis represents a right. The longer ther axis, the better the country's peformance on the right.</div>
           </div>
           <div className='column'>
-            <div className={styles.columnRight}>
-              <div>
+            <div className={styles.columnRight} ref="columnRight">
+              <div ref="countryInfo">
                 <div className={styles.detailCountry}>{currCountry.name}</div>
                 <div className={styles.smallTitle}>POPULATION (2016)</div>
                 <div className={styles.smallText2}>{currCountry.population} million</div>
                 <div className={styles.smallTitle}>GDP/CAPITA (2016)</div>
                 <div className={styles.smallText2}>${Math.round(currCountry.GDP2016)} (current PPP dollars)</div>
               </div>
-              { CPRs.indexOf(this.state.currRight) === -1 &&
-                <div>
-                  <div className={styles.subtitleESR}>ESR</div>
-                  <div className={styles.smallText2}>most recent data (2015 or earlier)</div>
-                  <div className={styles.barChartWrapper}><BarChartESR data={currCountry.rights.ESR} height={80} /></div>
-                </div>
-              }
-              { ESRs.indexOf(this.state.currRight) === -1 &&
-                <div>
-                  <div className={styles.subtitleCPR}>CPR</div>
-                  <div className={styles.smallText2}>data is for period january - june 2017</div>
-                  <div className={styles.barChartWrapper}><BarChartCPR data={currCountry.rights.CPR} height={80} /></div>
-                  <div className={styles.legend}><div className={styles.uncertaintyIcon}></div> 95% UNCERTAINTY BAND</div>
-                </div>
-              }
-              {
-                this.state.currRight === 'all'
-                ? <div>
-                  <a className={styles.link} href="">Why are the two types of metrics not on the same scale?</a>
-                  <a className={styles.link} href="">Why are the two sets of metrics not for the same year?</a>
-                  <a className={styles.link} href="">What is the difference between the core and the high income OECD country scale?</a>
-                </div>
-                : <div className='arrowLink'>
-                  <div className='text'>Explore this rights in:</div>
-                  <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
-                </div>
-              }
+              <div className={styles.rightInfo} ref="rightInfo">
+                { CPRs.indexOf(this.state.currRight) === -1 &&
+                  <div>
+                    <div className={styles.subtitleESR}>ESR</div>
+                    <div className={styles.smallText2}>most recent data (2015 or earlier)</div>
+                    <div className={styles.barChartWrapper}><BarChartESR data={currCountry.rights.ESR} height={80} /></div>
+                  </div>
+                }
+                { ESRs.indexOf(this.state.currRight) === -1 &&
+                  <div>
+                    <div className={styles.subtitleCPR}>CPR</div>
+                    <div className={styles.smallText2}>data is for period january - june 2017</div>
+                    <div className={styles.barChartWrapper}><BarChartCPR data={currCountry.rights.CPR} height={80} /></div>
+                    <div className={styles.legend}><div className={styles.uncertaintyIcon}></div> 95% UNCERTAINTY BAND</div>
+                  </div>
+                }
+                {
+                  this.state.currRight === 'all'
+                  ? <div>
+                    <a className={styles.link} href="">Why are the two types of metrics not on the same scale?</a>
+                    <a className={styles.link} href="">Why are the two sets of metrics not for the same year?</a>
+                    <a className={styles.link} href="">What is the difference between the core and the high income OECD country scale?</a>
+                  </div>
+                  : <div className='arrowLink'>
+                    <div className='text'>Explore this rights in:</div>
+                    <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
+                  </div>
+                }
+              </div>
             </div>
           </div>
         </div>

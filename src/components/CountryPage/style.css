@@ -51,6 +51,7 @@
   font-size: 12px;
   letter-spacing: .025em;
   color: #9b9b9d;
+  overflow: auto;
 }
 .countryItem {
   margin: 4px 0;
@@ -96,6 +97,9 @@
 .smallText2 {
   composes: smallText;
   color: #9B9B9D;
+}
+.rightInfo {
+  overflow: auto;
 }
 .subtitleESR {
   font-family: 'Source Sans Pro', sans-serif;

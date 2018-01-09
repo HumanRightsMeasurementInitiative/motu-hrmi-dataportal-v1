@@ -11,6 +11,12 @@ export default class RegionItem extends React.Component {
     selected: PropTypes.bool.isRequired,
   }
 
+  componentDidMount() {
+    const width = this.refs.borderLine.offsetLeft
+    this.refs.borderLine.style.display = 'block'
+    this.refs.borderLine.style.width = width - 25 + 'px'
+  }
+
   onClick = () => {
     const { code, onItemClick } = this.props
     onItemClick(code)
@@ -25,7 +31,10 @@ export default class RegionItem extends React.Component {
     }, styles)
 
     return (
-      <li className={joinedClass} onClick={this.onClick}>{children}</li>
+      <li className={joinedClass} onClick={this.onClick}>
+        {children}
+        <span className={styles.borderLine} ref='borderLine'></span>
+      </li>
     )
   }
 }

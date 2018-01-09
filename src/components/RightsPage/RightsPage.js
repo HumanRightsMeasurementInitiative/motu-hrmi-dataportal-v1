@@ -20,6 +20,9 @@ export default class RightsPage extends React.Component {
 
   componentDidMount() {
     this.refs.content.style.height = this.refs.page.offsetHeight - 110 + 'px'
+    this.refs.rightList.style.height = this.refs.content.offsetHeight - this.refs.regionSelector.offsetHeight + 'px'
+    this.refs.charts.style.height = this.refs.content.offsetHeight - this.refs.chartsHeader.offsetHeight - this.refs.chartsFooter.offsetHeight + 'px'
+    this.refs.infoContent.style.height = this.refs.content.offsetHeight - this.refs.infoHeader.offsetHeight + 'px'
   }
 
   setExploreBy = (right) => {
@@ -74,23 +77,31 @@ export default class RightsPage extends React.Component {
         <div className='row' ref='content'>
           <div className='column'>
             <div className={styles.columnLeft}>
-              <RegionSelector data={data} urlSegs={urlSegs} onItemClick={this.setRegion} />
-              <div className={styles.ESRTitle}>Economic and Social Rights</div>
-              <ul>
-                {ESRItems}
-              </ul>
-              <div className={styles.CPRTitle}>Civil and Political Rights</div>
-              <ul>
-                {CPRItems}
-              </ul>
+              <div ref="regionSelector">
+                <RegionSelector data={data} urlSegs={urlSegs} onItemClick={this.setRegion} />
+              </div>
+              <div className={styles.rightList} ref="rightList">
+                <div className={styles.ESRTitle}>Economic and Social Rights</div>
+                <ul>
+                  {ESRItems}
+                </ul>
+                <div className={styles.CPRTitle}>Civil and Political Rights</div>
+                <ul>
+                  {CPRItems}
+                </ul>
+              </div>
             </div>
           </div>
           <div className='column'>
-            <div>{getRegionName(urlSegs.region)}</div>
-            <div>{countryItem}</div>
+            <div ref="chartsHeader">{getRegionName(urlSegs.region)} sort by: Name</div>
+            <div className={styles.chartsContainer} ref="charts">{countryItem}</div>
+            <div ref="chartsFooter">
+              <div>SOURCE: 2018 HRMI DATASET, https://</div>
+              <div>Each axis represents a right. The longer the axis, the better the conuntry's performance on that right.</div>
+            </div>
           </div>
           <div className='column'>
-            <div>
+            <div ref="infoHeader">
               <div>
                 <div>Right to {urlSegs.right}</div>
                 <div>in {getRegionName(urlSegs.region)}</div>
@@ -102,6 +113,9 @@ export default class RightsPage extends React.Component {
                   <div className='text underline' onClick={this.setCountry}>{this.state.currCountry}</div>
                 }
               </div>
+            </div>
+            <div className={styles.infoContent} ref="infoContent">
+              
             </div>
           </div>
         </div>
@@ -126,7 +140,7 @@ class CountryItem extends React.Component {
   render() {
     const { children } = this.props
     return (
-      <li onClick={this.onClick}>{children}</li>
+      <li onClick={this.onClick} style={{ display: 'inline-block', border: '1px solid blue' }}>{children}</li>
     )
   }
 }

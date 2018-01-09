@@ -16,6 +16,8 @@ export default class GeoPage extends React.Component {
 
   componentDidMount() {
     this.refs.content.style.height = this.refs.page.offsetHeight - 110 + 'px'
+    this.refs.regionList.style.height = this.refs.content.offsetHeight - this.refs.searchInput.offsetHeight + 'px'
+    this.refs.countriesList.style.height = this.refs.content.offsetHeight - this.refs.chartsHeader.offsetHeight - this.refs.chartsFooter.offsetHeight + 'px'
   }
 
   setRegion = (region) => {
@@ -68,19 +70,21 @@ export default class GeoPage extends React.Component {
         <div className='row' ref='content'>
           <div className='column'>
             <div className={styles.columnLeft}>
-              <input type="text" placeholder='Search Country' />
-              <ul>
+              <div ref="searchInput">
+                <input type="text" placeholder='Search Country' />
+              </div>
+              <ul className={styles.regionList} ref="regionList">
                 {regionItems}
               </ul>
             </div>
           </div>
           <div className='column'>
             <div className={styles.columnMiddle}>
-              <div>Sort by: Name Change standard: Core</div>
-              <ul className={styles.countriesList}>
+              <div ref="chartsHeader">Sort by: Name Change standard: Core</div>
+              <ul className={styles.countriesList} ref="countriesList">
                 {countryItem}
               </ul>
-              <div>
+              <div ref="chartsFooter">
                 <div>SOURCE: 2018 HRMI DATASET, https://</div>
                 <div>Each axis represents a right. The longer the axis, the better the conuntry's performance on that right.</div>
               </div>

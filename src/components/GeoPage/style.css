@@ -9,20 +9,36 @@
   padding: 0 24px;
 }
 
+.regionList {
+  overflow: auto;
+}
 .regionItem {
-  margin: 20px 0;
+  padding: 10px 0;
   font-size: 14px;
   border-bottom: 3px solid transparent;
   cursor: default;
 }
-.regionItem.selected {
-  border-color: #2f2ffd;
+.borderLine {
+  border-bottom: 2px solid transparent;
+  transition: border .2s;
+}
+.regionItem.selected .borderLine {
+  border-color: #9b9b9d;
 }
 
+.countriesList {
+  overflow: auto;
+}
 .CountryItem {
   display: inline-block;
   flex: none;
-  width: 20%;
+  width: 180px;
+  height: 120px;
   border: 1px solid #2f2ffd;
   cursor: default;
+}
+
+.columnRight {
+  height: 100%;
+  overflow: auto;
 }

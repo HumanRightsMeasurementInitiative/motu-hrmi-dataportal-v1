@@ -19,7 +19,10 @@ ul {
 
 :global(.row) {
   display: flex;
-  overflow: auto;
+}
+:global(.column) {
+  height: 100%;
+  overflow: hidden;
 }
 :global(.column):first-child {
   flex: none;
