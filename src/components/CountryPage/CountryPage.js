@@ -14,6 +14,11 @@ export default class CountryPage extends React.Component {
     urlPush: PropTypes.func.isRequired,
   }
 
+  constructor() {
+    super()
+    this.state = { currRight: null }
+  }
+
   componentDidMount() {
     this.refs.content.style.height = this.refs.page.offsetHeight - 110 + 'px'
   }
@@ -31,16 +36,31 @@ export default class CountryPage extends React.Component {
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, country: undefined, right: 'all' }))
   }
 
+  setCurrRight = (right) => {
+    if (right !== this.state.currRight) {
+      this.setState({ currRight: right })
+    } else {
+      this.setState({ currRight: null })
+    }
+  }
+
   render() {
     const { data, urlSegs } = this.props
 
     const contries = data[urlSegs.region]
+    const Rights = ['Food', 'Education', 'Work', 'Housing', 'Health', 'Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
 
     let currCountry
     const countryItem = contries.map((item, i) => {
       if (item.code === urlSegs.country) currCountry = item
       return <CountryItem key={i} code={item.code} onItemClick={this.setCountry} selected={item.code === urlSegs.country}>{item.name}</CountryItem>
     })
+
+    // TODO modify
+    const rightList = Rights.map((item, i) => {
+      return <RightsItem key={i} right={item} onItemClick={this.setCurrRight}>Right to {item}</RightsItem>
+    })
+    // TODO end
 
     return (
       <div className={styles.countryPage} ref='page'>
@@ -57,7 +77,11 @@ export default class CountryPage extends React.Component {
               </ul>
             </div>
           </div>
-          <div className='column'></div>
+          <div className='column'>
+            <ul>
+              {rightList}
+            </ul>
+          </div>
           <div className='column'>
             <div className={styles.columnRight}>
               <div className={styles.detailCountry}>{currCountry.name}</div>
@@ -91,3 +115,25 @@ export default class CountryPage extends React.Component {
     )
   }
 }
+
+// TODO delete
+class RightsItem extends React.Component {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    right: PropTypes.string.isRequired,
+    onItemClick: PropTypes.func.isRequired,
+  }
+
+  onClick = () => {
+    const { right, onItemClick } = this.props
+    onItemClick(right)
+  }
+
+  render() {
+    const { children } = this.props
+    return (
+      <li onClick={this.onClick}>{children}</li>
+    )
+  }
+}
+// TODO end

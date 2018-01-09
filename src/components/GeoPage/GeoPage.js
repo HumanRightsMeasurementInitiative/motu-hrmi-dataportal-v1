@@ -76,9 +76,14 @@ export default class GeoPage extends React.Component {
           </div>
           <div className='column'>
             <div className={styles.columnMiddle}>
+              <div>Sort by: Name Change standard: Core</div>
               <ul className={styles.countriesList}>
                 {countryItem}
               </ul>
+              <div>
+                <div>SOURCE: 2018 HRMI DATASET, https://</div>
+                <div>Each axis represents a right. The longer the axis, the better the conuntry's performance on that right.</div>
+              </div>
             </div>
           </div>
           <div className='column'>

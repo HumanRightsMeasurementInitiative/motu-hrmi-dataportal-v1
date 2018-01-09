@@ -34,7 +34,6 @@ ul {
 }
 
 :global(.arrowLink) {
-  position: relative;
   padding: 10px 0 0 24px;
   font-size: 12px;
 }
@@ -42,15 +41,16 @@ ul {
   line-height: 1.4em;
 }
 :global(.arrowLink .underline) {
+  position: relative;
   text-decoration: underline;
   cursor: pointer;
 }
-:global(.arrowLink):before {
+:global(.underline):before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 10px;
-  border-left: 8px solid #4848fb;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
+  top: 3px;
+  left: -12px;
+  border-left: 6px solid #4848fb;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
 }

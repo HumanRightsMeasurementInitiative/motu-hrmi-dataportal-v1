@@ -13,6 +13,11 @@ export default class RightsPage extends React.Component {
     urlPush: PropTypes.func.isRequired,
   }
 
+  constructor() {
+    super()
+    this.state = { currCountry: null }
+  }
+
   componentDidMount() {
     this.refs.content.style.height = this.refs.page.offsetHeight - 110 + 'px'
   }
@@ -32,6 +37,18 @@ export default class RightsPage extends React.Component {
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, right: right }))
   }
 
+  setCountry = () => {
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: 'Geography', country: this.state.currCountry, right: 'all' }))
+  }
+
+  setCurrCountry = (country) => {
+    if (country !== this.state.currCountry) {
+      this.setState({ currCountry: country })
+    } else {
+      this.setState({ currCountry: null })
+    }
+  }
+
   render() {
     const { data, urlSegs } = this.props
 
@@ -44,6 +61,12 @@ export default class RightsPage extends React.Component {
     const CPRItems = CPRs.map((item, i) => (
       <RightsItem key={i} right={item} onItemClick={this.setRight} selected={item === urlSegs.right}>{item}</RightsItem>
     ))
+
+    // TODO update
+    const countryItem = data[urlSegs.region].map((item, i) => (
+      <CountryItem key={i} country={item.code} onItemClick={this.setCurrCountry}>{item.name}</CountryItem>
+    ))
+    // TODO end
 
     return (
       <div className={styles.rightsPage} ref='page'>
@@ -64,6 +87,7 @@ export default class RightsPage extends React.Component {
           </div>
           <div className='column'>
             <div>{getRegionName(urlSegs.region)}</div>
+            <div>{countryItem}</div>
           </div>
           <div className='column'>
             <div>
@@ -74,6 +98,9 @@ export default class RightsPage extends React.Component {
               <div className='arrowLink'>
                 <div className='text'>Expore all rights in:</div>
                 <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
+                { this.state.currCountry &&
+                  <div className='text underline' onClick={this.setCountry}>{this.state.currCountry}</div>
+                }
               </div>
             </div>
           </div>
@@ -82,3 +109,25 @@ export default class RightsPage extends React.Component {
     )
   }
 }
+
+// TODO delete
+class CountryItem extends React.Component {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    country: PropTypes.string.isRequired,
+    onItemClick: PropTypes.func.isRequired,
+  }
+
+  onClick = () => {
+    const { country, onItemClick } = this.props
+    onItemClick(country)
+  }
+
+  render() {
+    const { children } = this.props
+    return (
+      <li onClick={this.onClick}>{children}</li>
+    )
+  }
+}
+// TODO end
