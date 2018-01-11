@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import SubTopNav from '../SubTopNav/'
 import RightsItem from './RightsItem'
 import RegionSelector from './RegionSelector'
-import ESRRightBar from '../ESRRightBar/'
+import RightBarchart from '../RightBarchart/'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
 
@@ -19,6 +19,7 @@ export default class RightsPage extends React.Component {
     this.state = {
       currCountry: null,
       chartHeight: 0,
+      chartWidth: 0,
     }
   }
 
@@ -27,7 +28,7 @@ export default class RightsPage extends React.Component {
     this.refs.rightList.style.height = this.refs.content.offsetHeight - this.refs.regionSelector.offsetHeight + 'px'
     this.refs.charts.style.height = this.refs.content.offsetHeight - this.refs.chartsHeader.offsetHeight - this.refs.chartsFooter.offsetHeight + 'px'
     this.refs.infoContent.style.height = this.refs.content.offsetHeight - this.refs.infoHeader.offsetHeight + 'px'
-    this.setState({ chartHeight: this.refs.charts.offsetHeight })
+    this.setState({ chartHeight: this.refs.charts.offsetHeight, chartWidth:  this.refs.charts.offsetWidth })
   }
 
   setExploreBy = (right) => {
@@ -46,11 +47,11 @@ export default class RightsPage extends React.Component {
   }
 
   setCountry = () => {
-    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: 'Geography', country: this.state.currCountry, right: 'all' }))
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: 'Geography', country: this.state.currCountry.code, right: 'all' }))
   }
 
   setCurrCountry = (country) => {
-    if (country !== this.state.currCountry) {
+    if (this.state.currCountry === null || country.name !== this.state.currCountry.name) {
       this.setState({ currCountry: country })
     } else {
       this.setState({ currCountry: null })
@@ -94,7 +95,7 @@ export default class RightsPage extends React.Component {
           <div className='column'>
             <div ref="chartsHeader">{getRegionName(urlSegs.region)} sort by: Name</div>
             <div className={styles.chartsContainer} ref="charts">
-              <ESRRightBar data={data[urlSegs.region]} chartHeight={this.state.chartHeight} onItemClick={this.setCurrCountry}></ESRRightBar>
+              <RightBarchart isESR={ESRs.indexOf(urlSegs.right) > -1} currRight={urlSegs.right} data={data[urlSegs.region]} chartHeight={this.state.chartHeight * 0.7} chartWidth={this.state.chartWidth} onItemClick={this.setCurrCountry}></RightBarchart>
             </div>
             <div ref="chartsFooter">
               <div>SOURCE: 2018 HRMI DATASET, https://</div>
@@ -110,8 +111,8 @@ export default class RightsPage extends React.Component {
               <div className='arrowLink'>
                 <div className='text'>Expore all rights in:</div>
                 <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
-                { this.state.currCountry &&
-                  <div className='text underline' onClick={this.setCountry}>{this.state.currCountry}</div>
+                { this.state.currCountry !== null &&
+                  <div className='text underline' onClick={this.setCountry}>{this.state.currCountry.name}</div>
                 }
               </div>
             </div>

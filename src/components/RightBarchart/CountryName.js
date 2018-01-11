@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export default class CountryName extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    country: PropTypes.string.isRequired,
+    country: PropTypes.object.isRequired,
     onItemClick: PropTypes.func.isRequired,
   }
 
@@ -16,7 +16,7 @@ export default class CountryName extends React.Component {
   render() {
     const { children } = this.props
     return (
-      <text textAnchor='end' style={{ fontSize: '10px' }} onClick={this.onClick}>{children}</text>
+      <text textAnchor='end' fontSize='10px' fill='#9a9a9b' onClick={this.onClick}>{children}</text>
     )
   }
 }
