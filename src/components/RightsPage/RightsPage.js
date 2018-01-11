@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import SubTopNav from '../SubTopNav/'
 import RightsItem from './RightsItem'
 import RegionSelector from './RegionSelector'
+import ESRRightBar from '../ESRRightBar/'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
 
@@ -15,7 +16,10 @@ export default class RightsPage extends React.Component {
 
   constructor() {
     super()
-    this.state = { currCountry: null }
+    this.state = {
+      currCountry: null,
+      chartHeight: 0,
+    }
   }
 
   componentDidMount() {
@@ -23,6 +27,7 @@ export default class RightsPage extends React.Component {
     this.refs.rightList.style.height = this.refs.content.offsetHeight - this.refs.regionSelector.offsetHeight + 'px'
     this.refs.charts.style.height = this.refs.content.offsetHeight - this.refs.chartsHeader.offsetHeight - this.refs.chartsFooter.offsetHeight + 'px'
     this.refs.infoContent.style.height = this.refs.content.offsetHeight - this.refs.infoHeader.offsetHeight + 'px'
+    this.setState({ chartHeight: this.refs.charts.offsetHeight })
   }
 
   setExploreBy = (right) => {
@@ -65,12 +70,6 @@ export default class RightsPage extends React.Component {
       <RightsItem key={i} right={item} onItemClick={this.setRight} selected={item === urlSegs.right}>{item}</RightsItem>
     ))
 
-    // TODO update
-    const countryItem = data[urlSegs.region].map((item, i) => (
-      <CountryItem key={i} country={item.code} onItemClick={this.setCurrCountry}>{item.name}</CountryItem>
-    ))
-    // TODO end
-
     return (
       <div className={styles.rightsPage} ref='page'>
         <SubTopNav />
@@ -94,7 +93,9 @@ export default class RightsPage extends React.Component {
           </div>
           <div className='column'>
             <div ref="chartsHeader">{getRegionName(urlSegs.region)} sort by: Name</div>
-            <div className={styles.chartsContainer} ref="charts">{countryItem}</div>
+            <div className={styles.chartsContainer} ref="charts">
+              <ESRRightBar data={data[urlSegs.region]} chartHeight={this.state.chartHeight} onItemClick={this.setCurrCountry}></ESRRightBar>
+            </div>
             <div ref="chartsFooter">
               <div>SOURCE: 2018 HRMI DATASET, https://</div>
               <div>Each axis represents a right. The longer the axis, the better the conuntry's performance on that right.</div>
@@ -115,7 +116,7 @@ export default class RightsPage extends React.Component {
               </div>
             </div>
             <div className={styles.infoContent} ref="infoContent">
-              
+
             </div>
           </div>
         </div>
@@ -123,25 +124,3 @@ export default class RightsPage extends React.Component {
     )
   }
 }
-
-// TODO delete
-class CountryItem extends React.Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    country: PropTypes.string.isRequired,
-    onItemClick: PropTypes.func.isRequired,
-  }
-
-  onClick = () => {
-    const { country, onItemClick } = this.props
-    onItemClick(country)
-  }
-
-  render() {
-    const { children } = this.props
-    return (
-      <li onClick={this.onClick} style={{ display: 'inline-block', border: '1px solid blue' }}>{children}</li>
-    )
-  }
-}
-// TODO end
