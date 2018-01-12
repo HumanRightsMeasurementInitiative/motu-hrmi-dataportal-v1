@@ -7,6 +7,8 @@ export default class CountryName extends React.Component {
     translateY: PropTypes.number.isRequired,
     meanValue: PropTypes.number.isRequired,
     diffValue: PropTypes.number.isRequired,
+    textValue: PropTypes.number.isRequired,
+    currCountry: PropTypes.object,
     country: PropTypes.object.isRequired,
     onItemClick: PropTypes.func.isRequired,
   }
@@ -17,8 +19,8 @@ export default class CountryName extends React.Component {
   }
 
   render() {
-    const { translateX, translateY, meanValue, diffValue } = this.props
-
+    const { translateX, translateY, meanValue, diffValue, textValue, currCountry, country } = this.props
+    const isActive = currCountry && currCountry.name === country.name
     return (
       <g transform={'translate(' + translateX + ', ' + translateY + ')'} onClick={this.onClick}>
         { meanValue > 0 &&
@@ -29,6 +31,9 @@ export default class CountryName extends React.Component {
             <rect height={diffValue} width='6' x='-3' y={-diffValue / 2} fill='#3378ae'></rect>
             <rect height='2' width='6' x='-3' y='-1' fill='#fff'></rect>
           </g>
+        }
+        { isActive &&
+          <text y={-diffValue / 2 - 4} fontSize='12' fill='#3378ae' fontWeight='600' textAnchor='middle'>{Math.round(textValue * 10) / 10}/10</text>
         }
       </g>
     )

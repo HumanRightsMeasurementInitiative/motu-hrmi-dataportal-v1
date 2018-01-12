@@ -12,11 +12,12 @@ export default class ESRRightBar extends React.Component {
     chartHeight: PropTypes.number.isRequired,
     chartWidth: PropTypes.number.isRequired,
     data: PropTypes.array.isRequired,
+    currCountry: PropTypes.object,
     onItemClick: PropTypes.func.isRequired,
   }
 
   render() {
-    const { isESR, currRight, chartHeight, chartWidth, data, onItemClick } = this.props
+    const { isESR, currRight, chartHeight, chartWidth, data, currCountry, onItemClick } = this.props
     const yAxisRange = Array.from(Array(11).keys()).reverse()
     const yAxisRate = isESR ? 10 : 1
     const keyword = isESR ? 'ESR' : 'CPR'
@@ -47,7 +48,7 @@ export default class ESRRightBar extends React.Component {
                 data.map((item, i) => {
                   return (
                     <g key={i} transform={'translate(' + (xScale(i) + 30) + ', 0)rotate(-45)'}>
-                      <CountryName country={item} onItemClick={onItemClick}>{item.name}</CountryName>
+                      <CountryName currCountry={currCountry} country={item} onItemClick={onItemClick}>{item.name}</CountryName>
                     </g>
                   )
                 })
@@ -81,6 +82,9 @@ export default class ESRRightBar extends React.Component {
                         translateY={chartHeight - margin.top - margin.bottom - yScale(value.maxValue)}
                         highPos={yScale(value.maxValue)}
                         corePos={yScale(value.minValue)}
+                        maxValue={value.maxValue}
+                        minValue={value.minValue}
+                        currCountry={currCountry}
                         country={item}
                         onItemClick={onItemClick}
                       />
@@ -88,9 +92,11 @@ export default class ESRRightBar extends React.Component {
                     { !isESR &&
                       <CPRRects
                         translateX={xScale(i) + 30}
-                        translateY={chartHeight - margin.top - margin.bottom - yScale(value.value)}
-                        meanValue={yScale(value.value)}
+                        translateY={chartHeight - margin.top - margin.bottom - yScale((value.maxValue + value.minValue) / 2)}
+                        meanValue={yScale((value.maxValue + value.minValue) / 2)}
                         diffValue={yScale(value.maxValue - value.minValue)}
+                        textValue={(value.maxValue + value.minValue) / 2}
+                        currCountry={currCountry}
                         country={item}
                         onItemClick={onItemClick}
                       />

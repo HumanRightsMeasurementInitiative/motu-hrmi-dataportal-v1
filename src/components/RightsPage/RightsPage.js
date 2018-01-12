@@ -95,7 +95,15 @@ export default class RightsPage extends React.Component {
           <div className='column'>
             <div ref="chartsHeader">{getRegionName(urlSegs.region)} sort by: Name</div>
             <div className={styles.chartsContainer} ref="charts">
-              <RightBarchart isESR={ESRs.indexOf(urlSegs.right) > -1} currRight={urlSegs.right} data={data[urlSegs.region]} chartHeight={this.state.chartHeight * 0.7} chartWidth={this.state.chartWidth} onItemClick={this.setCurrCountry}></RightBarchart>
+              <RightBarchart
+                isESR={ESRs.indexOf(urlSegs.right) > -1}
+                currRight={urlSegs.right}
+                data={data[urlSegs.region]}
+                chartHeight={this.state.chartHeight * 0.7}
+                chartWidth={this.state.chartWidth}
+                currCountry={this.state.currCountry}
+                onItemClick={this.setCurrCountry}>
+              </RightBarchart>
             </div>
             <div ref="chartsFooter">
               <div>SOURCE: 2018 HRMI DATASET, https://</div>
