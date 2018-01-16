@@ -4,6 +4,7 @@ import SubTopNav from '../SubTopNav/'
 import CountryItem from './CountryItem'
 import BarChartESR from '../BarChartESR/'
 import BarChartCPR from '../BarChartCPR/'
+import RadarChart from '../RadarChart'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
 
@@ -16,7 +17,11 @@ export default class CountryPage extends React.Component {
 
   constructor() {
     super()
-    this.state = { currRight: 'all' }
+    this.state = {
+      currRight: 'all',
+      chartHeight: 0,
+      chartWidth: 0,
+    }
   }
 
   componentDidMount() {
@@ -24,6 +29,7 @@ export default class CountryPage extends React.Component {
     this.refs.countriesList.style.height = this.refs.content.offsetHeight - this.refs.backBtn.offsetHeight + 'px'
     this.refs.countryChart.style.height = this.refs.content.offsetHeight - this.refs.countryHeader.offsetHeight - this.refs.countryFooter.offsetHeight + 'px'
     this.refs.rightInfo.style.height = this.refs.content.offsetHeight - this.refs.countryInfo.offsetHeight + 'px'
+    this.setState({ chartHeight: this.refs.countryChart.offsetHeight, chartWidth: this.refs.countryChart.offsetWidth })
   }
 
   setExploreBy = (right) => {
@@ -60,15 +66,6 @@ export default class CountryPage extends React.Component {
       return <CountryItem key={i} code={item.code} onItemClick={this.setCountry} selected={item.code === urlSegs.country}>{item.name}</CountryItem>
     })
 
-    // TODO modify
-    const ESRList = ESRs.map((item, i) => {
-      return <RightsItem key={i} right={item} onItemClick={this.setCurrRight}>Right to {item}</RightsItem>
-    })
-    const CPRList = CPRs.map((item, i) => {
-      return <RightsItem key={i} right={item} onItemClick={this.setCurrRight}>Right to {item}</RightsItem>
-    })
-    // TODO end
-
     return (
       <div className={styles.countryPage} ref='page'>
         <SubTopNav />
@@ -87,8 +84,13 @@ export default class CountryPage extends React.Component {
           <div className='column'>
             <div ref="countryHeader">Compare with Change assessment standard: Core</div>
             <ul ref="countryChart">
-              {ESRList}
-              {CPRList}
+              <RadarChart
+                chartHeight={this.state.chartHeight}
+                chartWidth={this.state.chartWidth}
+                currRight={this.state.currRight}
+                rights={ESRs.concat(CPRs)}
+                onRightClick={this.setCurrRight}
+              ></RadarChart>
             </ul>
             <div ref="countryFooter">EachAxis represents a right. The longer ther axis, the better the country's peformance on the right.</div>
           </div>
@@ -137,25 +139,3 @@ export default class CountryPage extends React.Component {
     )
   }
 }
-
-// TODO delete
-class RightsItem extends React.Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    right: PropTypes.string.isRequired,
-    onItemClick: PropTypes.func.isRequired,
-  }
-
-  onClick = () => {
-    const { right, onItemClick } = this.props
-    onItemClick(right)
-  }
-
-  render() {
-    const { children } = this.props
-    return (
-      <li onClick={this.onClick}>{children}</li>
-    )
-  }
-}
-// TODO end

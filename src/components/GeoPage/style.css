@@ -37,6 +37,11 @@
   border: 1px solid #2f2ffd;
   cursor: default;
 }
+.chartsFooter {
+  padding-top: 20px;
+  padding-bottom: 32px;
+  font-size: 12px;
+}
 
 .columnRight {
   height: 100%;

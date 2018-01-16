@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SubTopNav from '../SubTopNav/'
 import RegionItem from './RegionItem'
-import CountryItem from './CountryItem'
 import RightsItem from './RightsItem'
+import RadarChart from '../RadarChart'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
 
@@ -14,10 +14,20 @@ export default class GeoPage extends React.Component {
     urlPush: PropTypes.func.isRequired,
   }
 
+  constructor() {
+    super()
+    this.state = {
+      currCountry: null,
+      chartHeight: 0,
+      chartWidth: 0,
+    }
+  }
+
   componentDidMount() {
     this.refs.content.style.height = this.refs.page.offsetHeight - 110 + 'px'
     this.refs.regionList.style.height = this.refs.content.offsetHeight - this.refs.searchInput.offsetHeight + 'px'
-    this.refs.countriesList.style.height = this.refs.content.offsetHeight - this.refs.chartsHeader.offsetHeight - this.refs.chartsFooter.offsetHeight + 'px'
+    this.refs.countries.style.height = this.refs.content.offsetHeight - this.refs.chartsHeader.offsetHeight - this.refs.chartsFooter.offsetHeight + 'px'
+    this.setState({ chartHeight: this.refs.countries.offsetHeight / 3, chartWidth: 180 })
   }
 
   setRegion = (region) => {
@@ -41,6 +51,10 @@ export default class GeoPage extends React.Component {
     this.props.urlPush(segsToUrl({ ...urlSegs, exploreBy: 'Rights' }))
   }
 
+  setCurrCountry = (country) => {
+    this.setState({ currCountry: country })
+  }
+
   render() {
     const { data, urlSegs } = this.props
 
@@ -51,7 +65,15 @@ export default class GeoPage extends React.Component {
       <RegionItem key={i} code={item} onItemClick={this.setRegion} selected={item === urlSegs.region}>{getRegionName(item)}</RegionItem>
     ))
     const countryItem = data[urlSegs.region].map((item, i) => (
-      <CountryItem key={i} country={item.code} onItemClick={this.setCountry}>{item.name}</CountryItem>
+      <RadarChart
+        key={i}
+        chartHeight={this.state.chartHeight}
+        chartWidth={this.state.chartWidth}
+        country={item}
+        currCountry={this.state.currCountry}
+        onCountryClick={this.setCountry}
+        onCountryHover={this.setCurrCountry}
+      ></RadarChart>
     ))
     const ESRItems = ESRs.filter((item, i) => (
       urlSegs.right === item || urlSegs.right === 'all'
@@ -81,12 +103,12 @@ export default class GeoPage extends React.Component {
           <div className='column'>
             <div className={styles.columnMiddle}>
               <div ref="chartsHeader">Sort by: Name Change standard: Core</div>
-              <ul className={styles.countriesList} ref="countriesList">
+              <div className={styles.countriesList} ref="countries">
                 {countryItem}
-              </ul>
-              <div ref="chartsFooter">
-                <div>SOURCE: 2018 HRMI DATASET, https://</div>
-                <div>Each axis represents a right. The longer the axis, the better the conuntry's performance on that right.</div>
+              </div>
+              <div className={styles.chartsFooter} ref='chartsFooter'>
+                <div>Higher scores indicate greater respect for this human right.</div>
+                <div>Source: 2018 Human Rights Measurement Initiative(HRMI) data-set, https://humanrightsmeasurement.org/</div>
               </div>
             </div>
           </div>
