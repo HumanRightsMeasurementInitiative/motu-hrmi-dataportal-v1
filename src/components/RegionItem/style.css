@@ -1,0 +1,16 @@
+.regionItem {
+  padding: 10px 0;
+  font-size: 16px;
+  border-bottom: 3px solid transparent;
+  cursor: default;
+}
+.borderLine {
+  border-bottom: 3px solid transparent;
+  transition: border .2s;
+}
+.regionItem.selected .borderLine {
+  border-color: #6b6c6e;
+}
+.whiteBorder.selected .borderLine {
+  border-color: #fff;
+}

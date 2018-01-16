@@ -45,7 +45,7 @@ export default class ESRRightBar extends React.Component {
       : (chartWidth - margin.left - margin.right) / 2
 
     return (
-      <svg 
+      <svg
         ref='svg'
         height={chartHeight}
         width={chartWidth}

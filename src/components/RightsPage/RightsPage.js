@@ -4,7 +4,7 @@ import SubTopNav from '../SubTopNav/'
 import RightsItem from './RightsItem'
 import RegionSelector from './RegionSelector'
 import RightBarchart from '../RightBarchart/'
-import { segsToUrl, getRegionName } from '../utils'
+import { segsToUrl, getRegionName, joinClassName as jcn } from '../utils'
 import styles from './style.css'
 
 export default class RightsPage extends React.Component {
@@ -71,6 +71,12 @@ export default class RightsPage extends React.Component {
       <RightsItem key={i} right={item} onItemClick={this.setRight} selected={item === urlSegs.right}>{item}</RightsItem>
     ))
 
+    const colorClassName = jcn({
+      rightInfo: true,
+      esrs: ESRs.indexOf(urlSegs.right) > -1,
+      cprs: CPRs.indexOf(urlSegs.right) > -1,
+    }, styles)
+
     return (
       <div className={styles.rightsPage} ref='page'>
         <SubTopNav />
@@ -112,9 +118,9 @@ export default class RightsPage extends React.Component {
           </div>
           <div className='column'>
             <div ref="infoHeader">
-              <div>
-                <div>Right to {urlSegs.right}</div>
-                <div>in {getRegionName(urlSegs.region)}</div>
+              <div className={colorClassName}>
+                <div className={styles.rightName}>Right to {urlSegs.right}</div>
+                <div className={styles.regionName}>in {getRegionName(urlSegs.region)}</div>
               </div>
               <div className='arrowLink'>
                 <div className='text'>Expore all rights in:</div>
@@ -125,7 +131,9 @@ export default class RightsPage extends React.Component {
               </div>
             </div>
             <div className={styles.infoContent} ref="infoContent">
-
+              <div className={styles.textWrapper}>
+                <p className={styles.definition}>According to international law, everyone has the fundamental right to be free from hunger. Everyone has the right to enjoy "the availability of food in a quantity and quality sufficient to satisfy [their] dietary needs … free from adverse substances, and acceptable within a given culture" (ICESCR Art. 11 and CESCR General Comment 12).</p>
+              </div>
             </div>
           </div>
         </div>

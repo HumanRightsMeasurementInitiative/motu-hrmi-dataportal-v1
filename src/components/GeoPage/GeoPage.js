@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SubTopNav from '../SubTopNav/'
-import RegionItem from './RegionItem'
+import RegionItem from '../RegionItem'
 import RightsItem from './RightsItem'
 import RadarChart from '../RadarChart'
 import { segsToUrl, getRegionName } from '../utils'
@@ -93,7 +93,7 @@ export default class GeoPage extends React.Component {
           <div className='column'>
             <div className={styles.columnLeft}>
               <div ref="searchInput">
-                <input type="text" placeholder='Search Country' />
+                <input className={styles.searchInput} type="text" placeholder='Search Country' />
               </div>
               <ul className={styles.regionList} ref="regionList">
                 {regionItems}

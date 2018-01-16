@@ -9,12 +9,15 @@ export default class RegionItem extends React.Component {
     code: PropTypes.string.isRequired,
     onItemClick: PropTypes.func.isRequired,
     selected: PropTypes.bool.isRequired,
+    closePopup: PropTypes.func,
+    whiteBorder: PropTypes.bool,
   }
 
   componentDidMount() {
     const width = this.refs.borderLine.offsetLeft
     this.refs.borderLine.style.display = 'block'
     this.refs.borderLine.style.width = width - 25 + 'px'
+    if (this.props.closePopup !== undefined) this.props.closePopup()
   }
 
   onClick = () => {
@@ -23,11 +26,12 @@ export default class RegionItem extends React.Component {
   }
 
   render() {
-    const { children, selected } = this.props
+    const { children, selected, whiteBorder } = this.props
 
     const joinedClass = jcn({
       regionItem: true,
       selected: selected,
+      whiteBorder: whiteBorder,
     }, styles)
 
     return (

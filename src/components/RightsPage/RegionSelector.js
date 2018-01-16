@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import RegionItem from '../RegionItem'
 import { getRegionName, joinClassName as jcn } from '../utils'
 import styles from './style.css'
 
@@ -12,7 +13,7 @@ export default class RegionSelector extends React.Component {
 
   constructor() {
     super()
-    this.state = { isRegionOpen: false }
+    this.state = { isRegionOpen: true }
   }
 
   toggleRegionDropdown = () => {
@@ -28,7 +29,7 @@ export default class RegionSelector extends React.Component {
     const { data, urlSegs } = this.props
 
     const regions = Object.keys(data).map((item, i) => (
-      <RegionItem key={i} code={item} onItemClick={this.onItemClick} selected={item === urlSegs.region}>{getRegionName(item)}</RegionItem>
+      <RegionItem key={i} code={item} onItemClick={this.onItemClick} selected={item === urlSegs.region} closePopup={this.toggleRegionDropdown} whiteBorder={true}>{getRegionName(item)}</RegionItem>
     ))
 
     const regionSelector = jcn({
@@ -43,49 +44,6 @@ export default class RegionSelector extends React.Component {
           {regions}
         </ul>
       </div>
-    )
-  }
-}
-
-class RegionItem extends React.Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    code: PropTypes.string.isRequired,
-    onItemClick: PropTypes.func.isRequired,
-    selected: PropTypes.bool.isRequired,
-  }
-
-  onClick = () => {
-    const { code, onItemClick } = this.props
-    onItemClick(code)
-  }
-
-  createBorderLine = () => {
-    const { borderLine } = this.refs
-    if (this.timer) clearTimeout(this.timer)
-    if (borderLine && borderLine.style.display !== 'block') {
-      this.timer = setTimeout(function () {
-        const width = borderLine.offsetLeft
-        borderLine.style.display = 'block'
-        borderLine.style.width = width - 25 + 'px'
-      }, 100)
-    }
-    return ''
-  }
-
-  render() {
-    const { children, selected } = this.props
-
-    const joinedClass = jcn({
-      regionItem: true,
-      selected: selected,
-    }, styles)
-
-    return (
-      <li className={joinedClass} onClick={this.onClick}>
-        {children}
-        <span className={styles.rightBorder} ref='borderLine'>{this.createBorderLine()}</span>
-      </li>
     )
   }
 }
