@@ -68,7 +68,7 @@
   cursor: default;
 }
 .borderLine {
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
   transition: border .2s;
 }
 .rightItem.selected .borderLine {

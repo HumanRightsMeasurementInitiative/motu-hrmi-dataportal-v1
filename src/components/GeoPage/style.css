@@ -121,6 +121,48 @@
 .rightCate {
   font-size: 12px;
 }
+.rightName {
+  font-size: 16px;
+}
+.rightCate {
+  font-size: 12px;
+}
+[rightcolor='Food'] .chartCaption:before {
+  background: #00a255;
+}
+[rightcolor='Education'] .chartCaption:before {
+  background: #00b95f;
+}
+[rightcolor='Work'] .chartCaption:before {
+  background: #00ce6a;
+}
+[rightcolor='Housing'] .chartCaption:before {
+  background: #00d96e;
+}
+[rightcolor='Health'] .chartCaption:before {
+  background: #00e374;
+}
+[rightcolor='Opinion and Expression'] .chartCaption:before {
+  background: #342f73;
+}
+[rightcolor='Assembly and Association'] .chartCaption:before {
+  background: #365692;
+}
+[rightcolor='Freedom from Execution'] .chartCaption:before {
+  background: #3778ae;
+}
+[rightcolor='Freedom from Torture'] .chartCaption:before {
+  background: #3598ca;
+}
+[rightcolor='Participate in Government'] .chartCaption:before {
+  background: #33b5e4;
+}
+[rightcolor='Freedom from Arbitrary Arrest'] .chartCaption:before {
+  background: #56d1f1;
+}
+[rightcolor='Freedom from Disappearance'] .chartCaption:before {
+  background: #72ecfe;
+}
 .specRightHeader[rightcolor='Food'] {
   color: #00a255;
 }
@@ -140,20 +182,20 @@
   color: #342f73;
 }
 .specRightHeader[rightcolor='Assembly and Association'] {
-  color: #00a255;
+  color: #365692;
 }
 .specRightHeader[rightcolor='Freedom from Execution'] {
-  color: #00a255;
+  color: #3778ae;
 }
 .specRightHeader[rightcolor='Freedom from Torture'] {
-  color: #00a255;
+  color: #3598ca;
 }
 .specRightHeader[rightcolor='Participate in Government'] {
-  color: #00a255;
+  color: #33b5e4;
 }
 .specRightHeader[rightcolor='Freedom from Arbitrary Arrest'] {
-  color: #00a255;
+  color: #56d1f1;
 }
 .specRightHeader[rightcolor='Freedom from Disappearance'] {
-  color: #00a255;
+  color: #72ecfe;
 }

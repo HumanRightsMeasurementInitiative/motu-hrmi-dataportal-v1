@@ -17,7 +17,7 @@ export default class RightsItem extends React.Component {
   render() {
     const { children } = this.props
     return (
-      <li className={styles.rightsItem} onClick={this.onClick}>
+      <li className={styles.rightsItem} onClick={this.onClick} rightcolor={children}>
         <div className={styles.chartCaption}>Right to {children}</div>
         <div className={styles.chartWrapper}></div>
       </li>

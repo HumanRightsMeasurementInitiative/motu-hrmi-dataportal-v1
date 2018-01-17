@@ -27,7 +27,7 @@ ul {
 :global(.column):first-child {
   flex: none;
   width: 20%;
-  max-width: 245px;
+  min-width: 245px;
 }
 :global(.column):nth-child(2) {
   flex: 1;
@@ -35,7 +35,7 @@ ul {
 :global(.column):last-child {
   flex: none;
   width: 20%;
-  max-width: 245px;
+  min-width: 245px;
 }
 
 :global(.arrowLink) {
