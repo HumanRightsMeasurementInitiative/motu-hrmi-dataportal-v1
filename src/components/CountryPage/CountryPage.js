@@ -5,6 +5,7 @@ import CountryItem from './CountryItem'
 import BarChartESR from '../BarChartESR/'
 import BarChartCPR from '../BarChartCPR/'
 import RadarChart from '../RadarChart'
+import DownloadIcon from '../DownloadIcon'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
 
@@ -92,7 +93,11 @@ export default class CountryPage extends React.Component {
                 onRightClick={this.setCurrRight}
               ></RadarChart>
             </ul>
-            <div ref="countryFooter">EachAxis represents a right. The longer ther axis, the better the country's peformance on the right.</div>
+            <div className={styles.countryFooter} ref='countryFooter'>
+              <div className={styles.downloadIcon}><DownloadIcon /></div>
+              <div className={styles.text}>Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.</div>
+              <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
+            </div>
           </div>
           <div className='column'>
             <div className={styles.columnRight} ref="columnRight">

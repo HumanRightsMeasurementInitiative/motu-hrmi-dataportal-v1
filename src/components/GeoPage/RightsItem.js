@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styles from './style.css'
 
 export default class RightsItem extends React.Component {
   static propTypes = {
@@ -16,7 +17,10 @@ export default class RightsItem extends React.Component {
   render() {
     const { children } = this.props
     return (
-      <li onClick={this.onClick}>Right to {children}</li>
+      <li className={styles.rightsItem} onClick={this.onClick}>
+        <div className={styles.chartCaption}>Right to {children}</div>
+        <div className={styles.chartWrapper}></div>
+      </li>
     )
   }
 }

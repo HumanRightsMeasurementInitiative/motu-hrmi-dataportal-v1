@@ -78,6 +78,29 @@
 .chartsContainer {
   overflow: hidden;
 }
+.chartsFooter {
+  position: relative;
+  padding: 20px 0 30px;
+  font-size: 12px;
+}
+.chartsFooter .small {
+  font-size: .9em;
+  color: #c5c5c6;
+}
+.downloadIcon {
+  position: absolute;
+  top: 26px;
+  height: 24px;
+  width: 24px;
+}
+.chartsFooter .source {
+  padding-left: 42px;
+  color: #c5c5c6;
+}
+.chartsFooter .text {
+  padding-left: 42px;
+  color: #8d8e90;
+}
 
 .rightInfo {
   padding: 0 24px 20px;

@@ -45,7 +45,6 @@
   color: #58595b;
 }
 
-
 .countriesList {
   padding: 10px 0;
   font-size: 12px;
@@ -54,9 +53,9 @@
   overflow: auto;
 }
 .countryItem {
-  margin: 4px 0;
-  padding-left: 30px;
-  line-height: 1.2em;
+  margin: 8px 0;
+  padding: 0 30px;
+  line-height: 1.1em;
 }
 .countryName {
   display: inline-block;
@@ -66,6 +65,29 @@
 .countryName.selected {
   font-weight: 700;
   color: #58595b;
+}
+.countryFooter {
+  position: relative;
+  padding: 0 0 30px;
+  font-size: 12px;
+}
+.countryFooter .small {
+  font-size: .9em;
+  color: #c5c5c6;
+}
+.downloadIcon {
+  position: absolute;
+  top: 6px;
+  height: 24px;
+  width: 24px;
+}
+.countryFooter .source {
+  padding-left: 42px;
+  color: #c5c5c6;
+}
+.countryFooter .text {
+  padding-left: 42px;
+  color: #8d8e90;
 }
 
 .columnRight {

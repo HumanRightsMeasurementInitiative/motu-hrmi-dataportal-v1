@@ -4,6 +4,7 @@ import SubTopNav from '../SubTopNav/'
 import RegionItem from '../RegionItem'
 import RightsItem from './RightsItem'
 import RadarChart from '../RadarChart'
+import DownloadIcon from '../DownloadIcon'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
 
@@ -42,8 +43,12 @@ export default class GeoPage extends React.Component {
     if (right !== this.props.urlSegs.right) {
       this.props.urlPush(segsToUrl({ ...this.props.urlSegs, right: right }))
     } else {
-      this.props.urlPush(segsToUrl({ ...this.props.urlSegs, right: 'all' }))
+      this.setRightToAll()
     }
+  }
+
+  setRightToAll = () => {
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, right: 'all' }))
   }
 
   setExploreBy = (right) => {
@@ -107,25 +112,31 @@ export default class GeoPage extends React.Component {
                 {countryItem}
               </div>
               <div className={styles.chartsFooter} ref='chartsFooter'>
-                <div>Higher scores indicate greater respect for this human right.</div>
-                <div>Source: 2018 Human Rights Measurement Initiative(HRMI) data-set, https://humanrightsmeasurement.org/</div>
+                <div className={styles.downloadIcon}><DownloadIcon /></div>
+                <div className={styles.text}>Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.</div>
+                <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
               </div>
             </div>
           </div>
           <div className='column'>
             <div className={styles.columnRight}>
-              { ESRItems.length !== 0 && <div>ESR</div> }
-              <ul>
-                {ESRItems}
-              </ul>
-              { CPRItems.length !== 0 && <div>CPR</div> }
-              <ul>
-                {CPRItems}
-              </ul>
-              { urlSegs.right !== 'all' &&
+              { urlSegs.right === 'all' &&
                 <div>
-                  <div>
-                    { ESRItems.length === 0 ? <div>Civil and Political Rights</div> : <div>Ecomonic and Social Rights</div> }
+                  <div className={styles.esrTitle}>Economic and Social Rights</div>
+                  <ul className={styles.esrList}>
+                    {ESRItems}
+                  </ul>
+                  <div className={styles.cprTitle}>Civil and Political Rights</div>
+                  <ul className={styles.cprList}>
+                    {CPRItems}
+                  </ul>
+                </div>
+              }
+              { urlSegs.right !== 'all' &&
+                <div className={styles.specRightInfo}>
+                  <div className={styles.specRightHeader} onClick={this.setRightToAll} rightcolor={urlSegs.right}>
+                    <div className={styles.rightName}>Right to {urlSegs.right}</div>
+                    <div className={styles.rightCate}>{ESRItems.length === 0 ? 'Civil and Political Rights' : 'Ecomonic and Social Rights'}</div>
                   </div>
                   <div className='arrowLink'>
                     <div className='text'>Explore this rights in:</div>

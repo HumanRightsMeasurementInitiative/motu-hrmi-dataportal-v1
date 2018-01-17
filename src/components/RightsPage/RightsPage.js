@@ -4,6 +4,7 @@ import SubTopNav from '../SubTopNav/'
 import RightsItem from './RightsItem'
 import RegionSelector from './RegionSelector'
 import RightBarchart from '../RightBarchart/'
+import DownloadIcon from '../DownloadIcon'
 import { segsToUrl, getRegionName, joinClassName as jcn } from '../utils'
 import styles from './style.css'
 
@@ -111,9 +112,10 @@ export default class RightsPage extends React.Component {
                 onItemClick={this.setCurrCountry}>
               </RightBarchart>
             </div>
-            <div ref="chartsFooter">
-              <div>SOURCE: 2018 HRMI DATASET, https://</div>
-              <div>Each axis represents a right. The longer the axis, the better the conuntry's performance on that right.</div>
+            <div className={styles.chartsFooter} ref='chartsFooter'>
+              <div className={styles.downloadIcon}><DownloadIcon /></div>
+              <div className={styles.text}>Hight Scores indicate greater respect for this human right.</div>
+              <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
             </div>
           </div>
           <div className='column'>

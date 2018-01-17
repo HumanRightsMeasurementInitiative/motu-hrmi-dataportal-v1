@@ -3,9 +3,10 @@
   height: 100%;
 }
 
-.columnLeft,
-.columnMiddle,
-.columnRight {
+.columnLeft {
+  padding: 0 0 0 24px;
+}
+.columnMiddle{
   padding: 0 24px;
 }
 
@@ -39,12 +40,120 @@
   cursor: default;
 }
 .chartsFooter {
-  padding-top: 20px;
-  padding-bottom: 32px;
+  position: relative;
+  padding: 20px 0 30px;
   font-size: 12px;
+}
+.chartsFooter .small {
+  font-size: .9em;
+  color: #c5c5c6;
+}
+.downloadIcon {
+  position: absolute;
+  top: 26px;
+  height: 24px;
+  width: 24px;
+}
+.chartsFooter .source {
+  padding-left: 42px;
+  color: #c5c5c6;
+}
+.chartsFooter .text {
+  padding-left: 42px;
+  color: #8d8e90;
 }
 
 .columnRight {
+  padding: 0 16px 0 22px;
   height: 100%;
   overflow: auto;
+}
+.esrTitle,
+.cprTitle {
+  padding-left: 14px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.esrTitle {
+  color: #00b95f;
+}
+.cprTitle {
+  color: #2e65a1;
+}
+.esrList {
+  margin-bottom: 16px;
+}
+.rightsItem {
+  cursor: pointer;
+}
+.chartCaption {
+  position: relative;
+  margin: 6px 0;
+  padding-left: 14px;
+  font-size: 12px;
+  color: #6b6c6e;
+  line-height: 1em;
+}
+.chartCaption:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 0;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #eee;
+}
+.chartWrapper {
+  height: 18px;
+  border: 1px solid #eee;
+}
+/*.esrRightHeader {
+  color: #00b95f;
+}
+.cprRightHeader {
+  color: #2e65a1;
+}*/
+.rightName {
+  font-size: 16px;
+}
+.rightCate {
+  font-size: 12px;
+}
+.specRightHeader[rightcolor='Food'] {
+  color: #00a255;
+}
+.specRightHeader[rightcolor='Education'] {
+  color: #00b95f;
+}
+.specRightHeader[rightcolor='Work'] {
+  color: #00ce6a;
+}
+.specRightHeader[rightcolor='Housing'] {
+  color: #00d96e;
+}
+.specRightHeader[rightcolor='Health'] {
+  color: #00e374;
+}
+.specRightHeader[rightcolor='Opinion and Expression'] {
+  color: #342f73;
+}
+.specRightHeader[rightcolor='Assembly and Association'] {
+  color: #00a255;
+}
+.specRightHeader[rightcolor='Freedom from Execution'] {
+  color: #00a255;
+}
+.specRightHeader[rightcolor='Freedom from Torture'] {
+  color: #00a255;
+}
+.specRightHeader[rightcolor='Participate in Government'] {
+  color: #00a255;
+}
+.specRightHeader[rightcolor='Freedom from Arbitrary Arrest'] {
+  color: #00a255;
+}
+.specRightHeader[rightcolor='Freedom from Disappearance'] {
+  color: #00a255;
 }
