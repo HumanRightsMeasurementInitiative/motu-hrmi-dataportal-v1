@@ -29,7 +29,7 @@ export default class RegionSelector extends React.Component {
     const { data, urlSegs } = this.props
 
     const regions = Object.keys(data).map((item, i) => (
-      <RegionItem key={i} code={item} onItemClick={this.onItemClick} selected={item === urlSegs.region} closePopup={this.toggleRegionDropdown} whiteBorder={true}>{getRegionName(item)}</RegionItem>
+      <RegionItem key={i} index={i} code={item} onItemClick={this.onItemClick} selected={item === urlSegs.region} closePopup={this.toggleRegionDropdown} whiteBorder={true}>{getRegionName(item)}</RegionItem>
     ))
 
     const regionSelector = jcn({

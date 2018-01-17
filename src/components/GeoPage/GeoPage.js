@@ -67,7 +67,7 @@ export default class GeoPage extends React.Component {
     const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
 
     const regionItems = Object.keys(data).map((item, i) => (
-      <RegionItem key={i} code={item} onItemClick={this.setRegion} selected={item === urlSegs.region}>{getRegionName(item)}</RegionItem>
+      <RegionItem key={i} index={i} code={item} onItemClick={this.setRegion} selected={item === urlSegs.region}>{getRegionName(item)}</RegionItem>
     ))
     const countryItem = data[urlSegs.region].map((item, i) => (
       <RadarChart

@@ -2,7 +2,20 @@
   padding: 10px 0;
   font-size: 16px;
   border-bottom: 3px solid transparent;
+  line-height: 18px;
   cursor: default;
+}
+[data-width="90px"] {
+  max-width: 90px;
+}
+[data-width="110px"] {
+  max-width: 110px;
+}
+[data-width="126px"] {
+  max-width: 126px;
+}
+[data-width="160px"] {
+  max-width: 160px;
 }
 .borderLine {
   border-bottom: 3px solid transparent;
