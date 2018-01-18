@@ -7,7 +7,8 @@
 .navItem {
   display: inline-block;
   vertical-align: top;
-  margin: 0 5px;
+  position: relative;
+  margin: 0 10px;
   color: #262261;
   letter-spacing: .025em;
 }
@@ -16,14 +17,13 @@
 }
 
 .menuLabel {
-  padding: 0 10px;
-  font-size: 14px;
+  padding: 2px 6px 6px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 30px;
   cursor: pointer;
 }
 .menuLabel.active {
-  background: #262261;
+  background: #342f72;
   color: #fff;
 }
 .withArrow {
@@ -31,13 +31,13 @@
 }
 .withArrow {
   position: relative;
-  padding-right: 26px;
+  padding-right: 24px;
 }
 .withArrow:after {
   content: '';
   position: absolute;
   right: 10px;
-  margin-top: 12px;
+  margin-top: 8px;
   border-top: 6px solid #25a9e0;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
@@ -46,53 +46,83 @@
 .menuDropdown {
   position: absolute;
   z-index: 1;
-  top: 30px;
-  padding: 40px 30px 20px;
-  max-width: 360px;
-  background: #262261;
+  top: 28px;
+  padding: 40px 10px 30px;
+  background: #342f72;
+  font-size: 14px;
   color: #fff;
+  overflow: hidden;
 }
-.closeBtn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 20px;
+[dropdown='About the initiative'] {
+  width: 420px;
 }
-.menuDropdown .title {
-  margin-top: 0;
-  font-size: 20px;
+[dropdown='Methodology'] {
+  right: 0;
+  width: 428px;
+  height: 495px;
+}
+[dropdown='How To Use'] {
+  right: 0;
+  width: 450px;
+  height: 495px;
+}
+.menuDropdown .dropdownWrapper {
+  padding: 0 20px;
+  height: 100%;
+  overflow: auto;
+}
+.dropdownWrapper::-webkit-scrollbar {
+  background: transparent;
+  width: 4px;
+}
+.dropdownWrapper::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 4px;
+}
+.menuDropdown a {
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.6em;
 }
 .menuDropdown .para {
-  font-size: 14px;
+  margin: 0 0 12px;
   line-height: 1.4em;
 }
-.menuDropdown .link {
-  position: relative;
-  margin-top: 30px;
-  padding-right: 16px;
-  font-size: 12px;
-  line-height: 1em;
-  text-align: right;
+.menuDropdown .listLabel {
+  margin: 0;
 }
-.menuDropdown .link:after {
+.menuDropdown .list {
+  padding-bottom: 12px;
+}
+.menuDropdown .listEl {
+  padding-left: 20px;
+}
+.menuDropdown .listEl:before {
+  content: '\2022';
+  margin-right: 4px;
+}
+.menuDropdown .linkWrapper {
+  position: relative;
+  padding-left: 20px;
+}
+.menuDropdown .link:before {
   content: '';
   position: absolute;
-  right: 0;
+  left: 8px;
+  bottom: .2em;
   border-left: 8px solid #fff;
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
 }
-.menuDropdown .link a {
-  color: #fff;
+.list .linkWrapper {
+  padding-left: 0;
 }
 
 .menuDropdownList {
   position: absolute;
-  top: 30px;
+  top: 28px;
+  width: 100%;
   color: #fff;
-}
-.navItem:last-child .menuDropdownList {
-  width: 155px;
 }
 .dropdownUl {
   position: relative;

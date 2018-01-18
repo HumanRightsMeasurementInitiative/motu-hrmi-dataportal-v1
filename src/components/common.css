@@ -28,6 +28,7 @@ ul {
   flex: none;
   width: 20%;
   min-width: 245px;
+  max-width: 400px;
 }
 :global(.column):nth-child(2) {
   flex: 1;
@@ -36,6 +37,7 @@ ul {
   flex: none;
   width: 20%;
   min-width: 245px;
+  max-width: 400px;
 }
 
 :global(.arrowLink) {
