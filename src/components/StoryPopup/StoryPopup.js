@@ -23,7 +23,6 @@ export default class StoryPopup extends React.Component {
 
   componentDidMount() {
     const { storyPopup, graph, countryName, langSelector, columnLeft, columnRight } = this.refs
-    console.log(this.refs.storyPopup.clientHeight)
     graph.style.height = storyPopup.offsetHeight - langSelector.offsetHeight - countryName.offsetHeight + 'px'
     graph.style.width = graph.offsetHeight * 1.2 + 'px'
     columnRight.style.width = storyPopup.offsetWidth - columnLeft.offsetWidth - 2 + 'px'
