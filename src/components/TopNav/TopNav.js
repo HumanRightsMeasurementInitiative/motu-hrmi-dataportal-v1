@@ -60,7 +60,7 @@ export default class TopNav extends React.Component {
               <p className={styles.para}></p>
             </li>
             <li className={styles.listEl}>
-              <span>See the HRMI expert survey for civil and political rights:</span>
+              <span>See the HRMI expert survey for civil and political rights (please note this is a link to a preview of the survey only, and any responses you make will not be collected):</span>
               <div className={styles.linkWrapper}><a href="https://humanrightsmeasurement.org/methodology/survey/" target="_blank">https://humanrightsmeasurement.org/methodology/ survey/</a></div>
               <p className={styles.para}></p>
             </li>
