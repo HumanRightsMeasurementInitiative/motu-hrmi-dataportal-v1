@@ -1,7 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import LangSelector from '../LangSelector/'
-import CloseIcon from '../CloseIcon'
 import NavItem from './NavItem'
 import styles from './styles.css'
 
@@ -19,7 +17,7 @@ export default class TopNav extends React.Component {
     }
   }
 
-  closeDropdown = () => {
+  startDownload = () => {
     this.props.updateDropdown('closed')
   }
 
@@ -27,10 +25,7 @@ export default class TopNav extends React.Component {
     const { currentDropdown } = this.props
     return (
       <div className={styles.nav}>
-        {/* <div className={styles.navItem}><LangSelector /></div> */}
         <NavItem label={'About the initiative'} onLabelClick={this.onNavItemClicked} currentDropdown={currentDropdown}>
-          {/*  <div className={styles.closeBtn} onClick={this.closeDropdown}><CloseIcon color='#fff' /></div>
-          <h2 className={styles.title}>About the iniative</h2> */}
           <p className={styles.para}>The Human Rights Measurement Initiative (HRMI) is a unique collaborative venture between human rights practitioners, researchers, academics, and other human rights supporters.</p>
           <p className={styles.para}>Our goal is to produce the first and best comprehensive set of metrics for tracking the human rights performance of countries.</p>
           <p className={styles.listLabel}>Our 2018 data-set includes:</p>
@@ -45,8 +40,6 @@ export default class TopNav extends React.Component {
           <div className={styles.linkWrapper}><a className={styles.link} href="https://humanrightsmeasurement.org/methodology/overview/" target="_blank">Visit the main HRMI website</a></div>
         </NavItem>
         <NavItem label={'Methodology'} onLabelClick={this.onNavItemClicked} currentDropdown={currentDropdown}>
-          {/*  <div className={styles.closeBtn} onClick={this.closeDropdown}><CloseIcon color='#fff' /></div>
-          <h2 className={styles.title}>Methodology</h2> */}
           <p className={styles.para}>There is no one-size-fits-all methodology for measuring human rights performance, so we use different methodologies that are best tailored to each area. Wherever possible – e.g. in the area of economic and social rights – our methodologies use objective statistics produced by national governments and international agencies.</p>
           <p className={styles.para}>For civil and political rights, where violations often take place in secret and reporting is very patchy, we use an expert survey approach to get our information directly from the human rights experts who are monitoring events in each country.</p>
           <div>Learn more:</div>
@@ -74,8 +67,6 @@ export default class TopNav extends React.Component {
           </ul>
         </NavItem>
         <NavItem label={'How To Use'} onLabelClick={this.onNavItemClicked} currentDropdown={currentDropdown}>
-          {/*  <div className={styles.closeBtn} onClick={this.closeDropdown}><CloseIcon color='#fff' /></div>
-          <h2 className={styles.title}>Methodology</h2> */}
           <p className={styles.para}>
             There are lots of ways that you can use Human Rights Measurement Initiative (HRMI) data.
             <br />
@@ -92,11 +83,9 @@ export default class TopNav extends React.Component {
           <p className={styles.para}>We want to make our work freely available to everyone, so all HRMI data, charts, and text are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 copyright licence</a>. This means that you are welcome to reuse what we have created as long as you attribute the Human Rights Measurement Initiative and link back to <a href="https://humanrightsmeasurement.org/">our website</a>.</p>
           <p className={styles.para}>In charts, where space is limited, please reference the source as follows:<br />Source: 2018 Human Rights Measurement Initiative (HRMI) dataset <a href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></p>
         </NavItem>
-        <NavItem label={'Download Dataset'} onLabelClick={this.onNavItemClicked} currentDropdown={currentDropdown}>
-          <ul className={styles.dropdownUl}>
-            <li className={styles.dropdownLi}>Dataset 1</li>
-            <li className={styles.dropdownLi}>Dataset 2</li>
-          </ul>
+        <NavItem label={'Download Dataset'} onLabelClick={this.onNavItemClicked} currentDropdown={currentDropdown} onDownloadClick={this.startDownload}>
+          <p className={styles.para}>You are welcome to use data and charts produced by the Human Rights Measurement Initiative (HRMI) for your advocacy or research. However, we ask that you take care to ensure that you understand the data and what they are showing, so that you do not misrepresent them.</p>
+          <p className={styles.para}>Please attribute the Human Rights Measurement Initiative and link back to our website (https://humanrightsmeasurement.org/).</p>
         </NavItem>
       </div>
     )

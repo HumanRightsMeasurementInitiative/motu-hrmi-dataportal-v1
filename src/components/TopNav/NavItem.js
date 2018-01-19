@@ -9,18 +9,29 @@ export default class NavItem extends React.Component {
     onLabelClick: PropTypes.func.isRequired,
     currentDropdown: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
+    onDownloadClick: PropTypes.func,
   }
 
   componentDidMount() {
     document.addEventListener('click', this.documentClick)
     this.refs.labels.addEventListener('click', this.onClickHanlder)
-    this.refs.dropdown.addEventListener('click', this.removePropogation)
+    if (this.refs.agreeBtn) this.refs.agreeBtn.addEventListener('click', this.onDownloadClick)
+    if (this.props.label !== 'Download Dataset') {
+      this.refs.dropdown.addEventListener('click', this.removePropogation)
+    } else {
+      this.refs.dropdownWrapper.addEventListener('click', this.removePropogation)
+    }
   }
 
   componentWillUnmount() {
     document.removeEventListener('click', this.documentClick)
     this.refs.labels.removeEventListener('click', this.onClickHanlder)
-    this.refs.dropdown.removeEventListener('click', this.removePropogation)
+    if (this.refs.agreeBtn) this.refs.agreeBtn.removeEventListener('click', this.onDownloadClick)
+    if (this.props.label !== 'Download Dataset') {
+      this.refs.dropdown.removeEventListener('click', this.removePropogation)
+    } else {
+      this.refs.dropdownWrapper.removeEventListener('click', this.removePropogation)
+    }
   }
 
   documentClick = () => {
@@ -40,13 +51,15 @@ export default class NavItem extends React.Component {
     this.props.label === this.props.currentDropdown
   )
 
+  onDownloadClick = () => {
+    this.props.onDownloadClick()
+  }
+
   render() {
     const { label, currentDropdown, children } = this.props
-
     const labelClass = jcn({
       'menuLabel': true,
       'active':  currentDropdown === label,
-      'withArrow': label === 'Download Dataset',
     }, styles)
 
     const dropdownClassNames = jcn({
@@ -59,8 +72,11 @@ export default class NavItem extends React.Component {
       <div className={styles.navItem}>
         <div className={labelClass} ref='labels'>{label}</div>
         <div className={dropdownClassNames} dropdown={label} ref='dropdown'>
-          <div className={styles.dropdownWrapper}>
+          <div className={styles.dropdownWrapper} ref='dropdownWrapper'>
             {children}
+            { label === 'Download Dataset' &&
+              <div className={styles.agreeBtnWrapper}><div className={styles.agreeBtn} ref='agreeBtn'>AGREE</div></div>
+            }
           </div>
         </div>
       </div>
