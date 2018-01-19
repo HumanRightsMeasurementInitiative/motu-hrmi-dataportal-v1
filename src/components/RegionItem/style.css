@@ -3,7 +3,7 @@
   font-size: 16px;
   border-bottom: 3px solid transparent;
   line-height: 18px;
-  cursor: default;
+  cursor: pointer;
 }
 [data-width="90px"] {
   max-width: 90px;

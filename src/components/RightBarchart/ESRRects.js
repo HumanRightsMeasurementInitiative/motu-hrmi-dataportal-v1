@@ -23,7 +23,7 @@ export default class CountryName extends React.Component {
     const { translateX, translateY, highPos, corePos, maxValue, minValue, currCountry, country } = this.props
     const isActive = currCountry && currCountry.name === country.name
     return (
-      <g transform={'translate(' + translateX + ', ' + translateY + ')'} onClick={this.onClick}>
+      <g transform={'translate(' + translateX + ', ' + translateY + ')'} onClick={this.onClick} cursor='pointer'>
         { highPos > 0 &&
           <rect height={highPos} width='6' x='-3' fill={isActive ? '#b2eacf' : '#eee'}></rect>
         }

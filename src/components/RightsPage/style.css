@@ -65,7 +65,7 @@
   font-size: 14px;
   color: #9b9b9d;
   line-height: 1em;
-  cursor: default;
+  cursor: pointer;
 }
 .borderLine {
   border-bottom: 3px solid transparent;

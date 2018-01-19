@@ -22,7 +22,7 @@ export default class RadarChartItem extends React.Component {
     const angleSlice = Math.PI / 6
 
     return (
-      <g transform={'translate(' + translateX + ',' + translateY + ')'} onClick={this.onClick}>
+      <g transform={'translate(' + translateX + ',' + translateY + ')'} onClick={this.onClick} cursor='pointer'>
         <text
           x={r * Math.cos(angleSlice * index)}
           y={r * Math.sin(angleSlice * index)}

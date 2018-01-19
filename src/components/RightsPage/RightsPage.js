@@ -25,6 +25,7 @@ export default class RightsPage extends React.Component {
   }
 
   componentDidMount() {
+    this.props.closeStoryMode()
     this.refs.content.style.height = this.refs.page.offsetHeight - 110 + 'px'
     this.refs.rightList.style.height = this.refs.content.offsetHeight - this.refs.regionSelector.offsetHeight + 'px'
     this.refs.charts.style.height = this.refs.content.offsetHeight - this.refs.chartsHeader.offsetHeight - this.refs.chartsFooter.offsetHeight + 'px'

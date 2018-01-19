@@ -72,7 +72,8 @@ export default class ESRRightBar extends React.Component {
             onClick={this.onCountryClick}
             onMouseOver={this.onMouseOver}
             onMouseOut={this.onMouseOut}
-            transform={'translate(' + chartWidth / 2 + ',' + (r * 2 + margin.top) + ')'}>
+            transform={'translate(' + chartWidth / 2 + ',' + (r * 2 + margin.top) + ')'}
+            cursor='pointer'>
             <text y='22' fontSize='12' textAnchor='middle' style={{ 'textTransform': 'uppercase' }}>{country.name}</text>
           </g>
         }

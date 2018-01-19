@@ -60,7 +60,7 @@
 .countryName {
   display: inline-block;
   line-height: 1em;
-  cursor: default;
+  cursor: pointer;
 }
 .countryName.selected {
   font-weight: 700;
