@@ -88,7 +88,7 @@
 
 .columnRight {
   float: left;
-  padding: 80px 50px 80px 0;
+  padding: 80px 40px 80px 0;
   height: 100%;
   font-size: 16px;
   overflow: auto;
@@ -155,16 +155,51 @@
   display: block;
   clear: both;
 }
+.radarCol {
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px;
+  width: 50%;
+  text-align: center;
+}
+.fakeRadarRegion {
+  font-size: 14px;
+}
+.fakeRadarCountry {
+  font-size: 16px;
+  font-weight: 600;
+}
+.fakeRadar {
+  padding-top: 100%;
+  width: 100%;
+  background: #eee;
+  border-radius: 50%;
+  overflow: hidden;
+}
 .links {
   position: absolute;
   right: 0;
   width: 160px;
 }
 .topLink .links {
-  top: 24px;
+  top: 0;
 }
 .bottomLink .links {
-  bottom: 24px;
+  bottom: 0;
+}
+.sectionSelector {
+  padding: 20px 0 50px;
+  font-size: 16px;
+  text-align: center;
+}
+.sectionSelector .title,
+.sectionSelector .subtitle {
+  margin: 0;
+}
+.sectionSelector .subtitle {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 400;
 }
 /*.fixedContainer {
   position: absolute;

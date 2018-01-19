@@ -11,6 +11,7 @@ export default class SectionSelector extends React.Component {
   }
 
   changeUrl = (section) => {
+    this.props.closeStoryMode()
     if (section === 'Geography') {
       this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: section, right: 'all', country: undefined }))
     } else if (this.props.urlSegs.right === 'all' || this.props.urlSegs.right === undefined) {

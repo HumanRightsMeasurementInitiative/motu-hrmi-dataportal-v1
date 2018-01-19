@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import SectionSelector from './SectionSelector'
-import { urlPush } from '../actions'
+import { urlPush, closeStoryMode } from '../actions'
 
 const mapStateToProps = (state) => (
   {
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => (
 const mapDispatchToProps = (dispatch) => (
   {
     urlPush: url => dispatch(urlPush(url)),
+    closeStoryMode: () => dispatch(closeStoryMode()),
   }
 )
 
