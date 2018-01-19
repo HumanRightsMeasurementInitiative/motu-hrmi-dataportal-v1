@@ -3,15 +3,31 @@ import PropTypes from 'prop-types'
 import styles from './style.css'
 import LangSelector from '../LangSelector'
 import SectionSelector from '../SectionSelector'
+import RadarChart from '../RadarChart'
+import RightBarchart from '../RightBarchart/'
 
 export default class StoryPopup extends React.Component {
   static propTypes = {
+    data: PropTypes.object.isRequired,
     closeStoryMode: PropTypes.func.isRequired,
   }
 
+  constructor() {
+    super()
+    this.state = {
+      radarHeight: 0,
+      radarWidth: 0,
+      barchartWidth: 0,
+    }
+  }
+
   componentDidMount() {
-    const { container, graph, intro } = this.refs
-    graph.style.height = container.clientHeight - intro.clientHeight - 80 + 'px'
+    const { storyPopup, graph, countryName, langSelector, columnLeft, columnRight } = this.refs
+    console.log(this.refs.storyPopup.clientHeight)
+    graph.style.height = storyPopup.offsetHeight - langSelector.offsetHeight - countryName.offsetHeight + 'px'
+    graph.style.width = graph.offsetHeight * 1.2 + 'px'
+    columnRight.style.width = storyPopup.offsetWidth - columnLeft.offsetWidth - 2 + 'px'
+    this.setState({ radarHeight: graph.offsetHeight, radarWidth: graph.offsetWidth, barchartWidth: columnRight.offsetWidth - 50 })
   }
 
   closeStoryMode = () => {
@@ -20,21 +36,32 @@ export default class StoryPopup extends React.Component {
     this.refs.storyPopup.style.top = '100%'
     this.timer = setTimeout(() => {
       this.props.closeStoryMode()
-    }, 1000)
+    }, 200)
   }
 
   render() {
+    const { data } = this.props
+    const ESRs = ['Food', 'Education', 'Work', 'Housing', 'Health']
+    const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
+
     return (
       <div className={styles.storyWrapper} ref='storyWrapper'>
         <div className={styles.storyPopup} ref='storyPopup'>
           <div className={styles.popupBody}>
-            <div className={styles.columnLeft} ref='container'>
-              <div className={styles.fixedContainer}>
-                <div className={styles.graph} ref='graph'></div>
-                <div ref='intro'>
-                  <h4 className={styles.countryName}>Brunei</h4>
-                  <p className={styles.countryIntro}>This is a story about rights in Brunei, one of our pilot countries for the Human Rights Measuerement Initiative.</p>
-                  <p className={styles.countryIntro}>Here there will be a short introduction on the country and the general context, wich will be narrated in more detail in the long scroll on the right.</p>
+
+            <div className={styles.columnLeft} ref='columnLeft'>
+              <div className={styles.langSelector} ref='langSelector'><LangSelector /></div>
+              <div className={styles.graph} ref='graph'>
+                <RadarChart
+                  chartHeight={this.state.radarHeight}
+                  chartWidth={this.state.radarWidth}
+                  currRight={'all'}
+                  rights={ESRs.concat(CPRs)}
+                ></RadarChart>
+              </div>
+              <div ref='countryName'>
+                <h4 className={styles.countryName}>MEXICO</h4>
+                <div className={styles.linkWrapper}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
                     <div className='text underline'>in Brunei</div>
@@ -42,46 +69,137 @@ export default class StoryPopup extends React.Component {
                 </div>
               </div>
             </div>
-            <div className={styles.columnRight}>
-              <div className={styles.article}>
-                <section className={styles.section}>
-                  <h1 className={styles.title}>This is a title of the article</h1>
-                  <p className={styles.paragraph}>Right to educationThis is a long scroll article about rights in Brunei. It will explain the economic, social, cultural and political context of the country, highlighting how different rights are perceived and experienced in the country, and how some relevant events have influenced the evolution of specific rights.</p>
-                  <p className={styles.paragraph}>Images, charts and other kind of media could be used in the article, and several links embedded in the article will lead the user to different sections of the site.</p>
-                </section>
-                <section className={styles.section}>
-                  <h5 className={styles.subtitle}>Right to education</h5>
-                  <p className={styles.paragraph}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-                  <div className={styles.links}>
-                    <div className='arrowLink'>
-                      <div className='text'>Explore all rights:</div>
-                      <div className='text underline'>in East Asia and the Pacific</div>
-                    </div>
+
+            <div className={styles.columnRight} ref='columnRight'>
+              <section>
+                <h1 className={styles.articleTitle}>Respect for Human Rights in Mexico is far worse than it should be</h1>
+              </section>
+              <section>
+                <p className={styles.boldText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <p className={styles.boldText}>But HRMI's new data measuring respect for civil and political rights in Mexico highlights that this situation is not normal at all.</p>
+              </section>
+              <section>
+                <div className={styles.imageWrapper}>
+                  <img src="https://erconsult.com.au/wp-content/uploads/2015/04/placeholder-600x400.png" alt="article image"/>
+                  <div className={styles.imageLegend}>[Include some human interest story somewhere quite high up in the story - even to start with - e.g. a story about a particaular journalist who was killed / disppeared]</div>
+                  <div className={styles.imageSource}>PHOTO SOURCE / CREDITS</div>
+                </div>
+              </section>
+              <section>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+              </section>
+              <section>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+              </section>
+              <section>
+                <div className={styles.chartCaption}>Right to Freedom from Disappearance</div>
+                <div className={styles.chartSubTitle}>scores for all 13 countries in HRMI pilot sample</div>
+                <RightBarchart
+                  isESR={false}
+                  currRight={'Freedom from Disappearance'}
+                  data={data.OECD}
+                  chartHeight={338}
+                  chartWidth={this.state.barchartWidth}>
+                </RightBarchart>
+              </section>
+              <section>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <div className={styles.links}>
+                  <div className='arrowLink'>
+                    <div className='text'>Explore all rights:</div>
+                    <div className='text underline'>in East Asia and the Pacific</div>
                   </div>
-                </section>
-                <section className={styles.section}>
-                  <div className={styles.articleGraph}></div>
-                </section>
-                <section className={styles.section}>
-                  <p className={styles.paragraph}>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                </section>
-                <section className={styles.section}>
-                  <div className={styles.articleImg}>
-                    <div className={styles.image}></div>
-                    <div className={styles.desc}>This is a picture of a great strike for this right. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation</div>
+                </div>
+              </section>
+              <section>
+                <div className={styles.cprCaption}>Right to Participate in Government</div>
+                <div className={styles.cprSubTitle}>scores for all 13 countries in HRMI pilot sample</div>
+                <RightBarchart
+                  isESR={false}
+                  currRight={'Participate in Government'}
+                  data={data.OECD}
+                  chartHeight={338}
+                  chartWidth={this.state.barchartWidth}>
+                </RightBarchart>
+              </section>
+              <section>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <div className={styles.links}>
+                  <div className='arrowLink'>
+                    <div className='text'>Explore all rights:</div>
+                    <div className='text underline'>in East Asia and the Pacific</div>
                   </div>
-                </section>
-                <section className={styles.section}>
-                  <p className={styles.paragraph}>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                </section>
-                <section className={styles.section}>
-                  <h5 className={styles.subtitle}>This is end of the story</h5>
-                  <SectionSelector title='Explore all the dataset:' />
-                </section>
-              </div>
+                </div>
+              </section>
+              <section>
+                <div className={styles.esrCaption}>Economic and Social Rights</div>
+              </section>
+              <section>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+              </section>
+              <section>
+                <div className={styles.lineChart}><img src="" alt=""/></div>
+              </section>
+              <section>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+              </section>
+              <section>
+                <div className={styles.esrCaption}>Right to Education</div>
+                <div className={styles.esrSubTitle}>Mexico compared to rest of Latin America</div>
+                <RightBarchart
+                  isESR={true}
+                  currRight={'Education'}
+                  data={data.OECD}
+                  chartHeight={338}
+                  chartWidth={this.state.barchartWidth}
+                  currCountry={{ name: 'Mexico', code: 'MEX' }}
+                  >
+                </RightBarchart>
+              </section>
+              <section>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <div className={styles.links}>
+                  <div className='arrowLink'>
+                    <div className='text'>Explore all rights:</div>
+                    <div className='text underline'>in East Asia and the Pacific</div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div className={styles.esrCaption}>Right to Education</div>
+                <div className={styles.radarWrapper}></div>
+              </section>
+              <section className={styles.bottomLink}>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <p className={styles.normalText}>Media Stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has vegun to think they are normal.</p>
+                <div className={styles.links}>
+                  <div className='arrowLink'>
+                    <div className='text'>Explore all rights:</div>
+                    <div className='text underline'>in East Asia and the Pacific</div>
+                  </div>
+                  <div className='arrowLink'>
+                    <div className='text'>Explore all rights:</div>
+                    <div className='text underline'>in East Asia and the Pacific</div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div className={styles.radarWrapper}></div>
+              </section>
+
+              <section className={styles.section}>
+                <h5 className={styles.subtitle}>This is end of the story</h5>
+                <SectionSelector title='Explore all the dataset:' />
+              </section>
             </div>
           </div>
-          <div className={styles.langSelector}><LangSelector /></div>
           <div className={styles.closeBtn} onClick={this.closeStoryMode}></div>
         </div>
       </div>

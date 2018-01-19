@@ -19,7 +19,7 @@ export default class LangSelector extends React.Component {
   componentDidMount() {
     document.addEventListener('click', this.onClick)
     this.refs.toggleBtn.addEventListener('click', this.toggleDropdown)
-    this.refs.options.style.left = this.refs.text.offsetWidth + 10 + 'px'
+    this.refs.options.style.left = this.refs.text.offsetWidth + 'px'
   }
 
   componentWillUnMount() {

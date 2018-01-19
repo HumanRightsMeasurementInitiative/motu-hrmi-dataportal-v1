@@ -13,7 +13,7 @@ export default class ESRRightBar extends React.Component {
     chartWidth: PropTypes.number.isRequired,
     data: PropTypes.array.isRequired,
     currCountry: PropTypes.object,
-    onItemClick: PropTypes.func.isRequired,
+    onItemClick: PropTypes.func,
   }
 
   render() {

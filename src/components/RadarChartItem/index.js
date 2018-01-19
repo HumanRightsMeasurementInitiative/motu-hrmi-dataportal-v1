@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class CountryItem extends React.Component {
+export default class RadarChartItem extends React.Component {
   static propTypes = {
     r: PropTypes.number.isRequired,
     index: PropTypes.number.isRequired,
@@ -9,7 +9,7 @@ export default class CountryItem extends React.Component {
     rightName: PropTypes.string.isRequired,
     translateX: PropTypes.number.isRequired,
     translateY: PropTypes.number.isRequired,
-    onRightClick: PropTypes.func.isRequired,
+    onRightClick: PropTypes.func,
   }
 
   onClick = () => {

@@ -6,7 +6,7 @@ export default class CountryName extends React.Component {
     children: PropTypes.node.isRequired,
     currCountry: PropTypes.object,
     country: PropTypes.object.isRequired,
-    onItemClick: PropTypes.func.isRequired,
+    onItemClick: PropTypes.func,
   }
 
   onClick = () => {

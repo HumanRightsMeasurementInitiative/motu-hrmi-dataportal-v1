@@ -10,7 +10,7 @@ export default class CountryName extends React.Component {
     textValue: PropTypes.number.isRequired,
     currCountry: PropTypes.object,
     country: PropTypes.object.isRequired,
-    onItemClick: PropTypes.func.isRequired,
+    onItemClick: PropTypes.func,
   }
 
   onClick = () => {
