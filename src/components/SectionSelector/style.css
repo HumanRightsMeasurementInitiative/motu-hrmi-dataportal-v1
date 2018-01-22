@@ -16,7 +16,7 @@
   margin: 0 2em;
   padding: 0 0 4px;
   font-size: .8em;
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
   line-height: 1em;
   cursor: pointer;
   transition: border .2s;
