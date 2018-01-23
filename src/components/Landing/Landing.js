@@ -7,6 +7,11 @@ import styles from './style.css'
 export default class Landing extends React.Component {
   static propTypes = {
     isStoryOpen: PropTypes.bool.isRequired,
+    openStoryMode: PropTypes.func.isRequired,
+  }
+
+  componentWillMount() {
+    this.props.openStoryMode()
   }
 
   render() {

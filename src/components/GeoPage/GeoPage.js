@@ -25,7 +25,6 @@ export default class GeoPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.closeStoryMode()
     this.refs.content.style.height = this.refs.page.offsetHeight - 110 + 'px'
     this.refs.regionList.style.height = this.refs.content.offsetHeight - this.refs.searchInput.offsetHeight + 'px'
     this.refs.countries.style.height = this.refs.content.offsetHeight - this.refs.chartsHeader.offsetHeight - this.refs.chartsFooter.offsetHeight + 'px'

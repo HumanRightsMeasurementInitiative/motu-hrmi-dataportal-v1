@@ -6,36 +6,34 @@ import styles from './styles.css'
 export default class NavItem extends React.Component {
   static propTypes = {
     label: PropTypes.string.isRequired,
-    onLabelClick: PropTypes.func.isRequired,
-    currentDropdown: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
     onDownloadClick: PropTypes.func,
   }
 
+  constructor() {
+    super()
+    this.state = { isOpen: false }
+  }
+
   componentDidMount() {
     document.addEventListener('click', this.documentClick)
-    this.refs.labels.addEventListener('click', this.onClickHanlder)
-    if (this.refs.agreeBtn) this.refs.agreeBtn.addEventListener('click', this.onDownloadClick)
-    if (this.props.label !== 'Download Dataset') {
-      this.refs.dropdown.addEventListener('click', this.removePropogation)
-    } else {
+    if (this.props.onDownloadClick !== undefined) {
+      this.refs.dropdown.addEventListener('click', this.onClickHanlder)
       this.refs.dropdownWrapper.addEventListener('click', this.removePropogation)
     }
   }
 
   componentWillUnmount() {
     document.removeEventListener('click', this.documentClick)
-    this.refs.labels.removeEventListener('click', this.onClickHanlder)
-    if (this.refs.agreeBtn) this.refs.agreeBtn.removeEventListener('click', this.onDownloadClick)
-    if (this.props.label !== 'Download Dataset') {
-      this.refs.dropdown.removeEventListener('click', this.removePropogation)
-    } else {
+    if (this.props.onDownloadClick !== undefined) {
+      this.refs.dropdown.removeEventListener('click', this.onClickHanlder)
       this.refs.dropdownWrapper.removeEventListener('click', this.removePropogation)
     }
   }
 
-  documentClick = () => {
-    this.props.onLabelClick('closed')
+  documentClick = (e) => {
+    if (this.refs.navItem.contains(e.target)) return
+    this.setState({ isOpen: false })
   }
 
   removePropogation = (e) => {
@@ -44,38 +42,39 @@ export default class NavItem extends React.Component {
 
   onClickHanlder = (e) => {
     e.stopPropagation()
-    this.props.onLabelClick(this.props.label)
+    this.setState({ isOpen: !this.state.isOpen })
   }
 
   isActive = () => (
-    this.props.label === this.props.currentDropdown
+    this.state.isOpen
   )
 
   onDownloadClick = () => {
+    this.setState({ isOpen: false })
     this.props.onDownloadClick()
   }
 
   render() {
-    const { label, currentDropdown, children } = this.props
+    const { label, children } = this.props
     const labelClass = jcn({
       'menuLabel': true,
-      'active':  currentDropdown === label,
+      'active': this.state.isOpen,
     }, styles)
 
     const dropdownClassNames = jcn({
-      'hide': currentDropdown !== label,
+      'hide': !this.state.isOpen,
       'menuDropdown': label === 'About the initiative' || label === 'Methodology' || label === 'How To Use',
       'menuDropdownList': label === 'Download Dataset',
     }, styles)
 
     return (
-      <div className={styles.navItem}>
-        <div className={labelClass} ref='labels'>{label}</div>
+      <div className={styles.navItem} ref='navItem'>
+        <div className={labelClass} onClick={this.onClickHanlder}>{label}</div>
         <div className={dropdownClassNames} dropdown={label} ref='dropdown'>
           <div className={styles.dropdownWrapper} ref='dropdownWrapper'>
             {children}
             { label === 'Download Dataset' &&
-              <div className={styles.agreeBtnWrapper}><div className={styles.agreeBtn} ref='agreeBtn'>AGREE</div></div>
+              <div className={styles.agreeBtnWrapper}><div className={styles.agreeBtn} onClick={this.onDownloadClick}>AGREE</div></div>
             }
           </div>
         </div>

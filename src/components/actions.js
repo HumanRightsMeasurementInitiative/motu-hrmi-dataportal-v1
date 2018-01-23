@@ -31,9 +31,8 @@ export const locationChange = ({ pathname, search, hash, urlSegs }) => ({
   },
 })
 
-export const updateDropdown = (clickedMenu) => ({
-  type: 'UPDATE_DROPDOWN',
-  payload: clickedMenu,
+export const openStoryMode = () => ({
+  type: 'OPEN_STORYMODE',
 })
 
 export const closeStoryMode = () => ({
