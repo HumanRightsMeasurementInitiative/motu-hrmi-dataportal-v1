@@ -26,7 +26,7 @@ export default class CountryPage extends React.Component {
   }
 
   componentDidMount() {
-    this.refs.content.style.height = this.refs.page.offsetHeight - 110 + 'px'
+    this.refs.content.style.height = this.refs.page.offsetHeight - 117 + 'px'
     this.refs.countriesList.style.height = this.refs.content.offsetHeight - this.refs.backBtn.offsetHeight + 'px'
     this.refs.countryChart.style.height = this.refs.content.offsetHeight - this.refs.countryHeader.offsetHeight - this.refs.countryFooter.offsetHeight + 'px'
     this.refs.rightInfo.style.height = this.refs.content.offsetHeight - this.refs.countryInfo.offsetHeight + 'px'

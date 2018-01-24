@@ -6,11 +6,14 @@ import SectionSelector from '../SectionSelector'
 import RadarChart from '../RadarChart'
 import RightBarchart from '../RightBarchart/'
 import lineChart from '../../img/line-chart.png'
+import { segsToUrl } from '../utils'
 
 export default class StoryPopup extends React.Component {
   static propTypes = {
     data: PropTypes.object.isRequired,
     closeStoryMode: PropTypes.func.isRequired,
+    urlSegs: PropTypes.object.isRequired,
+    urlPush: PropTypes.func.isRequired,
   }
 
   constructor() {
@@ -39,6 +42,16 @@ export default class StoryPopup extends React.Component {
     }, 200)
   }
 
+  setCountry = (region, countryCode) => {
+    this.props.closeStoryMode()
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: 'Geography', 'region': region, country: countryCode, right: 'all' }))
+  }
+
+  setRegion = (region, right) => {
+    this.props.closeStoryMode()
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: 'Rights', 'region': region, right: right }))
+  }
+
   render() {
     const { data } = this.props
     const ESRs = ['Food', 'Education', 'Work', 'Housing', 'Health']
@@ -64,7 +77,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.linkWrapper}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <div className='text underline'>in Brunei</div>
+                    <CountryLink region='OECD' code='MEX' onItemClick={this.setCountry}>MEXCO</CountryLink>
                   </div>
                 </div>
               </div>
@@ -100,7 +113,8 @@ export default class StoryPopup extends React.Component {
                   currRight={'Freedom from Disappearance'}
                   data={data.OECD}
                   chartHeight={338}
-                  chartWidth={this.state.barchartWidth}>
+                  chartWidth={this.state.barchartWidth}
+                  currCountry={{ name: 'Mexico', code: 'MEX' }}>
                 </RightBarchart>
               </section>
               <section className={styles.topLink}>
@@ -108,8 +122,8 @@ export default class StoryPopup extends React.Component {
                 <p className={styles.normalText}>By contrast, Mexico’s two best scores in the area of civil and political rights are for the Right to Assembly and Association (score 6.7 out of 10) and the Right to Participate in Government (score 6.6 out of 10).  On both of these Rights, Mexico is closer to the middle of the pack, when compared to the other 12 countries in the pilot study.</p>
                 <div className={styles.links}>
                   <div className='arrowLink'>
-                    <div className='text'>Explore all rights:</div>
-                    <div className='text underline'>in East Asia and the Pacific</div>
+                    <div className='text'>Explore this right:</div>
+                    <RegionLink region='LAC' right='Freedom from Disappearance' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -121,7 +135,8 @@ export default class StoryPopup extends React.Component {
                   currRight={'Participate in Government'}
                   data={data.OECD}
                   chartHeight={338}
-                  chartWidth={this.state.barchartWidth}>
+                  chartWidth={this.state.barchartWidth}
+                  currCountry={{ name: 'Mexico', code: 'MEX' }}>
                 </RightBarchart>
               </section>
               <section className={styles.bottomLink}>
@@ -129,8 +144,8 @@ export default class StoryPopup extends React.Component {
                 <p className={styles.normalText}>This is consistent with the fact that Mexico has a somewhat free and fair electoral system with [………………… give more detail….]. Survey respondents did, however, highlight regulations and practices that disproportionately impact indigenous people, people of low economic and social status, less educated people, immigrants and people in some regions of the country. [There have also been concerns expressed about single-party states and people who don’t like the two main political parties.] If you visit this chart on our data visualisation website you will be able to see this further information about the groups in Mexico that are most at risk of having each right violated, by clicking on the Mexico bar of the chart. [Q: or would we like this information to show up in the left hand column of the country profile?]</p>
                 <div className={styles.links}>
                   <div className='arrowLink'>
-                    <div className='text'>Explore all rights:</div>
-                    <div className='text underline'>in East Asia and the Pacific</div>
+                    <div className='text'>Explore this right:</div>
+                    <RegionLink region='LAC' right='Participate in Government' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -171,8 +186,8 @@ export default class StoryPopup extends React.Component {
                 <p className={styles.normalText}>Coming back to the radar chart for Mexico, Mexico’s scores on the five economic and social rights are visible along the uppermost five axes of the radar chart. Based on the core assessment standard, you will see that these scores are very close to one another, ranging from 82% to 89%. But when assessed on the HiYOECD standard they are much more variable.</p>
                 <div className={styles.links}>
                   <div className='arrowLink'>
-                    <div className='text'>Explore all rights:</div>
-                    <div className='text underline'>in East Asia and the Pacific</div>
+                    <div className='text'>Explore this right:</div>
+                    <RegionLink region='LAC' right='Education' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -197,11 +212,11 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <div className='text underline'>in East Asia and the Pacific</div>
+                    <CountryLink region='LAC' code='BOL' onItemClick={this.setCountry}>BOLIVIA</CountryLink>
                   </div>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <div className='text underline'>in East Asia and the Pacific</div>
+                    <CountryLink region='LAC' code='PER' onItemClick={this.setCountry}>PERU</CountryLink>
                   </div>
                 </div>
               </section>
@@ -228,6 +243,44 @@ export default class StoryPopup extends React.Component {
           <div className={styles.closeBtn} onClick={this.closeStoryMode}></div>
         </div>
       </div>
+    )
+  }
+}
+
+class CountryLink extends React.Component {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    region: PropTypes.string.isRequired,
+    code: PropTypes.string.isRequired,
+    onItemClick: PropTypes.func.isRequired,
+  }
+
+  onItemClick = () => {
+    this.props.onItemClick(this.props.region, this.props.code)
+  }
+
+  render() {
+    return (
+      <div className='text underline' onClick={this.onItemClick} style={{ fontSize: '.9em' }}>IN {this.props.children}</div>
+    )
+  }
+}
+
+class RegionLink extends React.Component {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    region: PropTypes.string.isRequired,
+    right: PropTypes.string.isRequired,
+    onItemClick: PropTypes.func.isRequired,
+  }
+
+  onItemClick = () => {
+    this.props.onItemClick(this.props.region, this.props.right)
+  }
+
+  render() {
+    return (
+      <div className='text underline' onClick={this.onItemClick} style={{ fontSize: '.9em' }}>IN {this.props.children}</div>
     )
   }
 }
