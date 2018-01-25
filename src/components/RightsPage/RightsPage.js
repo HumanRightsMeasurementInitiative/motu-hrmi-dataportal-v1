@@ -7,6 +7,7 @@ import RightBarchart from '../RightBarchart/'
 import DownloadIcon from '../DownloadIcon'
 import { segsToUrl, getRegionName, joinClassName as jcn } from '../utils'
 import styles from './style.css'
+import definition from '../../data/right_definition.json'
 
 export default class RightsPage extends React.Component {
   static propTypes = {
@@ -134,7 +135,42 @@ export default class RightsPage extends React.Component {
             </div>
             <div className={styles.infoContent} ref="infoContent">
               <div className={styles.textWrapper}>
-                <p className={styles.definition}>According to international law, everyone has the fundamental right to be free from hunger. Everyone has the right to enjoy "the availability of food in a quantity and quality sufficient to satisfy [their] dietary needs … free from adverse substances, and acceptable within a given culture" (ICESCR Art. 11 and CESCR General Comment 12).</p>
+                { definition[urlSegs.right].definition
+                  ? <p className={styles.definition}>{definition[urlSegs.right].definition}</p>
+                  : <ul>
+                    {definition[urlSegs.right].measure_list.map((item, i) => {
+                      return (<li key={i} className={styles.defList}>{item}</li>)
+                    })}
+                  </ul>
+                }
+                { definition[urlSegs.right].conclusion_para &&
+                  <p className={styles.definition}>{definition[urlSegs.right].conclusion_para}</p>
+                }
+                <p className={styles.measureQues}>How has HRMI measured the Right to {urlSegs.right}?</p>
+                { definition[urlSegs.right].core_text &&
+                  <div>
+                    <p>{definition[urlSegs.right].core_text}</p>
+                    <ul>
+                      {
+                        definition[urlSegs.right].core_indicator.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                }
+                { definition[urlSegs.right].high_text &&
+                  <div>
+                    <p>{definition[urlSegs.right].high_text}</p>
+                    <ul>
+                      {
+                        definition[urlSegs.right].high_indicator.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                }
               </div>
             </div>
           </div>

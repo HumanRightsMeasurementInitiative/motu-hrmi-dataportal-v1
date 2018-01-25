@@ -8,7 +8,6 @@ export default class LangSelector extends React.Component {
   static propTypes = {
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
-    updateDropdown: PropTypes.func.isRequired,
   }
 
   constructor() {
@@ -33,7 +32,6 @@ export default class LangSelector extends React.Component {
 
   toggleDropdown = (e) => {
     e.stopPropagation()
-    this.props.updateDropdown('closed')
     if (this.refs.toggleBtn) this.setState({ open: !this.state.open })
   }
 
