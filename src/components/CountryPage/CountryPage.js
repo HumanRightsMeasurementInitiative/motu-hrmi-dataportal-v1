@@ -86,11 +86,10 @@ export default class CountryPage extends React.Component {
             <div ref="countryHeader">Compare with Change assessment standard: Core</div>
             <ul ref="countryChart">
               <RadarChart
-                chartHeight={this.state.chartHeight}
-                chartWidth={this.state.chartWidth}
+                size={500}
                 currRight={this.state.currRight}
-                rights={ESRs.concat(CPRs)}
-                onRightClick={this.setCurrRight}
+                country={currCountry}
+                onClickRight={this.setCurrRight}
               ></RadarChart>
             </ul>
             <div className={styles.countryFooter} ref='countryFooter'>

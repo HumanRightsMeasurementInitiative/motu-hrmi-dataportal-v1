@@ -7,6 +7,9 @@ import RadarChart from '../RadarChart'
 import RightBarchart from '../RightBarchart/'
 import lineChart from '../../img/line-chart.png'
 import { segsToUrl } from '../utils'
+import dataOECD from 'data/data_OECD.json'
+
+const mexico = dataOECD.find(country => country.code === 'MEX')
 
 export default class StoryPopup extends React.Component {
   static propTypes = {
@@ -54,8 +57,6 @@ export default class StoryPopup extends React.Component {
 
   render() {
     const { data } = this.props
-    const ESRs = ['Food', 'Education', 'Work', 'Housing', 'Health']
-    const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
 
     return (
       <div className={styles.storyWrapper} ref='storyWrapper'>
@@ -66,10 +67,8 @@ export default class StoryPopup extends React.Component {
               <div className={styles.langSelector} ref='langSelector'><LangSelector /></div>
               <div className={styles.graph} ref='graph'>
                 <RadarChart
-                  chartHeight={this.state.radarHeight}
-                  chartWidth={this.state.radarWidth}
-                  currRight={'all'}
-                  rights={ESRs.concat(CPRs)}
+                  size={200}
+                  country={mexico}
                 ></RadarChart>
               </div>
               <div ref='countryName'>

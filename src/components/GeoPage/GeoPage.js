@@ -72,10 +72,7 @@ export default class GeoPage extends React.Component {
     const countryItem = data[urlSegs.region].map((item, i) => (
       <RadarChart
         key={i}
-        chartHeight={this.state.chartHeight}
-        chartWidth={this.state.chartWidth}
         country={item}
-        currCountry={this.state.currCountry}
         onCountryClick={this.setCountry}
         onCountryHover={this.setCurrCountry}
       ></RadarChart>
