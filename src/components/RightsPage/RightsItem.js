@@ -14,7 +14,7 @@ export default class RightsItem extends React.Component {
   componentDidMount() {
     const width = this.refs.borderLine.offsetLeft
     this.refs.borderLine.style.display = 'block'
-    this.refs.borderLine.style.width = width - 25 + 'px'
+    this.refs.borderLine.style.width = width + 'px'
   }
 
   onClick = () => {
@@ -26,14 +26,28 @@ export default class RightsItem extends React.Component {
     const { children, selected } = this.props
 
     const joinedClass = jcn({
-      rightItem: true,
+      rightItemWrapper: true,
       selected: selected,
     }, styles)
 
     return (
-      <li className={joinedClass} onClick={this.onClick}>
-        Right to {children}
-        <span className={styles.borderLine} ref='borderLine'></span>
+      <li className={joinedClass}>
+        <div className={styles.rightItem} onClick={this.onClick}>
+          Right to {children}
+          <span className={styles.borderLine} ref='borderLine'></span>
+        </div>
+        { children === 'Assembly and Association' && selected &&
+          <ul>
+            <li className={styles.rightSubItem}>Right to Assembly</li>
+            <li className={styles.rightSubItem}>Right to Association</li>
+          </ul>
+        }
+        { children === 'Freedom from Execution' && selected  &&
+          <ul>
+            <li className={styles.rightSubItem}>Right to freedom from the death penalty</li>
+            <li className={styles.rightSubItem}>Right to freedom from extrajudicial execution</li>
+          </ul>
+        }
       </li>
     )
   }

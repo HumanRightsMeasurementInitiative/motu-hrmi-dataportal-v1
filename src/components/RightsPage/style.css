@@ -11,7 +11,7 @@
 
 .toggleSwitch {
   position: relative;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: underline;
   line-height: 1.4em;
   color: #25a9e0;
@@ -45,33 +45,79 @@
   display: block;
 }
 
+.rightsWrapper {
+  position: relative;
+}
+.rightsWrapper:before,
+.rightsWrapper:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 4px;
+  height: 26px;
+}
+.rightsWrapper:before {
+  top: 0;
+  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, .2));
+}
+.rightsWrapper:after {
+  bottom: 0;
+  background: linear-gradient(0deg, #fff 20%, transparent);
+}
 .rightList {
+  padding: 20px 0;
+  height: 100%;
+  max-width: 232px;
   overflow: auto;
+}
+.rightList::-webkit-scrollbar {
+  background: transparent;
+  width: 4px;
+}
+.rightList::-webkit-scrollbar-thumb {
+  display: none;
+  background: #bdbdbd;
+  border-radius: 4px;
+  opacity: 0;
+}
+.rightList:hover::-webkit-scrollbar-thumb {
+  display: block;
+  opacity: 1;
 }
 .ESRTitle,
 .CPRTitle {
-  margin-top: 20px;
+  padding-bottom: 6px;
   font-size: 16px;
   font-weight: 600;
-  color: #00b95f;
+  color: #9b9b9d;
   letter-spacing: .025em;
 }
 .CPRTitle {
-  color: #2e65a1;
+  margin-top: 20px;
 }
-.rightItem {
-  margin-top: 10px;
-  max-width: 120px;
+.rightItemWrapper {
   font-size: 14px;
   color: #9b9b9d;
-  line-height: 1em;
+  line-height: 1.2em;
   cursor: pointer;
+}
+.rightItem,
+.rightSubItem {
+  margin-top: 11px;
+  cursor: pointer;
+}
+.rightItem {
+  max-width: 120px;
+}
+.rightSubItem {
+  padding-left: 20px;
+  max-width: 200px;
 }
 .borderLine {
   border-bottom: 3px solid transparent;
   transition: border .2s;
 }
-.rightItem.selected .borderLine {
+.rightItemWrapper.selected .borderLine {
   border-color: #9b9b9d;
 }
 

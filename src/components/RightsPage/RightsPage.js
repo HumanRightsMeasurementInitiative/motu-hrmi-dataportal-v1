@@ -27,7 +27,7 @@ export default class RightsPage extends React.Component {
 
   componentDidMount() {
     this.refs.content.style.height = this.refs.page.offsetHeight - 117 + 'px'
-    this.refs.rightList.style.height = this.refs.content.offsetHeight - this.refs.regionSelector.offsetHeight + 'px'
+    this.refs.rightsWrapper.style.height = this.refs.content.offsetHeight - this.refs.regionSelector.offsetHeight + 'px'
     this.refs.charts.style.height = this.refs.content.offsetHeight - this.refs.chartsHeader.offsetHeight - this.refs.chartsFooter.offsetHeight + 'px'
     this.refs.infoContent.style.height = this.refs.content.offsetHeight - this.refs.infoHeader.offsetHeight + 'px'
     this.setState({ chartHeight: this.refs.charts.offsetHeight, chartWidth:  this.refs.charts.offsetWidth })
@@ -64,7 +64,7 @@ export default class RightsPage extends React.Component {
     const { data, urlSegs } = this.props
 
     const ESRs = ['Food', 'Education', 'Work', 'Housing', 'Health']
-    const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
+    const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Participate in Government', 'Freedom from Torture', 'Freedom from Execution', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
 
     const ESRItems = ESRs.map((item, i) => (
       <RightsItem key={i} right={item} onItemClick={this.setRight} selected={item === urlSegs.right}>{item}</RightsItem>
@@ -88,15 +88,17 @@ export default class RightsPage extends React.Component {
               <div ref="regionSelector">
                 <RegionSelector data={data} urlSegs={urlSegs} onItemClick={this.setRegion} />
               </div>
-              <div className={styles.rightList} ref="rightList">
-                <div className={styles.ESRTitle}>Economic and Social Rights</div>
-                <ul>
-                  {ESRItems}
-                </ul>
-                <div className={styles.CPRTitle}>Civil and Political Rights</div>
-                <ul>
-                  {CPRItems}
-                </ul>
+              <div className={styles.rightsWrapper} ref="rightsWrapper">
+                <div className={styles.rightList}>
+                  <div className={styles.ESRTitle}>Economic and Social Rights</div>
+                  <ul>
+                    {ESRItems}
+                  </ul>
+                  <div className={styles.CPRTitle}>Civil and Political Rights</div>
+                  <ul>
+                    {CPRItems}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
