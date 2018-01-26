@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import styles from './style.css'
 import LangSelector from '../LangSelector'
 import SectionSelector from '../SectionSelector'
-import RadarChart from '../RadarChart'
 import RightBarchart from '../RightBarchart/'
+import CountryRightsChart from 'components/CountryRightsChart'
 import lineChart from '../../img/line-chart.png'
 import { segsToUrl } from '../utils'
 import dataOECD from 'data/data_OECD.json'
@@ -66,10 +66,7 @@ export default class StoryPopup extends React.Component {
             <div className={styles.columnLeft} ref='columnLeft'>
               <div className={styles.langSelector} ref='langSelector'><LangSelector /></div>
               <div className={styles.graph} ref='graph'>
-                <RadarChart
-                  size={200}
-                  country={mexico}
-                ></RadarChart>
+                <CountryRightsChart rights={mexico.rights} size={400} />
               </div>
               <div ref='countryName'>
                 <h4 className={styles.countryName}>MEXICO</h4>
