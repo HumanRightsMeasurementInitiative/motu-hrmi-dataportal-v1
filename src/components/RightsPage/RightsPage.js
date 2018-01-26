@@ -176,6 +176,18 @@ export default class RightsPage extends React.Component {
                     </ul>
                   </div>
                 }
+                { ESRs.indexOf(urlSegs.right) > -1 &&
+                  <div>
+                    Why aren't the same indicators used for all countries?
+                    <div></div>
+                  </div>
+                }
+                { urlSegs.right === 'Food' &&
+                  <div>
+                    How does the HRMI methodology convert the above indicators into the Right to Food metric?
+                    <div></div>
+                  </div>
+                }
               </div>
             </div>
           </div>
