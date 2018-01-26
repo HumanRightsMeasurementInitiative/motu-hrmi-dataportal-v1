@@ -108,7 +108,7 @@ export default class GeoPage extends React.Component {
                     className={styles.countryCard}
                     onClick={rewriteArgs(this.setCountry, country.code)}
                   >
-                    <CountryRightsChart rights={country.rights} />
+                    <CountryRightsChart rights={country.rights} size={165} />
                     <span>{country.name.toUpperCase()}</span>
                   </div>
                 ))}
