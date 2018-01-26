@@ -7,7 +7,7 @@
   display: inline-block;
   position: relative;
   padding: 4px 10px 4px 30px;
-  width: 80%;
+  max-width: 60%;
   border: 1px solid #9b9b9d;
   text-transform: uppercase;
   font-variant: small-caps;
@@ -47,10 +47,25 @@
 
 .countriesList {
   padding: 10px 0;
-  font-size: 12px;
+  max-width: 200px;
+  font-size: 13px;
   letter-spacing: .025em;
   color: #9b9b9d;
   overflow: auto;
+}
+.countriesList::-webkit-scrollbar {
+  background: transparent;
+  width: 4px;
+}
+.countriesList::-webkit-scrollbar-thumb {
+  display: none;
+  background: #bdbdbd;
+  border-radius: 4px;
+  opacity: 0;
+}
+.countriesList:hover::-webkit-scrollbar-thumb {
+  display: block;
+  opacity: 1;
 }
 .countryItem {
   margin: 8px 0;
