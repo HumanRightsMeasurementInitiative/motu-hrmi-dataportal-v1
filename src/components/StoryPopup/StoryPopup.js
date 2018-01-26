@@ -25,8 +25,6 @@ export default class StoryPopup extends React.Component {
   constructor() {
     super()
     this.state = {
-      radarHeight: 0,
-      radarWidth: 0,
       barchartWidth: 0,
     }
   }
@@ -69,7 +67,7 @@ export default class StoryPopup extends React.Component {
                 <LangSelector />
               </div>
               <div className={styles.graph} style={{ padding: '0 150px' /* temporary */ }}>
-                <CountryRightsChart rights={mexico.rights} size={500} />
+                <CountryRightsChart rights={mexico.rights} size={300} />
               </div>
               <div>
                 <h4 className={styles.countryName}>MEXICO</h4>
@@ -221,11 +219,11 @@ export default class StoryPopup extends React.Component {
               <section>
                 <div className={styles.radarWrapper}>
                   <div className={styles.radarCol}>
-                    <CountryRightsChart rights={peru.rights} size={400} />
+                    <CountryRightsChart rights={peru.rights} size={250} />
                     <div className={styles.radarCountryName}>PERU</div>
                   </div>
                   <div className={styles.radarCol}>
-                    <CountryRightsChart rights={bolivia.rights} size={400} />
+                    <CountryRightsChart rights={bolivia.rights} size={250} />
                     <div className={styles.radarCountryName}>BOLIVIA</div>
                   </div>
                 </div>

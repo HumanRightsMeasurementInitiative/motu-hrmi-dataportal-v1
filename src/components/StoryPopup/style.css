@@ -99,7 +99,8 @@
 .columnRight section {
   position: relative;
   margin: 24px 0;
-  padding-right: 160px;
+  width: 80%;
+  min-width: 350px;
 }
 .articleTitle {
   /*margin: 80px 0 20px;*/
@@ -168,9 +169,9 @@
   margin: 10px;
 }
 .fakeRadar {
-  width: 380px;
-  height: 380px;
-  margin: 10px;
+  width: 230px;
+  height: 230px;
+  margin: 10px auto;
   background: #f3f3f3;
   border-radius: 50%;
 }
