@@ -25,7 +25,11 @@ export default class CountryItem extends React.Component {
     }, styles)
 
     return (
-      <li className={styles.countryItem}><div className={joinedClass} onClick={this.onClick}>{children}</div></li>
+      <li className={styles.countryItem}>
+        <div className={joinedClass} onClick={this.onClick}>
+          {children}
+        </div>
+      </li>
     )
   }
 }

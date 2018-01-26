@@ -66,6 +66,11 @@
   font-weight: 700;
   color: #58595b;
 }
+.countryChart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .countryFooter {
   position: relative;
   padding: 0 0 30px;

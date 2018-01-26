@@ -4,7 +4,7 @@ import SubTopNav from '../SubTopNav/'
 import CountryItem from './CountryItem'
 import BarChartESR from '../BarChartESR/'
 import BarChartCPR from '../BarChartCPR/'
-import RadarChart from '../RadarChart'
+import CountryRightsChart from 'components/CountryRightsChart'
 import DownloadIcon from '../DownloadIcon'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
@@ -20,8 +20,6 @@ export default class CountryPage extends React.Component {
     super()
     this.state = {
       currRight: 'all',
-      chartHeight: 0,
-      chartWidth: 0,
     }
   }
 
@@ -30,7 +28,6 @@ export default class CountryPage extends React.Component {
     this.refs.countriesList.style.height = this.refs.content.offsetHeight - this.refs.backBtn.offsetHeight + 'px'
     this.refs.countryChart.style.height = this.refs.content.offsetHeight - this.refs.countryHeader.offsetHeight - this.refs.countryFooter.offsetHeight + 'px'
     this.refs.rightInfo.style.height = this.refs.content.offsetHeight - this.refs.countryInfo.offsetHeight + 'px'
-    this.setState({ chartHeight: this.refs.countryChart.offsetHeight, chartWidth: this.refs.countryChart.offsetWidth })
   }
 
   setExploreBy = (right) => {
@@ -57,15 +54,11 @@ export default class CountryPage extends React.Component {
   render() {
     const { data, urlSegs } = this.props
 
-    const contries = data[urlSegs.region]
+    const countries = data[urlSegs.region]
+    const currCountry = countries.find(country => country.code === urlSegs.country)
+
     const ESRs = ['Food', 'Education', 'Work', 'Housing', 'Health']
     const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
-
-    let currCountry
-    const countryItem = contries.map((item, i) => {
-      if (item.code === urlSegs.country) currCountry = item
-      return <CountryItem key={i} code={item.code} onItemClick={this.setCountry} selected={item.code === urlSegs.country}>{item.name}</CountryItem>
-    })
 
     return (
       <div className={styles.countryPage} ref='page'>
@@ -75,29 +68,32 @@ export default class CountryPage extends React.Component {
             <div className={styles.columnLeft}>
               <div className={styles.backBtn} ref="backBtn">
                 <div className={styles.hintText}>BACK TO</div>
-                <div className={styles.backLink} onClick={this.resetCountry}>{getRegionName(urlSegs.region)}</div>
+                <div className={styles.backLink} onClick={this.resetCountry}>
+                  {getRegionName(urlSegs.region)}
+                </div>
               </div>
               <ul className={styles.countriesList} ref="countriesList">
-                {countryItem}
+                {countries.map((country) => (
+                  <CountryItem key={country.code} code={country.code} onItemClick={this.setCountry} selected={country.code === urlSegs.country}>
+                    {country.name}
+                  </CountryItem>
+                ))}
               </ul>
             </div>
           </div>
+
           <div className='column'>
             <div ref="countryHeader">Compare with Change assessment standard: Core</div>
-            <ul ref="countryChart">
-              <RadarChart
-                size={500}
-                currRight={this.state.currRight}
-                country={currCountry}
-                onClickRight={this.setCurrRight}
-              ></RadarChart>
-            </ul>
+            <div className={styles.countryChart} ref="countryChart">
+              <CountryRightsChart rights={currCountry.rights} size={500} />
+            </div>
             <div className={styles.countryFooter} ref='countryFooter'>
               <div className={styles.downloadIcon}><DownloadIcon /></div>
               <div className={styles.text}>Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.</div>
               <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
             </div>
           </div>
+
           <div className='column'>
             <div className={styles.columnRight} ref="columnRight">
               <div ref="countryInfo">
