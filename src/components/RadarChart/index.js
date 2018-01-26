@@ -39,6 +39,7 @@ export default class RadarChart extends React.Component {
       'Work', // ESR
 
       'Freedom from Disappearance', // CPR
+      'Freedom from Arbitrary Arrest', // CPR
       'Freedom from Execution', // CPR
       'Freedom from Torture', // CPR
       'Participate in Government', // CPR
