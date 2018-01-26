@@ -66,7 +66,7 @@ export default class StoryPopup extends React.Component {
               <div className={styles.langSelector}>
                 <LangSelector />
               </div>
-              <div className={styles.graph} style={{ padding: '0 150px' /* temporary */ }}>
+              <div className={styles.graph} style={{ padding: '0 100px' /* temporary */ }}>
                 <CountryRightsChart rights={mexico.rights} size={300} />
               </div>
               <div>
@@ -115,8 +115,10 @@ export default class StoryPopup extends React.Component {
                 </RightBarchart>
               </section>
               <section className={styles.topLink}>
-                <p className={styles.normalText}>This finding is not surprising given….. [examples, details and context of disappearances in Mexico. If need be the profile could draw on qualitative responses in HRMI survey here, but Amnesty Mexico likely to have plenty of qualitative research to draw on already.]</p>
-                <p className={styles.normalText}>By contrast, Mexico’s two best scores in the area of civil and political rights are for the Right to Assembly and Association (score 6.7 out of 10) and the Right to Participate in Government (score 6.6 out of 10).  On both of these Rights, Mexico is closer to the middle of the pack, when compared to the other 12 countries in the pilot study.</p>
+                <div>
+                  <p className={styles.normalText}>This finding is not surprising given….. [examples, details and context of disappearances in Mexico. If need be the profile could draw on qualitative responses in HRMI survey here, but Amnesty Mexico likely to have plenty of qualitative research to draw on already.]</p>
+                  <p className={styles.normalText}>By contrast, Mexico’s two best scores in the area of civil and political rights are for the Right to Assembly and Association (score 6.7 out of 10) and the Right to Participate in Government (score 6.6 out of 10).  On both of these Rights, Mexico is closer to the middle of the pack, when compared to the other 12 countries in the pilot study.</p>
+                </div>
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
@@ -137,8 +139,10 @@ export default class StoryPopup extends React.Component {
                 />
               </section>
               <section className={styles.bottomLink}>
-                <p className={styles.normalText}>For example, consider the chart below, which compares the scores of countries for the Right to Participate in Government. For this Right Mexico’s score is not substantively different from Brazil’s score, as indicated by the substantial overlap between the uncertainty bands of the two countries (i.e. Mexico’s average score is above the 10th percentile of Brazil’s score).  The scores shown, together with the uncertainty bands, also suggest that Mexico’s respect for this right is generally comparable to that observed in Fiji and not a lot worse than observed in Liberia and the United Kingdom.</p>
-                <p className={styles.normalText}>This is consistent with the fact that Mexico has a somewhat free and fair electoral system with [………………… give more detail….]. Survey respondents did, however, highlight regulations and practices that disproportionately impact indigenous people, people of low economic and social status, less educated people, immigrants and people in some regions of the country. [There have also been concerns expressed about single-party states and people who don’t like the two main political parties.] If you visit this chart on our data visualisation website you will be able to see this further information about the groups in Mexico that are most at risk of having each right violated, by clicking on the Mexico bar of the chart. [Q: or would we like this information to show up in the left hand column of the country profile?]</p>
+                <div>
+                  <p className={styles.normalText}>For example, consider the chart below, which compares the scores of countries for the Right to Participate in Government. For this Right Mexico’s score is not substantively different from Brazil’s score, as indicated by the substantial overlap between the uncertainty bands of the two countries (i.e. Mexico’s average score is above the 10th percentile of Brazil’s score).  The scores shown, together with the uncertainty bands, also suggest that Mexico’s respect for this right is generally comparable to that observed in Fiji and not a lot worse than observed in Liberia and the United Kingdom.</p>
+                  <p className={styles.normalText}>This is consistent with the fact that Mexico has a somewhat free and fair electoral system with [………………… give more detail….]. Survey respondents did, however, highlight regulations and practices that disproportionately impact indigenous people, people of low economic and social status, less educated people, immigrants and people in some regions of the country. [There have also been concerns expressed about single-party states and people who don’t like the two main political parties.] If you visit this chart on our data visualisation website you will be able to see this further information about the groups in Mexico that are most at risk of having each right violated, by clicking on the Mexico bar of the chart. [Q: or would we like this information to show up in the left hand column of the country profile?]</p>
+                </div>
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
@@ -174,12 +178,14 @@ export default class StoryPopup extends React.Component {
                 />
               </section>
               <section className={styles.topLink}>
-                <p className={styles.normalText}>It is interesting to see that the best performing country in the region on the Right to Education was [Country X].  However, it is also important to remember that [Country X]’s score of 100% (or 90-something %) does NOT imply that everyone in the country enjoys the right. Rather, it tells us that [country X]’s right enjoyment level is on par with the historically best-performing countries at the same per-capita income level. Further improvement is of course still possible – it is just that countries like [Country X] with a very high HRMI score need to innovate to extend human rights enjoyment further than has been done in the past.</p>
-                <p className={styles.normalText}>[Assuming that it is possible to switch back and forth within the above chart between the core and high income OECD country standard – we can now have a discussion about the different components of that right using each standard.  Question for Accurat – how do we do this?  Can we have the sub-component scores appear in the left hand side column? Or perhaps we can show in the left hand column the radar of Mexico with the Education petal highlighted, showing the drill-down into the different education components.]</p>
-                <p className={styles.normalText}>[This would allow us to clearly see that the main education challenge for Mexico is in improving the quality of education.]</p>
-                <p className={styles.normalText}>Comparing Mexico’s performance on the Right to Education with other countries in Latin America, the bar chart above shows…..[… pick out a few interesting things, e.g. comparison with Costa Rica & Bolivia for the core standard; and Uruguay and Brazil using the HIYOECD standard]</p>
-                <p className={styles.normalText}>One final point worth noting is that the aggregate country economic and social rights metrics as shown tend to mask the fact that the distribution of fulfilment of the right is often very uneven. For example, higher income people in Mexico are likely to be able to send their children to private schools of a much higher quality than people in lower socio-economic groups. […. add some other examples relevant to Mexico, perhaps with references to analysis and research that discusses these inequalities….?]</p>
-                <p className={styles.normalText}>Coming back to the radar chart for Mexico, Mexico’s scores on the five economic and social rights are visible along the uppermost five axes of the radar chart. Based on the core assessment standard, you will see that these scores are very close to one another, ranging from 82% to 89%. But when assessed on the HiYOECD standard they are much more variable.</p>
+                <div>
+                  <p className={styles.normalText}>It is interesting to see that the best performing country in the region on the Right to Education was [Country X].  However, it is also important to remember that [Country X]’s score of 100% (or 90-something %) does NOT imply that everyone in the country enjoys the right. Rather, it tells us that [country X]’s right enjoyment level is on par with the historically best-performing countries at the same per-capita income level. Further improvement is of course still possible – it is just that countries like [Country X] with a very high HRMI score need to innovate to extend human rights enjoyment further than has been done in the past.</p>
+                  <p className={styles.normalText}>[Assuming that it is possible to switch back and forth within the above chart between the core and high income OECD country standard – we can now have a discussion about the different components of that right using each standard.  Question for Accurat – how do we do this?  Can we have the sub-component scores appear in the left hand side column? Or perhaps we can show in the left hand column the radar of Mexico with the Education petal highlighted, showing the drill-down into the different education components.]</p>
+                  <p className={styles.normalText}>[This would allow us to clearly see that the main education challenge for Mexico is in improving the quality of education.]</p>
+                  <p className={styles.normalText}>Comparing Mexico’s performance on the Right to Education with other countries in Latin America, the bar chart above shows…..[… pick out a few interesting things, e.g. comparison with Costa Rica & Bolivia for the core standard; and Uruguay and Brazil using the HIYOECD standard]</p>
+                  <p className={styles.normalText}>One final point worth noting is that the aggregate country economic and social rights metrics as shown tend to mask the fact that the distribution of fulfilment of the right is often very uneven. For example, higher income people in Mexico are likely to be able to send their children to private schools of a much higher quality than people in lower socio-economic groups. […. add some other examples relevant to Mexico, perhaps with references to analysis and research that discusses these inequalities….?]</p>
+                  <p className={styles.normalText}>Coming back to the radar chart for Mexico, Mexico’s scores on the five economic and social rights are visible along the uppermost five axes of the radar chart. Based on the core assessment standard, you will see that these scores are very close to one another, ranging from 82% to 89%. But when assessed on the HiYOECD standard they are much more variable.</p>
+                </div>
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
@@ -201,10 +207,12 @@ export default class StoryPopup extends React.Component {
                 </div>
               </section>
               <section className={styles.bottomLink}>
-                <p className={styles.normalText}>On either assessment standard for economic and social rights, and also for civil and political rights, the overall story that these data tell us about human rights in Mexico is that Mexico could be doing a lot better…. [ elaborate…]</p>
-                <p className={styles.normalText}>For regional inspiration for how to do better in the area of economic and social rights, Mexico might like to look to countries such as Costa Rica/Bolivia/Ecuador/Peru.</p>
-                <p className={styles.normalText}>[include here a radar country comparison of Mexico with some or all of Costa Rica/Bolivia/Ecuador/Peru/Brazil.  Obviously most of these other countries would have ‘half-shell’ radars since we don’t yet have CPR data for them. What is the comparision limit? ]</p>
-                <p className={styles.normalText}>[If possible for these radar charts also, we would like to offer users the ability to switch between comparisons using the different standards].</p>
+                <div>
+                  <p className={styles.normalText}>On either assessment standard for economic and social rights, and also for civil and political rights, the overall story that these data tell us about human rights in Mexico is that Mexico could be doing a lot better…. [ elaborate…]</p>
+                  <p className={styles.normalText}>For regional inspiration for how to do better in the area of economic and social rights, Mexico might like to look to countries such as Costa Rica/Bolivia/Ecuador/Peru.</p>
+                  <p className={styles.normalText}>[include here a radar country comparison of Mexico with some or all of Costa Rica/Bolivia/Ecuador/Peru/Brazil.  Obviously most of these other countries would have ‘half-shell’ radars since we don’t yet have CPR data for them. What is the comparision limit? ]</p>
+                  <p className={styles.normalText}>[If possible for these radar charts also, we would like to offer users the ability to switch between comparisons using the different standards].</p>
+                </div>
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>

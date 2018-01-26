@@ -99,7 +99,7 @@
 .columnRight section {
   position: relative;
   margin: 24px 0;
-  width: 80%;
+  padding-right: 144px;
   min-width: 350px;
 }
 .articleTitle {
@@ -175,10 +175,19 @@
   background: #f3f3f3;
   border-radius: 50%;
 }
+.topLink,
+.bottomLink {
+  display: flex;
+}
+.topLink > div,
+.bottomLink > div {
+  flex: 1;
+}
 .links {
+  flex: none;
   position: absolute;
   right: 0;
-  width: 160px;
+  width: 144px;
 }
 .topLink .links {
   top: 0;
