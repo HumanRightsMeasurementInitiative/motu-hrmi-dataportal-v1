@@ -1,12 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import CountryRightsChart from 'components/CountryRightsChart'
 import SubTopNav from '../SubTopNav/'
 import RegionItem from '../RegionItem'
 import RightsItem from './RightsItem'
-import RadarChart from '../RadarChart'
 import DownloadIcon from '../DownloadIcon'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
+
+function rewriteArgs(fn, ...args) {
+  return () => fn(...args)
+}
 
 export default class GeoPage extends React.Component {
   static propTypes = {
@@ -19,8 +23,6 @@ export default class GeoPage extends React.Component {
     super()
     this.state = {
       currCountry: null,
-      chartHeight: 0,
-      chartWidth: 0,
     }
   }
 
@@ -28,7 +30,6 @@ export default class GeoPage extends React.Component {
     this.refs.content.style.height = this.refs.page.offsetHeight - 117 + 'px'
     this.refs.regionList.style.height = this.refs.content.offsetHeight - this.refs.searchInput.offsetHeight + 'px'
     this.refs.countries.style.height = this.refs.content.offsetHeight - this.refs.chartsHeader.offsetHeight - this.refs.chartsFooter.offsetHeight + 'px'
-    this.setState({ chartHeight: this.refs.countries.offsetHeight / 3, chartWidth: 180 })
   }
 
   setRegion = (region) => {
@@ -60,33 +61,24 @@ export default class GeoPage extends React.Component {
     this.setState({ currCountry: country })
   }
 
+  unsetCurrCountry = (country) => {
+    this.setState({ currCountry: null })
+  }
+
   render() {
     const { data, urlSegs } = this.props
 
-    const ESRs = ['Food', 'Education', 'Work', 'Housing', 'Health']
-    const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
+    const countries = data[urlSegs.region]
+    const regionCodes = Object.keys(data)
 
-    const regionItems = Object.keys(data).map((item, i) => (
-      <RegionItem key={i} index={i} code={item} onItemClick={this.setRegion} selected={item === urlSegs.region}>{getRegionName(item)}</RegionItem>
-    ))
-    const countryItem = data[urlSegs.region].map((item, i) => (
-      <RadarChart
-        key={i}
-        country={item}
-        onCountryClick={this.setCountry}
-        onCountryHover={this.setCurrCountry}
-      ></RadarChart>
-    ))
-    const ESRItems = ESRs.filter((item, i) => (
-      urlSegs.right === item || urlSegs.right === 'all'
-    )).map((item, i) => (
-      <RightsItem key={i} right={item} onItemClick={this.setRight}>{item}</RightsItem>
-    ))
-    const CPRItems = CPRs.filter((item, i) => (
-      urlSegs.right === item || urlSegs.right === 'all'
-    )).map((item, i) => (
-      <RightsItem key={i} right={item} onItemClick={this.setRight}>{item}</RightsItem>
-    ))
+    const rightsESR = ['Food', 'Education', 'Work', 'Housing', 'Health']
+    const rightsCPR = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
+    const displayedRightsESR = urlSegs.right === 'all'
+      ? rightsESR
+      : rightsESR.filter(rightName => rightName === urlSegs.right)
+    const displayedRightsCPR = urlSegs.right === 'all'
+      ? rightsCPR
+      : rightsCPR.filter(rightName => rightName === urlSegs.right)
 
     return (
       <div className={styles.geoPage} ref='page'>
@@ -98,7 +90,11 @@ export default class GeoPage extends React.Component {
                 <input className={styles.searchInput} type="text" placeholder='Search Country' />
               </div>
               <ul className={styles.regionList} ref="regionList">
-                {regionItems}
+                {regionCodes.map((regionCode, i) => (
+                  <RegionItem key={regionCode} index={i} code={regionCode} onItemClick={this.setRegion} selected={regionCode === urlSegs.region}>
+                    {getRegionName(regionCode)}
+                  </RegionItem>
+                ))}
               </ul>
             </div>
           </div>
@@ -106,7 +102,16 @@ export default class GeoPage extends React.Component {
             <div className={styles.columnMiddle}>
               <div ref="chartsHeader">Sort by: Name Change standard: Core</div>
               <div className={styles.countriesList} ref="countries">
-                {countryItem}
+                {countries.map((country, i) => (
+                  <div
+                    key={country.code}
+                    className={styles.countryCard}
+                    onClick={rewriteArgs(this.setCountry, country.code)}
+                  >
+                    <CountryRightsChart rights={country.rights} />
+                    <span>{country.name.toUpperCase()}</span>
+                  </div>
+                ))}
               </div>
               <div className={styles.chartsFooter} ref='chartsFooter'>
                 <div className={styles.downloadIcon}><DownloadIcon /></div>
@@ -117,29 +122,38 @@ export default class GeoPage extends React.Component {
           </div>
           <div className='column'>
             <div className={styles.columnRight}>
-              { urlSegs.right === 'all' &&
-                <div>
-                  <div className={styles.esrTitle}>Economic and Social Rights</div>
-                  <ul className={styles.esrList}>
-                    {ESRItems}
-                  </ul>
-                  <div className={styles.cprTitle}>Civil and Political Rights</div>
-                  <ul className={styles.cprList}>
-                    {CPRItems}
-                  </ul>
-                </div>
-              }
-              { urlSegs.right !== 'all' &&
-                <div className={styles.specRightInfo}>
-                  <div className={styles.specRightHeader} onClick={this.setRightToAll} rightcolor={urlSegs.right}>
-                    <div className={styles.rightName}>Right to {urlSegs.right}</div>
-                    <div className={styles.rightCate}>{ESRItems.length === 0 ? 'Civil and Political Rights' : 'Ecomonic and Social Rights'}</div>
+              { urlSegs.right === 'all'
+                ? (
+                  <div>
+                    <div className={styles.esrTitle}>Economic and Social Rights</div>
+                    <ul className={styles.esrList}>
+                      {displayedRightsESR.map((item, i) => (
+                        <RightsItem key={i} right={item} onItemClick={this.setRight}>{item}</RightsItem>
+                      ))}
+                    </ul>
+                    <div className={styles.cprTitle}>Civil and Political Rights</div>
+                    <ul className={styles.cprList}>
+                      {displayedRightsCPR.map((item, i) => (
+                        <RightsItem key={i} right={item} onItemClick={this.setRight}>{item}</RightsItem>
+                      ))}
+                    </ul>
                   </div>
-                  <div className='arrowLink'>
-                    <div className='text'>Explore this rights in:</div>
-                    <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
+                ) : (
+                  <div className={styles.specRightInfo}>
+                    <div className={styles.specRightHeader} onClick={this.setRightToAll} rightcolor={urlSegs.right}>
+                      <div className={styles.rightName}>Right to {urlSegs.right}</div>
+                      <div className={styles.rightCate}>
+                        {displayedRightsESR.length === 0 ? 'Civil and Political Rights' : 'Ecomonic and Social Rights'}
+                      </div>
+                    </div>
+                    <div className='arrowLink'>
+                      <div className='text'>Explore this rights in:</div>
+                      <div className='text underline' onClick={this.setExploreBy}>
+                        {getRegionName(urlSegs.region)}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                )
               }
             </div>
           </div>

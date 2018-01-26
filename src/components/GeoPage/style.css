@@ -30,17 +30,22 @@
 
 .countriesList {
   overflow: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  grid-gap: 15px;
 }
-.CountryItem {
-  display: inline-block;
-  flex: none;
-  width: 180px;
-  height: 120px;
-  border: 1px solid #2f2ffd;
+
+.countryCard {
+  padding: 15px 0;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
 }
+.countryCard:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
 .chartsFooter {
   position: relative;
   padding: 20px 0 30px;

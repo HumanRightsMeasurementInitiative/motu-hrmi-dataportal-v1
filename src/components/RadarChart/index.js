@@ -61,7 +61,7 @@ export default class RadarChart extends React.Component {
         onMouseOver={this.onMouseOver}
         onMouseOut={this.onMouseOut}
       >
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ margin: '0 auto' }}>
           <PetalChart
             size={size}
             data={rightsData}
