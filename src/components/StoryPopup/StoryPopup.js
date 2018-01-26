@@ -3,13 +3,16 @@ import PropTypes from 'prop-types'
 import styles from './style.css'
 import LangSelector from '../LangSelector'
 import SectionSelector from '../SectionSelector'
-import RadarChart from '../RadarChart'
 import RightBarchart from '../RightBarchart/'
+import CountryRightsChart from 'components/CountryRightsChart'
 import lineChart from '../../img/line-chart.png'
 import { segsToUrl } from '../utils'
 import dataOECD from 'data/data_OECD.json'
+import dataLAC from 'data/data_LAC.json'
 
 const mexico = dataOECD.find(country => country.code === 'MEX')
+const peru = dataLAC.find(country => country.code === 'PER')
+const bolivia = dataLAC.find(country => country.code === 'BOL')
 
 export default class StoryPopup extends React.Component {
   static propTypes = {
@@ -22,18 +25,14 @@ export default class StoryPopup extends React.Component {
   constructor() {
     super()
     this.state = {
-      radarHeight: 0,
-      radarWidth: 0,
       barchartWidth: 0,
     }
   }
 
   componentDidMount() {
-    const { storyPopup, graph, countryName, langSelector, columnLeft, columnRight } = this.refs
-    graph.style.height = storyPopup.offsetHeight - langSelector.offsetHeight - countryName.offsetHeight + 'px'
-    graph.style.width = graph.offsetHeight * 1.3 + 'px'
+    const { storyPopup, columnLeft, columnRight } = this.refs
     columnRight.style.width = storyPopup.offsetWidth - columnLeft.offsetWidth - 6 + 'px'
-    this.setState({ radarHeight: graph.offsetHeight, radarWidth: graph.offsetWidth, barchartWidth: columnRight.offsetWidth - 50 })
+    this.setState({ barchartWidth: columnRight.offsetWidth - 50 })
   }
 
   closeStoryMode = () => {
@@ -64,19 +63,18 @@ export default class StoryPopup extends React.Component {
           <div className={styles.popupBody}>
 
             <div className={styles.columnLeft} ref='columnLeft'>
-              <div className={styles.langSelector} ref='langSelector'><LangSelector /></div>
-              <div className={styles.graph} ref='graph'>
-                <RadarChart
-                  size={200}
-                  country={mexico}
-                ></RadarChart>
+              <div className={styles.langSelector}>
+                <LangSelector />
               </div>
-              <div ref='countryName'>
+              <div className={styles.graph} style={{ padding: '0 150px' /* temporary */ }}>
+                <CountryRightsChart rights={mexico.rights} size={300} />
+              </div>
+              <div>
                 <h4 className={styles.countryName}>MEXICO</h4>
                 <div className={styles.linkWrapper}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <CountryLink region='OECD' code='MEX' onItemClick={this.setCountry}>MEXCO</CountryLink>
+                    <CountryLink region='OECD' code='MEX' onItemClick={this.setCountry}>MEXICO</CountryLink>
                   </div>
                 </div>
               </div>
@@ -113,7 +111,7 @@ export default class StoryPopup extends React.Component {
                   data={data.OECD}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
-                  currCountry={{ name: 'Mexico', code: 'MEX' }}>
+                  currCountry={mexico}>
                 </RightBarchart>
               </section>
               <section className={styles.topLink}>
@@ -135,8 +133,8 @@ export default class StoryPopup extends React.Component {
                   data={data.OECD}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
-                  currCountry={{ name: 'Mexico', code: 'MEX' }}>
-                </RightBarchart>
+                  currCountry={mexico}
+                />
               </section>
               <section className={styles.bottomLink}>
                 <p className={styles.normalText}>For example, consider the chart below, which compares the scores of countries for the Right to Participate in Government. For this Right Mexico’s score is not substantively different from Brazil’s score, as indicated by the substantial overlap between the uncertainty bands of the two countries (i.e. Mexico’s average score is above the 10th percentile of Brazil’s score).  The scores shown, together with the uncertainty bands, also suggest that Mexico’s respect for this right is generally comparable to that observed in Fiji and not a lot worse than observed in Liberia and the United Kingdom.</p>
@@ -172,9 +170,8 @@ export default class StoryPopup extends React.Component {
                   data={data.OECD}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
-                  currCountry={{ name: 'Mexico', code: 'MEX' }}
-                  >
-                </RightBarchart>
+                  currCountry={mexico}
+                />
               </section>
               <section className={styles.topLink}>
                 <p className={styles.normalText}>It is interesting to see that the best performing country in the region on the Right to Education was [Country X].  However, it is also important to remember that [Country X]’s score of 100% (or 90-something %) does NOT imply that everyone in the country enjoys the right. Rather, it tells us that [country X]’s right enjoyment level is on par with the historically best-performing countries at the same per-capita income level. Further improvement is of course still possible – it is just that countries like [Country X] with a very high HRMI score need to innovate to extend human rights enjoyment further than has been done in the past.</p>
@@ -195,11 +192,11 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.radarWrapper}>
                   <div className={styles.radarCol}>
                     <div className={styles.fakeRadar}></div>
-                    <div className={styles.fakeRadarRegion}>Core assessment standard</div>
+                    <div className={styles.radarCountryName}>Core assessment standard</div>
                   </div>
                   <div className={styles.radarCol}>
                     <div className={styles.fakeRadar}></div>
-                    <div className={styles.fakeRadarRegion}>High income OECD assessment standard</div>
+                    <div className={styles.radarCountryName}>High income OECD assessment standard</div>
                   </div>
                 </div>
               </section>
@@ -222,12 +219,12 @@ export default class StoryPopup extends React.Component {
               <section>
                 <div className={styles.radarWrapper}>
                   <div className={styles.radarCol}>
-                    <div className={styles.fakeRadar}></div>
-                    <div className={styles.fakeRadarCountry}>PERU</div>
+                    <CountryRightsChart rights={peru.rights} size={250} />
+                    <div className={styles.radarCountryName}>PERU</div>
                   </div>
                   <div className={styles.radarCol}>
-                    <div className={styles.fakeRadar}></div>
-                    <div className={styles.fakeRadarCountry}>BOLIVIA</div>
+                    <CountryRightsChart rights={bolivia.rights} size={250} />
+                    <div className={styles.radarCountryName}>BOLIVIA</div>
                   </div>
                 </div>
               </section>

@@ -16,7 +16,7 @@
   width: 100vw;
   background: rgba(255, 255, 255, .5);
   color: #616161;
-  transition: opacity 1s; 
+  transition: opacity 1s;
 }
 
 .storyPopup {
@@ -27,7 +27,7 @@
   left: 30px;
   background: #fff;
   border: 1px solid #a6a6a6;
-  transition: all 1s; 
+  transition: all 1s;
   animation: slideInDown 1s;
 }
 
@@ -99,7 +99,8 @@
 .columnRight section {
   position: relative;
   margin: 24px 0;
-  padding-right: 160px;
+  width: 80%;
+  min-width: 350px;
 }
 .articleTitle {
   /*margin: 80px 0 20px;*/
@@ -162,19 +163,17 @@
   width: 50%;
   text-align: center;
 }
-.fakeRadarRegion {
-  font-size: 14px;
-}
-.fakeRadarCountry {
+.radarCountryName {
   font-size: 16px;
   font-weight: 600;
+  margin: 10px;
 }
 .fakeRadar {
-  padding-top: 100%;
-  width: 100%;
-  background: #eee;
+  width: 230px;
+  height: 230px;
+  margin: 10px auto;
+  background: #f3f3f3;
   border-radius: 50%;
-  overflow: hidden;
 }
 .links {
   position: absolute;
