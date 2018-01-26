@@ -76,7 +76,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.linkWrapper}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <CountryLink region='OECD' code='MEX' onItemClick={this.setCountry}>MEXCO</CountryLink>
+                    <CountryLink region='OECD' code='MEX' onItemClick={this.setCountry}>MEXICO</CountryLink>
                   </div>
                 </div>
               </div>
