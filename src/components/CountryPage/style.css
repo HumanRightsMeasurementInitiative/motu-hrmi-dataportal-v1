@@ -1,9 +1,12 @@
 .countryPage {
+  display: flex;
+  flex-direction: column;
   padding-top: 60px;
   height: 100%;
 }
 
 .backBtn {
+  flex: 0 0 auto;
   display: inline-block;
   position: relative;
   padding: 4px 10px 4px 30px;
@@ -45,7 +48,13 @@
   color: #58595b;
 }
 
+.countriesListWrapper {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
 .countriesList {
+  flex: 1 1 auto;
   padding: 10px 0;
   max-width: 200px;
   font-size: 13px;
@@ -81,12 +90,21 @@
   font-weight: 700;
   color: #58595b;
 }
+.countryHeader {
+  flex: 0 0 auto;
+  display: flex;
+  font-size: 14px;
+  color: #616161;
+}
 .countryChart {
+  flex: 1 1 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .countryFooter {
+  flex: 0 0 auto;
   position: relative;
   padding: 0 0 30px;
   font-size: 12px;
@@ -111,6 +129,9 @@
 }
 
 .columnRight {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   padding: 10px 0 0 0;
 }
 .smallText {
@@ -141,12 +162,16 @@
   color: #9B9B9D;
 }
 .countryInfo {
+  flex: 0 0 auto;
   margin-left: 26px;
   margin-right: 16px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #eee;
 }
 .rightInfoWrapper {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   position: relative;
   padding-right: 4px;
 }
@@ -160,7 +185,7 @@
 }
 .rightInfoWrapper:before {
   top: 0;
-  height: 16px;
+  height: 18px;
   background: linear-gradient(180deg, #fff, rgba(255, 255, 255, .2));
 }
 .rightInfoWrapper:after {
@@ -169,7 +194,7 @@
   background: linear-gradient(0deg, #fff 20%, transparent);
 }
 .rightInfo {
-  padding: 10px 16px 20px 26px;
+  padding: 15px 16px 20px 26px;
   height: 100%;
   overflow: auto;
 }

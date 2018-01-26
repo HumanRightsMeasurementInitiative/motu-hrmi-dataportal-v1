@@ -1,14 +1,21 @@
 .rightsPage {
+  display: flex;
+  flex-direction: column;
   padding-top: 60px;
   height: 100%;
 }
 
 .columnLeft {
+  display: flex;
+  flex-direction: column;
   position: relative;
   padding: 0 0 0 25px;
   height: 100%;
 }
 
+.regionSelectorWrapper {
+  flex: 0 0 auto;
+}
 .toggleSwitch {
   position: relative;
   font-size: 16px;
@@ -47,6 +54,9 @@
 }
 
 .rightsWrapper {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
 .rightsWrapper:before,
@@ -66,10 +76,11 @@
   background: linear-gradient(0deg, #fff 20%, transparent);
 }
 .rightList {
+  flex: 1;
   padding: 20px 0;
   height: 100%;
   max-width: 232px;
-  overflow: auto;
+  overflow-y: auto;
 }
 .rightList::-webkit-scrollbar {
   background: transparent;
@@ -90,7 +101,7 @@
   padding-bottom: 6px;
   font-size: 16px;
   font-weight: 600;
-  color: #9b9b9d;
+  color: #616161;
   letter-spacing: .025em;
 }
 .CPRTitle {
@@ -98,7 +109,7 @@
 }
 .rightItemWrapper {
   font-size: 14px;
-  color: #9b9b9d;
+  color: #616161;
   line-height: 1.2em;
   cursor: pointer;
 }
@@ -119,13 +130,19 @@
   transition: border .2s;
 }
 .rightItemWrapper.selected .borderLine {
-  border-color: #9b9b9d;
+  border-color: #616161;
 }
 
+.columnMiddle {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .chartsHeader {
+  flex: 0 0 auto;
   display: flex;
   padding: 0 20px;
-  color: #9d9e9f;
+  color: #616161;
 }
 .regionName {
   flex: 1;
@@ -137,9 +154,11 @@
   font-size: 13px;
 }
 .chartsContainer {
+  flex: 1 1 auto;
   overflow: hidden;
 }
 .chartsFooter {
+  flex: 0 0 auto;
   position: relative;
   padding: 20px 0 30px;
   font-size: 12px;
@@ -163,6 +182,9 @@
   color: #8d8e90;
 }
 
+.infoContent {
+  flex: 0 0 auto;
+}
 .rightInfo {
   padding: 0 24px 14px;
   font-size: 16px;
@@ -180,9 +202,11 @@
   font-size: 14px;
 }
 .infoContent {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   position: relative;
   padding-right: 4px;
-  color: #616161;
 }
 .infoContent:before,
 .infoContent:after {
@@ -203,11 +227,12 @@
   background: linear-gradient(0deg, #fff 20%, transparent);
 }
 .textWrapper {
+  flex: 1 1 auto;
   padding: 20px 24px 30px;
   height: 100%;
   width: 100%;
   font-size: 13px;
-  color: #9b9b9d;
+  color: #616161;
   line-height: 1.2em;
   overflow: auto;
 }

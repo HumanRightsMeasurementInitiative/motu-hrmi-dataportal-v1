@@ -18,9 +18,13 @@ ul {
 }
 
 :global(.row) {
+  flex: 1 1 auto;
   display: flex;
+  height: 100%;
 }
 :global(.column) {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   overflow: hidden;
 }

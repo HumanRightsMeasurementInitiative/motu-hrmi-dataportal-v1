@@ -24,13 +24,6 @@ export default class CountryPage extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.refs.content.style.height = this.refs.page.offsetHeight - 117 + 'px'
-    this.refs.countriesList.style.height = this.refs.content.offsetHeight - this.refs.backBtn.offsetHeight + 'px'
-    this.refs.countryChart.style.height = this.refs.content.offsetHeight - this.refs.countryHeader.offsetHeight - this.refs.countryFooter.offsetHeight + 'px'
-    this.refs.rightInfo.style.height = this.refs.content.offsetHeight - this.refs.countryInfo.offsetHeight + 'px'
-  }
-
   setExploreBy = (right) => {
     const { urlSegs } = this.props
     this.props.urlPush(segsToUrl({ ...urlSegs, exploreBy: 'Rights', right: this.state.currRight, country: undefined }))
@@ -62,18 +55,18 @@ export default class CountryPage extends React.Component {
     const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
 
     return (
-      <div className={styles.countryPage} ref='page'>
+      <div className={styles.countryPage}>
         <SubTopNav />
-        <div className='row' ref='content'>
+        <div className='row'>
           <div className='column'>
-            <div className={styles.columnLeft}>
-              <div className={styles.backBtn} ref="backBtn">
-                <div className={styles.hintText}>BACK TO</div>
-                <div className={styles.backLink} onClick={this.resetCountry}>
-                  {getRegionName(urlSegs.region)}
-                </div>
+            <div className={styles.backBtn}>
+              <div className={styles.hintText}>BACK TO</div>
+              <div className={styles.backLink} onClick={this.resetCountry}>
+                {getRegionName(urlSegs.region)}
               </div>
-              <ul className={styles.countriesList} ref="countriesList">
+            </div>
+            <div className={styles.countriesListWrapper}>
+              <ul className={styles.countriesList}>
                 {countries.map((country) => (
                   <CountryItem key={country.code} code={country.code} onItemClick={this.setCountry} selected={country.code === urlSegs.country}>
                     {country.name}
@@ -84,11 +77,14 @@ export default class CountryPage extends React.Component {
           </div>
 
           <div className='column'>
-            <div ref="countryHeader">Compare with Change assessment standard: Core</div>
-            <div className={styles.countryChart} ref="countryChart">
+            <div className={styles.countryHeader}>
+              <div>Compare with</div>
+              <div>Change assessment standard: Core</div>
+            </div>
+            <div className={styles.countryChart}>
               <CountryRightsChart rights={currCountry.rights} size={500} />
             </div>
-            <div className={styles.countryFooter} ref='countryFooter'>
+            <div className={styles.countryFooter}>
               <div className={styles.downloadIcon}><DownloadIcon /></div>
               <div className={styles.text}>Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.</div>
               <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
@@ -96,15 +92,15 @@ export default class CountryPage extends React.Component {
           </div>
 
           <div className='column'>
-            <div className={styles.columnRight} ref="columnRight">
-              <div className={styles.countryInfo} ref="countryInfo">
+            <div className={styles.columnRight}>
+              <div className={styles.countryInfo}>
                 <div className={styles.detailCountry}>{currCountry.name}</div>
                 <div className={styles.smallTitle}>POPULATION (2016)</div>
                 <div className={styles.smallText2}>{currCountry.population} million</div>
                 <div className={styles.smallTitle}>GDP/CAPITA (2016)</div>
                 <div className={styles.smallText2}>${Math.round(currCountry.GDP2016)} (current PPP dollars)</div>
               </div>
-              <div className={styles.rightInfoWrapper} ref="rightInfo">
+              <div className={styles.rightInfoWrapper}>
                 <div className={styles.rightInfo}>
                   { CPRs.indexOf(this.state.currRight) === -1 &&
                     <div>

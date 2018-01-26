@@ -1,4 +1,5 @@
 .wrapper {
+  flex: 0 0 auto;
   position: relative;
   z-index: 3000;
   padding: 16px 0;

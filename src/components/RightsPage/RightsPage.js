@@ -26,10 +26,6 @@ export default class RightsPage extends React.Component {
   }
 
   componentDidMount() {
-    this.refs.content.style.height = this.refs.page.offsetHeight - 117 + 'px'
-    this.refs.rightsWrapper.style.height = this.refs.content.offsetHeight - this.refs.regionSelector.offsetHeight + 'px'
-    this.refs.charts.style.height = this.refs.content.offsetHeight - this.refs.chartsHeader.offsetHeight - this.refs.chartsFooter.offsetHeight + 'px'
-    this.refs.infoContent.style.height = this.refs.content.offsetHeight - this.refs.infoHeader.offsetHeight + 'px'
     this.setState({ chartHeight: this.refs.charts.offsetHeight, chartWidth:  this.refs.charts.offsetWidth })
   }
 
@@ -80,15 +76,15 @@ export default class RightsPage extends React.Component {
     }, styles)
 
     return (
-      <div className={styles.rightsPage} ref='page'>
+      <div className={styles.rightsPage}>
         <SubTopNav />
-        <div className='row' ref='content'>
+        <div className='row'>
           <div className='column'>
             <div className={styles.columnLeft}>
-              <div ref="regionSelector">
+              <div className={styles.regionSelectorWrapper}>
                 <RegionSelector data={data} urlSegs={urlSegs} onItemClick={this.setRegion} />
               </div>
-              <div className={styles.rightsWrapper} ref="rightsWrapper">
+              <div className={styles.rightsWrapper}>
                 <div className={styles.rightList}>
                   <div className={styles.ESRTitle}>Economic and Social Rights</div>
                   <ul>
@@ -103,7 +99,7 @@ export default class RightsPage extends React.Component {
             </div>
           </div>
           <div className='column'>
-            <div className={styles.chartsHeader} ref="chartsHeader">
+            <div className={styles.chartsHeader}>
               <div className={styles.regionName}>{getRegionName(urlSegs.region)}</div>
               <div className={styles.sortBy}>Sort by: Name</div>
             </div>
@@ -118,14 +114,14 @@ export default class RightsPage extends React.Component {
                 onItemClick={this.setCurrCountry}>
               </RightBarchart>
             </div>
-            <div className={styles.chartsFooter} ref='chartsFooter'>
+            <div className={styles.chartsFooter}>
               <div className={styles.downloadIcon}><DownloadIcon /></div>
               <div className={styles.text}>Hight Scores indicate greater respect for this human right.</div>
               <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
             </div>
           </div>
           <div className='column'>
-            <div ref="infoHeader">
+            <div className={styles.infoHeader}>
               <div className={colorClassName}>
                 <div className={styles.rightName}>Right to {urlSegs.right}</div>
                 <div className={styles.regionName}>in {getRegionName(urlSegs.region)}</div>
@@ -138,7 +134,7 @@ export default class RightsPage extends React.Component {
                 }
               </div>
             </div>
-            <div className={styles.infoContent} ref="infoContent">
+            <div className={styles.infoContent}>
               <div className={styles.textWrapper}>
                 { definition[urlSegs.right].definition
                   ? <p className={styles.definition}>{definition[urlSegs.right].definition}</p>

@@ -26,12 +26,6 @@ export default class GeoPage extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.refs.content.style.height = this.refs.page.offsetHeight - 117 + 'px'
-    this.refs.regionList.style.height = this.refs.content.offsetHeight - this.refs.searchInput.offsetHeight + 'px'
-    this.refs.countries.style.height = this.refs.content.offsetHeight - this.refs.chartsHeader.offsetHeight - this.refs.chartsFooter.offsetHeight + 'px'
-  }
-
   setRegion = (region) => {
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, region: region }))
   }
@@ -81,15 +75,15 @@ export default class GeoPage extends React.Component {
       : rightsCPR.filter(rightName => rightName === urlSegs.right)
 
     return (
-      <div className={styles.geoPage} ref='page'>
+      <div className={styles.geoPage}>
         <SubTopNav />
-        <div className='row' ref='content'>
+        <div className='row'>
           <div className='column'>
             <div className={styles.columnLeft}>
-              <div ref="searchInput">
+              <div className={styles.searchInputWrapper}>
                 <input className={styles.searchInput} type="text" placeholder='Search Country' />
               </div>
-              <ul className={styles.regionList} ref="regionList">
+              <ul className={styles.regionList}>
                 {regionCodes.map((regionCode, i) => (
                   <RegionItem key={regionCode} index={i} code={regionCode} onItemClick={this.setRegion} selected={regionCode === urlSegs.region}>
                     {getRegionName(regionCode)}
@@ -100,8 +94,8 @@ export default class GeoPage extends React.Component {
           </div>
           <div className='column'>
             <div className={styles.columnMiddle}>
-              <div ref="chartsHeader">Sort by: Name Change standard: Core</div>
-              <div className={styles.countriesList} ref="countries">
+              <div className={styles.chartsHeader}>Sort by: Name Change standard: Core</div>
+              <div className={styles.countriesList}>
                 {countries.map((country, i) => (
                   <div
                     key={country.code}
@@ -113,7 +107,7 @@ export default class GeoPage extends React.Component {
                   </div>
                 ))}
               </div>
-              <div className={styles.chartsFooter} ref='chartsFooter'>
+              <div className={styles.chartsFooter}>
                 <div className={styles.downloadIcon}><DownloadIcon /></div>
                 <div className={styles.text}>Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.</div>
                 <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
