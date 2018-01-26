@@ -103,7 +103,10 @@ export default class RightsPage extends React.Component {
             </div>
           </div>
           <div className='column'>
-            <div ref="chartsHeader">{getRegionName(urlSegs.region)} sort by: Name</div>
+            <div className={styles.chartsHeader} ref="chartsHeader">
+              <div className={styles.regionName}>{getRegionName(urlSegs.region)}</div>
+              <div className={styles.sortBy}>Sort by: Name</div>
+            </div>
             <div className={styles.chartsContainer} ref="charts">
               <RightBarchart
                 isESR={ESRs.indexOf(urlSegs.right) > -1}
