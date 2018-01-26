@@ -30,6 +30,9 @@
 
 .countriesList {
   overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .CountryItem {
   display: inline-block;

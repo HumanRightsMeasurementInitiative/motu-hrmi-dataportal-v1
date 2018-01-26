@@ -1,83 +1,78 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import RadarChartItem from '../RadarChartItem'
+import { PetalChart } from 'hrmi-charts'
+import { keyBy } from 'lodash'
 
-export default class ESRRightBar extends React.Component {
+export default class RadarChart extends React.Component {
   static propTypes = {
-    chartHeight: PropTypes.number.isRequired,
-    chartWidth: PropTypes.number.isRequired,
-    currRight: PropTypes.string,
-    rights: PropTypes.array,
-    onRightClick: PropTypes.func,
     country: PropTypes.object,
-    currCountry: PropTypes.string,
     onCountryClick: PropTypes.func,
     onCountryHover: PropTypes.func,
   }
 
   onCountryClick = () => {
     const { country, onCountryClick } = this.props
-    onCountryClick(country.code)
+    onCountryClick && onCountryClick(country.code)
   }
 
   onMouseOver = () => {
     const { country, onCountryHover } = this.props
-    if (country) onCountryHover(country.code)
+    if (country && onCountryHover) onCountryHover(country.code)
   }
 
   onMouseOut = () => {
     const { country, onCountryHover } = this.props
-    if (country) onCountryHover(null)
+    if (country && onCountryHover) onCountryHover(null)
   }
 
   render() {
-    const { chartHeight, chartWidth, currRight, rights, country, currCountry, onRightClick } = this.props
+    const { country, size = 150 } = this.props
 
-    const margin = {
-      top: rights ? 60 : 20,
-      left: rights ? 100 : 10,
-      bottom: rights ? 80 : 30,
-      right: rights ? 100 : 10,
-    }
+    const rights = keyBy([].concat(
+      country.rights.CPR.map(({ name, value }) => ({ name, value: value / 10 })),
+      country.rights.ESR.map(({ name, value }) => ({ name, value: value / 100 })),
+    ), 'name')
 
-    const r = chartHeight - margin.top - margin.bottom < chartWidth - margin.left - margin.right
-      ? (chartHeight - margin.top - margin.bottom) / 2
-      : (chartWidth - margin.left - margin.right) / 2
+    const rightsData = [
+      'Health', // ESR
+      'Housing', // ESR
+      'Work', // ESR
+
+      'Freedom from Disappearance', // CPR
+      'Freedom from Execution', // CPR
+      'Freedom from Torture', // CPR
+      'Participate in Government', // CPR
+      'Assembly and Association', // CPR
+      'Opinion and Expression', // CPR
+
+      'Food', // ESR
+      'Education', // ESR
+    ].map(nameOfRight => rights[nameOfRight].value)
 
     return (
-      <svg
-        ref='svg'
-        height={chartHeight}
-        width={chartWidth}
-        opacity={currCountry === null || !country || currCountry === country.code ? 1 : 0.2}>
-        <g transform={'translate(' + chartWidth / 2 + ',' + ((chartHeight - margin.top - margin.bottom) / 2 + margin.top) + ')'}>
-          <circle r={r > 0 ? r : 0} fill='#eee'></circle>
-        </g>
-        { rights &&
-          rights.map((item, i) => (
-            <RadarChartItem
-              key={i}
-              r={r}
-              index={i}
-              currRight={currRight}
-              rightName={item}
-              translateX={chartWidth / 2}
-              translateY={(chartHeight - margin.top - margin.bottom) / 2 + margin.top}
-              onRightClick={onRightClick}
-            ></RadarChartItem>
-          ))
-        }
-        { country &&
-          <g
-            onClick={this.onCountryClick}
-            onMouseOver={this.onMouseOver}
-            onMouseOut={this.onMouseOut}
-            transform={'translate(' + chartWidth / 2 + ',' + (r * 2 + margin.top) + ')'}
-            cursor='pointer'>
-            <text y='22' fontSize='12' textAnchor='middle' style={{ 'textTransform': 'uppercase' }}>{country.name}</text>
-          </g>
-        }
-      </svg>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          marginBottom: 24,
+        }}
+        onClick={this.onCountryClick}
+        onMouseOver={this.onMouseOver}
+        onMouseOut={this.onMouseOut}
+      >
+        <div style={{ textAlign: 'center' }}>
+          <PetalChart
+            size={size}
+            data={rightsData}
+            domain={[0, 1]}
+            debug={false}
+            enableBlur={false}
+          />
+        </div>
+        <div style={{ fontSize: 12, textAlign: 'center' }}>
+          { country && country.name.toUpperCase() }
+        </div>
+      </div>
     )
   }
 }
