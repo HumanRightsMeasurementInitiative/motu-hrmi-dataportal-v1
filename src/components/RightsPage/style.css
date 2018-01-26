@@ -206,6 +206,9 @@
   padding: 20px 24px 30px;
   height: 100%;
   width: 100%;
+  font-size: 13px;
+  color: #9b9b9d;
+  line-height: 1.2em;
   overflow: auto;
 }
 .textWrapper::-webkit-scrollbar {
@@ -224,13 +227,11 @@
 }
 .definition {
   margin: 0;
-  font-size: 13px;
 }
 .defList {
   position: relative;
   margin: 0;
   padding-left: 10px;
-  font-size: 13px;
 }
 .defList:first-child {
   padding-left: 0;
@@ -243,7 +244,7 @@
   left: 0;
   height: 3px;
   width: 3px;
-  background: #616161;
+  background: #9b9b9d;
 }
 .defList:first-child:before {
   display: none;
@@ -252,4 +253,20 @@
   font-size: 14px;
   font-weight: 600;
 }
-
+.indicatorQues {
+  margin: 14px 0;
+  text-decoration: underline;
+}
+.withDot {
+  position: relative;
+}
+.withDot:before {
+  content: '';
+  position: absolute;
+  top: .4em;
+  left: -14px;
+  height: 4px;
+  width: 4px;
+  border: 1px solid #9b9b9d;
+  border-radius: 4px;
+}

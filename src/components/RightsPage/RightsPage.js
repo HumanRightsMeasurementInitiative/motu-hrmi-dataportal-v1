@@ -158,7 +158,7 @@ export default class RightsPage extends React.Component {
                     <ul>
                       {
                         definition[urlSegs.right].core_indicator.map((item, i) => (
-                          <li key={i}>{item}</li>
+                          <li key={i} className={styles.withDot}>{item}</li>
                         ))
                       }
                     </ul>
@@ -170,7 +170,7 @@ export default class RightsPage extends React.Component {
                     <ul>
                       {
                         definition[urlSegs.right].high_indicator.map((item, i) => (
-                          <li key={i}>{item}</li>
+                          <li key={i} className={styles.withDot}>{item}</li>
                         ))
                       }
                     </ul>
@@ -178,13 +178,13 @@ export default class RightsPage extends React.Component {
                 }
                 { ESRs.indexOf(urlSegs.right) > -1 &&
                   <div>
-                    Why aren't the same indicators used for all countries?
+                    <div className={styles.indicatorQues}>Why aren't the same indicators used for all countries?</div>
                     <div></div>
                   </div>
                 }
                 { urlSegs.right === 'Food' &&
                   <div>
-                    How does the HRMI methodology convert the above indicators into the Right to Food metric?
+                    <div className={styles.indicatorQues}>How does the HRMI methodology convert the above indicators into the Right to Food metric?</div>
                     <div></div>
                   </div>
                 }

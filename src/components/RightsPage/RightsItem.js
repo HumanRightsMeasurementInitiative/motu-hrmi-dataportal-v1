@@ -42,7 +42,7 @@ export default class RightsItem extends React.Component {
             <li className={styles.rightSubItem}>Right to Association</li>
           </ul>
         }
-        { children === 'Freedom from Execution' && selected  &&
+        { children === 'Freedom from Execution' && selected &&
           <ul>
             <li className={styles.rightSubItem}>Right to freedom from the death penalty</li>
             <li className={styles.rightSubItem}>Right to freedom from extrajudicial execution</li>

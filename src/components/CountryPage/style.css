@@ -96,7 +96,7 @@
 }
 
 .columnRight {
-  padding: 10px 16px;
+  padding: 10px 0 0 0;
 }
 .smallText {
   font-family: 'Source Sans Pro', sans-serif;
@@ -108,41 +108,92 @@
   text-transform: uppercase;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
-  font-size: 26px;
+  font-size: 20px;
   letter-spacing: 0.025em;
   color: #58595B;
 }
 .smallTitle {
+  margin-top: 8px;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-size: 12px;
   font-variant: small-caps;
   letter-spacing: 0.01em;
   color: #58595B;
-  margin-top: 10px;
 }
 .smallText2 {
   composes: smallText;
   color: #9B9B9D;
 }
+.countryInfo {
+  margin-left: 26px;
+  margin-right: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.rightInfoWrapper {
+  position: relative;
+  padding-right: 4px;
+}
+.rightInfoWrapper:before,
+.rightInfoWrapper:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 8px;
+}
+.rightInfoWrapper:before {
+  top: 0;
+  height: 16px;
+  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, .2));
+}
+.rightInfoWrapper:after {
+  bottom: 0;
+  height: 30px;
+  background: linear-gradient(0deg, #fff 20%, transparent);
+}
 .rightInfo {
+  padding: 10px 16px 20px 26px;
+  height: 100%;
   overflow: auto;
+}
+.rightInfo::-webkit-scrollbar {
+  background: transparent;
+  width: 4px;
+}
+.rightInfo::-webkit-scrollbar-thumb {
+  display: none;
+  background: #bdbdbd;
+  border-radius: 4px;
+  opacity: 0;
+}
+.rightInfo:hover::-webkit-scrollbar-thumb {
+  display: block;
+  opacity: 1;
 }
 .subtitleESR {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
-  font-size: 19px;
+  font-size: 16px;
   letter-spacing: 0.025em;
-  color: #2E65A1;
-  margin: 15px 0 0;
+  color: #17ab65;
 }
 .subtitleCPR {
+  margin: 15px 0 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
-  font-size: 19px;
+  font-size: 16px;
   letter-spacing: 0.025em;
-  color: #00A551;
-  margin: 15px 0 0;
+  color: #3598ca;
+}
+.esrChartSubtitle {
+  composes: smallText;
+  color: #38d98b;
+}
+.cprChartSubtitle {
+  composes: smallText;
+  color: #71d8f3;
 }
 .barChartWrapper {
   margin-top: 10px;
@@ -165,6 +216,70 @@
   content: '';
   border-top: 2px solid #FFA096;
   margin-top: 4px;
+}
+
+.rightDefinition {
+  font-size: 13px;
+  color: #9b9b9d;
+}
+.defList {
+  position: relative;
+  padding-left: 10px;
+}
+.defList:first-child {
+  margin-top: 14px;
+  padding-left: 0;
+}
+.defList:before {
+  content: ''; 
+  display: block;
+  position: absolute;
+  top: .6em;
+  left: 0;
+  height: 3px;
+  width: 3px;
+  background: #9b9b9d;
+}
+.defList:first-child:before {
+  display: none;
+}
+.measureQues {
+  font-size: 14px;
+  font-weight: 600;
+}
+.indicatorQues {
+  margin: 14px 0;
+  text-decoration: underline;
+}
+.withDot {
+  position: relative;
+}
+.withDot:before {
+  content: '';
+  position: absolute;
+  top: .4em;
+  left: -14px;
+  height: 4px;
+  width: 4px;
+  border: 1px solid #9b9b9d;
+  border-radius: 4px;
+}
+
+.esrRegionValue,
+.cprRegionValue {
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0abc65;
+}
+.cprRegionValue {
+  color: #3778ae;
+}
+.esrValueList,
+.cprValueList {
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #9b9b9d;
 }
 
 .link {
