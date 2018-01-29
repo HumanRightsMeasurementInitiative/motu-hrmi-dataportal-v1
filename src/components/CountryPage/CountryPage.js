@@ -155,7 +155,9 @@ export default class CountryPage extends React.Component {
                           })}
                         </ul>
                       }
-                      <p className={styles.measureQues}>How has HRMI measured the Right to {this.state.currRight}?</p>
+                      { ESRs.indexOf(this.state.currRight) > -1 &&
+                        <p className={styles.measureQues}>How has HRMI measured the Right to {this.state.currRight}?</p>
+                      }
                       { definition[this.state.currRight].core_text &&
                         <div>
                           <p>{definition[this.state.currRight].core_text}</p>
