@@ -4,6 +4,7 @@ import * as d3 from 'd3'
 import CountryName from './CountryName'
 import ESRRects from './ESRRects'
 import CPRRects from './CPRRects'
+import ValueTooltips from './ValueTooltips'
 
 export default class ESRRightBar extends React.Component {
   static propTypes = {
@@ -40,10 +41,10 @@ export default class ESRRightBar extends React.Component {
     })
 
     return (
-      <div ref='chartContainer'>
-        <svg ref='svg' height={chartHeight} width={chartWidth}>
+      <div>
+        <svg height={chartHeight} width={chartWidth}>
           <g transform={'translate(' + margin.left + ',' + margin.top + ')'}>
-            <g ref='xAxis' transform={'translate(0,' + (chartHeight - margin.top - margin.bottom + 10) + ')'}>
+            <g transform={'translate(0,' + (chartHeight - margin.top - margin.bottom + 10) + ')'}>
               {
                 data.map((item, i) => {
                   return (
@@ -54,7 +55,7 @@ export default class ESRRightBar extends React.Component {
                 })
               }
             </g>
-            <g ref='yAxis'>
+            <g>
               {
                 yAxisRange.map((item, i) => {
                   return (
@@ -75,33 +76,44 @@ export default class ESRRightBar extends React.Component {
               data.map((item, i) => {
                 const value = item.rights[keyword].filter(item => item.name === currRight)[0]
                 return (
-                  <g ref='bars' key={i}>
-                    { isESR &&
-                      <ESRRects
-                        translateX={xScale(i) + 30}
-                        translateY={chartHeight - margin.top - margin.bottom - yScale(value.maxValue)}
-                        highPos={yScale(value.maxValue)}
-                        corePos={yScale(value.minValue)}
-                        maxValue={value.maxValue}
-                        minValue={value.minValue}
-                        currCountry={currCountry}
-                        country={item}
-                        onItemClick={onItemClick}
-                      />
-                    }
-                    { !isESR &&
-                      <CPRRects
-                        translateX={xScale(i) + 30}
-                        translateY={chartHeight - margin.top - margin.bottom - yScale((value.maxValue + value.minValue) / 2)}
-                        meanValue={yScale((value.maxValue + value.minValue) / 2)}
-                        diffValue={yScale(value.maxValue - value.minValue)}
-                        textValue={(value.maxValue + value.minValue) / 2}
-                        currCountry={currCountry}
-                        country={item}
-                        onItemClick={onItemClick}
-                      />
-                    }
-                  </g>
+                  isESR
+                  ? <ESRRects
+                    key={i}
+                    translateX={xScale(i) + 30}
+                    translateY={chartHeight - margin.top - margin.bottom - yScale(value.maxValue)}
+                    highPos={yScale(value.maxValue)}
+                    corePos={yScale(value.minValue)}
+                    currCountry={currCountry}
+                    country={item}
+                    onItemClick={onItemClick}
+                  />
+                  : <CPRRects
+                    key={i}
+                    translateX={xScale(i) + 30}
+                    translateY={chartHeight - margin.top - margin.bottom - yScale((value.maxValue + value.minValue) / 2)}
+                    valueMean={yScale((value.maxValue + value.minValue) / 2)}
+                    valueDiff={yScale(value.maxValue - value.minValue)}
+                    country={item}
+                    onItemClick={onItemClick}
+                  />
+                )
+              })
+            }
+            {
+              data.map((item, i) => {
+                const value = item.rights[keyword].filter(item => item.name === currRight)[0]
+                return (
+                  <ValueTooltips
+                    key={i}
+                    isESR={isESR}
+                    translateX={xScale(i) + 30}
+                    translateY={chartHeight - margin.top - margin.bottom - yScale(value.maxValue)}
+                    currCountry={currCountry}
+                    country={item}
+                    maxValue={value.maxValue}
+                    minValue={value.minValue}
+                    textValue={(value.maxValue + value.minValue) / 2}
+                  />
                 )
               })
             }

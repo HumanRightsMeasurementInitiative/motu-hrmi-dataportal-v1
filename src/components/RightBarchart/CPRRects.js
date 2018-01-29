@@ -1,39 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { joinClassName as jcn } from '../utils'
+import styles from './style.css'
 
 export default class CountryName extends React.Component {
   static propTypes = {
     translateX: PropTypes.number.isRequired,
     translateY: PropTypes.number.isRequired,
-    meanValue: PropTypes.number.isRequired,
-    diffValue: PropTypes.number.isRequired,
-    textValue: PropTypes.number.isRequired,
-    currCountry: PropTypes.object,
+    valueMean: PropTypes.number.isRequired,
+    valueDiff: PropTypes.number.isRequired,
     country: PropTypes.object.isRequired,
     onItemClick: PropTypes.func,
   }
 
   onClick = () => {
     const { country, onItemClick } = this.props
-    onItemClick(country)
+    if (onItemClick !== undefined) onItemClick(country)
   }
 
   render() {
-    const { translateX, translateY, meanValue, diffValue, textValue, currCountry, country } = this.props
-    const isActive = currCountry && currCountry.name === country.name
+    const { translateX, translateY, valueMean, valueDiff, onItemClick } = this.props
     return (
-      <g transform={'translate(' + translateX + ', ' + translateY + ')'} onClick={this.onClick} cursor='pointer'>
-        { meanValue > 0 &&
-          <rect height={meanValue} width='6' x='-3' fill='#eee'></rect>
+      <g transform={'translate(' + translateX + ', ' + translateY + ')'} onClick={this.onClick} className={jcn({ clickable: onItemClick !== undefined }, styles)}>
+        { valueMean > 0 &&
+          <rect height={valueMean} width='6' x='-3' fill='rgba(0, 0, 0, .1)'></rect>
         }
-        { diffValue > 0 &&
+        { valueDiff > 0 &&
           <g>
-            <rect height={diffValue} width='6' x='-3' y={-diffValue / 2} fill='#3378ae'></rect>
+            <rect height={valueDiff} width='6' x='-3' y={-valueDiff / 2} fill='#3378ae'></rect>
             <rect height='2' width='6' x='-3' y='-1' fill='#fff'></rect>
           </g>
-        }
-        { isActive &&
-          <text y={-diffValue / 2 - 4} fontSize='12' fill='#3378ae' fontWeight='600' textAnchor='middle'>{Math.round(textValue * 10) / 10}/10</text>
         }
       </g>
     )
