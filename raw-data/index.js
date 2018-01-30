@@ -58,15 +58,33 @@ function ESRHighIncome() {
       SERF: round(row.H),
       rights: {
         food: round(row.I),
-        food_derived: [round(row.J)],
+        food_sub: {
+          childrenNourishment: null,
+          normalBirthweightInfants: round(row.J),
+        },
         education: round(row.K),
-        education_derived: [round(row.L), round(row.M)],
+        education_sub: {
+          combinedSchoolEnrollment: round(row.L),
+          educationQuality: round(row.M),
+          primarySchoolCompletion: null,
+        },
         work: round(row.Q),
-        work_derived: [round(row.R), round(row.S)],
+        work_sub: {
+          notLongTermUnemployed: round(row.R),
+          notRelativelyPoor: round(row.S),
+          notAbsolutelyPoor: null,
+        },
         housing: null,
-        housing_derived: [null, null],
+        housing_sub: {
+          improvedSanitation: null,
+          improvedRuralWater: null,
+        },
         health: round(row.N),
-        health_derived: [round(row.O), round(row.P)],
+        health_sub: {
+          cildSurvival: round(row.O),
+          survivalToAge65: round(row.P),
+          contraceptiveUseScore: null,
+        },
       },
     }
     return datum
@@ -111,15 +129,33 @@ function ESRCore() {
       SERF: round(row.G),
       rights: {
         food: round(row.I),
-        food_derived: [round(row.J)],
+        food_sub: {
+          childrenNourishment: round(row.J),
+          normalBirthweightInfants: null,
+        },
         education: round(row.R),
-        education_derived: [round(row.S), round(row.T)],
+        education_sub: {
+          combinedSchoolEnrollment: round(row.S),
+          educationQuality: null,
+          primarySchoolCompletion: round(row.T),
+        },
         work: round(row.U),
-        work_derived: [round(row.V)],
+        work_sub: {
+          notLongTermUnemployed: null,
+          notRelativelyPoor: null,
+          notAbsolutelyPoor: round(row.V),
+        },
         housing: round(row.K),
-        housing_derived: [round(row.L), round(row.M)],
+        housing_sub: {
+          improvedSanitation: round(row.L),
+          improvedRuralWater: round(row.M),
+        },
         health: round(row.N),
-        health_derived: [round(row.O), round(row.P), round(row.Q)],
+        health_sub: {
+          cildSurvival: round(row.O),
+          survivalToAge65: round(row.P),
+          contraceptiveUseScore: round(row.Q),
+        },
       },
     }
     return datum
@@ -166,17 +202,17 @@ function CPR() {
       rights: {
         opinionAndExpression: getRight('express'),
         assemblyAndAssociation: getRight('assem_assoc'),
-        assemblyAndAssociation_derived: [
-          getRight('assem'), // assembly
-          getRight('assoc'), // association
-        ],
+        assemblyAndAssociation_sub: {
+          assembly: getRight('assem'),
+          association: getRight('assoc'),
+        },
         participateInGovernment: getRight('polpart'),
         freedomFromTorture: getRight('tort'),
         freedomFromExecution: getRight('execution'),
-        freedomFromExecution_derived: [
-          getRight('dpex'), // freedomFromTheDeathPenalty
-          getRight('exkill'), // freedomFromExtrajudicialExecution
-        ],
+        freedomFromExecution_sub: {
+          freedomFromTheDeathPenalty: getRight('dpex'),
+          freedomFromExtrajudicialExecution: getRight('exkill'),
+        },
         freedomFromArbitraryArrest: getRight('arrest'),
         freedomFromDisappearance: getRight('disap'),
       },
