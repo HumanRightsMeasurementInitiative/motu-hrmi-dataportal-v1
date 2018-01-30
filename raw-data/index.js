@@ -19,6 +19,10 @@ const CPR_MAPPING = {
   UnitedKingdom: 'GBR',
 }
 
+function round(float) {
+  return parseFloat(parseFloat(float).toFixed(1))
+}
+
 function sheetRows(sheet, columns = 'AZ', startFromRow = 0) {
   const [colStart, rowStart, colEnd, rowEnd] = sheet['!ref'].match(/([A-Z]+)(\d+):([A-Z]+)(\d+)/).slice(1)
 
@@ -50,19 +54,19 @@ function ESRHighIncome() {
       isHighIncome: parseInt(row.D) === 1,
       isOECD: parseInt(row.E) === 1,
       geoRegion: row.F,
-      GDP: row.G,
-      SERF: row.H,
+      GDP: round(row.G),
+      SERF: round(row.H),
       rights: {
-        food: row.I,
-        food_derived: [row.J],
-        education: row.K,
-        education_derived: [row.L, row.M],
-        work: row.Q,
-        work_derived: [row.R, row.S],
+        food: round(row.I),
+        food_derived: [round(row.J)],
+        education: round(row.K),
+        education_derived: [round(row.L), round(row.M)],
+        work: round(row.Q),
+        work_derived: [round(row.R), round(row.S)],
         housing: null,
-        housing_derived: [],
-        health: row.N,
-        health_derived: [row.O, row.P],
+        housing_derived: [null, null],
+        health: round(row.N),
+        health_derived: [round(row.O), round(row.P)],
       },
     }
     return datum
@@ -103,19 +107,19 @@ function ESRCore() {
       isHighIncome: parseInt(row.E) === 1,
       isOECD: parseInt(row.F) === 1,
       geoRegion: row.D,
-      GDP: row.H,
-      SERF: row.G,
+      GDP: round(row.H),
+      SERF: round(row.G),
       rights: {
-        food: row.I,
-        food_derived: [row.J],
-        education: row.R,
-        education_derived: [row.S, row.T],
-        work: row.U,
-        work_derived: [row.V],
-        housing: row.K,
-        housing_derived: [row.L, row.M],
-        health: row.N,
-        health_derived: [row.O, row.P, row.Q],
+        food: round(row.I),
+        food_derived: [round(row.J)],
+        education: round(row.R),
+        education_derived: [round(row.S), round(row.T)],
+        work: round(row.U),
+        work_derived: [round(row.V)],
+        housing: round(row.K),
+        housing_derived: [round(row.L), round(row.M)],
+        health: round(row.N),
+        health_derived: [round(row.O), round(row.P), round(row.Q)],
       },
     }
     return datum
@@ -242,6 +246,6 @@ fs.writeFileSync('../src/data/country-categories.json', JSON.stringify(regions, 
 
 console.log(`
 Written data files:
-  • src/data/rights-by-country.json: Rights data for each country
-  • src/data/country-categories.json: Countries grouped by category (geographical or political)
+  • ../src/data/rights-by-country.json: Rights data for each country
+  • ../src/data/country-categories.json: Countries grouped by category (geographical or political)
 `)
