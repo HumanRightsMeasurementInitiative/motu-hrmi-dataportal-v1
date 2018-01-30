@@ -242,7 +242,7 @@
 }
 .legend {
   display: flex;
-  margin: 10px 0;
+  margin: 10px 0 15px;
   font-size: 12px;
   color: #616161;
 }
@@ -345,9 +345,8 @@
   font-size: 14px;
   font-weight: 600;
 }
-.indicatorQues {
-  margin: 14px 0;
-  text-decoration: underline;
+.countryQues {
+  font-size: 13px;
 }
 .withDot {
   position: relative;

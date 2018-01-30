@@ -2,6 +2,7 @@
   position: relative;
   margin: 14px 0;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .CPRTitle {
@@ -12,6 +13,7 @@
   font-size: 16px;
   letter-spacing: 0.025em;
   color: #3778ae;
+  cursor: pointer;
 }
 
 .questionMark {
@@ -26,7 +28,6 @@
   color: #fff;
   text-align: center;
   line-height: 10px;
-  cursor: pointer;
 }
 .CPRTitle .questionMark {
   bottom: 4px;
@@ -34,16 +35,25 @@
 }
 
 .popupPane {
-  position: absolute;
-  bottom: 30px;
-  right: 100%;
-  padding: 16px 24px;
+  position: fixed;
+  z-index: 6000;
+  padding: 6px 18px;
   width: 200%;
   min-width: 200px;
-  background: #2d64a0;
+  background: #262261;
   color: #fff;
   line-height: 1.4em;
 }
+
+.popupPane li {
+  padding-left: 20px;
+}
+
+.popupPane p {
+  margin: 10px 0;
+}
+
 .popupPane a {
   color: #fff;
+  text-decoration: underline;
 }

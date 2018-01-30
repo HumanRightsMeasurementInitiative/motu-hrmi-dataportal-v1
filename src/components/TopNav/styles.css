@@ -24,7 +24,7 @@
   transition: background .4s;
 }
 .menuLabel.active {
-  background: #342f72;
+  background: #262261;
   color: #fff;
 }
 
@@ -33,7 +33,7 @@
   z-index: 1;
   top: 28px;
   padding: 40px 10px 30px;
-  background: #342f72;
+  background: #262261;
   font-size: 14px;
   color: #fff;
   overflow: hidden;
@@ -120,7 +120,7 @@
   padding: 42px 42px 12px;
   width: 90%;
   max-width: 460px;
-  background: #342f72;
+  background: #262261;
   font-size: 14px;
   color: #fff;
   transform: translate(-50%, -50%);

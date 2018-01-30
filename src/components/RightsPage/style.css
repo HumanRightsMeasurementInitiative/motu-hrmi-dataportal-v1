@@ -228,7 +228,7 @@
 }
 .textWrapper {
   flex: 1 1 auto;
-  padding: 20px 24px 30px;
+  padding: 20px 16px 30px 24px;
   height: 100%;
   width: 100%;
   font-size: 13px;
@@ -345,4 +345,18 @@
 }
 .esrChartKey {
   font-size: 13px;
+}
+
+.tooptipLink {
+  position: relative;
+  padding-left: 20px;
+}
+.tooptipLink:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-left: 8px solid #fff;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
 }

@@ -93,7 +93,7 @@ export default class CountryPage extends React.Component {
             <div className={styles.countryFooter}>
               <div className={styles.downloadIcon}><DownloadIcon /></div>
               <div className={styles.text}>Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.</div>
-              <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
+              <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href='https://humanrightsmeasurement.org'>https://humanrightsmeasurement.org</a></div>
             </div>
           </div>
 
@@ -150,10 +150,16 @@ export default class CountryPage extends React.Component {
                   }
                   {
                     this.state.currRight === 'all'
-                    ? <div>
-                      <a className={styles.link} href="">Why are the two types of metrics not on the same scale?</a>
-                      <a className={styles.link} href="">Why are the two sets of metrics not for the same year?</a>
-                      <a className={styles.link} href="">What is the difference between the core and the high income OECD country scale?</a>
+                    ? <div className={styles.countryQues}>
+                      <QuestionTooltip width={288} question={`Why are the two types of metrics not on the same scale?`}>
+                        <p>HRMI metrics use two different methodologies that have different scales and interpretations. The scores for the civil and political rights metrics are a score out of 10 indicating the extent to which the government in the country respected that right. By contrast, the scores for the economic and social rights metrics are percentage scores. These tell you the percentage level of enjoyment achieved on that right relative to what should be feasible for a country with that income level. This is not the same as the extent to which people in the country enjoy the right. For more information please explore our <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blink'>methodologies in more detail.</a></p>
+                      </QuestionTooltip>
+                      <QuestionTooltip width={244} question={`Why are the two sets of metrics not for the same year?`}>
+                        <p>All metrics presented are the most recent data available. The civil and political rights metrics are for January to June 2017. The economic and social rights metrics are from the 2017 update of the International Social and Economic Rights Fulfilment Index, which covers the period from 2005 to 2015. The data used for each year are the most recently available data as of that year. HRMI graphs use the most recently available data from the full dataset.</p>
+                      </QuestionTooltip>
+                      <QuestionTooltip width={286} question={`What is the difference between the core and the high income OECD country scale?`}>
+                        <p>For countries assessed using the core assessment standard, our methodology uses statistical indicators that are available for most countries in the world, particularly developing and non-OECD-member countries. By contrast, the high-income OECD country assessment standard uses indicators that are typically available only for the high-income OECD countries, and/or better reflect the human rights challenges of high-income countries. We would also use many of these indicators in the core assessment standard if they had broader country coverage. All countries are evaluated using both assessment standards to the extent data are available.</p>
+                      </QuestionTooltip>
                     </div>
                     : <div className={styles.rightDefinition}>
                       <div className='arrowLink' style={{ marginLeft: '-24px' }}>
@@ -196,24 +202,34 @@ export default class CountryPage extends React.Component {
                         </div>
                       }
                       { this.state.showMore && ESRs.indexOf(this.state.currRight) > -1 &&
-                        <QuestionTooltip question={`Why aren't the same indicators used for all countries?`}>
-                          This is because the same data are not always collected for all countries in the world. The core assessment standard is mostly used for developing and non-OECD-member countries. The high-income OECD country assessment standard uses indicators that are often available only for high-income OECD countries. However, all countries are evaluated using both sets of indicators to the extent data are available.
+                        <QuestionTooltip width={238} question={`Why aren't the same indicators used for all countries?`}>
+                          <p>This is because the same data are not always collected for all countries in the world. The core assessment standard is mostly used for developing and non-OECD-member countries. The high-income OECD country assessment standard uses indicators that are often available only for high-income OECD countries. However, all countries are evaluated using both sets of indicators to the extent data are available.</p>
                         </QuestionTooltip>
                       }
                       { this.state.showMore && this.state.currRight === 'Food' &&
-                        <QuestionTooltip question='How does the HRMI methodology convert the above indicators into the Right to Food metric?'>
-                          All HRMI measures of economic and social rights have been produced using official statistics collected by national governments and harmonised by international organisations. For each indicator, our methodology compares the observed level of enjoyment of that dimension of human rights to the enjoyment level it should be feasible for that country to achieve given its per-capita income level. HRMI economic and social rights metrics thus show how well the State is using its available resources to ensure that all people enjoy these rights. Three things should be kept in mind when interpreting HRMI economic and social rights metrics:
+                        <QuestionTooltip width={360} question='How does the HRMI methodology convert the above indicators into the Right to Food metric?'>
+                          <p>All HRMI measures of economic and social rights have been produced using official statistics collected by national governments and harmonised by international organisations. For each indicator, our methodology compares the observed level of enjoyment of that dimension of human rights to the enjoyment level it should be feasible for that country to achieve given its per-capita income level. HRMI economic and social rights metrics thus show how well the State is using its available resources to ensure that all people enjoy these rights.</p>
+                          <p>Three things should be kept in mind when interpreting HRMI economic and social rights metrics: </p>
                           <ul>
-                            <li>A score of 100% does NOT imply that everyone in the country enjoys the right. Rather, it implies that the country’s right enjoyment level is on par with the historically best-performing countries at the same per-capita income level.</li>
-                            <li>A score of 100% does NOT mean there is no room for improvement. Countries with high HRMI scores still need to innovate to extend human rights enjoyment further than has been done in the past.</li>
-                            <li>The fact that a high-income country earns a high HRMI score on a right does NOT imply that all population subgroups (e.g. women or indigenous people) in that country enjoy the right equally. For more information on the HRMI ESR methodology click <a href='https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/' target='_blankhttps://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/'></a>here.</li>
+                            <li>1) A score of 100% does NOT imply that everyone in the country enjoys the right. Rather, it implies that the country’s right enjoyment level is on par with the historically best-performing countries at the same per-capita income level.</li>
+                            <li>2) A score of 100% does NOT mean there is no room for improvement. Countries with high HRMI scores still need to innovate to extend human rights enjoyment further than has been done in the past.</li>
+                            <li>3) The fact that a high-income country earns a high HRMI score on a right does NOT imply that all population subgroups (e.g. women or indigenous people) in that country enjoy the right equally.</li>
                           </ul>
+                          <p className={styles.tooptipLink}>For more information on the HRMI ESR methodology <a href='https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/' target='_blank'>click here.</a></p>
                         </QuestionTooltip>
                       }
                       { this.state.showMore && CPRs.indexOf(this.state.currRight) > -1 &&
-                        <QuestionTooltip question={'How has HRMI measured the Right to ' + this.state.currRight + '?'}>
-                          Each civil and political right metric has been produced from responses to a survey of in-country human rights experts. Respondents’ answers to questions about the frequency of violations of each civil and political right were combined using a statistical model that ensures the comparability of responses across countries. This results in a distribution of estimated levels of respect for each right in each country, represented by the scores and uncertainty bands shown throughout the data visualisations. Other information about who was identified as at risk for human rights abuse was also collected from our respondents, as shown. For more detailed information, please see our methodology note <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blank'>here</a>.
-                        </QuestionTooltip>
+                        <div>
+                          <QuestionTooltip width={293} question={'How should I interpret the uncertainty bands?'}>
+                            <p>Our civil and political rights measures methodology produces a range of estimated levels of respect for each human right. The average country score (indicated by the white horizontal line) represents the average estimate in that range. The lower score on the uncertainty band represents the 10th percentile of our estimates; the higher score on the uncertainty band represents the 90th percentile.</p>
+                            <p>Narrower uncertainty bands tell us that there was more agreement among expert survey respondents about what that country’s score should be, and/or a larger number of respondents. The greater the overlap between two uncertainty bands, the less certain we can be that the level of respect for human rights represented by those bands are truly different from one another.</p>
+                            <p className={styles.tooptipLink}>For more detailed information, please see our <a href='#' target='_blank'>methodology note.[need link]</a></p>
+                          </QuestionTooltip>
+                          <QuestionTooltip width={294} question={'How has HRMI measured the Right to ' + this.state.currRight + '?'}>
+                            <p>Each civil and political right metric has been produced from responses to a survey of in-country human rights experts. Respondents’ answers to questions about the frequency of violations of each civil and political right were combined using a statistical model that ensures the comparability of responses across countries. This results in a distribution of estimated levels of respect for each right in each country, represented by the scores and uncertainty bands shown throughout the data visualisations. Other information about who was identified as at risk for human rights abuse was also collected from our respondents, as shown.</p>
+                            <p className={styles.tooptipLink}>For more detailed information, please see our <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blank'>website here.</a></p>
+                          </QuestionTooltip>
+                        </div>
                       }
                       <div className={styles.showMoreBtn} onClick={this.toggleShowMore}>{this.state.showMore ? 'Show less' : 'Show more'}</div>
                       { ESRs.indexOf(this.state.currRight) > -1 &&
@@ -225,8 +241,8 @@ export default class CountryPage extends React.Component {
                       { CPRs.indexOf(this.state.currRight) > -1 &&
                         <div>
                           <div>
-                            <QuestionTooltip question={'Groups most at risk'} isTitle={true}>
-                              This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our summary of qualitative survey responses.
+                            <QuestionTooltip width={214} question={'Groups most at risk'} isTitle={true}>
+                              <p>This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our <a href='#' target='_blank'>summary of qualitative survey responses.[need link]</a></p>
                             </QuestionTooltip>
                             <ul className={styles.groupsList}>
                               <li>nationality</li>
@@ -237,8 +253,8 @@ export default class CountryPage extends React.Component {
                             </ul>
                           </div>
                           <div>
-                            <QuestionTooltip question={'Distribution of abuse'} isTitle={true}>
-                              This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group as being especially vulnerable.
+                            <QuestionTooltip width={220} question={'Distribution of abuse'} isTitle={true}>
+                              <p>This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group as being especially vulnerable.</p>
                             </QuestionTooltip>
                             <div className={styles.cprChartSubtitle}>Data is for period January - June 2017</div>
                             <div className={styles.chartKeys}>
