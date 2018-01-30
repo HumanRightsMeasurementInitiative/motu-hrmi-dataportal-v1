@@ -43,7 +43,15 @@ export default class QuestionTooltip extends React.Component {
 
     return (
       <div className={styles.quesPopup} ref='quesPopup'>
-        <div className={joinedClass}>{question}<span className={styles.questionMark} onClick={this.toggleAnswer}><QuestionMark></QuestionMark></span></div>
+        <div className={joinedClass}>
+          {question}
+          <span className={styles.questionMark} onClick={this.toggleAnswer}>
+            { isTitle
+              ? 'i'
+              : <QuestionMark></QuestionMark>
+            }
+          </span>
+        </div>
         { this.state.showAnswer &&
           <div className={styles.popupPane}>{children}</div>
         }
