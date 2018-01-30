@@ -1,0 +1,49 @@
+.indicatorQues {
+  position: relative;
+  margin: 14px 0;
+  text-decoration: underline;
+}
+
+.CPRTitle {
+  position: relative;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.025em;
+  color: #3778ae;
+}
+
+.questionMark {
+  position: absolute;
+  bottom: 2px;
+  margin-left: 4px;
+  height: 10px;
+  width: 10px;
+  background: #616161;
+  border-radius: 50%;
+  font-size: 9px;
+  color: #fff;
+  text-align: center;
+  line-height: 10px;
+  cursor: pointer;
+}
+.CPRTitle .questionMark {
+  bottom: 4px;
+  background: #3778ae;
+}
+
+.popupPane {
+  position: absolute;
+  bottom: 30px;
+  right: 100%;
+  padding: 16px 24px;
+  width: 200%;
+  min-width: 200px;
+  background: #2d64a0;
+  color: #fff;
+  line-height: 1.4em;
+}
+.popupPane a {
+  color: #fff;
+}

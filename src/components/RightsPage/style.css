@@ -278,11 +278,7 @@
   font-size: 14px;
   font-weight: 600;
 }
-.indicatorQues {
-  position: relative;
-  margin: 14px 0;
-  text-decoration: underline;
-}
+
 .withDot {
   position: relative;
 }
@@ -295,33 +291,4 @@
   width: 4px;
   border: 1px solid #9b9b9d;
   border-radius: 4px;
-}
-.questionMark {
-  position: absolute;
-  bottom: 2px;
-  margin-left: 4px;
-  height: 10px;
-  width: 10px;
-  background: #616161;
-  border-radius: 50%;
-  font-size: 9px;
-  color: #fff;
-  text-align: center;
-  line-height: 10px;
-  cursor: pointer;
-}
-
-.popupPane {
-  position: absolute;
-  bottom: 30px;
-  right: 100%;
-  padding: 16px 24px;
-  width: 200%;
-  min-width: 200px;
-  background: #2d64a0;
-  color: #fff;
-  line-height: 1.4em;
-}
-.popupPane a {
-  color: #fff;
 }

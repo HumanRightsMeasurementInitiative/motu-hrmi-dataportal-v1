@@ -43,33 +43,23 @@ export default class BarChartCPR extends React.Component {
       const rectHeight = d3.scaleLinear().range([0, 0.8 * height]).domain([0, 10])
       return (
         <g key={index}>
-          <rect x={x} y={height - rectHeight(right.value)} width={0.05 * containerWidth} height={rectHeight(right.value)} fill="#00A551"/>
-          <line x1={x} y1={height - rectHeight(right.maxValue)} x2={x + 0.05 * containerWidth} y2={height - rectHeight(right.maxValue)} stroke="red" strokeWidth="2" opacity="0.4"/>
-          <line x1={x} y1={height - rectHeight(right.minValue)} x2={x + 0.05 * containerWidth} y2={height - rectHeight(right.minValue)} stroke="red" strokeWidth="2" opacity="0.4"/>
-          <line x1={x + 0.025 * containerWidth} y1={height - rectHeight(right.maxValue)} x2={x + 0.025 * containerWidth} y2={height - rectHeight(right.minValue)} stroke="red" strokeWidth="2" opacity="0.4"/>
+          <rect x={x} y={height - rectHeight(right.value)} width={0.05 * containerWidth} height={rectHeight(right.value)} fill='rgba(0, 0, 0, .1)'/>
+          <rect x={x} y={height - rectHeight(right.maxValue) - 1} width={0.05 * containerWidth} height={rectHeight(right.maxValue) - rectHeight(right.minValue) + 2} fill='#2E65A1'/>
+          <rect x={x} y={height - rectHeight(right.value) - 1} width={0.05 * containerWidth} height={2} fill='#fff'/>
         </g>
       )
     })
     return (
       <div ref='chartContainer'>
         <svg width={containerWidth} height={height}>
-          {axis.map((line, index) => {
-            if (index < 2) {
-              return (
-                <g key={index}>
-                  <text x="0" y={line.height - 2}>{line.text}</text>
-                  <line x1="0" y1={line.height} x2={containerWidth} y2={line.height} stroke="#00A551" opacity="0.25" />
-                </g>
-              )
-            } else {
-              return (
-                <g key={index}>
-                  <text x="0" y={line.height - 2}>{line.text}</text>
-                  <line x1="0" y1={line.height} x2={containerWidth} y2={line.height} stroke="#00A551" />
-                </g>
-              )
-            }
-          })}
+          {
+            axis.map((line, index) => (
+              <g key={index}>
+                <text x='0' y={line.height - 2} fontSize='10px' fill='#616161'>{line.text}</text>
+                <line x1='0' y1={line.height} x2={containerWidth} y2={line.height} stroke='#616161' opacity={index < 2 ? '0.25' : '1'} />
+              </g>
+            ))
+          }
           {bars}
         </svg>
       </div>

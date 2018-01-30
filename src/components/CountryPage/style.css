@@ -59,7 +59,7 @@
   max-width: 200px;
   font-size: 13px;
   letter-spacing: .025em;
-  color: #9b9b9d;
+  color: #616161;
   overflow: auto;
 }
 .countriesList::-webkit-scrollbar {
@@ -174,6 +174,7 @@
   flex-direction: column;
   position: relative;
   padding-right: 4px;
+  color: #616161;
 }
 .rightInfoWrapper:before,
 .rightInfoWrapper:after {
@@ -182,11 +183,12 @@
   position: absolute;
   left: 0;
   right: 8px;
+  z-index: 10;
 }
 .rightInfoWrapper:before {
   top: 0;
   height: 18px;
-  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, .2));
+  background: linear-gradient(180deg, #fff 20%, rgba(255, 255, 255, .2));
 }
 .rightInfoWrapper:after {
   bottom: 0;
@@ -220,12 +222,12 @@
   color: #17ab65;
 }
 .subtitleCPR {
-  margin: 15px 0 0;
+  margin: 0 0 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.025em;
-  color: #3598ca;
+  color: #3778ae;
 }
 .esrChartSubtitle {
   composes: smallText;
@@ -236,13 +238,69 @@
   color: #71d8f3;
 }
 .barChartWrapper {
-  margin-top: 10px;
+  margin: 15px 0;
 }
 .legend {
+  display: flex;
+  margin: 10px 0;
+  font-size: 12px;
+  color: #616161;
+}
+.legend .bar {
+  flex: 0 0 auto;
+  position: relative;
+  margin: 0 4px;
+  height: 40px;
+  width: 10px;
+  background: #2E65A1;
+}
+.legend .bar:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  width: 100%;
+  border: 1px solid #fff;
+}
+.meanText {
+  flex: 0 0 auto;
+  line-height: 40px;
+}
+.meanText:after {
+  content: ' \2014';
+}
+.textContainer {
+  flex: 1;
+  position: relative;
+}
+.maxText,
+.minText {
+  position: absolute;
+  line-height: 1em;
+}
+.maxText sup,
+.minText sup {
+  font-size: .8em;
+}
+.maxText {
+  top: -.8em;
+}
+.minText {
+  bottom: -.3em;
+}
+.maxText:before,
+.minText:before {
+  content: '\2014 ';
+}.maxText:before,
+.minText:before {
+  content: '\2014 ';
+}
+/*.legend {
   composes: smallText;
   color: #FFA096;
-}
-.uncertaintyIcon {
+}*/
+/*.uncertaintyIcon {
   display: inline-block;
   height: 10px;
   width: 25px;
@@ -256,11 +314,11 @@
   content: '';
   border-top: 2px solid #FFA096;
   margin-top: 4px;
-}
+}*/
 
 .rightDefinition {
   font-size: 13px;
-  color: #9b9b9d;
+  color: #616161;
 }
 .defList {
   position: relative;
@@ -278,7 +336,7 @@
   left: 0;
   height: 3px;
   width: 3px;
-  background: #9b9b9d;
+  background: #616161;
 }
 .defList:first-child:before {
   display: none;
@@ -301,7 +359,7 @@
   left: -14px;
   height: 4px;
   width: 4px;
-  border: 1px solid #9b9b9d;
+  border: 1px solid #616161;
   border-radius: 4px;
 }
 
@@ -319,7 +377,7 @@
 .cprValueList {
   margin-bottom: 14px;
   font-size: 13px;
-  color: #9b9b9d;
+  color: #616161;
 }
 
 .link {
@@ -331,4 +389,46 @@
   letter-spacing: 0.025em;
   line-height: 15px;
   color: #58595B;
+}
+
+.showMoreBtn {
+  margin: 10px 0 20px;
+  line-height: 1em;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.groupsList {
+  margin: 10px 0 15px;
+}
+.groupsList li {
+  margin: 5px 0;
+  color: #3778ae;
+  text-align: center;
+  line-height: 1em;
+}
+.groupsList li:nth-child(1) {
+  font-size: 22px;
+}
+.groupsList li:nth-child(2) {
+  font-size: 20px;
+  opacity: .9;
+}
+.groupsList li:nth-child(3) {
+  font-size: 18px;
+  opacity: .8;
+}
+.groupsList li:nth-child(4) {
+  font-size: 16px;
+  opacity: .7;
+}
+.groupsList li:nth-child(5) {
+  font-size: 14px;
+  opacity: .6;
+}
+.chartKeys {
+  margin-bottom: 10px;
+}
+.esrChartKey {
+  font-size: 13px;
 }
