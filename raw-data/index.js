@@ -236,6 +236,12 @@ const regions = {
   oecd: catalogCountriesOECD,
 }
 
-const indent = process.argv.includes('--verbose') ? 2 : 0
-console.log(JSON.stringify(joinedCountriesByCountry, null, indent))
-console.log(JSON.stringify(regions, null, indent))
+const indent = 2
+fs.writeFileSync('../src/data/rights-by-country.json', JSON.stringify(joinedCountriesByCountry, null, indent))
+fs.writeFileSync('../src/data/country-categories.json', JSON.stringify(regions, null, indent))
+
+console.log(`
+Written data files:
+  • src/data/rights-by-country.json: Rights data for each country
+  • src/data/country-categories.json: Countries grouped by category (geographical or political)
+`)
