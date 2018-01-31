@@ -46,10 +46,10 @@ export default class CountryPage extends React.Component {
   }
 
   render() {
-    const { data, urlSegs } = this.props
+    const { data: { rightsByRegion }, urlSegs } = this.props
 
-    const countries = data[urlSegs.region]
-    const currCountry = countries.find(country => country.code === urlSegs.country)
+    const countries = rightsByRegion[urlSegs.region].countries
+    const currCountry = countries.find(country => country.countryCode === urlSegs.country)
 
     const ESRs = ['Food', 'Education', 'Work', 'Housing', 'Health']
     const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
@@ -68,8 +68,8 @@ export default class CountryPage extends React.Component {
             <div className={styles.countriesListWrapper}>
               <ul className={styles.countriesList}>
                 {countries.map((country) => (
-                  <CountryItem key={country.code} code={country.code} onItemClick={this.setCountry} selected={country.code === urlSegs.country}>
-                    {country.name}
+                  <CountryItem key={country.countryCode} code={country.countryCode} onItemClick={this.setCountry} selected={country.countryCode === urlSegs.country}>
+                    {country.countryCode}
                   </CountryItem>
                 ))}
               </ul>
@@ -106,7 +106,9 @@ export default class CountryPage extends React.Component {
                     <div>
                       <div className={styles.subtitleESR}>Economic and Social Rights</div>
                       <div className={styles.esrChartSubtitle}>most recent data (2015 or earlier)</div>
-                      <div className={styles.barChartWrapper}><BarChartESR data={currCountry.rights.ESR} height={80} /></div>
+                      <div className={styles.barChartWrapper}>
+                        <BarChartESR data={currCountry.rights.ESR} height={80} />
+                      </div>
                       { this.state.currRight !== 'all' &&
                         <div>
                           <div className={styles.esrRegionValue}>Right to {getRegionName(urlSegs.region)} 22%</div>
