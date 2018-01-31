@@ -8,24 +8,29 @@ export default class CountryName extends React.Component {
     translateY: PropTypes.number.isRequired,
     country: PropTypes.object.isRequired,
     currCountry: PropTypes.object,
+    highIncomeDisplay: PropTypes.string,
+    coreDisplay: PropTypes.string,
+    valueDisplay: PropTypes.string,
+    highIncomeValue: PropTypes.number,
+    coreValue: PropTypes.number,
     maxValue: PropTypes.number,
-    minValue: PropTypes.number,
-    textValue: PropTypes.number,
   }
 
   render() {
-    const { isESR, translateX, translateY, textValue, currCountry, country, maxValue, minValue } = this.props
-    const isActive = currCountry && currCountry.name === country.name
+    const { isESR, translateX, translateY, currCountry, country, highIncomeDisplay, coreDisplay, valueDisplay, highIncomeValue, coreValue, maxValue } = this.props
+    const isActive = currCountry && currCountry === country
     return (
       <g transform={'translate(' + translateX + ', ' + translateY + ')'}>
         { isESR && isActive &&
           <g>
-            <text y='-20' fontSize='12' fill='#616161' fontWeight='600'>{maxValue} %</text>
-            <text y='-8' fontSize='12' fill='#616161' fontWeight='600'>{minValue} %</text>
+            <text y={-highIncomeValue + 3} x={8} fontSize='12' fill='#616161' fontWeight='600'>{highIncomeDisplay}%</text>
+            <text y={-coreValue + 3} x={8} fontSize='12' fill='#616161' fontWeight='600'>{coreDisplay}%</text>
           </g>
         }
         { !isESR && isActive &&
-          <text y='-8' fontSize='12' fill='#25a9e0' fontWeight='600' textAnchor='middle'>{Math.round(textValue * 10) / 10}/10</text>
+          <text y={-maxValue - 4} fontSize='12' fill='#3378ae' fontWeight='600' textAnchor='middle'>
+            {valueDisplay}
+          </text>
         }
       </g>
     )

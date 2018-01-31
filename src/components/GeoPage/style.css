@@ -79,7 +79,7 @@
 .chartsFooter {
   flex: 0 0 auto;
   position: relative;
-  padding: 20px 0 30px;
+  padding: 6px 0 30px;
   font-size: 12px;
 }
 .chartsFooter .small {
@@ -88,7 +88,7 @@
 }
 .downloadPopupWrapper {
   position: absolute;
-  top: 0;
+  top: 6px;
   height: 32px;
   width: 32px;
 }

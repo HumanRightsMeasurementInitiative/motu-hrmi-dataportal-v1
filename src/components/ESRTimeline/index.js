@@ -4,7 +4,6 @@ import * as d3 from 'd3'
 
 export default class ESRRightBar extends React.Component {
   static propTypes = {
-    data: PropTypes.array.isRequired,
     chartHeight: PropTypes.number.isRequired,
     chartWidth: PropTypes.number.isRequired,
     currYear: PropTypes.number.isRequired,
@@ -12,7 +11,7 @@ export default class ESRRightBar extends React.Component {
   }
 
   render() {
-    const { data, chartHeight, chartWidth, currYear, onItemClick } = this.props
+    const { chartHeight, chartWidth, currYear, onItemClick } = this.props
     const yAxisRate = 20
     const margin = {
       top: 40,

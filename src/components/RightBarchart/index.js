@@ -111,25 +111,34 @@ export default class RightBarchart extends React.Component {
               })
             }
             {
-              // data.map((item, i) => {
+              rightsByRegionCountries.map((country, i) => {
+                const { esr_hi: esrHi, esr_core: esrCore, cpr } = country.rights
+                const currentRightFrom = container => container ? container[currRight] : null
+                const value = isESR
+                  ? { highIncome: currentRightFrom(esrHi), core: currentRightFrom(esrCore) }
+                  : (currentRightFrom(cpr) || { mean: null, percentile10: null, percentile90: null })
               //   const value = item.rights[keyword].filter(item => item.name === currRight)[0]
-              //   return (
-              //     <ValueTooltips
-              //       key={i}
-              //       isESR={isESR}
-              //       translateX={xScale(i) + 30}
-              //       translateY={chartHeight - margin.top - margin.bottom}
-              //       currCountry={currCountry}
-              //       country={item}
-              //       // maxValue={value.maxValue}
-              //       // minValue={value.minValue}
-              //       // textValue={(value.maxValue + value.minValue) / 2}
-              //         highIncomeDisplay={Math.round(value.highIncome).toFixed(0) || 'N/A'}
-              //         coreDisplay={Math.round(value.core).toFixed(0) || 'N/A'}
-              //         valueDisplay={value.mean !== null ? `${value.mean}/10` : 'N/A'}
-              //     />
-              //   )
-              // })
+                return (
+                  <ValueTooltips
+                    key={i}
+                    isESR={isESR}
+                    translateX={xScale(i) + 30}
+                    translateY={chartHeight - margin.top - margin.bottom}
+                    currCountry={currCountry}
+                    country={country}
+                    // maxValue={value.maxValue}
+                    // minValue={value.minValue}
+                    // textValue={(value.maxValue + value.minValue) / 2}
+                      highIncomeDisplay={Math.round(value.highIncome).toFixed(0).toString() || 'N/A'}
+                      coreDisplay={Math.round(value.core).toFixed(0).toString() || 'N/A'}
+                      valueDisplay={value.mean !== null ? `${Math.round(value.mean).toFixed(0)}/10` : 'N/A'}
+
+                    highIncomeValue={yScale(value.highIncome)}
+                    coreValue={yScale(value.core)}
+                    maxValue={yScale(value.percentile90)}
+                  />
+                )
+              })
             }
           </g>
         </svg>

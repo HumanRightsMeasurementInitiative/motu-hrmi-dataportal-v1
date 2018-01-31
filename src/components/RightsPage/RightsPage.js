@@ -52,7 +52,7 @@ export default class RightsPage extends React.Component {
   }
 
   setCurrCountry = (country) => {
-    if (this.state.currCountry === null || country.name !== this.state.currCountry.name) {
+    if (this.state.currCountry === null || country.countryCode !== this.state.currCountry.countryCode) {
       this.setState({ currCountry: country })
     } else {
       this.setState({ currCountry: null })
@@ -130,15 +130,13 @@ export default class RightsPage extends React.Component {
                 currCountry={this.state.currCountry}
                 onItemClick={this.setCurrCountry}>
               </RightBarchart>
-              {
-                // ESRs.indexOf(urlSegs.right) > -1 &&
-                // <ESRTimeline
-                //   data={data[urlSegs.region]}
-                //   chartHeight={this.state.chartHeight * 0.3}
-                //   chartWidth={this.state.chartWidth}
-                //   currYear={this.state.currYear}
-                //   onItemClick={this.setCurrYear}
-                // />
+              { isESRSelected &&
+                <ESRTimeline
+                  chartHeight={this.state.chartHeight * 0.3}
+                  chartWidth={this.state.chartWidth}
+                  currYear={this.state.currYear}
+                  onItemClick={this.setCurrYear}
+                />
               }
             </div>
             <div className={styles.chartsFooter}>
@@ -157,7 +155,7 @@ export default class RightsPage extends React.Component {
                 <div className='text'>Expore all rights in:</div>
                 <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
                 { this.state.currCountry !== null &&
-                  <div className='text underline' onClick={this.setCountry}>{this.state.currCountry.name}</div>
+                  <div className='text underline' onClick={this.setCountry}>{this.state.currCountry.countryCode}</div>
                 }
               </div>
             </div>
@@ -204,7 +202,7 @@ export default class RightsPage extends React.Component {
                     <p>This is because the same data are not always collected for all countries in the world. The core assessment standard is mostly used for developing and non-OECD-member countries. The high-income OECD country assessment standard uses indicators that are often available only for high-income OECD countries. However, all countries are evaluated using both sets of indicators to the extent data are available.</p>
                   </QuestionTooltip>
                 }
-                { urlSegs.right === 'Food' &&
+                { urlSegs.right === 'food' &&
                   <QuestionTooltip width={360} question='How does the HRMI methodology convert the above indicators into the Right to Food metric?'>
                     <p>All HRMI measures of economic and social rights have been produced using official statistics collected by national governments and harmonised by international organisations. For each indicator, our methodology compares the observed level of enjoyment of that dimension of human rights to the enjoyment level it should be feasible for that country to achieve given its per-capita income level. HRMI economic and social rights metrics thus show how well the State is using its available resources to ensure that all people enjoy these rights.</p>
                     <p>Three things should be kept in mind when interpreting HRMI economic and social rights metrics: </p>
@@ -216,7 +214,7 @@ export default class RightsPage extends React.Component {
                     <p className={styles.tooptipLink}>For more information on the HRMI ESR methodology <a href='https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/' target='_blank'>click here.</a></p>
                   </QuestionTooltip>
                 }
-                { isESRSelected &&
+                { !isESRSelected &&
                   <div>
                     <QuestionTooltip width={293} question={'How should I interpret the uncertainty bands?'}>
                       <p>Our civil and political rights measures methodology produces a range of estimated levels of respect for each human right. The average country score (indicated by the white horizontal line) represents the average estimate in that range. The lower score on the uncertainty band represents the 10th percentile of our estimates; the higher score on the uncertainty band represents the 90th percentile.</p>
@@ -250,7 +248,7 @@ export default class RightsPage extends React.Component {
                     </div>
                   </div>
                 }
-                { ESRs.indexOf(urlSegs.right) > -1 &&
+                { isESRSelected &&
                   <div>
                     <div className={styles.subtitleESR}>Right trend over time</div>
                     <div className={styles.esrChartKey}>This chart shows data using the core country standard.</div>
