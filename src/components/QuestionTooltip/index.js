@@ -21,10 +21,6 @@ export default class QuestionTooltip extends React.Component {
     document.addEventListener('click', this.documentClick)
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('click', this.documentClick)
-  }
-
   componentDidUpdate() {
     if (this.refs.popupPane) {
       const pos = this.refs.question.getBoundingClientRect()
@@ -37,6 +33,10 @@ export default class QuestionTooltip extends React.Component {
         this.refs.popupPane.style.bottom = document.body.clientHeight - pos.bottom + 'px'
       }
     }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.documentClick)
   }
 
   documentClick = (e) => {

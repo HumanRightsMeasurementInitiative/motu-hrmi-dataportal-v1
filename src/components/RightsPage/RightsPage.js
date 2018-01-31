@@ -4,6 +4,7 @@ import SubTopNav from '../SubTopNav/'
 import RightsItem from './RightsItem'
 import RegionSelector from './RegionSelector'
 import RightBarchart from '../RightBarchart/'
+import ESRTimeline from '../ESRTimeline/'
 import QuestionTooltip from '../QuestionTooltip'
 import DownloadPopup from '../DownloadPopup'
 import { segsToUrl, getRegionName, joinClassName as jcn } from '../utils'
@@ -23,6 +24,7 @@ export default class RightsPage extends React.Component {
       currCountry: null,
       chartHeight: 0,
       chartWidth: 0,
+      currYear: 2015,
     }
   }
 
@@ -55,6 +57,10 @@ export default class RightsPage extends React.Component {
     } else {
       this.setState({ currCountry: null })
     }
+  }
+
+  setCurrYear = (year) => {
+    this.setState({ currYear: year })
   }
 
   render() {
@@ -114,6 +120,15 @@ export default class RightsPage extends React.Component {
                 currCountry={this.state.currCountry}
                 onItemClick={this.setCurrCountry}>
               </RightBarchart>
+              { ESRs.indexOf(urlSegs.right) > -1 &&
+                <ESRTimeline
+                  data={data[urlSegs.region]}
+                  chartHeight={this.state.chartHeight * 0.3}
+                  chartWidth={this.state.chartWidth}
+                  currYear={this.state.currYear}
+                  onItemClick={this.setCurrYear}
+                />
+              }
             </div>
             <div className={styles.chartsFooter}>
               <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={ESRs.indexOf(urlSegs.right) > -1 ? ['bar chart', 'line chart'] : ['bar chart']} /></div>

@@ -61,10 +61,10 @@ export default class ESRRightBar extends React.Component {
                   return (
                     <g key={i} transform={'translate(0,' + yScale(i * yAxisRate) + ')'}>
                       { item % 2 === 0 &&
-                        <text dy='-2px' fontSize='10px' fill='#bdbdbd'>{isESR ? item * 10 + ' %' : item}</text>
+                        <text dy='-2px' fontSize='10px' fill='#616161'>{isESR ? item * 10 + ' %' : item}</text>
                       }
                       <line x1='0' y1='0' y2='0' x2={chartWidth - margin.left - margin.right}
-                        stroke={item % 2 === 0 ? '#bdbdbd' : '#eee'}
+                        stroke={item % 2 === 0 ? '#616161' : '#ddd'}
                         strokeWidth='1px'
                       ></line>
                     </g>

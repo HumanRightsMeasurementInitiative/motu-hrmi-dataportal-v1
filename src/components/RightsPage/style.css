@@ -145,12 +145,13 @@
   color: #616161;
 }
 .regionName {
-  flex: 1;
+  flex: 1 1 auto;
   font-size: 14px;
   font-weight: 600;
 }
 .sortBy {
-  flex: 1;
+  flex: 0 0 auto;
+  padding: 0 40px;
   font-size: 13px;
 }
 .chartsContainer {
@@ -160,7 +161,7 @@
 .chartsFooter {
   flex: 0 0 auto;
   position: relative;
-  padding: 20px 20px 30px;
+  padding: 0 20px 30px;
   font-size: 12px;
 }
 .chartsFooter .small {
@@ -169,7 +170,7 @@
 }
 .downloadPopupWrapper {
   position: absolute;
-  top: 20px;
+  top: 0;
   height: 32px;
   width: 32px;
 }
