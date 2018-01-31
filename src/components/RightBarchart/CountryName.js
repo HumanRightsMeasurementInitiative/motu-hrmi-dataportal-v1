@@ -18,7 +18,7 @@ export default class CountryName extends React.Component {
 
   render() {
     const { children, currCountry, country, onItemClick } = this.props
-    const isActive = currCountry && currCountry.name === country.name
+    const isActive = currCountry && currCountry === country
     return (
       <text textAnchor='end' fontSize='11px' fontWeight={isActive ? 'bold' : 600} fill={isActive ? '#616161' : '#9a9a9b'} onClick={this.onClick} className={jcn({ clickable: onItemClick !== undefined }, styles)}>{children}</text>
     )

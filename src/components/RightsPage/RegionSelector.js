@@ -6,7 +6,7 @@ import styles from './style.css'
 
 export default class RegionSelector extends React.Component {
   static propTypes = {
-    data: PropTypes.object.isRequired,
+    rightsByRegion: PropTypes.object.isRequired,
     urlSegs: PropTypes.object.isRequired,
     onItemClick: PropTypes.func.isRequired,
   }
@@ -26,10 +26,12 @@ export default class RegionSelector extends React.Component {
   }
 
   render() {
-    const { data, urlSegs } = this.props
+    const { rightsByRegion, urlSegs } = this.props
 
-    const regions = Object.keys(data).map((item, i) => (
-      <RegionItem key={i} index={i} code={item} onItemClick={this.onItemClick} selected={item === urlSegs.region} closePopup={this.toggleRegionDropdown} whiteBorder={true}>{getRegionName(item)}</RegionItem>
+    const regions = Object.keys(rightsByRegion).map((region, i) => (
+      <RegionItem key={i} index={i} code={region} onItemClick={this.onItemClick} selected={region === urlSegs.region} closePopup={this.toggleRegionDropdown} whiteBorder={true}>
+        {getRegionName(region)}
+      </RegionItem>
     ))
 
     const regionSelector = jcn({

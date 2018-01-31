@@ -9,7 +9,7 @@ import QuestionTooltip from '../QuestionTooltip'
 import DownloadPopup from '../DownloadPopup'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
-import definition from '../../data/right_definition.json'
+import rightsDefinitions from '../../data/rights-definitions.json'
 
 export default class CountryPage extends React.Component {
   static propTypes = {
@@ -57,10 +57,10 @@ export default class CountryPage extends React.Component {
   }
 
   render() {
-    const { data, urlSegs } = this.props
+    const { data: { rightsByRegion }, urlSegs } = this.props
 
-    const countries = data[urlSegs.region]
-    const currCountry = countries.find(country => country.code === urlSegs.country)
+    const countries = rightsByRegion[urlSegs.region].countries
+    const currCountry = countries.find(country => country.countryCode === urlSegs.country)
 
     const ESRs = ['Food', 'Education', 'Work', 'Housing', 'Health']
     const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
@@ -79,8 +79,8 @@ export default class CountryPage extends React.Component {
             <div className={styles.countriesListWrapper}>
               <ul className={styles.countriesList}>
                 {countries.map((country) => (
-                  <CountryItem key={country.code} code={country.code} onItemClick={this.setCountry} selected={country.code === urlSegs.country}>
-                    {country.name}
+                  <CountryItem key={country.countryCode} code={country.countryCode} onItemClick={this.setCountry} selected={country.countryCode === urlSegs.country}>
+                    {country.countryCode}
                   </CountryItem>
                 ))}
               </ul>
@@ -116,7 +116,9 @@ export default class CountryPage extends React.Component {
                     <div>
                       <div className={styles.subtitleESR}>Economic and Social Rights</div>
                       <div className={styles.esrChartSubtitle}>most recent data (2015 or earlier)</div>
-                      <div className={styles.barChartWrapper}><BarChartESR data={currCountry.rights.ESR} height={60} /></div>
+                      <div className={styles.barChartWrapper}>
+                        <BarChartESR data={currCountry.rights.ESR} height={60} />
+                      </div>
                       { this.state.currRight !== 'all' &&
                         <div>
                           <div className={styles.esrRegionValue}>Right to {getRegionName(urlSegs.region)} 22%</div>
@@ -171,35 +173,36 @@ export default class CountryPage extends React.Component {
                         <div className='text'>Explore this rights in:</div>
                         <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
                       </div>
-                      { definition[this.state.currRight].definition
-                        ? <p className={styles.definition}>{definition[this.state.currRight].definition}</p>
+                      { rightsDefinitions[this.state.currRight].definition
+                        ? <p className={styles.definition}>{rightsDefinitions[this.state.currRight].definition}</p>
                         : <ul>
-                          {definition[this.state.currRight].measure_list.map((item, i) => {
+                          {rightsDefinitions[this.state.currRight].measure_list.map((item, i) => {
                             return (<li key={i} className={styles.defList}>{item}</li>)
                           })}
                         </ul>
                       }
+
                       { ESRs.indexOf(this.state.currRight) > -1 &&
                         <p className={styles.measureQues}>How has HRMI measured the Right to {this.state.currRight}?</p>
                       }
-                      { definition[this.state.currRight].core_text &&
+                      { rightsDefinitions[this.state.currRight].core_text &&
                         <div>
-                          <p>{definition[this.state.currRight].core_text}</p>
+                          <p>{rightsDefinitions[this.state.currRight].core_text}</p>
                           <ul>
                             {
-                              definition[this.state.currRight].core_indicator.map((item, i) => (
+                              rightsDefinitions[this.state.currRight].core_indicator.map((item, i) => (
                                 <li key={i} className={styles.withDot}>{item}</li>
                               ))
                             }
                           </ul>
                         </div>
                       }
-                      { this.state.showMore && definition[this.state.currRight].high_text &&
+                      { this.state.showMore && rightsDefinitions[this.state.currRight].high_text &&
                         <div>
-                          <p>{definition[this.state.currRight].high_text}</p>
+                          <p>{rightsDefinitions[this.state.currRight].high_text}</p>
                           <ul>
                             {
-                              definition[this.state.currRight].high_indicator.map((item, i) => (
+                              rightsDefinitions[this.state.currRight].high_indicator.map((item, i) => (
                                 <li key={i} className={styles.withDot}>{item}</li>
                               ))
                             }

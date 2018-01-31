@@ -9,7 +9,7 @@ import QuestionTooltip from '../QuestionTooltip'
 import DownloadPopup from '../DownloadPopup'
 import { segsToUrl, getRegionName, joinClassName as jcn } from '../utils'
 import styles from './style.css'
-import definition from '../../data/right_definition.json'
+import rightsDefinitions from 'data/rights-definitions.json'
 
 export default class RightsPage extends React.Component {
   static propTypes = {
@@ -64,23 +64,33 @@ export default class RightsPage extends React.Component {
   }
 
   render() {
-    const { data, urlSegs } = this.props
+    const { data: { rightsByRegion }, urlSegs } = this.props
 
-    const ESRs = ['Food', 'Education', 'Work', 'Housing', 'Health']
-    const CPRs = ['Opinion and Expression', 'Assembly and Association', 'Participate in Government', 'Freedom from Torture', 'Freedom from Execution', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
+    const rights = Object.entries(rightsDefinitions).map(([code, right]) => ({ code, ...right }))
+    const ESRs = rights.filter(right => right.type === 'ESR')
+    const CPRs = rights.filter(right => right.type === 'CPR')
 
-    const ESRItems = ESRs.map((item, i) => (
-      <RightsItem key={i} right={item} onItemClick={this.setRight} selected={item === urlSegs.right}>{item}</RightsItem>
+    const ESRItems = ESRs.map((right, i) => (
+      <RightsItem key={right.code} right={right.code} onItemClick={this.setRight} selected={right.code === urlSegs.right}>
+        {right.code}
+      </RightsItem>
     ))
-    const CPRItems = CPRs.map((item, i) => (
-      <RightsItem key={i} right={item} onItemClick={this.setRight} selected={item === urlSegs.right}>{item}</RightsItem>
+    const CPRItems = CPRs.map((right, i) => (
+      <RightsItem key={right.code} right={right.code} onItemClick={this.setRight} selected={right.code === urlSegs.right}>
+        {right.code}
+      </RightsItem>
     ))
+
+    const isESRSelected = ESRs.some(r => r.code === urlSegs.right)
+    const isCPRSelected = CPRs.some(r => r.code === urlSegs.right)
 
     const colorClassName = jcn({
       rightInfo: true,
-      esrs: ESRs.indexOf(urlSegs.right) > -1,
-      cprs: CPRs.indexOf(urlSegs.right) > -1,
+      esrs: isESRSelected,
+      cprs: isCPRSelected,
     }, styles)
+
+    const rightsByRegionCountries = rightsByRegion[urlSegs.region].countries
 
     return (
       <div className={styles.rightsPage}>
@@ -89,7 +99,7 @@ export default class RightsPage extends React.Component {
           <div className='column'>
             <div className={styles.columnLeft}>
               <div className={styles.regionSelectorWrapper}>
-                <RegionSelector data={data} urlSegs={urlSegs} onItemClick={this.setRegion} />
+                <RegionSelector rightsByRegion={rightsByRegion} urlSegs={urlSegs} onItemClick={this.setRegion} />
               </div>
               <div className={styles.rightsWrapper}>
                 <div className={styles.rightList}>
@@ -112,22 +122,23 @@ export default class RightsPage extends React.Component {
             </div>
             <div className={styles.chartsContainer} ref='charts'>
               <RightBarchart
-                isESR={ESRs.indexOf(urlSegs.right) > -1}
+                isESR={rightsDefinitions[urlSegs.right].type === 'ESR'}
                 currRight={urlSegs.right}
-                data={data[urlSegs.region]}
+                rightsByRegionCountries={rightsByRegionCountries}
                 chartHeight={this.state.chartHeight * 0.7}
                 chartWidth={this.state.chartWidth}
                 currCountry={this.state.currCountry}
                 onItemClick={this.setCurrCountry}>
               </RightBarchart>
-              { ESRs.indexOf(urlSegs.right) > -1 &&
-                <ESRTimeline
-                  data={data[urlSegs.region]}
-                  chartHeight={this.state.chartHeight * 0.3}
-                  chartWidth={this.state.chartWidth}
-                  currYear={this.state.currYear}
-                  onItemClick={this.setCurrYear}
-                />
+              {
+                // ESRs.indexOf(urlSegs.right) > -1 &&
+                // <ESRTimeline
+                //   data={data[urlSegs.region]}
+                //   chartHeight={this.state.chartHeight * 0.3}
+                //   chartWidth={this.state.chartWidth}
+                //   currYear={this.state.currYear}
+                //   onItemClick={this.setCurrYear}
+                // />
               }
             </div>
             <div className={styles.chartsFooter}>
@@ -152,43 +163,43 @@ export default class RightsPage extends React.Component {
             </div>
             <div className={styles.infoContent}>
               <div className={styles.textWrapper}>
-                { definition[urlSegs.right].definition
-                  ? <p className={styles.definition}>{definition[urlSegs.right].definition}</p>
+                { rightsDefinitions[urlSegs.right].definition
+                  ? <p className={styles.definition}>{rightsDefinitions[urlSegs.right].definition}</p>
                   : <ul>
-                    {definition[urlSegs.right].measure_list.map((item, i) => {
+                    {rightsDefinitions[urlSegs.right].measure_list.map((item, i) => {
                       return (<li key={i} className={styles.defList}>{item}</li>)
                     })}
                   </ul>
                 }
-                { definition[urlSegs.right].conclusion_para &&
-                  <p className={styles.definition}>{definition[urlSegs.right].conclusion_para}</p>
+                { rightsDefinitions[urlSegs.right].conclusion_para &&
+                  <p className={styles.definition}>{rightsDefinitions[urlSegs.right].conclusion_para}</p>
                 }
-                { definition[urlSegs.right].core_text &&
+                { rightsDefinitions[urlSegs.right].core_text &&
                   <div>
                     <p className={styles.measureQues}>How has HRMI measured the Right to {urlSegs.right}?</p>
-                    <p>{definition[urlSegs.right].core_text}</p>
+                    <p>{rightsDefinitions[urlSegs.right].core_text}</p>
                     <ul>
                       {
-                        definition[urlSegs.right].core_indicator.map((item, i) => (
+                        rightsDefinitions[urlSegs.right].core_indicator.map((item, i) => (
                           <li key={i} className={styles.withDot}>{item}</li>
                         ))
                       }
                     </ul>
                   </div>
                 }
-                { definition[urlSegs.right].high_text &&
+                { rightsDefinitions[urlSegs.right].high_text &&
                   <div>
-                    <p>{definition[urlSegs.right].high_text}</p>
+                    <p>{rightsDefinitions[urlSegs.right].high_text}</p>
                     <ul>
                       {
-                        definition[urlSegs.right].high_indicator.map((item, i) => (
+                        rightsDefinitions[urlSegs.right].high_indicator.map((item, i) => (
                           <li key={i} className={styles.withDot}>{item}</li>
                         ))
                       }
                     </ul>
                   </div>
                 }
-                { ESRs.indexOf(urlSegs.right) > -1 &&
+                { isESRSelected &&
                   <QuestionTooltip width={238} question={`Why aren't the same indicators used for all countries?`}>
                     <p>This is because the same data are not always collected for all countries in the world. The core assessment standard is mostly used for developing and non-OECD-member countries. The high-income OECD country assessment standard uses indicators that are often available only for high-income OECD countries. However, all countries are evaluated using both sets of indicators to the extent data are available.</p>
                   </QuestionTooltip>
@@ -205,7 +216,7 @@ export default class RightsPage extends React.Component {
                     <p className={styles.tooptipLink}>For more information on the HRMI ESR methodology <a href='https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/' target='_blank'>click here.</a></p>
                   </QuestionTooltip>
                 }
-                { CPRs.indexOf(urlSegs.right) > -1 &&
+                { isESRSelected &&
                   <div>
                     <QuestionTooltip width={293} question={'How should I interpret the uncertainty bands?'}>
                       <p>Our civil and political rights measures methodology produces a range of estimated levels of respect for each human right. The average country score (indicated by the white horizontal line) represents the average estimate in that range. The lower score on the uncertainty band represents the 10th percentile of our estimates; the higher score on the uncertainty band represents the 90th percentile.</p>

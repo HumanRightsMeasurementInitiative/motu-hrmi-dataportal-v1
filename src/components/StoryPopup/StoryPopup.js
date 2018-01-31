@@ -7,12 +7,11 @@ import RightBarchart from '../RightBarchart/'
 import CountryRightsChart from 'components/CountryRightsChart'
 import lineChart from '../../img/line-chart.png'
 import { segsToUrl } from '../utils'
-import dataOECD from 'data/data_OECD.json'
-import dataLAC from 'data/data_LAC.json'
+import rightsByCountry from 'data/rights-by-country.json'
 
-const mexico = dataOECD.find(country => country.code === 'MEX')
-const peru = dataLAC.find(country => country.code === 'PER')
-const bolivia = dataLAC.find(country => country.code === 'BOL')
+const mexico = rightsByCountry.MEX
+const peru = rightsByCountry.PER
+const bolivia = rightsByCountry.BOL
 
 export default class StoryPopup extends React.Component {
   static propTypes = {
@@ -74,7 +73,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.linkWrapper}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <CountryLink region='OECD' code='MEX' onItemClick={this.setCountry}>MEXICO</CountryLink>
+                    <CountryLink region='oecd' code='MEX' onItemClick={this.setCountry}>MEXICO</CountryLink>
                   </div>
                 </div>
               </div>
@@ -107,8 +106,8 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.cprSubTitle}>scores for all 13 countries in HRMI pilot sample</div>
                 <RightBarchart
                   isESR={false}
-                  currRight={'Freedom from Disappearance'}
-                  data={data.OECD}
+                  currRight={'freedomFromDisappearance'}
+                  rightsByRegionCountries={data.rightsByRegion.oecd.countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
                   currCountry={mexico}>
@@ -122,7 +121,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
-                    <RegionLink region='LAC' right='Freedom from Disappearance' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
+                    <RegionLink region='americas' right='freedomFromDisappearance' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -131,8 +130,8 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.cprSubTitle}>scores for all 13 countries in HRMI pilot sample</div>
                 <RightBarchart
                   isESR={false}
-                  currRight={'Participate in Government'}
-                  data={data.OECD}
+                  currRight={'participateInGovernment'}
+                  rightsByRegionCountries={data.rightsByRegion.oecd.countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
                   currCountry={mexico}
@@ -146,7 +145,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
-                    <RegionLink region='LAC' right='Participate in Government' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
+                    <RegionLink region='americas' right='participateInGovernment' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -170,8 +169,8 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.esrSubTitle}>Mexico compared to rest of Latin America</div>
                 <RightBarchart
                   isESR={true}
-                  currRight={'Education'}
-                  data={data.OECD}
+                  currRight={'education'}
+                  rightsByRegionCountries={data.rightsByRegion.oecd.countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
                   currCountry={mexico}
@@ -189,7 +188,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
-                    <RegionLink region='LAC' right='Education' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
+                    <RegionLink region='americas' right='education' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -216,11 +215,11 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <CountryLink region='LAC' code='BOL' onItemClick={this.setCountry}>BOLIVIA</CountryLink>
+                    <CountryLink region='americas' code='BOL' onItemClick={this.setCountry}>BOLIVIA</CountryLink>
                   </div>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <CountryLink region='LAC' code='PER' onItemClick={this.setCountry}>PERU</CountryLink>
+                    <CountryLink region='americas' code='PER' onItemClick={this.setCountry}>PERU</CountryLink>
                   </div>
                 </div>
               </section>
