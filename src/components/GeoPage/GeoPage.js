@@ -61,20 +61,20 @@ export default class GeoPage extends React.Component {
   }
 
   render() {
-    const { data, urlSegs } = this.props
+    const { data: { rightsByRegion }, urlSegs } = this.props
 
-    const countries = data[urlSegs.region]
-    const regionCodes = Object.keys(data)
+    const countries = rightsByRegion[urlSegs.region].countries
+    const regionCodes = Object.keys(rightsByRegion)
 
-    const rights = Object.entries(rightsDefinitions).map(([name, right]) => ({ name, ...right }))
+    const rights = Object.entries(rightsDefinitions).map(([code, right]) => ({ code, ...right }))
     const rightsESR = rights.filter(right => right.type === 'ESR')
     const rightsCPR = rights.filter(right => right.type === 'CPR')
     const displayedRightsESR = urlSegs.right === 'all'
       ? rightsESR
-      : rightsESR.filter(rightName => rightName === urlSegs.right)
+      : rightsESR.filter(right => right.code === urlSegs.right)
     const displayedRightsCPR = urlSegs.right === 'all'
       ? rightsCPR
-      : rightsCPR.filter(rightName => rightName === urlSegs.right)
+      : rightsCPR.filter(right => right.code === urlSegs.right)
 
     return (
       <div className={styles.geoPage}>
@@ -100,12 +100,12 @@ export default class GeoPage extends React.Component {
               <div className={styles.countriesList}>
                 {countries.map((country, i) => (
                   <div
-                    key={country.code}
+                    key={country.countryCode}
                     className={styles.countryCard}
-                    onClick={rewriteArgs(this.setCountry, country.code)}
+                    onClick={rewriteArgs(this.setCountry, country.countryCode)}
                   >
                     <CountryRightsChart rights={country.rights} size={165} />
-                    <span>{country.name.toUpperCase()}</span>
+                    <span>{country.countryCode}</span>
                   </div>
                 ))}
               </div>
@@ -123,14 +123,18 @@ export default class GeoPage extends React.Component {
                   <div>
                     <div className={styles.esrTitle}>Economic and Social Rights</div>
                     <ul className={styles.esrList}>
-                      {displayedRightsESR.map((item, i) => (
-                        <RightsItem key={i} right={item} onItemClick={this.setRight}>{item}</RightsItem>
+                      {displayedRightsESR.map((right, i) => (
+                        <RightsItem key={i} right={right.code} onItemClick={this.setRight}>
+                          {right.code}
+                        </RightsItem>
                       ))}
                     </ul>
                     <div className={styles.cprTitle}>Civil and Political Rights</div>
                     <ul className={styles.cprList}>
-                      {displayedRightsCPR.map((item, i) => (
-                        <RightsItem key={i} right={item} onItemClick={this.setRight}>{item}</RightsItem>
+                      {displayedRightsCPR.map((right, i) => (
+                        <RightsItem key={i} right={right.code} onItemClick={this.setRight}>
+                          {right.code}
+                        </RightsItem>
                       ))}
                     </ul>
                   </div>
@@ -145,7 +149,7 @@ export default class GeoPage extends React.Component {
                     <div className='arrowLink'>
                       <div className='text'>Explore this rights in:</div>
                       <div className='text underline' onClick={this.setExploreBy}>
-                        {getRegionName(urlSegs.region)}
+                        {urlSegs.region}
                       </div>
                     </div>
                   </div>
