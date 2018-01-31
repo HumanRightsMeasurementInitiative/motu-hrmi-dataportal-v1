@@ -73,7 +73,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.linkWrapper}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <CountryLink region='OECD' code='MEX' onItemClick={this.setCountry}>MEXICO</CountryLink>
+                    <CountryLink region='oecd' code='MEX' onItemClick={this.setCountry}>MEXICO</CountryLink>
                   </div>
                 </div>
               </div>
@@ -121,7 +121,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
-                    <RegionLink region='LAC' right='Freedom from Disappearance' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
+                    <RegionLink region='americas' right='freedomFromDisappearance' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -145,7 +145,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
-                    <RegionLink region='LAC' right='Participate in Government' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
+                    <RegionLink region='americas' right='participateInGovernment' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -188,7 +188,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
-                    <RegionLink region='LAC' right='Education' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
+                    <RegionLink region='americas' right='education' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -215,11 +215,11 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <CountryLink region='LAC' code='BOL' onItemClick={this.setCountry}>BOLIVIA</CountryLink>
+                    <CountryLink region='americas' code='BOL' onItemClick={this.setCountry}>BOLIVIA</CountryLink>
                   </div>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <CountryLink region='LAC' code='PER' onItemClick={this.setCountry}>PERU</CountryLink>
+                    <CountryLink region='americas' code='PER' onItemClick={this.setCountry}>PERU</CountryLink>
                   </div>
                 </div>
               </section>

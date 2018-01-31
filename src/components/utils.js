@@ -1,3 +1,5 @@
+const DEFAULT_REGION = 'oecd'
+
 export const joinClassName = (classNames, styles) => {
   return Object.keys(classNames).filter(key => {
     return classNames[key]
@@ -9,8 +11,8 @@ export const joinClassName = (classNames, styles) => {
 export const urlToSegs = (url) => {
   const URL_RE = /\/(?:([\w-]+)(?:\/([\w-]+)(?:\/([\w-]+)(?:\/([\w-]+)(?:\/([\w-]+))?)?)?)?)?/
   const segsArr = url.match(URL_RE)
-  const langguages = ['ES', 'PT', 'FR']
-  if (langguages.indexOf(segsArr[1]) > -1) {
+  const languages = ['ES', 'PT', 'FR']
+  if (languages.indexOf(segsArr[1]) > -1) {
     const [, language, exploreBy, region, right, country] = segsArr
     return {
       right: right && right.replace(/-/g, ' '),
@@ -36,7 +38,7 @@ export const segsToUrl = (urlSegs) => {
   let { language, exploreBy, region, right, country } = urlSegs
   if (language === 'EN') {
     if (exploreBy) {
-      region = region || 'OECD'
+      region = region || DEFAULT_REGION
       if (right) {
         url = '/' + exploreBy + '/' + region + '/' + right.replace(/\s/g, '-') + (country ? ('/' + country) : '')
       } else {
@@ -45,7 +47,7 @@ export const segsToUrl = (urlSegs) => {
     }
   } else {
     if (exploreBy) {
-      region = region || 'OECD'
+      region = region || DEFAULT_REGION
       if (right) {
         url = '/' + language + '/' + exploreBy + '/' + region + '/' + right.replace(/\s/g, '-') + (country ? ('/' + country) : '')
       } else {
