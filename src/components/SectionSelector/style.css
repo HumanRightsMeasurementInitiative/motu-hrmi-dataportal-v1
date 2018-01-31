@@ -20,6 +20,10 @@
   cursor: pointer;
   transition: border .2s;
 }
+.secBtn:hover {
+  font-weight: 700;
+}
+.secBtn:active,
 .secBtn.selected {
   border-color: #25a9e0;
   font-weight: 700;

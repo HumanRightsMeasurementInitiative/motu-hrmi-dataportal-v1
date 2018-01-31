@@ -5,8 +5,8 @@ import CountryItem from './CountryItem'
 import BarChartESR from '../BarChartESR/'
 import BarChartCPR from '../BarChartCPR/'
 import CountryRightsChart from 'components/CountryRightsChart'
-import DownloadIcon from '../DownloadIcon'
 import QuestionTooltip from '../QuestionTooltip'
+import DownloadPopup from '../DownloadPopup'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
 import definition from '../../data/right_definition.json'
@@ -51,6 +51,11 @@ export default class CountryPage extends React.Component {
     this.setState({ showMore: !this.state.showMore })
   }
 
+  backToLanding = (right) => {
+    const { urlSegs } = this.props
+    this.props.urlPush(segsToUrl({ ...urlSegs, exploreBy: undefined, right: undefined, country: undefined, region: undefined }))
+  }
+
   render() {
     const { data, urlSegs } = this.props
 
@@ -84,14 +89,13 @@ export default class CountryPage extends React.Component {
 
           <div className='column'>
             <div className={styles.countryHeader}>
-              <div>Compare with</div>
               <div>Change assessment standard: Core</div>
             </div>
             <div className={styles.countryChart}>
               <CountryRightsChart rights={currCountry.rights} size={500} />
             </div>
             <div className={styles.countryFooter}>
-              <div className={styles.downloadIcon}><DownloadIcon /></div>
+              <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={['chart']} /></div>
               <div className={styles.text}>Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.</div>
               <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href='https://humanrightsmeasurement.org'>https://humanrightsmeasurement.org</a></div>
             </div>
@@ -160,6 +164,7 @@ export default class CountryPage extends React.Component {
                       <QuestionTooltip width={286} question={`What is the difference between the core and the high income OECD country scale?`}>
                         <p>For countries assessed using the core assessment standard, our methodology uses statistical indicators that are available for most countries in the world, particularly developing and non-OECD-member countries. By contrast, the high-income OECD country assessment standard uses indicators that are typically available only for the high-income OECD countries, and/or better reflect the human rights challenges of high-income countries. We would also use many of these indicators in the core assessment standard if they had broader country coverage. All countries are evaluated using both assessment standards to the extent data are available.</p>
                       </QuestionTooltip>
+                      <div className={styles.storyLink} onClick={this.backToLanding}>READ OURPROFILE STORY ON <strong>MEXICO</strong></div>
                     </div>
                     : <div className={styles.rightDefinition}>
                       <div className='arrowLink' style={{ marginLeft: '-24px' }}>

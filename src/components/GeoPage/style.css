@@ -86,11 +86,11 @@
   font-size: .9em;
   color: #c5c5c6;
 }
-.downloadIcon {
+.downloadPopupWrapper {
   position: absolute;
-  top: 26px;
-  height: 24px;
-  width: 24px;
+  top: 0;
+  height: 32px;
+  width: 32px;
 }
 .chartsFooter .source {
   padding-left: 42px;

@@ -1,0 +1,26 @@
+.downloadPopup {
+	position: relative;
+	padding: 2px;
+  height: 100%;
+  width: 100%;
+}
+.active {
+  background: #25a9e0;
+}
+.list {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 102%;
+  width: 150px;
+}
+.list li {
+  padding: 4px 10px;
+  background: #25a9e0;
+  border-bottom: 1px solid #fff;
+  font-size: 13px;
+  color: #fff;
+}
+.active .list {
+  display: block;
+}

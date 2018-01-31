@@ -4,7 +4,7 @@ import CountryRightsChart from 'components/CountryRightsChart'
 import SubTopNav from '../SubTopNav/'
 import RegionItem from '../RegionItem'
 import RightsItem from './RightsItem'
-import DownloadIcon from '../DownloadIcon'
+import DownloadPopup from '../DownloadPopup'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
 
@@ -108,7 +108,7 @@ export default class GeoPage extends React.Component {
                 ))}
               </div>
               <div className={styles.chartsFooter}>
-                <div className={styles.downloadIcon}><DownloadIcon /></div>
+                <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={['chart']} /></div>
                 <div className={styles.text}>Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.</div>
                 <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
               </div>

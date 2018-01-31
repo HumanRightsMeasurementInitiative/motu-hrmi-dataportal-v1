@@ -4,8 +4,8 @@ import SubTopNav from '../SubTopNav/'
 import RightsItem from './RightsItem'
 import RegionSelector from './RegionSelector'
 import RightBarchart from '../RightBarchart/'
-import DownloadIcon from '../DownloadIcon'
 import QuestionTooltip from '../QuestionTooltip'
+import DownloadPopup from '../DownloadPopup'
 import { segsToUrl, getRegionName, joinClassName as jcn } from '../utils'
 import styles from './style.css'
 import definition from '../../data/right_definition.json'
@@ -101,7 +101,7 @@ export default class RightsPage extends React.Component {
           </div>
           <div className='column'>
             <div className={styles.chartsHeader}>
-              <div className={styles.regionName}>{getRegionName(urlSegs.region)}</div>
+              <div className={styles.regionName}>Right to {urlSegs.right} in {getRegionName(urlSegs.region)}</div>
               <div className={styles.sortBy}>Sort by: Name</div>
             </div>
             <div className={styles.chartsContainer} ref='charts'>
@@ -116,7 +116,7 @@ export default class RightsPage extends React.Component {
               </RightBarchart>
             </div>
             <div className={styles.chartsFooter}>
-              <div className={styles.downloadIcon}><DownloadIcon /></div>
+              <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={ESRs.indexOf(urlSegs.right) > -1 ? ['bar chart', 'line chart'] : ['bar chart']} /></div>
               <div className={styles.text}>Hight Scores indicate greater respect for this human right.</div>
               <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href='https://humanrightsmeasurement.org'>https://humanrightsmeasurement.org</a></div>
             </div>
