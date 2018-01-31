@@ -106,8 +106,8 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.cprSubTitle}>scores for all 13 countries in HRMI pilot sample</div>
                 <RightBarchart
                   isESR={false}
-                  currRight={'Freedom from Disappearance'}
-                  rightsByRegion={data.rightsByRegion}
+                  currRight={'freedomFromDisappearance'}
+                  rightsByRegionCountries={data.rightsByRegion.oecd.countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
                   currCountry={mexico}>
@@ -130,8 +130,8 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.cprSubTitle}>scores for all 13 countries in HRMI pilot sample</div>
                 <RightBarchart
                   isESR={false}
-                  currRight={'Participate in Government'}
-                  data={data.OECD}
+                  currRight={'participateInGovernment'}
+                  rightsByRegionCountries={data.rightsByRegion.oecd.countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
                   currCountry={mexico}
@@ -169,8 +169,8 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.esrSubTitle}>Mexico compared to rest of Latin America</div>
                 <RightBarchart
                   isESR={true}
-                  currRight={'Education'}
-                  data={data.OECD}
+                  currRight={'education'}
+                  rightsByRegionCountries={data.rightsByRegion.oecd.countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
                   currCountry={mexico}

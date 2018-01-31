@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { PetalChart } from 'hrmi-charts'
-import { keyBy } from 'lodash'
+import rightsDefinitions from 'data/rights-definitions.json'
 
 export default class CountryRightsChart extends React.Component {
   static propTypes = {
@@ -10,28 +10,27 @@ export default class CountryRightsChart extends React.Component {
 
   render() {
     const { rights, size = 150 } = this.props
+    const { esr_hi: esrHi, esr_core: esrCore, cpr } = rights
+    const esrType = 'HIGH_INCOME' // or 'CORE'
 
-    const rightsNames = keyBy([].concat(
-      rights.CPR.map(({ name, value }) => ({ name, value: value / 10 })),
-      rights.ESR.map(({ name, value }) => ({ name, value: value / 100 })),
-    ), 'name')
-
-    const rightsData = [
-      'Health', // ESR
-      'Housing', // ESR
-      'Work', // ESR
-
-      'Freedom from Disappearance', // CPR
-      'Freedom from Arbitrary Arrest', // CPR
-      'Freedom from Execution', // CPR
-      'Freedom from Torture', // CPR
-      'Participate in Government', // CPR
-      'Assembly and Association', // CPR
-      'Opinion and Expression', // CPR
-
-      'Food', // ESR
-      'Education', // ESR
-    ].map(nameOfRight => rightsNames[nameOfRight].value)
+    const rightsData = Object.entries(rightsDefinitions)
+      .map(([code, { type }]) => {
+        const NO_DATA = null
+        if (type === 'ESR' && esrType === 'HIGH_INCOME') {
+          if (!esrHi) return NO_DATA
+          if (esrHi[code] === null) return NO_DATA
+          return esrHi[code] / 100
+        } else if (type === 'ESR' && esrType === 'CORE') {
+          if (!esrCore) return NO_DATA
+          if (esrCore[code] === null) return NO_DATA
+          return esrCore[code] / 100
+        } else if (type === 'CPR') {
+          if (!cpr || !cpr[code]) return NO_DATA
+          if (cpr[code] === null || cpr[code].mean === null) return NO_DATA
+          return cpr[code].mean / 10
+        }
+        throw new Error('Right with no type! Check rightDefinitions')
+      })
 
     return (
       <div>
