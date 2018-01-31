@@ -6,6 +6,7 @@ import RegionItem from '../RegionItem'
 import RightsItem from './RightsItem'
 import DownloadIcon from '../DownloadIcon'
 import { segsToUrl, getRegionName } from '../utils'
+import rightsDefinitions from 'data/rights-definitions.json'
 import styles from './style.css'
 
 function rewriteArgs(fn, ...args) {
@@ -65,8 +66,9 @@ export default class GeoPage extends React.Component {
     const countries = data[urlSegs.region]
     const regionCodes = Object.keys(data)
 
-    const rightsESR = ['Food', 'Education', 'Work', 'Housing', 'Health']
-    const rightsCPR = ['Opinion and Expression', 'Assembly and Association', 'Freedom from Execution', 'Freedom from Torture', 'Participate in Government', 'Freedom from Arbitrary Arrest', 'Freedom from Disappearance']
+    const rights = Object.entries(rightsDefinitions).map(([name, right]) => ({ name, ...right }))
+    const rightsESR = rights.filter(right => right.type === 'ESR')
+    const rightsCPR = rights.filter(right => right.type === 'CPR')
     const displayedRightsESR = urlSegs.right === 'all'
       ? rightsESR
       : rightsESR.filter(rightName => rightName === urlSegs.right)

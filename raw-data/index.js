@@ -256,6 +256,7 @@ const joinedCountries = countryCodesList.map(countryCode => {
     'isOECD',
     'geoRegion',
   ])
+  countryCatalog.geoRegion = countryCatalog.geoRegion.replace('_', '-')
   catalogCountries.push(countryCatalog)
 
   return { ...countryInfo, rights }
@@ -272,7 +273,7 @@ const catalogCountriesOECD = catalogCountries.filter(c => c.isOECD).map(c => c.c
 
 const regions = {
   ...catalogCountriesByRegion,
-  high_income: catalogCountriesHI,
+  'high-income': catalogCountriesHI,
   oecd: catalogCountriesOECD,
 }
 

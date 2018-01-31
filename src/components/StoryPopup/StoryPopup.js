@@ -7,12 +7,11 @@ import RightBarchart from '../RightBarchart/'
 import CountryRightsChart from 'components/CountryRightsChart'
 import lineChart from '../../img/line-chart.png'
 import { segsToUrl } from '../utils'
-import dataOECD from 'data/data_OECD.json'
-import dataLAC from 'data/data_LAC.json'
+import rightsByCountry from 'data/rights-by-country.json'
 
-const mexico = dataOECD.find(country => country.code === 'MEX')
-const peru = dataLAC.find(country => country.code === 'PER')
-const bolivia = dataLAC.find(country => country.code === 'BOL')
+const mexico = rightsByCountry.MEX
+const peru = rightsByCountry.PER
+const bolivia = rightsByCountry.BOL
 
 export default class StoryPopup extends React.Component {
   static propTypes = {
@@ -108,7 +107,7 @@ export default class StoryPopup extends React.Component {
                 <RightBarchart
                   isESR={false}
                   currRight={'Freedom from Disappearance'}
-                  data={data.OECD}
+                  rightsByRegion={data.rightsByRegion}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
                   currCountry={mexico}>

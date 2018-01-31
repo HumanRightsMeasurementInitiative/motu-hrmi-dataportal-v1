@@ -8,7 +8,7 @@ import CountryRightsChart from 'components/CountryRightsChart'
 import DownloadIcon from '../DownloadIcon'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
-import definition from '../../data/right_definition.json'
+import rightsDefinitions from '../../data/rights-definitions.json'
 
 export default class CountryPage extends React.Component {
   static propTypes = {
@@ -147,33 +147,33 @@ export default class CountryPage extends React.Component {
                         <div className='text'>Explore this rights in:</div>
                         <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
                       </div>
-                      { definition[this.state.currRight].definition
-                        ? <p className={styles.definition}>{definition[this.state.currRight].definition}</p>
+                      { rightsDefinitions[this.state.currRight].definition
+                        ? <p className={styles.definition}>{rightsDefinitions[this.state.currRight].definition}</p>
                         : <ul>
-                          {definition[this.state.currRight].measure_list.map((item, i) => {
+                          {rightsDefinitions[this.state.currRight].measure_list.map((item, i) => {
                             return (<li key={i} className={styles.defList}>{item}</li>)
                           })}
                         </ul>
                       }
                       <p className={styles.measureQues}>How has HRMI measured the Right to {this.state.currRight}?</p>
-                      { definition[this.state.currRight].core_text &&
+                      { rightsDefinitions[this.state.currRight].core_text &&
                         <div>
-                          <p>{definition[this.state.currRight].core_text}</p>
+                          <p>{rightsDefinitions[this.state.currRight].core_text}</p>
                           <ul>
                             {
-                              definition[this.state.currRight].core_indicator.map((item, i) => (
+                              rightsDefinitions[this.state.currRight].core_indicator.map((item, i) => (
                                 <li key={i} className={styles.withDot}>{item}</li>
                               ))
                             }
                           </ul>
                         </div>
                       }
-                      { definition[this.state.currRight].high_text &&
+                      { rightsDefinitions[this.state.currRight].high_text &&
                         <div>
-                          <p>{definition[this.state.currRight].high_text}</p>
+                          <p>{rightsDefinitions[this.state.currRight].high_text}</p>
                           <ul>
                             {
-                              definition[this.state.currRight].high_indicator.map((item, i) => (
+                              rightsDefinitions[this.state.currRight].high_indicator.map((item, i) => (
                                 <li key={i} className={styles.withDot}>{item}</li>
                               ))
                             }

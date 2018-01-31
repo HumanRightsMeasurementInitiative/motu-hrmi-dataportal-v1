@@ -1,0 +1,97 @@
+{
+  "food": {
+    "type": "ESR",
+    "definition": "According to international law, everyone has the fundamental right to be free from hunger. Everyone has the right to enjoy \"the availability of food in a quantity and quality sufficient to satisfy [their] dietary needs … free from adverse substances, and acceptable within a given culture\" (ICESCR Art. 11 and CESCR General Comment 12).",
+    "core_text": "Our core assessment standard uses the following indicator:",
+    "core_indicator": [
+      "% children under 5 not stunted (WHO)"
+    ],
+    "high_text": "Our high-income OECD country assessment standard uses the following indicator:",
+    "high_indicator": [
+      "% babies not of low birth weight (UNICEF)"
+    ]
+  },
+  "education": {
+    "type": "ESR",
+    "definition": "According to international law, everyone has the right to a quality, relevant, and culturally appropriate education. We are all entitled to a primary, secondary, higher, technical/vocational, and fundamental education that is physically accessible and financially affordable (ICESCR Article 13 and CESCR General Comments 11 and 13).",
+    "core_text": "Our core assessment standard uses the following indicator:",
+    "core_indicator": [
+      "Primary school completion rate (UNESCO)",
+      "Gross combined school enrolment rate (UNESCO)"
+    ],
+    "high_text": "Our high-income OECD country assessment standard uses the following indicator:",
+    "high_indicator": [
+      "Gross combined school enrolment rate (UNESCO)",
+      "Average of country average math & science PISA scores (OECD PISA)"
+    ]
+  },
+  "health": {
+    "type": "ESR",
+    "definition": "According to international law, everyone has the right to the “highest attainable standard of physical and mental health”. We are all entitled to timely and appropriate healthcare facilities and services that promote physical and mental health. This includes maternal, child and reproductive health care; preventative and curative health care; disease control, health rehabilitation; and natural and workplace environmental health (ICESCR Art. 12.1; CESCR General Comment 14).",
+    "core_text": "Our core assessment standard uses the following indicator:",
+    "core_indicator": [
+      "% child survival rate (UNICEF, WHO, World Bank, UNPD)",
+      "% survival to age 65 rate (UNPD)",
+      "Modern contraceptive use rate, % women 15-49 (UNPD)"
+    ],
+    "high_text": "Our high-income OECD country assessment standard uses the following indicator:",
+    "high_indicator": [
+      "% child survival rate (UNICEF, WHO, World Bank, UNPD)",
+      "% survival to age 65 rate (UNPD)"
+    ]
+  },
+  "housing": {
+    "type": "ESR",
+    "definition": "According to international law, everyone has the fundamental right to habitable and culturally appropriate housing. We are all entitled to housing that is accessible to services, materials, facilities, and infrastructure. This includes “...safe drinking water, energy for cooking, heating and lighting, sanitation and washing facilities, means of food storage, refuse disposal, site drainage, and emergency services” (ICESCR Article. 11.1 and CESCR General Comment 4).",
+    "core_text": "Our core assessment standard uses the following indicator:",
+    "core_indicator": [
+      "% population with access to improved sanitation (WHO/UNICEF)",
+      "% rural population with access to improved water source (WHO/UNICEF)"
+    ],
+    "high_text": "No Right to Housing measure is currently available using the high-income OECD country assessment standard.",
+    "high_indicator": []
+  },
+  "work": {
+    "type": "ESR",
+    "definition": "According to international law, everyone is entitled to the opportunity to gain a living by work that is freely chosen and “the right to the enjoyment of just and favourable conditions of work”. This includes “equal pay for equal work, the chance to earn a decent living for [ourselves] and [our] families, just and safe working conditions, and a reasonable limitation of working hours” (ICESCR, Articles 6 and 7).",
+    "core_text": "Our core assessment standard uses the following indicator:",
+    "core_indicator": [
+      "% population with income >$3.10 (2011 PPP$) per day (World Bank)"
+    ],
+    "high_text": "Our high-income OECD country assessment standard uses the following indicator:",
+    "high_indicator": [
+      "% unemployed not long-term unemployed (ILO)",
+      "% population with > 50% median income (LIS Cross-national Data Center)"
+    ]
+  },
+  "opinionAndExpression": {
+    "type": "CPR",
+    "definition": "According to international law, everyone has \"the right to hold opinions without interference\" and \"the right to freedom of expression.\" This includes the \"freedom to seek, receive, and impart information and ideas of all kinds” through any media, including any form of artistic expression. This right also protects \"a free, uncensored, and unhindered press or other media\" (ICCPR, Part III, Article 19; Human Rights Committee, General Comment No. 34, para. 13)."
+  },
+  "assemblyAndAssociation": {
+    "type": "CPR",
+    "definition": "According to international law, the right to peaceful assembly ensures that all people have the right to gather publicly or privately to engage in peaceful meetings, protests, or other group gatherings. Freedom of association ensures that everyone may choose (or not) to form and/or join any group, such as political parties, civil society organisations, activist organisations, trade unions, religious groups, cultural organisations, or other groups (ICCPR, Part III, Articles 21 & 22)."
+  },
+  "freedomFromExecution": {
+    "type": "CPR",
+    "definition": "According to international law, the right to be free from execution includes freedom from any arbitrary or extrajudicial deprivation of life, as well as freedom from the death penalty even with due process of law (ICCPR, Part III, Article 6; Second Optional Protocol to the ICCPR, Article 1).",
+    "submeasures": "We have created separate sub-measures for freedom from extrajudicial killing and freedom from the death penalty, as well as a combined measure that is equal to the lowest score on the two separate sub-measures."
+  },
+  "freedomFromTorture": {
+    "type": "CPR",
+    "definition": "According to international law, everyone has the right to freedom from “any act by which severe pain or suffering, whether physical or mental, is intentionally inflicted on a person”. This includes torture or ill-treatment committed for any purpose, including (but not limited to) attempts to obtain information or confessions, punishment for suspected or committed acts, intimidation, coercion, and discrimination (CAT, Part 1, Article 1)."
+  },
+  "participateInGovernment": {
+    "type": "CPR",
+    "conclusion_para": "These rights are to be enjoyed without discrimination and without \"unreasonable restrictions\"(ICCPR, Part III, Article 25).",
+    "measure_list": ["According to international law, everyone has the right:", "\"to take part in the conduct of public affairs, directly or through freely chosen representatives\";", "\"to vote and to be elected at genuine periodic elections\" in which every person can vote, every vote counts equally, and the ballot is secret;", "\"to have access, on general terms of equality, to public service.\""]
+  },
+  "freedomFromArbitraryArrest": {
+    "type": "CPR",
+    "measure_list": ["According to international law, everyone has the right to freedom from arrest or detention for:", "reasons not established by law;", "inability to fulfil a contractual obligation;", "thoughts, beliefs, conscience, or religion;", "opinions or their peaceful expression;", "participation in peaceful assembly;", "peaceful association with others, including trade union membership; or", "identity, including \"race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status\" (ICCPR, Part II, Article 2; Part III, Articles 9, 11, 18 19, 21, 22 & 26)."]
+  },
+  "freedomFromDisappearance": {
+    "type": "CPR",
+    "definition": "According to international law, everyone has the right to freedom from “arrest, detention, abduction or any other form of deprivation of liberty” followed by a lack of acknowledgement that this has occurred or “concealment of the fate or whereabouts of the disappeared person”. Disappearances include all cases in which people are taken and their location or status is unclear, including those known to be held in secret and/or incommunicado detention (International Convention for the Protection of All Persons from Enforced Disappearance, Part I, Article 2)."
+  }
+}

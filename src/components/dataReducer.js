@@ -1,26 +1,14 @@
-import dataOECD from '../data/data_OECD.json'
-import dataCEECA from '../data/data_CEECA.json'
-import dataEAP from '../data/data_EAP.json'
-import dataLAC from '../data/data_LAC.json'
-import dataMENA from '../data/data_MENA.json'
-import dataSSA from '../data/data_SSA.json'
-import dataCPRP from '../data/data_CPRP.json'
+import rightsByCountry from 'data/rights-by-country.json'
+import categories from 'data/country-categories.json'
+import { keyBy } from 'lodash'
 
-export default function dataReducer(state = {
-  OECD: dataOECD,
-  CEECA: dataCEECA,
-  EAP: dataEAP,
-  LAC: dataLAC,
-  MENA: dataMENA,
-  SSA: dataSSA,
-  CPRP: dataCPRP,
-}, action) {
+const rightsByRegion = keyBy(Object.keys(categories).map(regionCode => ({
+  regionCode,
+  countries: categories[regionCode].map(countryCode => rightsByCountry[countryCode]),
+})), 'regionCode')
+
+export default function dataReducer(state = { rightsByCountry, rightsByRegion }, action) {
   switch (action.type) {
-    case 'UPDATE_DATA':
-      return {
-        ...state,
-        ...action.payload,
-      }
     default:
       return state
   }

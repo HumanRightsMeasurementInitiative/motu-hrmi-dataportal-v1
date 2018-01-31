@@ -16,7 +16,7 @@ export default class CountryName extends React.Component {
 
   render() {
     const { children, currCountry, country } = this.props
-    const isActive = currCountry && currCountry.name === country.name
+    const isActive = currCountry && currCountry === country
     return (
       <text textAnchor='end' fontSize='10px' fontWeight={isActive ? 'bold' : 600} fill={isActive ? '#616161' : '#9a9a9b'} onClick={this.onClick} cursor='pointer'>{children}</text>
     )
