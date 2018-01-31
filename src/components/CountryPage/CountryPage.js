@@ -117,7 +117,7 @@ export default class CountryPage extends React.Component {
                       <div className={styles.subtitleESR}>Economic and Social Rights</div>
                       <div className={styles.esrChartSubtitle}>most recent data (2015 or earlier)</div>
                       <div className={styles.barChartWrapper}>
-                        <BarChartESR data={currCountry.rights.ESR} height={60} />
+                        <BarChartESR data={ESRs} height={60} /> {/* data need to be change */}
                       </div>
                       { this.state.currRight !== 'all' &&
                         <div>
@@ -134,7 +134,9 @@ export default class CountryPage extends React.Component {
                     <div>
                       <div className={styles.subtitleCPR}>Civil and Political Rights</div>
                       <div className={styles.cprChartSubtitle}>data is for period january - june 2017</div>
-                      <div className={styles.barChartWrapper}><BarChartCPR data={currCountry.rights.CPR} height={60} /></div>
+                      <div className={styles.barChartWrapper}>
+                        <BarChartCPR data={CPRs} height={60} /> {/* data need to be change */}
+                      </div>
                       <div className={styles.legend}>
                         <div className={styles.meanText}>Mean score</div>
                         <div className={styles.bar}></div>
