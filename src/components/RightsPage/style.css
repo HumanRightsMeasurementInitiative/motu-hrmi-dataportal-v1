@@ -140,19 +140,15 @@
 }
 .chartsHeader {
   flex: 0 0 auto;
-  display: flex;
   padding: 0 20px;
+  font-size: 14px;
   color: #616161;
 }
-.regionName {
-  flex: 1 1 auto;
-  font-size: 14px;
+.regionName span {
   font-weight: 600;
 }
 .sortBy {
-  flex: 0 0 auto;
-  padding: 0 40px;
-  font-size: 13px;
+  margin-top: 4px;
 }
 .chartsContainer {
   flex: 1 1 auto;

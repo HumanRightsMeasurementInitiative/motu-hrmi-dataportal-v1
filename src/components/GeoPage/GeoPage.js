@@ -5,6 +5,7 @@ import SubTopNav from '../SubTopNav/'
 import RegionItem from '../RegionItem'
 import RightsItem from './RightsItem'
 import DownloadPopup from '../DownloadPopup'
+import ChangeStandard from '../ChangeStandard'
 import { segsToUrl, getRegionName } from '../utils'
 import rightsDefinitions from 'data/rights-definitions.json'
 import styles from './style.css'
@@ -24,6 +25,7 @@ export default class GeoPage extends React.Component {
     super()
     this.state = {
       currCountry: null,
+      standard: 'Core',
     }
   }
 
@@ -58,6 +60,10 @@ export default class GeoPage extends React.Component {
 
   unsetCurrCountry = (country) => {
     this.setState({ currCountry: null })
+  }
+
+  setStandard = (name) => {
+    this.setState({ standard: name })
   }
 
   render() {
@@ -96,7 +102,14 @@ export default class GeoPage extends React.Component {
           </div>
           <div className='column'>
             <div className={styles.columnMiddle}>
-              <div className={styles.chartsHeader}>Sort by: Name Change standard: Core</div>
+              <div className={styles.chartsHeader}>
+                <div className={styles.title}>
+                  Human rights performance in <strong>{getRegionName(urlSegs.region)}</strong>
+                </div>
+                <div className={styles.standard}>
+                  <ChangeStandard standard={this.state.standard} onItemClick={this.setStandard} />
+                </div>
+              </div>
               <div className={styles.countriesList}>
                 {countries.map((country, i) => (
                   <div

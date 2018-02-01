@@ -1,0 +1,56 @@
+.downloadPopup {
+	position: relative;
+	padding: 2px;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.list {
+  display: none;
+  position: absolute;
+  z-index: 2000;
+  left: 0;
+  margin-top: 6px;
+  background: #fff;
+  border: 1px solid #616161;
+}
+.active .list {
+  display: block;
+}
+.item {
+  display: block;
+  position: relative;
+  font-size: 13px;
+}
+.item > div {
+  padding: 4px 10px;
+}
+.item:nth-child(2) {
+  cursor: default;
+}
+.item:hover > div {
+  color: #25a9e0;
+}
+.sublist {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: #fff;
+  border: 1px solid #616161;
+}
+.item:nth-child(2):hover .sublist {
+  display: block;
+}
+.subItem {
+  composes: item;
+  width: 160px;
+  line-height: 1.2em;
+}
+.subItem > div {
+  padding: 4px 10px;
+}
+.selected {
+  background: #f4fbfd;
+  color: #25a9e0;
+}

@@ -33,7 +33,7 @@ export default class CountryName extends React.Component {
           // highPos > 0 &&
           // <rect height={highPos} width='6' x='-3' fill={isActive ? '#b2eacf' : 'rgba(0, 0, 0, .1)'}></rect>
         }
-        <rect y={-maxValue} height={maxValue} width='6' x='-3' fill={isActive ? '#b2eacf' : '#eee'}></rect>
+        <rect y={-maxValue} height={maxValue} width='6' x='-3' fill={isActive ? '#b2eacf' : 'rgba(0, 0, 0, .1)'}></rect>
         {
           // corePos > 0 &&
           <g className="-circle-core">

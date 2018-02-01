@@ -1,0 +1,36 @@
+.downloadPopup {
+  padding: 2px;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.listWrapper {
+  display: inline-block;
+  position: relative;
+}
+.list {
+  display: none;
+  position: absolute;
+  z-index: 2000;
+  left: 0;
+  right: 0;
+  margin-top: 6px;
+  background: #fff;
+  border: 1px solid #616161;
+}
+.active .list {
+  display: block;
+}
+.item {
+  font-size: 13px;
+}
+.item > div {
+  padding: 4px 10px;
+}
+.item:hover > div {
+  color: #25a9e0;
+}
+.selected {
+  background: #f4fbfd;
+  color: #25a9e0;
+}

@@ -7,6 +7,7 @@ import RightBarchart from '../RightBarchart/'
 import ESRTimeline from '../ESRTimeline/'
 import QuestionTooltip from '../QuestionTooltip'
 import DownloadPopup from '../DownloadPopup'
+import SortbyDropdown from '../SortbyDropdown'
 import { segsToUrl, getRegionName, joinClassName as jcn } from '../utils'
 import styles from './style.css'
 import rightsDefinitions from 'data/rights-definitions.json'
@@ -25,6 +26,7 @@ export default class RightsPage extends React.Component {
       chartHeight: 0,
       chartWidth: 0,
       currYear: 2015,
+      sortby: 'Name',
     }
   }
 
@@ -61,6 +63,10 @@ export default class RightsPage extends React.Component {
 
   setCurrYear = (year) => {
     this.setState({ currYear: year })
+  }
+
+  setSortby = (name) => {
+    this.setState({ sortby: name })
   }
 
   render() {
@@ -117,8 +123,8 @@ export default class RightsPage extends React.Component {
           </div>
           <div className='column'>
             <div className={styles.chartsHeader}>
-              <div className={styles.regionName}>Right to {urlSegs.right} in {getRegionName(urlSegs.region)}</div>
-              <div className={styles.sortBy}>Sort by: Name</div>
+              <div className={styles.regionName}><span style={{ color: isESRSelected ? '#00b95f' : '#2e65a1' }}>Right to {urlSegs.right}</span> in {getRegionName(urlSegs.region)}</div>
+              <div className={styles.sortBy}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div>
             </div>
             <div className={styles.chartsContainer} ref='charts'>
               <RightBarchart

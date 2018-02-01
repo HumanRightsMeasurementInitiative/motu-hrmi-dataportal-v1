@@ -41,6 +41,15 @@
 
 .chartsHeader {
   flex: 0 0 auto;
+  font-size: 14px;
+  color: #616161;
+}
+.title {
+  /*flex: 1;*/
+}
+.standard {
+  /*flex: 3;*/
+  margin-top: 4px;
 }
 
 .countriesList {

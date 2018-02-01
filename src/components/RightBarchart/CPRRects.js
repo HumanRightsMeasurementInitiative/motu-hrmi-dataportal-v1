@@ -29,7 +29,7 @@ export default class CountryName extends React.Component {
       <g transform={'translate(' + translateX + ', ' + translateY + ')'} onClick={this.onClick} className={jcn({ clickable: onItemClick !== undefined }, styles)}>
         {
           // valueMean > 0 &&
-          <rect className="-bar-background" y={-value} height={value} width='6' x='-3' fill='#eee'></rect>
+          <rect className="-bar-background" y={-value} height={value} width='6' x='-3' fill='rgba(0, 0, 0, .1)'></rect>
         }{
           <rect className="-bar-min-max" y={-maxValue} height={maxValue - minValue} width='6' x='-3' fill='#3378ae'></rect>
         }{
