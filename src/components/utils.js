@@ -60,14 +60,4 @@ export const segsToUrl = (urlSegs) => {
   return url
 }
 
-const regionCodetoName = {
-  OECD: 'High Income OECD Countries',
-  CEECA: 'Central and Eastern Europe and Central Asia',
-  EAP: 'East Asia and the Pacific',
-  LAC: 'Latin America and the Caribbean',
-  MENA: 'Middle East and Northern Africa',
-  SSA: 'Sub-Saharan Africa',
-  CPRP: 'Civil and Political Rights Pilot Countries',
-}
-
 export const getRegionName = (regionCode) => (regionCode)

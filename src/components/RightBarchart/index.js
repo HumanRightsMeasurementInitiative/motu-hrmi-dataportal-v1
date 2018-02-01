@@ -84,12 +84,8 @@ export default class RightBarchart extends React.Component {
                     key={i}
                     translateX={xScale(i) + 30}
                     translateY={chartHeight - margin.top - margin.bottom}
-                    // highPos={yScale(value.maxValue)}
-                    // corePos={yScale(value.minValue)}
-                      highIncomeValue={yScale(value.highIncome)}
-                      coreValue={yScale(value.core)}
-                      // highIncomeDisplay={Math.round(value.highIncome).toFixed(0) || 'N/A'}
-                      // coreDisplay={Math.round(value.core).toFixed(0) || 'N/A'}
+                    highIncomeValue={yScale(value.highIncome)}
+                    coreValue={yScale(value.core)}
                     currCountry={currCountry}
                     country={country}
                     onItemClick={onItemClick}
@@ -98,12 +94,9 @@ export default class RightBarchart extends React.Component {
                     key={i}
                     translateX={xScale(i) + 30}
                     translateY={chartHeight - margin.top - margin.bottom}
-                    // valueMean={yScale((value.maxValue + value.minValue) / 2)}
-                    // valueDiff={yScale(value.maxValue - value.minValue)}
-                      value={yScale(value.mean)}
-                      minValue={yScale(value.percentile10)}
-                      maxValue={yScale(value.percentile90)}
-                      // valueDisplay={value.mean !== null ? `${value.mean}/10` : 'N/A'}
+                    value={yScale(value.mean)}
+                    minValue={yScale(value.percentile10)}
+                    maxValue={yScale(value.percentile90)}
                     country={country}
                     onItemClick={onItemClick}
                   />
@@ -117,7 +110,6 @@ export default class RightBarchart extends React.Component {
                 const value = isESR
                   ? { highIncome: currentRightFrom(esrHi), core: currentRightFrom(esrCore) }
                   : (currentRightFrom(cpr) || { mean: null, percentile10: null, percentile90: null })
-              //   const value = item.rights[keyword].filter(item => item.name === currRight)[0]
                 return (
                   <ValueTooltips
                     key={i}
@@ -126,13 +118,9 @@ export default class RightBarchart extends React.Component {
                     translateY={chartHeight - margin.top - margin.bottom}
                     currCountry={currCountry}
                     country={country}
-                    // maxValue={value.maxValue}
-                    // minValue={value.minValue}
-                    // textValue={(value.maxValue + value.minValue) / 2}
-                      highIncomeDisplay={Math.round(value.highIncome).toFixed(0).toString() || 'N/A'}
-                      coreDisplay={Math.round(value.core).toFixed(0).toString() || 'N/A'}
-                      valueDisplay={value.mean !== null ? `${Math.round(value.mean).toFixed(0)}/10` : 'N/A'}
-
+                    highIncomeDisplay={Math.round(value.highIncome).toFixed(0).toString() || 'N/A'}
+                    coreDisplay={Math.round(value.core).toFixed(0).toString() || 'N/A'}
+                    valueDisplay={value.mean !== null ? `${Math.round(value.mean).toFixed(0)}/10` : 'N/A'}
                     highIncomeValue={yScale(value.highIncome)}
                     coreValue={yScale(value.core)}
                     maxValue={yScale(value.percentile90)}
