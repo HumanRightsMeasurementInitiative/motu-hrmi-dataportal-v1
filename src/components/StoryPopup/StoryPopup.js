@@ -9,7 +9,8 @@ import lineChart from '../../img/line-chart.png'
 import { segsToUrl } from '../utils'
 import rightsByCountry from 'data/rights-by-country.json'
 
-const REGION = 'high-income-oecd'
+const AMERICAS = 'americas'
+const PILOT = 'cpr-pilot'
 const MEXICO = rightsByCountry.MEX
 const PERU = rightsByCountry.PER
 const BOLIVIA = rightsByCountry.BOL
@@ -74,7 +75,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.linkWrapper}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <CountryLink region={REGION} code='MEX' onItemClick={this.setCountry}>MEXICO</CountryLink>
+                    <CountryLink region={AMERICAS} code='MEX' onItemClick={this.setCountry}>MEXICO</CountryLink>
                   </div>
                 </div>
               </div>
@@ -108,7 +109,7 @@ export default class StoryPopup extends React.Component {
                 <RightBarchart
                   isESR={false}
                   currRight={'freedom-from-disappearance'}
-                  rightsByRegionCountries={data.rightsByRegion[REGION].countries}
+                  rightsByRegionCountries={data.rightsByRegion[PILOT].countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
                   currCountry={MEXICO}>
@@ -122,7 +123,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
-                    <RegionLink region='americas' right='freedom-from-disappearance' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
+                    <RegionLink region={AMERICAS} right='freedom-from-disappearance' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -132,7 +133,7 @@ export default class StoryPopup extends React.Component {
                 <RightBarchart
                   isESR={false}
                   currRight={'participate-in-government'}
-                  rightsByRegionCountries={data.rightsByRegion[REGION].countries}
+                  rightsByRegionCountries={data.rightsByRegion[PILOT].countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
                   currCountry={MEXICO}
@@ -146,7 +147,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
-                    <RegionLink region='americas' right='participate-in-government' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
+                    <RegionLink region={AMERICAS} right='participate-in-government' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -171,7 +172,7 @@ export default class StoryPopup extends React.Component {
                 <RightBarchart
                   isESR={true}
                   currRight={'education'}
-                  rightsByRegionCountries={data.rightsByRegion[REGION].countries}
+                  rightsByRegionCountries={data.rightsByRegion[AMERICAS].countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
                   currCountry={MEXICO}
@@ -189,7 +190,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
-                    <RegionLink region='americas' right='education' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
+                    <RegionLink region={AMERICAS} right='education' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -216,11 +217,11 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <CountryLink region='americas' code='BOL' onItemClick={this.setCountry}>BOLIVIA</CountryLink>
+                    <CountryLink region={AMERICAS} code='BOL' onItemClick={this.setCountry}>BOLIVIA</CountryLink>
                   </div>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <CountryLink region='americas' code='PER' onItemClick={this.setCountry}>PERU</CountryLink>
+                    <CountryLink region={AMERICAS} code='PER' onItemClick={this.setCountry}>PERU</CountryLink>
                   </div>
                 </div>
               </section>
