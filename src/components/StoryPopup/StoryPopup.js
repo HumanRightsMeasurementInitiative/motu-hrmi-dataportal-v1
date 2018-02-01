@@ -107,7 +107,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.cprSubTitle}>scores for all 13 countries in HRMI pilot sample</div>
                 <RightBarchart
                   isESR={false}
-                  currRight={'freedomFromDisappearance'}
+                  currRight={'freedom-from-disappearance'}
                   rightsByRegionCountries={data.rightsByRegion[REGION].countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
@@ -122,7 +122,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
-                    <RegionLink region='americas' right='freedomFromDisappearance' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
+                    <RegionLink region='americas' right='freedom-from-disappearance' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>
@@ -131,7 +131,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.cprSubTitle}>scores for all 13 countries in HRMI pilot sample</div>
                 <RightBarchart
                   isESR={false}
-                  currRight={'participateInGovernment'}
+                  currRight={'participate-in-government'}
                   rightsByRegionCountries={data.rightsByRegion[REGION].countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
@@ -146,7 +146,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.links}>
                   <div className='arrowLink'>
                     <div className='text'>Explore this right:</div>
-                    <RegionLink region='americas' right='participateInGovernment' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
+                    <RegionLink region='americas' right='participate-in-government' onItemClick={this.setRegion}>LATIN AMERICA AND THE CARIBBEAN</RegionLink>
                   </div>
                 </div>
               </section>

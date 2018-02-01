@@ -64,33 +64,33 @@
       "% population with > 50% median income (LIS Cross-national Data Center)"
     ]
   },
-  "opinionAndExpression": {
+  "opinion-and-expression": {
     "type": "CPR",
     "definition": "According to international law, everyone has \"the right to hold opinions without interference\" and \"the right to freedom of expression.\" This includes the \"freedom to seek, receive, and impart information and ideas of all kinds” through any media, including any form of artistic expression. This right also protects \"a free, uncensored, and unhindered press or other media\" (ICCPR, Part III, Article 19; Human Rights Committee, General Comment No. 34, para. 13)."
   },
-  "assemblyAndAssociation": {
+  "assembly-and-association": {
     "type": "CPR",
     "definition": "According to international law, the right to peaceful assembly ensures that all people have the right to gather publicly or privately to engage in peaceful meetings, protests, or other group gatherings. Freedom of association ensures that everyone may choose (or not) to form and/or join any group, such as political parties, civil society organisations, activist organisations, trade unions, religious groups, cultural organisations, or other groups (ICCPR, Part III, Articles 21 & 22)."
   },
-  "freedomFromExecution": {
+  "freedom-from-execution": {
     "type": "CPR",
     "definition": "According to international law, the right to be free from execution includes freedom from any arbitrary or extrajudicial deprivation of life, as well as freedom from the death penalty even with due process of law (ICCPR, Part III, Article 6; Second Optional Protocol to the ICCPR, Article 1).",
     "submeasures": "We have created separate sub-measures for freedom from extrajudicial killing and freedom from the death penalty, as well as a combined measure that is equal to the lowest score on the two separate sub-measures."
   },
-  "freedomFromTorture": {
+  "freedom-from-torture": {
     "type": "CPR",
     "definition": "According to international law, everyone has the right to freedom from “any act by which severe pain or suffering, whether physical or mental, is intentionally inflicted on a person”. This includes torture or ill-treatment committed for any purpose, including (but not limited to) attempts to obtain information or confessions, punishment for suspected or committed acts, intimidation, coercion, and discrimination (CAT, Part 1, Article 1)."
   },
-  "participateInGovernment": {
+  "participate-in-government": {
     "type": "CPR",
     "conclusion_para": "These rights are to be enjoyed without discrimination and without \"unreasonable restrictions\"(ICCPR, Part III, Article 25).",
     "measure_list": ["According to international law, everyone has the right:", "\"to take part in the conduct of public affairs, directly or through freely chosen representatives\";", "\"to vote and to be elected at genuine periodic elections\" in which every person can vote, every vote counts equally, and the ballot is secret;", "\"to have access, on general terms of equality, to public service.\""]
   },
-  "freedomFromArbitraryArrest": {
+  "freedom-from-arbitrary-arrest": {
     "type": "CPR",
     "measure_list": ["According to international law, everyone has the right to freedom from arrest or detention for:", "reasons not established by law;", "inability to fulfil a contractual obligation;", "thoughts, beliefs, conscience, or religion;", "opinions or their peaceful expression;", "participation in peaceful assembly;", "peaceful association with others, including trade union membership; or", "identity, including \"race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status\" (ICCPR, Part II, Article 2; Part III, Articles 9, 11, 18 19, 21, 22 & 26)."]
   },
-  "freedomFromDisappearance": {
+  "freedom-from-disappearance": {
     "type": "CPR",
     "definition": "According to international law, everyone has the right to freedom from “arrest, detention, abduction or any other form of deprivation of liberty” followed by a lack of acknowledgement that this has occurred or “concealment of the fate or whereabouts of the disappeared person”. Disappearances include all cases in which people are taken and their location or status is unclear, including those known to be held in secret and/or incommunicado detention (International Convention for the Protection of All Persons from Enforced Disappearance, Part I, Article 2)."
   }

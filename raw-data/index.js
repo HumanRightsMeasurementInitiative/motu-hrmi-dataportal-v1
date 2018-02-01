@@ -200,21 +200,21 @@ function CPR() {
     const datum = {
       countryCode,
       rights: {
-        opinionAndExpression: getRight('express'),
-        assemblyAndAssociation: getRight('assem_assoc'),
-        assemblyAndAssociation_sub: {
-          assembly: getRight('assem'),
-          association: getRight('assoc'),
+        'opinion-and-expression': getRight('express'),
+        'assembly-and-association': getRight('assem_assoc'),
+        'assembly-and-association-sub': {
+          'assembly': getRight('assem'),
+          'association': getRight('assoc'),
         },
-        participateInGovernment: getRight('polpart'),
-        freedomFromTorture: getRight('tort'),
-        freedomFromExecution: getRight('execution'),
-        freedomFromExecution_sub: {
-          freedomFromTheDeathPenalty: getRight('dpex'),
-          freedomFromExtrajudicialExecution: getRight('exkill'),
+        'participate-in-government': getRight('polpart'),
+        'freedom-from-torture': getRight('tort'),
+        'freedom-from-execution': getRight('execution'),
+        'freedom-from-execution-sub': {
+          'freedom-from-the-death-penalty': getRight('dpex'),
+          'freedom-from-extrajudicial-execution': getRight('exkill'),
         },
-        freedomFromArbitraryArrest: getRight('arrest'),
-        freedomFromDisappearance: getRight('disap'),
+        'freedom-from-arbitrary-arrest': getRight('arrest'),
+        'freedom-from-disappearance': getRight('disap'),
       },
     }
     return datum
@@ -243,10 +243,10 @@ const joinedCountries = countryCodesList.map(countryCode => {
     // 'SERF',
   ])
   const rights = {
-    esr_hi: countryEsrHI.rights,
-    esr_hi_historical: countryEsrHI.historical,
-    esr_core: countryEsrCore.rights,
-    esr_core_historical: countryEsrCore.historical,
+    esrHI: countryEsrHI.rights,
+    esrHIHistorical: countryEsrHI.historical,
+    esrCore: countryEsrCore.rights,
+    esrCoreHistorical: countryEsrCore.historical,
     cpr: countryCpr.rights,
   }
 

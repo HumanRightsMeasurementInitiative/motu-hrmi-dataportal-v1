@@ -72,10 +72,10 @@ export default class RightBarchart extends React.Component {
             </g>
             {
               rightsByRegionCountries.map((country, i) => {
-                const { esr_hi: esrHi, esr_core: esrCore, cpr } = country.rights
+                const { esrHI, esrCore, cpr } = country.rights
                 const currentRightFrom = container => container ? container[currRight] : null
                 const value = isESR
-                  ? { highIncome: currentRightFrom(esrHi), core: currentRightFrom(esrCore) }
+                  ? { highIncome: currentRightFrom(esrHI), core: currentRightFrom(esrCore) }
                   : (currentRightFrom(cpr) || { mean: null, percentile10: null, percentile90: null })
 
                 return (
@@ -105,10 +105,10 @@ export default class RightBarchart extends React.Component {
             }
             {
               rightsByRegionCountries.map((country, i) => {
-                const { esr_hi: esrHi, esr_core: esrCore, cpr } = country.rights
+                const { esrHI, esrCore, cpr } = country.rights
                 const currentRightFrom = container => container ? container[currRight] : null
                 const value = isESR
-                  ? { highIncome: currentRightFrom(esrHi), core: currentRightFrom(esrCore) }
+                  ? { highIncome: currentRightFrom(esrHI), core: currentRightFrom(esrCore) }
                   : (currentRightFrom(cpr) || { mean: null, percentile10: null, percentile90: null })
                 return (
                   <ValueTooltips

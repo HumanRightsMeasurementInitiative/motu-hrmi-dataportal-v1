@@ -8,13 +8,13 @@ const RIGHTS_ORDER = [
   'housing', // ESR
   'work', // ESR
 
-  'freedomFromDisappearance', // CPR
-  'freedomFromArbitraryArrest', // CPR
-  'freedomFromExecution', // CPR
-  'freedomFromTorture', // CPR
-  'participateInGovernment', // CPR
-  'assemblyAndAssociation', // CPR
-  'opinionAndExpression', // CPR
+  'freedom-from-disappearance', // CPR
+  'freedom-from-arbitrary-arrest', // CPR
+  'freedom-from-execution', // CPR
+  'freedom-from-torture', // CPR
+  'participate-in-government', // CPR
+  'assembly-and-association', // CPR
+  'opinion-and-expression', // CPR
 
   'food', // ESR
   'education', // ESR
@@ -27,16 +27,16 @@ export default class CountryRightsChart extends React.Component {
 
   render() {
     const { rights, size = 150 } = this.props
-    const { esr_hi: esrHi, esr_core: esrCore, cpr } = rights
+    const { esrHI, esrCore, cpr } = rights
     const esrType = 'HIGH_INCOME' // or 'CORE'
 
     const rightsData = RIGHTS_ORDER.map(rightCode => {
       const { type } = rightsDefinitions[rightCode]
       const NO_DATA = null
       if (type === 'ESR' && esrType === 'HIGH_INCOME') {
-        if (!esrHi) return NO_DATA
-        if (esrHi[rightCode] === null) return NO_DATA
-        return esrHi[rightCode] / 100
+        if (!esrHI) return NO_DATA
+        if (esrHI[rightCode] === null) return NO_DATA
+        return esrHI[rightCode] / 100
       } else if (type === 'ESR' && esrType === 'CORE') {
         if (!esrCore) return NO_DATA
         if (esrCore[rightCode] === null) return NO_DATA
