@@ -21,6 +21,13 @@ export const urlGoForward = () => ({
   type: 'ROUTER/GO_FORWARD',
 })
 
+export const languageChange = (languageCode) => {
+  return {
+    type: 'CHANGE_LANGUAGE',
+    payload: languageCode,
+  }
+}
+
 export const locationChange = ({ pathname, search, hash, urlSegs }) => ({
   type: 'ROUTER/LOCATION_CHANGE',
   payload: {

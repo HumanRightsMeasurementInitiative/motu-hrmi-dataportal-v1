@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import LangSelector from './LangSelector'
-import { urlPush } from '../actions'
+import { urlPush, languageChange } from '../actions'
 
 const mapStateToProps = (state) => (
   {
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => (
 const mapDispatchToProps = (dispatch) => (
   {
     urlPush: url => dispatch(urlPush(url)),
+    changeLanguage: languageCode => dispatch(languageChange(languageCode)),
   }
 )
 

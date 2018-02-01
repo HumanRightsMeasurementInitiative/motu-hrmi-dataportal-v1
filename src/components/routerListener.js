@@ -1,4 +1,4 @@
-import { locationChange } from './actions'
+import { locationChange, languageChange } from './actions'
 import { urlToSegs } from './utils'
 
 export default function startListener(history, store) {
@@ -10,6 +10,10 @@ export default function startListener(history, store) {
     hash: history.location.hash,
     urlSegs,
   }))
+
+  if (urlSegs.language !== 'EN') {
+    store.dispatch(languageChange(urlSegs.language))
+  }
 
   history.listen((location) => {
     const urlSegs = urlToSegs(history.location.pathname)

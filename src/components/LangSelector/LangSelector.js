@@ -8,6 +8,7 @@ export default class LangSelector extends React.Component {
   static propTypes = {
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
+    changeLanguage: PropTypes.func.isRequired,
   }
 
   constructor() {
@@ -37,8 +38,10 @@ export default class LangSelector extends React.Component {
 
   changeLanguage = (language, e) => {
     const langabbr = this.abbreviator(language)
+    const { urlPush, changeLanguage } = this.props
     if (langabbr !== this.props.urlSegs.language) {
-      this.props.urlPush(segsToUrl({ ...this.props.urlSegs, language: langabbr }))
+      urlPush(segsToUrl({ ...this.props.urlSegs, language: langabbr }))
+      changeLanguage(langabbr)
     }
     this.toggleDropdown(e)
   }

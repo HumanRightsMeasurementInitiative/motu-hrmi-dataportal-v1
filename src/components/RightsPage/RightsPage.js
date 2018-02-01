@@ -242,30 +242,30 @@ export default class RightsPage extends React.Component {
                       <p>Each civil and political right metric has been produced from responses to a survey of in-country human rights experts. Respondents’ answers to questions about the frequency of violations of each civil and political right were combined using a statistical model that ensures the comparability of responses across countries. This results in a distribution of estimated levels of respect for each right in each country, represented by the scores and uncertainty bands shown throughout the data visualisations. Other information about who was identified as at risk for human rights abuse was also collected from our respondents, as shown.</p>
                       <p className={styles.tooptipLink}>For more detailed information, please see our <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blank'>website here.</a></p>
                     </QuestionTooltip>
-                    <div>
-                      <QuestionTooltip width={214} question={'Groups most at risk'} isTitle={true}>
-                        <p>This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our <a href='#' target='_blank'>summary of qualitative survey responses.[need link]</a></p>
-                      </QuestionTooltip>
-                      <ul className={styles.groupsList}>
-                        <li>nationality</li>
-                        <li>other immigrant</li>
-                        <li>political indigenous</li>
-                        <li>professional disabled journalist</li>
-                        <li>low ses refugees cultrue</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <QuestionTooltip width={220} question={'Distribution of abuse'} isTitle={true}>
-                        <p>This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group as being especially vulnerable.</p>
-                      </QuestionTooltip>
-                      <div className={styles.cprChartSubtitle}>Data is for period January - June 2017</div>
-                      <div className={styles.chartKeys}>
-                        <strong>A:</strong> Suspected criminals, <strong>B:</strong> Non-violent political, <strong>C:</strong> Violent political, <strong>D:</strong> Discriminated groups, <strong>E:</strong> Indiscriminate
+                    { this.state.currCountry &&
+                      <div>
+                        <QuestionTooltip width={214} question={'Groups most at risk'} isTitle={true}>
+                          <p>This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our <a href='#' target='_blank'>summary of qualitative survey responses.[need link]</a></p>
+                        </QuestionTooltip>
+                        <ul className={styles.groupsList}>
+                          <li>nationality</li>
+                          <li>other immigrant</li>
+                          <li>political indigenous</li>
+                          <li>professional disabled journalist</li>
+                          <li>low ses refugees cultrue</li>
+                        </ul>
+                        <QuestionTooltip width={220} question={'Distribution of abuse'} isTitle={true}>
+                          <p>This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group as being especially vulnerable.</p>
+                        </QuestionTooltip>
+                        <div className={styles.cprChartSubtitle}>Data is for period January - June 2017</div>
+                        <div className={styles.chartKeys}>
+                          <strong>A:</strong> Suspected criminals, <strong>B:</strong> Non-violent political, <strong>C:</strong> Violent political, <strong>D:</strong> Discriminated groups, <strong>E:</strong> Indiscriminate
+                        </div>
                       </div>
-                    </div>
+                    }
                   </div>
                 }
-                { isESRSelected &&
+                { (isESRSelected && this.state.currCountry) &&
                   <div>
                     <div className={styles.subtitleESR}>Right trend over time</div>
                     <div className={styles.esrChartKey}>This chart shows data using the core country standard.</div>
