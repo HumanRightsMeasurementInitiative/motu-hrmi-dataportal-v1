@@ -256,7 +256,8 @@ const joinedCountries = countryCodesList.map(countryCode => {
     'isOECD',
     'geoRegion',
   ])
-  countryCatalog.geoRegion = countryCatalog.geoRegion.replace('_', '-')
+  countryCatalog.geoRegion = countryCatalog.geoRegion.replace(/_/g, '-')
+  countryCatalog.hasCPR = countryCpr.rights !== null
   catalogCountries.push(countryCatalog)
 
   return { ...countryInfo, rights }
@@ -268,13 +269,13 @@ const catalogCountriesByRegion = d3.nest()
   .key(c => c.geoRegion)
   .rollup(cs => cs.map(c => c.countryCode))
   .object(catalogCountries)
-const catalogCountriesHI = catalogCountries.filter(c => c.isHighIncome).map(c => c.countryCode)
-const catalogCountriesOECD = catalogCountries.filter(c => c.isOECD).map(c => c.countryCode)
+const catalogCountriesHIOECD = catalogCountries.filter(c => c.isHighIncome && c.isOECD).map(c => c.countryCode)
+const catalogCountriesCPRPilot = catalogCountries.filter(c => c.hasCPR).map(c => c.countryCode)
 
 const regions = {
   ...catalogCountriesByRegion,
-  'high-income': catalogCountriesHI,
-  oecd: catalogCountriesOECD,
+  'high-income-oecd': catalogCountriesHIOECD,
+  'cpr-pilot': catalogCountriesCPRPilot,
 }
 
 const indent = 2

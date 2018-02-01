@@ -9,9 +9,10 @@ import lineChart from '../../img/line-chart.png'
 import { segsToUrl } from '../utils'
 import rightsByCountry from 'data/rights-by-country.json'
 
-const mexico = rightsByCountry.MEX
-const peru = rightsByCountry.PER
-const bolivia = rightsByCountry.BOL
+const REGION = 'high-income-oecd'
+const MEXICO = rightsByCountry.MEX
+const PERU = rightsByCountry.PER
+const BOLIVIA = rightsByCountry.BOL
 
 export default class StoryPopup extends React.Component {
   static propTypes = {
@@ -66,14 +67,14 @@ export default class StoryPopup extends React.Component {
                 <LangSelector />
               </div>
               <div className={styles.graph} style={{ padding: '0 100px' /* temporary */ }}>
-                <CountryRightsChart rights={mexico.rights} size={300} />
+                <CountryRightsChart rights={MEXICO.rights} size={300} />
               </div>
               <div>
                 <h4 className={styles.countryName}>MEXICO</h4>
                 <div className={styles.linkWrapper}>
                   <div className='arrowLink'>
                     <div className='text'>Explore all rights:</div>
-                    <CountryLink region='oecd' code='MEX' onItemClick={this.setCountry}>MEXICO</CountryLink>
+                    <CountryLink region={REGION} code='MEX' onItemClick={this.setCountry}>MEXICO</CountryLink>
                   </div>
                 </div>
               </div>
@@ -107,10 +108,10 @@ export default class StoryPopup extends React.Component {
                 <RightBarchart
                   isESR={false}
                   currRight={'freedomFromDisappearance'}
-                  rightsByRegionCountries={data.rightsByRegion.oecd.countries}
+                  rightsByRegionCountries={data.rightsByRegion[REGION].countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
-                  currCountry={mexico}>
+                  currCountry={MEXICO}>
                 </RightBarchart>
               </section>
               <section className={styles.topLink}>
@@ -131,10 +132,10 @@ export default class StoryPopup extends React.Component {
                 <RightBarchart
                   isESR={false}
                   currRight={'participateInGovernment'}
-                  rightsByRegionCountries={data.rightsByRegion.oecd.countries}
+                  rightsByRegionCountries={data.rightsByRegion[REGION].countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
-                  currCountry={mexico}
+                  currCountry={MEXICO}
                 />
               </section>
               <section className={styles.bottomLink}>
@@ -170,10 +171,10 @@ export default class StoryPopup extends React.Component {
                 <RightBarchart
                   isESR={true}
                   currRight={'education'}
-                  rightsByRegionCountries={data.rightsByRegion.oecd.countries}
+                  rightsByRegionCountries={data.rightsByRegion[REGION].countries}
                   chartHeight={338}
                   chartWidth={this.state.barchartWidth}
-                  currCountry={mexico}
+                  currCountry={MEXICO}
                 />
               </section>
               <section className={styles.topLink}>
@@ -226,11 +227,11 @@ export default class StoryPopup extends React.Component {
               <section>
                 <div className={styles.radarWrapper}>
                   <div className={styles.radarCol}>
-                    <CountryRightsChart rights={peru.rights} size={250} />
+                    <CountryRightsChart rights={PERU.rights} size={250} />
                     <div className={styles.radarCountryName}>PERU</div>
                   </div>
                   <div className={styles.radarCol}>
-                    <CountryRightsChart rights={bolivia.rights} size={250} />
+                    <CountryRightsChart rights={BOLIVIA.rights} size={250} />
                     <div className={styles.radarCountryName}>BOLIVIA</div>
                   </div>
                 </div>

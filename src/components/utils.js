@@ -1,4 +1,4 @@
-const DEFAULT_REGION = 'oecd'
+const DEFAULT_REGION = 'high-income-oecd'
 
 export const joinClassName = (classNames, styles) => {
   return Object.keys(classNames).filter(key => {
