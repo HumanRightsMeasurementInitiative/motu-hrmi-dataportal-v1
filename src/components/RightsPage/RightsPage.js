@@ -69,6 +69,10 @@ export default class RightsPage extends React.Component {
     this.setState({ sortby: name })
   }
 
+  gotoCPRPilot = () => {
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, region: 'cpr-pilot' }))
+  }
+
   render() {
     const { data: { rightsByRegion }, urlSegs } = this.props
 
@@ -105,7 +109,7 @@ export default class RightsPage extends React.Component {
           <div className='column'>
             <div className={styles.columnLeft}>
               <div className={styles.regionSelectorWrapper}>
-                <RegionSelector rightsByRegion={rightsByRegion} urlSegs={urlSegs} onItemClick={this.setRegion} />
+                <RegionSelector rightsByRegion={rightsByRegion} urlSegs={urlSegs} isActive={isESRSelected} onItemClick={this.setRegion} />
               </div>
               <div className={styles.rightsWrapper}>
                 <div className={styles.rightList}>
@@ -124,18 +128,25 @@ export default class RightsPage extends React.Component {
           <div className='column'>
             <div className={styles.chartsHeader}>
               <div className={styles.regionName}><span style={{ color: isESRSelected ? '#00af49' : '#2e65a1' }}>Right to {urlSegs.right}</span> in {getRegionName(urlSegs.region)}</div>
-              <div className={styles.sortBy}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div>
+              <div className={styles.sortBy} style={{ opacity: (isESRSelected || urlSegs.region === 'cpr-pilot') ? 1 : 0 }}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div>
             </div>
             <div className={styles.chartsContainer} ref='charts'>
-              <RightBarchart
-                isESR={rightsDefinitions[urlSegs.right].type === 'ESR'}
-                currRight={urlSegs.right}
-                rightsByRegionCountries={rightsByRegionCountries}
-                chartHeight={this.state.chartHeight * 0.7}
-                chartWidth={this.state.chartWidth}
-                currCountry={this.state.currCountry}
-                onItemClick={this.setCurrCountry}>
-              </RightBarchart>
+              { isESRSelected || urlSegs.region === 'cpr-pilot'
+                ? <RightBarchart
+                  isESR={rightsDefinitions[urlSegs.right].type === 'ESR'}
+                  currRight={urlSegs.right}
+                  rightsByRegionCountries={rightsByRegionCountries}
+                  chartHeight={this.state.chartHeight * 0.7}
+                  chartWidth={this.state.chartWidth}
+                  currCountry={this.state.currCountry}
+                  onItemClick={this.setCurrCountry} />
+                : <div className={styles.CPRAlertWrapper}>
+                  <div className={styles.CPRAlert}>
+                    The data is available only for the <u>HRMI Civil and political rights pilot countries</u>
+                    <div className={styles.button}><button onClick={this.gotoCPRPilot}>GOT IT</button></div>
+                  </div>
+                </div>
+              }
               { isESRSelected &&
                 <ESRTimeline
                   chartHeight={this.state.chartHeight * 0.3}

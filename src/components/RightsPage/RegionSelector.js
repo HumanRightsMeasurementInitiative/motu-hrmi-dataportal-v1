@@ -8,6 +8,7 @@ export default class RegionSelector extends React.Component {
   static propTypes = {
     rightsByRegion: PropTypes.object.isRequired,
     urlSegs: PropTypes.object.isRequired,
+    isActive: PropTypes.bool.isRequired,
     onItemClick: PropTypes.func.isRequired,
   }
 
@@ -17,19 +18,25 @@ export default class RegionSelector extends React.Component {
   }
 
   toggleRegionDropdown = () => {
-    this.setState({ isRegionOpen: !this.state.isRegionOpen })
+    if (this.props.isActive) {
+      this.setState({ isRegionOpen: !this.state.isRegionOpen })
+    }
+  }
+
+  closePopup = () => {
+    this.setState({ isRegionOpen: false })
   }
 
   onItemClick = (code) => {
     this.props.onItemClick(code)
-    this.setState({ isRegionOpen: false })
+    this.closePopup()
   }
 
   render() {
-    const { rightsByRegion, urlSegs } = this.props
+    const { rightsByRegion, urlSegs, isActive } = this.props
 
     const regions = Object.keys(rightsByRegion).map((region, i) => (
-      <RegionItem key={i} index={i} code={region} onItemClick={this.onItemClick} selected={region === urlSegs.region} closePopup={this.toggleRegionDropdown} whiteBorder={true}>
+      <RegionItem key={i} index={i} code={region} onItemClick={this.onItemClick} selected={region === urlSegs.region} closePopup={this.closePopup} whiteBorder={true}>
         {getRegionName(region)}
       </RegionItem>
     ))
@@ -40,8 +47,8 @@ export default class RegionSelector extends React.Component {
     }, styles)
 
     return (
-      <div className={regionSelector}>
-        <div className={styles.toggleSwitch} onClick={this.toggleRegionDropdown}>Select Region</div>
+      <div className={regionSelector} style={{ opacity: isActive ? 1 : 0.2 }}>
+        <div className={styles.toggleSwitch} onClick={this.toggleRegionDropdown} style={{ cursor: isActive ? 'pointer' : 'default' }}>Select Region</div>
         <ul className={styles.regionDropdown}>
           {regions}
         </ul>
