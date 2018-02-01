@@ -22,8 +22,9 @@
 }
 .searchInput {
   padding: 0 10px;
-  height: 30px;
+  height: 25px;
   width: 90%;
+  max-width: 128px;
   border: 1px solid #3bc4e9;
   font-size: 14px;
   color: #6b6c6e;
@@ -41,8 +42,9 @@
 
 .chartsHeader {
   flex: 0 0 auto;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
-  color: #616161;
+  color: #58595b;
 }
 .title {
   /*flex: 1;*/
@@ -138,7 +140,7 @@
   font-weight: 500;
 }
 .esrTitle {
-  color: #00b95f;
+  color: #00af49;
 }
 .cprTitle {
   color: #2e65a1;

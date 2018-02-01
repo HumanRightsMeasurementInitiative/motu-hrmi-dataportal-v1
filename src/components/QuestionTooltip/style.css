@@ -12,7 +12,7 @@
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.025em;
-  color: #3778ae;
+  color: #2e65a1;
   cursor: pointer;
 }
 
@@ -31,7 +31,7 @@
 }
 .CPRTitle .questionMark {
   bottom: 4px;
-  background: #3778ae;
+  background: #2e65a1;
 }
 
 .popupPane {

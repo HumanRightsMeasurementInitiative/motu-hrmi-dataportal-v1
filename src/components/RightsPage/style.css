@@ -141,8 +141,9 @@
 .chartsHeader {
   flex: 0 0 auto;
   padding: 0 20px;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
-  color: #616161;
+  color: #58595b;
 }
 .regionName span {
   font-weight: 600;
@@ -187,7 +188,7 @@
   font-size: 16px;
 }
 .rightInfo.esrs {
-  color: #00b95f;
+  color: #00af49;
 }
 .rightInfo.cprs {
   color: #2e65a1;
@@ -295,7 +296,7 @@
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.025em;
-  color: #17ab65;
+  color: #00af49;
 }
 .esrChartSubtitle,
 .cprChartSubtitle {
@@ -314,7 +315,7 @@
 }
 .groupsList li {
   margin: 5px 0;
-  color: #3778ae;
+  color: #2e65a1;
   text-align: center;
   line-height: 1em;
 }

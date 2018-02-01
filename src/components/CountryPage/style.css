@@ -223,7 +223,7 @@
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.025em;
-  color: #17ab65;
+  color: #00af49;
 }
 .subtitleCPR {
   margin: 0 0 0;
@@ -231,7 +231,7 @@
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.025em;
-  color: #3778ae;
+  color: #2e65a1;
 }
 .esrChartSubtitle {
   composes: smallText;
@@ -378,7 +378,7 @@
   color: #0abc65;
 }
 .cprRegionValue {
-  color: #3778ae;
+  color: #2e65a1;
 }
 .esrValueList,
 .cprValueList {
@@ -410,7 +410,7 @@
 }
 .groupsList li {
   margin: 5px 0;
-  color: #3778ae;
+  color: #2e65a1;
   text-align: center;
   line-height: 1em;
 }
