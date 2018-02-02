@@ -6,8 +6,10 @@ import styles from './styles.css'
 export default class NavItem extends React.Component {
   static propTypes = {
     label: PropTypes.string.isRequired,
+    labelKey: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
     onDownloadClick: PropTypes.func,
+    buttonText: PropTypes.string,
   }
 
   constructor() {
@@ -55,7 +57,7 @@ export default class NavItem extends React.Component {
   }
 
   render() {
-    const { label, children } = this.props
+    const { label, labelKey, children, buttonText } = this.props
     const labelClass = jcn({
       'menuLabel': true,
       'active': this.state.isOpen,
@@ -63,18 +65,18 @@ export default class NavItem extends React.Component {
 
     const dropdownClassNames = jcn({
       'hide': !this.state.isOpen,
-      'menuDropdown': label === 'About the initiative' || label === 'Methodology' || label === 'How To Use',
-      'menuDropdownList': label === 'Download Dataset',
+      'menuDropdown': labelKey === 'about' || labelKey === 'methodology' || labelKey === 'howToUse',
+      'menuDropdownList': labelKey === 'download',
     }, styles)
 
     return (
       <div className={styles.navItem} ref='navItem'>
         <div className={labelClass} onClick={this.onClickHanlder}>{label}</div>
-        <div className={dropdownClassNames} dropdown={label} ref='dropdown'>
+        <div className={dropdownClassNames} dropdown={labelKey} ref='dropdown'>
           <div className={styles.dropdownWrapper} ref='dropdownWrapper'>
             {children}
-            { label === 'Download Dataset' &&
-              <div className={styles.agreeBtnWrapper}><div className={styles.agreeBtn} onClick={this.onDownloadClick}>AGREE</div></div>
+            { labelKey === 'download' &&
+              <div className={styles.agreeBtnWrapper}><div className={styles.agreeBtn} onClick={this.onDownloadClick}>{buttonText}</div></div>
             }
           </div>
         </div>

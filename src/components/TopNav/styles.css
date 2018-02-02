@@ -15,6 +15,9 @@
 .hide {
   display: none;
 }
+.navItem a {
+  color: #fff;
+}
 
 .menuLabel {
   padding: 2px 6px 6px;
@@ -39,15 +42,15 @@
   overflow: hidden;
   animation: fadeIn .4s;
 }
-[dropdown='About the initiative'] {
+[dropdown='about'] {
   width: 420px;
 }
-[dropdown='Methodology'] {
+[dropdown='methodology'] {
   right: 0;
   width: 428px;
   height: 495px;
 }
-[dropdown='How To Use'] {
+[dropdown='howToUse'] {
   right: 0;
   width: 450px;
   height: 495px;

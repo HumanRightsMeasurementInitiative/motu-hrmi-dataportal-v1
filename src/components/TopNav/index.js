@@ -1,76 +1,93 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import NavItem from './NavItem'
 import styles from './styles.css'
 
 export default class TopNav extends React.Component {
+  static propTypes = {
+    content: PropTypes.object.isRequired,
+  }
+
   startDownload = () => {
     // start download dataset
   }
 
   render() {
+    const { content } = this.props
+    const menuText = content.menu
     return (
       <div className={styles.nav}>
-        <NavItem label={'About the initiative'}>
-          <p className={styles.para}>The Human Rights Measurement Initiative (HRMI) is a unique collaborative venture between human rights practitioners, researchers, academics, and other human rights supporters.</p>
-          <p className={styles.para}>Our goal is to produce the first and best comprehensive set of metrics for tracking the human rights performance of countries.</p>
-          <p className={styles.listLabel}>Our 2018 data-set includes:</p>
+        <NavItem label={menuText.about.title} labelKey='about'>
+          <p className={styles.para}>{menuText.about.paragraphs[0]}</p>
+          <p className={styles.para}>{menuText.about.paragraphs[1]}</p>
+          <p className={styles.listLabel}>{menuText.about.paragraphs[2]}</p>
           <ul className={styles.list}>
-            <li className={styles.listEl}>Annual data on five economic and social rights for 120 to 180 countries (depending on the right) from 2005 to 2015.</li>
-            <li className={styles.listEl}>Pilot data on seven civil and political rights for 13 countries covering the time period from January to June 2017.</li>
+            <li className={styles.listEl}>{menuText.about.list[0]}</li>
+            <li className={styles.listEl}>{menuText.about.list[1]}</li>
           </ul>
-          <p className={styles.para}>Over time we aim to extend our civil and political rights data to the rest of the world, and expand our full set of data to include additional metrics.</p>
-          <p className={styles.para}>Learn more about the Human Rights Measurement Initiative:</p>
-          <div className={styles.linkWrapper}><a href="https://humanrightsmeasurement.org/about-hrmi/the-team/" target="_blank">Who are we?</a></div>
-          <div className={styles.linkWrapper}><a href="https://humanrightsmeasurement.org/methodology/overview/" target="_blank">Read about our methodology</a></div>
-          <div className={styles.linkWrapper}><a className={styles.link} href="https://humanrightsmeasurement.org/methodology/overview/" target="_blank">Visit the main HRMI website</a></div>
+          <p className={styles.para}>{menuText.about.paragraphs[3]}</p>
+          <p className={styles.para}>{menuText.about.paragraphs[4]}</p>
+          <div className={styles.linkWrapper}><a href={menuText.about.links[0].href} target="_blank">{menuText.about.links[0].text} </a></div>
+          <div className={styles.linkWrapper}><a href={menuText.about.links[1].href} target="_blank">{menuText.about.links[1].text} </a></div>
+          <div className={styles.linkWrapper}><a className={styles.link} href={menuText.about.links[2].href} target="_blank">{menuText.about.links[2].text} </a></div>
         </NavItem>
-        <NavItem label={'Methodology'}>
-          <p className={styles.para}>There is no one-size-fits-all methodology for measuring human rights performance, so we use different methodologies that are best tailored to each area. Wherever possible – e.g. in the area of economic and social rights – our methodologies use objective statistics produced by national governments and international agencies.</p>
-          <p className={styles.para}>For civil and political rights, where violations often take place in secret and reporting is very patchy, we use an expert survey approach to get our information directly from the human rights experts who are monitoring events in each country.</p>
-          <div>Learn more:</div>
+        <NavItem label={menuText.methodology.title} labelKey='methodology'>
+          <p className={styles.para}>{menuText.methodology.paragraphs[0]}</p>
+          <p className={styles.para}>{menuText.methodology.paragraphs[1]}</p>
+          <div>{menuText.methodology.paragraphs[2]}</div>
           <ul className={styles.list}>
             <li className={styles.listEl}>
-              <span>Get an overview of our methodology for measuring economic and social rights:</span>
-              <div className={styles.linkWrapper}><a href="https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/" target="_blank">https://humanrightsmeasurement.org/methodology/ measuring-economic-social-rights/</a></div>
-              <p className={styles.para}></p>
+              <span className={styles.linkWrapper}><a href={menuText.methodology.links[0].href} target="_blank">{menuText.methodology.links[0].text}</a></span>
             </li>
             <li className={styles.listEl}>
-              <span>Get an overview of our methodology for measuring civil and political rights:</span>
-              <div className={styles.linkWrapper}><a href="https://humanrightsmeasurement.org/methodology/measuring-civil-political-rights/" target="_blank">https://humanrightsmeasurement.org/methodology/ measuring-civil-political-rights/</a></div>
-              <p className={styles.para}></p>
+              <span className={styles.linkWrapper}><a href={menuText.methodology.links[1].href} target="_blank">{menuText.methodology.links[1].text}</a></span>
             </li>
             <li className={styles.listEl}>
-              <span>Read our more in-depth methodology handbook:</span>
-              <div className={styles.linkWrapper}><a href="#" target="_blank">#</a></div>
-              <p className={styles.para}></p>
+              <span className={styles.linkWrapper}><a href={menuText.methodology.links[2].href} target="_blank">{menuText.methodology.links[2].text}</a></span>
             </li>
             <li className={styles.listEl}>
-              <span>See the HRMI expert survey for civil and political rights (please note this is a link to a preview of the survey only, and any responses you make will not be collected):</span>
-              <div className={styles.linkWrapper}><a href="https://humanrightsmeasurement.org/methodology/survey/" target="_blank">https://humanrightsmeasurement.org/methodology/ survey/</a></div>
-              <p className={styles.para}></p>
+              <span className={styles.linkWrapper}><a href={menuText.methodology.links[3].href} target="_blank">{menuText.methodology.links[3].text}</a></span>
             </li>
           </ul>
         </NavItem>
-        <NavItem label={'How To Use'}>
+        <NavItem label={menuText.howToUse.title} labelKey='howToUse'>
           <p className={styles.para}>
-            There are lots of ways that you can use Human Rights Measurement Initiative (HRMI) data.
+            {menuText.howToUse.paragraphs[0]}
             <br />
-            These include:
+            {menuText.howToUse.paragraphs[1]}
           </p>
           <ul className={styles.list}>
-            <li className={styles.listEl}>in advocacy and publicity campaigns</li>
-            <li className={styles.listEl}>to hold governments to account</li>
-            <li className={styles.listEl}>to help identify policies that work to advance human rights</li>
-            <li className={styles.listEl}>to stimulate competition for a “race to the top” (that is, to encourage countries to perform as well in human rights as they possibly can)</li>
+            <li className={styles.listEl}>{menuText.howToUse.list[0]}</li>
+            <li className={styles.listEl}>{menuText.howToUse.list[1]}</li>
+            <li className={styles.listEl}>{menuText.howToUse.list[2]}</li>
+            <li className={styles.listEl}>{menuText.howToUse.list[3]}</li>
           </ul>
-          <p className={styles.para}>As an example, we’ve created country narratives that draw on these data for Mexico [insert hyperlink] and Australia [insert hyperlink]. We would love to hear how you are using our data. Please let us know here:<br /><a href="https://humanrightsmeasurement.org/get-involved/tell-us/" target="_blank">https://humanrightsmeasurement.org/get-involved/tell-us/</a></p>
-          <p className={styles.para}>You can download HRMI charts and data by clicking on the download icon at the bottom left of each screen.<br />We ask that you take care to ensure that you understand the data and what they are showing, so that you do not misrepresent them.</p>
-          <p className={styles.para}>We want to make our work freely available to everyone, so all HRMI data, charts, and text are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 copyright licence</a>. This means that you are welcome to reuse what we have created as long as you attribute the Human Rights Measurement Initiative and link back to <a href="https://humanrightsmeasurement.org/" target="_blank">our website</a>.</p>
-          <p className={styles.para}>In charts, where space is limited, please reference the source as follows:<br />Source: 2018 Human Rights Measurement Initiative (HRMI) dataset <a href="https://humanrightsmeasurement.org" target="_blank">https://humanrightsmeasurement.org</a></p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[2]}<br /><a href={menuText.howToUse.links[0].href} target="_blank">{menuText.howToUse.links[0].text}</a></p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[3]}<br />{menuText.howToUse.paragraphs[4]}</p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[5]} <a href={menuText.howToUse.links[1].href} target="_blank">{menuText.howToUse.links[1].text}</a>. {menuText.howToUse.paragraphs[6]} <a href={menuText.howToUse.links[2].href} target="_blank"></a>{menuText.howToUse.links[2].text}.</p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[7]}</p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[8]} <a href={menuText.howToUse.links[3].href} target="_blank">{menuText.howToUse.links[3].text}</a></p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[9]}</p>
+          <ul className={styles.list}>
+            <li className={styles.listEl}>{menuText.howToUse.list[4]} <a href={menuText.howToUse.links[4].href} target='_blank'>{menuText.howToUse.links[4].text}</a> {menuText.howToUse.list[5]}</li>
+          </ul>
+          <p className={styles.para}>
+            {menuText.howToUse.paragraphs[10]}
+          </p>
+          <ul className={styles.list}>
+            <li className={styles.listEl}>{menuText.howToUse.list[6]}</li>
+          </ul>
+          <p className={styles.para}>
+            {menuText.howToUse.paragraphs[11]}
+          </p>
+          <ul className={styles.list}>
+            <li className={styles.listEl}>{menuText.howToUse.list[7]}</li>
+            <li className={styles.listEl}>{menuText.howToUse.list[8]}</li>
+          </ul>
         </NavItem>
-        <NavItem label={'Download Dataset'} onDownloadClick={this.startDownload}>
-          <p className={styles.para}>You are welcome to use data and charts produced by the Human Rights Measurement Initiative (HRMI) for your advocacy or research. However, we ask that you take care to ensure that you understand the data and what they are showing, so that you do not misrepresent them.</p>
-          <p className={styles.para}>Please attribute the Human Rights Measurement Initiative and link back to our website (https://humanrightsmeasurement.org/).</p>
+        <NavItem label={menuText.download.title} labelKey='download' onDownloadClick={this.startDownload} buttonText={menuText.download.button}>
+          <p className={styles.para}>{menuText.download.paragraphs[0]}</p>
+          <p className={styles.para}>{menuText.download.paragraphs[1]} <a href={menuText.download.links[0].href} target='_blank'>{menuText.download.links[0].text}</a>.</p>
         </NavItem>
       </div>
     )

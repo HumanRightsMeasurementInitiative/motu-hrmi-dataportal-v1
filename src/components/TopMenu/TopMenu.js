@@ -6,10 +6,11 @@ import styles from './styles.css'
 
 export default class TopMenu extends React.Component {
   static propTypes = {
-    isStoryOpen: PropTypes.bool,
+    isStoryOpen: PropTypes.bool.isRequired,
+    content: PropTypes.object.isRequired,
   }
   render() {
-    const { isStoryOpen } = this.props
+    const { isStoryOpen, content } = this.props
     const joinClassName = jcn({
       wrapper: true,
       isBlur: isStoryOpen,
@@ -19,7 +20,7 @@ export default class TopMenu extends React.Component {
         <div className={styles.logo}>
           <img className={styles.logoImg} src='https://humanrightsmeasurement.org/wp-content/uploads/2017/07/logo01.png' alt='logo'/>
         </div>
-        <TopNav />
+        <TopNav content={content} />
       </div>
     )
   }

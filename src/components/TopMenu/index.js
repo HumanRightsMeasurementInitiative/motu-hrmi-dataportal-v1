@@ -4,6 +4,7 @@ import TopMenu from './TopMenu'
 const mapStateToProps = (state) => (
   {
     isStoryOpen: state.isStoryOpen,
+    content: state.content,
   }
 )
 
