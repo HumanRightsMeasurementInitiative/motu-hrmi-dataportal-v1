@@ -45,7 +45,7 @@ ul {
 }
 
 :global(.arrowLink) {
-  padding: 0 24px;
+  padding: 0 0 0 24px;
   font-size: 12px;
   color: #a6a6a6;
 }

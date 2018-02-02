@@ -9,6 +9,7 @@ export default class SectionSelector extends React.Component {
     urlPush: PropTypes.func.isRequired,
     content: PropTypes.object.isRequired,
     title: PropTypes.string,
+    isStoryMode: PropTypes.bool,
   }
 
   changeUrl = (section) => {
@@ -23,7 +24,7 @@ export default class SectionSelector extends React.Component {
   }
 
   render() {
-    const { title, urlSegs, content } = this.props
+    const { title, urlSegs, content, isStoryMode } = this.props
 
     return (
       <div className={styles.secSelector}>
@@ -31,8 +32,8 @@ export default class SectionSelector extends React.Component {
           <div className={styles.title}>{title}</div>
         }
         <div className={styles.btnContainer}>
-          <SectionBtn onItemClick={this.changeUrl} exploreBy='Rights' isSelected={urlSegs.exploreBy === 'Rights'}>{content.section.section_name[0]}</SectionBtn>
-          <SectionBtn onItemClick={this.changeUrl} exploreBy='Geography' isSelected={urlSegs.exploreBy === 'Geography'}>{content.section.section_name[1]}</SectionBtn>
+          <SectionBtn onItemClick={this.changeUrl} exploreBy='Rights' isSelected={urlSegs.exploreBy === 'Rights'} isStoryMode={isStoryMode}>{content.section.section_name[0]}</SectionBtn>
+          <SectionBtn onItemClick={this.changeUrl} exploreBy='Geography' isSelected={urlSegs.exploreBy === 'Geography'} isStoryMode={isStoryMode}>{content.section.section_name[1]}</SectionBtn>
         </div>
       </div>
     )
@@ -45,6 +46,7 @@ class SectionBtn extends React.Component {
     onItemClick: PropTypes.func.isRequired,
     exploreBy: PropTypes.string.isRequired,
     isSelected: PropTypes.bool.isRequired,
+    isStoryMode: PropTypes.bool,
   }
 
   onItemClick = () => {
@@ -52,11 +54,12 @@ class SectionBtn extends React.Component {
   }
 
   render() {
-    const { children, isSelected } = this.props
+    const { children, isSelected, isStoryMode } = this.props
 
     const joinedClass = jcn({
       secBtn: true,
       selected: isSelected,
+      zeroMargin: isStoryMode,
     }, styles)
 
     return (
