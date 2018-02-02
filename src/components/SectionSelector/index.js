@@ -5,6 +5,7 @@ import { urlPush, closeStoryMode } from '../actions'
 const mapStateToProps = (state) => (
   {
     urlSegs: state.router.urlSegs,
+    content: state.content,
   }
 )
 

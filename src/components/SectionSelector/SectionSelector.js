@@ -5,9 +5,10 @@ import styles from './style.css'
 
 export default class SectionSelector extends React.Component {
   static propTypes = {
-    title: PropTypes.string,
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
+    content: PropTypes.object.isRequired,
+    title: PropTypes.string,
   }
 
   changeUrl = (section) => {
@@ -22,7 +23,7 @@ export default class SectionSelector extends React.Component {
   }
 
   render() {
-    const { title, urlSegs } = this.props
+    const { title, urlSegs, content } = this.props
 
     return (
       <div className={styles.secSelector}>
@@ -30,8 +31,8 @@ export default class SectionSelector extends React.Component {
           <div className={styles.title}>{title}</div>
         }
         <div className={styles.btnContainer}>
-          <SectionBtn onItemClick={this.changeUrl} exploreBy='Rights' isSelected={urlSegs.exploreBy === 'Rights'}>Explore by Rights</SectionBtn>
-          <SectionBtn onItemClick={this.changeUrl} exploreBy='Geography' isSelected={urlSegs.exploreBy === 'Geography'}>Explore by Geography</SectionBtn>
+          <SectionBtn onItemClick={this.changeUrl} exploreBy='Rights' isSelected={urlSegs.exploreBy === 'Rights'}>{content.section.section_name[0]}</SectionBtn>
+          <SectionBtn onItemClick={this.changeUrl} exploreBy='Geography' isSelected={urlSegs.exploreBy === 'Geography'}>{content.section.section_name[1]}</SectionBtn>
         </div>
       </div>
     )

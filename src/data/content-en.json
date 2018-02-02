@@ -101,5 +101,15 @@
        }],
       "button": "AGREE"
     }
+  },
+  "section": {
+    "title": "Explore all the dataset:",
+    "section_name": ["Explore by Rights", "Explore by Geography"]
+  },
+  "how_to_read": {
+
+  },
+  "story": {
+    
   }
 }

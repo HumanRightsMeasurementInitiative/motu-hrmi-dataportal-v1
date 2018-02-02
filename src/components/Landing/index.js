@@ -5,6 +5,7 @@ import { openStoryMode } from '../actions'
 const mapStateToProps = (state) => (
   {
     isStoryOpen: state.isStoryOpen,
+    content: state.content,
   }
 )
 

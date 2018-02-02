@@ -8,6 +8,7 @@ export default class Landing extends React.Component {
   static propTypes = {
     isStoryOpen: PropTypes.bool.isRequired,
     openStoryMode: PropTypes.func.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   componentWillMount() {
@@ -15,10 +16,10 @@ export default class Landing extends React.Component {
   }
 
   render() {
-    const { isStoryOpen } = this.props
+    const { isStoryOpen, content } = this.props
     return (
       <div className={styles.landing}>
-        <div className={styles.pageSelector}><SectionSelector title='Explore all the dataset:' /></div>
+        <div className={styles.pageSelector}><SectionSelector title={content.section.title} /></div>
         { isStoryOpen &&
           <StoryPopup />
         }

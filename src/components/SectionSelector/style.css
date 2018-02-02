@@ -20,11 +20,17 @@
   cursor: pointer;
   transition: border .2s;
 }
+.secBtn:first-child {
+  min-width: 155px;
+}
+.secBtn:last-child {
+  min-width: 195px;
+}
 .secBtn:hover {
   font-weight: 700;
 }
-.secBtn:active,
 .secBtn.selected {
+  min-width: 0;
   border-color: #25a9e0;
   font-weight: 700;
 }
