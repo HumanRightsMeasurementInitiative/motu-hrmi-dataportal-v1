@@ -95,7 +95,7 @@ function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
 
 
 
-var COLORS = ['#00D066', '#00DB69', '#00E56F', '#4FD1F3', '#44BFE6', '#3AABDA', '#2E97CC', '#3377B0', '#345494', '#342D75', '#00A352', '#00BB5B'];
+var DEFAULT_COLORS = ['#00D066', '#00DB69', '#00E56F', '#4FD1F3', '#44BFE6', '#3AABDA', '#2E97CC', '#3377B0', '#345494', '#342D75', '#00A352', '#00BB5B'];
 
 function dumbHash() {
   return window.btoa(Math.random().toString().slice(2)).slice(0, 10);
@@ -192,19 +192,24 @@ var PetalChart = function (_React$Component) {
     value: function render() {
       var _props = this.props,
           size = _props.size,
+          _props$margin = _props.margin,
+          margin = _props$margin === undefined ? 0 : _props$margin,
           dataDirty = _props.data,
           domain = _props.domain,
           debug = _props.debug,
-          enableBlur = _props.enableBlur;
+          _props$enableBlur = _props.enableBlur,
+          enableBlur = _props$enableBlur === undefined ? false : _props$enableBlur,
+          _props$colors = _props.colors,
+          colors = _props$colors === undefined ? DEFAULT_COLORS : _props$colors;
 
-      var margin = 10;
-      var dotRadius = size / 80;
       var radius = size / 2 - margin;
+      var dotRadius = radius / 50;
+      var innerRadius = radius / 30;
+
       var scale = Object(__WEBPACK_IMPORTED_MODULE_1_d3_scale__["scaleLinear"])().domain(domain).range([10, radius]);
       var count = dataDirty.length;
       var angleSlice = Math.PI * 2 / count;
       var degreeSlice = 360 / count;
-      var innerRadius = size / 30;
       var data = dataDirty.map(function (v, i) {
         return v === null ? scale.invert(0) : v;
       });
@@ -225,90 +230,94 @@ var PetalChart = function (_React$Component) {
       var blurId = 'blur--' + hash;
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'svg',
-        { width: size, height: size },
+        'div',
+        { style: { width: '100%', height: '100%', position: 'relative' } },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'defs',
-          null,
+          'svg',
+          { width: size, height: size },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'clipPath',
-            { id: clipPathId },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { d: radarPath })
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'mask',
-            { id: maskCenterCornersId },
-            data.map(function (d, i) {
-              return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', {
-                key: i,
-                d: sliceCenterPath(0),
-                transform: 'rotate(' + i * degreeSlice + ')',
-                fill: 'white'
-              });
-            })
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'filter',
-            { id: blurId, x: '0', y: '0' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('feGaussianBlur', { 'in': 'SourceGraphic', stdDeviation: '6' })
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'g',
-          { transform: 'translate(' + (size - dotRadius) / 2 + ',' + (size - dotRadius) / 2 + ')' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'g',
-            { className: '-background-circle', mask: 'url(#' + maskCenterCornersId + ')' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('circle', { r: radius, fill: '#F3F3F3' })
+            'defs',
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'clipPath',
+              { id: clipPathId },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { d: radarPath })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'mask',
+              { id: maskCenterCornersId },
+              data.map(function (d, i) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', {
+                  key: i,
+                  d: sliceCenterPath(0),
+                  transform: 'rotate(' + i * degreeSlice + ')',
+                  fill: 'white'
+                });
+              })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'filter',
+              { id: blurId, x: '0', y: '0' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('feGaussianBlur', { 'in': 'SourceGraphic', stdDeviation: '6' })
+            )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'g',
-            {
-              className: '-colored-slices',
-              clipPath: 'url(#' + clipPathId + ')',
-              mask: 'url(#' + maskCenterCornersId + ')',
-              filter: enableBlur ? 'url(#' + blurId + ')' : null
-            },
-            data.map(function (d, i) {
-              return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', {
-                key: i,
-                d: slicePath(d),
-                transform: 'rotate(' + (i * degreeSlice - degreeSlice / 2) + ')',
-                fill: COLORS[i]
-              });
-            })
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'g',
-            { className: '-axis' },
-            data.map(function (d, i) {
-              return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('line', {
-                key: i,
-                x1: 0,
-                y1: 0,
-                x2: radius * Math.cos(angleSlice * i - Math.PI / 2),
-                y2: radius * Math.sin(angleSlice * i - Math.PI / 2),
-                stroke: '#FFFFFF',
-                strokeWidth: 1.2
-              });
-            })
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'g',
-            { className: '-data-points' },
-            data.map(function (d, i) {
-              // Manage data N/A
-              if (dataDirty[i] === null) return null;
+            { transform: 'translate(' + (size - dotRadius) / 2 + ',' + (size - dotRadius) / 2 + ')' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'g',
+              { className: '-background-circle', mask: 'url(#' + maskCenterCornersId + ')' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('circle', { r: radius, fill: '#F3F3F3' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'g',
+              {
+                className: '-colored-slices',
+                clipPath: 'url(#' + clipPathId + ')',
+                mask: 'url(#' + maskCenterCornersId + ')',
+                filter: enableBlur ? 'url(#' + blurId + ')' : null
+              },
+              data.map(function (d, i) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', {
+                  key: i,
+                  d: slicePath(d),
+                  transform: 'rotate(' + (i * degreeSlice - degreeSlice / 2) + ')',
+                  fill: colors[i]
+                });
+              })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'g',
+              { className: '-axis' },
+              data.map(function (d, i) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('line', {
+                  key: i,
+                  x1: 0,
+                  y1: 0,
+                  x2: radius * Math.cos(angleSlice * i - Math.PI / 2),
+                  y2: radius * Math.sin(angleSlice * i - Math.PI / 2),
+                  stroke: '#FFFFFF',
+                  strokeWidth: 1.2
+                });
+              })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'g',
+              { className: '-data-points' },
+              data.map(function (d, i) {
+                // Manage data N/A
+                if (dataDirty[i] === null) return null;
 
-              return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('circle', {
-                key: i,
-                r: dotRadius,
-                cx: scale(d) * Math.cos(angleSlice * i - Math.PI / 2),
-                cy: scale(d) * Math.sin(angleSlice * i - Math.PI / 2)
-              });
-            })
-          ),
-          debug && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(DebugPath, { d: radarPath })
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('circle', {
+                  key: i,
+                  r: dotRadius,
+                  cx: scale(d) * Math.cos(angleSlice * i - Math.PI / 2),
+                  cy: scale(d) * Math.sin(angleSlice * i - Math.PI / 2)
+                });
+              })
+            ),
+            debug && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(DebugPath, { d: radarPath })
+          )
         )
       );
     }

@@ -67,8 +67,12 @@ export default class StoryPopup extends React.Component {
               <div className={styles.langSelector}>
                 <LangSelector />
               </div>
-              <div className={styles.graph} style={{ padding: '0 100px' /* temporary */ }}>
-                <CountryRightsChart rights={MEXICO.rights} size={300} />
+              <div className={styles.graph} style={{ lineHeight: '0.9rem' }}>
+                <CountryRightsChart
+                  rights={MEXICO.rights}
+                  size={500}
+                  displayLabels
+                />
               </div>
               <div>
                 <h4 className={styles.countryName}>MEXICO</h4>
