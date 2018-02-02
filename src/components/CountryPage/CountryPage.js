@@ -111,10 +111,10 @@ export default class CountryPage extends React.Component {
             <div className={styles.columnRight}>
               <div className={styles.countryInfo}>
                 <div className={styles.detailCountry}>{currCountry.countryCode}</div>
-                <div className={styles.smallTitle}>POPULATION (2016)</div>
+                <div className={styles.smallTitle}>POPULATION (2015)</div>
                 <div className={styles.smallText2}>{currCountry.population} million</div>
-                <div className={styles.smallTitle}>GDP/CAPITA (2016)</div>
-                <div className={styles.smallText2}>${Math.round(currCountry.rights.esrHIHistorical[2015].GDP)} (current PPP dollars)</div>
+                <div className={styles.smallTitle}>GDP/CAPITA (2015)</div>
+                <div className={styles.smallText2}>${Math.round(currCountry.rights.esrHIHistorical[2015].GDP).toLocaleString()} (current PPP dollars)</div>
               </div>
               <div className={styles.rightInfoWrapper}>
                 <div className={styles.rightInfo}>
