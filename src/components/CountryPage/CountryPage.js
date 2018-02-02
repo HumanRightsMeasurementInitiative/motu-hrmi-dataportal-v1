@@ -87,7 +87,12 @@ export default class CountryPage extends React.Component {
               <div>Change assessment standard: Core</div>
             </div>
             <div className={styles.countryChart}>
-              <CountryRightsChart rights={currCountry.rights} size={500} />
+              <CountryRightsChart
+                rights={currCountry.rights}
+                size={800}
+                margin={200}
+                displayLabels
+              />
             </div>
             <div className={styles.countryFooter}>
               <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={['chart']} /></div>

@@ -20,13 +20,28 @@ const RIGHTS_ORDER = [
   'education', // ESR
 ]
 
+const PETALS_COLORS = [
+  '#00c852', // health
+  '#00d556', // housing
+  '#00e25b', // work
+  '#51c9f0', // freedom from disap
+  '#46b3e0', // freedom from arbitrary
+  '#3c9dd1', // freedom from exec
+  '#3187c1', // freedom from torture
+  '#2e65a1', // participate in gov
+  '#2a4482', // assembly and assoc
+  '#262262', // opinion and exp
+  '#009540', // food
+  '#00af49', // edu
+]
+
 export default class CountryRightsChart extends React.Component {
   static propTypes = {
     rights: PropTypes.object.isRequired,
   }
 
   render() {
-    const { rights, size = 150 } = this.props
+    const { rights, size = 150, displayLabels = false } = this.props
     const { esrHI, esrCore, cpr } = rights
     const esrType = 'HIGH_INCOME' // or 'CORE'
 
@@ -50,15 +65,113 @@ export default class CountryRightsChart extends React.Component {
     })
 
     return (
-      <div>
+      <div style={{ position: 'relative' }}>
         <PetalChart
           size={size}
+          margin={displayLabels ? size / 4 : 0}
           data={rightsData}
           domain={[0, 1]}
+          colors={PETALS_COLORS}
           debug={false}
           enableBlur={false}
         />
+        {displayLabels &&
+          <PetalLabels
+            size={size}
+            data={rightsData}
+            colors={PETALS_COLORS}
+          />
+        }
       </div>
     )
   }
+}
+
+function PetalLabels({ size, data, colors }) {
+  const displayPercent = n => data[n] !== null ? (data[n] * 100).toFixed(0) + '%' : 'N/A'
+  const displayTenth = n => data[n] !== null ? (data[n] * 10).toFixed(1) + '/10' : 'N/A'
+
+  return (
+    <div style={{ fontSize: 14, color: '#606163' }}>
+      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 0} correction={[-45, -20]} style={{ textAlign: 'center' }}>
+        Right to health
+        <br/>
+        <strong style={{ color: colors[0] }}>{displayPercent(0)}</strong>
+      </LabelRadial>
+      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 1} correction={[0, -20]} style={{ textAlign: 'left' }}>
+        Right to housing
+        <br/>
+        <strong style={{ color: colors[1] }}>{displayPercent(1)}</strong>
+      </LabelRadial>
+      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 2} correction={[0, -15]} style={{ textAlign: 'left' }}>
+        Right to work
+        <br/>
+        <strong style={{ color: colors[2] }}>{displayPercent(2)}</strong>
+      </LabelRadial>
+      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 3} correction={[-10, -20]} style={{ textAlign: 'left' }}>
+        Right to freedom<br/>from disappearance
+        <br/>
+        <strong style={{ color: colors[3] }}>{displayTenth(3)}</strong>
+      </LabelRadial>
+      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 4} correction={[-10, -10]} style={{ textAlign: 'left' }}>
+        Right to freedom<br/>from arbitrary arrest
+        <br/>
+        <strong style={{ color: colors[4] }}>{displayTenth(4)}</strong>
+      </LabelRadial>
+      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 5} correction={[0, -15]} style={{ textAlign: 'left' }}>
+        Right to freedom<br/>from execution
+        <br/>
+        <strong style={{ color: colors[5] }}>{displayTenth(5)}</strong>
+      </LabelRadial>
+      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 6} correction={[-52, -15]} style={{ textAlign: 'center' }}>
+        Right to freedom<br/>from torture
+        <br/>
+        <strong style={{ color: colors[6] }}>{displayTenth(6)}</strong>
+      </LabelRadial>
+
+      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 7} correction={[-115, -15]} style={{ textAlign: 'right' }}>
+        Right to participate<br/>in government
+        <br/>
+        <strong style={{ color: colors[7] }}>{displayTenth(7)}</strong>
+      </LabelRadial>
+      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 8} correction={[-105, -10]} style={{ textAlign: 'right' }}>
+        Right to assembly<br/>and association
+        <br/>
+        <strong style={{ color: colors[8] }}>{displayTenth(8)}</strong>
+      </LabelRadial>
+      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 9} correction={[-95, -20]} style={{ textAlign: 'right' }}>
+        Right to opinion<br/>and expression
+        <br/>
+        <strong style={{ color: colors[9] }}>{displayTenth(9)}</strong>
+      </LabelRadial>
+      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 10} correction={[-80, -15]} style={{ textAlign: 'right' }}>
+        Right to food
+        <br/>
+        <strong style={{ color: colors[10] }}>{displayPercent(10)}</strong>
+      </LabelRadial>
+      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 11} correction={[-110, -20]} style={{ textAlign: 'right' }}>
+        Right to education
+        <br/>
+        <strong style={{ color: colors[11] }}>{displayPercent(11)}</strong>
+      </LabelRadial>
+    </div>
+  )
+}
+
+function Label({ x, y, children, ...props }) {
+  return (
+    <div { ...props } style={{ ...(props.style || {}), position: 'absolute', top: y, left: x }}>
+      {children}
+    </div>
+  )
+}
+
+function LabelRadial({ r, a, surfaceSize, correction: [cx, cy] = [0, 0], children, ...props }) {
+  const radA = a / 360 * 2 * Math.PI
+  const o = surfaceSize / 2
+  return (
+    <Label x={o + cx + Math.sin(radA) * r} y={o + cy - Math.cos(radA) * r} {...props}>
+      {children}
+    </Label>
+  )
 }
