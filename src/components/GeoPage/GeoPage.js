@@ -25,7 +25,7 @@ export default class GeoPage extends React.Component {
     super()
     this.state = {
       currCountry: null,
-      standard: 'Core',
+      standard: 'High income OECD',
     }
   }
 

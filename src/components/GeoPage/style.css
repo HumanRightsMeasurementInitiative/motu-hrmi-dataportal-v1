@@ -47,6 +47,7 @@
   color: #58595b;
 }
 .title {
+  font-size: 18px;
   /*flex: 1;*/
 }
 .standard {
@@ -136,8 +137,8 @@
 .esrTitle,
 .cprTitle {
   padding-left: 14px;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
 }
 .esrTitle {
   color: #00af49;
@@ -155,7 +156,7 @@
   position: relative;
   margin: 6px 0;
   padding-left: 14px;
-  font-size: 12px;
+  font-size: 14px;
   color: #6b6c6e;
   line-height: 1em;
 }
@@ -171,6 +172,7 @@
   background: #eee;
 }
 .chartWrapper {
+  margin-left: 14px;
   height: 18px;
   border: 1px solid #eee;
 }
@@ -192,75 +194,75 @@
 .rightCate {
   font-size: 12px;
 }
-[rightcolor='Food'] .chartCaption:before {
+[rightcolor='food'] .chartCaption:before {
   background: #00a255;
 }
-[rightcolor='Education'] .chartCaption:before {
+[rightcolor='education'] .chartCaption:before {
   background: #00b95f;
 }
-[rightcolor='Work'] .chartCaption:before {
+[rightcolor='work'] .chartCaption:before {
   background: #00ce6a;
 }
-[rightcolor='Housing'] .chartCaption:before {
+[rightcolor='housing'] .chartCaption:before {
   background: #00d96e;
 }
-[rightcolor='Health'] .chartCaption:before {
+[rightcolor='health'] .chartCaption:before {
   background: #00e374;
 }
-[rightcolor='Opinion and Expression'] .chartCaption:before {
+[rightcolor='opinion-and-expression'] .chartCaption:before {
   background: #342f73;
 }
-[rightcolor='Assembly and Association'] .chartCaption:before {
+[rightcolor='assembly-and-association'] .chartCaption:before {
   background: #365692;
 }
-[rightcolor='Freedom from Execution'] .chartCaption:before {
+[rightcolor='freedom-from-execution'] .chartCaption:before {
   background: #3778ae;
 }
-[rightcolor='Freedom from Torture'] .chartCaption:before {
+[rightcolor='freedom-from-torture'] .chartCaption:before {
   background: #3598ca;
 }
-[rightcolor='Participate in Government'] .chartCaption:before {
+[rightcolor='participate-in-government'] .chartCaption:before {
   background: #33b5e4;
 }
-[rightcolor='Freedom from Arbitrary Arrest'] .chartCaption:before {
+[rightcolor='freedom-from-arbitrary-arrest'] .chartCaption:before {
   background: #56d1f1;
 }
-[rightcolor='Freedom from Disappearance'] .chartCaption:before {
+[rightcolor='freedom-from-disappearance'] .chartCaption:before {
   background: #72ecfe;
 }
-.specRightHeader[rightcolor='Food'] {
+.specRightHeader[rightcolor='food'] {
   color: #00a255;
 }
-.specRightHeader[rightcolor='Education'] {
+.specRightHeader[rightcolor='education'] {
   color: #00b95f;
 }
-.specRightHeader[rightcolor='Work'] {
+.specRightHeader[rightcolor='work'] {
   color: #00ce6a;
 }
-.specRightHeader[rightcolor='Housing'] {
+.specRightHeader[rightcolor='housing'] {
   color: #00d96e;
 }
-.specRightHeader[rightcolor='Health'] {
+.specRightHeader[rightcolor='health'] {
   color: #00e374;
 }
-.specRightHeader[rightcolor='Opinion and Expression'] {
+.specRightHeader[rightcolor='opinion-and-expression'] {
   color: #342f73;
 }
-.specRightHeader[rightcolor='Assembly and Association'] {
+.specRightHeader[rightcolor='assembly-and-association'] {
   color: #365692;
 }
-.specRightHeader[rightcolor='Freedom from Execution'] {
+.specRightHeader[rightcolor='freedom-from-execution'] {
   color: #3778ae;
 }
-.specRightHeader[rightcolor='Freedom from Torture'] {
+.specRightHeader[rightcolor='freedom-from-torture'] {
   color: #3598ca;
 }
-.specRightHeader[rightcolor='Participate in Government'] {
+.specRightHeader[rightcolor='participate-in-government'] {
   color: #33b5e4;
 }
-.specRightHeader[rightcolor='Freedom from Arbitrary Arrest'] {
+.specRightHeader[rightcolor='freedom-from-arbitrary-arrest'] {
   color: #56d1f1;
 }
-.specRightHeader[rightcolor='Freedom from Disappearance'] {
+.specRightHeader[rightcolor='freedom-from-disappearance'] {
   color: #72ecfe;
 }

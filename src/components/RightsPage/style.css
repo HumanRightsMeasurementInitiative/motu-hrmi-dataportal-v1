@@ -99,7 +99,7 @@
 .ESRTitle,
 .CPRTitle {
   padding-bottom: 6px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #616161;
   letter-spacing: .025em;
@@ -110,7 +110,7 @@
 .rightItemWrapper {
   font-size: 14px;
   color: #616161;
-  line-height: 1.2em;
+  line-height: 1.5em;
   cursor: pointer;
 }
 .rightItem,
@@ -144,6 +144,9 @@
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   color: #58595b;
+}
+.regionName {
+  font-size: 18px;
 }
 .regionName span {
   font-weight: 600;
@@ -231,6 +234,7 @@
   color: #2e65a1;
 }
 .rightInfo .rightName {
+  font-size: 18px;
   font-weight: 600;
 }
 .rightInfo .regionName {
@@ -266,9 +270,9 @@
   padding: 20px 16px 30px 24px;
   height: 100%;
   width: 100%;
-  font-size: 13px;
+  font-size: 14px;
   color: #616161;
-  line-height: 1.2em;
+  line-height: 1.5em;
   overflow: auto;
 }
 .textWrapper::-webkit-scrollbar {
@@ -310,7 +314,7 @@
   display: none;
 }
 .measureQues {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -320,7 +324,7 @@
 .withDot:before {
   content: '';
   position: absolute;
-  top: .4em;
+  top: .6em;
   left: -14px;
   height: 4px;
   width: 4px;
@@ -379,7 +383,7 @@
   margin-bottom: 10px;
 }
 .esrChartKey {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .tooptipLink {

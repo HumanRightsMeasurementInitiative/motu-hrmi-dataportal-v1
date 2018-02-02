@@ -5,7 +5,7 @@ import * as d3 from 'd3'
 export default class BarChartESR extends React.Component {
   static propTypes = {
     height: PropTypes.number.isRequired,
-    data: PropTypes.array.isRequired,
+    data: PropTypes.object.isRequired,
   }
 
   constructor() {
@@ -39,7 +39,11 @@ export default class BarChartESR extends React.Component {
       { height: height, text: '0%' },
     ]
 
-    const bars = data.map((right, index) => {
+    const formatedData = Object.keys(data).filter(item => data[item] < 100).map(item => {
+      return { value: data[item] }
+    })
+
+    const bars = formatedData.map((right, index) => {
       const x = containerWidth / 5 * (index + 1) - 0.05 * containerWidth
       const rectHeight = d3.scaleLinear().range([0, 0.8 * height]).domain([0, 100])
       return (

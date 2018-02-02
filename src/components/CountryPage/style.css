@@ -57,7 +57,7 @@
   flex: 1 1 auto;
   padding: 10px 0;
   max-width: 200px;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: .025em;
   color: #616161;
   overflow: auto;
@@ -175,6 +175,7 @@
   position: relative;
   padding-right: 4px;
   color: #616161;
+  line-height: 1.5em;
 }
 .rightInfoWrapper:before,
 .rightInfoWrapper:after {
@@ -319,7 +320,7 @@
 }*/
 
 .rightDefinition {
-  font-size: 13px;
+  font-size: 14px;
   color: #616161;
 }
 .defList {
@@ -349,7 +350,7 @@
 }
 .countryQues {
   padding-right: 4px;
-  font-size: 13px;
+  font-size: 14px;
 }
 .rightInfo:hover .countryQues  {
   padding-right: 0;
@@ -360,7 +361,7 @@
 .withDot:before {
   content: '';
   position: absolute;
-  top: .4em;
+  top: .7em;
   left: -14px;
   height: 4px;
   width: 4px;
@@ -381,7 +382,7 @@
 .esrValueList,
 .cprValueList {
   margin-bottom: 14px;
-  font-size: 13px;
+  font-size: 14px;
   color: #616161;
 }
 
@@ -435,5 +436,5 @@
   margin-bottom: 10px;
 }
 .esrChartKey {
-  font-size: 13px;
+  font-size: 14px;
 }

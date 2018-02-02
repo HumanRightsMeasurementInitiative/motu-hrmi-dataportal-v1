@@ -2,24 +2,24 @@
   flex: 0 0 auto;
   position: relative;
   z-index: 3000;
-  padding: 16px 0;
+  padding: 32px 0;
 }
 .selectorWrapper {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 .btnHTR {
   position: absolute;
-  top: 16px;
+  top: 32px;
   right: 0;
   padding: 0 38px 0 15px;
-  height: 25px;
+  height: 26px;
   background: #fff;
   border: 1px solid #ef7d00;
   border-right: none;
   font-size: 14px;
   font-weight: 600;
   color: #ef7d00;
-  line-height: 23px;
+  line-height: 24px;
   letter-spacing: .075em;
   cursor: pointer;
   transition: all .4s;
@@ -27,7 +27,8 @@
 .btnIcon {
   position: absolute;
   right: 15px;
-  line-height: 22px;
+  font-size: 1.1em;
+  line-height: 24px;
 }
 .active {
   background: #ef7d00;

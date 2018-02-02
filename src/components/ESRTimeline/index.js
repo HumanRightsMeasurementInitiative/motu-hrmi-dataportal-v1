@@ -14,9 +14,9 @@ export default class ESRRightBar extends React.Component {
     const { chartHeight, chartWidth, currYear, onItemClick } = this.props
     const yAxisRate = 20
     const margin = {
-      top: 40,
+      top: 60,
       left: 20,
-      bottom: 20,
+      bottom: 40,
       right: 20,
     }
     const time = [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015]

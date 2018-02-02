@@ -71,9 +71,9 @@ export default class CountryPage extends React.Component {
         <SubTopNav />
         <div className='row'>
           <div className='column'>
-            <div className={styles.backBtn}>
+            <div className={styles.backBtn} onClick={this.resetCountry}>
               <div className={styles.hintText}>BACK TO</div>
-              <div className={styles.backLink} onClick={this.resetCountry}>
+              <div className={styles.backLink}>
                 {getRegionName(urlSegs.region)}
               </div>
             </div>
@@ -110,11 +110,11 @@ export default class CountryPage extends React.Component {
           <div className='column'>
             <div className={styles.columnRight}>
               <div className={styles.countryInfo}>
-                <div className={styles.detailCountry}>{currCountry.name}</div>
+                <div className={styles.detailCountry}>{currCountry.countryCode}</div>
                 <div className={styles.smallTitle}>POPULATION (2016)</div>
                 <div className={styles.smallText2}>{currCountry.population} million</div>
                 <div className={styles.smallTitle}>GDP/CAPITA (2016)</div>
-                <div className={styles.smallText2}>${Math.round(currCountry.GDP2016)} (current PPP dollars)</div>
+                <div className={styles.smallText2}>${Math.round(currCountry.rights.esrHIHistorical[2015].GDP)} (current PPP dollars)</div>
               </div>
               <div className={styles.rightInfoWrapper}>
                 <div className={styles.rightInfo}>
@@ -123,7 +123,7 @@ export default class CountryPage extends React.Component {
                       <div className={styles.subtitleESR}>Economic and Social Rights</div>
                       <div className={styles.esrChartSubtitle}>most recent data (2015 or earlier)</div>
                       <div className={styles.barChartWrapper}>
-                        <BarChartESR data={ESRs} height={60} /> {/* data need to be change */}
+                        <BarChartESR data={currCountry.rights.esrHI} height={60} /> {/* data need to be change */}
                       </div>
                       { this.state.currRight !== 'all' &&
                         <div>
@@ -138,19 +138,23 @@ export default class CountryPage extends React.Component {
                   }
                   { ESRs.indexOf(this.state.currRight) === -1 &&
                     <div>
-                      <div className={styles.subtitleCPR}>Civil and Political Rights</div>
-                      <div className={styles.cprChartSubtitle}>data is for period january - june 2017</div>
-                      <div className={styles.barChartWrapper}>
-                        <BarChartCPR data={CPRs} height={60} /> {/* data need to be change */}
-                      </div>
-                      <div className={styles.legend}>
-                        <div className={styles.meanText}>Mean score</div>
-                        <div className={styles.bar}></div>
-                        <div className={styles.textContainer}>
-                          <div className={styles.maxText}>90<sup>th</sup> percentile</div>
-                          <div className={styles.minText}>10<sup>th</sup> percentile</div>
-                        </div>
-                      </div>
+                      { currCountry.rights.cpr &&
+                        <div>
+                          <div className={styles.subtitleCPR}>Civil and Political Rights</div>
+                          <div className={styles.cprChartSubtitle}>data is for period january - june 2017</div>
+                          <div className={styles.barChartWrapper}>
+                            <BarChartCPR data={currCountry.rights.cpr} height={60} /> {/* data need to be change */}
+                          </div>
+                          <div className={styles.legend}>
+                            <div className={styles.meanText}>Mean score</div>
+                            <div className={styles.bar}></div>
+                            <div className={styles.textContainer}>
+                              <div className={styles.maxText}>90<sup>th</sup> percentile</div>
+                              <div className={styles.minText}>10<sup>th</sup> percentile</div>
+                            </div>
+                          </div>
+                          </div>
+                        }
                       { this.state.currRight !== 'all' &&
                         <div>
                           <div className={styles.cprRegionValue}>Right to {getRegionName(urlSegs.region)} 22%</div>

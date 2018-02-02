@@ -36,13 +36,13 @@ export default class RightsItem extends React.Component {
           Right to {children}
           <span className={styles.borderLine} ref='borderLine'></span>
         </div>
-        { children === 'Assembly and Association' && selected &&
+        { children === 'assembly-and-association' && selected &&
           <ul>
             <li className={styles.rightSubItem}>Right to Assembly</li>
             <li className={styles.rightSubItem}>Right to Association</li>
           </ul>
         }
-        { children === 'Freedom from Execution' && selected &&
+        { children === 'freedom-from-execution' && selected &&
           <ul>
             <li className={styles.rightSubItem}>Right to freedom from the death penalty</li>
             <li className={styles.rightSubItem}>Right to freedom from extrajudicial execution</li>

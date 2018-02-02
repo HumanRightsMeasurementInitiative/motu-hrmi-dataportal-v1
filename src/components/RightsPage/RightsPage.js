@@ -136,7 +136,7 @@ export default class RightsPage extends React.Component {
                   isESR={rightsDefinitions[urlSegs.right].type === 'ESR'}
                   currRight={urlSegs.right}
                   rightsByRegionCountries={rightsByRegionCountries}
-                  chartHeight={this.state.chartHeight * 0.7}
+                  chartHeight={this.state.chartHeight * 0.6}
                   chartWidth={this.state.chartWidth}
                   currCountry={this.state.currCountry}
                   onItemClick={this.setCurrCountry} />
@@ -149,7 +149,7 @@ export default class RightsPage extends React.Component {
               }
               { isESRSelected &&
                 <ESRTimeline
-                  chartHeight={this.state.chartHeight * 0.3}
+                  chartHeight={this.state.chartHeight * 0.4}
                   chartWidth={this.state.chartWidth}
                   currYear={this.state.currYear}
                   onItemClick={this.setCurrYear}
