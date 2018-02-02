@@ -51,11 +51,6 @@ export default class CountryPage extends React.Component {
     this.setState({ showMore: !this.state.showMore })
   }
 
-  backToLanding = (right) => {
-    const { urlSegs } = this.props
-    this.props.urlPush(segsToUrl({ ...urlSegs, exploreBy: undefined, right: undefined, country: undefined, region: undefined }))
-  }
-
   render() {
     const { data: { rightsByRegion }, urlSegs } = this.props
 
@@ -168,7 +163,6 @@ export default class CountryPage extends React.Component {
                       <QuestionTooltip width={286} question={`What is the difference between the core and the high income OECD country scale?`}>
                         <p>For countries assessed using the core assessment standard, our methodology uses statistical indicators that are available for most countries in the world, particularly developing and non-OECD-member countries. By contrast, the high-income OECD country assessment standard uses indicators that are typically available only for the high-income OECD countries, and/or better reflect the human rights challenges of high-income countries. We would also use many of these indicators in the core assessment standard if they had broader country coverage. All countries are evaluated using both assessment standards to the extent data are available.</p>
                       </QuestionTooltip>
-                      <div className={styles.storyLink} onClick={this.backToLanding}>READ OURPROFILE STORY ON <strong>MEXICO</strong></div>
                     </div>
                     : <div className={styles.rightDefinition}>
                       <div className='arrowLink' style={{ marginLeft: '-24px' }}>

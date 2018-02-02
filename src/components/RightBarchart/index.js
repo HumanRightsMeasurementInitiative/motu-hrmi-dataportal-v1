@@ -97,6 +97,7 @@ export default class RightBarchart extends React.Component {
                     value={yScale(value.mean)}
                     minValue={yScale(value.percentile10)}
                     maxValue={yScale(value.percentile90)}
+                    currCountry={currCountry}
                     country={country}
                     onItemClick={onItemClick}
                   />

@@ -26,13 +26,17 @@ export default class CountryName extends React.Component {
     return (
       <g transform={'translate(' + translateX + ', ' + translateY + ')'} onClick={this.onClick} className={jcn({ clickable: onItemClick !== undefined }, styles)}>
         <rect y={-maxValue} height={maxValue} width='6' x='-3' fill={isActive ? '#b2eacf' : 'rgba(0, 0, 0, .1)'}></rect>
-        <g className="-circle-core">
-          <circle className='core' cy={-coreValue} r='5' fill='#00b95f'></circle>
-        </g>
-        <g className="-circle-high-income">
-          <circle className='high' cy={-highIncomeValue} r='6' fill='#00b95f'></circle>
-          <circle className='high' cy={-highIncomeValue} r='3' fill='#00b95f' strokeWidth='2' stroke='#fff'></circle>
-        </g>
+        { coreValue &&
+          <g className="-circle-core">
+            <circle className='core' cy={-coreValue} r='5' fill='#00b95f'></circle>
+          </g>
+        }
+        { highIncomeValue &&
+          <g className="-circle-high-income">
+            <circle className='high' cy={-highIncomeValue} r='6' fill='#00b95f'></circle>
+            <circle className='high' cy={-highIncomeValue} r='3' fill='#00b95f' strokeWidth='2' stroke='#fff'></circle>
+          </g>
+        }
       </g>
     )
   }
