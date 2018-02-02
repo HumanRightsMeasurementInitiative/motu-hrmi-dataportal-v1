@@ -1,21 +1,24 @@
 .wrapper {
   position: relative;
+  z-index: 1;
 }
 
 .toggleBtn {
   display: inline-block;
-  font-size: 12px;
-  line-height: 30px;
+  font-size: 1em;
+  line-height: 25px;
   cursor: pointer;
 }
 
 .options {
   position: absolute;
+  z-index: 10;
   top: 6px;
   margin: 0;
   background: #fff;
   border: 1px solid #a5a5a5;
-  font-size: 12px;
+  font-size: 1em;
+  font-weight: 400;
   color: #616161;
 }
 .option {

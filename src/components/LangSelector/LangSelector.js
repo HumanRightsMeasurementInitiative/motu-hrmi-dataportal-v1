@@ -9,6 +9,7 @@ export default class LangSelector extends React.Component {
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
     changeLanguage: PropTypes.func.isRequired,
+    withArrow: PropTypes.bool,
   }
 
   constructor() {
@@ -71,6 +72,7 @@ export default class LangSelector extends React.Component {
   }
 
   render() {
+    const { withArrow } = this.props
     const { language } = this.props.urlSegs
 
     const optionsClassNames = jcn({
@@ -80,7 +82,7 @@ export default class LangSelector extends React.Component {
 
     return (
       <div className={styles.wrapper}>
-        <div className={styles.toggleBtn} ref='toggleBtn' onClick={this.toggleDropdown}><span ref='text'>Language: </span><span className={styles.currentLang}>{language}</span></div>
+        <div className={styles.toggleBtn} ref='toggleBtn' onClick={this.toggleDropdown} style={{ paddingRight: withArrow ? '16px' : '0px' }}><span ref='text'>Language: </span><span className={styles.currentLang}>{language}</span></div>
         <ul className={optionsClassNames} ref='options'>
           {this.optionList()}
         </ul>

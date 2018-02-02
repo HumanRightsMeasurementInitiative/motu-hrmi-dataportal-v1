@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import LangSelector from '../LangSelector'
 import NavItem from './NavItem'
 import styles from './styles.css'
 
@@ -17,6 +18,9 @@ export default class TopNav extends React.Component {
     const menuText = content.menu
     return (
       <div className={styles.nav}>
+        <div className={styles.langSelector}>
+          <LangSelector withArrow={true} />
+        </div>
         <NavItem label={menuText.about.title} labelKey='about'>
           <p className={styles.para}>{menuText.about.paragraphs[0]}</p>
           <p className={styles.para}>{menuText.about.paragraphs[1]}</p>

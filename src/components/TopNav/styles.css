@@ -4,6 +4,28 @@
   bottom: 0;
 }
 
+.langSelector {
+  position: relative;
+  display: inline-block;
+  margin-right: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #262261;
+}
+.langSelector:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -4px;
+  border-top: 8px solid #20bce6;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  cursor: pointer;
+}
+
+
 .navItem {
   display: inline-block;
   vertical-align: top;
