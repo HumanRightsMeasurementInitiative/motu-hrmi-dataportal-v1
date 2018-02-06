@@ -66,9 +66,9 @@ export default class TopNav extends React.Component {
             <li className={styles.listEl}>{menuText.howToUse.list[2]}</li>
             <li className={styles.listEl}>{menuText.howToUse.list[3]}</li>
           </ul>
-          <p className={styles.para}>{menuText.howToUse.paragraphs[2]}<br /><a href='https://humanrightsmeasurement.org/get-involved/tell-us/' target='_blank'>{menuText.howToUse.links[0]}</a></p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[2]} <a href='https://humanrightsmeasurement.org/get-involved/tell-us/' target='_blank'>{menuText.howToUse.links[0]}</a></p>
           <p className={styles.para}>{menuText.howToUse.paragraphs[3]}<br />{menuText.howToUse.paragraphs[4]}</p>
-          <p className={styles.para}>{menuText.howToUse.paragraphs[5]} <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>{menuText.howToUse.links[1]}</a>. {menuText.howToUse.paragraphs[6]} <a href='https://humanrightsmeasurement.org/' target='_blank'></a>{menuText.howToUse.links[2]}.</p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[5]} <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>{menuText.howToUse.links[1]}</a>. {menuText.howToUse.paragraphs[6]} <a href='https://humanrightsmeasurement.org/' target='_blank'>{menuText.howToUse.links[2]}</a>.</p>
           <p className={styles.para}>{menuText.howToUse.paragraphs[7]}</p>
           <p className={styles.para}>{menuText.howToUse.paragraphs[8]} <a href='https://humanrightsmeasurement.org' target='_blank'>{menuText.howToUse.links[3]}</a></p>
           <p className={styles.para}>{menuText.howToUse.paragraphs[9]}</p>
