@@ -166,7 +166,7 @@ export default class RightsPage extends React.Component {
             <div className={styles.infoHeader}>
               <div className={colorClassName}>
                 <div className={styles.rightName}>Right to {urlSegs.right}</div>
-                <div className={styles.regionName}>in {getRegionName(urlSegs.region)}</div>
+                <div className={styles.regionName}>in {this.state.currCountry ? this.state.currCountry.countryCode : getRegionName(urlSegs.region)}</div>
               </div>
               <div className='arrowLink'>
                 <div className='text'>Expore all rights in:</div>
