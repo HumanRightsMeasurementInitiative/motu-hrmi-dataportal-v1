@@ -29,8 +29,6 @@ export default class ESRRightBar extends React.Component {
     const yScale = d3.scaleLinear().domain([100, 0]).range([0, chartHeight - margin.top - margin.bottom])
     const line = d3.line().defined(function (d) { return d.value >= 0 }).x(function (d) { return xScale(d.year) }).y(function (d) { return yScale(d.value) })
 
-    // const lineData = [{ year: '2005', value: 0 }, { year: '2006', value: 20 }, { year: '2007', value: 40 }, { year: '2008', value: 20 }, { year: '2009', value: 70 }, { year: '2010', value: 75 }, { year: '2011', value: 88 }, { year: '2012', value: 30 }, { year: '2013', value: 60 }, { year: '2014', value: 70 }, { year: '2015', value: 20 }]
-
     return (
       <div>
         <svg height={chartHeight} width={chartWidth}>
@@ -56,17 +54,10 @@ export default class ESRRightBar extends React.Component {
           </g>
           {
             data.map((country, i) => {
-              const lineData = Object.keys(country.rights.esrCoreHistorical).map(year => ({ year: parseInt(year), value: country.rights.esrCoreHistorical[year].rights[currRight] }))
-              const missingLine = lineData.filter(data => {
-                return data.value || data.year === 2005 || data.year === 2015
-              }).map(data => {
-                if (data.year === 2005 && data.value === null) {
-                  return { ...data, value: 0 }
-                } else if (data.year === 2015 && data.value === null) {
-                  return { ...data, value: 0 }
-                }
-                return data
-              })
+              const years = Object.keys(country.rights.esrCoreHistorical)
+              const acceptedValues = data => data.value || data.year === 2005 || data.year === 2015
+              const lineData = years.map(year => ({ year: parseInt(year), value: country.rights.esrCoreHistorical[year].rights[currRight] }))
+              const missingLine = lineData.filter(acceptedValues).map(data => data.value === null ? { ...data, value: 0 } : data)
 
               return (
                 <g key={i} transform={'translate(' + margin.left + ',' + margin.top + ')'}>
