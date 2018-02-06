@@ -4,14 +4,16 @@ import * as d3 from 'd3'
 
 export default class ESRRightBar extends React.Component {
   static propTypes = {
+    data: PropTypes.array.isRequired,
     chartHeight: PropTypes.number.isRequired,
     chartWidth: PropTypes.number.isRequired,
     currYear: PropTypes.number.isRequired,
+    currRight: PropTypes.string.isRequired,
     onItemClick: PropTypes.func.isRequired,
   }
 
   render() {
-    const { chartHeight, chartWidth, currYear, onItemClick } = this.props
+    const { data, chartHeight, chartWidth, currYear, currRight, onItemClick } = this.props
     const yAxisRate = 20
     const margin = {
       top: 60,
@@ -19,14 +21,15 @@ export default class ESRRightBar extends React.Component {
       bottom: 40,
       right: 20,
     }
-    const time = [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015]
+
+    const time = Object.keys(data[0].rights.esrCoreHistorical).map(year => parseInt(year))
     const yAxisRange = Array.from(Array(6).keys())
 
     const xScale = d3.scaleLinear().domain([time[0], time[time.length - 1]]).range([60, chartWidth - margin.left - margin.right - 20])
     const yScale = d3.scaleLinear().domain([100, 0]).range([0, chartHeight - margin.top - margin.bottom])
-    var line = d3.line().x(function (d) { return xScale(d.year) }).y(function (d) { return yScale(d.value) })
+    const line = d3.line().defined(function (d) { return d.value >= 0 }).x(function (d) { return xScale(d.year) }).y(function (d) { return yScale(d.value) })
 
-    const lineData = [{ year: '2005', value: 0 }, { year: '2006', value: 20 }, { year: '2007', value: 40 }, { year: '2008', value: 20 }, { year: '2009', value: 70 }, { year: '2010', value: 75 }, { year: '2011', value: 88 }, { year: '2012', value: 30 }, { year: '2013', value: 60 }, { year: '2014', value: 70 }, { year: '2015', value: 20 }]
+    // const lineData = [{ year: '2005', value: 0 }, { year: '2006', value: 20 }, { year: '2007', value: 40 }, { year: '2008', value: 20 }, { year: '2009', value: 70 }, { year: '2010', value: 75 }, { year: '2011', value: 88 }, { year: '2012', value: 30 }, { year: '2013', value: 60 }, { year: '2014', value: 70 }, { year: '2015', value: 20 }]
 
     return (
       <div>
@@ -51,9 +54,28 @@ export default class ESRRightBar extends React.Component {
               ))
             }
           </g>
-          <g transform={'translate(' + margin.left + ',' + margin.top + ')'}>
-            <path d={line(lineData)} stroke='#00b95f' strokeWidth='2px' fill='none' opacity='.8'></path>
-          </g>
+          {
+            data.map((country, i) => {
+              const lineData = Object.keys(country.rights.esrCoreHistorical).map(year => ({ year: parseInt(year), value: country.rights.esrCoreHistorical[year].rights[currRight] }))
+              const missingLine = lineData.filter(data => {
+                return data.value || data.year === 2005 || data.year === 2015
+              }).map(data => {
+                if (data.year === 2005 && data.value === null) {
+                  return { ...data, value: 0 }
+                } else if (data.year === 2015 && data.value === null) {
+                  return { ...data, value: 0 }
+                }
+                return data
+              })
+
+              return (
+                <g key={i} transform={'translate(' + margin.left + ',' + margin.top + ')'}>
+                  <path d={line(missingLine)} stroke='#00b95f' strokeWidth='1px' fill='none' strokeDasharray="5, 5" opacity="0.8"></path>
+                  <path d={line(lineData)} stroke='#00b95f' strokeWidth='1px' fill='none'></path>
+                </g>
+              )
+            })
+          }
         </svg>
       </div>
     )

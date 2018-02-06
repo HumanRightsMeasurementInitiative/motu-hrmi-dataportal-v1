@@ -50,7 +50,7 @@ export default class RightsPage extends React.Component {
   }
 
   setCountry = () => {
-    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: 'Geography', country: this.state.currCountry.code, right: 'all' }))
+    this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: 'Geography', country: this.state.currCountry.countryCode, right: 'all' }))
   }
 
   setCurrCountry = (country) => {
@@ -149,9 +149,11 @@ export default class RightsPage extends React.Component {
               }
               { isESRSelected &&
                 <ESRTimeline
+                  data={rightsByRegionCountries}
                   chartHeight={this.state.chartHeight * 0.4}
                   chartWidth={this.state.chartWidth}
                   currYear={this.state.currYear}
+                  currRight={urlSegs.right}
                   onItemClick={this.setCurrYear}
                 />
               }
