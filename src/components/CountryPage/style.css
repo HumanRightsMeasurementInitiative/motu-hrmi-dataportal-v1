@@ -352,9 +352,6 @@
   padding-right: 4px;
   font-size: 14px;
 }
-.rightInfo:hover .countryQues  {
-  padding-right: 0;
-}
 .withDot {
   position: relative;
 }

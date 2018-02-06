@@ -23,12 +23,12 @@ export default class CountryName extends React.Component {
       <g transform={'translate(' + translateX + ', ' + translateY + ')'}>
         { isESR && isActive &&
           <g>
-            { highIncomeValue && <text y={-highIncomeValue + 3} x={8} fontSize='12' fill='#616161' fontWeight='600'>{highIncomeDisplay}%</text>}
-            { coreValue && <text y={-coreValue + 3} x={8} fontSize='12' fill='#616161' fontWeight='600'>{coreDisplay}%</text>}
+            { highIncomeValue && <text y={-highIncomeValue + 4} x={10} fontSize='16' fill='#616161' fontWeight='700'>{highIncomeDisplay}%</text>}
+            { coreValue && <text y={-coreValue + 4} x={10} fontSize='16' fill='#616161' fontWeight='700'>{coreDisplay}%</text>}
           </g>
         }
         { !isESR && isActive &&
-          <text y={-maxValue - 4} fontSize='12' fill='#3378ae' fontWeight='600' textAnchor='middle'>
+          <text y={-maxValue - 4} fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
             {valueDisplay}
           </text>
         }
