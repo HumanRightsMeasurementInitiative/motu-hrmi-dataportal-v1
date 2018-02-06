@@ -49,7 +49,9 @@ export default class BarChartESR extends React.Component {
       return (
         <g key={index}>
           <rect x={x} y={height - rectHeight(right.value)} width={0.05 * containerWidth} height={rectHeight(right.value)} fill='rgba(0, 0, 0, .1)'/>
-          <circle cx={x + 0.025 * containerWidth} cy={height - rectHeight(right.value)} r={0.025 * containerWidth} fill='#00A551'></circle>
+          { rectHeight(right.value) !== 0 &&
+            <circle cx={x + 0.025 * containerWidth} cy={height - rectHeight(right.value)} r={0.025 * containerWidth} fill='#00A551'></circle>
+          }
         </g>
       )
     })
