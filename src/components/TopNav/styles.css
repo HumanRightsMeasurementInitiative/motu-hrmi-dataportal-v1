@@ -70,17 +70,39 @@
 [dropdown='methodology'] {
   right: 0;
   width: 428px;
-  height: 495px;
+  height: 506px;
 }
 [dropdown='howToUse'] {
   right: 0;
+  padding: 10px;
   width: 450px;
-  height: 495px;
+  height: 556px;
 }
 .menuDropdown .dropdownWrapper {
   padding: 0 20px;
   height: 100%;
   overflow: auto;
+}
+[dropdown='howToUse']:before,
+[dropdown='howToUse']:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 14px;
+}
+[dropdown='howToUse']:before {
+  top: 10px;
+  height: 40px;
+  background: linear-gradient(180deg, #262261 10px, transparent);
+}
+[dropdown='howToUse']:after {
+  bottom: 10px;
+  height: 50px;
+  background: linear-gradient(0deg, #262261 10px, transparent);
+}
+[dropdown='howToUse'] .dropdownWrapper {
+  padding: 30px 20px;
 }
 .dropdownWrapper::-webkit-scrollbar {
   background: transparent;
