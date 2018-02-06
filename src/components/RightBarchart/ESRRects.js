@@ -25,16 +25,16 @@ export default class CountryName extends React.Component {
     const isActive = currCountry && currCountry === country
     return (
       <g transform={'translate(' + translateX + ', ' + translateY + ')'} onClick={this.onClick} className={jcn({ esrRect: true, clickable: onItemClick !== undefined }, styles)} opacity={currCountry === country || !currCountry ? 1 : 0.5}>
-        <rect y={-maxValue} height={maxValue} width='6' x='-3' fill={isActive ? '#a1e2bc' : 'rgba(0, 0, 0, .1)'}></rect>
+        <rect y={-maxValue} height={maxValue} width='9' x='-4.5' fill={isActive ? '#a1e2bc' : 'rgba(0, 0, 0, .1)'}></rect>
         { coreValue &&
           <g className="-circle-core">
-            <circle className='core' cy={-coreValue} r='5' fill='#00b95f'></circle>
+            <circle className='core' cy={-coreValue} r='7' fill='#00b95f'></circle>
           </g>
         }
         { highIncomeValue &&
           <g className="-circle-high-income">
-            <circle className='high' cy={-highIncomeValue} r='6' fill='#00b95f'></circle>
-            <circle className='high' cy={-highIncomeValue} r='3' fill='#00b95f' strokeWidth='2' stroke='#fff'></circle>
+            <circle className='high' cy={-highIncomeValue} r='8' fill='#00b95f'></circle>
+            <circle className='high' cy={-highIncomeValue} r='4' fill='#00b95f' strokeWidth='3' stroke='#fff'></circle>
           </g>
         }
       </g>

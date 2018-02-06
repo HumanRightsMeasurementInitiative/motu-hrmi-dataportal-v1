@@ -1,6 +1,10 @@
 .clickable {
   cursor: pointer;
 }
+.esrRect:hover,
+.cprRect:hover {
+	opacity: 1;
+}
 .esrRect:hover rect:first-child {
   fill: #a1e2bc;
 }
