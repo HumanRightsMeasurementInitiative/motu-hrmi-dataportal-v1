@@ -39,7 +39,7 @@ export default class BarChartESR extends React.Component {
       { height: height, text: '0%' },
     ]
 
-    const formatedData = Object.keys(data).filter(item => data[item] < 100).map(item => {
+    const formatedData = Object.keys(data).filter(item => data[item] <= 100).map(item => {
       return { value: data[item] }
     })
 
