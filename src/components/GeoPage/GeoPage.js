@@ -104,7 +104,7 @@ export default class GeoPage extends React.Component {
             <div className={styles.columnMiddle}>
               <div className={styles.chartsHeader}>
                 <div className={styles.title}>
-                  Human rights performance in <strong>{getRegionName(urlSegs.region)}</strong>
+                  <strong>Human rights performance in {getRegionName(urlSegs.region)}</strong>
                 </div>
                 <div className={styles.standard}>
                   <ChangeStandard standard={this.state.standard} onItemClick={this.setStandard} />
