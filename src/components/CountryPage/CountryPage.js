@@ -153,8 +153,8 @@ export default class CountryPage extends React.Component {
                               <div className={styles.minText}>10<sup>th</sup> percentile</div>
                             </div>
                           </div>
-                          </div>
-                        }
+                        </div>
+                      }
                       { this.state.currRight !== 'all' &&
                         <div>
                           <div className={styles.cprRegionValue}>Right to {getRegionName(urlSegs.region)} 22%</div>

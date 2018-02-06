@@ -40,12 +40,11 @@ export default class RightsPage extends React.Component {
   }
 
   setRegion = (region) => {
-    // need to check if dataset of current right is available in this region
+    this.setState({ currCountry: null })
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, region: region, country: undefined }))
   }
 
   setRight = (right) => {
-    // need to check if dataset of this right is available in current region
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, right: right }))
   }
 
@@ -129,6 +128,20 @@ export default class RightsPage extends React.Component {
             <div className={styles.chartsHeader}>
               <div className={styles.regionName}><span style={{ color: isESRSelected ? '#00af49' : '#2e65a1' }}>Right to {urlSegs.right}</span> in {getRegionName(urlSegs.region)}</div>
               <div className={styles.sortBy} style={{ opacity: (isESRSelected || urlSegs.region === 'cpr-pilot') ? 1 : 0 }}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div>
+              { isESRSelected
+                ? <div className={styles.esrLegend}>
+                  <div className={styles.text}>Core OECD</div>
+                  <div className={styles.text}>High Income OECD</div>
+                </div>
+                : <div className={styles.cprLegend}>
+                  <div className={styles.meanText}>Mean score</div>
+                  <div className={styles.bar}></div>
+                  <div className={styles.textContainer}>
+                    <div className={styles.maxText}>90<sup>th</sup> percentile</div>
+                    <div className={styles.minText}>10<sup>th</sup> percentile</div>
+                  </div>
+                </div>
+              }
             </div>
             <div className={styles.chartsContainer} ref='charts'>
               { isESRSelected || urlSegs.region === 'cpr-pilot'

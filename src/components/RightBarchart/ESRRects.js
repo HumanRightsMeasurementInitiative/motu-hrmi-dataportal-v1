@@ -24,8 +24,8 @@ export default class CountryName extends React.Component {
     const maxValue = Math.max(highIncomeValue, coreValue)
     const isActive = currCountry && currCountry === country
     return (
-      <g transform={'translate(' + translateX + ', ' + translateY + ')'} onClick={this.onClick} className={jcn({ clickable: onItemClick !== undefined }, styles)}>
-        <rect y={-maxValue} height={maxValue} width='6' x='-3' fill={isActive ? '#b2eacf' : 'rgba(0, 0, 0, .1)'}></rect>
+      <g transform={'translate(' + translateX + ', ' + translateY + ')'} onClick={this.onClick} className={jcn({ esrRect: true, clickable: onItemClick !== undefined }, styles)} opacity={currCountry === country || !currCountry ? 1 : 0.5}>
+        <rect y={-maxValue} height={maxValue} width='6' x='-3' fill={isActive ? '#a1e2bc' : 'rgba(0, 0, 0, .1)'}></rect>
         { coreValue &&
           <g className="-circle-core">
             <circle className='core' cy={-coreValue} r='5' fill='#00b95f'></circle>
