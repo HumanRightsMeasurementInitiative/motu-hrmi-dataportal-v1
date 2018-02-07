@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import * as d3 from 'd3'
+import { get } from 'lodash'
 
 export default class ESRRightBar extends React.Component {
   static propTypes = {
@@ -21,7 +22,7 @@ export default class ESRRightBar extends React.Component {
       right: 20,
     }
 
-    const years = d3.range(2005, 2015)
+    const years = d3.range(2005, 2015 + 1)
     const yAxisTicks = [0, 25, 50, 75, 100]
 
     const xScale = d3.scaleLinear()
@@ -38,7 +39,7 @@ export default class ESRRightBar extends React.Component {
     const buildLineWithStandard = (esrStandard) => (country, i) => {
       const lineData = years.map(year => ({
         year,
-        value: country.rights[`${esrStandard}Historical`][year].rights[currRight],
+        value: get(country, `rights.${esrStandard}Historical.${year}.rights.${currRight}`, null),
       }))
       return {
         esrStandard,
