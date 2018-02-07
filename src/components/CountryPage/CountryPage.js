@@ -17,6 +17,7 @@ export default class CountryPage extends React.Component {
     data: PropTypes.object.isRequired,
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
+    esrStandard: PropTypes.string.isRequired,
   }
 
   constructor() {
@@ -53,7 +54,7 @@ export default class CountryPage extends React.Component {
   }
 
   render() {
-    const { data: { rightsByRegion }, urlSegs } = this.props
+    const { data: { rightsByRegion }, urlSegs, esrStandard } = this.props
 
     const countries = rightsByRegion[urlSegs.region].countries
     const currCountry = countries.find(country => country.countryCode === urlSegs.country)
@@ -90,6 +91,7 @@ export default class CountryPage extends React.Component {
             <div className={styles.countryChart}>
               <CountryRightsChart
                 rights={currCountry.rights}
+                esrStandard={esrStandard}
                 size={800}
                 margin={200}
                 displayLabels
@@ -109,7 +111,7 @@ export default class CountryPage extends React.Component {
                 <div className={styles.smallTitle}>POPULATION (2015)</div>
                 <div className={styles.smallText2}>{currCountry.population} million</div>
                 <div className={styles.smallTitle}>GDP/CAPITA (2015)</div>
-                <div className={styles.smallText2}>${Math.round(currCountry.rights.esrHIHistorical[2015].GDP).toLocaleString()} (current PPP dollars)</div>
+                <div className={styles.smallText2}>${Math.round(currCountry.rights[`${esrStandard}Historical`][2015].GDP).toLocaleString()} (current PPP dollars)</div>
               </div>
               <div className={styles.rightInfoWrapper}>
                 <div className={styles.rightInfo}>
@@ -118,7 +120,7 @@ export default class CountryPage extends React.Component {
                       <div className={styles.subtitleESR}>Economic and Social Rights</div>
                       <div className={styles.esrChartSubtitle}>most recent data (2015 or earlier)</div>
                       <div className={styles.barChartWrapper} style={{ height: 80 }}>
-                        <BarChartESR data={currCountry.rights.esrHI} />
+                        <BarChartESR data={currCountry.rights[esrStandard]} />
                       </div>
                       { this.state.currRight !== 'all' &&
                         <div>

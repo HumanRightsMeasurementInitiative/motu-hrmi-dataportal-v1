@@ -19,6 +19,7 @@ export default class GeoPage extends React.Component {
     data: PropTypes.object.isRequired,
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
+    esrStandard: PropTypes.string.isRequired,
   }
 
   constructor() {
@@ -60,7 +61,7 @@ export default class GeoPage extends React.Component {
   }
 
   render() {
-    const { data: { rightsByRegion }, urlSegs } = this.props
+    const { data: { rightsByRegion }, urlSegs, esrStandard } = this.props
 
     const countries = rightsByRegion[urlSegs.region].countries
     const regionCodes = Object.keys(rightsByRegion)
@@ -110,7 +111,11 @@ export default class GeoPage extends React.Component {
                     className={styles.countryCard}
                     onClick={rewriteArgs(this.setCountry, country.countryCode)}
                   >
-                    <CountryRightsChart rights={country.rights} size={165} />
+                    <CountryRightsChart
+                      rights={country.rights}
+                      esrStandard={esrStandard}
+                      size={165}
+                    />
                     <span>{country.countryCode}</span>
                   </div>
                 ))}

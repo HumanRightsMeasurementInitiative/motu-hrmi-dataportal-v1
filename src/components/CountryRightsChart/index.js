@@ -38,21 +38,27 @@ const PETALS_COLORS = [
 export default class CountryRightsChart extends React.Component {
   static propTypes = {
     rights: PropTypes.object.isRequired,
+    displayLabels: PropTypes.bool.isRequired,
+    esrStandard: PropTypes.string.isRequired,
+  }
+
+  static defaultProps = {
+    displayLabels: false,
+    size: 150,
   }
 
   render() {
-    const { rights, size = 150, displayLabels = false } = this.props
+    const { rights, size, displayLabels, esrStandard } = this.props
     const { esrHI, esrCore, cpr } = rights
-    const esrType = 'HIGH_INCOME' // or 'CORE'
 
     const rightsData = RIGHTS_ORDER.map(rightCode => {
       const { type } = rightsDefinitions[rightCode]
       const NO_DATA = null
-      if (type === 'ESR' && esrType === 'HIGH_INCOME') {
+      if (type === 'ESR' && esrStandard === 'esrHI') {
         if (!esrHI) return NO_DATA
         if (esrHI[rightCode] === null) return NO_DATA
         return esrHI[rightCode] / 100
-      } else if (type === 'ESR' && esrType === 'CORE') {
+      } else if (type === 'ESR' && esrStandard === 'esrCore') {
         if (!esrCore) return NO_DATA
         if (esrCore[rightCode] === null) return NO_DATA
         return esrCore[rightCode] / 100
