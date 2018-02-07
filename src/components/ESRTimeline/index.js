@@ -50,6 +50,7 @@ export default class ESRRightBar extends React.Component {
       data.map(buildLineWithStandard('esrCore')),
       data.map(buildLineWithStandard('esrHI')),
     )
+    const linesVisibleCount = lines.filter(l => Boolean(l.path)).length
 
     return (
       <div>
@@ -85,7 +86,7 @@ export default class ESRRightBar extends React.Component {
           </g>
           {lines.map(({ path, esrStandard }, i) => (
             <g key={i} transform={'translate(' + margin.left + ',' + margin.top + ')'}>
-              <path d={path} stroke='#00b95f' strokeWidth='3' opacity='0.1' fill='none' />
+              <path d={path} stroke='#00b95f' strokeWidth='2' opacity={Math.max(0.1, 3 / linesVisibleCount)} fill='none' />
             </g>
           ))}
         </svg>
