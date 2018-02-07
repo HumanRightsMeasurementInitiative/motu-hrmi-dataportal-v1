@@ -3,10 +3,15 @@ import PropTypes from 'prop-types'
 import { joinClassName as jcn } from '../utils'
 import styles from './style.css'
 
+const LABELS = {
+  esrHI: 'High income OECD',
+  esrCore: 'Core',
+}
+
 export default class ChangeStandard extends React.Component {
   static propTypes = {
-    standard: PropTypes.string.isRequired,
-    changeStandard: PropTypes.func.isRequired,
+    esrStandard: PropTypes.string.isRequired,
+    changeEsrStandard: PropTypes.func.isRequired,
   }
 
   constructor() {
@@ -32,12 +37,12 @@ export default class ChangeStandard extends React.Component {
   }
 
   onItemClick = (name) => {
-    this.props.changeStandard(name)
+    this.props.changeEsrStandard(name)
     this.setState({ isOpen: false })
   }
 
   render() {
-    const { standard } = this.props
+    const { esrStandard } = this.props
 
     const downloadPopup = jcn({
       downloadPopup: true,
@@ -47,10 +52,18 @@ export default class ChangeStandard extends React.Component {
     return (
       <div className={downloadPopup} ref='downloadPopup'>
         <div className={styles.listWrapper}>
-          Change assessment standard: <span style={{ textDecoration: 'underline' }} onClick={this.togglePopup}>{standard}</span>
+          Change assessment standard:
+          {' '}
+          <span style={{ textDecoration: 'underline' }} onClick={this.togglePopup}>
+            {LABELS[esrStandard]}
+          </span>
           <ul className={styles.list}>
-            <ListItem className={styles.item} standard={standard} onItemClick={this.onItemClick}>Core</ListItem>
-            <ListItem className={styles.item} standard={standard} onItemClick={this.onItemClick}>High income OECD</ListItem>
+            <ListItem className={styles.item} onItemClick={this.onItemClick} value="esrHI" currentValue={esrStandard}>
+              {LABELS['esrHI']}
+            </ListItem>
+            <ListItem className={styles.item} onItemClick={this.onItemClick} value="esrCore" currentValue={esrStandard}>
+              {LABELS['esrCore']}
+            </ListItem>
           </ul>
         </div>
       </div>
@@ -61,20 +74,21 @@ export default class ChangeStandard extends React.Component {
 class ListItem extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
+    value: PropTypes.string.isRequired,
+    currentValue: PropTypes.string.isRequired,
     className: PropTypes.string.isRequired,
-    standard: PropTypes.string.isRequired,
     onItemClick: PropTypes.func.isRequired,
   }
 
   onItemClick = () => {
-    const { children, onItemClick } = this.props
-    onItemClick(children)
+    const { value, onItemClick } = this.props
+    onItemClick(value)
   }
 
   render() {
-    const { children, className, standard } = this.props
+    const { value, children, className, currentValue } = this.props
     const selected = jcn({
-      selected: children === standard,
+      selected: value === currentValue,
     }, styles)
     return (
       <li className={className} onClick={this.onItemClick}>

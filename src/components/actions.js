@@ -46,7 +46,7 @@ export const closeStoryMode = () => ({
   type: 'CLOSE_STORYMODE',
 })
 
-export const changeStandard = (standard) => ({
+export const changeEsrStandard = (esrStandard) => ({
   type: 'CHANGE_STANDARD',
-  payload: standard,
+  payload: esrStandard,
 })
