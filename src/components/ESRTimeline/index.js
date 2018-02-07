@@ -14,7 +14,6 @@ export default class ESRRightBar extends React.Component {
 
   render() {
     const { data, chartHeight, chartWidth, currYear, currRight, onItemClick } = this.props
-    const yAxisRate = 20
     const margin = {
       top: 60,
       left: 20,
@@ -23,11 +22,18 @@ export default class ESRRightBar extends React.Component {
     }
 
     const time = Object.keys(data[0].rights.esrCoreHistorical).map(year => parseInt(year))
-    const yAxisRange = Array.from(Array(6).keys())
+    const yAxisTicks = [0, 25, 50, 75, 100]
 
-    const xScale = d3.scaleLinear().domain([time[0], time[time.length - 1]]).range([60, chartWidth - margin.left - margin.right - 20])
-    const yScale = d3.scaleLinear().domain([100, 0]).range([0, chartHeight - margin.top - margin.bottom])
-    const line = d3.line().defined(function (d) { return d.value >= 0 }).x(function (d) { return xScale(d.year) }).y(function (d) { return yScale(d.value) })
+    const xScale = d3.scaleLinear()
+      .domain([time[0], time[time.length - 1]])
+      .range([60, chartWidth - margin.left - margin.right - 20])
+    const yScale = d3.scaleLinear()
+      .domain([0, 100])
+      .range([chartHeight - margin.top - margin.bottom, 0])
+    const buildLine = d3.line()
+      .defined(d => d.value !== null)
+      .x(d => xScale(d.year))
+      .y(d => yScale(d.value))
 
     return (
       <div>
@@ -42,12 +48,21 @@ export default class ESRRightBar extends React.Component {
           </g>
           <g transform={'translate(' + margin.left + ',' + margin.top + ')'}>
             {
-              yAxisRange.map((item, i) => (
-                <g key={i} transform={'translate(0,' + yScale(i * yAxisRate) + ')'}>
-                  { (item === 1 || item === 3 || item === 5) &&
-                    <text dy='-2px' fontSize='10px' fill='#616161'>{item * yAxisRate + ' %'}</text>
+              yAxisTicks.map((tick, i) => (
+                <g key={i} transform={'translate(0,' + yScale(tick) + ')'}>
+                  {tick % 2 === 0 &&
+                    <text dy='-2px' fontSize='10px' fill='#616161'>{tick + ' %'}</text>
                   }
-                  <line x1='0' y1='0' y2='0' x2={chartWidth - margin.left - margin.right} stroke='#ddd' strokeWidth='1px'></line>
+                  <line
+                    x1='0'
+                    y1='0'
+                    y2='0'
+                    x2={chartWidth - margin.left - margin.right}
+                    stroke='black'
+                    strokeWidth='1'
+                    strokeOpacity={tick % 2 === 0 ? '0.2' : '0.1'}
+                    shapeRendering='crispEdges' // Only because it's horizontal!
+                  />
                 </g>
               ))
             }
@@ -55,14 +70,11 @@ export default class ESRRightBar extends React.Component {
           {
             data.map((country, i) => {
               const years = Object.keys(country.rights.esrCoreHistorical)
-              const acceptedValues = data => data.value || data.year === 2005 || data.year === 2015
               const lineData = years.map(year => ({ year: parseInt(year), value: country.rights.esrCoreHistorical[year].rights[currRight] }))
-              const missingLine = lineData.filter(acceptedValues).map(data => data.value === null ? { ...data, value: 0 } : data)
 
               return (
                 <g key={i} transform={'translate(' + margin.left + ',' + margin.top + ')'}>
-                  <path d={line(missingLine)} stroke='#00b95f' strokeWidth='1px' fill='none' strokeDasharray="5, 5" opacity="0.8"></path>
-                  <path d={line(lineData)} stroke='#00b95f' strokeWidth='1px' fill='none'></path>
+                  <path d={buildLine(lineData)} stroke='#00b95f' strokeWidth='1' opacity='1' fill='none' />
                 </g>
               )
             })

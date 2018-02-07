@@ -61,9 +61,15 @@ export default class RightBarchart extends React.Component {
                           {isESR ? item * 10 + ' %' : item}
                         </text>
                       }
-                      <line x1='0' y1='0' y2='0' x2={chartWidth - margin.left - margin.right}
-                        stroke={item % 2 === 0 ? '#616161' : '#ddd'}
-                        strokeWidth='1px'
+                      <line
+                        x1='0'
+                        y1='0'
+                        y2='0'
+                        x2={chartWidth - margin.left - margin.right}
+                        stroke='black'
+                        strokeWidth='1'
+                        strokeOpacity={item % 2 === 0 ? '0.2' : '0.1'}
+                        shapeRendering='crispEdges' // Only because it's horizontal!
                       />
                     </g>
                   )
