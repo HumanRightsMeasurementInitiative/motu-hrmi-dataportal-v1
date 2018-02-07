@@ -23,10 +23,7 @@ export default class GeoPage extends React.Component {
 
   constructor() {
     super()
-    this.state = {
-      currCountry: null,
-      standard: 'High income OECD',
-    }
+    this.state = { currCountry: null }
   }
 
   setRegion = (region) => {
@@ -60,10 +57,6 @@ export default class GeoPage extends React.Component {
 
   unsetCurrCountry = (country) => {
     this.setState({ currCountry: null })
-  }
-
-  setStandard = (name) => {
-    this.setState({ standard: name })
   }
 
   render() {
@@ -107,7 +100,7 @@ export default class GeoPage extends React.Component {
                   <strong>Human rights performance in {getRegionName(urlSegs.region)}</strong>
                 </div>
                 <div className={styles.standard}>
-                  <ChangeStandard standard={this.state.standard} onItemClick={this.setStandard} />
+                  <ChangeStandard />
                 </div>
               </div>
               <div className={styles.countriesList}>

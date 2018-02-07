@@ -24,7 +24,6 @@ export default class CountryPage extends React.Component {
     this.state = {
       currRight: 'all',
       showMore: false,
-      standard: 'High income OECD',
     }
   }
 
@@ -51,10 +50,6 @@ export default class CountryPage extends React.Component {
 
   toggleShowMore = () => {
     this.setState({ showMore: !this.state.showMore })
-  }
-
-  setStandard = (name) => {
-    this.setState({ standard: name })
   }
 
   render() {
@@ -90,7 +85,7 @@ export default class CountryPage extends React.Component {
 
           <div className='column'>
             <div className={styles.countryHeader}>
-              <ChangeStandard standard={this.state.standard} onItemClick={this.setStandard} />
+              <ChangeStandard />
             </div>
             <div className={styles.countryChart}>
               <CountryRightsChart

@@ -45,3 +45,8 @@ export const openStoryMode = () => ({
 export const closeStoryMode = () => ({
   type: 'CLOSE_STORYMODE',
 })
+
+export const changeStandard = (standard) => ({
+  type: 'CHANGE_STANDARD',
+  payload: standard,
+})
