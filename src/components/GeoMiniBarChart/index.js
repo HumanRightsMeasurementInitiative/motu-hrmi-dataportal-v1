@@ -46,10 +46,10 @@ export default class GeoMiniBarChart extends React.Component {
       <div ref='chartContainer'>
         <svg height={height} width={containerWidth}>
           <g>
-            <text x='0' y={8} fontSize='10px' fill='#eee'>10</text>
-            <line x1={margin.left} y1={margin.top} x2={containerWidth} y2={margin.top} stroke='#eee' />
-            <text x='4' y={height - 2} fontSize='10px' fill='#eee'>0</text>
-            <line x1={margin.left} y1={height - margin.bottom} x2={containerWidth} y2={height - margin.bottom} stroke='#bdbdbd'/>
+            <text x='0' y={8} fontSize='10px' fill='#ddd'>{esrStandard ? '100%' : '10'}</text>
+            <line x1={esrStandard ? margin.left + 5 : margin.left} y1={margin.top} x2={containerWidth} y2={margin.top} stroke='#ddd' />
+            <text x='4' y={height - 2} fontSize='10px' fill='#ddd'>{esrStandard ? '0%' : '0'}</text>
+            <line x1={esrStandard ? margin.left + 5 : margin.left} y1={height - margin.bottom} x2={containerWidth} y2={height - margin.bottom} stroke='#bdbdbd'/>
           </g>
           {data.countries.map((country, i) => {
             const esrValue = esrStandard && country.rights[esrStandard] ? country.rights[esrStandard][right] : 0
@@ -57,7 +57,7 @@ export default class GeoMiniBarChart extends React.Component {
             const value = esrStandard ? esrHeight(esrValue) : cprHeight(cprValue)
             const x = value ? barX(i) : 0
             return (<g key={i}>
-              <rect x={x} y={height - value - margin.top} height={Math.round(value)} width={barWidth} fill='#eee'></rect>
+              <rect x={x} y={height - value - margin.top} height={Math.round(value)} width={barWidth} fill='#ddd'></rect>
             </g>)
           })}
         </svg>
