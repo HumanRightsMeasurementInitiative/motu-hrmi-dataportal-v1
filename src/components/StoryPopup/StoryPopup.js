@@ -73,6 +73,7 @@ export default class StoryPopup extends React.Component {
               <div className={styles.graph} style={{ lineHeight: '0.9rem' }}>
                 <CountryRightsChart
                   rights={MEXICO.rights}
+                  esrStandard="esrCore"
                   size={500}
                   displayLabels
                 />
@@ -235,11 +236,11 @@ export default class StoryPopup extends React.Component {
               <section>
                 <div className={styles.radarWrapper}>
                   <div className={styles.radarCol}>
-                    <CountryRightsChart rights={PERU.rights} size={250} />
+                    <CountryRightsChart rights={PERU.rights} esrStandard="esrCore" size={250} />
                     <div className={styles.radarCountryName}>{'PER'}</div>
                   </div>
                   <div className={styles.radarCol}>
-                    <CountryRightsChart rights={BOLIVIA.rights} size={250} />
+                    <CountryRightsChart rights={BOLIVIA.rights} esrStandard="esrCore" size={250} />
                     <div className={styles.radarCountryName}>{'BOL'}</div>
                   </div>
                 </div>
