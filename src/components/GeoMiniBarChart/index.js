@@ -42,6 +42,14 @@ export default class GeoMiniBarChart extends React.Component {
 
     const barWidth = containerWidth ? (containerWidth - margin.left) / data.countries.length * 0.6 : 0
 
+    data.countries.sort(function (a, b) {
+      if (esrStandard && a.rights[esrStandard] && b.rights[esrStandard]) {
+        return a.rights[esrStandard][right] - b.rights[esrStandard][right]
+      } else if (!esrStandard && a.rights.cpr && b.rights.cpr) {
+        return a.rights.cpr[right].mean - b.rights.cpr[right].mean
+      }
+    })
+
     return (
       <div ref='chartContainer'>
         <svg height={height} width={containerWidth}>
