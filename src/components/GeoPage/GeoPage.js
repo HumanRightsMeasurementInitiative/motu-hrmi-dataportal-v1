@@ -135,7 +135,7 @@ export default class GeoPage extends React.Component {
                     <div className={styles.esrTitle}>Economic and Social Rights</div>
                     <ul className={styles.esrList}>
                       {displayedRightsESR.map((right, i) => (
-                        <RightsItem key={i} right={right.code} onItemClick={this.setRight}>
+                        <RightsItem key={i} right={right.code} data={rightsByRegion[urlSegs.region]} esrStandard={esrStandard} onItemClick={this.setRight}>
                           {right.code}
                         </RightsItem>
                       ))}
@@ -143,7 +143,7 @@ export default class GeoPage extends React.Component {
                     <div className={styles.cprTitle}>Civil and Political Rights</div>
                     <ul className={styles.cprList}>
                       {displayedRightsCPR.map((right, i) => (
-                        <RightsItem key={i} right={right.code} onItemClick={this.setRight}>
+                        <RightsItem key={i} right={right.code} data={rightsByRegion[urlSegs.region]} onItemClick={this.setRight}>
                           {right.code}
                         </RightsItem>
                       ))}
