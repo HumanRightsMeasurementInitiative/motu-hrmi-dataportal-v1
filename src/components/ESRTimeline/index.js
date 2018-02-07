@@ -21,11 +21,11 @@ export default class ESRRightBar extends React.Component {
       right: 20,
     }
 
-    const time = Object.keys(data[0].rights.esrCoreHistorical).map(year => parseInt(year))
+    const years = d3.range(2005, 2015)
     const yAxisTicks = [0, 25, 50, 75, 100]
 
     const xScale = d3.scaleLinear()
-      .domain([time[0], time[time.length - 1]])
+      .domain([years[0], years[years.length - 1]])
       .range([60, chartWidth - margin.left - margin.right - 20])
     const yScale = d3.scaleLinear()
       .domain([0, 100])
@@ -35,13 +35,28 @@ export default class ESRRightBar extends React.Component {
       .x(d => xScale(d.year))
       .y(d => yScale(d.value))
 
+    const buildLineWithStandard = (esrStandard) => (country, i) => {
+      const lineData = years.map(year => ({
+        year,
+        value: country.rights[`${esrStandard}Historical`][year].rights[currRight],
+      }))
+      return {
+        esrStandard,
+        path: buildLine(lineData),
+      }
+    }
+    const lines = [].concat(
+      data.map(buildLineWithStandard('esrCore')),
+      data.map(buildLineWithStandard('esrHI')),
+    )
+
     return (
       <div>
         <svg height={chartHeight} width={chartWidth}>
           <g transform={'translate(' + margin.left + ',' + margin.top / 2 + ')'}>
             <text x='14' fontSize='12px' textAnchor='middle' textDecoration='underline'>Year:</text>
             {
-              time.map((item, i) => (
+              years.map((item, i) => (
                 <YearItem key={i} isActive={item === currYear} posX={xScale(item)} onItemClick={onItemClick}>{item}</YearItem>
               ))
             }
@@ -67,18 +82,11 @@ export default class ESRRightBar extends React.Component {
               ))
             }
           </g>
-          {
-            data.map((country, i) => {
-              const years = Object.keys(country.rights.esrCoreHistorical)
-              const lineData = years.map(year => ({ year: parseInt(year), value: country.rights.esrCoreHistorical[year].rights[currRight] }))
-
-              return (
-                <g key={i} transform={'translate(' + margin.left + ',' + margin.top + ')'}>
-                  <path d={buildLine(lineData)} stroke='#00b95f' strokeWidth='1' opacity='1' fill='none' />
-                </g>
-              )
-            })
-          }
+          {lines.map(({ path, esrStandard }, i) => (
+            <g key={i} transform={'translate(' + margin.left + ',' + margin.top + ')'}>
+              <path d={path} stroke='#00b95f' strokeWidth='1' opacity='1' fill='none' />
+            </g>
+          ))}
         </svg>
       </div>
     )
