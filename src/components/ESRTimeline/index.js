@@ -85,7 +85,7 @@ export default class ESRRightBar extends React.Component {
           </g>
           {lines.map(({ path, esrStandard }, i) => (
             <g key={i} transform={'translate(' + margin.left + ',' + margin.top + ')'}>
-              <path d={path} stroke='#00b95f' strokeWidth='1' opacity='1' fill='none' />
+              <path d={path} stroke='#00b95f' strokeWidth='3' opacity='0.1' fill='none' />
             </g>
           ))}
         </svg>
