@@ -8,10 +8,6 @@ export default class CountryPage extends React.Component {
   static propTypes = {
     right: PropTypes.string.isRequired,
     isESRSelected: PropTypes.bool.isRequired,
-    // data: PropTypes.object.isRequired,
-    // urlSegs: PropTypes.object.isRequired,
-    // urlPush: PropTypes.func.isRequired,
-    // esrStandard: PropTypes.string.isRequired,
   }
 
   render() {
