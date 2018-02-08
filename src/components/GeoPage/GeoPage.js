@@ -22,6 +22,7 @@ export default class GeoPage extends React.Component {
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
     esrStandard: PropTypes.string.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   constructor() {
@@ -63,8 +64,8 @@ export default class GeoPage extends React.Component {
   }
 
   render() {
-    const { data: { rightsByRegion }, urlSegs, esrStandard } = this.props
-
+    const { data: { rightsByRegion }, urlSegs, esrStandard, content } = this.props
+    const tooltips = content.question_tooltips
     const countries = rightsByRegion[urlSegs.region].countries
     const regionCodes = Object.keys(rightsByRegion)
 
@@ -173,7 +174,7 @@ export default class GeoPage extends React.Component {
                     </div>
                     <div className={styles.definitionWrapper}>
                       <div className={styles.rightInfo}>
-                        <RightDefinition right={urlSegs.right} isESRSelected={displayedRightsESR.length !== 0} />
+                        <RightDefinition right={urlSegs.right} isESRSelected={displayedRightsESR.length !== 0} tooltips={tooltips} />
                       </div>
                     </div>
                   </div>

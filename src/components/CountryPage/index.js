@@ -7,6 +7,7 @@ const mapStateToProps = (state) => (
     data: state.data,
     urlSegs: state.router.urlSegs,
     esrStandard: state.esrStandard,
+    content: state.content,
   }
 )
 

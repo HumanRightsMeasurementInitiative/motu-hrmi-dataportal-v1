@@ -18,6 +18,7 @@ export default class RightsPage extends React.Component {
     data: PropTypes.object.isRequired,
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   constructor() {
@@ -74,8 +75,8 @@ export default class RightsPage extends React.Component {
   }
 
   render() {
-    const { data: { rightsByRegion }, urlSegs } = this.props
-
+    const { data: { rightsByRegion }, urlSegs, content } = this.props
+    const tooltips = content.question_tooltips
     const rights = Object.entries(rightsDefinitions).map(([code, right]) => ({ code, ...right }))
     const ESRs = rights.filter(right => right.type === 'ESR')
     const CPRs = rights.filter(right => right.type === 'CPR')
@@ -194,7 +195,7 @@ export default class RightsPage extends React.Component {
             </div>
             <div className={styles.infoContent}>
               <div className={styles.textWrapper}>
-                <RightDefinition right={urlSegs.right} isESRSelected={isESRSelected} />
+                <RightDefinition right={urlSegs.right} isESRSelected={isESRSelected} tooltips={tooltips} />
                 { !isESRSelected && this.state.currCountry &&
                   <div>
                     <QuestionTooltip width={214} question={'Groups most at risk'} isTitle={true}>
