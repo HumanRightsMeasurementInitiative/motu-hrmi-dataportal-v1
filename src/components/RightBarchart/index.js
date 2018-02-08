@@ -5,6 +5,7 @@ import CountryName from './CountryName'
 import ESRRects from './ESRRects'
 import CPRRects from './CPRRects'
 import ValueTooltips from './ValueTooltips'
+import { round } from 'lodash'
 
 export default class RightBarchart extends React.Component {
   static propTypes = {
@@ -25,7 +26,7 @@ export default class RightBarchart extends React.Component {
     if (chartHeight === 0) return null
 
     const margin = {
-      top: 30,
+      top: 40,
       left: 20,
       bottom: 30,
       right: 20,
@@ -125,9 +126,9 @@ export default class RightBarchart extends React.Component {
                     translateY={chartHeight - margin.top - margin.bottom}
                     currCountry={currCountry}
                     country={country}
-                    highIncomeDisplay={Math.round(value.highIncome).toFixed(0).toString() || 'N/A'}
-                    coreDisplay={Math.round(value.core).toFixed(0).toString() || 'N/A'}
-                    valueDisplay={value.mean !== null ? `${Math.round(value.mean).toFixed(0)}/10` : 'N/A'}
+                    highIncomeDisplay={round(value.highIncome).toFixed(0).toString() || 'N/A'}
+                    coreDisplay={round(value.core).toFixed(0).toString() || 'N/A'}
+                    valueDisplay={value.mean !== null ? `${round(value.mean, 1).toFixed(1)}/10` : 'N/A'}
                     highIncomeValue={yScale(value.highIncome)}
                     coreValue={yScale(value.core)}
                     maxValue={yScale(value.percentile90)}
