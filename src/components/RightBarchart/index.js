@@ -25,7 +25,7 @@ export default class RightBarchart extends React.Component {
     if (chartHeight === 0) return null
 
     const margin = {
-      top: 30,
+      top: 40,
       left: 20,
       bottom: 30,
       right: 20,
