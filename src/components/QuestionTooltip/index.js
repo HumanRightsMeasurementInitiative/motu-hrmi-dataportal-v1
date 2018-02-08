@@ -25,7 +25,7 @@ export default class QuestionTooltip extends React.Component {
     if (this.refs.popupPane) {
       const pos = this.refs.question.getBoundingClientRect()
       const size = this.refs.popupPane.getBoundingClientRect()
-      console.log(size)
+
       this.refs.popupPane.style.right = document.body.clientWidth - pos.x + 24 + 'px'
       if (pos.top < size.height) {
         this.refs.popupPane.style.top = '30px'

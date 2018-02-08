@@ -6,6 +6,8 @@ import RegionItem from '../RegionItem'
 import RightsItem from './RightsItem'
 import DownloadPopup from '../DownloadPopup'
 import ChangeStandard from '../ChangeStandard'
+import MiniBarChart from '../GeoMiniBarChart'
+import RightDefinition from '../RightDefinition'
 import { segsToUrl, getRegionName } from '../utils'
 import rightsDefinitions from 'data/rights-definitions.json'
 import styles from './style.css'
@@ -156,11 +158,22 @@ export default class GeoPage extends React.Component {
                       <div className={styles.rightCate}>
                         {displayedRightsESR.length === 0 ? 'Civil and Political Rights' : 'Ecomonic and Social Rights'}
                       </div>
+                      { displayedRightsESR.length
+                        ? <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} right={urlSegs.right} esrStandard={esrStandard} />
+                        : <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} right={urlSegs.right} />
+                      }
+                      <div className={styles.linkWrapper}>
+                        <div className='arrowLink'>
+                          <div className='text'>Explore this rights in:</div>
+                          <div className='text underline' onClick={this.setExploreBy}>
+                            {urlSegs.region}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className='arrowLink'>
-                      <div className='text'>Explore this rights in:</div>
-                      <div className='text underline' onClick={this.setExploreBy}>
-                        {urlSegs.region}
+                    <div className={styles.definitionWrapper}>
+                      <div className={styles.rightInfo}>
+                        <RightDefinition right={urlSegs.right} isESRSelected={displayedRightsESR.length !== 0} />
                       </div>
                     </div>
                   </div>

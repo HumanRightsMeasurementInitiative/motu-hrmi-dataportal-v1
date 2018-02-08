@@ -116,9 +116,9 @@
 
 .columnRight {
   flex: 1 1 auto;
-  padding: 0 16px 0 22px;
+  display: flex;
+  padding-left: 22px;
   height: 100%;
-  overflow: auto;
 }
 .columnRight::-webkit-scrollbar {
   background: transparent;
@@ -171,6 +171,80 @@
   width: 10px;
   border-radius: 5px;
   background: #eee;
+}
+
+.specRightInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.specRightHeader {
+  flex: 0 0 auto;
+  padding-right: 16px;
+}
+.rightName,
+.rightCate {
+  padding-left: 20px;
+  cursor: pointer;
+}
+.rightName {
+  font-weight: 600;
+}
+.rightCate {
+  margin-bottom: 14px;
+}
+.linkWrapper {
+  margin: 14px 0 0;
+}
+
+.definitionWrapper {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-right: 4px;
+}
+.definitionWrapper:before,
+.definitionWrapper:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 8px;
+}
+.definitionWrapper:before {
+  top: 0;
+  height: 26px;
+  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, .2));
+}
+.definitionWrapper:after {
+  bottom: 0;
+  height: 30px;
+  background: linear-gradient(0deg, #fff 20%, transparent);
+}
+.rightInfo {
+  flex: 1 1 auto;
+  padding: 20px 16px 30px 24px;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  color: #616161;
+  line-height: 1.5em;
+  overflow: auto;
+}
+.rightInfo::-webkit-scrollbar {
+  background: transparent;
+  width: 4px;
+}
+.rightInfo::-webkit-scrollbar-thumb {
+  display: none;
+  background: #bdbdbd;
+  border-radius: 4px;
+  opacity: 0;
+}
+.rightInfo:hover::-webkit-scrollbar-thumb {
+  display: block;
+  opacity: 1;
 }
 /*.esrRightHeader {
   color: #00b95f;

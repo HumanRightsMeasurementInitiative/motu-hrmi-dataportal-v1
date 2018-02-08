@@ -33,7 +33,6 @@ export default class LangSelector extends React.Component {
   }
 
   toggleDropdown = (e) => {
-    e.stopPropagation()
     if (this.refs.toggleBtn) this.setState({ open: !this.state.open })
   }
 
