@@ -14,26 +14,26 @@ export default class LangSelector extends React.Component {
 
   constructor() {
     super()
-    this.state = { open: false }
+    this.state = { isOpen: false }
   }
 
   componentDidMount() {
-    document.addEventListener('click', this.onClick)
-    this.refs.toggleBtn.addEventListener('click', this.toggleDropdown)
+    document.addEventListener('click', this.documentClick)
     this.refs.options.style.left = this.refs.text.offsetWidth + 'px'
   }
 
   componentWillUnMount() {
-    document.removeEventListener('click', this.onClick)
-    this.refs.toggleBtn.removeEventListener('click', this.toggleDropdown)
+    document.removeEventListener('click', this.documentClick)
   }
 
-  onClick = () => {
-    if (this.refs.toggleBtn) this.setState({ open: false })
+  documentClick = (e) => {
+    if (this.refs.languageWrapper.contains(e.target)) return
+    this.setState({ isOpen: false })
   }
 
   toggleDropdown = (e) => {
-    if (this.refs.toggleBtn) this.setState({ open: !this.state.open })
+    e.stopPropagation()
+    this.setState({ isOpen: !this.state.isOpen })
   }
 
   changeLanguage = (language, e) => {
@@ -75,13 +75,13 @@ export default class LangSelector extends React.Component {
     const { language } = this.props.urlSegs
 
     const optionsClassNames = jcn({
-      'hide': !this.state.open,
+      'hide': !this.state.isOpen,
       'options': true,
     }, styles)
 
     return (
-      <div className={styles.wrapper}>
-        <div className={styles.toggleBtn} ref='toggleBtn' onClick={this.toggleDropdown} style={{ paddingRight: withArrow ? '16px' : '0px' }}><span ref='text'>Language: </span><span className={styles.currentLang}>{language}</span></div>
+      <div className={styles.wrapper} ref='languageWrapper'>
+        <div className={styles.toggleBtn} onClick={this.toggleDropdown} style={{ paddingRight: withArrow ? '16px' : '0px' }}><span ref='text'>Language: </span><span className={styles.currentLang}>{language}</span></div>
         <ul className={optionsClassNames} ref='options'>
           {this.optionList()}
         </ul>
