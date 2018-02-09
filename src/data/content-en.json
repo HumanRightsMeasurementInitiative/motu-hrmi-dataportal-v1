@@ -1,4 +1,8 @@
 {
+  "legend": {
+    "esr_barchart": ["Core assessment standart", "High-income-OECD assessment standard"],
+    "cpr_barchart": ["Mean score", "percentile"]
+  },
   "menu": {
     "about": {
       "title": "About the initiative",
@@ -141,5 +145,64 @@
       "high": "High income OECD assessment standard"
     },
     "ending_text": "This is end of the story"
-  }
+  },
+  "footer_text": {
+    "rights_page_esr": "Higher scores indicate greater fulfilment of country obligations for this human right.",
+    "rights_page_cpr": "Higher scores indicate greater respect for this human right.",
+    "by_geography": "Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.",
+    "source": "Source: 2018 Human Rights Measurement Initiative (HRMI) dataset,"
+  },
+  "question_tooltips": [
+    {
+      "question": "Why aren't the same indicators used for all countries?",
+      "tooltip": "This is because the same data are not always collected for all countries in the world. The core assessment standard is mostly used for developing and non-OECD-member countries. The high-income OECD country assessment standard uses indicators that are often available only for high-income OECD countries. However, all countries are evaluated using both sets of indicators to the extent data are available."
+    }, {
+      "question": "How does the HRMI methodology convert the above indicators into the Right to Food metric?",
+      "tooltip": {
+        "paragraphs": [
+          "All HRMI measures of economic and social rights have been produced using official statistics collected by national governments and harmonised by international organisations. For each indicator, our methodology compares the observed level of enjoyment of that dimension of human rights to the enjoyment level it should be feasible for that country to achieve given its per-capita income level. HRMI economic and social rights metrics thus show how well the State is using its available resources to ensure that all people enjoy these rights.",
+          "Three things should be kept in mind when interpreting HRMI economic and social rights metrics:",
+          "For more information on the HRMI ESR methodology"
+        ],
+        "list": [
+          "1) A score of 100% does NOT imply that everyone in the country enjoys the right. Rather, it implies that the country’s right enjoyment level is on par with the historically best-performing countries at the same per-capita income level.",
+          "2) A score of 100% does NOT mean there is no room for improvement. Countries with high HRMI scores still need to innovate to extend human rights enjoyment further than has been done in the past.",
+          "3) The fact that a high-income country earns a high HRMI score on a right does NOT imply that all population subgroups (e.g. women or indigenous people) in that country enjoy the right equally."
+        ],
+        "linkText": "click here"
+      }
+    }, {
+      "question": "How should I interpret the uncertainty bands?",
+      "tooltip": {
+        "paragraphs": [
+          "Our civil and political rights measures methodology produces a range of estimated levels of respect for each human right. The average country score (indicated by the white horizontal line) represents the average estimate in that range. The lower score on the uncertainty band represents the 10th percentile of our estimates; the higher score on the uncertainty band represents the 90th percentile.",
+          "Narrower uncertainty bands tell us that there was more agreement among expert survey respondents about what that country’s score should be, and/or a larger number of respondents. The greater the overlap between two uncertainty bands, the less certain we can be that the level of respect for human rights represented by those bands are truly different from one another.",
+          "For more detailed information, please see our"
+        ],
+        "linkText": "methodology note"
+      }
+    }, {
+      "question": "How has HRMI measured the Right to",
+      "tooltip": {
+        "paragraphs": [
+          "Each civil and political right metric has been produced from responses to a survey of in-country human rights experts. Respondents’ answers to questions about the frequency of violations of each civil and political right were combined using a statistical model that ensures the comparability of responses across countries. This results in a distribution of estimated levels of respect for each right in each country, represented by the scores and uncertainty bands shown throughout the data visualisations. Other information about who was identified as at risk for human rights abuse was also collected from our respondents, as shown.",
+          "For more detailed information, please see our"
+        ],
+        "linkText": "website here"
+      }
+    }
+  ],
+  "country_tooltips": [
+    {
+      "question": "Why are the two types of metrics not on the same scale?",
+      "paragraphs": "HRMI metrics use two different methodologies that have different scales and interpretations. The scores for the civil and political rights metrics are a score out of 10 indicating the extent to which the government in the country respected that right. By contrast, the scores for the economic and social rights metrics are percentage scores. These tell you the percentage level of enjoyment achieved on that right relative to what should be feasible for a country with that income level. This is not the same as the extent to which people in the country enjoy the right. For more information please explore our",
+      "linkText": "methodologies in more detail"
+    }, {
+      "question": "Why are the two sets of metrics not for the same year?",
+      "paragraphs": "All metrics presented are the most recent data available. The civil and political rights metrics are for January to June 2017. The economic and social rights metrics are from the 2017 update of the International Social and Economic Rights Fulfilment Index, which covers the period from 2005 to 2015. The data used for each year are the most recently available data as of that year. HRMI graphs use the most recently available data from the full dataset."
+    }, {
+      "question": "What is the difference between the core and the high income OECD country scale?",
+      "paragraphs": "For countries assessed using the core assessment standard, our methodology uses statistical indicators that are available for most countries in the world, particularly developing and non-OECD-member countries. By contrast, the high-income OECD country assessment standard uses indicators that are typically available only for the high-income OECD countries, and/or better reflect the human rights challenges of high-income countries. We would also use many of these indicators in the core assessment standard if they had broader country coverage. All countries are evaluated using both assessment standards to the extent data are available."
+    }
+  ]
 }

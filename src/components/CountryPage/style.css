@@ -59,7 +59,7 @@
   max-width: 200px;
   font-size: 14px;
   letter-spacing: .025em;
-  color: #616161;
+  color: #58595b;
   overflow: auto;
 }
 .countriesList::-webkit-scrollbar {
@@ -94,7 +94,7 @@
   flex: 0 0 auto;
   display: flex;
   font-size: 14px;
-  color: #616161;
+  color: #58595b;
 }
 .countryChart {
   flex: 1 1 auto;
@@ -174,7 +174,7 @@
   flex-direction: column;
   position: relative;
   padding-right: 4px;
-  color: #616161;
+  color: #58595b;
   line-height: 1.5em;
 }
 .rightInfoWrapper:before,
@@ -247,7 +247,7 @@
   display: flex;
   margin: 10px 0 15px;
   font-size: 12px;
-  color: #616161;
+  color: #58595b;
 }
 .legend .bar {
   flex: 0 0 auto;
@@ -320,8 +320,9 @@
 }*/
 
 .rightDefinition {
-  font-size: 14px;
-  color: #616161;
+  font-size: 13px;
+  color: #58595b;
+  line-height: 1.6em;
 }
 .defList {
   position: relative;
@@ -345,12 +346,12 @@
   display: none;
 }
 .measureQues {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 .countryQues {
   padding-right: 4px;
-  font-size: 14px;
+  font-size: 13px;
 }
 .withDot {
   position: relative;
@@ -379,8 +380,8 @@
 .esrValueList,
 .cprValueList {
   margin-bottom: 14px;
-  font-size: 14px;
-  color: #616161;
+  font-size: 13px;
+  color: #58595b;
 }
 
 .link {
@@ -388,7 +389,7 @@
   margin: 20px 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0.025em;
   line-height: 15px;
   color: #58595B;

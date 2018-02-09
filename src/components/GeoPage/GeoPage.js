@@ -22,6 +22,7 @@ export default class GeoPage extends React.Component {
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
     esrStandard: PropTypes.string.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   constructor() {
@@ -63,8 +64,8 @@ export default class GeoPage extends React.Component {
   }
 
   render() {
-    const { data: { rightsByRegion }, urlSegs, esrStandard } = this.props
-
+    const { data: { rightsByRegion }, urlSegs, esrStandard, content } = this.props
+    const tooltips = content.question_tooltips
     const countries = rightsByRegion[urlSegs.region].countries
     const regionCodes = Object.keys(rightsByRegion)
 
@@ -124,8 +125,8 @@ export default class GeoPage extends React.Component {
               </div>
               <div className={styles.chartsFooter}>
                 <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={['chart']} /></div>
-                <div className={styles.text}>Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.</div>
-                <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
+                <div className={styles.text}>{content.footer_text.by_geography}</div>
+                <div className={styles.source}>{content.footer_text.source} <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
               </div>
             </div>
           </div>
@@ -173,7 +174,7 @@ export default class GeoPage extends React.Component {
                     </div>
                     <div className={styles.definitionWrapper}>
                       <div className={styles.rightInfo}>
-                        <RightDefinition right={urlSegs.right} isESRSelected={displayedRightsESR.length !== 0} />
+                        <RightDefinition right={urlSegs.right} isESRSelected={displayedRightsESR.length !== 0} tooltips={tooltips} />
                       </div>
                     </div>
                   </div>

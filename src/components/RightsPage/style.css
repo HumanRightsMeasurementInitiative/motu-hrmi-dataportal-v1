@@ -271,9 +271,9 @@
   padding: 20px 16px 30px 24px;
   height: 100%;
   width: 100%;
-  font-size: 14px;
-  color: #616161;
-  line-height: 1.5em;
+  font-size: 13px;
+  color: #58595b;
+  line-height: 1.6em;
   overflow: auto;
 }
 .textWrapper::-webkit-scrollbar {

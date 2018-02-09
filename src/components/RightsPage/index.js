@@ -6,6 +6,7 @@ const mapStateToProps = (state) => (
   {
     data: state.data,
     urlSegs: state.router.urlSegs,
+    content: state.content,
   }
 )
 
