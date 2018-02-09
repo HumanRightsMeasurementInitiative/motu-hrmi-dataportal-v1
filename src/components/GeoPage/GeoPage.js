@@ -125,8 +125,8 @@ export default class GeoPage extends React.Component {
               </div>
               <div className={styles.chartsFooter}>
                 <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={['chart']} /></div>
-                <div className={styles.text}>Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.</div>
-                <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
+                <div className={styles.text}>{content.footer_text.by_geography}</div>
+                <div className={styles.source}>{content.footer_text.source} <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
               </div>
             </div>
           </div>

@@ -142,6 +142,12 @@
     },
     "ending_text": "This is end of the story"
   },
+  "footer_text": {
+    "rights_page_esr": "Higher scores indicate greater fulfilment of country obligations for this human right.",
+    "rights_page_cpr": "Higher scores indicate greater respect for this human right.",
+    "by_geography": "Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.",
+    "source": "Source: 2018 Human Rights Measurement Initiative (HRMI) dataset,"
+  },
   "question_tooltips": [
     {
       "question": "Why aren't the same indicators used for all countries?",

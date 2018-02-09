@@ -175,8 +175,8 @@ export default class RightsPage extends React.Component {
             </div>
             <div className={styles.chartsFooter}>
               <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={ESRs.indexOf(urlSegs.right) > -1 ? ['bar chart', 'line chart'] : ['bar chart']} /></div>
-              <div className={styles.text}>Hight Scores indicate greater respect for this human right.</div>
-              <div className={styles.source}><small className={styles.small}>SOURCE:</small> 2018 Human Rights Measurement Initiative (HRMI) DATASET, <a className={styles.small} href='https://humanrightsmeasurement.org'>https://humanrightsmeasurement.org</a></div>
+              <div className={styles.text}>{isESRSelected ? content.footer_text.rights_page_esr : content.footer_text.rights_page_cpr}</div>
+              <div className={styles.source}>{content.footer_text.source} <a className={styles.small} href='https://humanrightsmeasurement.org'>https://humanrightsmeasurement.org</a></div>
             </div>
           </div>
           <div className='column'>
