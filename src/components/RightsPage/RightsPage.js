@@ -7,7 +7,7 @@ import RightBarchart from '../RightBarchart/'
 import ESRTimeline from '../ESRTimeline/'
 import QuestionTooltip from '../QuestionTooltip'
 import DownloadPopup from '../DownloadPopup'
-import SortbyDropdown from '../SortbyDropdown'
+// import SortbyDropdown from '../SortbyDropdown'
 import RightDefinition from '../RightDefinition'
 import { segsToUrl, getRegionName, joinClassName as jcn } from '../utils'
 import styles from './style.css'
@@ -28,7 +28,7 @@ export default class RightsPage extends React.Component {
       chartHeight: 0,
       chartWidth: 0,
       currYear: 2015,
-      sortby: 'Name',
+      // sortby: 'Name',
     }
   }
 
@@ -66,9 +66,9 @@ export default class RightsPage extends React.Component {
     this.setState({ currYear: year })
   }
 
-  setSortby = (name) => {
-    this.setState({ sortby: name })
-  }
+  // setSortby = (name) => {
+  //   this.setState({ sortby: name })
+  // }
 
   gotoCPRPilot = () => {
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, region: 'cpr-pilot' }))
@@ -129,18 +129,18 @@ export default class RightsPage extends React.Component {
           <div className='column'>
             <div className={styles.chartsHeader}>
               <div className={styles.regionName}><span style={{ color: isESRSelected ? '#00af49' : '#2e65a1' }}>Right to {urlSegs.right}</span> in {getRegionName(urlSegs.region)}</div>
-              <div className={styles.sortBy} style={{ opacity: (isESRSelected || urlSegs.region === 'cpr-pilot') ? 1 : 0 }}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div>
+              {/* <div className={styles.sortBy} style={{ opacity: (isESRSelected || urlSegs.region === 'cpr-pilot') ? 1 : 0 }}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div> */}
               { isESRSelected
                 ? <div className={styles.esrLegend}>
-                  <div className={styles.text}>Core OECD</div>
-                  <div className={styles.text}>High Income OECD</div>
+                  <div className={styles.text}>{content.legend.esr_barchart[0]}</div>
+                  <div className={styles.text}>{content.legend.esr_barchart[1]}</div>
                 </div>
                 : <div className={styles.cprLegend}>
-                  <div className={styles.meanText}>Mean score</div>
+                  <div className={styles.meanText}>{content.legend.cpr_barchart[0]}</div>
                   <div className={styles.bar}></div>
                   <div className={styles.textContainer}>
-                    <div className={styles.maxText}>90<sup>th</sup> percentile</div>
-                    <div className={styles.minText}>10<sup>th</sup> percentile</div>
+                    <div className={styles.maxText}>90<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
+                    <div className={styles.minText}>10<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
                   </div>
                 </div>
               }

@@ -1,4 +1,8 @@
 {
+  "legend": {
+    "esr_barchart": ["Core assessment standart", "High-income-OECD assessment standard"],
+    "cpr_barchart": ["Mean score", "percentile"]
+  },
   "menu": {
     "about": {
       "title": "About the initiative",

@@ -24,7 +24,7 @@ export default class CountryPage extends React.Component {
   constructor() {
     super()
     this.state = {
-      currRight: 'freedom-from-arbitrary-arrest',
+      currRight: 'all',
       showMore: false,
     }
   }
@@ -147,11 +147,11 @@ export default class CountryPage extends React.Component {
                             <BarChartCPR data={currCountry.rights.cpr} height={80} />
                           </div>
                           <div className={styles.legend}>
-                            <div className={styles.meanText}>Mean score</div>
+                            <div className={styles.meanText}>{content.legend.cpr_barchart[0]}</div>
                             <div className={styles.bar}></div>
                             <div className={styles.textContainer}>
-                              <div className={styles.maxText}>90<sup>th</sup> percentile</div>
-                              <div className={styles.minText}>10<sup>th</sup> percentile</div>
+                              <div className={styles.maxText}>90<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
+                              <div className={styles.minText}>10<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
                             </div>
                           </div>
                         </div>
