@@ -62,6 +62,10 @@ export default class RightsPage extends React.Component {
     }
   }
 
+  resetCurrCountry = () => {
+    this.setState({ currCountry: null })
+  }
+
   setCurrYear = (year) => {
     this.setState({ currYear: year })
   }
@@ -154,7 +158,8 @@ export default class RightsPage extends React.Component {
                   chartHeight={this.state.chartHeight * 0.6}
                   chartWidth={this.state.chartWidth}
                   currCountry={this.state.currCountry}
-                  onItemClick={this.setCurrCountry} />
+                  onItemClick={this.setCurrCountry} 
+                  resetCurrCountry={this.resetCurrCountry} />
                 : <div className={styles.CPRAlertWrapper}>
                   <div className={styles.CPRAlert}>
                     The data is available only for the <u>HRMI Civil and political rights pilot countries</u>

@@ -16,6 +16,12 @@ export default class RightBarchart extends React.Component {
     rightsByRegionCountries: PropTypes.array.isRequired,
     currCountry: PropTypes.object,
     onItemClick: PropTypes.func,
+    resetCurrCountry: PropTypes.func,
+  }
+
+  onBackgroundClick = () => {
+    const { resetCurrCountry } = this.props
+    if (resetCurrCountry) resetCurrCountry()
   }
 
   render() {
@@ -39,6 +45,9 @@ export default class RightBarchart extends React.Component {
       <div>
         <svg height={chartHeight} width={chartWidth}>
           <g transform={'translate(' + margin.left + ',' + margin.top + ')'}>
+            <g onClick={this.onBackgroundClick}>
+              <rect height={chartHeight} width={chartWidth - margin.left - margin.right} y={-margin.top} opacity='0'></rect>
+            </g>
             <g transform={'translate(0,' + (chartHeight - margin.top - margin.bottom + 10) + ')'}>
               {
                 rightsByRegionCountries.map((country, i) => {
