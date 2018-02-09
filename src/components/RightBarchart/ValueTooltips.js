@@ -10,14 +10,18 @@ export default class CountryName extends React.Component {
     currCountry: PropTypes.object,
     highIncomeDisplay: PropTypes.string,
     coreDisplay: PropTypes.string,
-    valueDisplay: PropTypes.string,
     highIncomeValue: PropTypes.number,
     coreValue: PropTypes.number,
+    maxDisplay: PropTypes.string,
+    minDisplay: PropTypes.string,
+    meanDisplay: PropTypes.string,
     maxValue: PropTypes.number,
+    minValue: PropTypes.number,
+    meanValue: PropTypes.number,
   }
 
   render() {
-    const { isESR, translateX, translateY, currCountry, country, highIncomeDisplay, coreDisplay, valueDisplay, highIncomeValue, coreValue, maxValue } = this.props
+    const { isESR, translateX, translateY, currCountry, country, highIncomeDisplay, coreDisplay, highIncomeValue, coreValue, maxDisplay, minDisplay, meanDisplay, maxValue, minValue, meanValue } = this.props
     const isActive = currCountry && currCountry === country
     return (
       <g transform={'translate(' + translateX + ', ' + translateY + ')'}>
@@ -28,9 +32,17 @@ export default class CountryName extends React.Component {
           </g>
         }
         { !isESR && isActive &&
-          <text y={-maxValue - 4} fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
-            {valueDisplay}
-          </text>
+          <g>
+            <text y={-maxValue + 4} x='20' fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
+              {maxDisplay}
+            </text>
+            <text y={-minValue + 4} x='20' fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
+              {minDisplay}
+            </text>
+            <text y={-meanValue + 4} x='20' fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
+              {meanDisplay}
+            </text>
+          </g>
         }
       </g>
     )

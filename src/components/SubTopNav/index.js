@@ -37,7 +37,7 @@ export default class SubTopNav extends React.Component {
 
   render() {
     const { content } = this.props
-    console.log(content)
+
     const dropdownClassNames = jcn({
       'hide': !this.state.open,
       'dropdown': true,

@@ -158,7 +158,7 @@ export default class RightsPage extends React.Component {
                   chartHeight={this.state.chartHeight * 0.6}
                   chartWidth={this.state.chartWidth}
                   currCountry={this.state.currCountry}
-                  onItemClick={this.setCurrCountry} 
+                  onItemClick={this.setCurrCountry}
                   resetCurrCountry={this.resetCurrCountry} />
                 : <div className={styles.CPRAlertWrapper}>
                   <div className={styles.CPRAlert}>
