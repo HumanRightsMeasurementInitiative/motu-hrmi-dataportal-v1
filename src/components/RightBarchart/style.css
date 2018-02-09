@@ -1,13 +1,13 @@
 .clickable {
   cursor: pointer;
 }
-.esrRect:hover,
-.cprRect:hover {
+.clickable.esrRect:hover,
+.clickable.cprRect:hover {
 	opacity: 1;
 }
-.esrRect:hover rect:first-child {
+.clickable.esrRect:hover rect:first-child {
   fill: #a1e2bc;
 }
-.cprRect:hover rect:first-child {
+.clickable.cprRect:hover rect:first-child {
 	fill: #abc1d9;
 }

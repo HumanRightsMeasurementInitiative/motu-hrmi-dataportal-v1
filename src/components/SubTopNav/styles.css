@@ -11,16 +11,16 @@
   position: absolute;
   top: 32px;
   right: 0;
-  padding: 0 38px 0 15px;
+  padding: 0 60px 0 15px;
   height: 26px;
   background: #fff;
   border: 1px solid #ef7d00;
   border-right: none;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 800;
   color: #ef7d00;
+  letter-spacing: 1px;
   line-height: 24px;
-  letter-spacing: .075em;
   cursor: pointer;
   transition: all .4s;
 }

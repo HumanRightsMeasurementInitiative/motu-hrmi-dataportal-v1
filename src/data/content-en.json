@@ -1,4 +1,8 @@
 {
+  "rights_category": {
+    "esr": "Economic and Social Rights",
+    "cpr": "Civil and Political Rights"
+  },
   "legend": {
     "esr_barchart": ["Core assessment standart", "High-income-OECD assessment standard"],
     "cpr_barchart": ["Mean score", "percentile"]
@@ -146,6 +150,9 @@
     },
     "ending_text": "This is end of the story"
   },
+  "header_text": {
+    "by_geography": "Human rights performance in"
+  },
   "footer_text": {
     "rights_page_esr": "Higher scores indicate greater fulfilment of country obligations for this human right.",
     "rights_page_cpr": "Higher scores indicate greater respect for this human right.",
@@ -204,5 +211,18 @@
       "question": "What is the difference between the core and the high income OECD country scale?",
       "paragraphs": "For countries assessed using the core assessment standard, our methodology uses statistical indicators that are available for most countries in the world, particularly developing and non-OECD-member countries. By contrast, the high-income OECD country assessment standard uses indicators that are typically available only for the high-income OECD countries, and/or better reflect the human rights challenges of high-income countries. We would also use many of these indicators in the core assessment standard if they had broader country coverage. All countries are evaluated using both assessment standards to the extent data are available."
     }
-  ]
+  ],
+  "how_to_read": {
+    "name": "HOW TO READ",
+    "paragraphs": [
+      "Each country is represented by a radar chart, formed by twelve axes. Each axis stands for a right. The longer the axis, the better the performance of the country on that right.",
+      "Rights are color coded by two different sets:",
+      "and",
+      "CPR data are only available for 13 pilot countries",
+      "The two sets of rights are evaluated on two different scales: on a percentage scale",
+      "and as a score out of 10",
+      "When CPR data are not available in a country, only ESR axes will be shown on the radar.",
+      "A dashed and greyed out axis means that there is no data available for that rights in that country."
+    ]
+  }
 }

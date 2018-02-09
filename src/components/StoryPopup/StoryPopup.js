@@ -114,14 +114,16 @@ export default class StoryPopup extends React.Component {
               <section>
                 <div className={styles.cprCaption}>{story.chart[0].title}</div>
                 <div className={styles.cprSubTitle}>{story.chart[0].subtitle}</div>
-                <RightBarchart
-                  isESR={false}
-                  currRight={'freedom-from-disappearance'}
-                  rightsByRegionCountries={data.rightsByRegion[PILOT].countries}
-                  chartHeight={338}
-                  chartWidth={this.state.barchartWidth}
-                  currCountry={MEXICO}>
-                </RightBarchart>
+                { this.state.barchartWidth &&
+                  <RightBarchart
+                    isESR={false}
+                    currRight={'freedom-from-disappearance'}
+                    rightsByRegionCountries={data.rightsByRegion[PILOT].countries}
+                    chartHeight={338}
+                    chartWidth={this.state.barchartWidth}
+                    currCountry={MEXICO}>
+                  </RightBarchart>
+                }
               </section>
               <section className={styles.topLink}>
                 <div>
@@ -138,14 +140,16 @@ export default class StoryPopup extends React.Component {
               <section>
                 <div className={styles.cprCaption}>{story.chart[1].title}</div>
                 <div className={styles.cprSubTitle}>{story.chart[1].subtitle}</div>
-                <RightBarchart
-                  isESR={false}
-                  currRight={'participate-in-government'}
-                  rightsByRegionCountries={data.rightsByRegion[PILOT].countries}
-                  chartHeight={338}
-                  chartWidth={this.state.barchartWidth}
-                  currCountry={MEXICO}
-                />
+                { this.state.barchartWidth &&
+                  <RightBarchart
+                    isESR={false}
+                    currRight={'participate-in-government'}
+                    rightsByRegionCountries={data.rightsByRegion[PILOT].countries}
+                    chartHeight={338}
+                    chartWidth={this.state.barchartWidth}
+                    currCountry={MEXICO}
+                  />
+                }
               </section>
               <section className={styles.bottomLink}>
                 <div>
@@ -177,14 +181,16 @@ export default class StoryPopup extends React.Component {
               <section>
                 <div className={styles.esrCaption}>{story.chart[2].title}</div>
                 <div className={styles.esrSubTitle}>{story.chart[2].subtitle}</div>
-                <RightBarchart
-                  isESR={true}
-                  currRight={'education'}
-                  rightsByRegionCountries={data.rightsByRegion[AMERICAS].countries}
-                  chartHeight={338}
-                  chartWidth={this.state.barchartWidth}
-                  currCountry={MEXICO}
-                />
+                { this.state.barchartWidth &&
+                  <RightBarchart
+                    isESR={true}
+                    currRight={'education'}
+                    rightsByRegionCountries={data.rightsByRegion[AMERICAS].countries}
+                    chartHeight={338}
+                    chartWidth={this.state.barchartWidth}
+                    currCountry={MEXICO}
+                  />
+                }
               </section>
               <section className={styles.topLink}>
                 <div>

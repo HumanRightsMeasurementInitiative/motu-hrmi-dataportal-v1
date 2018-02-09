@@ -81,7 +81,7 @@ export default class GeoPage extends React.Component {
 
     return (
       <div className={styles.geoPage}>
-        <SubTopNav />
+        <SubTopNav content={content} />
         <div className='row'>
           <div className='column'>
             <div className={styles.columnLeft}>
@@ -101,7 +101,7 @@ export default class GeoPage extends React.Component {
             <div className={styles.columnMiddle}>
               <div className={styles.chartsHeader}>
                 <div className={styles.title}>
-                  <strong>Human rights performance in {getRegionName(urlSegs.region)}</strong>
+                  <strong>{content.header_text.by_geography} {getRegionName(urlSegs.region)}</strong>
                 </div>
                 <div className={styles.standard}>
                   <ChangeStandard />

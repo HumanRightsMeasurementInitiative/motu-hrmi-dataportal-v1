@@ -68,7 +68,7 @@ export default class CountryPage extends React.Component {
 
     return (
       <div className={styles.countryPage}>
-        <SubTopNav />
+        <SubTopNav content={content} />
         <div className='row'>
           <div className='column'>
             <div className={styles.backBtn} onClick={this.resetCountry}>
@@ -90,6 +90,9 @@ export default class CountryPage extends React.Component {
 
           <div className='column'>
             <div className={styles.countryHeader}>
+              <div className={styles.title}>
+                <strong>{content.header_text.by_geography} {urlSegs.country}</strong>
+              </div>
               <ChangeStandard />
             </div>
             <div className={styles.countryChart}>
