@@ -137,7 +137,7 @@ export default class RightBarchart extends React.Component {
                     country={country}
                     highIncomeDisplay={round(value.highIncome).toFixed(0).toString() || 'N/A'}
                     coreDisplay={round(value.core).toFixed(0).toString() || 'N/A'}
-                    valueDisplay={value.mean !== null ? `${round(value.mean, 1).toFixed(1)}/10` : 'N/A'}
+                    valueDisplay={value.mean !== null ? round(value.mean, 1).toFixed(1) : 'N/A'}
                     highIncomeValue={yScale(value.highIncome)}
                     coreValue={yScale(value.core)}
                     maxValue={yScale(value.percentile90)}
