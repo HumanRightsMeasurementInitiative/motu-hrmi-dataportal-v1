@@ -104,7 +104,7 @@ function ESRHighIncome() {
 
       const current = historical['2015'] || null
 
-      const countryData = _.pick(Object.values(countryYears)[0], 'countryCode isHighIncome isOECD geoRegion'.split(' '))
+      const countryData = _.pick(Object.values(countryYears)[0], 'countryCode countryName isHighIncome isOECD geoRegion'.split(' '))
       return { ...countryData, ...current, historical }
     })
     .object(rows)
@@ -119,7 +119,7 @@ function ESRCore() {
 
   const rows = sheetRows(sheet, 'AV', 1).map(row => {
     const datum = {
-      countryName: row.A,
+      // countryName: row.A, // Malformed for Core data
       countryCode: row.C,
       year: row.B,
       isHighIncome: parseInt(row.E) === 1,
@@ -238,7 +238,7 @@ const joinedCountries = countryCodesList.map(countryCode => {
 
   const countryInfo = _.pick(countryEsrHI, [
     'countryCode',
-    // 'countryName',
+    'countryName',
     // 'GDP',
     // 'SERF',
   ])
