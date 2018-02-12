@@ -2209,6 +2209,12 @@ d3-chord@1.0.4:
     d3-array "1"
     d3-path "1"
 
+d3-cloud@^1.2.4:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/d3-cloud/-/d3-cloud-1.2.5.tgz#3e91564f2d27fba47fcc7d812eb5081ea24c603d"
+  dependencies:
+    d3-dispatch "^1.0.3"
+
 d3-collection@1, d3-collection@1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/d3-collection/-/d3-collection-1.0.4.tgz#342dfd12837c90974f33f1cc0a785aea570dcdc2"
@@ -2217,7 +2223,7 @@ d3-color@1, d3-color@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/d3-color/-/d3-color-1.0.3.tgz#bc7643fca8e53a8347e2fbdaffa236796b58509b"
 
-d3-dispatch@1, d3-dispatch@1.0.3:
+d3-dispatch@1, d3-dispatch@1.0.3, d3-dispatch@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/d3-dispatch/-/d3-dispatch-1.0.3.tgz#46e1491eaa9b58c358fce5be4e8bed626e7871f8"
 
@@ -2298,7 +2304,7 @@ d3-request@1.0.6:
     d3-dsv "1"
     xmlhttprequest "1"
 
-d3-scale@1.0.7:
+d3-scale@1.0.7, d3-scale@^1.0.6:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-1.0.7.tgz#fa90324b3ea8a776422bd0472afab0b252a0945d"
   dependencies:
@@ -5951,6 +5957,10 @@ qs@~6.4.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
 
+query-selector@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/query-selector/-/query-selector-1.0.9.tgz#917fd31b7379b53fd441e536af647552e01e7e9e"
+
 query-string@^4.1.0:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-4.3.4.tgz#bbb693b9ca915c232515b228b1a02b609043dbeb"
@@ -6027,6 +6037,15 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-d3-cloud@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/react-d3-cloud/-/react-d3-cloud-0.6.0.tgz#fb88284457be2baea2d432a80f960db599df8280"
+  dependencies:
+    d3-cloud "^1.2.4"
+    d3-scale "^1.0.6"
+    d3-selection "^1.1.0"
+    react-faux-dom "^3.0.0"
+
 react-dataviz@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/react-dataviz/-/react-dataviz-0.0.1.tgz#f9ac8378a4ac1c8e012e25389069ab66ce0c0446"
@@ -6066,6 +6085,13 @@ react-dom@^16.2.0:
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
+
+react-faux-dom@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-faux-dom/-/react-faux-dom-3.1.0.tgz#d070ce8068bcf10e19b5dec329d2da671aa6734b"
+  dependencies:
+    query-selector "^1.0.9"
+    style-attr "^1.0.1"
 
 react-redux@^5.0.6:
   version "5.0.6"
@@ -7042,6 +7068,10 @@ strip-indent@^1.0.1:
 strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
+
+style-attr@^1.0.1:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/style-attr/-/style-attr-1.3.0.tgz#2c1997a4865e25d7dbcb216be0ad715f005b9b17"
 
 style-loader@^0.18.2:
   version "0.18.2"

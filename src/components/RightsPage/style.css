@@ -352,7 +352,10 @@
   color: #71d8f3;
 }
 
-.groupsList {
+.wordCloud {
+  margin-left: -20px;
+}
+/*.groupsList {
   margin: 10px 0 15px;
 }
 .groupsList li {
@@ -379,7 +382,7 @@
 .groupsList li:nth-child(5) {
   font-size: 14px;
   opacity: .6;
-}
+}*/
 .chartKeys {
   margin-bottom: 10px;
 }
