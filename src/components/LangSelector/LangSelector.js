@@ -27,7 +27,8 @@ export default class LangSelector extends React.Component {
   }
 
   documentClick = (e) => {
-    if (this.refs.languageWrapper.contains(e.target)) return
+    const { languageWrapper } = this.refs
+    if (languageWrapper && languageWrapper.contains(e.target)) return
     this.setState({ isOpen: false })
   }
 

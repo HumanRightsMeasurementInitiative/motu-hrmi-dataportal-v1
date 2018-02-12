@@ -100,63 +100,63 @@ function PetalLabels({ size, data, colors }) {
   return (
     <div style={{ fontSize: 14, color: '#606163' }}>
       <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 0} correction={[-45, -20]} style={{ textAlign: 'center' }}>
-        Right to health
+        health
         <br/>
         <strong style={{ color: colors[0] }}>{displayPercent(0)}</strong>
       </LabelRadial>
       <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 1} correction={[0, -20]} style={{ textAlign: 'left' }}>
-        Right to housing
+        housing
         <br/>
         <strong style={{ color: colors[1] }}>{displayPercent(1)}</strong>
       </LabelRadial>
       <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 2} correction={[0, -15]} style={{ textAlign: 'left' }}>
-        Right to work
+        work
         <br/>
         <strong style={{ color: colors[2] }}>{displayPercent(2)}</strong>
       </LabelRadial>
       <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 3} correction={[-10, -20]} style={{ textAlign: 'left' }}>
-        Right to freedom<br/>from disappearance
+        freedom from<br/>disappearance
         <br/>
         <strong style={{ color: colors[3] }}>{displayTenth(3)}</strong>
       </LabelRadial>
       <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 4} correction={[-10, -10]} style={{ textAlign: 'left' }}>
-        Right to freedom<br/>from arbitrary arrest
+        freedom from<br/>arbitrary arrest
         <br/>
         <strong style={{ color: colors[4] }}>{displayTenth(4)}</strong>
       </LabelRadial>
       <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 5} correction={[0, -15]} style={{ textAlign: 'left' }}>
-        Right to freedom<br/>from execution
+        freedom<br/>from execution
         <br/>
         <strong style={{ color: colors[5] }}>{displayTenth(5)}</strong>
       </LabelRadial>
       <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 6} correction={[-52, -15]} style={{ textAlign: 'center' }}>
-        Right to freedom<br/>from torture
+        freedom<br/>from torture
         <br/>
         <strong style={{ color: colors[6] }}>{displayTenth(6)}</strong>
       </LabelRadial>
 
       <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 7} correction={[-115, -15]} style={{ textAlign: 'right' }}>
-        Right to participate<br/>in government
+        participate<br/>in government
         <br/>
         <strong style={{ color: colors[7] }}>{displayTenth(7)}</strong>
       </LabelRadial>
       <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 8} correction={[-105, -10]} style={{ textAlign: 'right' }}>
-        Right to assembly<br/>and association
+        assembly<br/>and association
         <br/>
         <strong style={{ color: colors[8] }}>{displayTenth(8)}</strong>
       </LabelRadial>
       <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 9} correction={[-95, -20]} style={{ textAlign: 'right' }}>
-        Right to opinion<br/>and expression
+        opinion<br/>and expression
         <br/>
         <strong style={{ color: colors[9] }}>{displayTenth(9)}</strong>
       </LabelRadial>
       <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 10} correction={[-80, -15]} style={{ textAlign: 'right' }}>
-        Right to food
+        food
         <br/>
         <strong style={{ color: colors[10] }}>{displayPercent(10)}</strong>
       </LabelRadial>
       <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 11} correction={[-110, -20]} style={{ textAlign: 'right' }}>
-        Right to education
+        education
         <br/>
         <strong style={{ color: colors[11] }}>{displayPercent(11)}</strong>
       </LabelRadial>
