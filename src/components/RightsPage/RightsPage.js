@@ -112,7 +112,7 @@ export default class RightsPage extends React.Component {
 
     const cloudWords = this.state.currCountry ? this.state.currCountry.rights.cprRangeAtRisk[urlSegs.right].map(word => {
       return { text: word[0], value: word[1] }
-    }) : null
+    }) : ''
     const fontSizeMapper = word => word.value * 40 + 5
 
     return (
@@ -209,7 +209,7 @@ export default class RightsPage extends React.Component {
             <div className={styles.infoContent}>
               <div className={styles.textWrapper}>
                 <RightDefinition right={urlSegs.right} isESRSelected={isESRSelected} tooltips={tooltips} />
-                { !isESRSelected && cloudWords &&
+                { !isESRSelected && cloudWords.length !== 0 &&
                   <div>
                     <QuestionTooltip width={214} question={'Groups most at risk'} isTitle={true}>
                       <p>This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our <a href='#' target='_blank'>summary of qualitative survey responses.[need link]</a></p>

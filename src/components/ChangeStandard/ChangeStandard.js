@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import QuestionMark from '../QuestionMark'
 import { joinClassName as jcn } from '../utils'
 import styles from './style.css'
 
@@ -10,6 +11,7 @@ const LABELS = {
 
 export default class ChangeStandard extends React.Component {
   static propTypes = {
+    content: PropTypes.object.isRequired,
     esrStandard: PropTypes.string.isRequired,
     changeEsrStandard: PropTypes.func.isRequired,
   }
@@ -28,7 +30,7 @@ export default class ChangeStandard extends React.Component {
   }
 
   documentClick = (e) => {
-    if (this.refs.downloadPopup.contains(e.target)) return
+    if (this.refs.questionTooltip.contains(e.target)) return
     this.setState({ isOpen: false })
   }
 
@@ -38,33 +40,27 @@ export default class ChangeStandard extends React.Component {
 
   onItemClick = (name) => {
     this.props.changeEsrStandard(name)
-    this.setState({ isOpen: false })
+    // this.setState({ isOpen: false })
   }
 
   render() {
-    const { esrStandard } = this.props
-
-    const downloadPopup = jcn({
-      downloadPopup: true,
-      active: this.state.isOpen,
-    }, styles)
+    const { esrStandard, content } = this.props
 
     return (
-      <div className={downloadPopup} ref='downloadPopup'>
-        <div className={styles.listWrapper}>
-          Change assessment standard:
-          {' '}
-          <span style={{ textDecoration: 'underline' }} onClick={this.togglePopup}>
-            {LABELS[esrStandard]}
+      <div className={styles.buttonGroup}>
+        <ListItem onItemClick={this.onItemClick} value='esrCore' currentValue={esrStandard}>
+          {content.legend.esr_barchart[0]}
+        </ListItem>
+        <ListItem onItemClick={this.onItemClick} value='esrHI' currentValue={esrStandard}>
+          {content.legend.esr_barchart[1]}
+        </ListItem>
+        <div className={styles.container} ref='questionTooltip'>
+          <span className={styles.questionMark} onClick={this.togglePopup}>
+            <QuestionMark></QuestionMark>
           </span>
-          <ul className={styles.list}>
-            <ListItem className={styles.item} onItemClick={this.onItemClick} value="esrHI" currentValue={esrStandard}>
-              {LABELS['esrHI']}
-            </ListItem>
-            <ListItem className={styles.item} onItemClick={this.onItemClick} value="esrCore" currentValue={esrStandard}>
-              {LABELS['esrCore']}
-            </ListItem>
-          </ul>
+          { this.state.isOpen &&
+            <div className={styles.popupPane} ref='popupPane'>{content.country_tooltips[2].paragraphs}</div>
+          }
         </div>
       </div>
     )
@@ -76,7 +72,6 @@ class ListItem extends React.Component {
     children: PropTypes.node.isRequired,
     value: PropTypes.string.isRequired,
     currentValue: PropTypes.string.isRequired,
-    className: PropTypes.string.isRequired,
     onItemClick: PropTypes.func.isRequired,
   }
 
@@ -86,14 +81,13 @@ class ListItem extends React.Component {
   }
 
   render() {
-    const { value, children, className, currentValue } = this.props
+    const { children, value, currentValue } = this.props
     const selected = jcn({
+      standardItem: true,
       selected: value === currentValue,
     }, styles)
     return (
-      <li className={className} onClick={this.onItemClick}>
-        <div className={selected}>{children}</div>
-      </li>
+      <div className={selected} onClick={this.onItemClick}>{children}</div>
     )
   }
 }

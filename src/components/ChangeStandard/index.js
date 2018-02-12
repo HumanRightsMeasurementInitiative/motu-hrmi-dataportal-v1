@@ -5,6 +5,7 @@ import { changeEsrStandard } from '../actions'
 const mapStateToProps = (state) => (
   {
     esrStandard: state.esrStandard,
+    content: state.content,
   }
 )
 
