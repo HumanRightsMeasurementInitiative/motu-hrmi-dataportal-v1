@@ -42,7 +42,7 @@ export default class GeoMiniBarChart extends React.Component {
 
     const barWidth = containerWidth ? (containerWidth - margin.left) / data.countries.length * 0.6 : 0
 
-    data.countries.sort(function (a, b) {
+    const sortedData = data.countries.slice().sort(function (a, b) {
       if (esrStandard && a.rights[esrStandard] && b.rights[esrStandard]) {
         return a.rights[esrStandard][right] - b.rights[esrStandard][right]
       } else if (!esrStandard && a.rights.cpr && b.rights.cpr) {
@@ -59,7 +59,7 @@ export default class GeoMiniBarChart extends React.Component {
             <text x='4' y={height - 2} fontSize='10px' fill='#ddd'>{esrStandard ? '0%' : '0'}</text>
             <line x1={esrStandard ? margin.left + 5 : margin.left} y1={height - margin.bottom} x2={containerWidth} y2={height - margin.bottom} stroke='#bdbdbd'/>
           </g>
-          {data.countries.map((country, i) => {
+          { sortedData.map((country, i) => {
             const esrValue = esrStandard && country.rights[esrStandard] ? country.rights[esrStandard][right] : 0
             const cprValue = !esrStandard && country.rights.cpr ? country.rights.cpr[right].mean : 0
             const value = esrStandard ? esrHeight(esrValue) : cprHeight(cprValue)
