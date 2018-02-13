@@ -38,7 +38,7 @@ export default class RightBarchart extends React.Component {
       right: 20,
     }
 
-    const xScale = d3.scaleLinear().domain([0, rightsByRegionCountries.length]).range([20, chartWidth - margin.left - margin.right])
+    const xScale = d3.scaleLinear().domain([0, rightsByRegionCountries.length - 1]).range([40, chartWidth - margin.left - margin.right - 10])
     const yScale = d3.scaleLinear().domain([0, 10 * yAxisRate]).range([0, chartHeight - margin.top - margin.bottom])
 
     return (
@@ -48,11 +48,11 @@ export default class RightBarchart extends React.Component {
             <g onClick={this.onBackgroundClick}>
               <rect height={chartHeight} width={chartWidth - margin.left - margin.right} y={-margin.top} opacity='0'></rect>
             </g>
-            <g transform={'translate(0,' + (chartHeight - margin.top - margin.bottom + 10) + ')'}>
+            <g transform={'translate(0,' + (chartHeight - margin.top - margin.bottom) + ')'}>
               {
                 rightsByRegionCountries.map((country, i) => {
                   return (
-                    <g key={i} transform={'translate(' + (xScale(i) + 30) + ', 0) rotate(-45)'}>
+                    <g key={i} transform={'translate(' + xScale(i) + ', 10)rotate(-45)'}>
                       <CountryName currCountry={currCountry} country={country} onItemClick={onItemClick}>
                         {country.countryCode}
                       </CountryName>
@@ -98,7 +98,7 @@ export default class RightBarchart extends React.Component {
                   isESR
                   ? <ESRRects
                     key={i}
-                    translateX={xScale(i) + 30}
+                    translateX={xScale(i)}
                     translateY={chartHeight - margin.top - margin.bottom}
                     highIncomeValue={yScale(value.highIncome)}
                     coreValue={yScale(value.core)}
@@ -108,7 +108,7 @@ export default class RightBarchart extends React.Component {
                   />
                   : <CPRRects
                     key={i}
-                    translateX={xScale(i) + 30}
+                    translateX={xScale(i)}
                     translateY={chartHeight - margin.top - margin.bottom}
                     value={yScale(value.mean)}
                     minValue={yScale(value.percentile10)}
@@ -131,7 +131,7 @@ export default class RightBarchart extends React.Component {
                   <ValueTooltips
                     key={i}
                     isESR={isESR}
-                    translateX={xScale(i) + 30}
+                    translateX={xScale(i)}
                     translateY={chartHeight - margin.top - margin.bottom}
                     currCountry={currCountry}
                     country={country}

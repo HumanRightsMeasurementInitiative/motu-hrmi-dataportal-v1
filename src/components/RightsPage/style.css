@@ -73,7 +73,7 @@
 }
 .rightsWrapper:after {
   bottom: 0;
-  background: linear-gradient(0deg, #fff 20%, transparent);
+  background: linear-gradient(0deg, #fff 20%, rgba(255, 255, 255, .01));
 }
 .rightList {
   flex: 1;
@@ -264,7 +264,7 @@
 .infoContent:after {
   bottom: 0;
   height: 30px;
-  background: linear-gradient(0deg, #fff 20%, transparent);
+  background: linear-gradient(0deg, #fff 20%, rgba(255, 255, 255, .01));
 }
 .textWrapper {
   flex: 1 1 auto;

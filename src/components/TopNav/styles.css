@@ -94,12 +94,12 @@
 [dropdown='howToUse']:before {
   top: 10px;
   height: 40px;
-  background: linear-gradient(180deg, #262261 10px, transparent);
+  background: linear-gradient(180deg, #262261 10px, rgba(38, 34, 97, .01));
 }
 [dropdown='howToUse']:after {
   bottom: 10px;
   height: 50px;
-  background: linear-gradient(0deg, #262261 10px, transparent);
+  background: linear-gradient(0deg, #262261 10px, rgba(38, 34, 97, .01));
 }
 [dropdown='howToUse'] .dropdownWrapper {
   padding: 30px 20px;
@@ -157,7 +157,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: radial-gradient(#fff, transparent);
+  background: radial-gradient(#fff, rgba(255, 255, 255, .01));
   overflow: auto;
 }
 .menuDropdownList .dropdownWrapper {
