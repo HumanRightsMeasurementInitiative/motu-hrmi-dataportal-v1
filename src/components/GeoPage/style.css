@@ -60,6 +60,8 @@
   flex: 1 1 auto;
   overflow: auto;
   padding: 15px;
+}
+.countriesContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   grid-gap: 15px;

@@ -108,20 +108,22 @@ export default class GeoPage extends React.Component {
                 </div>
               </div>
               <div className={styles.countriesList}>
-                {countries.map((country, i) => (
-                  <div
-                    key={country.countryCode}
-                    className={styles.countryCard}
-                    onClick={rewriteArgs(this.setCountry, country.countryCode)}
-                  >
-                    <CountryRightsChart
-                      rights={country.rights}
-                      esrStandard={esrStandard}
-                      size={165}
-                    />
-                    <span>{country.countryCode}</span>
-                  </div>
-                ))}
+                <div className={styles.countriesContainer}>
+                  {countries.map((country, i) => (
+                    <div
+                      key={country.countryCode}
+                      className={styles.countryCard}
+                      onClick={rewriteArgs(this.setCountry, country.countryCode)}
+                    >
+                      <CountryRightsChart
+                        rights={country.rights}
+                        esrStandard={esrStandard}
+                        size={165}
+                      />
+                      <span>{country.countryCode}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className={styles.chartsFooter}>
                 <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={['chart']} /></div>
