@@ -109,8 +109,7 @@ export default class RightsPage extends React.Component {
     }, styles)
 
     const rightsByRegionCountries = rightsByRegion[urlSegs.region].countries
-
-    const cloudWords = this.state.currCountry ? this.state.currCountry.rights.cprRangeAtRisk[urlSegs.right].map(word => {
+    const cloudWords = this.state.currCountry && isCPRSelected ? this.state.currCountry.rights.cprRangeAtRisk[urlSegs.right].map(word => {
       return { text: word[0], value: word[1] }
     }) : ''
 

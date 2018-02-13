@@ -73,7 +73,7 @@ export default class CountryPage extends React.Component {
     const isESRSelected = ESRs.some(r => r.code === currRight)
     const isCPRSelected = CPRs.some(r => r.code === currRight)
 
-    const cloudWords = currCountry && currRight !== 'all' ? currCountry.rights.cprRangeAtRisk[currRight].map(word => {
+    const cloudWords = isCPRSelected && currCountry && currRight !== 'all' ? currCountry.rights.cprRangeAtRisk[currRight].map(word => {
       return { text: word[0], value: word[1] }
     }) : ''
 
