@@ -28,15 +28,15 @@ export default class CountryName extends React.Component {
         { isESR && isActive &&
           <g>
             { highIncomeValue && <text y={-highIncomeValue + 4} x={10} fontSize='16' fill='#616161' fontWeight='700'>{highIncomeDisplay}%</text>}
-            { coreValue && <text y={-coreValue + 4} x={10} fontSize='16' fill='#616161' fontWeight='700'>{coreDisplay}%</text>}
+            { coreValue && <text y={Math.abs(highIncomeValue - coreValue) < 20 ? (highIncomeValue > coreValue ? -highIncomeValue + 18 : -highIncomeValue - 10) : -coreValue + 4} x={10} fontSize='16' fill='#616161' fontWeight='700'>{coreDisplay}%</text>}
           </g>
         }
         { !isESR && isActive &&
           <g>
-            <text y={-maxValue + 4} x='20' fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
+            <text y={maxValue - meanValue < 12 ? -meanValue - 10 : -maxValue + 4} x='20' fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
               {maxDisplay}
             </text>
-            <text y={-minValue + 4} x='20' fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
+            <text y={meanValue - minValue < 12 ? -meanValue + 18 : -minValue + 4} x='20' fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
               {minDisplay}
             </text>
             <text y={-meanValue + 4} x='20' fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
