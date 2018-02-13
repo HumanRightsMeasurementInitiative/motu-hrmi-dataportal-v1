@@ -4,11 +4,6 @@ import QuestionMark from '../QuestionMark'
 import { joinClassName as jcn } from '../utils'
 import styles from './style.css'
 
-const LABELS = {
-  esrHI: 'High income OECD',
-  esrCore: 'Core',
-}
-
 export default class ChangeStandard extends React.Component {
   static propTypes = {
     content: PropTypes.object.isRequired,

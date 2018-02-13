@@ -8,6 +8,7 @@ import CountryRightsChart from 'components/CountryRightsChart'
 import QuestionTooltip from '../QuestionTooltip'
 import DownloadPopup from '../DownloadPopup'
 import ChangeStandard from '../ChangeStandard'
+import WordCloudChart from '../WordCloudChart'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
 import rightsDefinitions from '../../data/rights-definitions.json'
@@ -25,8 +26,14 @@ export default class CountryPage extends React.Component {
     super()
     this.state = {
       currRight: 'all',
+      rightPaneWidth: 0,
       showMore: false,
     }
+  }
+
+  componentDidMount() {
+    const { rightPane } = this.refs
+    this.setState({ rightPaneWidth: rightPane.offsetWidth })
   }
 
   setExploreBy = (right) => {
@@ -65,6 +72,10 @@ export default class CountryPage extends React.Component {
     const CPRs = rights.filter(right => right.type === 'CPR')
     const isESRSelected = ESRs.some(r => r.code === currRight)
     const isCPRSelected = CPRs.some(r => r.code === currRight)
+
+    const cloudWords = currCountry ? currCountry.rights.cprRangeAtRisk[currRight].map(word => {
+      return { text: word[0], value: word[1] }
+    }) : ''
 
     return (
       <div className={styles.countryPage}>
@@ -111,7 +122,7 @@ export default class CountryPage extends React.Component {
             </div>
           </div>
 
-          <div className='column'>
+          <div className='column' ref='rightPane'>
             <div className={styles.columnRight}>
               <div className={styles.countryInfo}>
                 <div className={styles.detailCountry}>{currCountry.countryCode}</div>
@@ -261,28 +272,22 @@ export default class CountryPage extends React.Component {
                           <div className={styles.esrChartKey}>This chart shows data using the core country standard.</div>
                         </div>
                       }
-                      { isCPRSelected &&
+                      { !isESRSelected && cloudWords.length !== 0 &&
                         <div>
-                          <div>
-                            <QuestionTooltip width={214} question={'Groups most at risk'} isTitle={true}>
-                              <p>This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our <a href='#' target='_blank'>summary of qualitative survey responses.[need link]</a></p>
-                            </QuestionTooltip>
-                            <ul className={styles.groupsList}>
-                              <li>nationality</li>
-                              <li>other immigrant</li>
-                              <li>political indigenous</li>
-                              <li>professional disabled journalist</li>
-                              <li>low ses refugees cultrue</li>
-                            </ul>
-                          </div>
-                          <div>
-                            <QuestionTooltip width={220} question={'Distribution of abuse'} isTitle={true}>
-                              <p>This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group as being especially vulnerable.</p>
-                            </QuestionTooltip>
-                            <div className={styles.cprChartSubtitle}>Data is for period January - June 2017</div>
-                            <div className={styles.chartKeys}>
-                              <strong>A:</strong> Suspected criminals, <strong>B:</strong> Non-violent political, <strong>C:</strong> Violent political, <strong>D:</strong> Discriminated groups, <strong>E:</strong> Indiscriminate
-                            </div>
+                          <QuestionTooltip width={214} question={'Groups most at risk'} isTitle={true}>
+                            <p>This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our <a href='#' target='_blank'>summary of qualitative survey responses.[need link]</a></p>
+                          </QuestionTooltip>
+                          <WordCloudChart
+                            width={this.state.rightPaneWidth - 10}
+                            height={cloudWords.length * 20}
+                            words={cloudWords}
+                          />
+                          <QuestionTooltip width={220} question={'Distribution of abuse'} isTitle={true}>
+                            <p>This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group as being especially vulnerable.</p>
+                          </QuestionTooltip>
+                          <div className={styles.cprChartSubtitle}>Data is for period January - June 2017</div>
+                          <div className={styles.chartKeys}>
+                            <strong>A:</strong> Suspected criminals, <strong>B:</strong> Non-violent political, <strong>C:</strong> Violent political, <strong>D:</strong> Discriminated groups, <strong>E:</strong> Indiscriminate
                           </div>
                         </div>
                       }

@@ -404,34 +404,6 @@
   cursor: pointer;
 }
 
-.groupsList {
-  margin: 10px 0 15px;
-}
-.groupsList li {
-  margin: 5px 0;
-  color: #2e65a1;
-  text-align: center;
-  line-height: 1em;
-}
-.groupsList li:nth-child(1) {
-  font-size: 22px;
-}
-.groupsList li:nth-child(2) {
-  font-size: 20px;
-  opacity: .9;
-}
-.groupsList li:nth-child(3) {
-  font-size: 18px;
-  opacity: .8;
-}
-.groupsList li:nth-child(4) {
-  font-size: 16px;
-  opacity: .7;
-}
-.groupsList li:nth-child(5) {
-  font-size: 14px;
-  opacity: .6;
-}
 .chartKeys {
   margin-bottom: 10px;
 }

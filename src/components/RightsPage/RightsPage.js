@@ -9,7 +9,7 @@ import QuestionTooltip from '../QuestionTooltip'
 import DownloadPopup from '../DownloadPopup'
 // import SortbyDropdown from '../SortbyDropdown'
 import RightDefinition from '../RightDefinition'
-import WordCloud from 'react-d3-cloud'
+import WordCloudChart from '../WordCloudChart'
 import { segsToUrl, getRegionName, joinClassName as jcn } from '../utils'
 import styles from './style.css'
 import rightsDefinitions from 'data/rights-definitions.json'
@@ -113,7 +113,6 @@ export default class RightsPage extends React.Component {
     const cloudWords = this.state.currCountry ? this.state.currCountry.rights.cprRangeAtRisk[urlSegs.right].map(word => {
       return { text: word[0], value: word[1] }
     }) : ''
-    const fontSizeMapper = word => word.value * 40 + 5
 
     return (
       <div className={styles.rightsPage}>
@@ -214,15 +213,11 @@ export default class RightsPage extends React.Component {
                     <QuestionTooltip width={214} question={'Groups most at risk'} isTitle={true}>
                       <p>This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our <a href='#' target='_blank'>summary of qualitative survey responses.[need link]</a></p>
                     </QuestionTooltip>
-                    <div className={styles.wordCloud}>
-                      <WordCloud
-                        width={this.state.rightPaneWidth - 10}
-                        height={cloudWords.length * 20}
-                        data={cloudWords}
-                        font={'Source Sans Pro, sans-serif'}
-                        fontSizeMapper={fontSizeMapper}
-                      />
-                    </div>
+                    <WordCloudChart
+                      width={this.state.rightPaneWidth - 10}
+                      height={cloudWords.length * 20}
+                      words={cloudWords}
+                    />
                     <QuestionTooltip width={220} question={'Distribution of abuse'} isTitle={true}>
                       <p>This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group as being especially vulnerable.</p>
                     </QuestionTooltip>
