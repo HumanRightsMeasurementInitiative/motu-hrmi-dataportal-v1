@@ -206,7 +206,7 @@ export default class RightsPage extends React.Component {
             </div>
             <div className={styles.infoContent}>
               <div className={styles.textWrapper}>
-                <RightDefinition right={urlSegs.right} isESRSelected={isESRSelected} tooltips={tooltips} />
+                <RightDefinition right={urlSegs.right} isESRSelected={isESRSelected} tooltips={tooltips} content={content} />
                 { !isESRSelected && cloudWords.length !== 0 &&
                   <div>
                     <QuestionTooltip width={214} question={content.cpr_at_risk.title} isTitle={true}>

@@ -176,7 +176,7 @@ export default class GeoPage extends React.Component {
                     </div>
                     <div className={styles.definitionWrapper}>
                       <div className={styles.rightInfo}>
-                        <RightDefinition right={urlSegs.right} isESRSelected={displayedRightsESR.length !== 0} tooltips={tooltips} />
+                        <RightDefinition right={urlSegs.right} isESRSelected={displayedRightsESR.length !== 0} tooltips={tooltips} content={content} />
                       </div>
                     </div>
                   </div>

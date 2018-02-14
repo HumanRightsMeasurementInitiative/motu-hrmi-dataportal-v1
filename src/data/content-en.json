@@ -1,23 +1,23 @@
 {
   "rights_name" : {
-    "food": "Right to food",
-    "education": "Right to education",
-    "health": "Right to health",
-    "housing": "Right to housing",
-    "work": "Right to work",
-    "opinion-and-expression": "Right to opinion and expression",
-    "assembly-and-association": "Right to assembly and association",
-    "participate-in-government": "Right to participate in government",
-    "freedom-from-torture": "Right to freedom from torture",
-    "freedom-from-execution": "Right to freedom from execution",
-    "freedom-from-arbitrary-arrest": "Right to freedom from arbitrary arrest",
-    "freedom-from-disappearance": "Right to freedom from disappearance"
+    "food": "right to food",
+    "education": "right to education",
+    "health": "right to health",
+    "housing": "right to housing",
+    "work": "right to work",
+    "opinion-and-expression": "right to opinion and expression",
+    "assembly-and-association": "right to assembly and association",
+    "participate-in-government": "right to participate in government",
+    "freedom-from-torture": "right to freedom from torture",
+    "freedom-from-execution": "right to freedom from execution",
+    "freedom-from-arbitrary-arrest": "right to freedom from arbitrary arrest",
+    "freedom-from-disappearance": "right to freedom from disappearance"
   },
   "subrights_name": {
-    "assembly": "Right to assembly",
-    "association": "Right to association",
-    "freedom-from-the-death-penalty": "Right to freedom from the death penalty",
-    "freedom-from-extrajudicial-execution": "Right to freedom from extrajudicial execution"
+    "assembly": "right to assembly",
+    "association": "right to association",
+    "freedom-from-the-death-penalty": "right to freedom from the death penalty",
+    "freedom-from-extrajudicial-execution": "right to freedom from extrajudicial execution"
   },
   "rights_category": {
     "esr": "Economic and Social Rights",
@@ -29,13 +29,13 @@
   },
   "menu": {
     "about": {
-      "title": "About the initiative",
+      "title": "About the Initiative",
       "paragraphs": [
-      	"The Human Rights Measurement Initiative (HRMI) is a unique collaborative venture between human rights practitioners, researchers, academics, and other human rights supporters.",
-      	"Our goal is to produce the first and best comprehensive set of metrics for tracking the human rights performance of countries.",
-      	"Our 2018 data-set includes:",
-      	"Over time we aim to extend our civil and political rights data to the rest of the world, and expand our full set of data to include additional metrics.",
-      	"Learn more about the Human Rights Measurement Initiative:"
+        "The Human Rights Measurement Initiative (HRMI) is a unique collaborative venture between human rights practitioners, researchers, academics, and other human rights supporters.",
+        "Our goal is to produce the first and best comprehensive set of metrics for tracking the human rights performance of countries.",
+        "Our 2018 data-set includes:",
+        "Over time we aim to extend our civil and political rights data to the rest of the world, and expand our full set of data to include additional metrics.",
+        "Learn more about the Human Rights Measurement Initiative:"
       ],
       "list": [
         "Annual data on five economic and social rights for 120 to 180 countries (depending on the right) from 2005 to 2015.",
@@ -50,43 +50,43 @@
     "methodology": {
       "title": "Methodology",
       "paragraphs": [
-      	"There is no one-size-fits-all methodology for measuring human rights performance, so we use different methodologies that are best tailored to each area. Wherever possible – e.g. in the area of economic and social rights – our methodologies use objective statistics produced by national governments and international agencies.",
-      	"For civil and political rights, where violations often take place in secret and reporting is very patchy, we use an expert survey approach to get our information directly from the human rights experts who are monitoring events in each country.",
-      	"Learn more:"
+        "There is no one-size-fits-all methodology for measuring human rights performance, so we use different methodologies that are best tailored to each area.",
+        "Wherever possible – e.g. in the area of economic and social rights – our methodologies use objective statistics produced by national governments and international agencies.",
+        "For civil and political rights, where violations often take place in secret and reporting is very patchy, we use an expert survey approach to get our information directly from the human rights experts who are monitoring events in each country.",
+        "Learn more:"
       ],
       "links": [
         "Get an overview of our methodology for measuring economic and social rights.",
         "Get an overview of our methodology for measuring civil and political rights.",
-        "Read our more in-depth methodology handbook.",
-        "See the HRMI expert survey for civil and political rights."
+        "Read our more in-depth methodology handbook: [Add hyperlink when available].",
+        "See the HRMI expert survey for civil and political rights (please note this is a link to a preview of the survey only, and any responses you make will not be collected)."
       ]
     },
     "howToUse": {
       "title": "How To Use",
       "paragraphs": [
-      	"There are lots of ways that you can use Human Rights Measurement Initiative (HRMI) data.",
-      	"These include:",
-      	"As an example, we’ve created country narratives that draw on these data for Mexico [insert hyperlink] and Australia [insert hyperlink]. We would love to hear how you are using our data. Please let us know",
-      	"You can download HRMI charts and data by clicking on the download icon at the bottom left of each screen.",
-      	"We ask that you take care to ensure that you understand the data and what they are showing, so that you do not misrepresent them.",
-      	"We want to make our work freely available to everyone, so all HRMI data, charts, and text are licensed under a",
-      	"This means that you are welcome to reuse what we have created as long as you attribute the Human Rights Measurement Initiative and link back to",
-      	"In charts, where space is limited, please reference the source as follows:",
-      	"Source:",
-      	"If you use HRMI data in formal research, please cite them with the following references:",
-      	"And when using the civil and political rights data please cite:",
-      	"And when using the economic and social rights data please cite:"
+        "There are lots of ways that you can use Human Rights Measurement Initiative (HRMI) data. These include:",
+        "As an example, we’ve created country narratives that draw on these data for Mexico [insert hyperlink] and Australia [insert hyperlink]. We would love to hear how you are using our data. Please let us know",
+        "You can download HRMI charts and data by clicking on the download icon at the bottom left of each screen.",
+        "We ask that you take care to ensure that you understand the data and what they are showing, so that you do not misrepresent them.",
+        "We want to make our work freely available to everyone, so all HRMI data, charts, and text are licensed under a",
+        "This means that you are welcome to reuse what we have created as long as you attribute the Human Rights Measurement Initiative and link back to",
+        "In charts, where space is limited, please reference the source as follows:",
+        "Source:",
+        "If you use HRMI data in formal research, please cite them with the following references:",
+        "And when using the civil and political rights data please cite:",
+        "And when using the economic and social rights data please cite:"
       ],
       "list": [
-      	"in advocacy and publicity campaigns",
-      	"to hold governments to account",
-      	"to help identify policies that work to advance human rights",
-      	"to stimulate competition for a \"race to the top\" (that is, to encourage countries to perform as well in human rights as they possibly can)",
-      	"Human Rights Measurement Initiative (HRMI). 2018.",
-      	"Version 2018.1",
-      	"Clay et al, (2018) \"The Human Rights Measurement Initiative (HRMI) Civil and Political Rights Indicators.\" Motu Working Paper, forthcoming.",
-      	"HRMI Economic and Social Rights Methodology 2017 Technical note.",
-      	"Sakiko Fukuda-Parr, Terra Lawson-Remer and Susan Randolph (2015), Fulfilling Social and Economic Rights, Oxford: Oxford University Press."
+        "in advocacy and publicity campaigns",
+        "to hold governments to account",
+        "to help identify policies that work to advance human rights",
+        "to stimulate competition for a \"race to the top\" (that is, to encourage countries to perform as well in human rights as they possibly can)",
+        "Human Rights Measurement Initiative (HRMI). 2018.",
+        "Version 2018.1",
+        "Clay et al, (2018) \"The Human Rights Measurement Initiative (HRMI) Civil and Political Rights Indicators.\" Motu Working Paper, forthcoming.",
+        "HRMI Economic and Social Rights Methodology 2017 Technical note.",
+        "Sakiko Fukuda-Parr, Terra Lawson-Remer and Susan Randolph (2015), Fulfilling Social and Economic Rights, Oxford: Oxford University Press."
       ],
       "links": [
         "here.",
@@ -184,7 +184,7 @@
       "question": "Why aren't the same indicators used for all countries?",
       "tooltip": "This is because the same data are not always collected for all countries in the world. The core assessment standard is mostly used for developing and non-OECD-member countries. The high-income OECD country assessment standard uses indicators that are often available only for high-income OECD countries. However, all countries are evaluated using both sets of indicators to the extent data are available."
     }, {
-      "question": "How does the HRMI methodology convert the above indicators into the Right to Food metric?",
+      "question": ["How does the HRMI methodology convert the above indicators into the ", " metric?"],
       "tooltip": {
         "paragraphs": [
           "All HRMI measures of economic and social rights have been produced using official statistics collected by national governments and harmonised by international organisations. For each indicator, our methodology compares the observed level of enjoyment of that dimension of human rights to the enjoyment level it should be feasible for that country to achieve given its per-capita income level. HRMI economic and social rights metrics thus show how well the State is using its available resources to ensure that all people enjoy these rights.",
@@ -209,7 +209,7 @@
         "linkText": "methodology note"
       }
     }, {
-      "question": "How has HRMI measured the Right to",
+      "question": "How has HRMI measured the",
       "tooltip": {
         "paragraphs": [
           "Each civil and political right metric has been produced from responses to a survey of in-country human rights experts. Respondents’ answers to questions about the frequency of violations of each civil and political right were combined using a statistical model that ensures the comparability of responses across countries. This results in a distribution of estimated levels of respect for each right in each country, represented by the scores and uncertainty bands shown throughout the data visualisations. Other information about who was identified as at risk for human rights abuse was also collected from our respondents, as shown.",
@@ -217,6 +217,9 @@
         ],
         "linkText": "website here"
       }
+    }, {
+      "question": "Why is there no right to housing measure using the high-income OECD country standard?",
+      "tooltip": "There currently are no data available that are comparable across most high-income OECD countries that reflect housing access and affordability problems. As a result, HRMI metrics on the right to housing are not available for high-income OECD countries."
     }
   ],
   "country_tooltips": [
@@ -285,5 +288,102 @@
   "select_region": "Select Region",
   "in": "in",
   "explore_this_rights_in": "Explore this rights in",
-  "explore_all_rights_in": "Explore all rights in"
+  "explore_all_rights_in": "Explore all rights in",
+  "rights_definitions": {
+    "food": {
+      "type": "ESR",
+      "definition": "According to international law, everyone has the fundamental right to be free from hunger. Everyone has the right to enjoy \"the availability of food in a quantity and quality sufficient to satisfy [their] dietary needs … free from adverse substances, and acceptable within a given culture\" (ICESCR Art. 11 and CESCR General Comment 12).",
+      "core_text": "Our core assessment standard uses the following indicator:",
+      "core_indicator": [
+        "% children under 5 not stunted (WHO)"
+      ],
+      "high_text": "Our high-income OECD country assessment standard uses the following indicator:",
+      "high_indicator": [
+        "% babies not of low birth weight (UNICEF)"
+      ]
+    },
+    "education": {
+      "type": "ESR",
+      "definition": "According to international law, everyone has the right to a quality, relevant, and culturally appropriate education. We are all entitled to a primary, secondary, higher, technical/vocational, and fundamental education that is physically accessible and financially affordable (ICESCR Article 13 and CESCR General Comments 11 and 13).",
+      "core_text": "Our core assessment standard uses the following indicator:",
+      "core_indicator": [
+        "Primary school completion rate (UNESCO)",
+        "Gross combined school enrolment rate (UNESCO)"
+      ],
+      "high_text": "Our high-income OECD country assessment standard uses the following indicator:",
+      "high_indicator": [
+        "Gross combined school enrolment rate (UNESCO)",
+        "Average of country average math & science PISA scores (OECD PISA)"
+      ]
+    },
+    "health": {
+      "type": "ESR",
+      "definition": "According to international law, everyone has the right to the “highest attainable standard of physical and mental health”. We are all entitled to timely and appropriate healthcare facilities and services that promote physical and mental health. This includes maternal, child and reproductive health care; preventative and curative health care; disease control, health rehabilitation; and natural and workplace environmental health (ICESCR Art. 12.1; CESCR General Comment 14).",
+      "core_text": "Our core assessment standard uses the following indicator:",
+      "core_indicator": [
+        "% child survival rate (UNICEF, WHO, World Bank, UNPD)",
+        "% survival to age 65 rate (UNPD)",
+        "Modern contraceptive use rate, % women 15-49 (UNPD)"
+      ],
+      "high_text": "Our high-income OECD country assessment standard uses the following indicator:",
+      "high_indicator": [
+        "% child survival rate (UNICEF, WHO, World Bank, UNPD)",
+        "% survival to age 65 rate (UNPD)"
+      ]
+    },
+    "housing": {
+      "type": "ESR",
+      "definition": "According to international law, everyone has the fundamental right to habitable and culturally appropriate housing. We are all entitled to housing that is accessible to services, materials, facilities, and infrastructure. This includes “...safe drinking water, energy for cooking, heating and lighting, sanitation and washing facilities, means of food storage, refuse disposal, site drainage, and emergency services” (ICESCR Article. 11.1 and CESCR General Comment 4).",
+      "core_text": "Our core assessment standard uses the following indicator:",
+      "core_indicator": [
+        "% population with access to improved sanitation (WHO/UNICEF)",
+        "% rural population with access to improved water source (WHO/UNICEF)"
+      ],
+      "high_text": "No right to housing measure is currently available using the high-income OECD country assessment standard.",
+      "high_indicator": []
+    },
+    "work": {
+      "type": "ESR",
+      "definition": "According to international law, everyone is entitled to the opportunity to gain a living by work that is freely chosen and “the right to the enjoyment of just and favourable conditions of work”. This includes “equal pay for equal work, the chance to earn a decent living for [ourselves] and [our] families, just and safe working conditions, and a reasonable limitation of working hours” (ICESCR, Articles 6 and 7).",
+      "core_text": "Our core assessment standard uses the following indicator:",
+      "core_indicator": [
+        "% population with income >$3.10 (2011 PPP$) per day (World Bank)"
+      ],
+      "high_text": "Our high-income OECD country assessment standard uses the following indicator:",
+      "high_indicator": [
+        "% unemployed not long-term unemployed (ILO)",
+        "% population with > 50% median income (LIS Cross-national Data Center)"
+      ]
+    },
+    "freedom-from-disappearance": {
+      "type": "CPR",
+      "definition": "According to international law, everyone has the right to freedom from “arrest, detention, abduction or any other form of deprivation of liberty” followed by a lack of acknowledgement that this has occurred or “concealment of the fate or whereabouts of the disappeared person”. Disappearances include all cases in which people are taken and their location or status is unclear, including those known to be held in secret and/or incommunicado detention (International Convention for the Protection of All Persons from Enforced Disappearance, Part I, Article 2)."
+    },
+    "freedom-from-arbitrary-arrest": {
+      "type": "CPR",
+      "measure_list": ["According to international law, everyone has the right to freedom from arrest or detention for:", "reasons not established by law;", "inability to fulfil a contractual obligation;", "thoughts, beliefs, conscience, or religion;", "opinions or their peaceful expression;", "participation in peaceful assembly;", "peaceful association with others, including trade union membership; or", "identity, including \"race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status\" (ICCPR, Part II, Article 2; Part III, Articles 9, 11, 18 19, 21, 22 & 26)."]
+    },
+    "freedom-from-execution": {
+      "type": "CPR",
+      "definition": "According to international law, the right to be free from execution includes freedom from any arbitrary or extrajudicial deprivation of life, as well as freedom from the death penalty even with due process of law (ICCPR, Part III, Article 6; Second Optional Protocol to the ICCPR, Article 1).",
+      "submeasures": "We have created separate sub-measures for freedom from extrajudicial killing and freedom from the death penalty, as well as a combined measure that is equal to the lowest score on the two separate sub-measures."
+    },
+    "freedom-from-torture": {
+      "type": "CPR",
+      "definition": "According to international law, everyone has the right to freedom from “any act by which severe pain or suffering, whether physical or mental, is intentionally inflicted on a person”. This includes torture or ill-treatment committed for any purpose, including (but not limited to) attempts to obtain information or confessions, punishment for suspected or committed acts, intimidation, coercion, and discrimination (CAT, Part 1, Article 1)."
+    },
+    "participate-in-government": {
+      "type": "CPR",
+      "conclusion_para": "These rights are to be enjoyed without discrimination and without \"unreasonable restrictions\"(ICCPR, Part III, Article 25).",
+      "measure_list": ["According to international law, everyone has the right:", "\"to take part in the conduct of public affairs, directly or through freely chosen representatives\";", "\"to vote and to be elected at genuine periodic elections\" in which every person can vote, every vote counts equally, and the ballot is secret;", "\"to have access, on general terms of equality, to public service.\""]
+    },
+    "assembly-and-association": {
+      "type": "CPR",
+      "definition": "According to international law, the right to peaceful assembly ensures that all people have the right to gather publicly or privately to engage in peaceful meetings, protests, or other group gatherings. Freedom of association ensures that everyone may choose (or not) to form and/or join any group, such as political parties, civil society organisations, activist organisations, trade unions, religious groups, cultural organisations, or other groups (ICCPR, Part III, Articles 21 & 22)."
+    },
+    "opinion-and-expression": {
+      "type": "CPR",
+      "definition": "According to international law, everyone has \"the right to hold opinions without interference\" and \"the right to freedom of expression.\" This includes the \"freedom to seek, receive, and impart information and ideas of all kinds” through any media, including any form of artistic expression. This right also protects \"a free, uncensored, and unhindered press or other media\" (ICCPR, Part III, Article 19; Human Rights Committee, General Comment No. 34, para. 13)."
+    }
+  }
 }

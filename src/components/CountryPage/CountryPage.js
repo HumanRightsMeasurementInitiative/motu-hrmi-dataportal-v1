@@ -207,12 +207,12 @@ export default class CountryPage extends React.Component {
                           })}
                         </ul>
                       }
-
-                      { isESRSelected &&
-                        <p className={styles.measureQues}>{content.question_tooltips[3].question} {currRight}?</p>
+                      { rightsDefinitions[currRight].conclusion_para &&
+                        <p className={styles.definition}>{rightsDefinitions[currRight].conclusion_para}</p>
                       }
                       { rightsDefinitions[currRight].core_text &&
                         <div>
+                          <p className={styles.measureQues}>{content.question_tooltips[3].question} {content.rights_name[currRight]}?</p>
                           <p>{rightsDefinitions[currRight].core_text}</p>
                           <ul>
                             {
@@ -236,21 +236,26 @@ export default class CountryPage extends React.Component {
                         </div>
                       }
                       { showMore && isESRSelected &&
-                        <QuestionTooltip width={238} question={content.question_tooltips[0].question}>
-                          <p>{content.question_tooltips[0].tooltip}</p>
-                        </QuestionTooltip>
-                      }
-                      { showMore && currRight === 'food' &&
-                        <QuestionTooltip width={360} question={content.question_tooltips[1].question}>
-                          <p>{content.question_tooltips[1].tooltip.paragraphs[0]}</p>
-                          <p>{content.question_tooltips[1].tooltip.paragraphs[1]}</p>
-                          <ul>
-                            <li>{content.question_tooltips[1].tooltip.list[0]}</li>
-                            <li>{content.question_tooltips[1].tooltip.list[1]}</li>
-                            <li>{content.question_tooltips[1].tooltip.list[2]}</li>
-                          </ul>
-                          <p className={styles.tooptipLink}>{content.question_tooltips[1].tooltip.paragraphs[2]} <a href='https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/' target='_blank'>{content.question_tooltips[1].tooltip.linkText}</a>.</p>
-                        </QuestionTooltip>
+                        <div>
+                          <QuestionTooltip width={238} question={content.question_tooltips[0].question}>
+                            <p>{content.question_tooltips[0].tooltip}</p>
+                          </QuestionTooltip>
+                          <QuestionTooltip width={360} question={content.question_tooltips[1].question[0] + content.rights_name[currRight] + content.question_tooltips[1].question[1]}>
+                            <p>{content.question_tooltips[1].tooltip.paragraphs[0]}</p>
+                            <p>{content.question_tooltips[1].tooltip.paragraphs[1]}</p>
+                            <ul>
+                              <li>{content.question_tooltips[1].tooltip.list[0]}</li>
+                              <li>{content.question_tooltips[1].tooltip.list[1]}</li>
+                              <li>{content.question_tooltips[1].tooltip.list[2]}</li>
+                            </ul>
+                            <p className={styles.tooptipLink}>{content.question_tooltips[1].tooltip.paragraphs[2]} <a href='https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/' target='_blank'>{content.question_tooltips[1].tooltip.linkText}</a>.</p>
+                          </QuestionTooltip>
+                          { currRight === 'housing' &&
+                            <QuestionTooltip width={238} question={content.question_tooltips[4].question}>
+                              <p>{content.question_tooltips[4].tooltip}</p>
+                            </QuestionTooltip>
+                          }
+                        </div>
                       }
                       { showMore && isCPRSelected &&
                         <div>
@@ -259,7 +264,7 @@ export default class CountryPage extends React.Component {
                             <p>{content.question_tooltips[2].tooltip.paragraphs[1]}</p>
                             <p className={styles.tooptipLink}>{content.question_tooltips[2].tooltip.paragraphs[2]} <a href='#' target='_blank'>{content.question_tooltips[2].tooltip.linkText}</a>.</p>
                           </QuestionTooltip>
-                          <QuestionTooltip width={294} question={content.question_tooltips[3].question + ' ' + currRight + '?'}>
+                          <QuestionTooltip width={294} question={content.question_tooltips[3].question + ' ' + content.rights_name[currRight] + '?'}>
                             <p>{content.question_tooltips[3].tooltip.paragraphs[0]}</p>
                             <p className={styles.tooptipLink}>{content.question_tooltips[3].tooltip.paragraphs[1]} <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blank'>{content.question_tooltips[3].tooltip.linkText}</a>.</p>
                           </QuestionTooltip>

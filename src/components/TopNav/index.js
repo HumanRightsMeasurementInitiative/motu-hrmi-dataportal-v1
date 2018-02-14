@@ -38,7 +38,8 @@ export default class TopNav extends React.Component {
         <NavItem label={menuText.methodology.title} labelKey='methodology'>
           <p className={styles.para}>{menuText.methodology.paragraphs[0]}</p>
           <p className={styles.para}>{menuText.methodology.paragraphs[1]}</p>
-          <div>{menuText.methodology.paragraphs[2]}</div>
+          <p className={styles.para}>{menuText.methodology.paragraphs[2]}</p>
+          <div>{menuText.methodology.paragraphs[3]}</div>
           <ul className={styles.list}>
             <li className={styles.listEl}>
               <span className={styles.linkWrapper}><a href='https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/' target='_blank'>{menuText.methodology.links[0]}</a></span>
@@ -57,8 +58,6 @@ export default class TopNav extends React.Component {
         <NavItem label={menuText.howToUse.title} labelKey='howToUse'>
           <p className={styles.para}>
             {menuText.howToUse.paragraphs[0]}
-            <br />
-            {menuText.howToUse.paragraphs[1]}
           </p>
           <ul className={styles.list}>
             <li className={styles.listEl}>{menuText.howToUse.list[0]}</li>
@@ -66,23 +65,23 @@ export default class TopNav extends React.Component {
             <li className={styles.listEl}>{menuText.howToUse.list[2]}</li>
             <li className={styles.listEl}>{menuText.howToUse.list[3]}</li>
           </ul>
-          <p className={styles.para}>{menuText.howToUse.paragraphs[2]} <a href='https://humanrightsmeasurement.org/get-involved/tell-us/' target='_blank'>{menuText.howToUse.links[0]}</a></p>
-          <p className={styles.para}>{menuText.howToUse.paragraphs[3]}<br />{menuText.howToUse.paragraphs[4]}</p>
-          <p className={styles.para}>{menuText.howToUse.paragraphs[5]} <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>{menuText.howToUse.links[1]}</a>. {menuText.howToUse.paragraphs[6]} <a href='https://humanrightsmeasurement.org/' target='_blank'>{menuText.howToUse.links[2]}</a>.</p>
-          <p className={styles.para}>{menuText.howToUse.paragraphs[7]}</p>
-          <p className={styles.para}>{menuText.howToUse.paragraphs[8]} <a href='https://humanrightsmeasurement.org' target='_blank'>{menuText.howToUse.links[3]}</a></p>
-          <p className={styles.para}>{menuText.howToUse.paragraphs[9]}</p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[1]} <a href='https://humanrightsmeasurement.org/get-involved/tell-us/' target='_blank'>{menuText.howToUse.links[0]}</a></p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[2]}<br />{menuText.howToUse.paragraphs[3]}</p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[4]} <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>{menuText.howToUse.links[1]}</a>. {menuText.howToUse.paragraphs[5]} <a href='https://humanrightsmeasurement.org/' target='_blank'>{menuText.howToUse.links[2]}</a>.</p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[6]}</p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[7]} <a href='https://humanrightsmeasurement.org' target='_blank'>{menuText.howToUse.links[3]}</a></p>
+          <p className={styles.para}>{menuText.howToUse.paragraphs[8]}</p>
           <ul className={styles.list}>
             <li className={styles.listEl}>{menuText.howToUse.list[4]} <a href='https://humanrightsmeasurement.org/' target='_blank'>{menuText.howToUse.links[4]}</a> {menuText.howToUse.list[5]}</li>
           </ul>
           <p className={styles.para}>
-            {menuText.howToUse.paragraphs[10]}
+            {menuText.howToUse.paragraphs[9]}
           </p>
           <ul className={styles.list}>
             <li className={styles.listEl}>{menuText.howToUse.list[6]}</li>
           </ul>
           <p className={styles.para}>
-            {menuText.howToUse.paragraphs[11]}
+            {menuText.howToUse.paragraphs[10]}
           </p>
           <ul className={styles.list}>
             <li className={styles.listEl}>{menuText.howToUse.list[7]}</li>
