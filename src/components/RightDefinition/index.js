@@ -4,7 +4,7 @@ import QuestionTooltip from '../QuestionTooltip'
 import rightsDefinitions from 'data/rights-definitions.json'
 import styles from './style.css'
 
-export default class CountryPage extends React.Component {
+export default class RightDefinition extends React.Component {
   static propTypes = {
     right: PropTypes.string.isRequired,
     isESRSelected: PropTypes.bool.isRequired,

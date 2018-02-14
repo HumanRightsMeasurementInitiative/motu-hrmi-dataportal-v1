@@ -5,6 +5,7 @@ import { urlPush, languageChange } from '../actions'
 const mapStateToProps = (state) => (
   {
     urlSegs: state.router.urlSegs,
+    content: state.content,
   }
 )
 

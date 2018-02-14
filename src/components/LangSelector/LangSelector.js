@@ -6,6 +6,7 @@ import styles from './styles.css'
 
 export default class LangSelector extends React.Component {
   static propTypes = {
+    content: PropTypes.object.isRequired,
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
     changeLanguage: PropTypes.func.isRequired,
@@ -19,7 +20,6 @@ export default class LangSelector extends React.Component {
 
   componentDidMount() {
     document.addEventListener('click', this.documentClick)
-    this.refs.options.style.left = this.refs.text.offsetWidth + 'px'
   }
 
   componentWillUnMount() {
@@ -51,17 +51,17 @@ export default class LangSelector extends React.Component {
     switch (language) {
       case 'English':
         return 'EN'
-      case 'Spanish':
+      case 'Español':
         return 'ES'
-      case 'Portuguese':
+      case 'Português':
         return 'PT'
-      case 'French':
+      case 'Français':
         return 'FR'
     }
   }
 
   optionList = () => {
-    const languages = ['English', 'Spanish', 'Portuguese', 'French']
+    const languages = ['English', 'Español', 'Português', 'Français']
     return languages.map((item, i) => {
       const optionClassNames = jcn({
         active: this.abbreviator(item) === this.props.urlSegs.language,
@@ -72,7 +72,7 @@ export default class LangSelector extends React.Component {
   }
 
   render() {
-    const { withArrow } = this.props
+    const { withArrow, content } = this.props
     const { language } = this.props.urlSegs
 
     const optionsClassNames = jcn({
@@ -82,8 +82,8 @@ export default class LangSelector extends React.Component {
 
     return (
       <div className={styles.wrapper} ref='languageWrapper'>
-        <div className={styles.toggleBtn} onClick={this.toggleDropdown} style={{ paddingRight: withArrow ? '16px' : '0px' }}><span ref='text'>Language: </span><span className={styles.currentLang}>{language}</span></div>
-        <ul className={optionsClassNames} ref='options'>
+        <div className={styles.toggleBtn} onClick={this.toggleDropdown} style={{ paddingRight: withArrow ? '16px' : '0px' }}><span>{content.lang}: </span><span className={styles.currentLang}>{language}</span></div>
+        <ul className={optionsClassNames}>
           {this.optionList()}
         </ul>
       </div>

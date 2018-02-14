@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class CountryName extends React.Component {
+export default class ValueTooltips extends React.Component {
   static propTypes = {
     isESR: PropTypes.bool.isRequired,
     translateX: PropTypes.number.isRequired,

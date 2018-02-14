@@ -86,7 +86,7 @@ export default class GeoPage extends React.Component {
           <div className='column'>
             <div className={styles.columnLeft}>
               <div className={styles.searchInputWrapper}>
-                <input className={styles.searchInput} type="text" placeholder='Search Country' />
+                <input className={styles.searchInput} type='text' placeholder={content.search_country} />
               </div>
               <ul className={styles.regionList}>
                 {regionCodes.map((regionCode, i) => (
@@ -126,9 +126,9 @@ export default class GeoPage extends React.Component {
                 </div>
               </div>
               <div className={styles.chartsFooter}>
-                <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={['chart']} /></div>
+                <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={['chart']} content={content} /></div>
                 <div className={styles.text}>{content.footer_text.by_geography}</div>
-                <div className={styles.source}>{content.footer_text.source} <a className={styles.small} href="https://humanrightsmeasurement.org">https://humanrightsmeasurement.org</a></div>
+                <div className={styles.source}>{content.footer_text.source} <a className={styles.small} href='https://humanrightsmeasurement.org'>https://humanrightsmeasurement.org</a></div>
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default class GeoPage extends React.Component {
               { urlSegs.right === 'all'
                 ? (
                   <div>
-                    <div className={styles.esrTitle}>Economic and Social Rights</div>
+                    <div className={styles.esrTitle}>{content.rights_category.esr}</div>
                     <ul className={styles.esrList}>
                       {displayedRightsESR.map((right, i) => (
                         <RightsItem key={i} right={right.code} data={rightsByRegion[urlSegs.region]} esrStandard={esrStandard} onItemClick={this.setRight}>
@@ -145,7 +145,7 @@ export default class GeoPage extends React.Component {
                         </RightsItem>
                       ))}
                     </ul>
-                    <div className={styles.cprTitle}>Civil and Political Rights</div>
+                    <div className={styles.cprTitle}>{content.rights_category.cpr}</div>
                     <ul className={styles.cprList}>
                       {displayedRightsCPR.map((right, i) => (
                         <RightsItem key={i} right={right.code} data={rightsByRegion[urlSegs.region]} onItemClick={this.setRight}>
@@ -159,7 +159,7 @@ export default class GeoPage extends React.Component {
                     <div className={styles.specRightHeader} onClick={this.setRightToAll} rightcolor={urlSegs.right}>
                       <div className={styles.rightName}>Right to {urlSegs.right}</div>
                       <div className={styles.rightCate}>
-                        {displayedRightsESR.length === 0 ? 'Civil and Political Rights' : 'Ecomonic and Social Rights'}
+                        {displayedRightsESR.length === 0 ? content.rights_category.cpr : content.rights_category.esr}
                       </div>
                       { displayedRightsESR.length
                         ? <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} right={urlSegs.right} esrStandard={esrStandard} />
@@ -167,7 +167,7 @@ export default class GeoPage extends React.Component {
                       }
                       <div className={styles.linkWrapper}>
                         <div className='arrowLink'>
-                          <div className='text'>Explore this rights in:</div>
+                          <div className='text'>{content.explore_this_rights_in}:</div>
                           <div className='text underline' onClick={this.setExploreBy}>
                             {urlSegs.region}
                           </div>

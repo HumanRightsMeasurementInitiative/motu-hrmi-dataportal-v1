@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class CloseIcon extends React.Component {
+export default class QuestionMark extends React.Component {
   render() {
     return (
       <svg viewBox='0 0 44 44'>

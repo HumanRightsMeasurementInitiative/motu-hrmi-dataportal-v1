@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { joinClassName as jcn } from '../utils'
 import styles from './style.css'
 
-export default class CountryName extends React.Component {
+export default class ESRRects extends React.Component {
   static propTypes = {
     translateX: PropTypes.number.isRequired,
     translateY: PropTypes.number.isRequired,

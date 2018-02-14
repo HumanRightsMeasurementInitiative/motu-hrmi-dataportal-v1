@@ -70,6 +70,7 @@
 }
 .langSelector {
   padding: 24px 0;
+  width: 80px;
   font-size: 12px;
   text-align: left;
 }

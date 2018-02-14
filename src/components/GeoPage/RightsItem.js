@@ -21,7 +21,7 @@ export default class RightsItem extends React.Component {
     const { children, data, right, esrStandard } = this.props
     return (
       <li className={styles.rightsItem} onClick={this.onClick} rightcolor={children}>
-        <div className={styles.chartCaption}>Right to {children}</div>
+        <div className={styles.chartCaption}>{children}</div>
         <div className={styles.chartWrapper}>
           <MiniBarChart height={28} data={data} right={right} esrStandard={esrStandard} />
         </div>

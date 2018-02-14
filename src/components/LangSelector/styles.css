@@ -13,8 +13,10 @@
 .options {
   position: absolute;
   z-index: 10;
-  top: 6px;
+  left: 0;
+  top: 100%;
   margin: 0;
+  width: 100%;
   background: #fff;
   border: 1px solid #a5a5a5;
   font-size: 1em;

@@ -7,6 +7,7 @@ import styles from './style.css'
 export default class DownloadPopup extends React.Component {
   static propTypes = {
     itemList: PropTypes.array.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   constructor() {
@@ -32,7 +33,7 @@ export default class DownloadPopup extends React.Component {
   }
 
   render() {
-    const { itemList } = this.props
+    const { itemList, content } = this.props
     const joinedClass = jcn({
       downloadPopup: true,
       active: this.state.isOpen,
@@ -43,16 +44,16 @@ export default class DownloadPopup extends React.Component {
         <div onClick={this.togglePopup}><DownloadIcon color={this.state.isOpen ? '#fff' : '#25a9e0'} /></div>
         <ul className={styles.list}>
           { itemList.indexOf('chart') > -1 &&
-            <li>Download chart</li>
+            <li>{content.download[0]}</li>
           }
           { itemList.indexOf('bar chart') > -1 &&
-            <li>Download bar chart</li>
+            <li>{content.download[1]}</li>
           }
           { itemList.indexOf('line chart') > -1 &&
-            <li>Download line chart</li>
+            <li>{content.download[2]}</li>
           }
-          <li>Download csv</li>
-          <li>Download all the above</li>
+          <li>{content.download[3]}</li>
+          <li>{content.download[4]}</li>
         </ul>
       </div>
     )

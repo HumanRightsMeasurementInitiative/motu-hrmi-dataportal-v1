@@ -6,6 +6,7 @@ import styles from './style.css'
 
 export default class RegionSelector extends React.Component {
   static propTypes = {
+    selectRetionText: PropTypes.string.isRequired,
     rightsByRegion: PropTypes.object.isRequired,
     urlSegs: PropTypes.object.isRequired,
     isActive: PropTypes.bool.isRequired,
@@ -33,7 +34,7 @@ export default class RegionSelector extends React.Component {
   }
 
   render() {
-    const { rightsByRegion, urlSegs, isActive } = this.props
+    const { selectRetionText, rightsByRegion, urlSegs, isActive } = this.props
 
     const regions = Object.keys(rightsByRegion).map((region, i) => (
       <RegionItem key={i} index={i} code={region} onItemClick={this.onItemClick} selected={region === urlSegs.region} closePopup={this.closePopup} whiteBorder={true}>
@@ -48,7 +49,7 @@ export default class RegionSelector extends React.Component {
 
     return (
       <div className={regionSelector} style={{ opacity: isActive ? 1 : 0.2 }}>
-        <div className={styles.toggleSwitch} onClick={this.toggleRegionDropdown} style={{ cursor: isActive ? 'pointer' : 'default' }}>Select Region</div>
+        <div className={styles.toggleSwitch} onClick={this.toggleRegionDropdown} style={{ cursor: isActive ? 'pointer' : 'default' }}>{selectRetionText}</div>
         <ul className={styles.regionDropdown}>
           {regions}
         </ul>

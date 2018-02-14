@@ -89,13 +89,13 @@ export default class RightsPage extends React.Component {
     const CPRs = rights.filter(right => right.type === 'CPR')
 
     const ESRItems = ESRs.map((right, i) => (
-      <RightsItem key={right.code} right={right.code} onItemClick={this.setRight} selected={right.code === urlSegs.right}>
-        {right.code}
+      <RightsItem key={right.code} right={right.code} onItemClick={this.setRight} selected={right.code === urlSegs.right} content={content}>
+        {content.rights_name[right.code]}
       </RightsItem>
     ))
     const CPRItems = CPRs.map((right, i) => (
-      <RightsItem key={right.code} right={right.code} onItemClick={this.setRight} selected={right.code === urlSegs.right}>
-        {right.code}
+      <RightsItem key={right.code} right={right.code} onItemClick={this.setRight} selected={right.code === urlSegs.right} content={content}>
+        {content.rights_name[right.code]}
       </RightsItem>
     ))
 
@@ -120,15 +120,15 @@ export default class RightsPage extends React.Component {
           <div className='column'>
             <div className={styles.columnLeft}>
               <div className={styles.regionSelectorWrapper}>
-                <RegionSelector rightsByRegion={rightsByRegion} urlSegs={urlSegs} isActive={isESRSelected} onItemClick={this.setRegion} />
+                <RegionSelector selectRetionText={content.select_region} rightsByRegion={rightsByRegion} urlSegs={urlSegs} isActive={isESRSelected} onItemClick={this.setRegion} />
               </div>
               <div className={styles.rightsWrapper}>
                 <div className={styles.rightList}>
-                  <div className={styles.ESRTitle}>Economic and Social Rights</div>
+                  <div className={styles.ESRTitle}>{content.rights_category.esr}</div>
                   <ul>
                     {ESRItems}
                   </ul>
-                  <div className={styles.CPRTitle}>Civil and Political Rights</div>
+                  <div className={styles.CPRTitle}>{content.rights_category.cpr}</div>
                   <ul>
                     {CPRItems}
                   </ul>
@@ -138,7 +138,7 @@ export default class RightsPage extends React.Component {
           </div>
           <div className='column'>
             <div className={styles.chartsHeader}>
-              <div className={styles.regionName}><span style={{ color: isESRSelected ? '#00af49' : '#2e65a1' }}>Right to {urlSegs.right}</span> in {getRegionName(urlSegs.region)}</div>
+              <div className={styles.regionName}><span style={{ color: isESRSelected ? '#00af49' : '#2e65a1' }}>{content.rights_name[urlSegs.right]}</span> {content.in} {getRegionName(urlSegs.region)}</div>
               {/* <div className={styles.sortBy} style={{ opacity: (isESRSelected || urlSegs.region === 'cpr-pilot') ? 1 : 0 }}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div> */}
               { isESRSelected
                 ? <div className={styles.esrLegend}>
@@ -168,8 +168,8 @@ export default class RightsPage extends React.Component {
                   resetCurrCountry={this.resetCurrCountry} />
                 : <div className={styles.CPRAlertWrapper}>
                   <div className={styles.CPRAlert}>
-                    The data is available only for the <u>HRMI Civil and political rights pilot countries</u>
-                    <div className={styles.button}><button onClick={this.gotoCPRPilot}>GOT IT</button></div>
+                    {content.cpr_alert.text} <u>{content.cpr_alert.underline_text}</u>
+                    <div className={styles.button}><button onClick={this.gotoCPRPilot}>{content.cpr_alert.button_text}</button></div>
                   </div>
                 </div>
               }
@@ -185,7 +185,7 @@ export default class RightsPage extends React.Component {
               }
             </div>
             <div className={styles.chartsFooter}>
-              <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={ESRs.indexOf(urlSegs.right) > -1 ? ['bar chart', 'line chart'] : ['bar chart']} /></div>
+              <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={ESRs.indexOf(urlSegs.right) > -1 ? ['bar chart', 'line chart'] : ['bar chart']} content={content} /></div>
               <div className={styles.text}>{isESRSelected ? content.footer_text.rights_page_esr : content.footer_text.rights_page_cpr}</div>
               <div className={styles.source}>{content.footer_text.source} <a className={styles.small} href='https://humanrightsmeasurement.org'>https://humanrightsmeasurement.org</a></div>
             </div>
@@ -197,7 +197,7 @@ export default class RightsPage extends React.Component {
                 <div className={styles.regionName}>in {this.state.currCountry ? this.state.currCountry.countryCode : getRegionName(urlSegs.region)}</div>
               </div>
               <div className='arrowLink'>
-                <div className='text'>Expore all rights in:</div>
+                <div className='text'>{content.explore_all_rights_in}:</div>
                 <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
                 { this.state.currCountry !== null &&
                   <div className='text underline' onClick={this.setCountry}>{this.state.currCountry.countryCode}</div>
@@ -209,27 +209,27 @@ export default class RightsPage extends React.Component {
                 <RightDefinition right={urlSegs.right} isESRSelected={isESRSelected} tooltips={tooltips} />
                 { !isESRSelected && cloudWords.length !== 0 &&
                   <div>
-                    <QuestionTooltip width={214} question={'Groups most at risk'} isTitle={true}>
-                      <p>This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our <a href='#' target='_blank'>summary of qualitative survey responses.[need link]</a></p>
+                    <QuestionTooltip width={214} question={content.cpr_at_risk.title} isTitle={true}>
+                      <p>{content.cpr_at_risk.tooltip} <a href='#' target='_blank'>{content.cpr_at_risk.link}</a>.</p>
                     </QuestionTooltip>
                     <WordCloudChart
                       width={this.state.rightPaneWidth - 10}
                       height={cloudWords.length * 20}
                       words={cloudWords}
                     />
-                    <QuestionTooltip width={220} question={'Distribution of abuse'} isTitle={true}>
-                      <p>This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group as being especially vulnerable.</p>
+                    <QuestionTooltip width={220} question={content.cpr_abuse.title} isTitle={true}>
+                      <p>{content.cpr_abuse.tooltip}</p>
                     </QuestionTooltip>
-                    <div className={styles.cprChartSubtitle}>Data is for period January - June 2017</div>
+                    <div className={styles.cprChartSubtitle}>{content.cpr_abuse.subtitle}</div>
                     <div className={styles.chartKeys}>
-                      <strong>A:</strong> Suspected criminals, <strong>B:</strong> Non-violent political, <strong>C:</strong> Violent political, <strong>D:</strong> Discriminated groups, <strong>E:</strong> Indiscriminate
+                      <strong>A:</strong> {content.cpr_abuse.keys[0]}, <strong>B:</strong> {content.cpr_abuse.keys[1]}, <strong>C:</strong> {content.cpr_abuse.keys[2]}, <strong>D:</strong> {content.cpr_abuse.keys[3]}, <strong>E:</strong> {content.cpr_abuse.keys[4]}
                     </div>
                   </div>
                 }
                 { (isESRSelected && this.state.currCountry) &&
                   <div>
-                    <div className={styles.subtitleESR}>Right trend over time</div>
-                    <div className={styles.esrChartKey}>This chart shows data using the core country standard.</div>
+                    <div className={styles.subtitleESR}>{content.esr_trend.title}</div>
+                    <div className={styles.esrChartKey}>{content.esr_trend.subtitle}</div>
                   </div>
                 }
               </div>
