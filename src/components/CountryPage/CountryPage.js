@@ -73,6 +73,9 @@ export default class CountryPage extends React.Component {
     const isESRSelected = ESRs.some(r => r.code === currRight)
     const isCPRSelected = CPRs.some(r => r.code === currRight)
 
+    const displayPercent = (data) => data !== null ? data.toFixed(0) + '%' : 'N/A'
+    const displayTenth = data => data !== null ? data.toFixed(1) + '/10' : 'N/A'
+
     const cloudWords = isCPRSelected && currCountry && currRight !== 'all' ? currCountry.rights.cprRangeAtRisk[currRight].map(word => {
       return { text: word[0], value: word[1] }
     }) : ''
@@ -135,17 +138,20 @@ export default class CountryPage extends React.Component {
                 <div className={styles.rightInfo}>
                   { (isESRSelected || currRight === 'all') &&
                     <div>
-                      <div className={styles.subtitleESR}>Economic and Social Rights</div>
+                      <div className={styles.subtitleESR}>{content.rights_category.esr}</div>
                       <div className={styles.esrChartSubtitle}>most recent data (2015 or earlier)</div>
                       <div className={styles.barChartWrapper} style={{ height: 80 }}>
                         <BarChartESR data={currCountry.rights[esrStandard]} />
                       </div>
                       { currRight !== 'all' &&
                         <div>
-                          <div className={styles.esrRegionValue}>Right to {getRegionName(urlSegs.region)} 22%</div>
+                          <div className={styles.esrRegionValue}>Right to {getRegionName(urlSegs.region)} <span className={styles.floatNum}>{displayPercent(currCountry.rights[esrStandard][currRight])}</span></div>
                           <ul className={styles.esrValueList}>
-                            <li className={styles.withDot}>Primary school completion rate 11%</li>
-                            <li className={styles.withDot}>Gross combined school entolment rate 33%</li>
+                            {
+                              Object.keys(currCountry.rights[esrStandard][currRight + '_sub']).map((item, i) => {
+                                return <li key={i} className={styles.withDot}>{item} <span className={styles.floatNum}>{displayPercent(currCountry.rights[esrStandard][currRight + '_sub'][item])}</span></li>
+                              })
+                            }
                           </ul>
                         </div>
                       }
@@ -155,7 +161,7 @@ export default class CountryPage extends React.Component {
                     <div>
                       { currCountry.rights.cpr &&
                         <div>
-                          <div className={styles.subtitleCPR}>Civil and Political Rights</div>
+                          <div className={styles.subtitleCPR}>{content.rights_category.cpr}</div>
                           <div className={styles.cprChartSubtitle}>data is for period january - june 2017</div>
                           <div className={styles.barChartWrapper}>
                             <BarChartCPR data={currCountry.rights.cpr} height={80} />
@@ -171,13 +177,7 @@ export default class CountryPage extends React.Component {
                         </div>
                       }
                       { currRight !== 'all' &&
-                        <div>
-                          <div className={styles.cprRegionValue}>Right to {getRegionName(urlSegs.region)} 22%</div>
-                          <ul className={styles.esrValueList}>
-                            <li className={styles.withDot}>Primary school completion rate 11%</li>
-                            <li className={styles.withDot}>Gross combined school entolment rate 33%</li>
-                          </ul>
-                        </div>
+                        <div className={styles.cprRegionValue}>Right to {getRegionName(urlSegs.region)} <span className={styles.floatNum}>{displayTenth(currCountry.rights.cpr[currRight].mean)}</span></div>
                       }
                     </div>
                   }
@@ -265,29 +265,29 @@ export default class CountryPage extends React.Component {
                           </QuestionTooltip>
                         </div>
                       }
-                      <div className={styles.showMoreBtn} onClick={this.toggleShowMore}>{showMore ? 'Show less' : 'Show more'}</div>
+                      <div className={styles.showMoreBtn} onClick={this.toggleShowMore}>{showMore ? content.show_less : content.show_more}</div>
                       { isESRSelected &&
                         <div>
-                          <div className={styles.subtitleESR}>Right trend over time</div>
-                          <div className={styles.esrChartKey}>This chart shows data using the core country standard.</div>
+                          <div className={styles.subtitleESR}>{content.esr_trend.title}</div>
+                          <div className={styles.esrChartKey}>{content.esr_trend.subtitle}</div>
                         </div>
                       }
                       { !isESRSelected && cloudWords.length !== 0 &&
                         <div>
-                          <QuestionTooltip width={214} question={'Groups most at risk'} isTitle={true}>
-                            <p>This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our <a href='#' target='_blank'>summary of qualitative survey responses.[need link]</a></p>
+                          <QuestionTooltip width={214} question={content.cpr_at_risk.title} isTitle={true}>
+                            <p>{content.cpr_at_risk.tooltip} <a href='#' target='_blank'>{content.cpr_at_risk.link}</a>.</p>
                           </QuestionTooltip>
                           <WordCloudChart
                             width={this.state.rightPaneWidth - 10}
                             height={cloudWords.length * 20}
                             words={cloudWords}
                           />
-                          <QuestionTooltip width={220} question={'Distribution of abuse'} isTitle={true}>
-                            <p>This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group as being especially vulnerable.</p>
+                          <QuestionTooltip width={220} question={content.cpr_abuse.title} isTitle={true}>
+                            <p>{content.cpr_abuse.tooltip}</p>
                           </QuestionTooltip>
-                          <div className={styles.cprChartSubtitle}>Data is for period January - June 2017</div>
+                          <div className={styles.cprChartSubtitle}>{content.cpr_abuse.subtitle}</div>
                           <div className={styles.chartKeys}>
-                            <strong>A:</strong> Suspected criminals, <strong>B:</strong> Non-violent political, <strong>C:</strong> Violent political, <strong>D:</strong> Discriminated groups, <strong>E:</strong> Indiscriminate
+                            <strong>A:</strong> {content.cpr_abuse.keys[0]}, <strong>B:</strong> {content.cpr_abuse.keys[1]}, <strong>C:</strong> {content.cpr_abuse.keys[2]}, <strong>D:</strong> {content.cpr_abuse.keys[3]}, <strong>E:</strong> {content.cpr_abuse.keys[4]}
                           </div>
                         </div>
                       }

@@ -224,5 +224,28 @@
       "When CPR data are not available in a country, only ESR axes will be shown on the radar.",
       "A dashed and greyed out axis means that there is no data available for that rights in that country."
     ]
-  }
+  },
+  "esr_trend": {
+    "title": "Right trend over time",
+    "subtitle": "This chart shows data using the core country standard."
+  },
+  "cpr_at_risk": {
+    "title": "Groups most at risk",
+    "tooltip": "This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our",
+    "link": "summary of qualitative survey responses"
+  },
+  "cpr_abuse": {
+    "title": "Distribution of abuse",
+    "subtitle": "Data is for period January - June 2017",
+    "tooltip": "This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group as being especially vulnerable.",
+    "keys": [
+      "Suspected criminals",
+      "Non-violent political",
+      "Violent political",
+      "Discriminated groups",
+      "Indiscriminate"
+    ]
+  },
+  "show_more": "Show more",
+  "show_less": "Show less"
 }

@@ -368,6 +368,9 @@
   border: 1px solid #616161;
   border-radius: 4px;
 }
+.floatNum {
+  float: right;
+}
 
 .esrRegionValue,
 .cprRegionValue {
