@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import QuestionTooltip from '../QuestionTooltip'
-import rightsDefinitions from 'data/rights-definitions.json'
 import styles from './style.css'
 
 export default class RightDefinition extends React.Component {
@@ -14,6 +13,7 @@ export default class RightDefinition extends React.Component {
 
   render() {
     const { right, isESRSelected, tooltips, content } = this.props
+    const rightsDefinitions = content.rights_definitions
 
     return (
       <div style={{ height: '100%' }}>
@@ -30,7 +30,7 @@ export default class RightDefinition extends React.Component {
         }
         { rightsDefinitions[right].core_text &&
           <div>
-            <p className={styles.measureQues}>{tooltips[3].question} {content.rights_name[right]}?</p>
+            <p className={styles.measureQues}>{tooltips[3].question} {content.rights_name[right].toLowerCase()}?</p>
             <p>{rightsDefinitions[right].core_text}</p>
             <ul>
               {
@@ -58,7 +58,7 @@ export default class RightDefinition extends React.Component {
             <QuestionTooltip width={238} question={tooltips[0].question}>
               <p>{tooltips[0].tooltip}</p>
             </QuestionTooltip>
-            <QuestionTooltip width={360} question={tooltips[1].question[0] + content.rights_name[right] + tooltips[1].question[1]}>
+            <QuestionTooltip width={360} question={tooltips[1].question[0] + content.rights_name[right].toLowerCase() + tooltips[1].question[1]}>
               <p>{tooltips[1].tooltip.paragraphs[0]}</p>
               <p>{tooltips[1].tooltip.paragraphs[1]}</p>
               <ul>
@@ -82,7 +82,7 @@ export default class RightDefinition extends React.Component {
               <p>{tooltips[2].tooltip.paragraphs[1]}</p>
               <p className={styles.tooptipLink}>{tooltips[2].tooltip.paragraphs[2]} <a href='#' target='_blank'>{tooltips[2].tooltip.linkText}</a>.</p>
             </QuestionTooltip>
-            <QuestionTooltip width={294} question={tooltips[3].question + ' ' + content.rights_name[right] + '?'}>
+            <QuestionTooltip width={294} question={tooltips[3].question + ' ' + content.rights_name[right].toLowerCase() + '?'}>
               <p>{tooltips[3].tooltip.paragraphs[0]}</p>
               <p className={styles.tooptipLink}>{tooltips[3].tooltip.paragraphs[1]} <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blank'>{tooltips[3].tooltip.linkText}</a>.</p>
             </QuestionTooltip>

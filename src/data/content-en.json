@@ -29,6 +29,21 @@
     "freedom-from-the-death-penalty": "Right to freedom from the death penalty",
     "freedom-from-extrajudicial-execution": "Right to freedom from extrajudicial execution"
   },
+  "score_name": {
+    "childrenNourishment": "Well-nourished children score",
+    "normalBirthweightInfants": "Normal birth-weight infants score",
+    "combinedSchoolEnrollment": "Combined school enrolment score",
+    "primarySchoolCompletion": "Primary school completion score",
+    "combinedSchoolEnrollment": "Education quality score",
+    "contraceptiveUseScore": "Contraceptive use score",
+    "cildSurvival": "Child survival score",
+    "survivalToAge65": "Survival to age 65 score",
+    "improvedSanitation": "Improved sanitation score",
+    "improvedRuralWater": "Improved rural water score",
+    "notAbsolutelyPoor": "Not absolutely poor score",
+    "notRelativelyPoor": "Not relatively poor score",
+    "notLongTermUnemployed": "Not long-term unemployed score"
+  },
   "rights_category": {
     "esr": "Economic and Social Rights",
     "cpr": "Civil and Political Rights"

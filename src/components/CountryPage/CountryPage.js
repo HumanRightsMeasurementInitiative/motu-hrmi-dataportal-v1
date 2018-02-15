@@ -145,11 +145,11 @@ export default class CountryPage extends React.Component {
                       </div>
                       { currRight !== 'all' &&
                         <div>
-                          <div className={styles.esrRegionValue}>Right to {getRegionName(urlSegs.region)} <span className={styles.floatNum}>{displayPercent(currCountry.rights[esrStandard][currRight])}</span></div>
+                          <div className={styles.esrRegionValue}>{content.rights_name[currRight]} <span className={styles.floatNum}>{displayPercent(currCountry.rights[esrStandard][currRight])}</span></div>
                           <ul className={styles.esrValueList}>
                             {
                               Object.keys(currCountry.rights[esrStandard][currRight + '_sub']).map((item, i) => {
-                                return <li key={i} className={styles.withDot}>{item} <span className={styles.floatNum}>{displayPercent(currCountry.rights[esrStandard][currRight + '_sub'][item])}</span></li>
+                                return <li key={i} className={styles.withDot}>{content.score_name[item]} <span className={styles.floatNum}>{displayPercent(currCountry.rights[esrStandard][currRight + '_sub'][item])}</span></li>
                               })
                             }
                           </ul>
