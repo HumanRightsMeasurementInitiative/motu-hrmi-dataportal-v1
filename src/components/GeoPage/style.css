@@ -43,6 +43,7 @@
 
 .chartsHeader {
   flex: 0 0 auto;
+  padding-bottom: 4px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   color: #58595b;

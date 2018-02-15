@@ -147,6 +147,7 @@
   color: #58595b;
 }
 .regionName {
+  padding-bottom: 10px;
   font-size: 18px;
 }
 .regionName span {
@@ -389,7 +390,7 @@
 .esrLegend {
   position: absolute;
   right: 20px;
-  bottom: -20px;
+  bottom: -28px;
 }
 .esrLegend .text {
   display: inline-block;
@@ -427,7 +428,7 @@
   display: flex;
   position: absolute;
   right: 106px;
-  bottom: -20px;
+  bottom: -28px;
   font-size: 12px;
   color: #616161;
 }

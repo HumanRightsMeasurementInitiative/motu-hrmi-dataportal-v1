@@ -8,7 +8,7 @@ import DownloadPopup from '../DownloadPopup'
 import ChangeStandard from '../ChangeStandard'
 import MiniBarChart from '../GeoMiniBarChart'
 import RightDefinition from '../RightDefinition'
-import { segsToUrl, getRegionName } from '../utils'
+import { segsToUrl } from '../utils'
 import rightsDefinitions from 'data/rights-definitions.json'
 import styles from './style.css'
 
@@ -101,7 +101,7 @@ export default class GeoPage extends React.Component {
             <div className={styles.columnMiddle}>
               <div className={styles.chartsHeader}>
                 <div className={styles.title}>
-                  <strong>{content.header_text.by_geography} {getRegionName(urlSegs.region)}</strong>
+                  <strong>{content.header_text.by_geography} {content.region_name[urlSegs.region]}</strong>
                 </div>
                 <div className={styles.standard}>
                   <ChangeStandard />
@@ -169,7 +169,7 @@ export default class GeoPage extends React.Component {
                         <div className='arrowLink'>
                           <div className='text'>{content.explore_this_rights_in}:</div>
                           <div className='text underline' onClick={this.setExploreBy}>
-                            {urlSegs.region}
+                            {content.region_name[urlSegs.region]}
                           </div>
                         </div>
                       </div>

@@ -10,7 +10,7 @@ import DownloadPopup from '../DownloadPopup'
 // import SortbyDropdown from '../SortbyDropdown'
 import RightDefinition from '../RightDefinition'
 import WordCloudChart from '../WordCloudChart'
-import { segsToUrl, getRegionName, joinClassName as jcn } from '../utils'
+import { segsToUrl, joinClassName as jcn } from '../utils'
 import styles from './style.css'
 import rightsDefinitions from 'data/rights-definitions.json'
 
@@ -138,7 +138,7 @@ export default class RightsPage extends React.Component {
           </div>
           <div className='column'>
             <div className={styles.chartsHeader}>
-              <div className={styles.regionName}><span style={{ color: isESRSelected ? '#00af49' : '#2e65a1' }}>{content.rights_name[urlSegs.right]}</span> {content.in} {getRegionName(urlSegs.region)}</div>
+              <div className={styles.regionName}><span style={{ color: isESRSelected ? '#00af49' : '#2e65a1' }}>{content.rights_name[urlSegs.right]}</span> {content.in} {content.region_name[urlSegs.region]}</div>
               {/* <div className={styles.sortBy} style={{ opacity: (isESRSelected || urlSegs.region === 'cpr-pilot') ? 1 : 0 }}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div> */}
               { isESRSelected
                 ? <div className={styles.esrLegend}>
@@ -194,13 +194,13 @@ export default class RightsPage extends React.Component {
             <div className={styles.infoHeader}>
               <div className={colorClassName}>
                 <div className={styles.rightName}>Right to {urlSegs.right}</div>
-                <div className={styles.regionName}>in {this.state.currCountry ? this.state.currCountry.countryCode : getRegionName(urlSegs.region)}</div>
+                <div className={styles.regionName}>{content.in} {this.state.currCountry ? this.state.currCountry.countryName : content.region_name[urlSegs.region]}</div>
               </div>
               <div className='arrowLink'>
                 <div className='text'>{content.explore_all_rights_in}:</div>
-                <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
+                <div className='text underline' onClick={this.setExploreBy}>{content.region_name[urlSegs.region]}</div>
                 { this.state.currCountry !== null &&
-                  <div className='text underline' onClick={this.setCountry}>{this.state.currCountry.countryCode}</div>
+                  <div className='text underline' onClick={this.setCountry}>{this.state.currCountry.countryName}</div>
                 }
               </div>
             </div>

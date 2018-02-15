@@ -88,14 +88,14 @@ export default class CountryPage extends React.Component {
             <div className={styles.backBtn} onClick={this.resetCountry}>
               <div className={styles.hintText}>BACK TO</div>
               <div className={styles.backLink}>
-                {getRegionName(urlSegs.region)}
+                {content.region_name[urlSegs.region]}
               </div>
             </div>
             <div className={styles.countriesListWrapper}>
               <ul className={styles.countriesList}>
                 {countries.map((country) => (
                   <CountryItem key={country.countryCode} code={country.countryCode} onItemClick={this.setCountry} selected={country.countryCode === urlSegs.country}>
-                    {country.countryCode}
+                    {country.countryName}
                   </CountryItem>
                 ))}
               </ul>
@@ -105,7 +105,7 @@ export default class CountryPage extends React.Component {
           <div className='column'>
             <div className={styles.countryHeader}>
               <div className={styles.title}>
-                <strong>{content.header_text.by_geography} {urlSegs.country}</strong>
+                <strong>{content.header_text.by_geography} {currCountry.countryName}</strong>
               </div>
               <ChangeStandard />
             </div>
@@ -113,7 +113,7 @@ export default class CountryPage extends React.Component {
               <CountryRightsChart
                 rights={currCountry.rights}
                 esrStandard={esrStandard}
-                size={800}
+                size={740}
                 margin={200}
                 displayLabels
               />
@@ -128,7 +128,7 @@ export default class CountryPage extends React.Component {
           <div className='column' ref='rightPane'>
             <div className={styles.columnRight}>
               <div className={styles.countryInfo}>
-                <div className={styles.detailCountry}>{currCountry.countryCode}</div>
+                <div className={styles.detailCountry}>{currCountry.countryName}</div>
                 <div className={styles.smallTitle}>POPULATION (2015)</div>
                 <div className={styles.smallText2}>{currCountry.population} million</div>
                 <div className={styles.smallTitle}>GDP/CAPITA (2015)</div>
