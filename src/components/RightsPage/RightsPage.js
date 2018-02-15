@@ -120,7 +120,7 @@ export default class RightsPage extends React.Component {
           <div className='column'>
             <div className={styles.columnLeft}>
               <div className={styles.regionSelectorWrapper}>
-                <RegionSelector selectRetionText={content.select_region} rightsByRegion={rightsByRegion} urlSegs={urlSegs} isActive={isESRSelected} onItemClick={this.setRegion} />
+                <RegionSelector content={content} selectRetionText={content.select_region} rightsByRegion={rightsByRegion} urlSegs={urlSegs} isActive={isESRSelected} onItemClick={this.setRegion} />
               </div>
               <div className={styles.rightsWrapper}>
                 <div className={styles.rightList}>

@@ -24,7 +24,7 @@ export default class RightsItem extends React.Component {
   }
 
   render() {
-    const { children, content, selected } = this.props
+    const { children, right, content, selected } = this.props
 
     const joinedClass = jcn({
       rightItemWrapper: true,
@@ -37,13 +37,13 @@ export default class RightsItem extends React.Component {
           {children}
           <span className={styles.borderLine} ref='borderLine'></span>
         </div>
-        { children === 'assembly-and-association' && selected &&
+        { right === 'assembly-and-association' && selected &&
           <ul>
             <li className={styles.rightSubItem}>{content.subrights_name.assembly}</li>
             <li className={styles.rightSubItem}>{content.subrights_name.association}</li>
           </ul>
         }
-        { children === 'freedom-from-execution' && selected &&
+        { right === 'freedom-from-execution' && selected &&
           <ul>
             <li className={styles.rightSubItem}>{content.subrights_name['freedom-from-the-death-penalty']}</li>
             <li className={styles.rightSubItem}>{content.subrights_name['freedom-from-extrajudicial-execution']}</li>

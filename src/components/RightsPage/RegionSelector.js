@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import RegionItem from '../RegionItem'
-import { getRegionName, joinClassName as jcn } from '../utils'
+import { joinClassName as jcn } from '../utils'
 import styles from './style.css'
 
 export default class RegionSelector extends React.Component {
   static propTypes = {
+    content: PropTypes.object.isRequired,
     selectRetionText: PropTypes.string.isRequired,
     rightsByRegion: PropTypes.object.isRequired,
     urlSegs: PropTypes.object.isRequired,
@@ -34,11 +35,11 @@ export default class RegionSelector extends React.Component {
   }
 
   render() {
-    const { selectRetionText, rightsByRegion, urlSegs, isActive } = this.props
+    const { content, selectRetionText, rightsByRegion, urlSegs, isActive } = this.props
 
     const regions = Object.keys(rightsByRegion).map((region, i) => (
       <RegionItem key={i} code={region} onItemClick={this.onItemClick} selected={region === urlSegs.region} closePopup={this.closePopup} whiteBorder={true}>
-        {getRegionName(region)}
+        {content.region_name[region]}
       </RegionItem>
     ))
 
