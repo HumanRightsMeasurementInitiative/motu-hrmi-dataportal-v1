@@ -37,7 +37,7 @@ export default class RegionSelector extends React.Component {
     const { selectRetionText, rightsByRegion, urlSegs, isActive } = this.props
 
     const regions = Object.keys(rightsByRegion).map((region, i) => (
-      <RegionItem key={i} index={i} code={region} onItemClick={this.onItemClick} selected={region === urlSegs.region} closePopup={this.closePopup} whiteBorder={true}>
+      <RegionItem key={i} code={region} onItemClick={this.onItemClick} selected={region === urlSegs.region} closePopup={this.closePopup} whiteBorder={true}>
         {getRegionName(region)}
       </RegionItem>
     ))

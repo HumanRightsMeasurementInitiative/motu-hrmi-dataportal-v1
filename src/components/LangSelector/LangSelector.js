@@ -22,7 +22,7 @@ export default class LangSelector extends React.Component {
     document.addEventListener('click', this.documentClick)
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     document.removeEventListener('click', this.documentClick)
   }
 

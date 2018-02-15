@@ -90,8 +90,8 @@ export default class GeoPage extends React.Component {
               </div>
               <ul className={styles.regionList}>
                 {regionCodes.map((regionCode, i) => (
-                  <RegionItem key={regionCode} index={i} code={regionCode} onItemClick={this.setRegion} selected={regionCode === urlSegs.region}>
-                    {getRegionName(regionCode)}
+                  <RegionItem key={regionCode} code={regionCode} onItemClick={this.setRegion} selected={regionCode === urlSegs.region}>
+                    {content.region_name[regionCode]}
                   </RegionItem>
                 ))}
               </ul>
@@ -141,7 +141,7 @@ export default class GeoPage extends React.Component {
                     <ul className={styles.esrList}>
                       {displayedRightsESR.map((right, i) => (
                         <RightsItem key={i} right={right.code} data={rightsByRegion[urlSegs.region]} esrStandard={esrStandard} onItemClick={this.setRight}>
-                          {right.code}
+                          {content.rights_name[right.code]}
                         </RightsItem>
                       ))}
                     </ul>
@@ -149,7 +149,7 @@ export default class GeoPage extends React.Component {
                     <ul className={styles.cprList}>
                       {displayedRightsCPR.map((right, i) => (
                         <RightsItem key={i} right={right.code} data={rightsByRegion[urlSegs.region]} onItemClick={this.setRight}>
-                          {right.code}
+                          {content.rights_name[right.code]}
                         </RightsItem>
                       ))}
                     </ul>
@@ -157,7 +157,7 @@ export default class GeoPage extends React.Component {
                 ) : (
                   <div className={styles.specRightInfo}>
                     <div className={styles.specRightHeader} onClick={this.setRightToAll} rightcolor={urlSegs.right}>
-                      <div className={styles.rightName}>Right to {urlSegs.right}</div>
+                      <div className={styles.rightName}>{content.rights_name[urlSegs.right]}</div>
                       <div className={styles.rightCate}>
                         {displayedRightsESR.length === 0 ? content.rights_category.cpr : content.rights_category.esr}
                       </div>

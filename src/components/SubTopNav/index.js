@@ -58,10 +58,10 @@ export default class SubTopNav extends React.Component {
               <div className={styles.dropdownCol}>
                 <p>{content.how_to_read.paragraphs[0]}</p>
                 <div className={styles.image1}><img src={radarImage} alt="radar image" style={{ width: '100%' }} /></div>
-                <p>{content.how_to_read.paragraphs[1]} <span className={styles.esr}>{content.rights_category.esr} (ESR)</span> {content.how_to_read.paragraphs[2]} <span className={styles.cpr}>{content.rights_category.cpr} (CPR).</span> {content.how_to_read.paragraphs[3]}.</p>
+                <p>{content.how_to_read.paragraphs[1]} <span className={styles.esr}>{content.rights_category.esr}</span> {content.how_to_read.paragraphs[2]} <span className={styles.cpr}>{content.rights_category.cpr}.</span> {content.how_to_read.paragraphs[3]}</p>
               </div>
               <div className={styles.dropdownCol}>
-                <p>{content.how_to_read.paragraphs[4]} <span className={styles.esr}>(ESR)</span> {content.how_to_read.paragraphs[5]} <span className={styles.cpr}>(CPR)</span>.</p>
+                <p>{content.how_to_read.paragraphs[4]} <span className={styles.esr}>({content.rights_category.esr})</span> {content.how_to_read.paragraphs[5]} <span className={styles.cpr}>({content.rights_category.cpr})</span>.</p>
                 <div className={styles.image2}><img src={rightImage} alt="right image" style={{ height: '90px' }} /></div>
                 <p>{content.how_to_read.paragraphs[6]}<br />{content.how_to_read.paragraphs[7]}</p>
                 <div className={styles.image3}><img src={unavailableImage} alt="unavailable image" style={{ height: '180px' }} /></div>

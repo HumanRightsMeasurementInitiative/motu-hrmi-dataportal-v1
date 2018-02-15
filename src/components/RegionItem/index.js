@@ -6,7 +6,6 @@ import styles from './style.css'
 export default class RegionItem extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    index: PropTypes.number.isRequired,
     code: PropTypes.string.isRequired,
     onItemClick: PropTypes.func.isRequired,
     selected: PropTypes.bool.isRequired,
@@ -27,8 +26,7 @@ export default class RegionItem extends React.Component {
   }
 
   render() {
-    const { children, index, selected, whiteBorder } = this.props
-    const widthValues = ['110px', '160px', '90px', '126px', '110px', '160px', '160px']
+    const { children, code, selected, whiteBorder } = this.props
 
     const joinedClass = jcn({
       regionItem: true,
@@ -37,7 +35,7 @@ export default class RegionItem extends React.Component {
     }, styles)
 
     return (
-      <li className={joinedClass} onClick={this.onClick} data-width={widthValues[index]}>
+      <li className={joinedClass} onClick={this.onClick} region={code}>
         {children}
         <span className={styles.borderLine} ref='borderLine'></span>
       </li>

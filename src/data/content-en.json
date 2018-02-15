@@ -1,30 +1,40 @@
 {
+  "region_name": {
+    "high-income-oecd": "High-income OECD countries",
+    "europe-central-asia": "Central and Eastern Europe and Central Asia",
+    "east-asia-pacific": "East Asia and the Pacific",
+    "americas": "Latin America and the Caribbean",
+    "middle-east-north-africa": "Middle East and Northern Africa",
+    "south-asia": "South Asia",
+    "sub-saharan-africa": "Sub-Saharan Africa",
+    "cpr-pilot": "Civil and political rights pilot countries"
+  },
   "rights_name" : {
-    "food": "right to food",
-    "education": "right to education",
-    "health": "right to health",
-    "housing": "right to housing",
-    "work": "right to work",
-    "opinion-and-expression": "right to opinion and expression",
-    "assembly-and-association": "right to assembly and association",
-    "participate-in-government": "right to participate in government",
-    "freedom-from-torture": "right to freedom from torture",
-    "freedom-from-execution": "right to freedom from execution",
-    "freedom-from-arbitrary-arrest": "right to freedom from arbitrary arrest",
-    "freedom-from-disappearance": "right to freedom from disappearance"
+    "food": "Right to food",
+    "education": "Right to education",
+    "health": "Right to health",
+    "housing": "Right to housing",
+    "work": "Right to work",
+    "opinion-and-expression": "Right to opinion and expression",
+    "assembly-and-association": "Right to assembly and association",
+    "participate-in-government": "Right to participate in government",
+    "freedom-from-torture": "Right to freedom from torture",
+    "freedom-from-execution": "Right to freedom from execution",
+    "freedom-from-arbitrary-arrest": "Right to freedom from arbitrary arrest",
+    "freedom-from-disappearance": "Right to freedom from disappearance"
   },
   "subrights_name": {
-    "assembly": "right to assembly",
-    "association": "right to association",
-    "freedom-from-the-death-penalty": "right to freedom from the death penalty",
-    "freedom-from-extrajudicial-execution": "right to freedom from extrajudicial execution"
+    "assembly": "Right to assembly",
+    "association": "Right to association",
+    "freedom-from-the-death-penalty": "Right to freedom from the death penalty",
+    "freedom-from-extrajudicial-execution": "Right to freedom from extrajudicial execution"
   },
   "rights_category": {
     "esr": "Economic and Social Rights",
     "cpr": "Civil and Political Rights"
   },
   "legend": {
-    "esr_barchart": ["Core assessment standart", "High income OECD assessment standard"],
+    "esr_barchart": ["Core assessment standart", "High income OECD country assessment standard"],
     "cpr_barchart": ["Mean score", "percentile"]
   },
   "menu": {
@@ -166,7 +176,7 @@
     },
     "standard_name": {
       "core": "Core assessment standard",
-      "high": "High income OECD assessment standard"
+      "high": "High income OECD country assessment standard"
     },
     "ending_text": "This is end of the story"
   },
@@ -213,7 +223,7 @@
       "tooltip": {
         "paragraphs": [
           "Each civil and political right metric has been produced from responses to a survey of in-country human rights experts. Respondents’ answers to questions about the frequency of violations of each civil and political right were combined using a statistical model that ensures the comparability of responses across countries. This results in a distribution of estimated levels of respect for each right in each country, represented by the scores and uncertainty bands shown throughout the data visualisations. Other information about who was identified as at risk for human rights abuse was also collected from our respondents, as shown.",
-          "For more detailed information, please see our"
+          "For more detailed information, please visit our"
         ],
         "linkText": "website here"
       }
@@ -238,14 +248,14 @@
   "how_to_read": {
     "name": "HOW TO READ",
     "paragraphs": [
-      "Each country is represented by a radar chart, formed by twelve axes. Each axis stands for a right. The longer the axis, the better the performance of the country on that right.",
-      "Rights are color coded by two different sets:",
+      "Each country has a radar chart, formed by twelve axes. Each axis represents a right. The further the score is along each axis, the better the performance of the country on that right.",
+      "Rights are colour-coded in two different sets:",
       "and",
-      "CPR data are only available for 13 pilot countries",
+      "For now, civil and political rights data are only available for 13 pilot countries.",
       "The two sets of rights are evaluated on two different scales: on a percentage scale",
       "and as a score out of 10",
-      "When CPR data are not available in a country, only ESR axes will be shown on the radar.",
-      "A dashed and greyed out axis means that there is no data available for that rights in that country."
+      "When civil and political rights data are not available for a country, only economic and social rights axes will be shown on the radar.",
+      "A dashed and greyed out axis means that there is no data available for that right in that country. "
     ]
   },
   "cpr_alert": {
@@ -262,7 +272,7 @@
   ],
   "esr_trend": {
     "title": "Right trend over time",
-    "subtitle": "This chart shows data using the core country standard."
+    "subtitle": "This chart shows data using the core assessment standard."
   },
   "cpr_at_risk": {
     "title": "Groups most at risk",

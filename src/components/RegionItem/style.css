@@ -4,17 +4,20 @@
   line-height: 18px;
   cursor: pointer;
 }
-[data-width="90px"] {
-  max-width: 90px;
+[region="east-asia-pacific"] {
+  width: 90px;
 }
-[data-width="110px"] {
-  max-width: 110px;
+[region="americas"] {
+  width: 126px;
 }
-[data-width="126px"] {
-  max-width: 126px;
+[region="high-income-oecd"],
+[region="middle-east-north-africa"] {
+  width: 110px;
 }
-[data-width="160px"] {
-  max-width: 160px;
+[region="europe-central-asia"],
+[region="sub-saharan-africa"],
+[region="cpr-pilot"] {
+  width: 160px;
 }
 .borderLine {
   border-bottom: 3px solid transparent;
