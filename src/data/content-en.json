@@ -138,7 +138,7 @@
   "arrow_link": {
     "title": {
       "all": "Explore all rights in:",
-      "this": "Explore this rights in:"
+      "this": "Explore this right in:"
     }
   },
   "story_mexico": {
@@ -309,7 +309,7 @@
   "lang": "Language",
   "select_region": "Select Region",
   "in": "in",
-  "explore_this_rights_in": "Explore this rights in",
+  "explore_this_rights_in": "Explore this right in",
   "explore_all_rights_in": "Explore all rights in",
   "rights_definitions": {
     "food": {

@@ -287,20 +287,20 @@
     "subtitle": "Ce diagramme représente les données à partir du standard d’évaluation principal."
   },
   "cpr_at_risk": {
-    "title": "Groups most at risk",
-    "tooltip": "This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our",
-    "link": "summary of qualitative survey responses"
+    "title": "Groupes les plus à risque",
+    "tooltip": "Ce nuage de mots représente les groupes considérés par les répondants d’enquête comme étant les plus à risques pour les violations de ce droit. L'accent est mis sur les groupes dont les noms ont été les plus fréquemment cités comme étant particulièrement vulnérables. Pour plus d’information sur ces groupes, reportez-vous à notre",
+    "link": "résumé des réponses aux enquêtes qualitatives"
   },
   "cpr_abuse": {
-    "title": "Distribution of abuse",
+    "title": "Distribution des abus",
     "subtitle": "Data is for period January - June 2017",
-    "tooltip": "This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group.",
+    "tooltip": "Ce graphique indique la distribution des violations de ce droit dans différents groupes. La hauteur des barres correspond au pourcentage de répondants d’enquête ayant sélectionné chaque groupe comme étant particulièrement vulnérable.",
     "keys": [
-      "Suspected criminals",
-      "Non-violent political",
-      "Violent political",
-      "Discriminated groups",
-      "Indiscriminate"
+      "Activité criminelle présumée",
+      "Activité politique non violente",
+      "Activité politique violente",
+      "Groupes discriminés",
+      "Sans distinction/Tous"
     ]
   },
   "show_more": "Montrer plus",

@@ -1,144 +1,144 @@
 {
   "region_name": {
-    "high-income-oecd": "High-income OECD countries",
-    "europe-central-asia": "Central and Eastern Europe and Central Asia",
-    "east-asia-pacific": "East Asia and the Pacific",
-    "americas": "Latin America and the Caribbean",
-    "middle-east-north-africa": "Middle East and Northern Africa",
-    "south-asia": "South Asia",
-    "sub-saharan-africa": "Sub-Saharan Africa",
-    "cpr-pilot": "Civil and political rights pilot countries"
+    "high-income-oecd": "Países da OCDE de alta renda",
+    "europe-central-asia": "Leste Europeu, Europa Central e Ásia Central",
+    "east-asia-pacific": "Ásia Oriental e Pacífico",
+    "americas": "América Latina e Caribe",
+    "middle-east-north-africa": "Oriente Médio e Norte da África",
+    "south-asia": "Sul da Ásia",
+    "sub-saharan-africa": "África Subsaariana",
+    "cpr-pilot": "Países Pilotos dos Direitos Civis e Políticos"
   },
   "rights_name" : {
-    "food": "Right to food",
-    "education": "Right to education",
-    "health": "Right to health",
-    "housing": "Right to housing",
-    "work": "Right to work",
-    "opinion-and-expression": "Right to opinion and expression",
-    "assembly-and-association": "Right to assembly and association",
-    "participate-in-government": "Right to participate in government",
-    "freedom-from-torture": "Right to freedom from torture",
-    "freedom-from-execution": "Right to freedom from execution",
-    "freedom-from-arbitrary-arrest": "Right to freedom from arbitrary arrest",
-    "freedom-from-disappearance": "Right to freedom from disappearance"
+    "food": "Direito à comida",
+    "education": "Direito à educação",
+    "health": "Direito à saúde",
+    "housing": "Direito à moradia",
+    "work": "Direito ao trabalho",
+    "opinion-and-expression": "Direito de opinião e expressão",
+    "assembly-and-association": "Direito à assembleia e associação",
+    "participate-in-government": "Direito de participar do governo",
+    "freedom-from-torture": "Direito de não ser torturado",
+    "freedom-from-execution": "Direito de não ser executado",
+    "freedom-from-arbitrary-arrest": "Direito de não ser preso arbitrariamente",
+    "freedom-from-disappearance": "Direito de não ser submetido a desaparecimento forçado"
   },
   "subrights_name": {
-    "assembly": "Right to assembly",
-    "association": "Right to association",
-    "freedom-from-the-death-penalty": "Right to freedom from the death penalty",
-    "freedom-from-extrajudicial-execution": "Right to freedom from extrajudicial execution"
+    "assembly": "Direito à assembleia",
+    "association": "Direito à associação",
+    "freedom-from-the-death-penalty": "Direito de não receber pena de morte",
+    "freedom-from-extrajudicial-execution": "Direito de não ser executado extrajudicialmente"
   },
   "score_name": {
-    "childrenNourishment": "Well-nourished children score",
-    "normalBirthweightInfants": "Normal birth-weight infants score",
-    "combinedSchoolEnrollment": "Combined school enrolment score",
-    "primarySchoolCompletion": "Primary school completion score",
-    "combinedSchoolEnrollment": "Education quality score",
-    "contraceptiveUseScore": "Contraceptive use score",
-    "cildSurvival": "Child survival score",
-    "survivalToAge65": "Survival to age 65 score",
-    "improvedSanitation": "Improved sanitation score",
-    "improvedRuralWater": "Improved rural water score",
-    "notAbsolutelyPoor": "Not absolutely poor score",
-    "notRelativelyPoor": "Not relatively poor score",
-    "notLongTermUnemployed": "Not long-term unemployed score"
+    "childrenNourishment": "Pontuação de crianças bem nutridas",
+    "normalBirthweightInfants": "Pontuação de bebês com peso normal ao nascer",
+    "combinedSchoolEnrollment": "Pontuação de inscrição escolar combinada",
+    "primarySchoolCompletion": "Pontuação de conclusão da escola primária",
+    "combinedSchoolEnrollment": "Pontuação de qualidade educacional",
+    "contraceptiveUseScore": "Pontuação de uso de anticoncepcionais",
+    "cildSurvival": "Pontuação de sobrevivência infantil",
+    "survivalToAge65": "Pontuação de sobrevivência para idade 65",
+    "improvedSanitation": "Pontuação de saneamento melhorado",
+    "improvedRuralWater": "Pontuação de fontes melhoradas de água em área rural",
+    "notAbsolutelyPoor": "Pontuação de pessoas não consideradas em pobreza absoluta",
+    "notRelativelyPoor": "Pontuação de pessoas não consideradas em pobreza relativa",
+    "notLongTermUnemployed": "Pontuação de indivíduos não desempregados de longa duração"
   },
   "rights_category": {
-    "esr": "Economic and Social Rights",
-    "cpr": "Civil and Political Rights"
+    "esr": "Direitos Econômicos e Sociais",
+    "cpr": "Direitos Civis e Políticos"
   },
   "legend": {
-    "esr_barchart": ["Core assessment standart", "High income OECD country assessment standard"],
+    "esr_barchart": ["Pontuação em padrão principal de avaliação", "Pontuação em padrão de avaliação de países da OCDE de alta renda"],
     "cpr_barchart": ["Mean score", "percentile"]
   },
   "menu": {
     "about": {
-      "title": "About the Initiative",
+      "title": "Sobre a Iniciativa",
       "paragraphs": [
-        "The Human Rights Measurement Initiative (HRMI) is a unique collaborative venture between human rights practitioners, researchers, academics, and other human rights supporters.",
-        "Our goal is to produce the first and best comprehensive set of metrics for tracking the human rights performance of countries.",
-        "Our 2018 data-set includes:",
-        "Over time we aim to extend our civil and political rights data to the rest of the world, and expand our full set of data to include additional metrics.",
-        "Learn more about the Human Rights Measurement Initiative:"
+        "A Iniciativa de Medição dos Direitos Humanos (HRMI) é um empreendimento colaborativo único entre profissionais de direitos humanos, pesquisadores, acadêmicos e outros defensores de direitos humanos.",
+        "Nosso objetivo é produzir o primeiro e mais abrangente conjunto de métricas para rastreamento de desempenho dos direitos humanos nos países do mundo.",
+        "Nosso conjunto de dados de 2018 inclui:",
+        "Ao longo do tempo, procuramos ampliar nossos dados de direitos civis e políticos para o resto do mundo e expandir todo o nosso conjunto de dados para incluir métricas adicionais.",
+        "Saiba mais sobre a Iniciativa de Medição dos Direitos Humanos:"
       ],
       "list": [
-        "Annual data on five economic and social rights for 120 to 180 countries (depending on the right) from 2005 to 2015.",
-        "Pilot data on seven civil and political rights for 13 countries covering the time period from January to June 2017."
+        "Dados anuais sobre cinco direitos econômicos e sociais de 120 a 180 países (dependendo do direito) desde 2005 até 2015.",
+        "Dados-piloto sobre sete direitos civis e políticos para 13 países que abrangem o período de janeiro a junho de 2017."
       ],
       "links": [
-        "Who are we?",
-        "Read about our methodology",
-        "Visit the main HRMI website"
+        "Quem somos?",
+        "Leia sobre nossa metodologia",
+        "Visite o site principal do HRMI"
       ]
     },
     "methodology": {
-      "title": "Methodology",
+      "title": "Metodologia",
       "paragraphs": [
-        "There is no one-size-fits-all methodology for measuring human rights performance, so we use different methodologies that are best tailored to each area.",
-        "Wherever possible – e.g. in the area of economic and social rights – our methodologies use objective statistics produced by national governments and international agencies.",
-        "For civil and political rights, where violations often take place in secret and reporting is very patchy, we use an expert survey approach to get our information directly from the human rights experts who are monitoring events in each country.",
-        "Learn more:"
+        "Não existe uma metodologia única para medir o desempenho dos direitos humanos, por isso utilizamos metodologias diferentes que são mais adequadas para cada área.",
+        "Sempre que possível — por exemplo, na área de direitos econômicos e sociais — nossas metodologias utilizam estatísticas objetivas produzidas por governos nacionais e agências internacionais.",
+        "Para os direitos civis e políticos, onde as violações muitas vezes ocorrem em segredo e os relatórios sobre elas são muito irregulares, usamos uma abordagem de pesquisa feita por especialistas para obter nossas informações diretamente dos especialistas em direitos humanos que estão monitorando os acontecimentos em cada país.",
+        "Saiba mais:"
       ],
       "links": [
-        "Get an overview of our methodology for measuring economic and social rights.",
-        "Get an overview of our methodology for measuring civil and political rights.",
-        "Read our more in-depth methodology handbook: [Add hyperlink when available].",
-        "See the HRMI expert survey for civil and political rights (please note this is a link to a preview of the survey only, and any responses you make will not be collected)."
+        "Obtenha uma visão geral de nossa metodologia de medição dos direitos econômicos e sociais.",
+        "Obtenha uma visão geral de nossa metodologia para medir os direitos civis e políticos.",
+        "Leia nosso manual de metodologia mais aprofundado: [Add hyperlink when available].",
+        "Veja a pesquisa de especialistas da HRMI para direitos civis e políticos. [Atenção: esta versão da pesquisa não está ativa e qualquer resposta inserida não será registrada]"
       ]
     },
     "howToUse": {
-      "title": "How To Use",
+      "title": "Como Usar",
       "paragraphs": [
-        "There are lots of ways that you can use Human Rights Measurement Initiative (HRMI) data. These include:",
-        "As an example, we’ve created country narratives that draw on these data for Mexico [insert hyperlink] and Australia [insert hyperlink]. We would love to hear how you are using our data. Please let us know",
-        "You can download HRMI charts and data by clicking on the download icon at the bottom left of each screen.",
-        "We ask that you take care to ensure that you understand the data and what they are showing, so that you do not misrepresent them.",
-        "We want to make our work freely available to everyone, so all HRMI data, charts, and text are licensed under a",
-        "This means that you are welcome to reuse what we have created as long as you attribute the Human Rights Measurement Initiative and link back to",
-        "In charts, where space is limited, please reference the source as follows:",
-        "Source:",
-        "If you use HRMI data in formal research, please cite them with the following references:",
-        "And when using the civil and political rights data please cite:",
-        "And when using the economic and social rights data please cite:"
+        "Há diversas maneiras de usar os dados da Iniciativa de Medição dos Direitos Humanos (HRMI). Isso inclui:",
+        "Como exemplo, criamos narrativas de países que utilizam esses dados para o México [insert hyperlink] e para a Austrália [insert hyperlink]. Adoraríamos saber como você está usando nossos dados. Por favor, avise-nos clicando",
+        "Você pode baixar gráficos e dados do HRMI clicando no ícone de download na parte inferior esquerda de cada tela.",
+        "Pedimos que você se assegure de ter entendido os dados e o que eles estão mostrando, para que não haja erros de interpretação.",
+        "Queremos tornar nosso trabalho disponível livremente para todos; por isso todos os dados, gráficos e textos da HRMI possuem uma licença de direitos autorais da",
+        "Isso significa que você é bem-vindo para reutilizar o que criamos, desde que você faça menção à Iniciativa de Medição dos Direitos Humanos e insira o link do",
+        "Em gráficos, onde o espaço é limitado, faça referência à fonte da seguinte maneira:",
+        "Fonte:",
+        "Se você usa dados HRMI numa pesquisa formal, cite-os com as seguintes referências:",
+        "Ao usar os dados sobre direitos civis e políticos, cite:",
+        "Ao usar os dados de direitos econômicos e sociais, cite:"
       ],
       "list": [
-        "in advocacy and publicity campaigns",
-        "to hold governments to account",
-        "to help identify policies that work to advance human rights",
-        "to stimulate competition for a \"race to the top\" (that is, to encourage countries to perform as well in human rights as they possibly can)",
-        "Human Rights Measurement Initiative (HRMI). 2018.",
-        "Version 2018.1",
+        "em campanhas de advocacy e publicidade",
+        "para responsabilizar os governos",
+        "-  para ajudar a identificar políticas que trabalhem para promover os direitos humanos",
+        "para incentivar a disputa de uma \"corrida para o topo\" (ou seja, encorajar os países a ter o melhor desempenho em direitos humanos possível)",
+        "Iniciativa de Medição dos Direitos Humanos (HRMI). 2018.",
+        "Versão 2018.1",
         "Clay et al, (2018) \"The Human Rights Measurement Initiative (HRMI) Civil and Political Rights Indicators.\" Motu Working Paper, forthcoming.",
-        "HRMI Economic and Social Rights Methodology 2017 Technical note.",
+        "HRMI Economic and Social Rights Methodology, 2017, nota técnica.",
         "Sakiko Fukuda-Parr, Terra Lawson-Remer and Susan Randolph (2015), Fulfilling Social and Economic Rights, Oxford: Oxford University Press."
       ],
       "links": [
-        "here.",
-        "Creative Commons Attribution 4.0 copyright licence",
-        "our website",
-        "2018 Human Rights Measurement Initiative (HRMI) dataset",
-        "\"HRMI Human Rights Data Set.\""
+        "aqui.",
+        "Creative Commons Attribution 4.0.",
+        "nosso site",
+        "conjunto de dados da Iniciativa de Medição dos Direitos Humanos (HRMI) de 2018",
+        "\"Conjunto de dados sobre direitos humanos da HRMI\"."
       ]
     },
     "download": {
-      "title": "Download Dataset",
+      "title": "Baixe o conjunto de dados",
       "paragraphs": [
-        "You are welcome to use data and charts produced by the Human Rights Measurement Initiative (HRMI) for your advocacy or research. However, we ask that you take care to ensure that you understand the data and what they are showing, so that you do not misrepresent them.",
-        "Please attribute the Human Rights Measurement Initiative and link back to our website"
+        "É possível usar dados e gráficos produzidos pela Iniciativa de Medição dos Direitos Humanos (HRMI) em sua defesa ou pesquisa. Pedimos que você se assegure de ter entendido os dados e o que eles estão mostrando, para que não haja erros de interpretação.",
+        "Faça menção à Iniciativa de Medição dos Direitos Humanos (HRMI) e insira o link do nosso site"
       ],
       "link": "(https://humanrightsmeasurement.org/)",
-      "button": "AGREE"
+      "button": "CONCORDO"
     }
   },
   "section": {
     "title": "Explore all the dataset:",
-    "section_name": ["Explore by Rights", "Explore by Geography"]
+    "section_name": ["Explore por direitos", "Explore geograficamente"]
   },
   "arrow_link": {
     "title": {
-      "all": "Explore all rights in:",
-      "this": "Explore this rights in:"
+      "all": "Explore todos os direitos em:",
+      "this": "Explore este direito em:"
     }
   },
   "story_mexico": {
@@ -201,76 +201,73 @@
   "footer_text": {
     "rights_page_esr": "Higher scores indicate greater fulfilment of country obligations for this human right.",
     "rights_page_cpr": "Higher scores indicate greater respect for this human right.",
-    "by_geography": "Each axis represents a right. The further the score is along each axis, the better the country’s performance on that right.",
-    "source": "Source: 2018 Human Rights Measurement Initiative (HRMI) dataset,"
+    "by_geography": "Cada eixo representa um direito. Quanto maior for a pontuação de acordo com o eixo, melhor o desempenho do país para este direito.",
+    "source": "Fonte: Conjunto de dados de 2018 da Iniciativa de Medição dos Direitos Humanos (HRMI)"
   },
   "question_tooltips": [
     {
-      "question": "Why aren't the same indicators used for all countries?",
-      "tooltip": "This is because the same data are not always collected for all countries in the world. The core assessment standard is mostly used for developing and non-OECD-member countries. The high-income OECD country assessment standard uses indicators that are often available only for high-income OECD countries. However, all countries are evaluated using both sets of indicators to the extent data are available."
+      "question": "Por que alguns indicadores não são utilizados para todos os países?",
+      "tooltip": "Isso porque os mesmos dados nem sempre são coletados para todos os países do mundo. O padrão principal de avaliação é mais utilizado em países em desenvolvimento e não-membros da OCDE. O padrão de avaliação dos países da OCDE de alta renda utiliza indicadores que geralmente estão disponíveis apenas para países da OCDE de alta renda. Contudo, todos os países são avaliados utilizando ambos os padrões de avaliação na medida em que os dados são disponibilizados."
     }, {
-      "question": ["How does the HRMI methodology convert the above indicators into the ", " metric?"],
+      "question": ["Como a metodologia da HRMI converte os indicadores acima na métrica ", "?"],
       "tooltip": {
         "paragraphs": [
-          "All HRMI measures of economic and social rights have been produced using official statistics collected by national governments and harmonised by international organisations. For each indicator, our methodology compares the observed level of enjoyment of that dimension of human rights to the enjoyment level it should be feasible for that country to achieve given its per-capita income level. HRMI economic and social rights metrics thus show how well the State is using its available resources to ensure that all people enjoy these rights.",
-          "Three things should be kept in mind when interpreting HRMI economic and social rights metrics:",
-          "For more information on the HRMI ESR methodology"
+          "Todas as métricas de direitos econômicos e sociais foram produzidas utilizando estatísticas oficiais coletadas por governos nacionais e em acordo com organizações internacionais. Para cada indicador, nossa metodologia compara o nível de satisfação observado para cada dimensão dos direitos humanos com o nível de satisfação que seria plausível para aquele país alcançar dada a sua renda per capita. As métricas econômicas e sociais da HRMI mostram então de que forma um Estado está utilizando os recursos disponíveis para assegurar que todas as pessoas gozem desses direitos.",
+          "Três coisas que precisam ser consideradas quando interpretar as métricas econômicas e sociais da HRMI:"
         ],
         "list": [
-          "1) A score of 100% does NOT imply that everyone in the country enjoys the right. Rather, it implies that the country’s right enjoyment level is on par with the historically best-performing countries at the same per-capita income level.",
-          "2) A score of 100% does NOT mean there is no room for improvement. Countries with high HRMI scores still need to innovate to extend human rights enjoyment further than has been done in the past.",
-          "3) The fact that a high-income country earns a high HRMI score on a right does NOT imply that all population subgroups (e.g. women or indigenous people) in that country enjoy the right equally."
+          "1) Uma pontuação de 100% NÃO significa que todos no país gozem do direito. Melhor, implica que o nível de gozo dos direitos do país está a par com os países historicamente mais desenvolvidos naquele mesmo nível de renda per capita.",
+          "2) Uma pontuação de 100% NÃO significa que não há necessidade para aperfeiçoamento. Países com alta pontuação de HRMI ainda necessitam inovar para estender o gozo dos direitos humanos além do que já foi realizado no passado.",
+          "3) O fato de um país com alta renda receber uma alta pontuação HRMI NÃO significa que todos os subgrupos populacionais (como mulheres ou povos indígenas) daquele país gozem do direito igualmente. Para mais informações sobre a metodologia DES da HRMI,"
         ],
-        "linkText": "click here"
+        "linkText": "clique aqui"
       }
     }, {
-      "question": "How should I interpret the uncertainty bands?",
+      "question": "Como posso interpretar as faixas de incerteza?",
       "tooltip": {
         "paragraphs": [
-          "Our civil and political rights measures methodology produces a range of estimated levels of respect for each human right. The average country score (indicated by the white horizontal line) represents the average estimate in that range. The lower score on the uncertainty band represents the 10th percentile of our estimates; the higher score on the uncertainty band represents the 90th percentile.",
-          "Narrower uncertainty bands tell us that there was more agreement among expert survey respondents about what that country’s score should be, and/or a larger number of respondents. The greater the overlap between two uncertainty bands, the less certain we can be that the level of respect for human rights represented by those bands are truly different from one another.",
-          "For more detailed information, please see our"
+          "Nossa metodologia de métricas de direitos civis e políticos produz uma variedade de níveis estimados de respeito a cada direito humano. A pontuação média por país (indicada pela linha horizontal branca) representa a média estimada para aquela variedade. A pontuação mais baixa da marcação imprecisa representa o décimo percentil das nossas estimativas; a pontuação mais alta na marcação imprecisa representa o nonagésimo percentil.",
+          "Faixas de incerteza mais estreitas mostram que houve uma maior concordância entre os respondentes especialistas da pesquisa sobre qual deveria ser a pontuação do país e/ou um maior número de respondentes. Quanto maior for a sobreposição entre duas faixas de incerteza, menos certeza poderemos ter de que o nível de respeito aos direitos humanos representado por essas marcações é de fato diferente um do outro. Para informações mais detalhadas, por favor, veja a nota sobre nossa"
         ],
-        "linkText": "methodology note"
+        "linkText": "metodologia"
       }
     }, {
       "question": "How has HRMI measured the",
       "tooltip": {
         "paragraphs": [
-          "Each civil and political right metric has been produced from responses to a survey of in-country human rights experts. Respondents’ answers to questions about the frequency of violations of each civil and political right were combined using a statistical model that ensures the comparability of responses across countries. This results in a distribution of estimated levels of respect for each right in each country, represented by the scores and uncertainty bands shown throughout the data visualisations. Other information about who was identified as at risk for human rights abuse was also collected from our respondents, as shown.",
-          "For more detailed information, please visit our"
+          "Cada métrica de direito civil e político foi elaborada a partir de respostas a uma pesquisa de especialistas em direitos humanos no país. As respostas dos respondentes para perguntas sobre a frequência das violações a cada direito civil e político foram combinadas utilizando um modelo estatístico que garante a comparabilidade de respostas entre países. Isso resulta numa distribuição de níveis estimados de respeito a cada direito em cada país, representados pelas pontuações e faixas de incerteza mostradas no decorrer das visualizações de dados. Também foram coletadas de nossos respondentes, informações sobre aqueles que foram identificados como em risco a sofrer abuso de direitos humanos, como mostrado. Para informações mais detalhadas, por favor, visite nosso site"
         ],
-        "linkText": "website here"
+        "linkText": "aqui"
       }
     }, {
-      "question": "Why is there no right to housing measure using the high-income OECD country standard?",
-      "tooltip": "There currently are no data available that are comparable across most high-income OECD countries that reflect housing access and affordability problems. As a result, HRMI metrics on the right to housing are not available for high-income OECD countries."
+      "question": "Por que não há medidas de direito à moradia para o padrão de avaliação de país da OCDE de alta renda?",
+      "tooltip": "Atualmente, não há dados disponíveis que sejam comparáveis ​​entre a maioria dos países da OCDE de alta renda que reflitam o acesso à moradia e os problemas de acessibilidade. Assim, as métricas da HRMI sobre o direito à moradia não estão disponíveis para países da OCDE de alta renda."
     }
   ],
   "country_tooltips": [
     {
-      "question": "Why are the two types of metrics not on the same scale?",
-      "paragraphs": "HRMI metrics use two different methodologies that have different scales and interpretations. The scores for the civil and political rights metrics are a score out of 10 indicating the extent to which the government in the country respected that right. By contrast, the scores for the economic and social rights metrics are percentage scores. These tell you the percentage level of enjoyment achieved on that right relative to what should be feasible for a country with that income level. This is not the same as the extent to which people in the country enjoy the right. For more information please explore our",
-      "linkText": "methodologies in more detail"
+      "question": "Por que não há uma mesma escala para os dois tipos de métricas?",
+      "paragraphs": "As métricas da HRMI vêm de duas metodologias diferentes que possuem escalas e interpretações diferenciadas. As pontuações das métricas de direitos civis e políticos são de 0 a 10, indicando a medida na qual o governo no país respeitou aquele direito. Em contrapartida, as pontuações para as métricas de direitos econômicos e sociais são pontuações em estatísticas. Essas informam o nível de porcentagem de satisfação atingida naquele direito em relação ao que seria plausível para um país com aquele nível de renda nacional. Não significa a medida em que as pessoas gozam do direito no país. Para maiores informações, favor",
+      "linkText": "explorar nossa metodologia aprofundada"
     }, {
-      "question": "Why are the two sets of metrics not for the same year?",
-      "paragraphs": "All metrics presented are the most recent data available. The civil and political rights metrics are for January to June 2017. The economic and social rights metrics are from the 2017 update of the International Social and Economic Rights Fulfilment Index, which covers the period from 2005 to 2015. The data used for each year are the most recently available data as of that year. HRMI graphs use the most recently available data from the full dataset."
+      "question": "Por que os dois conjuntos de métricas não são para o mesmo ano?",
+      "paragraphs": "Todas as métricas apresentadas são dos dados mais recentes disponíveis. As métricas de direitos civis e políticos são de janeiro a junho de 2017. As métricas de direitos econômicos e sociais são da atualização de 2017 do International Social and Economic Rights Fulfilment Index, que cobre o período de 2005 a 2015. Os dados utilizados para cada ano são os mais recentes à disposição para aquele ano. Os gráficos da HRMI usam os dados mais recentes disponíveis do conjunto completo de dados."
     }, {
-      "question": "What is the difference between the core and the high income OECD country scale?",
-      "paragraphs": "For countries assessed using the core assessment standard, our methodology uses statistical indicators that are available for most countries in the world, particularly developing and non-OECD-member countries. By contrast, the high-income OECD country assessment standard uses indicators that are typically available only for the high-income OECD countries, and/or better reflect the human rights challenges of high-income countries. We would also use many of these indicators in the core assessment standard if they had broader country coverage. All countries are evaluated using both assessment standards to the extent data are available."
+      "question": "Qual a diferença entre o padrão principal de avaliação e o dos países  da OCDE de alta renda?",
+      "paragraphs": "Para os países avaliados utilizando o padrão principal de avaliação, nossa metodologia utiliza indicadores estatísticos que estão disponíveis na maioria dos países, principalmente países em desenvolvimento e não-membros da OCDE. Em contrapartida, o padrão de avaliação dos países da OCDE de alta renda utiliza indicadores que geralmente estão disponíveis apenas para os países da OCDE de alta renda e/ou melhor refletem os desafios dos direitos humanos em países de alta renda. Gostaríamos também de utilizar muitos dos indicadores do padrão principal de avaliação se cobrissem mais países. Todos os países são avaliados utilizando ambos os padrões de avaliação na medida em que os dados são disponibilizados."
     }
   ],
   "how_to_read": {
-    "name": "HOW TO READ",
+    "name": "Como interpretar",
     "paragraphs": [
-      "Each country has a radar chart, formed by twelve axes. Each axis represents a right. The further the score is along each axis, the better the performance of the country on that right.",
-      "Rights are colour-coded in two different sets:",
-      "and",
-      "For now, civil and political rights data are only available for 13 pilot countries.",
-      "The two sets of rights are evaluated on two different scales: on a percentage scale",
-      "and as a score out of 10",
-      "When civil and political rights data are not available for a country, only economic and social rights axes will be shown on the radar.",
-      "A dashed and greyed out axis means that there is no data available for that right in that country. "
+      "Cada país possui um gráfico de radar, formado por doze eixos. Cada eixo representa um direito. Quanto maior for a pontuação de acordo com o eixo, melhor o desempenho do país para este direito.",
+      "Direitos são codificados por cores em dois conjuntos diferentes:",
+      "e",
+      "Por enquanto, os dados sobre Direitos Civis e Políticos estão disponíveis somente para os treze países pilotos.",
+      "Os dois conjuntos de direitos são avaliados em duas escalas diferentes: em uma escala percentual",
+      "e em uma escala de zero a 10",
+      "Quando os dados Direitos Civis e Políticos não estiverem disponíveis para um país, apenas os eixos Direitos Econômicos e Sociais serão mostrados no radar.",
+      "Um eixo acinzentado e tracejado significa que não há dados disponíveis para tal direito naquele país. "
     ]
   },
   "cpr_alert": {
@@ -279,136 +276,136 @@
     "button_text": "GOT IT"
   },
   "download": [
-    "Download chart",
-    "Download bar chart",
-    "Download line chart",
-    "Download csv",
-    "Download all the above"
+    "Baixar gráfico",
+    "Baixar gráfico de barras",
+    "Baixar gráfico de linha",
+    "Baixar csv",
+    "Baixar ambos"
   ],
   "esr_trend": {
-    "title": "Right trend over time",
-    "subtitle": "This chart shows data using the core assessment standard."
+    "title": "Tendência do direito ao longo do período",
+    "subtitle": "Este gráfico mostra os dados utilizando um padrão principal de avaliação do país."
   },
   "cpr_at_risk": {
-    "title": "Groups most at risk",
-    "tooltip": "This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our",
-    "link": "summary of qualitative survey responses"
+    "title": "Grupos em risco",
+    "tooltip": "Essa nuvem de palavras ilustra os grupos considerados mais em risco de violações a este direito de acordo com os respondentes da pesquisa. Uma maior proeminência é dada aos nomes dos grupos que são frequentemente mais indicados por serem particularmente mais vulneráveis. Para maiores informações sobre os grupos alvos, veja nosso",
+    "link": "sumário das respostas da pesquisa qualitativa"
   },
   "cpr_abuse": {
-    "title": "Distribution of abuse",
-    "subtitle": "Data is for period January - June 2017",
-    "tooltip": "This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group.",
+    "title": "Distribuição de abuso",
+    "subtitle": "Dados do período de janeiro a junho de 2017",
+    "tooltip": "Este gráfico indica como as violações destes direitos são distribuídas entre diferentes grupos.",
     "keys": [
-      "Suspected criminals",
-      "Non-violent political",
-      "Violent political",
-      "Discriminated groups",
-      "Indiscriminate"
+      "Atividade criminosa suspeita",
+      "Atividade política não-violenta",
+      "Atividade política violenta",
+      "Grupos discriminados",
+      "Indiscriminado"
     ]
   },
-  "show_more": "Show more",
-  "show_less": "Show less",
-  "search_country": "Search Country",
-  "lang": "Language",
-  "select_region": "Select Region",
-  "in": "in",
-  "explore_this_rights_in": "Explore this rights in",
-  "explore_all_rights_in": "Explore all rights in",
+  "show_more": "Mostrar mais",
+  "show_less": "Mostrar menos",
+  "search_country": "Pesquisar País",
+  "lang": "Língua",
+  "select_region": "Selecionar região",
+  "in": "em",
+  "explore_this_rights_in": "Explore este direito em",
+  "explore_all_rights_in": "Explore todos os direitos em",
   "rights_definitions": {
     "food": {
       "type": "ESR",
-      "definition": "According to international law, everyone has the fundamental right to be free from hunger. Everyone has the right to enjoy \"the availability of food in a quantity and quality sufficient to satisfy [their] dietary needs … free from adverse substances, and acceptable within a given culture\" (ICESCR Art. 11 and CESCR General Comment 12).",
-      "core_text": "Our core assessment standard uses the following indicator:",
+      "definition": "De acordo com o direito internacional, todos têm o direito fundamental de não passarem fome. Todos tem o direito de desfrutar \"da disponibilidade de alimentos em quantidade e qualidade suficientes para satisfazer [suas] necessidades alimentares...livres de substâncias adversas e aceitáveis ​​dentro de uma determinada cultura\" (art. 11 do PIDESC e CDESC Comentário Geral nº 12).",
+      "core_text": "Nosso padrão principal de avaliação usa o seguinte indicador:",
       "core_indicator": [
-        "% children under 5 not stunted (WHO)"
+        "% crianças menores de 5 anos com crescimento não comprometido (OMS)"
       ],
-      "high_text": "Our high-income OECD country assessment standard uses the following indicator:",
+      "high_text": "Nosso padrão de avaliação de países da OCDE de alta renda usa o seguinte indicador:",
       "high_indicator": [
-        "% babies not of low birth weight (UNICEF)"
+        "% de bebês que não estão abaixo do peso ao nascer (UNICEF)"
       ]
     },
     "education": {
       "type": "ESR",
-      "definition": "According to international law, everyone has the right to a quality, relevant, and culturally appropriate education. We are all entitled to a primary, secondary, higher, technical/vocational, and fundamental education that is physically accessible and financially affordable (ICESCR Article 13 and CESCR General Comments 11 and 13).",
-      "core_text": "Our core assessment standard uses the following indicator:",
+      "definition": "De acordo com o direito internacional, todos têm direito a uma educação de qualidade, relevante e culturalmente apropriada. Todos temos direito à educação primária, secundária, superior, técnica/vocacional e fundamental que seja física e financeiramente acessível (art. 13 do PIDESC e Comentário Geral nº 11 e nº 13 do CDESC).",
+      "core_text": "Nosso padrão principal de avaliação usa o seguinte indicador:",
       "core_indicator": [
-        "Primary school completion rate (UNESCO)",
-        "Gross combined school enrolment rate (UNESCO)"
+        "Taxa de conclusão da escola primária (UNESCO)",
+        "Taxa bruta de matrícula escolar combinada (UNESCO)"
       ],
-      "high_text": "Our high-income OECD country assessment standard uses the following indicator:",
+      "high_text": "Nosso padrão de avaliação de países da OCDE de alta renda usa o seguinte indicador:",
       "high_indicator": [
-        "Gross combined school enrolment rate (UNESCO)",
-        "Average of country average math & science PISA scores (OECD PISA)"
+        "Taxa bruta de matrícula escolar combinada (UNESCO)",
+        "Pontuação média do país no PISA em matemática e ciências (PISA da OCDE)"
       ]
     },
     "health": {
       "type": "ESR",
-      "definition": "According to international law, everyone has the right to the “highest attainable standard of physical and mental health”. We are all entitled to timely and appropriate healthcare facilities and services that promote physical and mental health. This includes maternal, child and reproductive health care; preventative and curative health care; disease control, health rehabilitation; and natural and workplace environmental health (ICESCR Art. 12.1; CESCR General Comment 14).",
-      "core_text": "Our core assessment standard uses the following indicator:",
+      "definition": "De acordo com o direito internacional, todos têm direito ao \"melhor padrão possível de saúde física e mental\". Todos temos direito a instalações e serviços de saúde oportunos e adequados que promovam a saúde física e mental. Isso inclui cuidados de saúde materna, infantil e reprodutiva; cuidados de saúde preventivos e curativos; controle de doenças, reabilitação de saúde; e saúde ambiental natural e no local de trabalho (art. 12,1 do PIDESC e Comentário Geral nº14 do CDESC).",
+      "core_text": "Nosso padrão principal de avaliação usa o seguinte indicador:",
       "core_indicator": [
-        "% child survival rate (UNICEF, WHO, World Bank, UNPD)",
-        "% survival to age 65 rate (UNPD)",
-        "Modern contraceptive use rate, % women 15-49 (UNPD)"
+        "% da taxa de sobrevivência infantil (UNICEF, OMS, Banco Mundial, UNPD)",
+        "% da taxa de sobrevivência aos 65 anos de idade (UNPD)",
+        "Taxa atual de uso de anticoncepcionais, % mulheres dos 15-49 (UNPD)"
       ],
-      "high_text": "Our high-income OECD country assessment standard uses the following indicator:",
+      "high_text": "Nosso padrão de avaliação de países da OCDE de alta renda usa o seguinte indicador:",
       "high_indicator": [
-        "% child survival rate (UNICEF, WHO, World Bank, UNPD)",
-        "% survival to age 65 rate (UNPD)"
+        "% taxa de sobrevivência infantil (UNICEF, OMS, Banco Mundial, UNPD)",
+        "% de taxa de sobrevivência aos 65 anos de idade (UNPD)"
       ]
     },
     "housing": {
       "type": "ESR",
-      "definition": "According to international law, everyone has the fundamental right to habitable and culturally appropriate housing. We are all entitled to housing that is accessible to services, materials, facilities, and infrastructure. This includes “...safe drinking water, energy for cooking, heating and lighting, sanitation and washing facilities, means of food storage, refuse disposal, site drainage, and emergency services” (ICESCR Article. 11.1 and CESCR General Comment 4).",
-      "core_text": "Our core assessment standard uses the following indicator:",
+      "definition": "De acordo com o direito internacional, todos têm o direito fundamental a habitação habitável e culturalmente apropriada. Todos temos direito a habitações acessíveis a serviços, materiais, instalações e infraestrutura. Isso inclui \"... água potável, energia para cozinhar, aquecimento e iluminação, instalações sanitárias e de lavagem, meios de armazenamento de alimentos, eliminação de lixo, drenagem de locais e serviços de emergência\" (art. 11,1 do PIDESC e Comentário Geral nº 4 do CDESC).",
+      "core_text": "Nosso padrão principal de avaliação usa o seguinte indicador:",
       "core_indicator": [
-        "% population with access to improved sanitation (WHO/UNICEF)",
-        "% rural population with access to improved water source (WHO/UNICEF)"
+        "% de população com acesso a saneamento melhorado (OMS / UNICEF)",
+        "% de população rural com acesso à fontes melhoradas de água (OMS / UNICEF)"
       ],
-      "high_text": "No right to housing measure is currently available using the high-income OECD country assessment standard.",
+      "high_text": "Atualmente, nenhuma métrica de direito à habitação está disponível para o padrão de avaliação de país da OCDE de alta renda.",
       "high_indicator": []
     },
     "work": {
       "type": "ESR",
-      "definition": "According to international law, everyone is entitled to the opportunity to gain a living by work that is freely chosen and “the right to the enjoyment of just and favourable conditions of work”. This includes “equal pay for equal work, the chance to earn a decent living for [ourselves] and [our] families, just and safe working conditions, and a reasonable limitation of working hours” (ICESCR, Articles 6 and 7).",
-      "core_text": "Our core assessment standard uses the following indicator:",
+      "definition": "De acordo com o direito internacional, todos têm direito à oportunidade de ganhar a vida por um trabalho que seja livremente escolhido e \"o direito ao gozo de condições de trabalho justas e favoráveis\". Isso inclui \"o pagamento igual pelo mesmo trabalho, a chance de ganhar uma vida digna para [nós] e [nossas] famílias, condições de trabalho justas e seguras e uma limitação razoável das horas de trabalho\" (PIDESC, art. 6 e 7).",
+      "core_text": "Nosso padrão principal de avaliação usa o seguinte indicador:",
       "core_indicator": [
-        "% population with income >$3.10 (2011 PPP$) per day (World Bank)"
+        "% de população com renda > US$ 3.10 (2011 PPP $) por dia (Banco Mundial)"
       ],
-      "high_text": "Our high-income OECD country assessment standard uses the following indicator:",
+      "high_text": "Nosso padrão de avaliação de países da OCDE de alta renda usa o seguinte indicador:",
       "high_indicator": [
-        "% unemployed not long-term unemployed (ILO)",
-        "% population with > 50% median income (LIS Cross-national Data Center)"
+        "% de indivíduos não desempregados de longa duração (OIT)",
+        "% de população com renda média > 50% (LIS Cross-National Data Center)"
       ]
     },
     "freedom-from-disappearance": {
       "type": "CPR",
-      "definition": "According to international law, everyone has the right to freedom from “arrest, detention, abduction or any other form of deprivation of liberty” followed by a lack of acknowledgement that this has occurred or “concealment of the fate or whereabouts of the disappeared person”. Disappearances include all cases in which people are taken and their location or status is unclear, including those known to be held in secret and/or incommunicado detention (International Convention for the Protection of All Persons from Enforced Disappearance, Part I, Article 2)."
+      "definition": "De acordo com o direito internacional, todos têm o direito de não serem “presos, detidos, abduzidos ou qualquer outra forma de privação da liberdade” seguida pela falta de uma validação do ocorrido, ou “ocultação do destino ou do paradeiro da pessoa desaparecida”. Desaparecimentos incluem todos os casos nos quais as pessoas são levadas e suas localizações ou condições são incertas, inclusive aqueles conhecidos por terem tido sua detenção em segredo ou sem comunicação. (Convenção Internacional para a Proteção de Todas as Pessoas Contra o Desaparecimento Forçado, Parte I, Art. 2)."
     },
     "freedom-from-arbitrary-arrest": {
       "type": "CPR",
-      "measure_list": ["According to international law, everyone has the right to freedom from arrest or detention for:", "reasons not established by law;", "inability to fulfil a contractual obligation;", "thoughts, beliefs, conscience, or religion;", "opinions or their peaceful expression;", "participation in peaceful assembly;", "peaceful association with others, including trade union membership; or", "identity, including \"race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status\" (ICCPR, Part II, Article 2; Part III, Articles 9, 11, 18 19, 21, 22 & 26)."]
+      "measure_list": ["Segundo o direito internacional, todos têm direito à liberdade em casos de prisão ou detenção por:", "motivos não estabelecidos por lei;", "incapacidade de cumprir obrigações contratuais;", "pensamento, crenças, consciência ou religião;", "opiniões ou expressões pacíficas;", "participação em reunião pacífica;", "associação pacífica com outros, incluindo associação sindical; ou", "identidade, incluindo “raça, cor, sexo, língua, religião, opinião política ou de outra natureza, origem nacional ou social, situação econômica, nascimento ou qualquer condição” (PIDCP, Parte II, Art. 2, Parte III, Artigos 9, 11, 18, 19, 21, 22 & 26)."]
     },
     "freedom-from-execution": {
       "type": "CPR",
-      "definition": "According to international law, the right to be free from execution includes freedom from any arbitrary or extrajudicial deprivation of life, as well as freedom from the death penalty even with due process of law (ICCPR, Part III, Article 6; Second Optional Protocol to the ICCPR, Article 1).",
-      "submeasures": "We have created separate sub-measures for freedom from extrajudicial killing and freedom from the death penalty, as well as a combined measure that is equal to the lowest score on the two separate sub-measures."
+      "definition": "De acordo com o direito internacional, o direito de não ser executado inclui não haver qualquer privação arbitrária ou extrajudicial da vida, bem como a liberdade de não ser condenado à morte, mesmo com o devido processo legal (PIDCP, Parte III, art. 6; Segundo Protocolo Facultativo ao PIDCP, artigo 1°).",
+      "submeasures": "Criamos submétricas separadas para o direito de não ser executado extrajudicialmente e para o direito de não ser condenado à pena de morte, bem como uma métrica combinada que é igual à pontuação mais baixa nas duas submétricas separadas."
     },
     "freedom-from-torture": {
       "type": "CPR",
-      "definition": "According to international law, everyone has the right to freedom from “any act by which severe pain or suffering, whether physical or mental, is intentionally inflicted on a person”. This includes torture or ill-treatment committed for any purpose, including (but not limited to) attempts to obtain information or confessions, punishment for suspected or committed acts, intimidation, coercion, and discrimination (CAT, Part 1, Article 1)."
+      "definition": "De acordo com o direito internacional, todos têm o direito de se libertar de \"qualquer ato pelo qual a dor ou sofrimento severo, seja físico ou mental, seja intencionalmente infligido a uma pessoa\". Isso inclui tortura ou maus tratos cometidos para qualquer propósito, incluindo (mas não limitado a) tentativas de obter informações ou confissões, punição por atos suspeitos ou cometidos, intimidação, coerção e discriminação (Convenção contra tortura, Parte 1, Artigo 1)."
     },
     "participate-in-government": {
       "type": "CPR",
-      "conclusion_para": "These rights are to be enjoyed without discrimination and without \"unreasonable restrictions\"(ICCPR, Part III, Article 25).",
-      "measure_list": ["According to international law, everyone has the right:", "\"to take part in the conduct of public affairs, directly or through freely chosen representatives\";", "\"to vote and to be elected at genuine periodic elections\" in which every person can vote, every vote counts equally, and the ballot is secret;", "\"to have access, on general terms of equality, to public service.\""]
+      "conclusion_para": "Esses direitos existem para serem gozados sem discriminações e sem “restrições infundadas” (PIDCP, Parte III, Art. 25).",
+      "measure_list": ["Segundo o direito internacional, todos têm o direito:", "\"de participar na condução dos assuntos públicos, de modo direto ou por meio de representantes eleitos\";", "\"de votar e de ser votado em eleições periódicas autênticas\", na qual cada pessoa pode votar, e cada voto é secreto e igualitário;", "\"de ter acesso, em termos gerais de igualdade, ao serviço público.\""]
     },
     "assembly-and-association": {
       "type": "CPR",
-      "definition": "According to international law, the right to peaceful assembly ensures that all people have the right to gather publicly or privately to engage in peaceful meetings, protests, or other group gatherings. Freedom of association ensures that everyone may choose (or not) to form and/or join any group, such as political parties, civil society organisations, activist organisations, trade unions, religious groups, cultural organisations, or other groups (ICCPR, Part III, Articles 21 & 22)."
+      "definition": "De acordo com o direito internacional, o direito à reunião pacífica garante que todas as pessoas tenham o direito de se reunir em público ou em particular para participar de reuniões pacíficas, protestos ou outros encontros de grupo. A liberdade de associação garante que todos possam escolher (ou não) formar e/ou participar de qualquer grupo como partidos políticos, organizações da sociedade civil, organizações ativistas, sindicatos, grupos religiosos, organizações culturais ou outros grupos (art. 21 e 22 do PIDCP, Parte III)."
     },
     "opinion-and-expression": {
       "type": "CPR",
-      "definition": "According to international law, everyone has \"the right to hold opinions without interference\" and \"the right to freedom of expression.\" This includes the \"freedom to seek, receive, and impart information and ideas of all kinds” through any media, including any form of artistic expression. This right also protects \"a free, uncensored, and unhindered press or other media\" (ICCPR, Part III, Article 19; Human Rights Committee, General Comment No. 34, para. 13)."
+      "definition": "De acordo com o direito internacional, todos têm \"o direito de manter opiniões sem interferências\" e \"o direito à liberdade de expressão\". Isso inclui a \"liberdade de buscar, receber e transmitir informações e ideias de todos os tipos\" através de qualquer mídia, incluindo qualquer forma de expressão artística. Esse direito também protege \"uma imprensa livre, sem censura e sem impedimentos ou outros meios\" (art. 19, do PIDCP, Parte III; Comitê de Direitos Humanos, Comentário Geral nº 34, parágrafo. 13)."
     }
   }
 }
