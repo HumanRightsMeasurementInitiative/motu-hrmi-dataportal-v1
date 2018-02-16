@@ -50,6 +50,7 @@ export default class RightsPage extends React.Component {
   }
 
   setRight = (right) => {
+    this.setState({ currCountry: null })
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, right: right }))
   }
 
