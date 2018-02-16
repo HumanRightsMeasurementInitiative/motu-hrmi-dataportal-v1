@@ -35,6 +35,11 @@ const PETALS_COLORS = [
   '#00af49', // edu
 ]
 
+function rewriteArgs(fn, ...args) {
+  if (fn === null) return null
+  return () => fn(...args)
+}
+
 export default class CountryRightsChart extends React.Component {
   static propTypes = {
     rights: PropTypes.object.isRequired,
@@ -48,11 +53,11 @@ export default class CountryRightsChart extends React.Component {
   }
 
   render() {
-    const { rights, size, displayLabels, esrStandard, currRight = null } = this.props
+    const { rights, size, displayLabels, esrStandard, currRight = null, onClickRight = null } = this.props
     const { esrHI, esrCore, cpr } = rights
 
-    const currRightIndex = currRight
-      ? Object.keys(rightsDefinitions).findIndex(r => r === currRight)
+    const currRightIndex = RIGHTS_ORDER.includes(currRight)
+      ? RIGHTS_ORDER.indexOf(currRight)
       : null
 
     const rightsData = RIGHTS_ORDER.map(rightCode => {
@@ -91,6 +96,7 @@ export default class CountryRightsChart extends React.Component {
             size={size}
             data={rightsData}
             colors={PETALS_COLORS}
+            onClick={onClickRight}
           />
         }
       </div>
@@ -98,7 +104,7 @@ export default class CountryRightsChart extends React.Component {
   }
 }
 
-function PetalLabels({ size, data, colors }) {
+function PetalLabels({ size, data, colors, onClick }) {
   const displayPercent = n => data[n] !== null ? (data[n] * 100).toFixed(0) + '%' : 'N/A'
   const displayTenth = n => data[n] !== null ? (data[n] * 10).toFixed(1) + '/10' : 'N/A'
 
@@ -129,7 +135,11 @@ function PetalLabels({ size, data, colors }) {
           r={size / 4 + 30}
           a={360 / 12 * i}
           correction={corrections[i]}
-          style={{ textAlign: i === 0 || i === 6 ? 'center' : i > 6 ? 'right' : 'left' }}
+          style={{
+            textAlign: i === 0 || i === 6 ? 'center' : i > 6 ? 'right' : 'left',
+            cursor: onClick ? 'pointer' : null,
+          }}
+          onClick={rewriteArgs(onClick, RIGHTS_ORDER[i])}
         >
           {names[i]}
           <br/>
