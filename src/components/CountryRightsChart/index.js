@@ -102,69 +102,42 @@ function PetalLabels({ size, data, colors }) {
   const displayPercent = n => data[n] !== null ? (data[n] * 100).toFixed(0) + '%' : 'N/A'
   const displayTenth = n => data[n] !== null ? (data[n] * 10).toFixed(1) + '/10' : 'N/A'
 
+  const names = Object.keys(rightsDefinitions).map(k => rightsDefinitions[k].name)
+  const corrections = [
+    [-50, -20],
+    [0, -20],
+    [0, -15],
+    [-10, -20],
+    [-10, -10],
+    [0, -15],
+    [-52, -20],
+    [-105, -15],
+    [-100, -10],
+    [-95, -20],
+    [-105, -15],
+    [-110, -20],
+  ]
+
+  const isESR = i => i < 3 || i > 9
+
   return (
     <div style={{ fontSize: 14, color: '#606163' }}>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 0} correction={[-50, -20]} style={{ textAlign: 'center' }}>
-        Health
-        <br/>
-        <strong style={{ color: colors[0] }}>{displayPercent(0)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 1} correction={[0, -20]} style={{ textAlign: 'left' }}>
-        Housing
-        <br/>
-        <strong style={{ color: colors[1] }}>{displayPercent(1)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 2} correction={[0, -15]} style={{ textAlign: 'left' }}>
-        Work
-        <br/>
-        <strong style={{ color: colors[2] }}>{displayPercent(2)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 3} correction={[-10, -20]} style={{ textAlign: 'left' }}>
-        Freedom from disappearance
-        <br/>
-        <strong style={{ color: colors[3] }}>{displayTenth(3)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 4} correction={[-10, -10]} style={{ textAlign: 'left' }}>
-        Freedom from arbitrary arrest
-        <br/>
-        <strong style={{ color: colors[4] }}>{displayTenth(4)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 5} correction={[0, -15]} style={{ textAlign: 'left' }}>
-        Freedom from execution
-        <br/>
-        <strong style={{ color: colors[5] }}>{displayTenth(5)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 6} correction={[-52, -20]} style={{ textAlign: 'center' }}>
-        Freedom from torture
-        <br/>
-        <strong style={{ color: colors[6] }}>{displayTenth(6)}</strong>
-      </LabelRadial>
-
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 7} correction={[-105, -15]} style={{ textAlign: 'right' }}>
-        Participate in government
-        <br/>
-        <strong style={{ color: colors[7] }}>{displayTenth(7)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 8} correction={[-100, -10]} style={{ textAlign: 'right' }}>
-        Assembly and association
-        <br/>
-        <strong style={{ color: colors[8] }}>{displayTenth(8)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 9} correction={[-95, -20]} style={{ textAlign: 'right' }}>
-        Opinion and expression
-        <br/>
-        <strong style={{ color: colors[9] }}>{displayTenth(9)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 10} correction={[-105, -15]} style={{ textAlign: 'right' }}>
-        Food
-        <br/>
-        <strong style={{ color: colors[10] }}>{displayPercent(10)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 11} correction={[-110, -20]} style={{ textAlign: 'right' }}>
-        Education
-        <br/>
-        <strong style={{ color: colors[11] }}>{displayPercent(11)}</strong>
-      </LabelRadial>
+      {data.map((d, i) => (
+        <LabelRadial
+          key={i}
+          surfaceSize={size}
+          r={size / 4 + 30}
+          a={360 / 12 * i}
+          correction={corrections[i]}
+          style={{ textAlign: i === 0 || i === 6 ? 'center' : i > 6 ? 'right' : 'left' }}
+        >
+          {names[i]}
+          <br/>
+          <strong style={{ color: colors[i] }}>
+            {isESR(i) ? displayPercent(i) : displayTenth(i)}
+          </strong>
+        </LabelRadial>
+      ))}
     </div>
   )
 }
