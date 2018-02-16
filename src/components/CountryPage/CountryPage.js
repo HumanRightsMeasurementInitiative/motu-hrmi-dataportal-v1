@@ -114,6 +114,8 @@ export default class CountryPage extends React.Component {
                 esrStandard={esrStandard}
                 size={740}
                 margin={200}
+                currRight={currRight}
+                onClickRight={this.setCurrRight}
                 displayLabels
               />
             </div>

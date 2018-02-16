@@ -117,6 +117,7 @@ export default class GeoPage extends React.Component {
                     >
                       <CountryRightsChart
                         rights={country.rights}
+                        currRight={urlSegs.right === 'all' ? null : urlSegs.right}
                         esrStandard={esrStandard}
                         size={165}
                       />

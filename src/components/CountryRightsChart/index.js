@@ -35,6 +35,11 @@ const PETALS_COLORS = [
   '#00af49', // edu
 ]
 
+function rewriteArgs(fn, ...args) {
+  if (fn === null) return null
+  return () => fn(...args)
+}
+
 export default class CountryRightsChart extends React.Component {
   static propTypes = {
     rights: PropTypes.object.isRequired,
@@ -48,8 +53,12 @@ export default class CountryRightsChart extends React.Component {
   }
 
   render() {
-    const { rights, size, displayLabels, esrStandard } = this.props
+    const { rights, size, displayLabels, esrStandard, currRight = null, onClickRight = null } = this.props
     const { esrHI, esrCore, cpr } = rights
+
+    const currRightIndex = RIGHTS_ORDER.includes(currRight)
+      ? RIGHTS_ORDER.indexOf(currRight)
+      : null
 
     const rightsData = RIGHTS_ORDER.map(rightCode => {
       const { type } = rightsDefinitions[rightCode]
@@ -79,13 +88,15 @@ export default class CountryRightsChart extends React.Component {
           domain={[0, 1]}
           colors={PETALS_COLORS}
           debug={false}
-          enableBlur={false}
+          enableBlur={true}
+          highlightedSector={currRightIndex}
         />
         {displayLabels &&
           <PetalLabels
             size={size}
             data={rightsData}
             colors={PETALS_COLORS}
+            onClick={onClickRight}
           />
         }
       </div>
@@ -93,80 +104,57 @@ export default class CountryRightsChart extends React.Component {
   }
 }
 
-function PetalLabels({ size, data, colors }) {
+function PetalLabels({ size, data, colors, onClick }) {
   const displayPercent = n => data[n] !== null ? (data[n] * 100).toFixed(0) + '%' : 'N/A'
   const displayTenth = n => data[n] !== null ? (data[n] * 10).toFixed(1) + '/10' : 'N/A'
 
+  const names = Object.keys(rightsDefinitions).map(k => rightsDefinitions[k].name)
+  const corrections = [
+    [-50, -20],
+    [0, -20],
+    [0, -15],
+    [-10, -20],
+    [-10, -10],
+    [0, -15],
+    [-52, -20],
+    [-105, -15],
+    [-100, -10],
+    [-95, -20],
+    [-105, -15],
+    [-110, -20],
+  ]
+
+  const isESR = i => i < 3 || i > 9
+
   return (
     <div style={{ fontSize: 14, color: '#606163' }}>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 0} correction={[-45, -20]} style={{ textAlign: 'center' }}>
-        health
-        <br/>
-        <strong style={{ color: colors[0] }}>{displayPercent(0)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 1} correction={[0, -20]} style={{ textAlign: 'left' }}>
-        housing
-        <br/>
-        <strong style={{ color: colors[1] }}>{displayPercent(1)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 2} correction={[0, -15]} style={{ textAlign: 'left' }}>
-        work
-        <br/>
-        <strong style={{ color: colors[2] }}>{displayPercent(2)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 3} correction={[-10, -20]} style={{ textAlign: 'left' }}>
-        freedom from<br/>disappearance
-        <br/>
-        <strong style={{ color: colors[3] }}>{displayTenth(3)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 4} correction={[-10, -10]} style={{ textAlign: 'left' }}>
-        freedom from<br/>arbitrary arrest
-        <br/>
-        <strong style={{ color: colors[4] }}>{displayTenth(4)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 5} correction={[0, -15]} style={{ textAlign: 'left' }}>
-        freedom<br/>from execution
-        <br/>
-        <strong style={{ color: colors[5] }}>{displayTenth(5)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 6} correction={[-52, -15]} style={{ textAlign: 'center' }}>
-        freedom<br/>from torture
-        <br/>
-        <strong style={{ color: colors[6] }}>{displayTenth(6)}</strong>
-      </LabelRadial>
-
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 7} correction={[-115, -15]} style={{ textAlign: 'right' }}>
-        participate<br/>in government
-        <br/>
-        <strong style={{ color: colors[7] }}>{displayTenth(7)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 8} correction={[-105, -10]} style={{ textAlign: 'right' }}>
-        assembly<br/>and association
-        <br/>
-        <strong style={{ color: colors[8] }}>{displayTenth(8)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 9} correction={[-95, -20]} style={{ textAlign: 'right' }}>
-        opinion<br/>and expression
-        <br/>
-        <strong style={{ color: colors[9] }}>{displayTenth(9)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 10} correction={[-80, -15]} style={{ textAlign: 'right' }}>
-        food
-        <br/>
-        <strong style={{ color: colors[10] }}>{displayPercent(10)}</strong>
-      </LabelRadial>
-      <LabelRadial surfaceSize={size} r={size / 4 + 30} a={360 / 12 * 11} correction={[-110, -20]} style={{ textAlign: 'right' }}>
-        education
-        <br/>
-        <strong style={{ color: colors[11] }}>{displayPercent(11)}</strong>
-      </LabelRadial>
+      {data.map((d, i) => (
+        <LabelRadial
+          key={i}
+          surfaceSize={size}
+          r={size / 4 + 30}
+          a={360 / 12 * i}
+          correction={corrections[i]}
+          style={{
+            textAlign: i === 0 || i === 6 ? 'center' : i > 6 ? 'right' : 'left',
+            cursor: onClick ? 'pointer' : null,
+          }}
+          onClick={rewriteArgs(onClick, RIGHTS_ORDER[i])}
+        >
+          {names[i]}
+          <br/>
+          <strong style={{ color: colors[i] }}>
+            {isESR(i) ? displayPercent(i) : displayTenth(i)}
+          </strong>
+        </LabelRadial>
+      ))}
     </div>
   )
 }
 
 function Label({ x, y, children, ...props }) {
   return (
-    <div { ...props } style={{ ...(props.style || {}), position: 'absolute', top: y, left: x }}>
+    <div { ...props } style={{ ...(props.style || {}), position: 'absolute', top: y, left: x, width: 100 }}>
       {children}
     </div>
   )

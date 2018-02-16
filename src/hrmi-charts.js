@@ -66,40 +66,18 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/components/PetalChart.js":
+/***/ "./src/components/DebugPath.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PetalChart; });
+/* harmony export (immutable) */ __webpack_exports__["a"] = DebugPath;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_scale__ = __webpack_require__("d3-scale");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_scale___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_d3_scale__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_shape__ = __webpack_require__("d3-shape");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_shape___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3_shape__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lib_curve_normal_bezier__ = __webpack_require__("./src/lib/curve-normal-bezier.js");
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
 
 
-
-
-
-
-var DEFAULT_COLORS = ['#00D066', '#00DB69', '#00E56F', '#4FD1F3', '#44BFE6', '#3AABDA', '#2E97CC', '#3377B0', '#345494', '#342D75', '#00A352', '#00BB5B'];
-
-function dumbHash() {
-  return window.btoa(Math.random().toString().slice(2)).slice(0, 10);
-}
 
 function DebugPath(_ref) {
   var d = _ref.d;
@@ -178,6 +156,41 @@ function DebugPath(_ref) {
   );
 }
 
+/***/ }),
+
+/***/ "./src/components/PetalChart.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PetalChart; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_scale__ = __webpack_require__("d3-scale");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_scale___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_d3_scale__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_shape__ = __webpack_require__("d3-shape");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_shape___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3_shape__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_components_DebugPath__ = __webpack_require__("./src/components/DebugPath.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_lib_curve_normal_bezier__ = __webpack_require__("./src/lib/curve-normal-bezier.js");
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+var DEFAULT_COLORS = ['#00D066', '#00DB69', '#00E56F', '#4FD1F3', '#44BFE6', '#3AABDA', '#2E97CC', '#3377B0', '#345494', '#342D75', '#00A352', '#00BB5B'];
+
+function dumbHash() {
+  return window.btoa(Math.random().toString().slice(2)).slice(0, 10);
+}
+
 var PetalChart = function (_React$Component) {
   _inherits(PetalChart, _React$Component);
 
@@ -197,6 +210,8 @@ var PetalChart = function (_React$Component) {
           dataDirty = _props.data,
           domain = _props.domain,
           debug = _props.debug,
+          _props$highlightedSec = _props.highlightedSector,
+          highlightedSector = _props$highlightedSec === undefined ? null : _props$highlightedSec,
           _props$enableBlur = _props.enableBlur,
           enableBlur = _props$enableBlur === undefined ? false : _props$enableBlur,
           _props$colors = _props.colors,
@@ -214,7 +229,9 @@ var PetalChart = function (_React$Component) {
         return v === null ? scale.invert(0) : v;
       });
 
-      var radarLine = Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["lineRadial"])().curve(__WEBPACK_IMPORTED_MODULE_3_lib_curve_normal_bezier__["a" /* default */]).radius(scale).angle(function (d, i) {
+      if (highlightedSector < 0 || highlightedSector >= count) throw new Error('Petalchart: invalid highlightedSector');
+
+      var radarLine = Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["lineRadial"])().curve(__WEBPACK_IMPORTED_MODULE_4_lib_curve_normal_bezier__["a" /* default */]).radius(scale).angle(function (d, i) {
         return i * angleSlice;
       });
 
@@ -223,6 +240,8 @@ var PetalChart = function (_React$Component) {
       var slicePath = Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["arc"])().innerRadius(innerRadius).outerRadius(radius + 20).startAngle(0).endAngle(angleSlice);
 
       var sliceCenterPath = Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["arc"])().innerRadius(innerRadius).outerRadius(radius + 20).startAngle(0).endAngle(angleSlice).cornerRadius(5);
+
+      var sliceHighlightedMaskPath = Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["arc"])().innerRadius(0).outerRadius(radius).startAngle(angleSlice * highlightedSector + angleSlice / 2).endAngle(2 * Math.PI + angleSlice * highlightedSector - angleSlice / 2);
 
       var hash = dumbHash();
       var clipPathId = 'clipping-area-radar--' + hash;
@@ -249,7 +268,7 @@ var PetalChart = function (_React$Component) {
               data.map(function (d, i) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', {
                   key: i,
-                  d: sliceCenterPath(0),
+                  d: sliceCenterPath(),
                   transform: 'rotate(' + i * degreeSlice + ')',
                   fill: 'white'
                 });
@@ -274,17 +293,25 @@ var PetalChart = function (_React$Component) {
               {
                 className: '-colored-slices',
                 clipPath: 'url(#' + clipPathId + ')',
-                mask: 'url(#' + maskCenterCornersId + ')',
-                filter: enableBlur ? 'url(#' + blurId + ')' : null
+                mask: 'url(#' + maskCenterCornersId + ')'
               },
-              data.map(function (d, i) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', {
-                  key: i,
-                  d: slicePath(d),
-                  transform: 'rotate(' + (i * degreeSlice - degreeSlice / 2) + ')',
-                  fill: colors[i]
-                });
-              })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'g',
+                { filter: enableBlur ? 'url(#' + blurId + ')' : null },
+                data.map(function (d, i) {
+                  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', {
+                    key: i,
+                    d: slicePath(),
+                    transform: 'rotate(' + (i * degreeSlice - degreeSlice / 2) + ')',
+                    fill: colors[i]
+                  });
+                })
+              ),
+              highlightedSector !== null && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'g',
+                { className: '-highlighted-sector-mask' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { d: sliceHighlightedMaskPath(), fill: '#F3F3F3', fillOpacity: '0.8' })
+              )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'g',
@@ -312,11 +339,12 @@ var PetalChart = function (_React$Component) {
                   key: i,
                   r: dotRadius,
                   cx: scale(d) * Math.cos(angleSlice * i - Math.PI / 2),
-                  cy: scale(d) * Math.sin(angleSlice * i - Math.PI / 2)
+                  cy: scale(d) * Math.sin(angleSlice * i - Math.PI / 2),
+                  fill: highlightedSector === null || highlightedSector === i ? 'black' : '#D6D6D6'
                 });
               })
             ),
-            debug && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(DebugPath, { d: radarPath })
+            debug && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_components_DebugPath__["a" /* default */], { d: radarPath })
           )
         )
       );
