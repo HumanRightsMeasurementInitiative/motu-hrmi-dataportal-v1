@@ -48,8 +48,12 @@ export default class CountryRightsChart extends React.Component {
   }
 
   render() {
-    const { rights, size, displayLabels, esrStandard } = this.props
+    const { rights, size, displayLabels, esrStandard, currRight = null } = this.props
     const { esrHI, esrCore, cpr } = rights
+
+    const currRightIndex = currRight
+      ? Object.keys(rightsDefinitions).findIndex(r => r === currRight)
+      : null
 
     const rightsData = RIGHTS_ORDER.map(rightCode => {
       const { type } = rightsDefinitions[rightCode]
@@ -79,7 +83,8 @@ export default class CountryRightsChart extends React.Component {
           domain={[0, 1]}
           colors={PETALS_COLORS}
           debug={false}
-          enableBlur={false}
+          enableBlur={true}
+          highlightedSector={currRightIndex}
         />
         {displayLabels &&
           <PetalLabels
