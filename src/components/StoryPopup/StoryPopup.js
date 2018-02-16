@@ -116,6 +116,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.cprSubTitle}>{story.chart[0].subtitle}</div>
                 { this.state.barchartWidth &&
                   <RightBarchart
+                    currYear={2015}
                     isESR={false}
                     currRight={'freedom-from-disappearance'}
                     rightsByRegionCountries={data.rightsByRegion[PILOT].countries}
@@ -142,6 +143,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.cprSubTitle}>{story.chart[1].subtitle}</div>
                 { this.state.barchartWidth &&
                   <RightBarchart
+                    currYear={2015}
                     isESR={false}
                     currRight={'participate-in-government'}
                     rightsByRegionCountries={data.rightsByRegion[PILOT].countries}
@@ -183,6 +185,7 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.esrSubTitle}>{story.chart[2].subtitle}</div>
                 { this.state.barchartWidth &&
                   <RightBarchart
+                    currYear={2015}
                     isESR={true}
                     currRight={'education'}
                     rightsByRegionCountries={data.rightsByRegion[AMERICAS].countries}
