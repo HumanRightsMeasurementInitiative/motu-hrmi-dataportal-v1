@@ -464,7 +464,7 @@
 .minText {
   position: absolute;
   line-height: 1em;
-  min-width: 86px;
+  min-width: 90px;
 }
 .maxText sup,
 .minText sup {
