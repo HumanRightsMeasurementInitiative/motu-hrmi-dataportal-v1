@@ -159,6 +159,7 @@ export default class RightsPage extends React.Component {
               { isESRSelected || urlSegs.region === 'cpr-pilot'
                 ? <RightBarchart
                   isESR={rightsDefinitions[urlSegs.right].type === 'ESR'}
+                  currYear={this.state.currYear}
                   currRight={urlSegs.right}
                   rightsByRegionCountries={rightsByRegionCountries}
                   chartHeight={this.state.chartHeight * 0.6}

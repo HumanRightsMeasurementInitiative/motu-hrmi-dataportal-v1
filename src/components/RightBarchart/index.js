@@ -10,6 +10,7 @@ import { round } from 'lodash'
 export default class RightBarchart extends React.Component {
   static propTypes = {
     isESR: PropTypes.bool.isRequired,
+    currYear: PropTypes.number.isRequired,
     currRight: PropTypes.string.isRequired,
     chartHeight: PropTypes.number.isRequired,
     chartWidth: PropTypes.number.isRequired,
@@ -25,7 +26,7 @@ export default class RightBarchart extends React.Component {
   }
 
   render() {
-    const { isESR, currRight, chartHeight, chartWidth, rightsByRegionCountries, currCountry, onItemClick } = this.props
+    const { isESR, currYear, currRight, chartHeight, chartWidth, rightsByRegionCountries, currCountry, onItemClick } = this.props
     const yAxisRange = Array.from(Array(11).keys()).reverse()
     const yAxisRate = isESR ? 10 : 1
 
@@ -88,7 +89,9 @@ export default class RightBarchart extends React.Component {
             </g>
             {
               rightsByRegionCountries.map((country, i) => {
-                const { esrHI, esrCore, cpr } = country.rights
+                const { esrHIHistorical, esrCoreHistorical, cpr } = country.rights
+                const esrHI = esrHIHistorical[currYear].rights
+                const esrCore = esrCoreHistorical[currYear].rights
                 const currentRightFrom = container => container ? container[currRight] : null
                 const value = isESR
                   ? { highIncome: currentRightFrom(esrHI), core: currentRightFrom(esrCore) }
@@ -122,7 +125,9 @@ export default class RightBarchart extends React.Component {
             }
             {
               rightsByRegionCountries.map((country, i) => {
-                const { esrHI, esrCore, cpr } = country.rights
+                const { esrHIHistorical, esrCoreHistorical, cpr } = country.rights
+                const esrHI = esrHIHistorical[currYear].rights
+                const esrCore = esrCoreHistorical[currYear].rights
                 const currentRightFrom = container => container ? container[currRight] : null
                 const value = isESR
                   ? { highIncome: currentRightFrom(esrHI), core: currentRightFrom(esrCore) }
