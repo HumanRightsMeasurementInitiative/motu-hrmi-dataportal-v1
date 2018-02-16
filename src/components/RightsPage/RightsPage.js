@@ -185,7 +185,7 @@ export default class RightsPage extends React.Component {
               }
             </div>
             <div className={styles.chartsFooter}>
-              <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={ESRs.indexOf(urlSegs.right) > -1 ? ['bar chart', 'line chart'] : ['bar chart']} content={content} /></div>
+              <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={isESRSelected ? ['bar chart', 'line chart'] : ['bar chart']} content={content} /></div>
               <div className={styles.text}>{isESRSelected ? content.footer_text.rights_page_esr : content.footer_text.rights_page_cpr}</div>
               <div className={styles.source}>{content.footer_text.source} <a className={styles.small} href='https://humanrightsmeasurement.org'>https://humanrightsmeasurement.org</a></div>
             </div>

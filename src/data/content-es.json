@@ -1,3 +1,411 @@
 {
-	"menu": "es"
+  "region_name": {
+    "high-income-oecd": "Países con ingresos altos de la OCDE",
+    "europe-central-asia": "Europa Central y Oriental y Asia Central",
+    "east-asia-pacific": "Asia Oriental y el Pacífico",
+    "americas": "Latinoamérica y el Caribe",
+    "middle-east-north-africa": "Medio Oriente y Norte de África",
+    "south-asia": "Asia del Sur",
+    "sub-saharan-africa": "África Subsahariana",
+    "cpr-pilot": "Derechos civiles y políticos en países piloto"
+  },
+  "rights_name" : {
+    "food": "Derecho a la alimentación",
+    "education": "Derecho a la educación",
+    "health": "Derecho a la salud",
+    "housing": "Derecho a la vivienda",
+    "work": "Derecho al trabajo",
+    "opinion-and-expression": "Derecho a la opinión y expresión",
+    "assembly-and-association": "Derecho de asamblea y asociación",
+    "participate-in-government": "Derecho a participar en el Gobierno",
+    "freedom-from-torture": "Derecho a vivir libre de tortura",
+    "freedom-from-execution": "Derecho a vivir libre de ejecución",
+    "freedom-from-arbitrary-arrest": "Derecho a vivir libre de arresto arbitrario",
+    "freedom-from-disappearance": "Derecho a vivir libre de desaparición"
+  },
+  "subrights_name": {
+    "assembly": "Derecho de asamblea",
+    "association": "Derecho de asociación",
+    "freedom-from-the-death-penalty": "Derecho a vivir libre de pena de muerte",
+    "freedom-from-extrajudicial-execution": "Derecho a vivir libre de ejecución extrajudicial"
+  },
+  "score_name": {
+    "childrenNourishment": "Resultado de niños bien alimentados",
+    "normalBirthweightInfants": "Resultado de infantes con peso normal al nacer",
+    "combinedSchoolEnrollment": "Resultado de matrícula escolar combinada",
+    "primarySchoolCompletion": "Resultado de conclusión de educación primaria",
+    "combinedSchoolEnrollment": "Resultado de educación de calidad",
+    "contraceptiveUseScore": "Resultado de uso de contraceptivos",
+    "cildSurvival": "Resultado de supervivencia infantil",
+    "survivalToAge65": "Resultado de supervivencia a 65 años",
+    "improvedSanitation": "Resultado de instalaciones sanitarias mejoradas",
+    "improvedRuralWater": "Resultado de agua rural mejorada",
+    "notAbsolutelyPoor": "Resultado de no absolutamente pobre",
+    "notRelativelyPoor": "Resultado de no relativamente pobre",
+    "notLongTermUnemployed": "Resultado de desempleado no a largo plazo"
+  },
+  "rights_category": {
+    "esr": "Derechos económicos y sociales",
+    "cpr": "Derechos civiles y políticos"
+  },
+  "legend": {
+    "esr_barchart": ["Calificación estándar principal de evaluación", "Calificación de evaluación de país de ingresos altos de la OCDE"],
+    "cpr_barchart": ["Mean score", "percentile"]
+  },
+  "menu": {
+    "about": {
+      "title": "Sobre la iniciativa",
+      "paragraphs": [
+        "La Iniciativa de Medición de Derechos Humanos (HRMI) es un proyecto colaborativo entre profesionales, investigadores y académicos de derechos humanos y otros defensores de los derechos humanos.",
+        "Nuestro objetivo es preparar el primer y más completo conjunto de mediciones para registrar el desempeño de los derechos humanos de los países.",
+        "Nuestro grupo de datos para 2018 incluye:",
+        "Con el tiempo, buscamos extender nuestra información de derechos civiles y políticos al resto del mundo, y ampliar nuestro conjunto de datos para incluir mediciones adicionales.",
+        "Lee más sobre la Iniciativa de Medición de Derechos Humanos:"
+      ],
+      "list": [
+        "Datos anuales de cinco derechos económicos y sociales para entre 120 y 180 países (dependiendo del derecho) desde 2005 a 2015.",
+        "Datos experimentales para siete derechos civiles y políticos para 13 países entre enero y junio de 2017."
+      ],
+      "links": [
+        "¿Quiénes somos?",
+        "Lee sobre nuestra metodología",
+        "Visita el sitio web de HRMI"
+      ]
+    },
+    "methodology": {
+      "title": "Metodología",
+      "paragraphs": [
+        "No hay una sola metodología para medir el desempeño de los derechos humanos, así que usamos diferentes metodologías que se confeccionan para cada rubro.",
+        "Cada vez que sea posible, por ejemplo, en el rubro de derechos económicos y sociales, nuestras metodologías usan estadísticas objetivas realizadas por Gobiernos nacionales y agencias internacionales.",
+        "Para derechos civiles y políticos, donde las violaciones a menudo ocurren en secreto y los informes son incompletos, usamos un enfoque de encuesta a los expertos para obtener nuestra información directamente de los expertos en derechos humanos que analizan los acontecimientos en cada país.",
+        "Lee más:"
+      ],
+      "links": [
+        "Visión general de nuestra metodología para medir derechos económicos y sociales.",
+        "Visión general de nuestra metodología para medir derechos civiles y políticos.",
+        "Lee nuestro manual sobre metodología exhaustiva (en inglés): [Add hyperlink when available].",
+        "Mira la encuesta a los expertos de HRMI para derechos civiles y políticos. [Favor notar: esta versión de la encuesta no está activa, y cualquier respuesta que usted brinde no será guardada]."
+      ]
+    },
+    "howToUse": {
+      "title": "How To Use",
+      "paragraphs": [
+        "Hay muchas maneras en que puedes usar la información de la Iniciativa de Medición de Derechos Humanos (HRMI). Incluyen:",
+        "A manera de ejemplo, hemos creado narrativas de países que aprovechan esa información para México [insert hyperlink] y Australia [insert hyperlink]. Nos encantaría que nos contaran cómo están usando nuestra información. Por favor, ponte en contacto con nosotros haciendo clic",
+        "Puedes descargar los gráficos y datos de HRMI con un clic en el ícono de descarga en el extremo inferior izquierdo de cada pantalla.",
+        "Por favor, asegúrate de entender la información y lo que muestra, para que la interpretes bien.",
+        "Queremos que nuestro trabajo esté disponible libremente para todos, así que todos los datos, gráficos y textos de HRMI cuentan con",
+        "Esto quiere decir que puedes volver a usar lo que hemos creado siempre que des el crédito a la Iniciativa de Medición de Derechos Humanos e incluyas un enlace a",
+        "En los gráficos, donde el espacio es limitado, por favor pon la referencia a la fuente de esta manera:",
+        "Fuente:",
+        "Si usas información de HRMI en una investigación formal, por favor, cítala con las siguientes referencias:",
+        "Y cuando uses información de derechos civiles y políticos, por favor, cita:",
+        "Y cuando uses información de derechos económicos y sociales, por favor, cita:"
+      ],
+      "list": [
+        "campañas de defensoría y publicidad",
+        "solicitud de rendición de cuentas a los Gobiernos",
+        "identificación de políticas que trabajan para promover derechos humanos",
+        "estimulación de competencia para una \"carrera a lo más alto\" (es decir, para alentar a los países a desempeñarse en derechos humanos tan bien como puedan)",
+        "Iniciativa de Medición de Derechos Humanos (HRMI). 2018.",
+        "Versión 2018.1",
+        "Clay et al, (2018) \"The Human Rights Measurement Initiative (HRMI) Civil and Political Rights Indicators\". Motu Working Paper, próxima aparición.",
+        "HRMI Economic and Social Rights Methodology, 2017, Nota técnica.",
+        "akiko Fukuda-Parr, Terra Lawson-Remer y Susan Randolph (2015), Fulfilling Social and Economic Rights, Oxford: Oxford University Press."
+      ],
+      "links": [
+        "aquí.",
+        "licencia Creative Commons Attribution 4.0",
+        "nuestro sitio web",
+        "Conjunto de datos de la Iniciativa de Medición de Derechos Humanos 2018 (HRMI)",
+        "\"Conjunto de datos de derechos humanos de HRMI\""
+      ]
+    },
+    "download": {
+      "title": "Descargar conjunto de datos",
+      "paragraphs": [
+        "Puedes usar los datos y los gráficos elaborados por la Iniciativa de Medición de Derechos Humanos (HRMI) para tu defensoría o investigación. Sin embargo, te pedimos que te asegures de que entiendes la información y lo que muestra, para que la interpretes bien.",
+        "Por favor, dale el crédito a la Iniciativa de Medición de Derechos Humanos e incluye un enlace a nuestro sitio web"
+      ],
+      "link": "(https://humanrightsmeasurement.org/)",
+      "button": "AGREE"
+    }
+  },
+  "section": {
+    "title": "Explorar todo el conjunto de datos:",
+    "section_name": ["Explorar por derechos", "Explorar por geografía"]
+  },
+  "arrow_link": {
+    "title": {
+      "all": "Explorar todos los derechos en:",
+      "this": "Explorar este derecho en:"
+    }
+  },
+  "story_mexico": {
+    "in": "IN",
+    "country_code": "MEX",
+    "article_title": "Respect for Human Rights in Mexico is far worse than it should be",
+    "article_subtitle": [
+      "Economic and Social Rights",
+      "Right to Education"
+    ],
+    "paragraphs": [
+      "Media stories of disappearances, unjustified arrests and extrajudicial killings are now so commonplace in Mexico that the population has begun to think they are normal.",
+      "But HRMI’s new data measuring respect for civil and political rights in Mexico highlights that this situation is not normal at all.",
+      "The chart on the left summarises Mexico’s performance across 12 human rights. In this chart, each axis represents a right. The further from the origin the country’s score is, the better the performance of the country on that right. Scores for the seven civil and political rights are shown around the bottom half of the chart (in green) and scores for the five economic and social rights are shown around the top part of the chart (in blue). The unbalanced shape of the chart tells us that Mexico is performing much better in the area of economic and social rights than it is on civil and political rights.",
+      "Let’s dig into this in more detail – starting with the area of comparative worse performance – civil and political rights. Since there are no objective statistics on most of these Rights, we calculate these scores on the basis of responses provided by human rights experts in each country.",
+      "Mexico’s worst score is a score of 2.7 out of 10 on the Right to Freedom from Disappearance. The chart below compares Mexico’s performance on this Right with that of the 12 other countries in our pilot sample for measuring civil and political rights. Normally, we would not compare 13 such different countries, and in future iterations, we hope to only present scores for Mexico in comparison with other Latin American countries, as well as Mexico’s past scores. But for the pilot, we only have these scores for 13 countries, and as such, we can only focus on them. You can see that Mexico’s Disappearance score is not only worse than in Brazil (the only other Latin American country in the sample) but also on par with, and possibly lower than,  Saudi Arabia’s score.",
+      "This finding is not surprising given….. [examples, details and context of disappearances in Mexico. If need be the profile could draw on qualitative responses in HRMI survey here, but Amnesty Mexico likely to have plenty of qualitative research to draw on already.]",
+      "By contrast, Mexico’s two best scores in the area of civil and political rights are for the Right to Assembly and Association (score 6.7 out of 10) and the Right to Participate in Government (score 6.6 out of 10).  On both of these Rights, Mexico is closer to the middle of the pack, when compared to the other 12 countries in the pilot study.",
+      "For example, consider the chart below, which compares the scores of countries for the Right to Participate in Government. For this Right Mexico’s score is not substantively different from Brazil’s score, as indicated by the substantial overlap between the uncertainty bands of the two countries (i.e. Mexico’s average score is above the 10th percentile of Brazil’s score).  The scores shown, together with the uncertainty bands, also suggest that Mexico’s respect for this right is generally comparable to that observed in Fiji and not a lot worse than observed in Liberia and the United Kingdom.",
+      "This is consistent with the fact that Mexico has a somewhat free and fair electoral system with [………………… give more detail….]. Survey respondents did, however, highlight regulations and practices that disproportionately impact indigenous people, people of low economic and social status, less educated people, immigrants and people in some regions of the country. [There have also been concerns expressed about single-party states and people who don’t like the two main political parties.] If you visit this chart on our data visualisation website you will be able to see this further information about the groups in Mexico that are most at risk of having each right violated, by clicking on the Mexico bar of the chart. [Q: or would we like this information to show up in the left hand column of the country profile?]",
+      "Turning now to the economic and social rights, the chart below shows Mexico’s trend over time for each of the five economic and social rights. [assuming that this chart type is possible]",
+      "Note that toward the top of this chart it is possible to switch between two different assessment standards for Mexico. The default for Mexico is set to the Core Assessment Standard, because this is the assessment standard we use for most low and middle-income countries. [explain what this shows]. The other is the HiYOECD assessment standard. [explain what this is].  Although Mexico is not a high-income country, it does have all the data needed to rate it on the hiYOECD country standard as well.",
+      "[Note that if it’s not possible for the user to switch between the two standards IN the profile story then we can just show the line chart twice – once for each assessment standard].",
+      "[Discussion of results…. what will stand out for Mexico is that Mexico's score using the HiYStandard is much lower on Ed than using the Core Standard.   The difference is also especially pronounced on Work.  This sets up a focus on education or work for Mexico...  let’s assume it is a focus on education…]",
+      "Now turning to a comparison of Mexico’s Right to Education scores with other countries in Latin America, please see the chart below.",
+      "It is interesting to see that the best performing country in the region on the Right to Education was [Country X].  However, it is also important to remember that [Country X]’s score of 100% (or 90-something %) does NOT imply that everyone in the country enjoys the right. Rather, it tells us that [country X]’s right enjoyment level is on par with the historically best-performing countries at the same per-capita income level. Further improvement is of course still possible – it is just that countries like [Country X] with a very high HRMI score need to innovate to extend human rights enjoyment further than has been done in the past.",
+      "[Assuming that it is possible to switch back and forth within the above chart between the core and high income OECD country standard – we can now have a discussion about the different components of that right using each standard.  Question for Accurat – how do we do this?  Can we have the sub-component scores appear in the left hand side column? Or perhaps we can show in the left hand column the radar of Mexico with the Education petal highlighted, showing the drill-down into the different education components.]",
+      "[This would allow us to clearly see that the main education challenge for Mexico is in improving the quality of education.]",
+      "Comparing Mexico’s performance on the Right to Education with other countries in Latin America, the bar chart above shows…..[… pick out a few interesting things, e.g. comparison with Costa Rica & Bolivia for the core standard; and Uruguay and Brazil using the HIYOECD standard]",
+      "One final point worth noting is that the aggregate country economic and social rights metrics as shown tend to mask the fact that the distribution of fulfilment of the right is often very uneven. For example, higher income people in Mexico are likely to be able to send their children to private schools of a much higher quality than people in lower socio-economic groups. […. add some other examples relevant to Mexico, perhaps with references to analysis and research that discusses these inequalities….?]",
+      "Coming back to the radar chart for Mexico, Mexico’s scores on the five economic and social rights are visible along the uppermost five axes of the radar chart. Based on the core assessment standard, you will see that these scores are very close to one another, ranging from 82% to 89%. But when assessed on the HiYOECD standard they are much more variable.",
+      "On either assessment standard for economic and social rights, and also for civil and political rights, the overall story that these data tell us about human rights in Mexico is that Mexico could be doing a lot better…. [ elaborate…]",
+      "For regional inspiration for how to do better in the area of economic and social rights, Mexico might like to look to countries such as Costa Rica/Bolivia/Ecuador/Peru.",
+      "[include here a radar country comparison of Mexico with some or all of Costa Rica/Bolivia/Ecuador/Peru/Brazil.  Obviously most of these other countries would have ‘half-shell’ radars since we don’t yet have CPR data for them. What is the comparision limit?]",
+      "[If possible for these radar charts also, we would like to offer users the ability to switch between comparisons using the different standards]."
+    ],
+    "chart": [{
+      "title": "Right to Freedom from Disappearance",
+      "subtitle": "scores for all 13 countries in HRMI pilot sample"
+    }, {
+      "title": "Right to Participate in Government",
+      "subtitle": "scores for all 13 countries in HRMI pilot sample"
+    }, {
+      "title": "Right to Education",
+      "subtitle": "Mexico compared to rest of Latin America"
+    }],
+    "image": {
+      "legend": "[include some human interest story somewhere quite high up in the story – even to start with – e.g. a story about a particular journalist who was killed / disappeared]",
+      "source": "PHOTO SOURCE / CREDITS"
+    },
+    "standard_name": {
+      "core": "Core assessment standard",
+      "high": "High income OECD country assessment standard"
+    },
+    "ending_text": "This is end of the story"
+  },
+  "header_text": {
+    "by_geography": "El desempeño de los derechos humanos en"
+  },
+  "footer_text": {
+    "rights_page_esr": "Higher scores indicate greater fulfilment of country obligations for this human right.",
+    "rights_page_cpr": "Higher scores indicate greater respect for this human right.",
+    "by_geography": "Cada eje representa un derecho. Cuanto más lejos llegue la calificación en cada eje, mejor es el desempeño del país en ese derecho.",
+    "source": "Fuente: conjunto de datos de la Iniciativa de Medición de Derechos Humanos (HRMI) de 2018,"
+  },
+  "question_tooltips": [
+    {
+      "question": "¿Por qué no se usan los mismos indicadores para todos los países?",
+      "tooltip": "Es porque la misma información no siempre se reúne para todos los países en el mundo. El estándar principal de evaluación se usa mayormente para países en desarrollo y no miembros de la OCDE. El estándar de evaluación de país con ingresos altos de la OCDE usa indicadores que a menudo están disponibles solamente para países con ingresos altos de la OCDE. Sin embargo, se evalúa a todos los países con ambos grupos de indicadores hasta donde la información está disponible."
+    }, {
+      "question": ["¿Cómo convierte en mediciones la metodología de HRMI a los indicadores arriba mencionados ", "?"],
+      "tooltip": {
+        "paragraphs": [
+          "Todas las mediciones de HRMI de derechos económicos y sociales se han elaborado con estadísticas oficiales recopiladas por Gobiernos nacionales e igualados por organizaciones internacionales. Para cada indicador, nuestra metodología compara el nivel observado de disfrute de esa dimensión de derechos humanos al nivel de disfrute que debería ser viable para que ese país logre, dado su nivel de ingreso per cápita. Las mediciones de derechos económicos y sociales de HRMI muestran qué tan bien usa el Estado sus recursos disponibles para garantizar que las personas disfruten de esos derechos.",
+          "Hay tres cosas a tener en mente al interpretar las mediciones de derechos económicos y sociales de HRMI:"
+        ],
+        "list": [
+          "1) Una calificación de 100 % NO implica que todos en el país disfrutan de ese derecho. En cambio, implica que el nivel de disfrute de derecho del país está a la par de los países con mejor desempeño históricamente con el mismo nivel de ingresos per cápita.",
+          "2) Una calificación de 100 % NO significa que no hay lugar para mejorar. Los países con calificaciones altas de HRMI todavía deben innovar para extender el disfrute de derechos humanos más de lo que ha ocurrido en el pasado.",
+          "3) El hecho de que un país con ingresos altos obtenga una calificación HRMI alta en un derecho NO implica que todos los subgrupos de la población (por ejemplo, mujeres o población indígena) en ese país disfruten del derecho de la misma manera. Para mayor información sobre la metodología de NRMI para derechos económicos y sociales, haz clic"
+        ],
+        "linkText": "aquí"
+      }
+    }, {
+      "question": "¿Cómo debo interpretar las franjas de incertidumbre?",
+      "tooltip": {
+        "paragraphs": [
+          "Nuestra metodología de mediciones de derechos civiles y políticos genera un rango de niveles estimados de respeto por cada derecho humano. La calificación promedio del país (indicada por la línea blanca horizontal) representa el estimado promedio en ese rango. La calificación más baja en la franja de incertidumbre representa el percentil 10 de nuestros estimados; la calificación más alta en la franja de incertidumbre representa el percentil 90.",
+          "Franjas de incertidumbre más estrechas nos dicen que hubo más acuerdo entre los expertos encuestados sobre cuál debería ser la calificación de ese país, y/o un número mayor de encuestados. Cuanto mayor sea la parte de dos franjas de incertidumbre que se sobrepongan, menos seguros podemos estar de que el nivel de respeto por los derechos humanos representados por esas franjas sean realmente diferentes entre sí. Para información más detallada, por favor, revisa la nota de"
+        ],
+        "linkText": "nuestra metodología"
+      }
+    }, {
+      "question": "¿Cómo ha medido HRMI el derecho a",
+      "tooltip": {
+        "paragraphs": [
+          "Cada medición de derecho civil y político se ha elaborado a partir de respuestas a una encuesta de expertos en derechos humanos dentro del país. Las respuestas de los encuestados sobre la frecuencia de violaciones de todos los derechos civiles y políticos se combinaron usando un modelo estadístico que garantiza la comparabilidad de respuestas a través de países. Esto tiene como resultado una distribución de niveles estimados de respeto para cada derecho en cada país, representados por las calificaciones y franjas de incertidumbre mostradas en las visualizaciones de datos. También se preguntó a nuestros encuestados otra información sobre a quién se identificó como en riesgo de abuso de derechos humanos, como se muestra. Para información más detallada, por favor visita nuestro sitio web"
+        ],
+        "linkText": "aquí"
+      }
+    }, {
+      "question": "¿Por qué no hay mediciones de derecho a la vivienda con el estándar de evaluación de país de ingresos altos de la OCDE?",
+      "tooltip": "Actualmente, no hay datos disponibles que se puedan comparar entre varios países de ingresos altos de la OCDE que reflejen acceso a la vivienda y problemas de accesibilidad. Como resultado, las mediciones de HRMI sobre derecho a la vivienda no están disponibles para países de ingresos altos de la OCDE."
+    }
+  ],
+  "country_tooltips": [
+    {
+      "question": "¿Por qué los dos tipos de mediciones no están en la misma escala?",
+      "paragraphs": " Las mediciones de HRMI usan dos metodologías diferentes que tienen diferentes escalas e interpretaciones. Las calificaciones para las mediciones de derechos civiles y políticos son una calificación de diez que indican hasta el grado en que el Gobierno del país ha respetado ese derecho. Por contraste, las calificaciones para las mediciones de derechos económico y sociales son calificaciones de porcentaje. Estos te dirán el nivel de porcentaje de goce que logra ese derecho con relación a lo que debería ser viable para un país con ese nivel de ingreso. No es lo mismo que el grado con que las personas en el país gozan del derecho. Para mayor información, por favor, revisa",
+      "linkText": "nuestras metodologías con mayor detalle"
+    }, {
+      "question": "¿Por qué los dos grupos de mediciones no son para el mismo año?",
+      "paragraphs": "Todas las mediciones presentadas son la información disponible más reciente. Las mediciones de derechos civiles y políticos son entre enero y junio de 2017. Las mediciones de derechos económicos y sociales son de la actualización de 2017 de Índice Internacional de Cumplimiento de Derechos Sociales y Económicos, que abarca el periodo entre 2005 y 2015. La información usada para cada año son los datos disponibles más recientemente para ese año. Los gráficos de HRMI usan la información disponible más reciente del conjunto total de datos."
+    }, {
+      "question": "¿Cuál es la diferencia entre los estándares de evaluación principales y de países de ingresos altos de la OCDE?",
+      "paragraphs": "Para países evaluados con el estándar principal de evaluación, nuestra metodología usa indicadores estadísticos disponibles para la mayoría de países del mundo, sobretodo países en desarrollo y no miembros de la OCDE. En contraste, el estándar de evaluación de país con ingresos altos de la OCDE usa indicadores que generalmente están disponibles solamente para países con ingresos altos de la OCDE o que mejor reflejen los desafíos de derechos de países con altos ingresos. También usaríamos muchos de estos indicadores en el estándar principal de evaluación  si tuvieran mayor cobertura de país. Todos los países se evalúan usando estándares de evaluación hasta el punto en que la información está disponible."
+    }
+  ],
+  "how_to_read": {
+    "name": "Cómo leer",
+    "paragraphs": [
+      "Cada país tiene un gráfico radial, formado por doce ejes. Cada eje representa un derecho. Cuanto más lejos esté la calificación en cada eje, mejor es el desempeño del país en ese derecho.",
+      "Los derechos tienen código de colores en dos grupos diferentes:",
+      "y",
+      "Por ahora, la información de derechos civiles y políticos solamente está disponible para 13 países piloto.",
+      "Los dos grupos de derechos se evalúan en dos escalas diferentes: en una escala de porcentaje",
+      "y como una calificación de diez",
+      "Cuando la información Derechos civiles y políticos no está disponible para un país, solamente se mostrarán los ejes Derechos económicos y sociales en el radial.",
+      "Un eje discontinuo y gris significa que no hay información disponible para ese derecho en ese país."
+    ]
+  },
+  "cpr_alert": {
+    "text": "The data is available only for the",
+    "underline_text": "HRMI Civil and political rights pilot countries",
+    "button_text": "GOT IT"
+  },
+  "download": [
+    "Descargar gráfico",
+    "Descargar gráfico de barras",
+    "Descargar gráfico de líneas",
+    "Descargar formato csv",
+    "Descargar ambos"
+  ],
+  "esr_trend": {
+    "title": "Tendencia del derecho a lo largo del tiempo",
+    "subtitle": "Este gráfico muestra información con el estándar principal de evaluación de país."
+  },
+  "cpr_at_risk": {
+    "title": "Grupos en riesgo",
+    "tooltip": "Esta nube de palabras ilustra los grupos que los encuestados consideran como en mayor riesgo por violaciones de este derecho. Se da mayor importancia a los nombres de los grupos que fueron indicados con mayor frecuencia como especialmente vulnerables. Para más información sobre los grupos específicos, revisa nuestro",
+    "link": "resumen de respuestas cualitativas a la encuesta"
+  },
+  "cpr_abuse": {
+    "title": "Distribución de maltrato",
+    "subtitle": "Data is for period January - June 2017",
+    "tooltip": "Este gráfico indica cómo se distribuyen las violaciones de este derecho en diferentes grupos. La altura de las barras indica el porcentaje de encuestados que eligió cada grupo.",
+    "keys": [
+      "Presunta actividad criminal",
+      "Actividad política no violenta",
+      "Actividad política violenta",
+      "Grupos discriminados",
+      "Indiscriminado"
+    ]
+  },
+  "show_more": "Mostrar más",
+  "show_less": "Mostrar menos",
+  "search_country": "Buscar país",
+  "lang": "Idioma",
+  "select_region": "Elige región",
+  "in": "en",
+  "explore_this_rights_in": "Explorar este derecho en",
+  "explore_all_rights_in": "Explorar todos los derechos en",
+  "rights_definitions": {
+    "food": {
+      "type": "ESR",
+      "definition": "Según el derecho internacional, toda persona tiene el derecho fundamental de vivir libre de hambre. Todos tienen el derecho de disfrutar \"la disponibilidad de alimentos en cantidad y calidad suficiente para satisfacer las necesidades de su dieta... libre de sustancias adversas, y aceptable dentro de una cultura determinada\" (artículo 11 ICESCR y Comentario General 12 CESCR) y Comentario General 12 CESCR).",
+      "core_text": "Nuestro estándar principal de evaluación usa el siguiente indicador:",
+      "core_indicator": [
+        "% de niños menores de 5 años sin retraso en el crecimiento (OMS)"
+      ],
+      "high_text": "Nuestro estándar de evaluación de país de ingresos altos de la OCDE usa el siguiente indicador:",
+      "high_indicator": [
+        "% bebés no bajos de peso al nacer (UNICEF)"
+      ]
+    },
+    "education": {
+      "type": "ESR",
+      "definition": "Según el derecho internacional, toda persona tiene derecho a una educación de calidad, relevante y culturalmente apropiada. Todos tenemos derecho a una educación primaria, secundaria, superior, técnica/vocacional y fundamental que sea físicamente accesible y financieramente asequible (artículo 13 ICESCR y Comentario General 11 y 13 CESCR).",
+      "core_text": "Nuestro estándar principal de evaluación usa el siguiente indicador:",
+      "core_indicator": [
+        "Tasa de conclusión de educación primaria (UNESCO)",
+        "Tasa de matrícula escolar combinada bruta (UNESCO)"
+      ],
+      "high_text": "Nuestro estándar de evaluación de país de ingresos altos de la OCDE usa el siguiente indicador:",
+      "high_indicator": [
+        "Tasa de matrícula escolar combinada bruta (UNESCO)",
+        "Promedio de calificaciones PISA promedio del país en matemáticas y ciencias (OCDE PISA)"
+      ]
+    },
+    "health": {
+      "type": "ESR",
+      "definition": "Según el derecho internacional, toda persona tiene derecho al “más alto nivel alcanzable de salud física y mental”. Todos tenemos derecho a instalaciones y servicios de salud oportunos y apropiados que promuevan la salud física y mental. Esto incluye atención de salud materna, infantil y reproductiva; cuidado de salud preventivo y curativo; control de enfermedades, rehabilitación de salud; y salud ambiental natural y en el lugar de trabajo (artículo 12.1 ICESCR y Comentario General 14 CESCR).",
+      "core_text": "Nuestro estándar principal de evaluación usa el siguiente indicador:",
+      "core_indicator": [
+        "% tasa de supervivencia infantil (UNICEF, OMS, Banco Mundial, PNUD)",
+        "% tasa de supervivencia a los 65 años (PNUD)",
+        "tasa de uso de contraceptivos modernos, % mujeres de 15 a 49 años (PNUD)"
+      ],
+      "high_text": "Nuestro estándar de evaluación de país de ingresos altos de la OCDE usa el siguiente indicador:",
+      "high_indicator": [
+        "% tasa de supervivencia infantil (UNICEF, OMS, Banco Mundial, UNPD)",
+        "% tasa de supervivencia a los 65 años (PNUD)"
+      ]
+    },
+    "housing": {
+      "type": "ESR",
+      "definition": "Según el derecho internacional, toda persona tiene el derecho fundamental a vivienda habitable y culturalmente apropiada. Todos tenemos derecho a una vivienda que tenga acceso a servicios, materiales, instalaciones e infraestructura. Esto incluye “...agua potable, energía para cocinar, calentarse e iluminarse, instalaciones sanitarias y de lavado, medios de almacenamiento de comida, eliminación de residuos, drenaje y servicios de emergencia” (artículo 11.1 ICESCR y Comentario General 4 CESCR).",
+      "core_text": "Nuestro estándar principal de evaluación usa el siguiente indicador:",
+      "core_indicator": [
+        "% población con acceso a instalaciones sanitarias mejoradas (OMS/UNICEF)",
+        "% población rural con acceso a fuentes de agua mejorada (OMS/UNICEF)"
+      ],
+      "high_text": "Actualmente, no hay disponibles mediciones de derecho a la vivienda con el estándar de evaluación de país de ingresos altos de la OCDE.",
+      "high_indicator": []
+    },
+    "work": {
+      "type": "ESR",
+      "definition": "Según el derecho internacional, toda persona tiene derecho a la oportunidad de ganarse la vida con un trabajo que sea elegido libremente y “derecho a disfrutar de condiciones de trabajo justas y favorables”. Esto incluye “pago igual para trabajo igual, la oportunidad de ganarse la vida decentemente para [nosotros] y [nuestras] familias, condiciones de trabajo justas y seguras, y una razonable limitación de las horas de trabajo” (artículos 6 y 7 ICESCR).",
+      "core_text": "Nuestro estándar principal de evaluación usa el siguiente indicador:",
+      "core_indicator": [
+        "% población con ingreso >$3.10 (2011 PPP$) por día (Banco Mundial)"
+      ],
+      "high_text": "Nuestro estándar de evaluación de país de ingresos altos de la OCDE usa el siguiente indicador:",
+      "high_indicator": [
+        "% desempleados, desempleados no a largo plazo (ILO)",
+        "% población con > 50% ingreso mediano (LIS Cross-national Data Center)"
+      ]
+    },
+    "freedom-from-disappearance": {
+      "type": "CPR",
+      "definition": "Según el derecho internacional, toda persona tiene el derecho de vivir libre de “arresto, detención, secuestro o cualquier otra forma de privación de la libertad”, seguido de falta de reconocimiento de que esto ha ocurrido u “ocultamiento del destino o paradero de la persona desaparecida”. Las desapariciones incluyen todos los casos en que se llevan a las personas y su ubicación o condición no están claras, incluidos quienes se saben que están retenidos en secreto y en detención incomunicada (Convención Internacional para la Protección de las Personas de Desaparición Forzada, parte I, artículo 2)."
+    },
+    "freedom-from-arbitrary-arrest": {
+      "type": "CPR",
+      "measure_list": ["Según el derecho internacional, toda persona tiene el derecho a vivir libre de arresto o detención por:", "razones no establecidas en la ley;", "incapacidad de cumplir una obligación contractual;", "pensamientos, creencias, conciencia o religión;", "opiniones o su expresión pacífica;", "participación en asamblea pacífica;", "sociación pacífica con otros, incluida la pertenencia a un sindicato o;", "identidad, incluida \"raza, color, sexo, idioma, religión, política u otra opinión, origen nacional o social, propiedad, nacimiento u otras posiciones\" (ICCPR, parte II, artículo 2; parte III, artículos 9, 11, 18, 19, 21, 22 y 26)."]
+    },
+    "freedom-from-execution": {
+      "type": "CPR",
+      "definition": "Según el derecho internacional, el derecho a vivir libre de ejecución incluye vivir libre de toda privación arbitraria o extrajudicial de la vida, así como vivir libre de pena de muerte incluso con debido proceso legal (ICCPR, parte III, artículo 6; segundo protocolo opcional, ICCPR, artículo 1).",
+      "submeasures": "Hemos creado submediciones separadas para vivir libre de muerte extrajudicial y vivir libre de pena de muerte, y una medición combinada que es igual al resultado más bajo en las dos submediciones separadas."
+    },
+    "freedom-from-torture": {
+      "type": "CPR",
+      "definition": "Según el derecho internacional, toda persona tiene derecho a vivir libre de “todo acto que, por medio de severo dolor o sufrimiento, ya sea físico o mental, se inflija intencionalmente a una persona”. Esto incluye tortura o maltratos cometidos con cualquier, incluidos, entre otros, intentos de obtener información o confesiones, castigos por actos presuntos o cometidos, intimidación, coerción y discriminación (CAT, parte 1, artículo 1)."
+    },
+    "participate-in-government": {
+      "type": "CPR",
+      "conclusion_para": "Estos derechos se ejercerán sin discriminación y sin \"restricciones irracionales\"(ICCPR, parte III, artículo 25).",
+      "measure_list": ["Según el derecho internacional, toda persona tiene derecho:", "\"a participar en la conducción de asuntos públicos, directamente o a través de representantes libremente elegidos\";", "\"a elegir y ser elegido en elecciones periódicas genuinas\" donde todas las personas pueden votar, todos los votos cuentan igual y la votación es secreta;", "\"a tener acceso, en términos generales de igualdad, al servicio público\""]
+    },
+    "assembly-and-association": {
+      "type": "CPR",
+      "definition": "Según el derecho internacional, el derecho a la asamblea pacífica garantiza que toda persona tiene el derecho de reunirse pública o privadamente para participar en reuniones pacíficas, protestas u otras reuniones. La libertad de asociación garantiza que todos pueden elegir (o no) formar o unirse a un grupo, como partido político, organizaciones de la sociedad civil, organizaciones activistas, sindicatos, grupos religiosos, organizaciones culturales y otros grupos (ICCPR, parte III, artículos 21 y 22)."
+    },
+    "opinion-and-expression": {
+      "type": "CPR",
+      "definition": "Según el derecho internacional, toda persona tiene el \"derecho de tener opiniones sin interferencia\" y \"derecho a la libertad de expresión\". Esto incluye la \"libertad de buscar, recibir e impartir información e ideas de todo tipo\" por cualquier medio, incluida toda forma de expresión artística. Este derecho también protege una \"prensa y otros medios libres, sin censura y sin trabas\" (ICCPR, parte III, artículo 19; Comité de Derechos Humanos, comentario general No. 34, párrafo 13)."
+    }
+  }
 }

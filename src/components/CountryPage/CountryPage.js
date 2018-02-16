@@ -246,9 +246,8 @@ export default class CountryPage extends React.Component {
                             <ul>
                               <li>{content.question_tooltips[1].tooltip.list[0]}</li>
                               <li>{content.question_tooltips[1].tooltip.list[1]}</li>
-                              <li>{content.question_tooltips[1].tooltip.list[2]}</li>
+                              <li style={{ marginBottom: '10px' }}>{content.question_tooltips[1].tooltip.list[2]} <a href='https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/' target='_blank'>{content.question_tooltips[1].tooltip.linkText}</a>.</li>
                             </ul>
-                            <p className={styles.tooptipLink}>{content.question_tooltips[1].tooltip.paragraphs[2]} <a href='https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/' target='_blank'>{content.question_tooltips[1].tooltip.linkText}</a>.</p>
                           </QuestionTooltip>
                           { currRight === 'housing' &&
                             <QuestionTooltip width={238} question={content.question_tooltips[4].question}>
@@ -261,12 +260,10 @@ export default class CountryPage extends React.Component {
                         <div>
                           <QuestionTooltip width={293} question={content.question_tooltips[2].question}>
                             <p>{content.question_tooltips[2].tooltip.paragraphs[0]}</p>
-                            <p>{content.question_tooltips[2].tooltip.paragraphs[1]}</p>
-                            <p className={styles.tooptipLink}>{content.question_tooltips[2].tooltip.paragraphs[2]} <a href='#' target='_blank'>{content.question_tooltips[2].tooltip.linkText}</a>.</p>
+                            <p>{content.question_tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{content.question_tooltips[2].tooltip.linkText}</a>.</p>
                           </QuestionTooltip>
                           <QuestionTooltip width={294} question={content.question_tooltips[3].question + ' ' + content.rights_name[currRight] + '?'}>
-                            <p>{content.question_tooltips[3].tooltip.paragraphs[0]}</p>
-                            <p className={styles.tooptipLink}>{content.question_tooltips[3].tooltip.paragraphs[1]} <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blank'>{content.question_tooltips[3].tooltip.linkText}</a>.</p>
+                            <p>{content.question_tooltips[3].tooltip.paragraphs[0]} <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blank'>{content.question_tooltips[3].tooltip.linkText}</a>.</p>
                           </QuestionTooltip>
                         </div>
                       }
