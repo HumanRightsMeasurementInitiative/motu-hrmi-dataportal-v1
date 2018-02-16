@@ -1,0 +1,10 @@
+.wrapper {
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+.listItem {
+  margin: 4px 0;
+  font-weight: 600;
+  color: #262262;
+  text-align: center;
+}

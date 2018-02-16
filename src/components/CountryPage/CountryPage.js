@@ -279,11 +279,7 @@ export default class CountryPage extends React.Component {
                           <QuestionTooltip width={214} question={content.cpr_at_risk.title} isTitle={true}>
                             <p>{content.cpr_at_risk.tooltip} <a href='#' target='_blank'>{content.cpr_at_risk.link}</a>.</p>
                           </QuestionTooltip>
-                          <WordCloudChart
-                            width={this.state.rightPaneWidth - 10}
-                            height={cloudWords.length * 20}
-                            words={cloudWords}
-                          />
+                          <WordCloudChart words={cloudWords} />
                           <QuestionTooltip width={220} question={content.cpr_abuse.title} isTitle={true}>
                             <p>{content.cpr_abuse.tooltip}</p>
                           </QuestionTooltip>
