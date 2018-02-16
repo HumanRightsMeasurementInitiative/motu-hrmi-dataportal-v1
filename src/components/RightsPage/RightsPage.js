@@ -10,6 +10,7 @@ import DownloadPopup from '../DownloadPopup'
 // import SortbyDropdown from '../SortbyDropdown'
 import RightDefinition from '../RightDefinition'
 import WordCloudChart from '../WordCloudChart'
+import AbuseBarChart from '../AbuseBarChart'
 import { segsToUrl, joinClassName as jcn } from '../utils'
 import styles from './style.css'
 import rightsDefinitions from 'data/rights-definitions.json'
@@ -110,9 +111,7 @@ export default class RightsPage extends React.Component {
     }, styles)
 
     const rightsByRegionCountries = rightsByRegion[urlSegs.region].countries
-    const cloudWords = this.state.currCountry && isCPRSelected ? this.state.currCountry.rights.cprRangeAtRisk[urlSegs.right].map(word => {
-      return { text: word[0], value: word[1] }
-    }) : ''
+    const cloudWords = this.state.currCountry && isCPRSelected ? this.state.currCountry.rights.cprRangeAtRisk[urlSegs.right] : ''
 
     return (
       <div className={styles.rightsPage}>
@@ -219,6 +218,7 @@ export default class RightsPage extends React.Component {
                       <p>{content.cpr_abuse.tooltip}</p>
                     </QuestionTooltip>
                     <div className={styles.cprChartSubtitle}>{content.cpr_abuse.subtitle}</div>
+                    <AbuseBarChart data={cloudWords} height={100} />
                     <div className={styles.chartKeys}>
                       <strong>A:</strong> {content.cpr_abuse.keys[0]}, <strong>B:</strong> {content.cpr_abuse.keys[1]}, <strong>C:</strong> {content.cpr_abuse.keys[2]}, <strong>D:</strong> {content.cpr_abuse.keys[3]}, <strong>E:</strong> {content.cpr_abuse.keys[4]}
                     </div>

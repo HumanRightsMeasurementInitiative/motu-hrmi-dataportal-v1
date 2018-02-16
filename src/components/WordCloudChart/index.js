@@ -11,9 +11,15 @@ export default class WordCloudChart extends React.Component {
 
   render() {
     const { words } = this.props
-    const sort = (a, b) => (b.value - a.value)
+    const sort = (a, b) => (b[1] - a[1])
     const filter = (v, i) => i < 10
-    const sortedWords = words.slice().sort(sort).filter(filter)
+    // const sortedWords = words.slice().sort(sort).filter(filter)
+
+    // TODO remove
+    const abuseKeys = ['suspected criminals', 'non-violent political', 'violent political', 'discriminated groups', 'indiscriminate']
+    let sortedWords = words.filter(item => abuseKeys.indexOf(item[0].toLowerCase()) === -1)
+    sortedWords = sortedWords.slice().sort(sort).filter(filter)
+    // TODO end
 
     const scale = d3.scaleLinear().domain([0, 1]).range([0.5, 1])
 
@@ -21,8 +27,8 @@ export default class WordCloudChart extends React.Component {
       <div className={styles.wrapper}>
         {
           sortedWords.map((item, i) => (
-            <div key={i} className={styles.listItem} style={{ opacity: scale(item.value), fontSize: scale(item.value) * 24 }}>
-              {item.text}
+            <div key={i} className={styles.listItem} style={{ opacity: scale(item[1]), fontSize: scale(item[1]) * 24 }}>
+              {item[0]}
             </div>
           ))
         }
