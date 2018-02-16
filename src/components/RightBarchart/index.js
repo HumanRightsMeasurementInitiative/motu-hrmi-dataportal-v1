@@ -90,8 +90,8 @@ export default class RightBarchart extends React.Component {
             {
               rightsByRegionCountries.map((country, i) => {
                 const { esrHIHistorical, esrCoreHistorical, cpr } = country.rights
-                const esrHI = esrHIHistorical[currYear].rights
-                const esrCore = esrCoreHistorical[currYear].rights
+                const esrHI = esrHIHistorical[currYear] ? esrHIHistorical[currYear].rights : {}
+                const esrCore = esrCoreHistorical[currYear] ? esrCoreHistorical[currYear].rights : {}
                 const currentRightFrom = container => container ? container[currRight] : null
                 const value = isESR
                   ? { highIncome: currentRightFrom(esrHI), core: currentRightFrom(esrCore) }
@@ -126,8 +126,8 @@ export default class RightBarchart extends React.Component {
             {
               rightsByRegionCountries.map((country, i) => {
                 const { esrHIHistorical, esrCoreHistorical, cpr } = country.rights
-                const esrHI = esrHIHistorical[currYear].rights
-                const esrCore = esrCoreHistorical[currYear].rights
+                const esrHI = esrHIHistorical[currYear] ? esrHIHistorical[currYear].rights : {}
+                const esrCore = esrCoreHistorical[currYear] ? esrCoreHistorical[currYear].rights : {}
                 const currentRightFrom = container => container ? container[currRight] : null
                 const value = isESR
                   ? { highIncome: currentRightFrom(esrHI), core: currentRightFrom(esrCore) }

@@ -25,7 +25,7 @@ export default class ESRRects extends React.Component {
     const isActive = currCountry && currCountry === country
     return (
       <g transform={'translate(' + translateX + ', ' + translateY + ')'} onClick={this.onClick} className={jcn({ esrRect: true, clickable: onItemClick !== undefined }, styles)} opacity={currCountry === country || !currCountry ? 1 : 0.5}>
-        <rect y={-maxValue} height={maxValue} width='9' x='-4.5' fill={isActive ? '#a1e2bc' : 'rgba(0, 0, 0, .1)'}></rect>
+        <rect y={-maxValue || 0} height={maxValue || 0} width='9' x='-4.5' fill={isActive ? '#a1e2bc' : 'rgba(0, 0, 0, .1)'}></rect>
         { coreValue &&
           <g className="-circle-core">
             <circle className='core' cy={-coreValue} r='7' fill='#00b95f'></circle>
