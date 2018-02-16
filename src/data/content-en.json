@@ -49,7 +49,7 @@
     "cpr": "Civil and Political Rights"
   },
   "legend": {
-    "esr_barchart": ["Core assessment standart", "High income OECD country assessment standard"],
+    "esr_barchart": ["Core assessment standard", "High income OECD country assessment standard"],
     "cpr_barchart": ["Mean score", "percentile"]
   },
   "menu": {
@@ -247,8 +247,8 @@
   "country_tooltips": [
     {
       "question": "Why are the two types of metrics not on the same scale?",
-      "paragraphs": "HRMI metrics use two different methodologies that have different scales and interpretations. The scores for the civil and political rights metrics are a score out of 10 indicating the extent to which the government in the country respected that right. By contrast, the scores for the economic and social rights metrics are percentage scores. These tell you the percentage level of enjoyment achieved on that right relative to what should be feasible for a country with that income level. This is not the same as the extent to which people in the country enjoy the right. For more information please explore our",
-      "linkText": "methodologies in more detail"
+      "paragraphs": "HRMI metrics use two different methodologies that have different scales and interpretations. The scores for the civil and political rights metrics are a score out of 10 indicating the extent to which the government in the country respected that right. By contrast, the scores for the economic and social rights metrics are percentage scores. These tell you the percentage level of enjoyment achieved on that right relative to what should be feasible for a country with that income level. This is not the same as the extent to which people in the country enjoy the right. For more information please",
+      "linkText": "explore our methodologies in more detail"
     }, {
       "question": "Why are the two sets of metrics not for the same year?",
       "paragraphs": "All metrics presented are the most recent data available. The civil and political rights metrics are for January to June 2017. The economic and social rights metrics are from the 2017 update of the International Social and Economic Rights Fulfilment Index, which covers the period from 2005 to 2015. The data used for each year are the most recently available data as of that year. HRMI graphs use the most recently available data from the full dataset."
