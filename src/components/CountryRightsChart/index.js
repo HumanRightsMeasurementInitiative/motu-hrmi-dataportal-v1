@@ -108,7 +108,7 @@ function PetalLabels({ size, data, colors, onClick }) {
   const displayPercent = n => data[n] !== null ? (data[n] * 100).toFixed(0) + '%' : 'N/A'
   const displayTenth = n => data[n] !== null ? (data[n] * 10).toFixed(1) + '/10' : 'N/A'
 
-  const names = Object.keys(rightsDefinitions).map(k => rightsDefinitions[k].name)
+  const names = RIGHTS_ORDER.map(k => rightsDefinitions[k].name)
   const corrections = [
     [-50, -20],
     [0, -20],
