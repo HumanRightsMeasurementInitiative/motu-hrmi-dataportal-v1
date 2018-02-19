@@ -186,7 +186,16 @@ export default class CountryPage extends React.Component {
                         </div>
                       }
                       { currRight !== 'all' &&
-                        <div className={styles.cprRegionValue}>Right to {getRegionName(urlSegs.region)} <span className={styles.floatNum}>{displayTenth(currCountry.rights.cpr[currRight].mean)}</span></div>
+                        <div className={styles.cprRegionValue}>
+                          {content.rights_name[currRight]}
+                          {' '}
+                          <span className={styles.floatNum}>
+                            {currCountry.rights.cpr
+                              ? displayTenth(currCountry.rights.cpr[currRight].mean)
+                              : 'N/A'
+                            }
+                          </span>
+                        </div>
                       }
                     </div>
                   }
