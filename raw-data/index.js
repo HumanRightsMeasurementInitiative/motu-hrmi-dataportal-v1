@@ -298,7 +298,7 @@ function calculate() {
       esrCore: countryEsrCore.rights,
       esrCoreHistorical: countryEsrCore.historical,
       cpr: countryCpr.rights,
-      cprRangeAtRisk: countryCprRangeAtRisk,
+      cprRangeAtRisk: countryCprRangeAtRisk || null,
     }
 
     const countryCatalog = _.pick(countryEsrHI, [

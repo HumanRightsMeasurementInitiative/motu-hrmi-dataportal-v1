@@ -77,7 +77,9 @@ export default class CountryPage extends React.Component {
     const displayPercent = (data) => data !== null ? data.toFixed(0) + '%' : 'N/A'
     const displayTenth = data => data !== null ? data.toFixed(1) + '/10' : 'N/A'
 
-    const cloudWords = isCPRSelected && currCountry && currRight !== 'all' ? currCountry.rights.cprRangeAtRisk[currRight] : ''
+    const cloudWords = isCPRSelected && currCountry && currRight !== 'all' && currCountry.rights.cprRangeAtRisk
+      ? currCountry.rights.cprRangeAtRisk[currRight]
+      : ''
 
     return (
       <div className={styles.countryPage}>
@@ -146,7 +148,13 @@ export default class CountryPage extends React.Component {
                       </div>
                       { currRight !== 'all' &&
                         <div>
-                          <div className={styles.esrRegionValue}>{content.rights_name[currRight]} <span className={styles.floatNum}>{displayPercent(currCountry.rights[esrStandard][currRight])}</span></div>
+                          <div className={styles.esrRegionValue}>
+                            {content.rights_name[currRight]}
+                            {' '}
+                            <span className={styles.floatNum}>
+                              {displayPercent(currCountry.rights[esrStandard][currRight])}
+                            </span>
+                          </div>
                           <ul className={styles.esrValueList}>
                             {
                               Object.keys(currCountry.rights[esrStandard][currRight + '_sub']).map((item, i) => {
