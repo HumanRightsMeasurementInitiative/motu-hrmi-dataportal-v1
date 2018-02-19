@@ -35,6 +35,7 @@ export default class GeoMiniBarChart extends React.Component {
     const { containerWidth } = this.state
     const margin = { top: 10, right: 0, bottom: 10, left: 14 }
     const barX = d3.scaleLinear().domain([0, 4]).range([margin.left + 30, containerWidth - 30])
+    const heightScale = d3.scaleLinear().domain([0, 100]).range([0, height - margin.top - margin.bottom])
 
     // TODO remove
     const abuseKeys = ['suspected criminals', 'non-violent political', 'violent political', 'discriminated groups', 'indiscriminate']
@@ -65,7 +66,7 @@ export default class GeoMiniBarChart extends React.Component {
                 const currValue = abuseData.filter(d => d[0].toLowerCase() === item)
                 const isExist = currValue.length !== 0
                 const barHeight = isExist ? currValue[0][1] * 100 : 0
-                return <rect key={i} x={item ? barX(i) : 0} y={height - margin.bottom - barHeight} height={isExist ? barHeight : 0} width={10} fill='#ddd'></rect>
+                return <rect key={i} x={item ? barX(i) : 0} y={height - heightScale(barHeight) - margin.bottom} height={heightScale(barHeight)} width={10} fill='#ddd'></rect>
               })
             }
           </g>
