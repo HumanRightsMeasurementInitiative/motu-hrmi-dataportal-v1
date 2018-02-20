@@ -278,74 +278,74 @@
   font-size: 12px;
 }
 [rightcolor='food'] .chartCaption:before {
-  background: #00a255;
+  background: #009540;
 }
 [rightcolor='education'] .chartCaption:before {
-  background: #00b95f;
+  background: #00af49;
 }
 [rightcolor='work'] .chartCaption:before {
-  background: #00ce6a;
+  background: #00e25b;
 }
 [rightcolor='housing'] .chartCaption:before {
-  background: #00d96e;
+  background: #00d556;
 }
 [rightcolor='health'] .chartCaption:before {
-  background: #00e374;
+  background: #00c852;
 }
 [rightcolor='opinion-and-expression'] .chartCaption:before {
-  background: #342f73;
+  background: #262262;
 }
 [rightcolor='assembly-and-association'] .chartCaption:before {
-  background: #365692;
+  background: #2a4482;
 }
 [rightcolor='freedom-from-execution'] .chartCaption:before {
-  background: #3778ae;
+  background: #3c9dd1;
 }
 [rightcolor='freedom-from-torture'] .chartCaption:before {
-  background: #3598ca;
+  background: #3187c1;
 }
 [rightcolor='participate-in-government'] .chartCaption:before {
-  background: #33b5e4;
+  background: #2e65a1;
 }
 [rightcolor='freedom-from-arbitrary-arrest'] .chartCaption:before {
-  background: #56d1f1;
+  background: #46b3e0;
 }
 [rightcolor='freedom-from-disappearance'] .chartCaption:before {
-  background: #72ecfe;
+  background: #51c9f0;
 }
 .specRightHeader[rightcolor='food'] {
-  color: #00a255;
+  color: #009540;
 }
 .specRightHeader[rightcolor='education'] {
-  color: #00b95f;
+  color: #00af49;
 }
 .specRightHeader[rightcolor='work'] {
-  color: #00ce6a;
+  color: #00e25b;
 }
 .specRightHeader[rightcolor='housing'] {
-  color: #00d96e;
+  color: #00d556;
 }
 .specRightHeader[rightcolor='health'] {
-  color: #00e374;
+  color: #00c852;
 }
 .specRightHeader[rightcolor='opinion-and-expression'] {
-  color: #342f73;
+  color: #262262;
 }
 .specRightHeader[rightcolor='assembly-and-association'] {
-  color: #365692;
+  color: #2a4482;
 }
 .specRightHeader[rightcolor='freedom-from-execution'] {
-  color: #3778ae;
+  color: #3c9dd1;
 }
 .specRightHeader[rightcolor='freedom-from-torture'] {
-  color: #3598ca;
+  color: #3187c1;
 }
 .specRightHeader[rightcolor='participate-in-government'] {
-  color: #33b5e4;
+  color: #2e65a1;
 }
 .specRightHeader[rightcolor='freedom-from-arbitrary-arrest'] {
-  color: #56d1f1;
+  color: #46b3e0;
 }
 .specRightHeader[rightcolor='freedom-from-disappearance'] {
-  color: #72ecfe;
+  color: #51c9f0;
 }
