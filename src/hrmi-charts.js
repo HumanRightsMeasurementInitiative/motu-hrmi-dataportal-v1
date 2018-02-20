@@ -317,11 +317,12 @@ var PetalChart = function (_React$Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'g',
               { className: '-missing-data-markers' },
-              dataMissingIndexes.map(function (i) {
+              dataMissingIndexes.map(function (index) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', {
-                  d: sliceMissingDatumPath(i),
+                  key: index,
+                  d: sliceMissingDatumPath(index),
                   fill: 'url(#' + missingDataPatternId + ') black',
-                  fillOpacity: i === highlightedSector || highlightedSector === null ? 1 : 0.3
+                  fillOpacity: index === highlightedSector || highlightedSector === null ? 1 : 0.3
                 });
               })
             ),
