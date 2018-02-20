@@ -229,6 +229,19 @@ var PetalChart = function (_React$Component) {
         return v === null ? scale.invert(0) : v;
       });
 
+      var CPRs = [3, 4, 5, 6, 7, 8, 9];
+      var allCPRsMissing = CPRs.every(function (i) {
+        return dataDirty[i] === null;
+      });
+      var dataMissingIndexesIncludedCPRs = dataDirty.map(function (v, i) {
+        return v === null ? i : null;
+      }).filter(function (v) {
+        return v !== null;
+      });
+      var dataMissingIndexes = allCPRsMissing ? dataMissingIndexesIncludedCPRs.filter(function (i) {
+        return !CPRs.includes(i);
+      }) : dataMissingIndexesIncludedCPRs;
+
       if (highlightedSector < 0 || highlightedSector >= count) throw new Error('Petalchart: invalid highlightedSector');
 
       var radarLine = Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["lineRadial"])().curve(__WEBPACK_IMPORTED_MODULE_4_lib_curve_normal_bezier__["a" /* default */]).radius(scale).angle(function (d, i) {
@@ -241,12 +254,19 @@ var PetalChart = function (_React$Component) {
 
       var sliceCenterPath = Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["arc"])().innerRadius(innerRadius).outerRadius(radius + 20).startAngle(0).endAngle(angleSlice).cornerRadius(5);
 
-      var sliceHighlightedMaskPath = Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["arc"])().innerRadius(0).outerRadius(radius).startAngle(angleSlice * highlightedSector + angleSlice / 2).endAngle(2 * Math.PI + angleSlice * highlightedSector - angleSlice / 2);
+      var sliceHighlightedMaskPath = Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["arc"])().innerRadius(0).outerRadius(radius + 5).startAngle(angleSlice * highlightedSector + angleSlice / 2).endAngle(2 * Math.PI + angleSlice * highlightedSector - angleSlice / 2);
+
+      var sliceMissingDatumPath = Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["arc"])().innerRadius(innerRadius).outerRadius(radius).startAngle(function (sliceIndex) {
+        return angleSlice * sliceIndex + angleSlice / 2;
+      }).endAngle(function (sliceIndex) {
+        return angleSlice * sliceIndex - angleSlice / 2;
+      });
 
       var hash = dumbHash();
       var clipPathId = 'clipping-area-radar--' + hash;
       var maskCenterCornersId = 'mask-center-corners--' + hash;
       var blurId = 'blur--' + hash;
+      var missingDataPatternId = 'missing-data--' + hash;
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
@@ -278,6 +298,12 @@ var PetalChart = function (_React$Component) {
               'filter',
               { id: blurId, x: '0', y: '0' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('feGaussianBlur', { 'in': 'SourceGraphic', stdDeviation: '6' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'pattern',
+              { id: missingDataPatternId, x: '10', y: '0', width: '40', height: '40', patternUnits: 'userSpaceOnUse' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('rect', { width: '40', height: '40', fill: 'black', fillOpacity: '0.05' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { d: 'M0,0 l41,41 M0,-40 l41,41 M-40,0 l41,41', stroke: 'black', strokeWidth: '2', strokeOpacity: '0.2', fill: 'none' })
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -287,6 +313,17 @@ var PetalChart = function (_React$Component) {
               'g',
               { className: '-background-circle', mask: 'url(#' + maskCenterCornersId + ')' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('circle', { r: radius, fill: '#F3F3F3' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'g',
+              { className: '-missing-data-markers' },
+              dataMissingIndexes.map(function (i) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', {
+                  d: sliceMissingDatumPath(i),
+                  fill: 'url(#' + missingDataPatternId + ') black',
+                  fillOpacity: i === highlightedSector || highlightedSector === null ? 1 : 0.3
+                });
+              })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'g',
