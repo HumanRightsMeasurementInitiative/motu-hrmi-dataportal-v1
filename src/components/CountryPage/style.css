@@ -219,13 +219,6 @@
   display: block;
   opacity: 1;
 }
-.subtitleESR {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.025em;
-  color: #00af49;
-}
 .subtitleCPR {
   margin: 0 0 0;
   font-family: 'Source Sans Pro', sans-serif;
@@ -237,10 +230,6 @@
 .esrChartSubtitle {
   composes: smallText;
   color: #38d98b;
-}
-.cprChartSubtitle {
-  composes: smallText;
-  color: #71d8f3;
 }
 .barChartWrapper {
   margin: 15px 0;
@@ -405,11 +394,4 @@
   line-height: 1em;
   text-decoration: underline;
   cursor: pointer;
-}
-
-.chartKeys {
-  margin-bottom: 10px;
-}
-.esrChartKey {
-  font-size: 14px;
 }

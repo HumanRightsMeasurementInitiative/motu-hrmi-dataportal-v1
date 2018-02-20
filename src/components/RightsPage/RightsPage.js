@@ -5,12 +5,10 @@ import RightsItem from './RightsItem'
 import RegionSelector from './RegionSelector'
 import RightBarchart from '../RightBarchart/'
 import ESRTimeline from '../ESRTimeline/'
-import QuestionTooltip from '../QuestionTooltip'
 import DownloadPopup from '../DownloadPopup'
 // import SortbyDropdown from '../SortbyDropdown'
 import RightDefinition from '../RightDefinition'
-import WordCloudChart from '../WordCloudChart'
-import AbuseBarChart from '../AbuseBarChart'
+import DefinitionFooter from '../DefinitionFooter'
 import { segsToUrl, joinClassName as jcn } from '../utils'
 import styles from './style.css'
 import rightsDefinitions from 'data/rights-definitions.json'
@@ -111,7 +109,6 @@ export default class RightsPage extends React.Component {
     }, styles)
 
     const rightsByRegionCountries = rightsByRegion[urlSegs.region].countries
-    const cloudWords = this.state.currCountry && isCPRSelected ? this.state.currCountry.rights.cprRangeAtRisk[urlSegs.right] : ''
 
     return (
       <div className={styles.rightsPage}>
@@ -208,27 +205,14 @@ export default class RightsPage extends React.Component {
             <div className={styles.infoContent}>
               <div className={styles.textWrapper}>
                 <RightDefinition right={urlSegs.right} isESRSelected={isESRSelected} tooltips={tooltips} content={content} />
-                { !isESRSelected && cloudWords.length !== 0 &&
-                  <div>
-                    <QuestionTooltip width={214} question={content.cpr_at_risk.title} isTitle={true}>
-                      <p>{content.cpr_at_risk.tooltip} <a href='#' target='_blank'>{content.cpr_at_risk.link}</a>.</p>
-                    </QuestionTooltip>
-                    <WordCloudChart words={cloudWords} />
-                    <QuestionTooltip width={220} question={content.cpr_abuse.title} isTitle={true}>
-                      <p>{content.cpr_abuse.tooltip}</p>
-                    </QuestionTooltip>
-                    <div className={styles.cprChartSubtitle}>{content.cpr_abuse.subtitle}</div>
-                    <AbuseBarChart data={cloudWords} height={100} />
-                    <div className={styles.chartKeys}>
-                      <strong>A:</strong> {content.cpr_abuse.keys[0]}, <strong>B:</strong> {content.cpr_abuse.keys[1]}, <strong>C:</strong> {content.cpr_abuse.keys[2]}, <strong>D:</strong> {content.cpr_abuse.keys[3]}, <strong>E:</strong> {content.cpr_abuse.keys[4]}
-                    </div>
-                  </div>
-                }
-                { (isESRSelected && this.state.currCountry) &&
-                  <div>
-                    <div className={styles.subtitleESR}>{content.esr_trend.title}</div>
-                    <div className={styles.esrChartKey}>{content.esr_trend.subtitle}</div>
-                  </div>
+                { this.state.currCountry &&
+                  <DefinitionFooter
+                    isESRSelected={isESRSelected}
+                    isCPRSelected={isCPRSelected}
+                    currCountry={this.state.currCountry }
+                    currRight={urlSegs.right}
+                    content={content}
+                  />
                 }
               </div>
             </div>
