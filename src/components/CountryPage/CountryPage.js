@@ -8,10 +8,10 @@ import CountryRightsChart from 'components/CountryRightsChart'
 import QuestionTooltip from '../QuestionTooltip'
 import DownloadPopup from '../DownloadPopup'
 import ChangeStandard from '../ChangeStandard'
+import Definitions from './Definitions'
 import DefinitionFooter from '../DefinitionFooter'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
-import rightsDefinitions from '../../data/rights-definitions.json'
 
 export default class CountryPage extends React.Component {
   static propTypes = {
@@ -27,7 +27,6 @@ export default class CountryPage extends React.Component {
     this.state = {
       currRight: 'all',
       rightPaneWidth: 0,
-      showMore: false,
     }
   }
 
@@ -57,17 +56,13 @@ export default class CountryPage extends React.Component {
     }
   }
 
-  toggleShowMore = () => {
-    this.setState({ showMore: !this.state.showMore })
-  }
-
   render() {
     const { data: { rightsByRegion }, urlSegs, esrStandard, content } = this.props
-    const { currRight, showMore } = this.state
+    const { currRight } = this.state
     const countries = rightsByRegion[urlSegs.region].countries
     const currCountry = countries.find(country => country.countryCode === urlSegs.country)
 
-    const rights = Object.entries(rightsDefinitions).map(([code, right]) => ({ code, ...right }))
+    const rights = Object.entries(content.rights_definitions).map(([code, right]) => ({ code, ...right }))
     const ESRs = rights.filter(right => right.type === 'ESR')
     const CPRs = rights.filter(right => right.type === 'CPR')
     const isESRSelected = ESRs.some(r => r.code === currRight)
@@ -212,75 +207,12 @@ export default class CountryPage extends React.Component {
                         <div className='text'>{content.explore_this_rights_in}:</div>
                         <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
                       </div>
-                      { rightsDefinitions[currRight].definition
-                        ? <p className={styles.definition}>{rightsDefinitions[currRight].definition}</p>
-                        : <ul>
-                          {rightsDefinitions[currRight].measure_list.map((item, i) => {
-                            return (<li key={i} className={styles.defList}>{item}</li>)
-                          })}
-                        </ul>
-                      }
-                      { rightsDefinitions[currRight].conclusion_para &&
-                        <p className={styles.definition}>{rightsDefinitions[currRight].conclusion_para}</p>
-                      }
-                      { rightsDefinitions[currRight].core_text &&
-                        <div>
-                          <p className={styles.measureQues}>{content.question_tooltips[3].question} {content.rights_name[currRight]}?</p>
-                          <p>{rightsDefinitions[currRight].core_text}</p>
-                          <ul>
-                            {
-                              rightsDefinitions[currRight].core_indicator.map((item, i) => (
-                                <li key={i} className={styles.withDot}>{item}</li>
-                              ))
-                            }
-                          </ul>
-                        </div>
-                      }
-                      { showMore && rightsDefinitions[currRight].high_text &&
-                        <div>
-                          <p>{rightsDefinitions[currRight].high_text}</p>
-                          <ul>
-                            {
-                              rightsDefinitions[currRight].high_indicator.map((item, i) => (
-                                <li key={i} className={styles.withDot}>{item}</li>
-                              ))
-                            }
-                          </ul>
-                        </div>
-                      }
-                      { showMore && isESRSelected &&
-                        <div>
-                          <QuestionTooltip width={238} question={content.question_tooltips[0].question}>
-                            <p>{content.question_tooltips[0].tooltip}</p>
-                          </QuestionTooltip>
-                          <QuestionTooltip width={360} question={content.question_tooltips[1].question[0] + content.rights_name[currRight] + content.question_tooltips[1].question[1]}>
-                            <p>{content.question_tooltips[1].tooltip.paragraphs[0]}</p>
-                            <p>{content.question_tooltips[1].tooltip.paragraphs[1]}</p>
-                            <ul>
-                              <li>{content.question_tooltips[1].tooltip.list[0]}</li>
-                              <li>{content.question_tooltips[1].tooltip.list[1]}</li>
-                              <li style={{ marginBottom: '10px' }}>{content.question_tooltips[1].tooltip.list[2]} <a href='https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/' target='_blank'>{content.question_tooltips[1].tooltip.linkText}</a>.</li>
-                            </ul>
-                          </QuestionTooltip>
-                          { currRight === 'housing' &&
-                            <QuestionTooltip width={238} question={content.question_tooltips[4].question}>
-                              <p>{content.question_tooltips[4].tooltip}</p>
-                            </QuestionTooltip>
-                          }
-                        </div>
-                      }
-                      { showMore && isCPRSelected &&
-                        <div>
-                          <QuestionTooltip width={293} question={content.question_tooltips[2].question}>
-                            <p>{content.question_tooltips[2].tooltip.paragraphs[0]}</p>
-                            <p>{content.question_tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{content.question_tooltips[2].tooltip.linkText}</a>.</p>
-                          </QuestionTooltip>
-                          <QuestionTooltip width={294} question={content.question_tooltips[3].question + ' ' + content.rights_name[currRight] + '?'}>
-                            <p>{content.question_tooltips[3].tooltip.paragraphs[0]} <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blank'>{content.question_tooltips[3].tooltip.linkText}</a>.</p>
-                          </QuestionTooltip>
-                        </div>
-                      }
-                      <div className={styles.showMoreBtn} onClick={this.toggleShowMore}>{showMore ? content.show_less : content.show_more}</div>
+                      <Definitions
+                        isESRSelected={isESRSelected}
+                        isCPRSelected={isCPRSelected}
+                        currRight={currRight}
+                        content={content}
+                      />
                       { currRight &&
                         <DefinitionFooter
                           isESRSelected={isESRSelected}
