@@ -10,6 +10,7 @@ export default class RightsItem extends React.Component {
     data: PropTypes.object.isRequired,
     onItemClick: PropTypes.func.isRequired,
     esrStandard: PropTypes.string,
+    hoverCountry: PropTypes.string,
   }
 
   onClick = () => {
@@ -18,12 +19,12 @@ export default class RightsItem extends React.Component {
   }
 
   render() {
-    const { children, data, right, esrStandard } = this.props
+    const { children, data, right, esrStandard, hoverCountry } = this.props
     return (
       <li className={styles.rightsItem} onClick={this.onClick} rightcolor={right}>
         <div className={styles.chartCaption}>{children}</div>
         <div className={styles.chartWrapper}>
-          <MiniBarChart height={28} data={data} right={right} esrStandard={esrStandard} />
+          <MiniBarChart height={28} data={data} right={right} hoverCountry={hoverCountry} esrStandard={esrStandard} />
         </div>
       </li>
     )

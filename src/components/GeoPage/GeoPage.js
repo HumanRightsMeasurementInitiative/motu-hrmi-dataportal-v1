@@ -27,7 +27,7 @@ export default class GeoPage extends React.Component {
 
   constructor() {
     super()
-    this.state = { currCountry: null }
+    this.state = { currCountry: null, hoverCountry: null }
   }
 
   setRegion = (region) => {
@@ -61,6 +61,14 @@ export default class GeoPage extends React.Component {
 
   unsetCurrCountry = (country) => {
     this.setState({ currCountry: null })
+  }
+
+  setHoverCountry = (country) => {
+    this.setState({ hoverCountry: country })
+  }
+
+  unsetHoverCountry = (country) => {
+    this.setState({ hoverCountry: null })
   }
 
   render() {
@@ -121,7 +129,13 @@ export default class GeoPage extends React.Component {
                         esrStandard={esrStandard}
                         size={165}
                       />
-                      <span>{country.countryCode}</span>
+                      <span>{country.countryCode} {this.state.hoverCountry === country.countryCode}</span>
+                      <div
+                        className={styles.cardCover}
+                        onMouseOver={rewriteArgs(this.setHoverCountry, country.countryCode)}
+                        onMouseOut={this.unsetHoverCountry}
+                        style={{ opacity: this.state.hoverCountry === null || this.state.hoverCountry === country.countryCode ? 0 : 1 }}
+                      ></div>
                     </div>
                   ))}
                 </div>
@@ -141,7 +155,13 @@ export default class GeoPage extends React.Component {
                     <div className={styles.esrTitle}>{content.rights_category.esr}</div>
                     <ul className={styles.esrList}>
                       {displayedRightsESR.map((right, i) => (
-                        <RightsItem key={i} right={right.code} data={rightsByRegion[urlSegs.region]} esrStandard={esrStandard} onItemClick={this.setRight}>
+                        <RightsItem
+                          key={i}
+                          right={right.code}
+                          data={rightsByRegion[urlSegs.region]}
+                          esrStandard={esrStandard}
+                          onItemClick={this.setRight}
+                          hoverCountry={this.state.hoverCountry}>
                           {content.rights_name[right.code]}
                         </RightsItem>
                       ))}
@@ -149,7 +169,12 @@ export default class GeoPage extends React.Component {
                     <div className={styles.cprTitle}>{content.rights_category.cpr}</div>
                     <ul className={styles.cprList}>
                       {displayedRightsCPR.map((right, i) => (
-                        <RightsItem key={i} right={right.code} data={rightsByRegion[urlSegs.region]} onItemClick={this.setRight}>
+                        <RightsItem
+                          key={i}
+                          right={right.code}
+                          data={rightsByRegion[urlSegs.region]}
+                          onItemClick={this.setRight}
+                          hoverCountry={this.state.hoverCountry}>
                           {content.rights_name[right.code]}
                         </RightsItem>
                       ))}
@@ -163,8 +188,8 @@ export default class GeoPage extends React.Component {
                         {displayedRightsESR.length === 0 ? content.rights_category.cpr : content.rights_category.esr}
                       </div>
                       { displayedRightsESR.length
-                        ? <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} right={urlSegs.right} esrStandard={esrStandard} />
-                        : <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} right={urlSegs.right} />
+                        ? <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} right={urlSegs.right} hoverCountry={this.state.hoverCountry} esrStandard={esrStandard} />
+                        : <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} right={urlSegs.right} hoverCountry={this.state.hoverCountry} />
                       }
                       <div className={styles.linkWrapper}>
                         <div className='arrowLink'>

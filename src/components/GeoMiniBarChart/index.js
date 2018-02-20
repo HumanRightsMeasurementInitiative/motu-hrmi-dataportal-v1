@@ -2,11 +2,27 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import * as d3 from 'd3'
 
+const COLORS = {
+  'food': '#009540',
+  'education': '#00af49',
+  'health': '#00c852',
+  'housing': '#00d556',
+  'work': '#00e25b',
+  'freedom-from-disappearance': '#51c9f0',
+  'freedom-from-arbitrary-arrest': '#46b3e0',
+  'freedom-from-execution': '#3c9dd1',
+  'freedom-from-torture': '#3187c1',
+  'participate-in-government': '#2e65a1',
+  'assembly-and-association': '#2a4482',
+  'opinion-and-expression': '#262262',
+}
+
 export default class GeoMiniBarChart extends React.Component {
   static propTypes = {
     height: PropTypes.number.isRequired,
     data: PropTypes.object.isRequired,
     right: PropTypes.string.isRequired,
+    hoverCountry: PropTypes.string,
     esrStandard: PropTypes.string,
   }
 
@@ -33,7 +49,7 @@ export default class GeoMiniBarChart extends React.Component {
   }
 
   render() {
-    const { height, data, right, esrStandard } = this.props
+    const { height, data, right, esrStandard, hoverCountry } = this.props
     const { containerWidth } = this.state
     const margin = { top: 4, right: 0, bottom: 4, left: 14 }
     const barX = d3.scaleLinear().domain([0, data.countries.length - 1]).range([margin.left + 20, containerWidth - 20])
@@ -65,7 +81,7 @@ export default class GeoMiniBarChart extends React.Component {
             const value = esrStandard ? esrHeight(esrValue) : cprHeight(cprValue)
             const x = value ? barX(i) : 0
             return (<g key={i}>
-              <rect x={x} y={height - value - margin.top} height={Math.round(value)} width={barWidth} fill='#ddd'></rect>
+              <rect x={x} y={height - value - margin.top} height={Math.round(value)} width={barWidth} fill={hoverCountry === country.countryCode ? COLORS[right] : '#ddd'}></rect>
             </g>)
           })}
         </svg>
