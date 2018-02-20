@@ -108,6 +108,10 @@ export default class RightsPage extends React.Component {
       cprs: isCPRSelected,
     }, styles)
 
+    const cprFooter = jcn({
+      cprFooter: isCPRSelected,
+    }, styles)
+
     const rightsByRegionCountries = rightsByRegion[urlSegs.region].countries
 
     return (
@@ -183,9 +187,11 @@ export default class RightsPage extends React.Component {
               }
             </div>
             <div className={styles.chartsFooter}>
-              <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={isESRSelected ? ['bar chart', 'line chart'] : ['bar chart']} content={content} /></div>
-              <div className={styles.text}>{isESRSelected ? content.footer_text.rights_page_esr : content.footer_text.rights_page_cpr}</div>
-              <div className={styles.source}>{content.footer_text.source} <a className={styles.small} href='https://humanrightsmeasurement.org'>https://humanrightsmeasurement.org</a></div>
+              <div className={cprFooter} style={{ bottom: this.state.chartHeight * 0.4 - 40 + 'px' }}>
+                <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={isESRSelected ? ['bar chart', 'line chart'] : ['bar chart']} content={content} /></div>
+                <div className={styles.text}>{isESRSelected ? content.footer_text.rights_page_esr : content.footer_text.rights_page_cpr}</div>
+                <div className={styles.source}>{content.footer_text.source} <a className={styles.small} href='https://humanrightsmeasurement.org'>https://humanrightsmeasurement.org</a></div>
+              </div>
             </div>
           </div>
           <div className='column' ref='rightPane'>

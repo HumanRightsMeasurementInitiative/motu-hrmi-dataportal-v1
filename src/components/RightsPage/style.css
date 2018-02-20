@@ -164,6 +164,7 @@
   flex: 0 0 auto;
   position: relative;
   padding: 0 20px 30px;
+  min-height: 60px;
   font-size: 12px;
 }
 .chartsFooter .small {
@@ -183,6 +184,10 @@
 .chartsFooter .text {
   padding-left: 42px;
   color: #8d8e90;
+}
+.cprFooter {
+  position: relative;
+  width: 100%;
 }
 
 .CPRAlertWrapper {
