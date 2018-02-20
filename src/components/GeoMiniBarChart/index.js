@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import * as d3 from 'd3'
+import { get } from 'lodash'
 
 const COLORS = {
   'food': '#009540',
@@ -22,6 +23,7 @@ export default class GeoMiniBarChart extends React.Component {
     height: PropTypes.number.isRequired,
     data: PropTypes.object.isRequired,
     right: PropTypes.string.isRequired,
+    isESR: PropTypes.bool.isRequired,
     hoverCountry: PropTypes.string,
     esrStandard: PropTypes.string,
   }
@@ -49,7 +51,7 @@ export default class GeoMiniBarChart extends React.Component {
   }
 
   render() {
-    const { height, data, right, esrStandard, hoverCountry } = this.props
+    const { height, data, right, esrStandard, hoverCountry, isESR } = this.props
     const { containerWidth } = this.state
     const margin = { top: 4, right: 0, bottom: 4, left: 14 }
     const barX = d3.scaleLinear().domain([0, data.countries.length - 1]).range([margin.left + 20, containerWidth - 20])
@@ -58,13 +60,10 @@ export default class GeoMiniBarChart extends React.Component {
 
     const barWidth = containerWidth ? (containerWidth - margin.left) / data.countries.length * 0.6 : 0
 
-    const sortedData = data.countries.slice().sort(function (a, b) {
-      if (esrStandard && a.rights[esrStandard] && b.rights[esrStandard]) {
-        return a.rights[esrStandard][right] - b.rights[esrStandard][right]
-      } else if (!esrStandard && a.rights.cpr && b.rights.cpr) {
-        return a.rights.cpr[right].mean - b.rights.cpr[right].mean
-      }
-    })
+    const getRightValue = country => isESR
+      ? get(country, `rights.${esrStandard}.${right}`, 0)
+      : get(country, `rights.cpr.${right}.mean`, 0)
+    const sortedData = data.countries.slice().sort((a, b) => getRightValue(a) - getRightValue(b))
 
     return (
       <div ref='chartContainer'>

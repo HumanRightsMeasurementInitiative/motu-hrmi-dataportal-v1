@@ -158,6 +158,7 @@ export default class GeoPage extends React.Component {
                         <RightsItem
                           key={i}
                           right={right.code}
+                          isESR={true}
                           data={rightsByRegion[urlSegs.region]}
                           esrStandard={esrStandard}
                           onItemClick={this.setRight}
@@ -172,6 +173,7 @@ export default class GeoPage extends React.Component {
                         <RightsItem
                           key={i}
                           right={right.code}
+                          isESR={false}
                           data={rightsByRegion[urlSegs.region]}
                           onItemClick={this.setRight}
                           hoverCountry={this.state.hoverCountry}>
@@ -188,8 +190,8 @@ export default class GeoPage extends React.Component {
                         {displayedRightsESR.length === 0 ? content.rights_category.cpr : content.rights_category.esr}
                       </div>
                       { displayedRightsESR.length
-                        ? <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} right={urlSegs.right} hoverCountry={this.state.hoverCountry} esrStandard={esrStandard} />
-                        : <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} right={urlSegs.right} hoverCountry={this.state.hoverCountry} />
+                        ? <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} isESR={true} right={urlSegs.right} hoverCountry={this.state.hoverCountry} esrStandard={esrStandard} />
+                        : <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} isESR={false} right={urlSegs.right} hoverCountry={this.state.hoverCountry} />
                       }
                       <div className={styles.linkWrapper}>
                         <div className='arrowLink'>
