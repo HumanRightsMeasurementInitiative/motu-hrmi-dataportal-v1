@@ -83,7 +83,7 @@ export default class CountryRightsChart extends React.Component {
       <div style={{ position: 'relative' }}>
         <PetalChart
           size={size}
-          margin={displayLabels ? size / 4 : 0}
+          margin={displayLabels ? size / 4 : 5}
           data={rightsData}
           domain={[0, 1]}
           colors={PETALS_COLORS}
