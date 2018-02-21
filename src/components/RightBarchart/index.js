@@ -49,6 +49,9 @@ export default class RightBarchart extends React.Component {
       <div>
         <svg height={chartHeight} width={chartWidth}>
           <g transform={'translate(' + margin.left + ',' + margin.top + ')'}>
+            { !isESR &&
+              <g transform='rotate(-90)'><text dx={ (margin.left - chartHeight) / 2} dy='-14' fill='#616161' textAnchor='center'fontSize="12px">SCORE</text></g>
+            }
             <g onClick={this.onBackgroundClick}>
               <rect height={chartHeight} width={chartWidth - margin.left - margin.right} y={-margin.top} opacity='0'></rect>
             </g>
