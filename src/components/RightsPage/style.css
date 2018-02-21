@@ -422,8 +422,8 @@
 .cprLegend {
   display: flex;
   position: absolute;
-  right: 106px;
-  bottom: -28px;
+  right: 126px;
+  bottom: -24px;
   font-size: 12px;
   color: #616161;
 }

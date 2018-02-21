@@ -18,9 +18,9 @@ export default class ESRRightBar extends React.Component {
   render() {
     const { data, chartHeight, chartWidth, currYear, currRight, onItemClick, hoveredCountry, currCountry } = this.props
     const margin = {
-      top: 60,
+      top: 70,
       left: 40,
-      bottom: 40,
+      bottom: 20,
       right: 40,
     }
 
@@ -64,7 +64,8 @@ export default class ESRRightBar extends React.Component {
     return (
       <div>
         <svg height={chartHeight} width={chartWidth}>
-          <g transform={'translate(' + margin.left + ',' + margin.top / 2 + ')'}>
+          <g><text x={margin.left} y='24' fontSize='18px' fill='rgb(0, 175, 73)' fontWeight='600'>Trend over time</text></g>
+          <g transform={'translate(' + margin.left + ',' + (margin.top - 20 ) + ')'}>
             <text x='14' fontSize='12px' textAnchor='middle' textDecoration='underline'>Year:</text>
             {
               years.map((item, i) => (
