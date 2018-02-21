@@ -64,31 +64,26 @@ function ESRHighIncome() {
       rights: {
         food: round(row.I),
         food_sub: {
-          childrenNourishment: null,
           normalBirthweightInfants: round(row.J),
         },
         education: round(row.K),
         education_sub: {
           combinedSchoolEnrollment: round(row.L),
           educationQuality: round(row.M),
-          primarySchoolCompletion: null,
         },
         work: round(row.Q),
         work_sub: {
           notLongTermUnemployed: round(row.R),
           notRelativelyPoor: round(row.S),
-          notAbsolutelyPoor: null,
         },
         housing: null,
         housing_sub: {
-          improvedSanitation: null,
-          improvedRuralWater: null,
+          // No sub-indicators for Housing in this esrStandard
         },
         health: round(row.N),
         health_sub: {
-          cildSurvival: round(row.O),
+          childSurvival: round(row.O),
           survivalToAge65: round(row.P),
-          contraceptiveUseScore: null,
         },
       },
     }
@@ -132,18 +127,14 @@ function ESRCore() {
         food: round(row.I),
         food_sub: {
           childrenNourishment: round(row.J),
-          normalBirthweightInfants: null,
         },
         education: round(row.R),
         education_sub: {
           combinedSchoolEnrollment: round(row.S),
-          educationQuality: null,
           primarySchoolCompletion: round(row.T),
         },
         work: round(row.U),
         work_sub: {
-          notLongTermUnemployed: null,
-          notRelativelyPoor: null,
           notAbsolutelyPoor: round(row.V),
         },
         housing: round(row.K),
@@ -153,7 +144,7 @@ function ESRCore() {
         },
         health: round(row.N),
         health_sub: {
-          cildSurvival: round(row.O),
+          childSurvival: round(row.O),
           survivalToAge65: round(row.P),
           contraceptiveUseScore: round(row.Q),
         },
