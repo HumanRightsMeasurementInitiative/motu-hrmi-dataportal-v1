@@ -141,7 +141,7 @@
 .chartsHeader {
   flex: 0 0 auto;
   position: relative;
-  padding: 0 20px;
+  padding: 0 40px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   color: #58595b;
@@ -163,7 +163,7 @@
 .chartsFooter {
   flex: 0 0 auto;
   position: relative;
-  padding: 0 20px 30px;
+  padding: 0 40px 30px;
   min-height: 60px;
   font-size: 12px;
 }
@@ -384,10 +384,11 @@
 
 .esrLegend {
   position: absolute;
-  right: 20px;
+  right: 40px;
   bottom: -28px;
 }
 .esrLegend .text {
+  margin-left: 10px;
   display: inline-block;
   position: relative;
   padding-left: 20px;
@@ -402,9 +403,6 @@
   width: 12px;
   background: #00b95f;
   border-radius: 6px;
-}
-.esrLegend .text:last-child {
-  margin-left: 10px;
 }
 .esrLegend .text:last-child:after {
   content: '';

@@ -18,6 +18,9 @@ export default class RightBarchart extends React.Component {
     currCountry: PropTypes.object,
     onItemClick: PropTypes.func,
     resetCurrCountry: PropTypes.func,
+    hoveredCountry: PropTypes.string,
+    onItemHover: PropTypes.func,
+    resetHoveredCountry: PropTypes.func,
   }
 
   onBackgroundClick = () => {
@@ -26,7 +29,7 @@ export default class RightBarchart extends React.Component {
   }
 
   render() {
-    const { isESR, currYear, currRight, chartHeight, chartWidth, rightsByRegionCountries, currCountry, onItemClick } = this.props
+    const { isESR, currYear, currRight, chartHeight, chartWidth, rightsByRegionCountries, currCountry, onItemClick, hoveredCountry, onItemHover, resetHoveredCountry } = this.props
     const yAxisRange = Array.from(Array(11).keys()).reverse()
     const yAxisRate = isESR ? 10 : 1
 
@@ -34,9 +37,9 @@ export default class RightBarchart extends React.Component {
 
     const margin = {
       top: 40,
-      left: 20,
+      left: 40,
       bottom: 30,
-      right: 20,
+      right: 40,
     }
 
     const xScale = d3.scaleLinear().domain([0, rightsByRegionCountries.length - 1]).range([40, chartWidth - margin.left - margin.right - 10])
@@ -108,6 +111,9 @@ export default class RightBarchart extends React.Component {
                     currCountry={currCountry}
                     country={country}
                     onItemClick={onItemClick}
+                    hoveredCountry={hoveredCountry}
+                    onItemHover={onItemHover}
+                    resetHoveredCountry={resetHoveredCountry}
                   />
                   : <CPRRects
                     key={i}

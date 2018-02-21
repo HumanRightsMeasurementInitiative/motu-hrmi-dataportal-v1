@@ -29,6 +29,7 @@ export default class RightsPage extends React.Component {
       chartWidth: 0,
       currYear: 2015,
       rightPaneWidth: 0,
+      hoveredCountry: null,
       // sortby: 'Name',
     }
   }
@@ -79,6 +80,14 @@ export default class RightsPage extends React.Component {
 
   gotoCPRPilot = () => {
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, region: 'cpr-pilot' }))
+  }
+
+  setHoveredCountry = (country) => {
+    this.setState({ hoveredCountry: country })
+  }
+
+  unsetHoveredCountry = (country) => {
+    this.setState({ hoveredCountry: null })
   }
 
   render() {
@@ -167,7 +176,10 @@ export default class RightsPage extends React.Component {
                   chartWidth={this.state.chartWidth}
                   currCountry={this.state.currCountry}
                   onItemClick={this.setCurrCountry}
-                  resetCurrCountry={this.resetCurrCountry} />
+                  resetCurrCountry={this.resetCurrCountry}
+                  hoveredCountry={this.state.hoveredCountry}
+                  onItemHover={this.setHoveredCountry}
+                  resetHoveredCountry={this.unsetHoveredCountry} />
                 : <div className={styles.CPRAlertWrapper}>
                   <div className={styles.CPRAlert}>
                     {content.cpr_alert.text} <u>{content.cpr_alert.underline_text}</u>
@@ -182,6 +194,8 @@ export default class RightsPage extends React.Component {
                   chartWidth={this.state.chartWidth}
                   currYear={this.state.currYear}
                   currRight={urlSegs.right}
+                  currCountry={this.state.currCountry}
+                  hoveredCountry={this.state.hoveredCountry}
                   onItemClick={this.setCurrYear}
                 />
               }

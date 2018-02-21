@@ -11,15 +11,17 @@ export default class ESRRightBar extends React.Component {
     currYear: PropTypes.number.isRequired,
     currRight: PropTypes.string.isRequired,
     onItemClick: PropTypes.func.isRequired,
+    hoveredCountry: PropTypes.string,
+    currCountry: PropTypes.object,
   }
 
   render() {
-    const { data, chartHeight, chartWidth, currYear, currRight, onItemClick } = this.props
+    const { data, chartHeight, chartWidth, currYear, currRight, onItemClick, hoveredCountry, currCountry } = this.props
     const margin = {
       top: 60,
-      left: 20,
+      left: 40,
       bottom: 40,
-      right: 20,
+      right: 40,
     }
 
     const years = d3.range(2005, 2015 + 1)
@@ -41,15 +43,22 @@ export default class ESRRightBar extends React.Component {
         year,
         value: get(country, `rights.${esrStandard}Historical.${year}.rights.${currRight}`, null),
       }))
+
       return {
         esrStandard,
+        year: get(lineData.filter(buildLine.defined()).slice(-1)[0], 'year', null),
+        value: get(lineData.filter(buildLine.defined()).slice(-1)[0], 'value', null),
+        code: country.countryCode,
         path: buildLine(lineData),
+        dashedPath: buildLine(lineData.filter(buildLine.defined())),
       }
     }
+
     const lines = [].concat(
       data.map(buildLineWithStandard('esrCore')),
       data.map(buildLineWithStandard('esrHI')),
     )
+
     const linesVisibleCount = lines.filter(l => Boolean(l.path)).length
 
     return (
@@ -84,11 +93,27 @@ export default class ESRRightBar extends React.Component {
               ))
             }
           </g>
-          {lines.map(({ path, esrStandard }, i) => (
-            <g key={i} transform={'translate(' + margin.left + ',' + margin.top + ')'}>
-              <path d={path} stroke='#00b95f' strokeWidth='2' opacity={Math.max(0.1, 3 / linesVisibleCount)} fill='none' />
-            </g>
-          ))}
+          {lines.map(({ path, dashedPath, code, year, value, esrStandard }, i) => {
+            const selectedCode = get(currCountry, 'countryCode', null)
+            return (<g key={i} transform={'translate(' + margin.left + ',' + margin.top + ')'}>
+              <path
+                d={path}
+                stroke='#00b95f'
+                strokeWidth={hoveredCountry === code || selectedCode === code ? 2 : 1}
+                opacity={hoveredCountry === code || selectedCode === code ? 1 : Math.max(0.1, 3 / linesVisibleCount)}
+                fill='none'
+              />
+              { value && (hoveredCountry === code || selectedCode === code) &&
+                <g>
+                  <path d={dashedPath} strokeDasharray='4 4' stroke='#00b95f' strokeWidth='1' fill='none'/>
+                  <circle r='2' cx={xScale(year)} cy={yScale(value)} fill={esrStandard === 'esrCore' ? '#00b95f' : '#fff'} strokeWidth='2' stroke='#00b95f'></circle>
+                </g>
+              }
+              { selectedCode === code &&
+                <text dx={xScale(year) + 4} dy={yScale(value) + 4} fontSize='10' fill='#00b95f'>{code}</text>
+              }
+            </g>)
+          })}
         </svg>
       </div>
     )
