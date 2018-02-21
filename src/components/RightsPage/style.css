@@ -147,11 +147,13 @@
   color: #58595b;
 }
 .regionName {
-  padding-bottom: 10px;
   font-size: 18px;
 }
 .regionName span {
   font-weight: 600;
+}
+.chartSubtitle {
+  min-height: 20px;
 }
 .sortBy {
   margin-top: 4px;

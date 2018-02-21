@@ -149,6 +149,9 @@ export default class RightsPage extends React.Component {
           <div className='column'>
             <div className={styles.chartsHeader}>
               <div className={styles.regionName}><span style={{ color: isESRSelected ? '#00af49' : '#2e65a1' }}>{content.rights_name[urlSegs.right]}</span> {content.in} {content.region_name[urlSegs.region]}</div>
+              <div className={styles.chartSubtitle}>
+                {isESRSelected && 'Percentage level of human right enjoyment achieved, relative to what should be feasible'}
+              </div>
               {/* <div className={styles.sortBy} style={{ opacity: (isESRSelected || urlSegs.region === 'cpr-pilot') ? 1 : 0 }}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div> */}
               { isESRSelected
                 ? <div className={styles.esrLegend}>
