@@ -1,20 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import CountryRightsChart from 'components/CountryRightsChart'
 import SubTopNav from '../SubTopNav/'
-import RegionItem from '../RegionItem'
-import RightsItem from './RightsItem'
-import DownloadPopup from '../DownloadPopup'
-import ChangeStandard from '../ChangeStandard'
-import MiniBarChart from '../GeoMiniBarChart'
-import RightDefinition from '../RightDefinition'
 import { segsToUrl } from '../utils'
 import rightsDefinitions from 'data/rights-definitions.json'
+import RightColumn from './RightColumn'
+import LeftColumn from './LeftColumn'
+import CountryGrid from './CountryGrid'
 import styles from './style.css'
-
-function rewriteArgs(fn, ...args) {
-  return () => fn(...args)
-}
 
 export default class GeoPage extends React.Component {
   static propTypes = {
@@ -25,9 +17,9 @@ export default class GeoPage extends React.Component {
     content: PropTypes.object.isRequired,
   }
 
-  constructor() {
-    super()
-    this.state = { currCountry: null, hoverCountry: null }
+  state = {
+    currCountry: null,
+    hoverCountry: null,
   }
 
   setRegion = (region) => {
@@ -64,6 +56,7 @@ export default class GeoPage extends React.Component {
   }
 
   setHoverCountry = (country) => {
+    console.log('heyyy')
     this.setState({ hoverCountry: country })
   }
 
@@ -73,145 +66,55 @@ export default class GeoPage extends React.Component {
 
   render() {
     const { data: { rightsByRegion }, urlSegs, esrStandard, content } = this.props
-    const tooltips = content.question_tooltips
-    const countries = rightsByRegion[urlSegs.region].countries
-    const regionCodes = Object.keys(rightsByRegion)
+    const { hoverCountry } = this.state
+    const { region: currRegion, right: currRight } = urlSegs
+    const regionRights = rightsByRegion[currRegion]
+    const countries = regionRights.countries
 
     const rights = Object.entries(rightsDefinitions).map(([code, right]) => ({ code, ...right }))
     const rightsESR = rights.filter(right => right.type === 'ESR')
     const rightsCPR = rights.filter(right => right.type === 'CPR')
-    const displayedRightsESR = urlSegs.right === 'all'
+    const displayedRightsESR = currRight === 'all'
       ? rightsESR
-      : rightsESR.filter(right => right.code === urlSegs.right)
-    const displayedRightsCPR = urlSegs.right === 'all'
+      : rightsESR.filter(right => right.code === currRight)
+    const displayedRightsCPR = currRight === 'all'
       ? rightsCPR
-      : rightsCPR.filter(right => right.code === urlSegs.right)
+      : rightsCPR.filter(right => right.code === currRight)
 
     return (
       <div className={styles.geoPage}>
         <SubTopNav content={content} />
         <div className='row'>
-          <div className='column'>
-            <div className={styles.columnLeft}>
-              <div className={styles.searchInputWrapper}>
-                <input className={styles.searchInput} type='text' placeholder={content.search_country} />
-              </div>
-              <ul className={styles.regionList}>
-                {regionCodes.map((regionCode, i) => (
-                  <RegionItem key={regionCode} code={regionCode} onItemClick={this.setRegion} selected={regionCode === urlSegs.region}>
-                    {content.region_name[regionCode]}
-                  </RegionItem>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className='column'>
-            <div className={styles.columnMiddle}>
-              <div className={styles.chartsHeader}>
-                <div className={styles.title}>
-                  <strong>{content.header_text.by_geography} {content.region_name[urlSegs.region]}</strong>
-                </div>
-                <div className={styles.standard}>
-                  <ChangeStandard />
-                </div>
-              </div>
-              <div className={styles.countriesList}>
-                <div className={styles.countriesContainer}>
-                  {countries.map((country, i) => (
-                    <div
-                      key={country.countryCode}
-                      className={styles.countryCard}
-                      onClick={rewriteArgs(this.setCountry, country.countryCode)}
-                    >
-                      <CountryRightsChart
-                        rights={country.rights}
-                        currRight={urlSegs.right === 'all' ? null : urlSegs.right}
-                        esrStandard={esrStandard}
-                        size={165}
-                      />
-                      <span>{country.countryCode} {this.state.hoverCountry === country.countryCode}</span>
-                      <div
-                        className={styles.cardCover}
-                        onMouseOver={rewriteArgs(this.setHoverCountry, country.countryCode)}
-                        onMouseOut={this.unsetHoverCountry}
-                        style={{ opacity: this.state.hoverCountry === null || this.state.hoverCountry === country.countryCode ? 0 : 1 }}
-                      ></div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className={styles.chartsFooter}>
-                <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={['chart']} content={content} /></div>
-                <div className={styles.text}>{content.footer_text.by_geography}</div>
-                <div className={styles.source}>{content.footer_text.source} <a className={styles.small} href='https://humanrightsmeasurement.org'>https://humanrightsmeasurement.org</a></div>
-              </div>
-            </div>
-          </div>
-          <div className='column'>
-            <div className={styles.columnRight}>
-              { urlSegs.right === 'all'
-                ? (
-                  <div>
-                    <div className={styles.esrTitle}>{content.rights_category.esr}</div>
-                    <ul className={styles.esrList}>
-                      {displayedRightsESR.map((right, i) => (
-                        <RightsItem
-                          key={i}
-                          right={right.code}
-                          isESR={true}
-                          data={rightsByRegion[urlSegs.region]}
-                          esrStandard={esrStandard}
-                          onItemClick={this.setRight}
-                          hoverCountry={this.state.hoverCountry}>
-                          {content.rights_name[right.code]}
-                        </RightsItem>
-                      ))}
-                    </ul>
-                    <div className={styles.cprTitle}>{content.rights_category.cpr}</div>
-                    <ul className={styles.cprList}>
-                      {displayedRightsCPR.map((right, i) => (
-                        <RightsItem
-                          key={i}
-                          right={right.code}
-                          isESR={false}
-                          data={rightsByRegion[urlSegs.region]}
-                          onItemClick={this.setRight}
-                          hoverCountry={this.state.hoverCountry}>
-                          {content.rights_name[right.code]}
-                        </RightsItem>
-                      ))}
-                    </ul>
-                  </div>
-                ) : (
-                  <div className={styles.specRightInfo}>
-                    <div className={styles.specRightHeader} onClick={this.setRightToAll} rightcolor={urlSegs.right}>
-                      <div className={styles.rightName}>{content.rights_name[urlSegs.right]}</div>
-                      <div className={styles.rightCate}>
-                        {displayedRightsESR.length === 0 ? content.rights_category.cpr : content.rights_category.esr}
-                      </div>
-                      { displayedRightsESR.length
-                        ? <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} isESR={true} right={urlSegs.right} hoverCountry={this.state.hoverCountry} esrStandard={esrStandard} />
-                        : <MiniBarChart height={60} data={rightsByRegion[urlSegs.region]} isESR={false} right={urlSegs.right} hoverCountry={this.state.hoverCountry} />
-                      }
-                      <div className={styles.linkWrapper}>
-                        <div className='arrowLink'>
-                          <div className='text'>{content.explore_this_rights_in}:</div>
-                          <div className='text underline' onClick={this.setExploreBy}>
-                            {content.region_name[urlSegs.region]}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className={styles.definitionWrapper}>
-                      <div className={styles.rightInfo}>
-                        <RightDefinition right={urlSegs.right} isESRSelected={displayedRightsESR.length !== 0} tooltips={tooltips} content={content} />
-                      </div>
-                    </div>
-                  </div>
-                )
-              }
-            </div>
-          </div>
+          <LeftColumn
+            rightsByRegion={rightsByRegion}
+            currRegion={currRegion}
+            content={content}
+            setRegion={this.setRegion}
+          />
+          <CountryGrid
+            currRegion={currRegion}
+            currRight={currRight}
+            countries={countries}
+            esrStandard={esrStandard}
+            content={content}
+            hoverCountry={hoverCountry}
+            setCountry={this.setCountry}
+            setHoverCountry={this.setHoverCountry}
+            unsetHoverCountry={this.unsetHoverCountry}
+          />
+          <RightColumn
+            regionRights={regionRights}
+            esrStandard={esrStandard}
+            displayedRightsESR={displayedRightsESR}
+            displayedRightsCPR={displayedRightsCPR}
+            currRegion={currRegion}
+            currRight={currRight}
+            hoverCountry={hoverCountry}
+            content={content}
+            setRight={this.setRight}
+            setRightToAll={this.setRightToAll}
+            setExploreBy={this.setExploreBy}
+          />
         </div>
       </div>
     )
