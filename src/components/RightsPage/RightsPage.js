@@ -9,6 +9,7 @@ import DownloadPopup from '../DownloadPopup'
 // import SortbyDropdown from '../SortbyDropdown'
 import RightDefinition from '../RightDefinition'
 import DefinitionFooter from '../DefinitionFooter'
+import QuestionTooltip from '../QuestionTooltip'
 import { segsToUrl, joinClassName as jcn } from '../utils'
 import styles from './style.css'
 import rightsDefinitions from 'data/rights-definitions.json'
@@ -165,6 +166,12 @@ export default class RightsPage extends React.Component {
                     <div className={styles.maxText}>90<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
                     <div className={styles.minText}>10<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
                   </div>
+                  <div className={styles.questionTooltip}>
+                    <QuestionTooltip width={238} question={''}>
+                      <p>{tooltips[2].tooltip.paragraphs[0]}</p>
+                      <p>{tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{tooltips[2].tooltip.linkText}</a>.</p>
+                    </QuestionTooltip>
+                  </div>
                 </div>
               }
             </div>
@@ -227,7 +234,7 @@ export default class RightsPage extends React.Component {
             </div>
             <div className={styles.infoContent}>
               <div className={styles.textWrapper}>
-                <RightDefinition right={urlSegs.right} isESRSelected={isESRSelected} tooltips={tooltips} content={content} />
+                <RightDefinition right={urlSegs.right} isESRSelected={isESRSelected} tooltips={tooltips} content={content} isPopup={true} />
                 { this.state.currCountry &&
                   <DefinitionFooter
                     isESRSelected={isESRSelected}

@@ -386,7 +386,7 @@
 
 .esrLegend {
   position: absolute;
-  right: 40px;
+  right: 30px;
   bottom: -28px;
 }
 .esrLegend .text {
@@ -422,7 +422,7 @@
 .cprLegend {
   display: flex;
   position: absolute;
-  right: 126px;
+  right: 46px;
   bottom: -24px;
   font-size: 12px;
   color: #616161;
@@ -454,6 +454,7 @@
 .textContainer {
   flex: 1;
   position: relative;
+  width: 90px;
 }
 .maxText,
 .minText {
@@ -477,4 +478,11 @@
 }.maxText:before,
 .minText:before {
   content: '\2014 ';
+}
+
+.questionTooltip {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -4px;
 }

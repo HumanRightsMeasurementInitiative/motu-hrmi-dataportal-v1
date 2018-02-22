@@ -243,6 +243,8 @@
     }, {
       "question": "¿Por qué no hay mediciones de derecho a la vivienda con el estándar de evaluación de país de ingresos altos de la OCDE?",
       "tooltip": "Actualmente, no hay datos disponibles que se puedan comparar entre varios países de ingresos altos de la OCDE que reflejen acceso a la vivienda y problemas de accesibilidad. Como resultado, las mediciones de HRMI sobre derecho a la vivienda no están disponibles para países de ingresos altos de la OCDE."
+    }, {
+      "question": "How is this right defined?"
     }
   ],
   "country_tooltips": [

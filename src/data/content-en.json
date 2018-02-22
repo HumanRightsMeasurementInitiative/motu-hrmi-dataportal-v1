@@ -256,6 +256,8 @@
     }, {
       "question": "Why is there no right to housing measure using the high-income OECD country standard?",
       "tooltip": "There currently are no data available that are comparable across most high-income OECD countries that reflect housing access and affordability problems. As a result, HRMI metrics on the right to housing are not available for high-income OECD countries."
+    }, {
+      "question": "How is this right defined?"
     }
   ],
   "country_tooltips": [

@@ -9,24 +9,24 @@ export default class RightDefinition extends React.Component {
     isESRSelected: PropTypes.bool.isRequired,
     tooltips: PropTypes.array.isRequired,
     content: PropTypes.object.isRequired,
+    isPopup: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    isPopup: false,
   }
 
   render() {
-    const { right, isESRSelected, tooltips, content } = this.props
+    const { right, isESRSelected, tooltips, content, isPopup } = this.props
     const rightsDefinitions = content.rights_definitions
 
     return (
       <div style={{ height: '100%' }}>
-        { rightsDefinitions[right].definition
-          ? <p className={styles.definition}>{rightsDefinitions[right].definition}</p>
-          : <ul>
-            {rightsDefinitions[right].measure_list.map((item, i) => {
-              return (<li key={i} className={styles.defList}>{item}</li>)
-            })}
-          </ul>
-        }
-        { rightsDefinitions[right].conclusion_para &&
-          <p className={styles.definition}>{rightsDefinitions[right].conclusion_para}</p>
+        { isPopup
+          ? <QuestionTooltip width={238} question={tooltips[5].question}>
+            <DefinitionText right={right} rightsDefinitions={rightsDefinitions} tooltips={tooltips} content={content} />
+          </QuestionTooltip>
+          : <DefinitionText right={right} rightsDefinitions={rightsDefinitions} tooltips={tooltips} content={content} />
         }
         { rightsDefinitions[right].core_text &&
           <div>
@@ -84,6 +84,33 @@ export default class RightDefinition extends React.Component {
               <p>{tooltips[3].tooltip.paragraphs[0]} <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blank'>{tooltips[3].tooltip.linkText}</a>.</p>
             </QuestionTooltip>
           </div>
+        }
+      </div>
+    )
+  }
+}
+
+class DefinitionText extends React.Component {
+  static propTypes = {
+    right: PropTypes.string.isRequired,
+    rightsDefinitions: PropTypes.object.isRequired,
+    tooltips: PropTypes.array.isRequired,
+    content: PropTypes.object.isRequired,
+  }
+  render() {
+    const { right, rightsDefinitions, tooltips, content } = this.props
+    return (
+      <div>
+        { rightsDefinitions[right].definition
+          ? <p className={styles.definition}>{rightsDefinitions[right].definition}</p>
+          : <ul>
+            {rightsDefinitions[right].measure_list.map((item, i) => {
+              return (<li key={i} className={styles.defList}>{item}</li>)
+            })}
+          </ul>
+        }
+        { rightsDefinitions[right].conclusion_para &&
+          <p className={styles.definition}>{rightsDefinitions[right].conclusion_para}</p>
         }
       </div>
     )
