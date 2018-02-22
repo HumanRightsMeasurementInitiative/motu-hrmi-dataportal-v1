@@ -128,6 +128,9 @@ export default class RightBarchart extends React.Component {
                     currCountry={currCountry}
                     country={country}
                     onItemClick={onItemClick}
+                    hoveredCountry={hoveredCountry}
+                    onItemHover={onItemHover}
+                    resetHoveredCountry={resetHoveredCountry}
                   />
                 )
               })
@@ -159,6 +162,7 @@ export default class RightBarchart extends React.Component {
                     maxValue={yScale(value.percentile90)}
                     minValue={yScale(value.percentile10)}
                     meanValue={yScale(value.mean)}
+                    hoveredCountry={hoveredCountry}
                   />
                 )
               })

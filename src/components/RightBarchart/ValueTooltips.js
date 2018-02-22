@@ -18,10 +18,11 @@ export default class ValueTooltips extends React.Component {
     maxValue: PropTypes.number,
     minValue: PropTypes.number,
     meanValue: PropTypes.number,
+    hoveredCountry: PropTypes.string,
   }
 
   render() {
-    const { isESR, translateX, translateY, currCountry, country, highIncomeDisplay, coreDisplay, highIncomeValue, coreValue, maxDisplay, minDisplay, meanDisplay, maxValue, minValue, meanValue } = this.props
+    const { isESR, translateX, translateY, currCountry, country, highIncomeDisplay, coreDisplay, highIncomeValue, coreValue, maxDisplay, minDisplay, meanDisplay, maxValue, minValue, meanValue, hoveredCountry } = this.props
     const isActive = currCountry && currCountry === country
     return (
       <g transform={'translate(' + translateX + ', ' + translateY + ')'}>
@@ -31,15 +32,15 @@ export default class ValueTooltips extends React.Component {
             { coreValue && <text y={Math.abs(highIncomeValue - coreValue) < 20 ? (highIncomeValue > coreValue ? -highIncomeValue + 18 : -highIncomeValue - 10) : -coreValue + 4} x={10} fontSize='16' fill='#616161' fontWeight='700'>{coreDisplay}%</text>}
           </g>
         }
-        { !isESR && isActive &&
+        { !isESR && (isActive || hoveredCountry === country.countryCode) &&
           <g>
-            <text y={maxValue - meanValue < 12 ? -meanValue - 10 : -maxValue + 4} x='20' fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
+            <text y={maxValue - minValue < 20 ? -meanValue - 2 : -maxValue + 8} x='10' fontSize='14' fill='#3378ae' fontWeight='500'>
               {maxDisplay}
             </text>
-            <text y={meanValue - minValue < 12 ? -meanValue + 18 : -minValue + 4} x='20' fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
+            <text y={maxValue - minValue < 20 ? -meanValue + 10 : -minValue} x='10' fontSize='14' fill='#3378ae' fontWeight='500'>
               {minDisplay}
             </text>
-            <text y={-meanValue + 4} x='20' fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='middle'>
+            <text y={-meanValue + 4} x='-10' fontSize='16' fill='#3378ae' fontWeight='700' textAnchor='end'>
               {meanDisplay}
             </text>
           </g>
