@@ -21,10 +21,10 @@
   transition: border .2s;
 }
 .secBtn:first-child {
-  min-width: 170px;
+  min-width: 220px;
 }
 .secBtn:last-child {
-  min-width: 212px;
+  min-width: 250px;
 }
 .secBtn:hover {
   font-weight: 700;

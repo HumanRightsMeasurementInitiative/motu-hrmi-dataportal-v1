@@ -72,6 +72,7 @@ export default class StoryPopup extends React.Component {
               <div className={styles.langSelector}>
                 <LangSelector />
               </div>
+              <div className={styles.chartTitle}>{content.story_mexico.chart_title}</div>
               <div className={styles.graph} style={{ lineHeight: '0.9rem' }}>
                 <CountryRightsChart
                   rights={MEXICO.rights}
@@ -81,7 +82,6 @@ export default class StoryPopup extends React.Component {
                 />
               </div>
               <div>
-                <h4 className={styles.countryName}>{story.country_code}</h4>
                 <div className={styles.linkWrapper}>
                   <div className='arrowLink'>
                     <div className='text'>{arrowLink.title.all}</div>

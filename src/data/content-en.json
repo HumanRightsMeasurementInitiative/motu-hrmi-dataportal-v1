@@ -48,6 +48,7 @@
     "esr": "Economic and Social Rights",
     "cpr": "Civil and Political Rights"
   },
+  "esr_chart_subtitle": "Percentage level of human right enjoyment achieved, relative to what should be feasible",
   "legend": {
     "esr_barchart": ["Core assessment standard", "High income OECD country assessment standard"],
     "cpr_barchart": ["Mean score", "percentile"]
@@ -142,7 +143,8 @@
     }
   },
   "story_mexico": {
-    "country_code": "MEX",
+    "chart_title": "A summary picture of Mexico's human rights performance",
+    "country_code": "MEXICO",
     "article_title": "Respect for human rights in Mexico is far worse than it should be",
     "article_subtitle": [
       "Mexico – High-income OECD assessment standard",

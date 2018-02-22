@@ -37,9 +37,9 @@ export default class RightBarchart extends React.Component {
 
     const margin = {
       top: 40,
-      left: 40,
+      left: 30,
       bottom: 30,
-      right: 40,
+      right: 30,
     }
 
     const xScale = d3.scaleLinear().domain([0, rightsByRegionCountries.length - 1]).range([40, chartWidth - margin.left - margin.right - 10])

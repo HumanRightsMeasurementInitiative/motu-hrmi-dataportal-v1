@@ -19,9 +19,9 @@ export default class ESRRightBar extends React.Component {
     const { data, chartHeight, chartWidth, currYear, currRight, onItemClick, hoveredCountry, currCountry } = this.props
     const margin = {
       top: 70,
-      left: 40,
+      left: 30,
       bottom: 20,
-      right: 40,
+      right: 30,
     }
 
     const years = d3.range(2005, 2015 + 1)

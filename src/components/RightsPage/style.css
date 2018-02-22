@@ -141,7 +141,7 @@
 .chartsHeader {
   flex: 0 0 auto;
   position: relative;
-  padding: 0 40px;
+  padding: 0 30px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   color: #58595b;
@@ -165,7 +165,7 @@
 .chartsFooter {
   flex: 0 0 auto;
   position: relative;
-  padding: 0 40px 30px;
+  padding: 0 30px 30px;
   min-height: 60px;
   font-size: 12px;
 }
