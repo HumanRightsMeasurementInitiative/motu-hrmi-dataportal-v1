@@ -23,7 +23,7 @@ export default class RightsPage extends React.Component {
     const { isESRSelected, isCPRSelected, currCountry, currRight, content, isHideTimeline } = this.props
     const cloudWords = isCPRSelected && currCountry && currRight !== 'all' && currCountry.rights.cprRangeAtRisk
       ? currCountry.rights.cprRangeAtRisk[currRight]
-      : ''
+      : []
 
     return (
       <div>

@@ -12,13 +12,12 @@ export default class WordCloudChart extends React.Component {
   render() {
     const { words } = this.props
     const sort = (a, b) => (b[1] - a[1])
-    const filter = (v, i) => i < 10
-    // const sortedWords = words.slice().sort(sort).filter(filter)
+    // const sortedWords = words.slice().sort(sort).slice(0, 10)
 
     // TODO remove
     const abuseKeys = ['suspected criminals', 'non-violent political', 'violent political', 'discriminated groups', 'indiscriminate']
     let sortedWords = words.filter(item => abuseKeys.indexOf(item[0].toLowerCase()) === -1)
-    sortedWords = sortedWords.slice().sort(sort).filter(filter)
+    sortedWords = sortedWords.slice().sort(sort).slice(0, 10)
     // TODO end
 
     const scale = d3.scaleLinear().domain([0, 1]).range([0.5, 1])

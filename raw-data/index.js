@@ -239,16 +239,29 @@ function CPRRangeAtRisk() {
       return [ word, value ]
     }).filter(Boolean)
 
+    const getAverageWordsValues = (rightCode1, rightCode2) => {
+      const words1 = _.fromPairs(getWordsValues(rightCode1))
+      const words2 = _.fromPairs(getWordsValues(rightCode2))
+      const wordsKeys = _.uniq(Object.keys(words1).concat(Object.keys(words2)))
+      return wordsKeys.map(w => {
+        const v1 = words1[w]
+        const v2 = words2[w]
+        if (v1 === null && v2 !== null) return [w, v2]
+        if (v2 === null && v1 !== null) return [w, v1]
+        return [w, _.mean([v1, v2])]
+      })
+    }
+
     wordsValuesByCountry[countryCode] = {
       'opinion-and-expression': getWordsValues('express'),
-      'assembly-and-association': getWordsValues('assoc').concat(getWordsValues('assem')),
+      'assembly-and-association': getAverageWordsValues('assoc', 'assem'),
       'assembly-and-association-sub': {
         'assembly': getWordsValues('assem'),
         'association': getWordsValues('assoc'),
       },
       'participate-in-government': getWordsValues('polpart'),
       'freedom-from-torture': getWordsValues('tort'),
-      'freedom-from-execution': getWordsValues('exkill').concat(getWordsValues('dpex')),
+      'freedom-from-execution': getAverageWordsValues('exkill', 'dpex'),
       'freedom-from-execution-sub': {
         'freedom-from-the-death-penalty': getWordsValues('dpex'),
         'freedom-from-extrajudicial-execution': getWordsValues('exkill'),
