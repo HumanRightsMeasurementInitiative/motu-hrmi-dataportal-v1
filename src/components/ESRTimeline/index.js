@@ -42,12 +42,16 @@ export default class ESRRightBar extends React.Component {
       const lineData = years.map(year => ({
         year,
         value: get(country, `rights.${esrStandard}Historical.${year}.rights.${currRight}`, null),
+        valueCore: get(country, `rights.esrCoreHistorical.${year}.rights.${currRight}`, null),
+        valueHI: get(country, `rights.esrHIHistorical.${year}.rights.${currRight}`, null),
       }))
 
       return {
         esrStandard,
         year: get(lineData.filter(buildLine.defined()).slice(-1)[0], 'year', null),
         value: get(lineData.filter(buildLine.defined()).slice(-1)[0], 'value', null),
+        valueCore: get(lineData.filter(buildLine.defined()).slice(-1)[0], 'valueCore', null),
+        valueHI: get(lineData.filter(buildLine.defined()).slice(-1)[0], 'valueHI', null),
         code: country.countryCode,
         path: buildLine(lineData),
         dashedPath: buildLine(lineData.filter(buildLine.defined())),
@@ -94,8 +98,9 @@ export default class ESRRightBar extends React.Component {
               ))
             }
           </g>
-          {lines.map(({ path, dashedPath, code, year, value, esrStandard }, i) => {
+          {lines.map(({ path, dashedPath, code, year, value, valueCore, valueHI, esrStandard }, i) => {
             const selectedCode = get(currCountry, 'countryCode', null)
+            let dyValue = Math.abs(valueCore - valueHI) > 5 ? yScale(value) + 4 : yScale(Math.min(valueCore, valueHI) + (valueCore - valueHI) / 2)
             return (<g key={i} transform={'translate(' + margin.left + ',' + margin.top + ')'}>
               <path
                 d={path}
@@ -107,11 +112,11 @@ export default class ESRRightBar extends React.Component {
               { value && (hoveredCountry === code || selectedCode === code) &&
                 <g>
                   <path d={dashedPath} strokeDasharray='4 4' stroke='#00b95f' strokeWidth='1' fill='none'/>
-                  <circle r='2' cx={xScale(year)} cy={yScale(value)} fill={esrStandard === 'esrCore' ? '#00b95f' : '#fff'} strokeWidth='2' stroke='#00b95f'></circle>
+                  <circle r='4' cx={xScale(year)} cy={yScale(value)} fill={esrStandard === 'esrCore' ? '#00b95f' : '#fff'} strokeWidth='3' stroke='#00b95f'></circle>
                 </g>
               }
               { selectedCode === code &&
-                <text dx={xScale(year) + 4} dy={yScale(value) + 4} fontSize='10' fill='#00b95f'>{code}</text>
+                <text dx={xScale(year) + 8} dy={dyValue} fontSize='10' fill='#00b95f'>{code}</text>
               }
             </g>)
           })}

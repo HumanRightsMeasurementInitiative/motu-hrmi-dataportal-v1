@@ -24,9 +24,9 @@ export default class RightDefinition extends React.Component {
       <div style={{ height: '100%' }}>
         { isPopup
           ? <QuestionTooltip width={238} question={tooltips[5].question}>
-            <DefinitionText right={right} rightsDefinitions={rightsDefinitions} tooltips={tooltips} content={content} />
+            <DefinitionText right={right} rightsDefinitions={rightsDefinitions} />
           </QuestionTooltip>
-          : <DefinitionText right={right} rightsDefinitions={rightsDefinitions} tooltips={tooltips} content={content} />
+          : <DefinitionText right={right} rightsDefinitions={rightsDefinitions} />
         }
         { rightsDefinitions[right].core_text &&
           <div>
@@ -94,11 +94,9 @@ class DefinitionText extends React.Component {
   static propTypes = {
     right: PropTypes.string.isRequired,
     rightsDefinitions: PropTypes.object.isRequired,
-    tooltips: PropTypes.array.isRequired,
-    content: PropTypes.object.isRequired,
   }
   render() {
-    const { right, rightsDefinitions, tooltips, content } = this.props
+    const { right, rightsDefinitions } = this.props
     return (
       <div>
         { rightsDefinitions[right].definition
