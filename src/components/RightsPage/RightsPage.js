@@ -235,6 +235,7 @@ export default class RightsPage extends React.Component {
                     currCountry={this.state.currCountry }
                     currRight={urlSegs.right}
                     content={content}
+                    isHideTimeline={true}
                   />
                 }
               </div>

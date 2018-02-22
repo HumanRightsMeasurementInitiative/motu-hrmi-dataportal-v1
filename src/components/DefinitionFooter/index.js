@@ -12,10 +12,15 @@ export default class RightsPage extends React.Component {
     content: PropTypes.object.isRequired,
     currCountry: PropTypes.object.isRequired,
     currRight: PropTypes.string.isRequired,
+    isHideTimeline: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    isHideTimeline: false,
   }
 
   render() {
-    const { isESRSelected, isCPRSelected, currCountry, currRight, content } = this.props
+    const { isESRSelected, isCPRSelected, currCountry, currRight, content, isHideTimeline } = this.props
     const cloudWords = isCPRSelected && currCountry && currRight !== 'all' && currCountry.rights.cprRangeAtRisk
       ? currCountry.rights.cprRangeAtRisk[currRight]
       : ''
@@ -38,7 +43,7 @@ export default class RightsPage extends React.Component {
             </div>
           </div>
         }
-        { isESRSelected && currCountry &&
+        { isESRSelected && currCountry && !isHideTimeline &&
           <div>
             <div className={styles.subtitleESR}>{content.esr_trend.title}</div>
             <div className={styles.esrChartKey}>{content.esr_trend.subtitle}</div>
