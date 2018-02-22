@@ -22,7 +22,7 @@ export default class CPRRects extends React.Component {
 
   render() {
     const { translateX, translateY, value, maxValue, minValue, currCountry, country, onItemClick } = this.props
-    const isActive = currCountry && currCountry === country
+    // const isActive = currCountry && currCountry === country
     return (
       <g transform={'translate(' + translateX + ', ' + translateY + ')'} onClick={this.onClick} className={jcn({ cprRect: true, clickable: onItemClick !== undefined }, styles)} opacity={currCountry === country || !currCountry ? 1 : 0.5}>
         {/* <rect className="-bar-background" y={-value} height={value} width='9' x='-4.5' fill={isActive ? '#abc1d9' : 'rgba(0, 0, 0, .1)'}></rect> */}

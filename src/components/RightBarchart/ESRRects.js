@@ -24,12 +24,12 @@ export default class ESRRects extends React.Component {
 
   onMouseOver= () => {
     const { hoveredCountry, country, onItemHover } = this.props
-    if (!hoveredCountry || country.countryCode !== hoveredCountry) onItemHover(country.countryCode)
+    if ((!hoveredCountry || country.countryCode !== hoveredCountry) && onItemHover !== undefined) onItemHover(country.countryCode)
   }
 
   onMouseOut= () => {
     const { hoveredCountry, resetHoveredCountry } = this.props
-    if (hoveredCountry !== null) resetHoveredCountry()
+    if (hoveredCountry !== null && resetHoveredCountry !== undefined) resetHoveredCountry()
   }
 
   render() {
