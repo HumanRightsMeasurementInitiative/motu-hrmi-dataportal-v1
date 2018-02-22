@@ -8,6 +8,6 @@
 .clickable.esrRect:hover rect:first-child {
   fill: #a1e2bc;
 }
-.clickable.cprRect:hover rect:first-child {
+/*.clickable.cprRect:hover rect:first-child {
 	fill: #abc1d9;
-}
+}*/
