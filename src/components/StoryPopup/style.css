@@ -114,6 +114,7 @@
 }
 .imageWrapper {
   position: relative;
+  min-height: 160px;
 }
 .imageWrapper img {
   width: 60%;
@@ -211,65 +212,7 @@
   margin-bottom: 20px;
   font-weight: 400;
 }
-/*.fixedContainer {
-  position: absolute;
-  padding: 40px 15%;
-  width: 100%;
-}*/
-/*.countryIntro {
-  margin: 0;
-  padding: 10px;
-  font-size: 14px;
-  line-height: 1.4em;
-}
-*/
-/*
-.columnRight .section {
-  position: relative;
-}
-.section:last-child {
-  padding: 20px 0 50px;
-  font-size: 16px;
-  text-align: center;
-}
-.columnRight .links {
-  position: absolute;
-  right: -160px;
-  bottom: 0;
-  width: 120px;
-}
 
-.title {
-  margin: 80px 0 20px;
-  font-size: 24px;
-}
-.subtitle {
-  margin: 0 0 10px;
-  font-size: 16px;
-}
-.paragraph {
-  margin: 0 0 20px;
-  font-size: 14px;
-  line-height: 1.4em;
-}
-
-.articleGraph {
-  margin: 0 0 20px;
-  height: 140px;
-  border: 1px solid #4848fb;
-}
-
-.articleImg {
-  margin: 0 0 20px;
-  display: flex;
-}
-.articleImg .image {
-  flex: 3;
-  height: 140px;
-  background: #4848fb;
-}
-.articleImg .desc {
-  flex: 2;
+.footnote {
   font-size: 12px;
-  padding-left: 20px;
-}*/
+}

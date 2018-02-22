@@ -127,6 +127,7 @@ export default class StoryPopup extends React.Component {
                     currCountry={MEXICO}>
                   </RightBarchart>
                 }
+                <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
               </section>
               <section className={styles.topLink}>
                 <div>
@@ -155,6 +156,7 @@ export default class StoryPopup extends React.Component {
                     currCountry={MEXICO}
                   />
                 }
+                <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
               </section>
               <section className={styles.bottomLink}>
                 <div>
@@ -225,6 +227,7 @@ export default class StoryPopup extends React.Component {
                     currCountry={MEXICO}
                   />
                 }
+                <div className={styles.footnote}>{content.footer_text.rights_page_esr}</div>
               </section>
               <section className={styles.topLink}>
                 <div>
