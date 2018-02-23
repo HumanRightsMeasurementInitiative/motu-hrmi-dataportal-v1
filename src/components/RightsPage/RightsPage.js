@@ -93,7 +93,6 @@ export default class RightsPage extends React.Component {
 
   render() {
     const { data: { rightsByRegion }, urlSegs, content } = this.props
-    const tooltips = content.question_tooltips
     const rights = Object.entries(rightsDefinitions).map(([code, right]) => ({ code, ...right }))
     const ESRs = rights.filter(right => right.type === 'ESR')
     const CPRs = rights.filter(right => right.type === 'CPR')
@@ -168,8 +167,8 @@ export default class RightsPage extends React.Component {
                   </div>
                   <div className={styles.questionTooltip}>
                     <QuestionTooltip width={238} question={''}>
-                      <p>{tooltips[2].tooltip.paragraphs[0]}</p>
-                      <p>{tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{tooltips[2].tooltip.linkText}</a>.</p>
+                      <p>{content.question_tooltips[2].tooltip.paragraphs[0]}</p>
+                      <p>{content.question_tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{content.question_tooltips[2].tooltip.linkText}</a>.</p>
                     </QuestionTooltip>
                   </div>
                 </div>
@@ -235,7 +234,7 @@ export default class RightsPage extends React.Component {
             </div>
             <div className={styles.infoContent}>
               <div className={styles.textWrapper}>
-                <RightDefinition right={urlSegs.right} isESRSelected={isESRSelected} tooltips={tooltips} content={content} isPopup={true} />
+                <RightDefinition right={urlSegs.right} isESRSelected={isESRSelected} content={content} />
                 { this.state.currCountry &&
                   <DefinitionFooter
                     isESRSelected={isESRSelected}

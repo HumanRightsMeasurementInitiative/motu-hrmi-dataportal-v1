@@ -41,9 +41,12 @@
 .closeBtn {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 20px;
   height: 30px;
-  width: 30px;
+  /* width: 30px; */
+  padding-right: 30px;
+  font-size: 16px;
+  line-height: 26px;
   cursor: pointer;
 }
 .closeBtn:before,
@@ -51,16 +54,18 @@
   content: '';
   display: block;
   position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  border-top: 1px solid #a6a6a6;
+  top:  6px;
+  right: 8px;
+  border-left: 8px solid #616161;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
 }
 .closeBtn:before {
-  transform: rotate(45deg);
+  border-radius: 4px;
 }
 .closeBtn:after {
-  transform: rotate(-45deg);
+  right: 11px;
+  border-left: 8px solid #fff;
 }
 
 .columnLeft {
@@ -77,11 +82,18 @@
   text-align: left;
 }
 .chartTitle {
+  margin: 20px auto 0;
+  max-width: 320px;
   font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+}
+.graph {
+  margin-top: -20px;
 }
 .linkWrapper {
   display: inline-block;
-  padding: 20px 0 30px;
+  margin-top: -20px;
   text-align: left;
 }
 
@@ -105,7 +117,7 @@
   color: #616161;
 }
 .articleTitle {
-  /*margin: 80px 0 20px;*/
+  margin: 0;
   font-size: 24px;
 }
 .boldText {

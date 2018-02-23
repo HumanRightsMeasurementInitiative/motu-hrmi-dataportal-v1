@@ -101,7 +101,6 @@ export default class GeoPageRightColumn extends React.Component {
                   <RightDefinition
                     right={currRight}
                     isESRSelected={displayedRightsESR.length !== 0}
-                    tooltips={content.question_tooltips}
                     content={content}
                   />
                 </div>

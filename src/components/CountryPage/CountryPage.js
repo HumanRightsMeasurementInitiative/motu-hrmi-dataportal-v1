@@ -8,7 +8,7 @@ import CountryRightsChart from 'components/CountryRightsChart'
 import QuestionTooltip from '../QuestionTooltip'
 import DownloadPopup from '../DownloadPopup'
 import ChangeStandard from '../ChangeStandard'
-import Definitions from './Definitions'
+import RightDefinition from '../RightDefinition'
 import DefinitionFooter from '../DefinitionFooter'
 import { segsToUrl, getRegionName } from '../utils'
 import styles from './style.css'
@@ -176,6 +176,12 @@ export default class CountryPage extends React.Component {
                               <div className={styles.maxText}>90<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
                               <div className={styles.minText}>10<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
                             </div>
+                            <div className={styles.questionTooltip}>
+                              <QuestionTooltip width={238} question={''}>
+                                <p>{content.question_tooltips[2].tooltip.paragraphs[0]}</p>
+                                <p>{content.question_tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{content.question_tooltips[2].tooltip.linkText}</a>.</p>
+                              </QuestionTooltip>
+                            </div>
                           </div>
                         </div>
                       }
@@ -211,12 +217,7 @@ export default class CountryPage extends React.Component {
                         <div className='text'>{content.explore_this_rights_in}:</div>
                         <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
                       </div>
-                      <Definitions
-                        isESRSelected={isESRSelected}
-                        isCPRSelected={isCPRSelected}
-                        currRight={currRight}
-                        content={content}
-                      />
+                      <RightDefinition isESRSelected={isESRSelected} right={currRight} content={content} />
                       { currRight &&
                         <DefinitionFooter
                           isESRSelected={isESRSelected}

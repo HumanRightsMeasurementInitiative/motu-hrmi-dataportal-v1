@@ -124,7 +124,8 @@ export default class StoryPopup extends React.Component {
                     rightsByRegionCountries={data.rightsByRegion[PILOT].countries}
                     chartHeight={338}
                     chartWidth={this.state.barchartWidth}
-                    currCountry={MEXICO}>
+                    currCountry={MEXICO}
+                    score={content.score}>
                   </RightBarchart>
                 }
                 <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
@@ -154,6 +155,7 @@ export default class StoryPopup extends React.Component {
                     chartHeight={338}
                     chartWidth={this.state.barchartWidth}
                     currCountry={MEXICO}
+                    score={content.score}
                   />
                 }
                 <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
@@ -225,6 +227,7 @@ export default class StoryPopup extends React.Component {
                     chartHeight={338}
                     chartWidth={this.state.barchartWidth}
                     currCountry={MEXICO}
+                    score={content.score}
                   />
                 }
                 <div className={styles.footnote}>{content.footer_text.rights_page_esr}</div>
@@ -284,7 +287,7 @@ export default class StoryPopup extends React.Component {
               </section>
             </div>
           </div>
-          <div className={styles.closeBtn} onClick={this.closeStoryMode}></div>
+          <div className={styles.closeBtn} onClick={this.closeStoryMode}>Skip the story</div>
         </div>
       </div>
     )

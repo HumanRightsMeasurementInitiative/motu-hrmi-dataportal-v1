@@ -236,6 +236,7 @@
 }
 .legend {
   display: flex;
+  position: relative;
   margin: 10px 0 15px;
   font-size: 12px;
   color: #58595b;
@@ -265,8 +266,8 @@
   content: ' \2014';
 }
 .textContainer {
-  flex: 1;
   position: relative;
+  width: 90px;
 }
 .maxText,
 .minText {
@@ -290,25 +291,10 @@
 .minText:before {
   content: '\2014 ';
 }
-/*.legend {
-  composes: smallText;
-  color: #FFA096;
-}*/
-/*.uncertaintyIcon {
-  display: inline-block;
-  height: 10px;
-  width: 25px;
-  border-left: 2px solid #FFA096;
-  border-right: 2px solid #FFA096;
-  margin-right: 10px;
+.questionTooltip {
+  margin-top: 16px;
+  right: 0;
 }
-.uncertaintyIcon:before {
-  display: block;
-  width: 100%;
-  content: '';
-  border-top: 2px solid #FFA096;
-  margin-top: 4px;
-}*/
 
 .rightDefinition {
   font-size: 13px;
