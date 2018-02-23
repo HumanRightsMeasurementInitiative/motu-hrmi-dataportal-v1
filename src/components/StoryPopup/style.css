@@ -40,13 +40,18 @@
 
 .closeBtn {
   position: absolute;
-  top: 10px;
+  top: 0;
   right: 20px;
-  height: 30px;
-  /* width: 30px; */
+  padding-top: 10px;
   padding-right: 30px;
+  padding-bottom: 10px;
+  height: 40px;
+  /* width: 30px; */
+  width: calc(100% - 30px);
+  background: #fff;
   font-size: 16px;
   line-height: 26px;
+  text-align: right;
   cursor: pointer;
 }
 .closeBtn:before,
@@ -54,7 +59,7 @@
   content: '';
   display: block;
   position: absolute;
-  top:  6px;
+  top:  16px;
   right: 8px;
   border-left: 8px solid #616161;
   border-top: 8px solid transparent;
