@@ -3,7 +3,6 @@
   flex-direction: column;
   padding-top: 60px;
   height: 100%;
-
 }
 
 .columnLeft {
@@ -94,7 +93,7 @@
 }*/
 .countryCard .cardCover {
   position: absolute;
-  top: 0;;
+  top: 0;
   left: 0;
   height: 100%;
   width: 100%;

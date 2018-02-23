@@ -189,7 +189,8 @@ export default class RightsPage extends React.Component {
                   resetCurrCountry={this.resetCurrCountry}
                   hoveredCountry={this.state.hoveredCountry}
                   onItemHover={this.setHoveredCountry}
-                  resetHoveredCountry={this.unsetHoveredCountry} />
+                  resetHoveredCountry={this.unsetHoveredCountry}
+                  score={content.score} />
                 : <div className={styles.CPRAlertWrapper}>
                   <div className={styles.CPRAlert}>
                     {content.cpr_alert.text} <u>{content.cpr_alert.underline_text}</u>

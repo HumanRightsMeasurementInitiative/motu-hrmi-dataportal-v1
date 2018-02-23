@@ -15,6 +15,7 @@ export default class RightBarchart extends React.Component {
     chartHeight: PropTypes.number.isRequired,
     chartWidth: PropTypes.number.isRequired,
     rightsByRegionCountries: PropTypes.array.isRequired,
+    score: PropTypes.string.isRequired,
     currCountry: PropTypes.object,
     onItemClick: PropTypes.func,
     resetCurrCountry: PropTypes.func,
@@ -29,7 +30,7 @@ export default class RightBarchart extends React.Component {
   }
 
   render() {
-    const { isESR, currYear, currRight, chartHeight, chartWidth, rightsByRegionCountries, currCountry, onItemClick, hoveredCountry, onItemHover, resetHoveredCountry } = this.props
+    const { isESR, currYear, currRight, chartHeight, chartWidth, rightsByRegionCountries, currCountry, onItemClick, hoveredCountry, onItemHover, resetHoveredCountry, score } = this.props
     const yAxisRange = Array.from(Array(11).keys()).reverse()
     const yAxisRate = isESR ? 10 : 1
 
@@ -50,7 +51,7 @@ export default class RightBarchart extends React.Component {
         <svg height={chartHeight} width={chartWidth}>
           <g transform={'translate(' + margin.left + ',' + margin.top + ')'}>
             { !isESR &&
-              <g transform='rotate(-90)'><text dx={ (margin.left - chartHeight) / 2} dy='-14' fill='#616161' textAnchor='center'fontSize="12px">SCORE</text></g>
+              <g transform='rotate(-90)'><text dx={ (margin.left - chartHeight) / 2} dy='-14' fill='#616161' textAnchor='center'fontSize="12px">{score}</text></g>
             }
             <g onClick={this.onBackgroundClick}>
               <rect height={chartHeight} width={chartWidth - margin.left - margin.right} y={-margin.top} opacity='0'></rect>

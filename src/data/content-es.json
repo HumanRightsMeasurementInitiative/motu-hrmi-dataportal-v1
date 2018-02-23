@@ -89,7 +89,7 @@
       ]
     },
     "howToUse": {
-      "title": "How To Use",
+      "title": "Cómo usar",
       "paragraphs": [
         "Hay muchas maneras en que puedes usar la información de la Iniciativa de Medición de Derechos Humanos (HRMI). Incluyen:",
         "A manera de ejemplo, hemos creado narrativas de países que aprovechan esa información para México [insert hyperlink] y Australia [insert hyperlink]. Nos encantaría que nos contaran cómo están usando nuestra información. Por favor, ponte en contacto con nosotros haciendo clic",
@@ -306,6 +306,8 @@
       "Indiscriminado"
     ]
   },
+  "backto": "DE REGRESO",
+  "score": "PUNTUACIÓN",
   "show_more": "Mostrar más",
   "show_less": "Mostrar menos",
   "search_country": "Buscar país",
