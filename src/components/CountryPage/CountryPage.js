@@ -108,6 +108,7 @@ export default class CountryPage extends React.Component {
                 margin={200}
                 currRight={currRight}
                 onClickRight={this.setCurrRight}
+                content={content}
                 displayLabels
               />
             </div>

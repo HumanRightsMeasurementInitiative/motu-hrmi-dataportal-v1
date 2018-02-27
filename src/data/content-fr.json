@@ -23,6 +23,20 @@
     "freedom-from-arbitrary-arrest": "Droit de ne pas faire l’objet d’arrestation arbitraire",
     "freedom-from-disappearance": "Droit de ne pas faire l’objet de disparition"
   },
+  "rights_name_short" : {
+    "food": "Alimentation",
+    "education": "Éducation",
+    "health": "Santé",
+    "housing": "Logement",
+    "work": "Travail",
+    "opinion-and-expression": "Opinion et d’expression",
+    "assembly-and-association": "Réunion et d’association",
+    "participate-in-government": "Participer aux affaires publiques",
+    "freedom-from-torture": "Ne pas faire l’objet de torture",
+    "freedom-from-execution": "Ne pas faire l’objet d’exécution",
+    "freedom-from-arbitrary-arrest": "Ne pas faire l’objet d’arrestation arbitraire",
+    "freedom-from-disappearance": "Ne pas faire l’objet de disparition"
+  },
   "subrights_name": {
     "assembly": "Droit de réunion",
     "association": "Droit d’association",

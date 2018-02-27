@@ -23,6 +23,20 @@
     "freedom-from-arbitrary-arrest": "Right to freedom from arbitrary arrest",
     "freedom-from-disappearance": "Right to freedom from disappearance"
   },
+  "rights_name_short" : {
+    "food": "Food",
+    "education": "Education",
+    "health": "Health",
+    "housing": "Housing",
+    "work": "Work",
+    "opinion-and-expression": "Opinion and expression",
+    "assembly-and-association": "Assembly and association",
+    "participate-in-government": "Participate in government",
+    "freedom-from-torture": "Freedom from torture",
+    "freedom-from-execution": "Freedom from execution",
+    "freedom-from-arbitrary-arrest": "Freedom from arbitrary arrest",
+    "freedom-from-disappearance": "Freedom from disappearance"
+  },
   "subrights_name": {
     "assembly": "Right to assembly",
     "association": "Right to association",

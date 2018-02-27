@@ -53,7 +53,7 @@ export default class CountryRightsChart extends React.Component {
   }
 
   render() {
-    const { rights, size, displayLabels, esrStandard, currRight = null, onClickRight = null } = this.props
+    const { rights, size, displayLabels, esrStandard, content, currRight = null, onClickRight = null } = this.props
     const { esrHI, esrCore, cpr } = rights
 
     const currRightIndex = RIGHTS_ORDER.includes(currRight)
@@ -97,6 +97,7 @@ export default class CountryRightsChart extends React.Component {
             data={rightsData}
             colors={PETALS_COLORS}
             onClick={onClickRight}
+            content={content}
           />
         }
       </div>
@@ -104,11 +105,12 @@ export default class CountryRightsChart extends React.Component {
   }
 }
 
-function PetalLabels({ size, data, colors, onClick }) {
+function PetalLabels({ size, data, colors, content, onClick }) {
+  if (!content) throw new Error(`PetalLabels: no translation content passed!`)
   const displayPercent = n => data[n] !== null ? (data[n] * 100).toFixed(0) + '%' : 'N/A'
   const displayTenth = n => data[n] !== null ? (data[n] * 10).toFixed(1) + '/10' : 'N/A'
 
-  const names = RIGHTS_ORDER.map(k => rightsDefinitions[k].name)
+  const names = RIGHTS_ORDER.map(k => content.rights_name_short[k])
   const corrections = [
     [-50, -20],
     [0, -20],

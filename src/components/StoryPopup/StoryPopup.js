@@ -78,6 +78,7 @@ export default class StoryPopup extends React.Component {
                   rights={MEXICO.rights}
                   esrStandard="esrCore"
                   size={500}
+                  content={content}
                   displayLabels
                 />
               </div>

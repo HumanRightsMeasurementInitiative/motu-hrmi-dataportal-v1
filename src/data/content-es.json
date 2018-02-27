@@ -23,6 +23,20 @@
     "freedom-from-arbitrary-arrest": "Derecho a vivir libre de arresto arbitrario",
     "freedom-from-disappearance": "Derecho a vivir libre de desaparición"
   },
+  "rights_name_short" : {
+    "food": "Alimentación",
+    "education": "Educación",
+    "health": "Salud",
+    "housing": "Vivienda",
+    "work": "Trabajo",
+    "opinion-and-expression": "Opinión y expresión",
+    "assembly-and-association": "Asamblea y asociación",
+    "participate-in-government": "Participar en el Gobierno",
+    "freedom-from-torture": "Vivir libre de tortura",
+    "freedom-from-execution": "Vivir libre de ejecución",
+    "freedom-from-arbitrary-arrest": "Vivir libre de arresto arbitrario",
+    "freedom-from-disappearance": "Vivir libre de desaparición"
+  },
   "subrights_name": {
     "assembly": "Derecho de asamblea",
     "association": "Derecho de asociación",

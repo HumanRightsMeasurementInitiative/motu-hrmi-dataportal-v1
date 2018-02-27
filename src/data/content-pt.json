@@ -23,6 +23,20 @@
     "freedom-from-arbitrary-arrest": "Direito de não ser preso arbitrariamente",
     "freedom-from-disappearance": "Direito de não ser submetido a desaparecimento forçado"
   },
+  "rights_name_short" : {
+    "food": "Comida",
+    "education": "Educação",
+    "health": "Saúde",
+    "housing": "Moradia",
+    "work": "Trabalho",
+    "opinion-and-expression": "Opinião e expressão",
+    "assembly-and-association": "Assembleia e associação",
+    "participate-in-government": "Participar do governo",
+    "freedom-from-torture": "Não ser torturado",
+    "freedom-from-execution": "Não ser executado",
+    "freedom-from-arbitrary-arrest": "Não ser preso arbitrariamente",
+    "freedom-from-disappearance": "Não ser submetido a desaparecimento forçado"
+  },
   "subrights_name": {
     "assembly": "Direito à assembleia",
     "association": "Direito à associação",
