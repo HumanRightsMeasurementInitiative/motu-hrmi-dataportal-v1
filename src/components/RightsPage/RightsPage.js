@@ -6,11 +6,12 @@ import RegionSelector from './RegionSelector'
 import RightBarchart from '../RightBarchart/'
 import ESRTimeline from '../ESRTimeline/'
 import DownloadPopup from '../DownloadPopup'
-// import SortbyDropdown from '../SortbyDropdown'
+import SortbyDropdown from '../SortbyDropdown'
 import RightDefinition from '../RightDefinition'
 import DefinitionFooter from '../DefinitionFooter'
 import QuestionTooltip from '../QuestionTooltip'
 import { segsToUrl, joinClassName as jcn } from '../utils'
+import { get } from 'lodash'
 import styles from './style.css'
 import rightsDefinitions from 'data/rights-definitions.json'
 
@@ -32,7 +33,7 @@ export default class RightsPage extends React.Component {
       rightPaneWidth: 0,
       hoveredCountry: null,
       subrights: null,
-      // sortby: 'Name',
+      sortby: 'Name',
     }
   }
 
@@ -80,9 +81,9 @@ export default class RightsPage extends React.Component {
     this.setState({ subrights: right })
   }
 
-  // setSortby = (name) => {
-  //   this.setState({ sortby: name })
-  // }
+  setSortby = (name) => {
+    this.setState({ sortby: name })
+  }
 
   gotoCPRPilot = () => {
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, region: 'cpr-pilot' }))
@@ -138,7 +139,25 @@ export default class RightsPage extends React.Component {
       cprFooter: isCPRSelected,
     }, styles)
 
-    const rightsByRegionCountries = rightsByRegion[urlSegs.region].countries
+    const getRightValue = country =>
+      this.state.sortby === 'Core assessment standard score'
+        ? get(country, `rights.esrCoreHistorical.${this.state.currYear}.rights.${urlSegs.right}`, 0)
+        : get(country, `rights.esrHIHistorical.${this.state.currYear}.rights.${urlSegs.right}`, 0)
+    const getGDPValue = country => get(country, `rights.esrHIHistorical.${this.state.currYear}.GDP`, 0)
+    const sortby = data => {
+      switch (this.state.sortby) {
+        case 'Core assessment standard score':
+          return data.slice().sort((a, b) => getRightValue(a) - getRightValue(b))
+        case 'High income OECD assessment country score':
+          return data.slice().sort((a, b) => getRightValue(a) - getRightValue(b))
+        case 'GDP/Capita':
+          return data.slice().sort((a, b) => getGDPValue(a) - getGDPValue(b))
+        case 'Name':
+          return data
+      }
+    }
+
+    const rightsByRegionCountries = sortby(rightsByRegion[urlSegs.region].countries)
 
     return (
       <div className={styles.rightsPage}>
@@ -169,7 +188,9 @@ export default class RightsPage extends React.Component {
               <div className={styles.chartSubtitle}>
                 {isESRSelected && content.esr_chart_subtitle}
               </div>
-              {/* <div className={styles.sortBy} style={{ opacity: (isESRSelected || urlSegs.region === 'cpr-pilot') ? 1 : 0 }}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div> */}
+              { isESRSelected &&
+                <div className={styles.sortBy} style={{ opacity: (isESRSelected || urlSegs.region === 'cpr-pilot') ? 1 : 0 }}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div> 
+              }
               { isESRSelected
                 ? <div className={styles.esrLegend}>
                   <div className={styles.text}>{content.legend.esr_barchart[0]}</div>

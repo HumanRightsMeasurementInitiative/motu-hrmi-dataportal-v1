@@ -120,6 +120,7 @@
   top: 0;
   height: 32px;
   width: 32px;
+  z-index: 20;
 }
 .countryFooter .source {
   padding-left: 42px;

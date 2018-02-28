@@ -159,6 +159,8 @@
 }
 .sortBy {
   margin-top: 4px;
+  position: absolute;
+  top:  100%;
 }
 .chartsContainer {
   flex: 1 1 auto;
@@ -180,6 +182,7 @@
   top: 0;
   height: 32px;
   width: 32px;
+  z-index: 20;
 }
 .chartsFooter .source {
   padding-left: 42px;
