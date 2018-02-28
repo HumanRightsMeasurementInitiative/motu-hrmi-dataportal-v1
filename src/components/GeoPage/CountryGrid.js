@@ -50,7 +50,7 @@ export default class GeoPageCountryGrid extends React.Component {
                       size={165}
                     />
                     <span>
-                      {country.countryCode} {hoverCountry === country.countryCode}
+                      {country.countryName} {hoverCountry === country.countryCode}
                     </span>
                     <div
                       className={styles.cardCover}

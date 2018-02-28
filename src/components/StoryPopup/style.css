@@ -38,28 +38,36 @@
   width: 100%;
 }
 
+.footer,
 .closeBtn {
   position: absolute;
-  top: 0;
   right: 20px;
   padding-top: 10px;
   padding-right: 30px;
   padding-bottom: 10px;
-  height: 40px;
   /* width: 30px; */
   width: calc(100% - 30px);
-  background: #fff;
+  background: linear-gradient(180deg, #fff 30px, rgba(255, 255, 255, .01));
   font-size: 16px;
-  line-height: 26px;
+  line-height: 20px;
   text-align: right;
   cursor: pointer;
+}
+.closeBtn {
+  top: 0;
+  height: 50px;
+}
+.footer {
+  bottom: 0;
+  height: 30px;
+  background: linear-gradient(0deg, #fff 10px, rgba(255, 255, 255, .01));
 }
 .closeBtn:before,
 .closeBtn:after {
   content: '';
   display: block;
   position: absolute;
-  top:  16px;
+  top:  14px;
   right: 8px;
   border-left: 8px solid #616161;
   border-top: 8px solid transparent;

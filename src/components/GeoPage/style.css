@@ -202,10 +202,10 @@
   font-weight: 600;
 }
 .esrTitle {
-  color: #00af49;
+  color: #009540;
 }
 .cprTitle {
-  color: #2e65a1;
+  color: #262262;
 }
 .esrList {
   margin-bottom: 16px;
@@ -360,39 +360,20 @@
 [rightcolor='freedom-from-disappearance'] .chartCaption:before {
   background: #51c9f0;
 }
-.specRightHeader[rightcolor='food'] {
+
+.specRightHeader[rightcolor='food'],
+.specRightHeader[rightcolor='education'],
+.specRightHeader[rightcolor='work'],
+.specRightHeader[rightcolor='housing'],
+.specRightHeader[rightcolor='health'] {
   color: #009540;
 }
-.specRightHeader[rightcolor='education'] {
-  color: #00af49;
-}
-.specRightHeader[rightcolor='work'] {
-  color: #00e25b;
-}
-.specRightHeader[rightcolor='housing'] {
-  color: #00d556;
-}
-.specRightHeader[rightcolor='health'] {
-  color: #00c852;
-}
-.specRightHeader[rightcolor='opinion-and-expression'] {
-  color: #262262;
-}
-.specRightHeader[rightcolor='assembly-and-association'] {
-  color: #2a4482;
-}
-.specRightHeader[rightcolor='freedom-from-execution'] {
-  color: #3c9dd1;
-}
-.specRightHeader[rightcolor='freedom-from-torture'] {
-  color: #3187c1;
-}
-.specRightHeader[rightcolor='participate-in-government'] {
-  color: #2e65a1;
-}
-.specRightHeader[rightcolor='freedom-from-arbitrary-arrest'] {
-  color: #46b3e0;
-}
+.specRightHeader[rightcolor='opinion-and-expression'],
+.specRightHeader[rightcolor='assembly-and-association'],
+.specRightHeader[rightcolor='freedom-from-execution'],
+.specRightHeader[rightcolor='freedom-from-torture'],
+.specRightHeader[rightcolor='participate-in-government'],
+.specRightHeader[rightcolor='freedom-from-arbitrary-arrest'],
 .specRightHeader[rightcolor='freedom-from-disappearance'] {
-  color: #51c9f0;
+  color: #262262;
 }

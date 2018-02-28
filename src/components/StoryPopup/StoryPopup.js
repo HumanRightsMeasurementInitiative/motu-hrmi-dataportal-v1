@@ -289,6 +289,7 @@ export default class StoryPopup extends React.Component {
             </div>
           </div>
           <div className={styles.closeBtn} onClick={this.closeStoryMode}>Skip the story</div>
+          <div className={styles.footer}></div>
         </div>
       </div>
     )

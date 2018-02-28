@@ -78,6 +78,7 @@ export default class GeoPageRightColumn extends React.Component {
                       right={currRight}
                       hoverCountry={hoverCountry}
                       esrStandard={esrStandard}
+                      isWithDot={true}
                     />
                   ) : (
                     <MiniBarChart
@@ -86,6 +87,7 @@ export default class GeoPageRightColumn extends React.Component {
                       isESR={false}
                       right={currRight}
                       hoverCountry={hoverCountry}
+                      isWithDot={true}
                     />
                   )}
                   <div className={styles.linkWrapper}>
