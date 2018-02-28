@@ -125,11 +125,13 @@
   padding-left: 20px;
   max-width: 200px;
 }
-.borderLine {
+.borderLine,
+.subBorderLine {
   border-bottom: 3px solid transparent;
   transition: border .2s;
 }
-.rightItemWrapper.selected .borderLine {
+.rightItemWrapper.selected .borderLine,
+.rightSubItem.selected .subBorderLine {
   border-color: #616161;
 }
 

@@ -31,6 +31,7 @@ export default class RightsPage extends React.Component {
       currYear: 2015,
       rightPaneWidth: 0,
       hoveredCountry: null,
+      subrights: null,
       // sortby: 'Name',
     }
   }
@@ -51,7 +52,7 @@ export default class RightsPage extends React.Component {
   }
 
   setRight = (right) => {
-    this.setState({ currCountry: null })
+    this.setState({ currCountry: null, subrights: null })
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, right: right }))
   }
 
@@ -73,6 +74,10 @@ export default class RightsPage extends React.Component {
 
   setCurrYear = (year) => {
     this.setState({ currYear: year })
+  }
+
+  setSubrights = (right) => {
+    this.setState({ subrights: right })
   }
 
   // setSortby = (name) => {
@@ -98,12 +103,24 @@ export default class RightsPage extends React.Component {
     const CPRs = rights.filter(right => right.type === 'CPR')
 
     const ESRItems = ESRs.map((right, i) => (
-      <RightsItem key={right.code} right={right.code} onItemClick={this.setRight} selected={right.code === urlSegs.right} content={content}>
+      <RightsItem
+        key={right.code}
+        right={right.code}
+        onItemClick={this.setRight}
+        selected={right.code === urlSegs.right}
+        content={content}>
         {content.rights_name[right.code]}
       </RightsItem>
     ))
     const CPRItems = CPRs.map((right, i) => (
-      <RightsItem key={right.code} right={right.code} onItemClick={this.setRight} selected={right.code === urlSegs.right} content={content}>
+      <RightsItem
+        key={right.code}
+        right={right.code}
+        onItemClick={this.setRight}
+        selected={right.code === urlSegs.right}
+        content={content}
+        subrights={this.state.subrights}
+        setSubrights={this.setSubrights}>
         {content.rights_name[right.code]}
       </RightsItem>
     ))
@@ -189,7 +206,9 @@ export default class RightsPage extends React.Component {
                   hoveredCountry={this.state.hoveredCountry}
                   onItemHover={this.setHoveredCountry}
                   resetHoveredCountry={this.unsetHoveredCountry}
-                  score={content.score} />
+                  score={content.score}
+                  subrights={this.state.subrights}
+                  />
                 : <div className={styles.CPRAlertWrapper}>
                   <div className={styles.CPRAlert}>
                     {content.cpr_alert.text} <u>{content.cpr_alert.underline_text}</u>

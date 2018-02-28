@@ -10,6 +10,12 @@ export default class RightsItem extends React.Component {
     content: PropTypes.object.isRequired,
     onItemClick: PropTypes.func.isRequired,
     selected: PropTypes.bool.isRequired,
+    setSubrights: PropTypes.func,
+    subrights: PropTypes.string,
+  }
+
+  static defaultProps = {
+    subrights: null,
   }
 
   componentDidMount() {
@@ -24,7 +30,7 @@ export default class RightsItem extends React.Component {
   }
 
   render() {
-    const { children, right, content, selected } = this.props
+    const { children, right, content, selected, subrights, setSubrights } = this.props
 
     const joinedClass = jcn({
       rightItemWrapper: true,
@@ -39,16 +45,52 @@ export default class RightsItem extends React.Component {
         </div>
         { right === 'assembly-and-association' && selected &&
           <ul>
-            <li className={styles.rightSubItem}>{content.subrights_name.assembly}</li>
-            <li className={styles.rightSubItem}>{content.subrights_name.association}</li>
+            <SubRights subrights={subrights} rightName='assembly' setSubrights={setSubrights}>{content.subrights_name.assembly}</SubRights>
+            <SubRights subrights={subrights} rightName='association' setSubrights={setSubrights}>{content.subrights_name.association}</SubRights>
           </ul>
         }
         { right === 'freedom-from-execution' && selected &&
           <ul>
-            <li className={styles.rightSubItem}>{content.subrights_name['freedom-from-the-death-penalty']}</li>
-            <li className={styles.rightSubItem}>{content.subrights_name['freedom-from-extrajudicial-execution']}</li>
+            <SubRights subrights={subrights} rightName='freedom-from-the-death-penalty' setSubrights={setSubrights}>{content.subrights_name['freedom-from-the-death-penalty']}</SubRights>
+            <SubRights subrights={subrights} rightName='freedom-from-extrajudicial-execution' setSubrights={setSubrights}>{content.subrights_name['freedom-from-extrajudicial-execution']}</SubRights>
           </ul>
         }
+      </li>
+    )
+  }
+}
+
+class SubRights extends React.Component {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    rightName: PropTypes.string.isRequired,
+    setSubrights: PropTypes.func,
+    subrights: PropTypes.string,
+  }
+
+  componentDidMount() {
+    const width = this.refs.borderLine.offsetLeft - 20
+    this.refs.borderLine.style.display = 'block'
+    this.refs.borderLine.style.width = width + 'px'
+  }
+
+  setSubrights = () => {
+    const { setSubrights, rightName } = this.props
+    if (setSubrights) setSubrights(rightName)
+  }
+
+  render() {
+    const { children, subrights, rightName } = this.props
+
+    const rightSubItem = jcn({
+      rightSubItem: true,
+      selected: subrights === rightName,
+    }, styles)
+
+    return (
+      <li className={rightSubItem} onClick={this.setSubrights}>
+        {children}
+        <span className={styles.subBorderLine} ref='borderLine'></span>
       </li>
     )
   }
