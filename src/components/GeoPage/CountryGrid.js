@@ -34,34 +34,36 @@ export default class GeoPageCountryGrid extends React.Component {
               <ChangeStandard />
             </div>
           </div>
-          <div className={styles.countriesList}>
-            <div className={styles.countriesContainer}>
-              {countries.map((country, i) => (
-                <div
-                  key={country.countryCode}
-                  className={styles.countryCard}
-                  onClick={rewriteArgs(setCountry, country.countryCode)}
-                >
-                  <CountryRightsChart
-                    rights={country.rights}
-                    currRight={currRight === 'all' ? null : currRight}
-                    esrStandard={esrStandard}
-                    size={165}
-                  />
-                  <span>
-                    {country.countryCode} {hoverCountry === country.countryCode}
-                  </span>
+          <div className={styles.gridWrapper}>
+            <div className={styles.countriesList}>
+              <div className={styles.countriesContainer}>
+                {countries.map((country, i) => (
                   <div
-                    className={styles.cardCover}
-                    onMouseOver={rewriteArgs(setHoverCountry, country.countryCode)}
-                    onMouseOut={unsetHoverCountry}
-                    style={{
-                      opacity:
-                        hoverCountry === null || hoverCountry === country.countryCode ? 0 : 1,
-                    }}
-                  />
-                </div>
-              ))}
+                    key={country.countryCode}
+                    className={styles.countryCard}
+                    onClick={rewriteArgs(setCountry, country.countryCode)}
+                  >
+                    <CountryRightsChart
+                      rights={country.rights}
+                      currRight={currRight === 'all' ? null : currRight}
+                      esrStandard={esrStandard}
+                      size={165}
+                    />
+                    <span>
+                      {country.countryCode} {hoverCountry === country.countryCode}
+                    </span>
+                    <div
+                      className={styles.cardCover}
+                      onMouseOver={rewriteArgs(setHoverCountry, country.countryCode)}
+                      onMouseOut={unsetHoverCountry}
+                      style={{
+                        opacity:
+                          hoverCountry === null || hoverCountry === country.countryCode ? 0 : 1,
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           <div className={styles.chartsFooter}>

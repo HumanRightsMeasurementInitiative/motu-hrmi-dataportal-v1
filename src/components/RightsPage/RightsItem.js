@@ -34,7 +34,7 @@ export default class RightsItem extends React.Component {
 
     const joinedClass = jcn({
       rightItemWrapper: true,
-      selected: selected,
+      selected: selected && !subrights,
     }, styles)
 
     return (

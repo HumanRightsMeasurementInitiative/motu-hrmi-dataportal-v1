@@ -56,10 +56,34 @@
   margin-top: 4px;
 }
 
-.countriesList {
+.gridWrapper {
   flex: 1 1 auto;
-  overflow: auto;
+  display: flex;
+  position: relative;
+}
+.gridWrapper:before,
+.gridWrapper:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 8px;
+  z-index: 2;
+}
+.gridWrapper:before {
+  top: 0;
+  height: 30px;
+  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, .01));
+}
+.gridWrapper:after {
+  bottom: 0;
+  height: 30px;
+  background: linear-gradient(0deg, #fff, rgba(255, 255, 255, .01));
+}
+.countriesList {
   padding: 15px;
+  flex: 1;
+  overflow: auto;
 }
 .countriesContainer {
   display: grid;
@@ -128,21 +152,45 @@
 .columnRight {
   flex: 1 1 auto;
   display: flex;
-  padding-left: 22px;
+  position: relative;
+  padding:  0 4px;
   height: 100%;
+}
+.columnRight:before,
+.columnRight:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 8px;
+  z-index: 20;
+}
+.columnRight:before {
+  top: 0;
+  height: 10px;
+  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, .01));
+}
+.columnRight:after {
+  bottom: 0;
+  height: 20px;
+  background: linear-gradient(0deg, #fff 40%, rgba(255, 255, 255, .01));
+}
+.rightPaneWrapper {
+  flex: 1;
+  padding: 10px 10px 20px 0;
   overflow: auto;
 }
-.columnRight::-webkit-scrollbar {
+.rightPaneWrapper::-webkit-scrollbar {
   background: transparent;
   width: 4px;
 }
-.columnRight::-webkit-scrollbar-thumb {
+.rightPaneWrapper::-webkit-scrollbar-thumb {
   display: none;
   background: #eee;
   border-radius: 4px;
   opacity: 0;
 }
-.columnRight:hover::-webkit-scrollbar-thumb {
+.rightPaneWrapper:hover::-webkit-scrollbar-thumb {
   display: block;
   opacity: 1;
 }
