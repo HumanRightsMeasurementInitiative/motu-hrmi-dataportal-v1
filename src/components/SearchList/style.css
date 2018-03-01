@@ -1,0 +1,37 @@
+.searchInputWrapper {
+  flex: 0 0 auto;
+}
+.searchInput {
+  padding: 0 10px;
+  height: 25px;
+  width: 90%;
+  max-width: 128px;
+  border: 1px solid #3bc4e9;
+  font-size: 14px;
+  color: #3bc4e9;
+  outline: none;
+}
+.searchInput::placeholder {
+  color: rgba(59, 196, 233, 0.6);
+}
+
+.countryDropdown {
+  position: absolute;
+  z-index: 100;
+  margin-top: 2px;
+  padding: 0 20px;
+  max-height: 200px;
+  background: #fff;
+  border: 1px solid #3bc4e9;
+  overflow: auto;
+  box-shadow: 0 0 2px rgba(55, 55, 55, .2);
+}
+.countryDropdown.hide {
+  display: none;
+}
+.listItem {
+  padding:  4px 0;
+  font-size: 14px;
+  color: #3bc4e9;
+  cursor: pointer;
+}

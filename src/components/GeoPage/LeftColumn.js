@@ -1,5 +1,6 @@
 import React from 'react'
 import RegionItem from '../RegionItem'
+import SearchList from '../SearchList'
 import styles from './style.css'
 
 export default class GeoPageLeftColumn extends React.Component {
@@ -10,13 +11,7 @@ export default class GeoPageLeftColumn extends React.Component {
     return (
       <div className="column">
         <div className={styles.columnLeft}>
-          <div className={styles.searchInputWrapper}>
-            <input
-              className={styles.searchInput}
-              type="text"
-              placeholder={content.search_country}
-            />
-          </div>
+          <SearchList />
           <ul className={styles.regionList}>
             {regionCodes.map((regionCode, i) => (
               <RegionItem

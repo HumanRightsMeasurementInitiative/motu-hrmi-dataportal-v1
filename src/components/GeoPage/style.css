@@ -17,22 +17,6 @@
   height: 100%;
 }
 
-.searchInputWrapper {
-  flex: 0 0 auto;
-}
-.searchInput {
-  padding: 0 10px;
-  height: 25px;
-  width: 90%;
-  max-width: 128px;
-  border: 1px solid #3bc4e9;
-  font-size: 14px;
-  color: #6b6c6e;
-  outline: none;
-}
-.searchInput::placeholder {
-  color: #3bc4e9;
-}
 .regionList {
   flex: 1 1 auto;
   padding-top: 20px;
