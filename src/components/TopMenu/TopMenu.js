@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import TopNav from '../TopNav/'
+import BetaLogo from '../BetaLogo/'
 import { joinClassName as jcn } from '../utils'
 import styles from './styles.css'
 
@@ -18,7 +19,7 @@ export default class TopMenu extends React.Component {
     return (
       <div className={joinClassName}>
         <div className={styles.logo}>
-          <img className={styles.logoImg} src='https://humanrightsmeasurement.org/wp-content/uploads/2017/07/logo01.png' alt='logo'/>
+          <BetaLogo />
         </div>
         <TopNav content={content} />
       </div>
