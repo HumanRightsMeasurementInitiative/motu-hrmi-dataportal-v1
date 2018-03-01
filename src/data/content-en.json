@@ -214,7 +214,7 @@
       "subtitle": "Mexico compared to rest of the Americas"
     }],
     "image": {
-      "legend": "Photo caption: Relatives of the 43 students of Ayotzinapa School gather to hear the findings of the international experts who investigated the case (April 2016).",
+      "legend": "Relatives of the 43 students of Ayotzinapa School gather to hear the findings of the international experts who investigated the case (April 2016).",
       "source": "Photo credit: Amnesty International / Sergio Ortiz Borbolla"
     },
     "standard_name": {
@@ -290,14 +290,14 @@
   "how_to_read": {
     "name": "HOW TO READ",
     "paragraphs": [
-      "Each country has a radar chart, formed by twelve axes. Each axis represents a right. The further the score is along each axis, the better the performance of the country on that right.",
-      "Rights are colour-coded in two different sets:",
+      "Each country has a radar chart, formed by twelve axes. Each axis represents a human right. The further the score is along each axis, the better the performance of the country on that human right.",
+      "Human rights are colour-coded in two different sets:",
       "and",
       "For now, civil and political rights data are only available for 13 pilot countries.",
-      "The two sets of rights are evaluated on two different scales: on a percentage scale",
+      "The two sets of human rights are evaluated on two different scales: on a percentage scale",
       "and as a score out of 10",
       "When civil and political rights data are not available for a country, only economic and social rights axes will be shown on the radar.",
-      "A dashed and greyed out axis means that there is no data available for that right in that country. "
+      "A dashed and greyed out axis means that there is no data available for that human right in that country. "
     ]
   },
   "cpr_alert": {

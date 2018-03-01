@@ -76,7 +76,7 @@ export default class StoryPopup extends React.Component {
               <div className={styles.graph} style={{ lineHeight: '0.9rem' }}>
                 <CountryRightsChart
                   rights={MEXICO.rights}
-                  esrStandard="esrCore"
+                  esrStandard='esrCore'
                   size={500}
                   content={content}
                   displayLabels
@@ -97,12 +97,12 @@ export default class StoryPopup extends React.Component {
                 <h1 className={styles.articleTitle}>{story.article_title}</h1>
               </section>
               <section>
-                <p className={styles.boldText}>{story.paragraphs[0]} <a href="https://www.amnesty.org/en/countries/americas/mexico/report-mexico/" target='_blank'>{story.paragraphs[1]}</a>{story.paragraphs[2]}</p>
-                <p className={styles.boldText}>{story.paragraphs[3]} <a href="" target='_blank'>{story.paragraphs[4]}</a> {story.paragraphs[5]} <a href="" target='_blank'>{story.paragraphs[6]}</a> {story.paragraphs[7]}</p>
+                <p className={styles.boldText}>{story.paragraphs[0]} <a href='https://www.amnesty.org/en/countries/americas/mexico/report-mexico/' target='_blank'>{story.paragraphs[1]}</a>{story.paragraphs[2]}</p>
+                <p className={styles.boldText}>{story.paragraphs[3]} <a href='https://www.wola.org/analysis/analysis-and-information-on-mexicos-ayotzinapa-case/' target='_blank'>{story.paragraphs[4]}</a> {story.paragraphs[5]} <a href='http://www.oas.org/en/iachr/expression/showarticle.asp?artID=1066&lID=1' target='_blank'>{story.paragraphs[6]}</a> {story.paragraphs[7]}</p>
               </section>
               <section>
                 <div className={styles.imageWrapper}>
-                  <img src={storyImage} alt="article image"/>
+                  <img src={storyImage} alt='article image'/>
                   <div className={styles.imageLegend}>{story.image.legend}</div>
                   <div className={styles.imageSource}>{story.image.source}</div>
                 </div>
@@ -133,7 +133,7 @@ export default class StoryPopup extends React.Component {
               </section>
               <section className={styles.topLink}>
                 <div>
-                  <p className={styles.normalText}>{story.paragraphs[11]} <a href="" target='_blank'>{story.paragraphs[12]}</a> {story.paragraphs[13]} <a href="" target='_blank'>{story.paragraphs[14]}</a> {story.paragraphs[15]}</p>
+                  <p className={styles.normalText}>{story.paragraphs[11]} <a href='https://www.insightcrime.org/news/brief/zetas-turned-mexico-prison-mass-grave/' target='_blank'>{story.paragraphs[12]}</a> {story.paragraphs[13]} <a href='http://secretariadoejecutivo.gob.mx/rnped/consulta-publica.php' target='_blank'>{story.paragraphs[14]}</a> {story.paragraphs[15]}</p>
                   <p className={styles.normalText}>{story.paragraphs[16]}</p>
                   <p className={styles.normalText}>{story.paragraphs[17]}</p>
                 </div>
@@ -186,18 +186,18 @@ export default class StoryPopup extends React.Component {
                 <p className={styles.normalText}>{story.paragraphs[24]}</p>
               </section>
               <section>
-                <div className={styles.lineChart}><img src={lineChart} alt="lineChart" style={{ width: '100%' }} /></div>
+                <div className={styles.lineChart}><img src={lineChart} alt='lineChart' style={{ width: '100%' }} /></div>
               </section>
               <section>
                 <p className={styles.normalText}>{story.paragraphs[25]}</p>
               </section>
               <section>
-                <div className={styles.lineChart}><img src={lineChart} alt="lineChart" style={{ width: '100%' }} /></div>
+                <div className={styles.lineChart}><img src={lineChart} alt='lineChart' style={{ width: '100%' }} /></div>
               </section>
               <section>
                 <p className={styles.normalText}>{story.paragraphs[26]}</p>
                 <p className={styles.normalText}>{story.paragraphs[27]}</p>
-                <p className={styles.normalText}>{story.paragraphs[28]} <a href="" target='_blank'>{story.paragraphs[29]}</a> {story.paragraphs[30]}</p>
+                <p className={styles.normalText}>{story.paragraphs[28]} <a href='http://www.worldbank.org/en/news/feature/2014/11/19/un-modelo-de-mexico-para-el-mundo' target='_blank'>{story.paragraphs[29]}</a> {story.paragraphs[30]}</p>
                 <p className={styles.normalText}>{story.paragraphs[31]}</p>
               </section>
               <section>
@@ -270,11 +270,11 @@ export default class StoryPopup extends React.Component {
               <section>
                 <div className={styles.radarWrapper}>
                   <div className={styles.radarCol}>
-                    <CountryRightsChart rights={PERU.rights} esrStandard="esrCore" size={250} />
+                    <CountryRightsChart rights={PERU.rights} esrStandard='esrCore' size={250} />
                     <div className={styles.radarCountryName}>{'PER'}</div>
                   </div>
                   <div className={styles.radarCol}>
-                    <CountryRightsChart rights={BOLIVIA.rights} esrStandard="esrCore" size={250} />
+                    <CountryRightsChart rights={BOLIVIA.rights} esrStandard='esrCore' size={250} />
                     <div className={styles.radarCountryName}>{'BOL'}</div>
                   </div>
                 </div>

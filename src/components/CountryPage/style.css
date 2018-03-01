@@ -344,9 +344,6 @@
   border: 1px solid #616161;
   border-radius: 4px;
 }
-.floatNum {
-  float: right;
-}
 
 .esrRegionValue,
 .cprRegionValue {
@@ -363,6 +360,17 @@
   margin-bottom: 14px;
   font-size: 13px;
   color: #58595b;
+}
+.esrRegionValue,
+.cprRegionValue,
+.esrValueList .withDot {
+  display: flex;
+  justify-content: space-between;
+}
+.esrRegionValue .text,
+.cprRegionValue .text,
+.esrValueList .withDot .text {
+  padding-right: 10px;
 }
 
 .link {

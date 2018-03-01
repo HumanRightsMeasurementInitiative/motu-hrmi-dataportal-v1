@@ -140,8 +140,7 @@ export default class CountryPage extends React.Component {
                       { currRight !== 'all' &&
                         <div>
                           <div className={styles.esrRegionValue}>
-                            {content.rights_name[currRight]}
-                            {' '}
+                            <span className={styles.text}>{content.rights_name[currRight]}</span>
                             <span className={styles.floatNum}>
                               {displayPercent(currCountry.rights[esrStandard][currRight])}
                             </span>
@@ -149,8 +148,7 @@ export default class CountryPage extends React.Component {
                           <ul className={styles.esrValueList}>
                             {Object.keys(currCountry.rights[esrStandard][currRight + '_sub']).map((item, i) => (
                               <li key={i} className={styles.withDot}>
-                                {content.score_name[item]}
-                                {' '}
+                                <span className={styles.text}>{content.score_name[item]}</span>
                                 <span className={styles.floatNum}>
                                   {displayPercent(currCountry.rights[esrStandard][currRight + '_sub'][item])}
                                 </span>
@@ -188,8 +186,7 @@ export default class CountryPage extends React.Component {
                       }
                       { currRight !== 'all' &&
                         <div className={styles.cprRegionValue}>
-                          {content.rights_name[currRight]}
-                          {' '}
+                          <span className={styles.text}>{content.rights_name[currRight]}</span>
                           <span className={styles.floatNum}>
                             {currCountry.rights.cpr
                               ? displayTenth(currCountry.rights.cpr[currRight].mean)

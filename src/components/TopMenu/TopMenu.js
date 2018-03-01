@@ -19,7 +19,7 @@ export default class TopMenu extends React.Component {
     return (
       <div className={joinClassName}>
         <div className={styles.logo}>
-          <BetaLogo />
+          <a href='https://humanrightsmeasurement.org/' target='_blank'><BetaLogo /></a>
         </div>
         <TopNav content={content} />
       </div>
