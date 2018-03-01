@@ -117,9 +117,6 @@
   font-size: 16px;
   overflow: auto;
 }
-.columnRight p {
-  margin: 0;
-}
 .columnRight section {
   position: relative;
   margin: 24px 0;
@@ -129,6 +126,15 @@
 .columnRight a {
   color: #616161;
 }
+.columnRight a:hover {
+  color: steelblue;
+}
+
+.normalText {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
 .articleTitle {
   margin: 0;
   font-size: 24px;
@@ -203,26 +209,14 @@
   background: #f3f3f3;
   border-radius: 50%;
 }
-.topLink,
-.bottomLink {
-  display: flex;
-}
-.topLink > div,
-.bottomLink > div {
-  flex: 1;
-}
+
 .links {
-  flex: none;
   position: absolute;
   right: 0;
+  bottom: -72px;
   width: 144px;
 }
-.topLink .links {
-  top: 0;
-}
-.bottomLink .links {
-  bottom: 0;
-}
+
 .sectionSelector {
   padding: 20px 0 50px;
   font-size: 16px;

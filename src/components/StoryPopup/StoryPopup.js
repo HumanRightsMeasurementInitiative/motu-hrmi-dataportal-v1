@@ -17,6 +17,10 @@ const MEXICO = rightsByCountry.MEX
 const PERU = rightsByCountry.PER
 const BOLIVIA = rightsByCountry.BOL
 
+function makeHTMLParagraph(text, i) {
+  return <p key={i} className={styles.normalText} dangerouslySetInnerHTML={{ __html: text }} />
+}
+
 export default class StoryPopup extends React.Component {
   static propTypes = {
     data: PropTypes.object.isRequired,
@@ -63,6 +67,19 @@ export default class StoryPopup extends React.Component {
     const story = content.story_mexico
     const arrowLink = content.arrow_link
 
+    function ArrowLink({ region, right, content, setRegion }) {
+      return (
+        <div className={styles.links}>
+          <div className="arrowLink">
+            <div className="text">{arrowLink.title.this}</div>
+            <RegionLink region={region} right={right} onItemClick={setRegion}>
+              {content.region_name[region]}
+            </RegionLink>
+          </div>
+        </div>
+      )
+    }
+
     return (
       <div className={styles.storyWrapper} ref='storyWrapper'>
         <div className={styles.storyPopup} ref='storyPopup'>
@@ -76,7 +93,7 @@ export default class StoryPopup extends React.Component {
               <div className={styles.graph} style={{ lineHeight: '0.9rem' }}>
                 <CountryRightsChart
                   rights={MEXICO.rights}
-                  esrStandard='esrCore'
+                  esrStandard="esrCore"
                   size={500}
                   content={content}
                   displayLabels
@@ -94,29 +111,32 @@ export default class StoryPopup extends React.Component {
 
             <div className={styles.columnRight} ref='columnRight'>
               <section>
-                <h1 className={styles.articleTitle}>{story.article_title}</h1>
+                <h1 className={styles.articleTitle}>{story.title}</h1>
               </section>
+
               <section>
-                <p className={styles.boldText}>{story.paragraphs[0]} <a href='https://www.amnesty.org/en/countries/americas/mexico/report-mexico/' target='_blank'>{story.paragraphs[1]}</a>{story.paragraphs[2]}</p>
-                <p className={styles.boldText}>{story.paragraphs[3]} <a href='https://www.wola.org/analysis/analysis-and-information-on-mexicos-ayotzinapa-case/' target='_blank'>{story.paragraphs[4]}</a> {story.paragraphs[5]} <a href='http://www.oas.org/en/iachr/expression/showarticle.asp?artID=1066&lID=1' target='_blank'>{story.paragraphs[6]}</a> {story.paragraphs[7]}</p>
+                {story.sections.paragraph_1.map(makeHTMLParagraph)}
               </section>
+
               <section>
                 <div className={styles.imageWrapper}>
-                  <img src={storyImage} alt='article image'/>
-                  <div className={styles.imageLegend}>{story.image.legend}</div>
-                  <div className={styles.imageSource}>{story.image.source}</div>
+                  <img src={storyImage} alt="article image"/>
+                  <div className={styles.imageLegend}>
+                    {story.sections.image_1.legend}
+                  </div>
+                  <div className={styles.imageSource}>
+                    {story.sections.image_1.source}
+                  </div>
                 </div>
               </section>
+
               <section>
-                <p className={styles.normalText}>{story.paragraphs[8]}</p>
+                {story.sections.paragraph_2.map(makeHTMLParagraph)}
               </section>
+
               <section>
-                <p className={styles.normalText}>{story.paragraphs[9]}</p>
-                <p className={styles.normalText}>{story.paragraphs[10]}</p>
-              </section>
-              <section>
-                <div className={styles.cprCaption}>{story.chart[0].title}</div>
-                <div className={styles.cprSubTitle}>{story.chart[0].subtitle}</div>
+                <div className={styles.cprCaption}>{story.sections.chart_1.title}</div>
+                <div className={styles.cprSubTitle}>{story.sections.chart_1.subtitle}</div>
                 { this.state.barchartWidth &&
                   <RightBarchart
                     currYear={2015}
@@ -130,23 +150,17 @@ export default class StoryPopup extends React.Component {
                   </RightBarchart>
                 }
                 <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
+
+                <ArrowLink region="cpr-pilot" right="freedom-from-disappearance" content={content} setRegion={this.setRegion} />
               </section>
-              <section className={styles.topLink}>
-                <div>
-                  <p className={styles.normalText}>{story.paragraphs[11]} <a href='https://www.insightcrime.org/news/brief/zetas-turned-mexico-prison-mass-grave/' target='_blank'>{story.paragraphs[12]}</a> {story.paragraphs[13]} <a href='http://secretariadoejecutivo.gob.mx/rnped/consulta-publica.php' target='_blank'>{story.paragraphs[14]}</a> {story.paragraphs[15]}</p>
-                  <p className={styles.normalText}>{story.paragraphs[16]}</p>
-                  <p className={styles.normalText}>{story.paragraphs[17]}</p>
-                </div>
-                <div className={styles.links}>
-                  <div className='arrowLink'>
-                    <div className='text'>{arrowLink.title.this}</div>
-                    <RegionLink region={'cpr-pilot'} right='freedom-from-disappearance' onItemClick={this.setRegion}>{content.region_name['cpr-pilot']}</RegionLink>
-                  </div>
-                </div>
-              </section>
+
               <section>
-                <div className={styles.cprCaption}>{story.chart[1].title}</div>
-                <div className={styles.cprSubTitle}>{story.chart[1].subtitle}</div>
+                {story.sections.paragraph_3.map(makeHTMLParagraph)}
+              </section>
+
+              <section>
+                <div className={styles.cprCaption}>{story.sections.chart_2.title}</div>
+                <div className={styles.cprSubTitle}>{story.sections.chart_2.subtitle}</div>
                 { this.state.barchartWidth &&
                   <RightBarchart
                     currYear={2015}
@@ -160,65 +174,57 @@ export default class StoryPopup extends React.Component {
                   />
                 }
                 <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
+
+                <ArrowLink region="cpr-pilot" right="participate-in-government" content={content} setRegion={this.setRegion} />
               </section>
-              <section className={styles.bottomLink}>
-                <div>
-                  <p className={styles.normalText}>{story.paragraphs[18]}</p>
-                  <p className={styles.normalText}>{story.paragraphs[19]}</p>
-                  <p className={styles.normalText}>{story.paragraphs[20]}</p>
-                  <p className={styles.normalText}>{story.paragraphs[21]}</p>
-                </div>
-                <div className={styles.links}>
-                  <div className='arrowLink'>
-                    <div className='text'>{arrowLink.title.this}</div>
-                    <RegionLink region={'cpr-pilot'} right='participate-in-government' onItemClick={this.setRegion}>{content.region_name['cpr-pilot']}</RegionLink>
-                  </div>
-                </div>
+
+              <section>
+                {story.sections.paragraph_4.map(makeHTMLParagraph)}
+              </section>
+
+              <section>
+                <div className={styles.esrCaption}>{story.sections.subtitle_1}</div>
+              </section>
+
+              <section>
+                {story.sections.paragraph_5.map(makeHTMLParagraph)}
+              </section>
+
+              <section>
+                <div className={styles.esrSubTitle}>{story.sections.timeline_1.title}</div>
+                <div className={styles.lineChart}><img src={lineChart} alt="lineChart" style={{ width: '100%' }} /></div>
               </section>
               <section>
-                <div className={styles.esrCaption}>{story.article_subtitle[0]}</div>
+                <div className={styles.esrSubTitle}>{story.sections.timeline_2.title}</div>
+                <div className={styles.lineChart}><img src={lineChart} alt="lineChart" style={{ width: '100%' }} /></div>
               </section>
+
               <section>
-                <p className={styles.normalText}>{story.paragraphs[22]}</p>
-                <p className={styles.normalText}>{story.paragraphs[23]}</p>
+                {story.sections.paragraph_6.map(makeHTMLParagraph)}
               </section>
+
               <section>
-                <p className={styles.normalText}>{story.paragraphs[24]}</p>
-              </section>
-              <section>
-                <div className={styles.lineChart}><img src={lineChart} alt='lineChart' style={{ width: '100%' }} /></div>
-              </section>
-              <section>
-                <p className={styles.normalText}>{story.paragraphs[25]}</p>
-              </section>
-              <section>
-                <div className={styles.lineChart}><img src={lineChart} alt='lineChart' style={{ width: '100%' }} /></div>
-              </section>
-              <section>
-                <p className={styles.normalText}>{story.paragraphs[26]}</p>
-                <p className={styles.normalText}>{story.paragraphs[27]}</p>
-                <p className={styles.normalText}>{story.paragraphs[28]} <a href='http://www.worldbank.org/en/news/feature/2014/11/19/un-modelo-de-mexico-para-el-mundo' target='_blank'>{story.paragraphs[29]}</a> {story.paragraphs[30]}</p>
-                <p className={styles.normalText}>{story.paragraphs[31]}</p>
-              </section>
-              <section>
-                <div className={styles.esrCaption}>{story.article_subtitle[1]}</div>
+                <div className={styles.esrCaption}>{story.sections.subtitle_2}</div>
+
                 <div className={styles.radarWrapper}>
                   <div className={styles.radarCol}>
                     <div className={styles.fakeRadar}></div>
-                    <div className={styles.radarCountryName}>{story.standard_name.core}</div>
+                    <div className={styles.radarCountryName}>{story.sections.radar_1.title}</div>
                   </div>
                   <div className={styles.radarCol}>
                     <div className={styles.fakeRadar}></div>
-                    <div className={styles.radarCountryName}>{story.standard_name.high}</div>
+                    <div className={styles.radarCountryName}>{story.sections.radar_2.title}</div>
                   </div>
                 </div>
               </section>
+
               <section>
-                <p className={styles.normalText}>{story.paragraphs[32]}</p>
+                {story.sections.paragraph_7.map(makeHTMLParagraph)}
               </section>
+
               <section>
-                <div className={styles.esrCaption}>{story.chart[2].title}</div>
-                <div className={styles.esrSubTitle}>{story.chart[2].subtitle}</div>
+                <div className={styles.esrCaption}>{story.sections.chart_3.title}</div>
+                <div className={styles.esrSubTitle}>{story.sections.chart_3.subtitle}</div>
                 { this.state.barchartWidth &&
                   <RightBarchart
                     currYear={2015}
@@ -232,64 +238,23 @@ export default class StoryPopup extends React.Component {
                   />
                 }
                 <div className={styles.footnote}>{content.footer_text.rights_page_esr}</div>
-              </section>
-              <section className={styles.topLink}>
-                <div>
-                  <p className={styles.normalText}>{story.paragraphs[33]}</p>
-                  <p className={styles.normalText}>{story.paragraphs[34]}</p>
-                  <p className={styles.normalText}>{story.paragraphs[35]}</p>
-                  <p className={styles.normalText}>{story.paragraphs[36]}</p>
-                </div>
-                <div className={styles.links}>
-                  <div className='arrowLink'>
-                    <div className='text'>{arrowLink.title.this}</div>
-                    <RegionLink region={'americas'} right='education' onItemClick={this.setRegion}>{content.region_name['americas']}</RegionLink>
-                  </div>
-                </div>
+
+                <ArrowLink region="americas" right="education" content={content} setRegion={this.setRegion} />
               </section>
 
-              {/*
-              <section className={styles.bottomLink}>
-                <div>
-                  <p className={styles.normalText}>{story.paragraphs[20]}</p>
-                  <p className={styles.normalText}>{story.paragraphs[21]}</p>
-                  <p className={styles.normalText}>{story.paragraphs[22]}</p>
-                  <p className={styles.normalText}>{story.paragraphs[23]}</p>
-                </div>
-                <div className={styles.links}>
-                  <div className='arrowLink'>
-                    <div className='text'>{arrowLink.title.all}</div>
-                    <CountryLink in={story.in} region={AMERICAS} code='BOL' onItemClick={this.setCountry}>{'BOL'}</CountryLink>
-                  </div>
-                  <div className='arrowLink'>
-                    <div className='text'>{arrowLink.title.all}</div>
-                    <CountryLink in={story.in} region={AMERICAS} code='PER' onItemClick={this.setCountry}>{'PER'}</CountryLink>
-                  </div>
-                </div>
-              </section>
               <section>
-                <div className={styles.radarWrapper}>
-                  <div className={styles.radarCol}>
-                    <CountryRightsChart rights={PERU.rights} esrStandard='esrCore' size={250} />
-                    <div className={styles.radarCountryName}>{'PER'}</div>
-                  </div>
-                  <div className={styles.radarCol}>
-                    <CountryRightsChart rights={BOLIVIA.rights} esrStandard='esrCore' size={250} />
-                    <div className={styles.radarCountryName}>{'BOL'}</div>
-                  </div>
-                </div>
+                {story.sections.paragraph_8.map(makeHTMLParagraph)}
               </section>
-              */}
 
               <section className={styles.sectionSelector}>
-                <h5 className={styles.title}>{story.ending_text}</h5>
+                <h5 className={styles.title}>{story.sections.ending_text}</h5>
+
                 <h5 className={styles.subtitle}>{content.section.title}</h5>
                 <SectionSelector isStoryMode={true} />
               </section>
             </div>
           </div>
           <div className={styles.closeBtn} onClick={this.closeStoryMode}>Skip the story</div>
-          <div className={styles.footer}></div>
         </div>
       </div>
     )
