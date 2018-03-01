@@ -16,7 +16,9 @@ const PILOT = 'cpr-pilot'
 const MEXICO = rightsByCountry.MEX
 
 function makeHTMLParagraph(text, i) {
-  return <p key={i} className={styles.normalText} dangerouslySetInnerHTML={{ __html: text }} />
+  const cleanedText = text
+    .replace(`<a `, `<a target="_blank" rel="noopener noreferrer"`)
+  return <p key={i} className={styles.normalText} dangerouslySetInnerHTML={{ __html: cleanedText }} />
 }
 
 export default class StoryPopup extends React.Component {
