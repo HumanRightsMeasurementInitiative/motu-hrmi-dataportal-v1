@@ -14,8 +14,6 @@ import storyImage from '../../img/story_mex.png'
 const AMERICAS = 'americas'
 const PILOT = 'cpr-pilot'
 const MEXICO = rightsByCountry.MEX
-const PERU = rightsByCountry.PER
-const BOLIVIA = rightsByCountry.BOL
 
 function makeHTMLParagraph(text, i) {
   return <p key={i} className={styles.normalText} dangerouslySetInnerHTML={{ __html: text }} />
@@ -208,11 +206,11 @@ export default class StoryPopup extends React.Component {
 
                 <div className={styles.radarWrapper}>
                   <div className={styles.radarCol}>
-                    <div className={styles.fakeRadar}></div>
+                    <CountryRightsChart rights={MEXICO.rights} esrStandard="esrCore" size={250} />
                     <div className={styles.radarCountryName}>{story.sections.radar_1.title}</div>
                   </div>
                   <div className={styles.radarCol}>
-                    <div className={styles.fakeRadar}></div>
+                    <CountryRightsChart rights={MEXICO.rights} esrStandard="esrHI" size={250} />
                     <div className={styles.radarCountryName}>{story.sections.radar_2.title}</div>
                   </div>
                 </div>
