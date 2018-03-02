@@ -8,7 +8,6 @@ export default class NavItem extends React.Component {
     label: PropTypes.string.isRequired,
     labelKey: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
-    onDownloadClick: PropTypes.func,
     buttonText: PropTypes.string,
   }
 
@@ -53,7 +52,6 @@ export default class NavItem extends React.Component {
 
   onDownloadClick = () => {
     this.setState({ isOpen: false })
-    this.props.onDownloadClick()
   }
 
   render() {
@@ -76,7 +74,15 @@ export default class NavItem extends React.Component {
           <div className={styles.dropdownWrapper} ref='dropdownWrapper'>
             {children}
             { labelKey === 'download' &&
-              <div className={styles.agreeBtnWrapper}><div className={styles.agreeBtn} onClick={this.onDownloadClick}>{buttonText}</div></div>
+              <div className={styles.agreeBtnWrapper}>
+                <a
+                  href="/Download_HRMI_data_and_codebook_EN_ES_PT_FR.xlsx"
+                  className={styles.agreeBtn}
+                  onClick={this.onDownloadClick}
+                >
+                  {buttonText}
+                </a>
+              </div>
             }
           </div>
         </div>

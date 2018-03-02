@@ -35,12 +35,15 @@ const PETALS_COLORS = [
   '#00af49', // edu
 ]
 
+function isRightIndexAnESR(i) {
+  return [0, 1, 2, 10, 11].includes(i)
+}
+
 function displayRightValue(rightData, rightIndex) {
   const val = rightData[rightIndex]
   if (val === null) return 'N/A'
 
-  const isESR = [0, 1, 2, 10, 11].includes(rightIndex)
-  const isPercent = isESR // LOGIC
+  const isPercent = isRightIndexAnESR(rightIndex)
 
   if (isPercent) {
     return (val * 100).toFixed(0) + '%'
@@ -165,6 +168,8 @@ export default class CountryRightsChart extends React.Component {
       throw new Error(`Right '${rightCode}' with no type! Check rightDefinitions`)
     })
 
+    const areCPRMissing = rightsData.filter((r, i) => !isRightIndexAnESR(i)).every(v => v === null)
+
     return (
       <div
         style={{ position: 'relative', cursor: 'pointer' }}
@@ -200,6 +205,23 @@ export default class CountryRightsChart extends React.Component {
           >
             {displayRightValue(rightsData, highlightedRightIndex)}
           </span>
+        }
+        {displayLabels && areCPRMissing &&
+          <div
+            style={{
+              position: 'absolute',
+              top: (size / 1.9),
+              left: (size / 2) - (250 / 2),
+              width: 250,
+              color: '#6a6b6d',
+              background: 'rgba(231, 231, 231, 0.5)',
+              textAlign: 'center',
+              fontSize: 13,
+              cursor: 'pointer',
+            }}
+          >
+            Civil and political rights data have not yet been produced for this country.
+          </div>
         }
       </div>
     )
