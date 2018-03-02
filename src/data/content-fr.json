@@ -1,4 +1,5 @@
 {
+  "alert": "Please use a device with a <span>larger screen</span><br />to access the website",
   "region_name": {
     "high-income-oecd": "Pays de l’OCDE à hauts revenus",
     "europe-central-asia": "Europe centrale et orientale et Asie centrale",

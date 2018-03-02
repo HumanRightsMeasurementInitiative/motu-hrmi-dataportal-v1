@@ -190,9 +190,6 @@ export default class RightsPage extends React.Component {
               <div className={styles.chartSubtitle}>
                 {isESRSelected && content.esr_chart_subtitle}
               </div>
-              { isESRSelected &&
-                <div className={styles.sortBy} style={{ opacity: (isESRSelected || urlSegs.region === 'cpr-pilot') ? 1 : 0 }}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div>
-              }
               { isESRSelected
                 ? <div className={styles.esrLegend}>
                   <div className={styles.text}>{content.legend.esr_barchart[0]}</div>
@@ -212,6 +209,9 @@ export default class RightsPage extends React.Component {
                     </QuestionTooltip>
                   </div>
                 </div>
+              }
+              { isESRSelected &&
+                <div className={styles.sortBy} style={{ opacity: (isESRSelected || urlSegs.region === 'cpr-pilot') ? 1 : 0 }}><SortbyDropdown regionCode={urlSegs.region} sortby={this.state.sortby} onItemClick={this.setSortby} /></div>
               }
             </div>
             <div className={styles.chartsContainer} ref='charts'>
