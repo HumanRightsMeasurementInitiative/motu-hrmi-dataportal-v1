@@ -9,7 +9,7 @@
   flex: 0 0 auto;
   display: inline-block;
   position: relative;
-  padding: 4px 10px 4px 30px;
+  padding: 4px 10px 4px 24px;
   max-width: 60%;
   border: 1px solid #9b9b9d;
   text-transform: uppercase;
@@ -26,7 +26,7 @@
   content: '';
   position: absolute;
   top: 50%;
-  left: 12px;
+  left: 8px;
   margin-top: -6px;
   border-right: 8px solid #9b9b9d;
   border-top: 6px solid transparent;
@@ -78,7 +78,7 @@
 }
 .countryItem {
   margin: 8px 0;
-  padding: 0 30px;
+  padding: 0 24px;
   line-height: 1.1em;
 }
 .countryName {
@@ -232,8 +232,12 @@
   composes: smallText;
   color: #38d98b;
 }
+.cprChartSubtitle {
+  composes: smallText;
+  color: #51c9f0;
+}
 .barChartWrapper {
-  margin: 15px 0;
+  margin: 0 0 15px;
 }
 .legend {
   display: flex;

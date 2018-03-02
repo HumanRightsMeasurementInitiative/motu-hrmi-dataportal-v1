@@ -10,7 +10,7 @@ import DownloadPopup from '../DownloadPopup'
 import ChangeStandard from '../ChangeStandard'
 import RightDefinition from '../RightDefinition'
 import DefinitionFooter from '../DefinitionFooter'
-import { segsToUrl, getRegionName } from '../utils'
+import { segsToUrl } from '../utils'
 import styles from './style.css'
 
 export default class CountryPage extends React.Component {
@@ -86,7 +86,7 @@ export default class CountryPage extends React.Component {
               <ul className={styles.countriesList}>
                 {countries.map((country) => (
                   <CountryItem key={country.countryCode} code={country.countryCode} onItemClick={this.setCountry} selected={country.countryCode === urlSegs.country}>
-                    {country.countryName}
+                    {content.countries[country.countryCode]}
                   </CountryItem>
                 ))}
               </ul>
@@ -96,7 +96,7 @@ export default class CountryPage extends React.Component {
           <div className='column'>
             <div className={styles.countryHeader}>
               <div className={styles.title}>
-                <strong>{content.header_text.by_geography} {currCountry.countryName}</strong>
+                <strong>{content.header_text.by_geography} {content.countries[currCountry.countryCode]}</strong>
               </div>
               <ChangeStandard />
             </div>
@@ -122,7 +122,7 @@ export default class CountryPage extends React.Component {
           <div className='column' ref='rightPane'>
             <div className={styles.columnRight}>
               <div className={styles.countryInfo}>
-                <div className={styles.detailCountry}>{currCountry.countryName}</div>
+                <div className={styles.detailCountry}>{content.countries[currCountry.countryCode]}</div>
                 <div className={styles.smallTitle}>POPULATION (2015)</div>
                 <div className={styles.smallText2}>{currCountry.population} million</div>
                 <div className={styles.smallTitle}>GDP/CAPITA (2015)</div>
@@ -213,7 +213,7 @@ export default class CountryPage extends React.Component {
                     : <div className={styles.rightDefinition}>
                       <div className='arrowLink' style={{ marginLeft: '-24px' }}>
                         <div className='text'>{content.explore_this_rights_in}:</div>
-                        <div className='text underline' onClick={this.setExploreBy}>{getRegionName(urlSegs.region)}</div>
+                        <div className='text underline' onClick={this.setExploreBy}>{content.region_name[urlSegs.region]}</div>
                       </div>
                       <RightDefinition isESRSelected={isESRSelected} right={currRight} content={content} />
                       { currRight &&

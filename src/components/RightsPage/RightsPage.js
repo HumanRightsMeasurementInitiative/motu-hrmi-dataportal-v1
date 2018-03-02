@@ -10,6 +10,7 @@ import SortbyDropdown from '../SortbyDropdown'
 import RightDefinition from '../RightDefinition'
 import DefinitionFooter from '../DefinitionFooter'
 import QuestionTooltip from '../QuestionTooltip'
+import SearchList from '../SearchList'
 import { segsToUrl, joinClassName as jcn } from '../utils'
 import { get } from 'lodash'
 import styles from './style.css'
@@ -161,6 +162,7 @@ export default class RightsPage extends React.Component {
 
     return (
       <div className={styles.rightsPage}>
+        <div className={styles.searchWrapper}><SearchList /></div>
         <SubTopNav />
         <div className='row'>
           <div className='column'>
@@ -262,13 +264,13 @@ export default class RightsPage extends React.Component {
             <div className={styles.infoHeader}>
               <div className={colorClassName}>
                 <div className={styles.rightName}>Right to {urlSegs.right}</div>
-                <div className={styles.regionName}>{content.in} {this.state.currCountry ? this.state.currCountry.countryName : content.region_name[urlSegs.region]}</div>
+                <div className={styles.regionName}>{content.in} {this.state.currCountry ? content.countries[this.state.currCountry.countryCode] : content.region_name[urlSegs.region]}</div>
               </div>
               <div className='arrowLink'>
                 <div className='text'>{content.explore_all_rights_in}:</div>
                 <div className='text underline' onClick={this.setExploreBy}>{content.region_name[urlSegs.region]}</div>
                 { this.state.currCountry !== null &&
-                  <div className='text underline' onClick={this.setCountry}>{this.state.currCountry.countryName}</div>
+                  <div className='text underline' onClick={this.setCountry}>{content.countries[this.state.currCountry.countryCode]}</div>
                 }
               </div>
             </div>

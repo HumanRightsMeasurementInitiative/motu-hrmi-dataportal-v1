@@ -5,10 +5,14 @@ import styles from './style.css'
 
 export default class CountryItem extends React.Component {
   static propTypes = {
-    children: PropTypes.node.isRequired,
     code: PropTypes.string.isRequired,
     onItemClick: PropTypes.func.isRequired,
     selected: PropTypes.bool.isRequired,
+    children: PropTypes.node,
+  }
+
+  static defaultProps = {
+    children: '',
   }
 
   onClick = () => {
