@@ -156,7 +156,7 @@ export default class RightBarchart extends React.Component {
                 const { esrHIHistorical, esrCoreHistorical, cpr } = country.rights
                 const esrHI = esrHIHistorical[currYear] ? esrHIHistorical[currYear].rights : {}
                 const esrCore = esrCoreHistorical[currYear] ? esrCoreHistorical[currYear].rights : {}
-                const currentRightFrom = container => container ? container[currRight] : null
+                const currentRightFrom = container => container ? (container[`${currRight}-sub`] && subrights ? container[`${currRight}-sub`][subrights] : container[currRight]) : null
                 const value = isESR
                   ? { highIncome: currentRightFrom(esrHI), core: currentRightFrom(esrCore) }
                   : (currentRightFrom(cpr) || { mean: null, percentile10: null, percentile90: null })

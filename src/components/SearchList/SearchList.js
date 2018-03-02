@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import SearchIcon from '../SearchIcon'
 import { segsToUrl, joinClassName as jcn } from '../utils'
 import styles from './style.css'
 
@@ -30,18 +31,19 @@ export default class SearchList extends React.Component {
   render() {
     const { data, content, urlPush, urlSegs } = this.props
 
-    const countries = content.countries.filter(country => {
-      return country.name.toLowerCase().search(this.state.searchText.toLowerCase()) !== -1
+    const countryCodes = Object.keys(content.countries).filter(countryCode => {
+      return content.countries[countryCode].toLowerCase().search(this.state.searchText.toLowerCase()) !== -1
     })
 
     const countryDropdown = jcn({
       countryDropdown: true,
-      hide: countries.length === 0 || this.state.searchText === '',
+      hide: countryCodes.length === 0 || this.state.searchText === '',
     }, styles)
 
     return (
       <div>
         <div className={styles.searchInputWrapper}>
+          <div className={styles.searchIcon}><SearchIcon /></div>
           <input ref='searchInput'
             className={styles.searchInput}
             type="text"
@@ -51,15 +53,15 @@ export default class SearchList extends React.Component {
         </div>
         <ul className={countryDropdown}>
           {
-            countries.map((country, i) => (
+            countryCodes.map((countryCode, i) => (
               <CountryItem key={i}
-                code={country.code}
+                code={countryCode}
                 rightsByRegion={data.rightsByRegion}
                 urlPush={urlPush}
                 urlSegs={urlSegs}
                 resetText={this.resetText}
               >
-                {country.name}
+                {content.countries[countryCode]}
               </CountryItem>
             ))
           }
@@ -80,10 +82,10 @@ class CountryItem extends React.Component {
   }
 
   onItemClick = () => {
-    const { children, code, rightsByRegion, urlPush, urlSegs, resetText } = this.props
-    const checkCountry = region => rightsByRegion[region].countries.some(country => country.countryName === children)
+    const { code, rightsByRegion, urlPush, urlSegs, resetText } = this.props
+    const checkCountry = region => rightsByRegion[region].countries.some(country => country.countryCode === code)
     const region = Object.keys(rightsByRegion).filter((region, i) => checkCountry(region))[0]
-    urlPush(segsToUrl({ ...urlSegs, region: region, country: urlSegs.country && code }))
+    urlPush(segsToUrl({ ...urlSegs, exploreBy: 'Geography', right: 'all', region: region, country: code }))
     resetText()
   }
 

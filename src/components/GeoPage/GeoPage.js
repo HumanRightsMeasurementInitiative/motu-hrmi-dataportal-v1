@@ -56,7 +56,6 @@ export default class GeoPage extends React.Component {
   }
 
   setHoverCountry = (country) => {
-    console.log('heyyy')
     this.setState({ hoverCountry: country })
   }
 

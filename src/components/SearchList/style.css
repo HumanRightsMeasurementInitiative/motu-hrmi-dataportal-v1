@@ -1,12 +1,18 @@
 .searchInputWrapper {
   flex: 0 0 auto;
+  position: relative;
+}
+.searchIcon {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  height: 30px;
 }
 .searchInput {
-  padding: 0 10px;
-  height: 25px;
-  width: 90%;
-  max-width: 128px;
-  border: 1px solid #3bc4e9;
+  height: 30px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #3bc4e9;
   font-size: 14px;
   color: #3bc4e9;
   outline: none;

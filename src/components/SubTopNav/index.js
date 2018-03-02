@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SectionSelector from '../SectionSelector/'
+import SearchList from '../SearchList'
 import { joinClassName as jcn } from '../utils'
 import styles from './styles.css'
 
@@ -53,6 +54,7 @@ export default class SubTopNav extends React.Component {
         <div className={styles.selectorWrapper}><SectionSelector /></div>
         { content &&
           <div ref='container'>
+            <div className={styles.searchWrapper}><SearchList /></div>
             <div className={btnHTRClass} onClick={this.onButtonClick}>{content.how_to_read.name}<span className={this.state.open ? styles.hide : styles.btnIcon}>&#43;</span><span className={this.state.open ? styles.btnIcon : styles.hide}>&#8722;</span></div>
             <div className={dropdownClassNames}>
               <div className={styles.dropdownCol}>
