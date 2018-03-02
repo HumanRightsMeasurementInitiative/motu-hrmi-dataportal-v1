@@ -9,10 +9,6 @@ export default class TopNav extends React.Component {
     content: PropTypes.object.isRequired,
   }
 
-  startDownload = () => {
-    // start download dataset
-  }
-
   render() {
     const { content } = this.props
     const menuText = content.menu
@@ -88,7 +84,7 @@ export default class TopNav extends React.Component {
             <li className={styles.listEl}>{menuText.howToUse.list[8]}</li>
           </ul>
         </NavItem>
-        <NavItem label={menuText.download.title} labelKey='download' onDownloadClick={this.startDownload} buttonText={menuText.download.button}>
+        <NavItem label={menuText.download.title} labelKey='download' buttonText={menuText.download.button}>
           <p className={styles.para}>{menuText.download.paragraphs[0]}</p>
           <p className={styles.para}>{menuText.download.paragraphs[1]} <a href='https://humanrightsmeasurement.org/' target='_blank'>{menuText.download.link}</a>.</p>
         </NavItem>
