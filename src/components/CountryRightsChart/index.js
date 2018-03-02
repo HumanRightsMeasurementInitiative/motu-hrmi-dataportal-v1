@@ -40,11 +40,31 @@ function rewriteArgs(fn, ...args) {
   return () => fn(...args)
 }
 
+function changeOrigin(point, newOrigin) {
+  return [point[0] - newOrigin[0], point[1] - newOrigin[1]]
+}
+
+function normalizeAngle(a) {
+  return a > 0
+    ? a % (2 * Math.PI)
+    : a % (2 * Math.PI) + (2 * Math.PI)
+}
+
+function cartesianToPolar([x, y]) {
+  const angle = normalizeAngle(Math.atan2(x, -y))
+  const radius = Math.hypot(x, y)
+  return [angle, radius]
+}
+
 export default class CountryRightsChart extends React.Component {
   static propTypes = {
     rights: PropTypes.object.isRequired,
     displayLabels: PropTypes.bool.isRequired,
     esrStandard: PropTypes.string.isRequired,
+    size: PropTypes.number.isRequired,
+    content: PropTypes.object,
+    currRight: PropTypes.string,
+    onClickRight: PropTypes.func,
   }
 
   static defaultProps = {
@@ -52,10 +72,62 @@ export default class CountryRightsChart extends React.Component {
     size: 150,
   }
 
+  state = {
+    hoveredRight: null,
+  }
+
+  rightFromEvent = (event) => {
+    const targetRect = event.currentTarget.getBoundingClientRect()
+    const mouse = [
+      event.nativeEvent.pageX - targetRect.left,
+      event.nativeEvent.pageY - targetRect.top,
+    ]
+
+    const center = [targetRect.width / 2, targetRect.height / 2]
+    const [angle, radius] = cartesianToPolar(changeOrigin(mouse, center))
+    const sectorAngle = 2 * Math.PI / RIGHTS_ORDER.length
+    const index = Math.floor(normalizeAngle(angle + sectorAngle / 2) / sectorAngle)
+    const right = RIGHTS_ORDER[index]
+
+    return { right, radius, angle }
+  }
+
+  clickSector = (event) => {
+    const { onClickRight } = this.props
+    const { right } = this.rightFromEvent(event)
+    onClickRight(right)
+  }
+
+  hoverSector = (event) => {
+    const { size } = this.props
+    const { hoveredRight } = this.state
+    const { right, radius } = this.rightFromEvent(event)
+
+    if (hoveredRight === right) return
+
+    if (radius > 10 && radius < size) {
+      this.setState({ hoveredRight: right })
+    } else {
+      this.setState({ hoveredRight: null })
+    }
+  }
+
+  offHoverSector = () => {
+    this.setState({ hoveredRight: null })
+  }
+
   render() {
-    const { rights, size, displayLabels, esrStandard, content, currRight = null, onClickRight = null } = this.props
+    const { rights, size, displayLabels, esrStandard, content, currRight } = this.props
+    const { hoveredRight } = this.state
     const { esrHI, esrCore, cpr } = rights
 
+    const highlightedRight = (!currRight || currRight === 'all')
+      ? hoveredRight
+      : currRight
+
+    const highlightedRightIndex = RIGHTS_ORDER.includes(highlightedRight)
+      ? RIGHTS_ORDER.indexOf(highlightedRight)
+      : null
     const currRightIndex = RIGHTS_ORDER.includes(currRight)
       ? RIGHTS_ORDER.indexOf(currRight)
       : null
@@ -80,7 +152,12 @@ export default class CountryRightsChart extends React.Component {
     })
 
     return (
-      <div style={{ position: 'relative' }}>
+      <div
+        style={{ position: 'relative', cursor: 'pointer' }}
+        onClick={this.clickSector}
+        onMouseMove={this.hoverSector}
+        onMouseLeave={this.offHoverSector}
+      >
         <PetalChart
           size={size}
           margin={displayLabels ? size / 4 : 5}
@@ -89,15 +166,15 @@ export default class CountryRightsChart extends React.Component {
           colors={PETALS_COLORS}
           debug={false}
           enableBlur={true}
-          highlightedSector={currRightIndex}
+          highlightedSector={highlightedRightIndex}
         />
         {displayLabels &&
           <PetalLabels
             size={size}
             data={rightsData}
             colors={PETALS_COLORS}
-            onClick={onClickRight}
             content={content}
+            currRightIndex={currRightIndex}
           />
         }
       </div>
@@ -105,7 +182,7 @@ export default class CountryRightsChart extends React.Component {
   }
 }
 
-function PetalLabels({ size, data, colors, content, onClick }) {
+function PetalLabels({ size, data, colors, content, currRightIndex, onClick = null }) {
   if (!content) throw new Error(`PetalLabels: no translation content passed!`)
   const displayPercent = n => data[n] !== null ? (data[n] * 100).toFixed(0) + '%' : 'N/A'
   const displayTenth = n => data[n] !== null ? (data[n] * 10).toFixed(1) + '/10' : 'N/A'
@@ -138,6 +215,7 @@ function PetalLabels({ size, data, colors, content, onClick }) {
           a={360 / 12 * i}
           correction={corrections[i]}
           style={{
+            fontWeight: currRightIndex === i ? 'bold' : '',
             textAlign: i === 0 || i === 6 ? 'center' : i > 6 ? 'right' : 'left',
             cursor: onClick ? 'pointer' : null,
           }}
