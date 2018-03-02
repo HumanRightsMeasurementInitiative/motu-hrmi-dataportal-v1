@@ -208,11 +208,11 @@ export default class StoryPopup extends React.Component {
 
                 <div className={styles.radarWrapper}>
                   <div className={styles.radarCol}>
-                    <CountryRightsChart rights={MEXICO.rights} esrStandard="esrCore" size={250} />
+                    <CountryRightsChart size={250} rights={MEXICO.rights} esrStandard="esrCore" currRight="education" />
                     <div className={styles.radarCountryName}>{story.sections.radar_1.title}</div>
                   </div>
                   <div className={styles.radarCol}>
-                    <CountryRightsChart rights={MEXICO.rights} esrStandard="esrHI" size={250} />
+                    <CountryRightsChart size={250} rights={MEXICO.rights} esrStandard="esrHI" currRight="education" />
                     <div className={styles.radarCountryName}>{story.sections.radar_2.title}</div>
                   </div>
                 </div>
