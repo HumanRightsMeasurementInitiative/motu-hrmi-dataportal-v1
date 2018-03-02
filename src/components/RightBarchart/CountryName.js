@@ -20,7 +20,7 @@ export default class CountryName extends React.Component {
     const { children, currCountry, country, onItemClick } = this.props
     const isActive = currCountry && currCountry === country
     return (
-      <text textAnchor='end' fontSize='11px' fontWeight={isActive ? 800 : 600} fill={currCountry === country || !currCountry ? '#424242' : '#616161'} onClick={this.onClick} className={jcn({ clickable: onItemClick !== undefined }, styles)}>{children}</text>
+      <text textAnchor='end' fontSize='11px' fontWeight={isActive ? 800 : 400} fill={currCountry === country || !currCountry ? '#212121' : '#616161'} onClick={this.onClick} className={jcn({ clickable: onItemClick !== undefined }, styles)}>{children}</text>
     )
   }
 }

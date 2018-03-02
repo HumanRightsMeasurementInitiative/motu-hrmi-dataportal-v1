@@ -175,7 +175,7 @@
 }
 .chartsFooter .small {
   font-size: .9em;
-  color: #c5c5c6;
+  color: #9a9a9a;
 }
 .downloadPopupWrapper {
   position: absolute;
@@ -186,11 +186,11 @@
 }
 .chartsFooter .source {
   padding-left: 42px;
-  color: #c5c5c6;
+  color: #9a9a9a;
 }
 .chartsFooter .text {
   padding-left: 42px;
-  color: #8d8e90;
+  color: #616161;
 }
 .cprFooter {
   position: relative;
