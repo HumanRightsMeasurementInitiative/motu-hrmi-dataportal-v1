@@ -35,6 +35,20 @@ const PETALS_COLORS = [
   '#00af49', // edu
 ]
 
+function displayRightValue(rightData, rightIndex) {
+  const val = rightData[rightIndex]
+  if (val === null) return 'N/A'
+
+  const isESR = [0, 1, 2, 10, 11].includes(rightIndex)
+  const isPercent = isESR // LOGIC
+
+  if (isPercent) {
+    return (val * 100).toFixed(0) + '%'
+  } else {
+    return (val * 10).toFixed(1) + '/10'
+  }
+}
+
 function rewriteArgs(fn, ...args) {
   if (fn === null) return null
   return () => fn(...args)
@@ -177,6 +191,16 @@ export default class CountryRightsChart extends React.Component {
             currRightIndex={currRightIndex}
           />
         }
+        {(!displayLabels && highlightedRightIndex !== null) &&
+          <span
+            style={{
+              color: PETALS_COLORS[highlightedRightIndex],
+              fontWeight: 'bold',
+            }}
+          >
+            {displayRightValue(rightsData, highlightedRightIndex)}
+          </span>
+        }
       </div>
     )
   }
@@ -184,8 +208,6 @@ export default class CountryRightsChart extends React.Component {
 
 function PetalLabels({ size, data, colors, content, currRightIndex, onClick = null }) {
   if (!content) throw new Error(`PetalLabels: no translation content passed!`)
-  const displayPercent = n => data[n] !== null ? (data[n] * 100).toFixed(0) + '%' : 'N/A'
-  const displayTenth = n => data[n] !== null ? (data[n] * 10).toFixed(1) + '/10' : 'N/A'
 
   const names = RIGHTS_ORDER.map(k => content.rights_name_short[k])
   const corrections = [
@@ -202,8 +224,6 @@ function PetalLabels({ size, data, colors, content, currRightIndex, onClick = nu
     [-105, -15],
     [-110, -20],
   ]
-
-  const isESR = i => i < 3 || i > 9
 
   return (
     <div style={{ fontSize: 14, color: '#606163' }}>
@@ -224,7 +244,7 @@ function PetalLabels({ size, data, colors, content, currRightIndex, onClick = nu
           {names[i]}
           <br/>
           <strong style={{ color: colors[i] }}>
-            {isESR(i) ? displayPercent(i) : displayTenth(i)}
+            {displayRightValue(data, i)}
           </strong>
         </LabelRadial>
       ))}
