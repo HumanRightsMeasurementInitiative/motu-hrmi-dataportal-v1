@@ -2,9 +2,9 @@
   "alert": "Please use a device with a <span>larger screen</span><br />to access the website",
   "region_name": {
     "high-income-oecd": "High-income OECD countries",
-    "europe-central-asia": "Central and Eastern Europe and Central Asia",
+    "europe-central-asia": "Europe and Central Asia",
     "east-asia-pacific": "East Asia and the Pacific",
-    "americas": "Latin America and the Caribbean",
+    "americas": "The Americas",
     "middle-east-north-africa": "Middle East and Northern Africa",
     "south-asia": "South Asia",
     "sub-saharan-africa": "Sub-Saharan Africa",
@@ -242,7 +242,7 @@
     }
   },
   "header_text": {
-    "by_geography": "Human rights performance in"
+    "by_geography": "Human rights performance"
   },
   "footer_text": {
     "rights_page_esr": "Higher scores indicate greater fulfilment of country obligations for this human right.",

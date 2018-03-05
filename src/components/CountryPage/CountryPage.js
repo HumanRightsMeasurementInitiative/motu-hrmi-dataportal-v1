@@ -96,7 +96,7 @@ export default class CountryPage extends React.Component {
           <div className='column'>
             <div className={styles.countryHeader}>
               <div className={styles.title}>
-                <strong>{content.header_text.by_geography} {content.countries[currCountry.countryCode]}</strong>
+                <strong>{content.header_text.by_geography}: {content.countries[currCountry.countryCode]}</strong>
               </div>
               <ChangeStandard />
             </div>

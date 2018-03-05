@@ -186,7 +186,7 @@ export default class RightsPage extends React.Component {
           </div>
           <div className='column'>
             <div className={styles.chartsHeader}>
-              <div className={styles.regionName}><span style={{ color: isESRSelected ? '#00af49' : '#2e65a1' }}>{content.rights_name[urlSegs.right]}</span> {content.in} {content.region_name[urlSegs.region]}</div>
+              <div className={styles.regionName}><span style={{ color: isESRSelected ? '#00af49' : '#2e65a1' }}>{content.rights_name[urlSegs.right]}:</span> {content.region_name[urlSegs.region]}</div>
               <div className={styles.chartSubtitle}>
                 {isESRSelected && content.esr_chart_subtitle}
               </div>

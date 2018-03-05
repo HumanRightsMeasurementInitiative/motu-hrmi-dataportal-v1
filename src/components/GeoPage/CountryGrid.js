@@ -27,7 +27,7 @@ export default class GeoPageCountryGrid extends React.Component {
           <div className={styles.chartsHeader}>
             <div className={styles.title}>
               <strong>
-                {content.header_text.by_geography} {content.region_name[currRegion]}
+                {content.header_text.by_geography}: {content.region_name[currRegion]}
               </strong>
             </div>
             <div className={styles.standard}>
