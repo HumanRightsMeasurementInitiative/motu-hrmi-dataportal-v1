@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { joinClassName as jcn } from '../utils'
 import styles from './style.css'
+import ReactTooltip from 'react-tooltip'
 
 export default class ESRRects extends React.Component {
   static propTypes = {
@@ -43,7 +44,10 @@ export default class ESRRects extends React.Component {
         onClick={this.onClick}
         onMouseOver={this.onMouseOver}
         onMouseOut={this.onMouseOut}
-        opacity={currCountry === country || !currCountry ? 1 : 0.5}>
+        opacity={currCountry === country || !currCountry ? 1 : 0.5}
+        data-for="bar-chart-tooltip"
+        data-tip={country.countryName}>
+        >
         <rect y={-maxValue || 0} height={maxValue || 0} width='9' x='-4.5' fill={isActive ? '#a1e2bc' : 'rgba(0, 0, 0, .1)'}></rect>
         { coreValue &&
           <g className="-circle-core">

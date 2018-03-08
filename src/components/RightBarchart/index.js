@@ -6,6 +6,7 @@ import ESRRects from './ESRRects'
 import CPRRects from './CPRRects'
 import ValueTooltips from './ValueTooltips'
 import { round } from 'lodash'
+import ReactTooltip from 'react-tooltip'
 
 export default class RightBarchart extends React.Component {
   static propTypes = {
@@ -63,6 +64,9 @@ export default class RightBarchart extends React.Component {
 
     return (
       <div>
+        <ReactTooltip id="country-name-tooltip" place="bottom" effect="solid" offset={{ right: 20 }} />
+        <ReactTooltip id="bar-chart-tooltip" place="bottom" effect="solid" offset={{ right: 8, bottom: 270 }}/>
+
         <svg height={chartHeight} width={chartWidth}>
           <g transform={'translate(' + margin.left + ',' + margin.top + ')'}>
             { !isESR &&
