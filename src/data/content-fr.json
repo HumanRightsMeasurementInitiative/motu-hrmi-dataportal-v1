@@ -30,8 +30,8 @@
     "health": "Santé",
     "housing": "Logement",
     "work": "Travail",
-    "opinion-and-expression": "Opinion et d’expression",
-    "assembly-and-association": "Réunion et d’association",
+    "opinion-and-expression": "Opinion et expression",
+    "assembly-and-association": "Réunion et association",
     "participate-in-government": "Participer aux affaires publiques",
     "freedom-from-torture": "Ne pas faire l’objet de torture",
     "freedom-from-execution": "Être libre d'exécution",
@@ -66,7 +66,7 @@
   "esr_chart_subtitle": "Percentage level of human right enjoyment achieved, relative to what should be feasible",
   "legend": {
     "esr_barchart": ["Score de standard d’évaluation principal", "Score d’évaluation de pays de l’OCDE à hauts revenus"],
-    "cpr_barchart": ["Mean score", "percentile"]
+    "cpr_barchart": ["Score moyen", "percentil"]
   },
   "menu": {
     "about": {
@@ -158,8 +158,8 @@
     }
   },
   "story_mexico": {
-    "title": "Respect for human rights in Mexico is far worse than it should be",
-    "chart_title": "A summary picture of Mexico's human rights performance",
+    "title": "New data on Mexico's human rights performance highlight serious problems",
+    "chart_title": "Respect des droits humains: Mexique",
     "country_code": "MEXICO",
     "sections": {
       "paragraph_1": [
@@ -175,7 +175,7 @@
         "Let’s dig into this in more detail starting with the area of worse performance – civil and political rights. Since there are no objective statistics on most of these rights, we surveyed human rights experts in Mexico and calculated scores based on their responses.<br/>The chart below explores in more detail one area where Mexico performs particularly badly – the right to freedom from disappearance. Mexico’s performance on this human right is compared with that of the 12 other countries in our pilot sample for measuring civil and political rights. (Normally, we would not compare 13 such different countries, and in future iterations, we hope to only present scores for Mexico in comparison with other Latin American countries, as well as Mexico’s past scores. But for the pilot, we only have civil and political rights scores for these 13 countries, and as such, we can only focus on them.) You can see that Mexico’s disappearance score is substantially worse than the score for Brazil (the only other Latin American country in the sample). It is also on par with Saudi Arabia’s score, as shown by the overlap of the blue bars of these two countries."
       ],
       "chart_1": {
-        "title": "Right to freedom from disappearance",
+        "title": "Droit de ne pas faire l'object de disparition",
         "subtitle": "scores for all 13 countries in HRMI pilot sample"
       },
       "paragraph_3": [
@@ -183,7 +183,7 @@
         "By contrast, Mexico’s best score in the area of civil and political rights is for the right to participate in government (mean score 6.1 out of 10). On this human right, Mexico is closer to the middle of the pack when compared to the other 12 countries in the pilot study.<br/>To illustrate this, consider the chart below, which compares scores for the right to participate in government across countries in our civil and political rights pilot study. For this human right Mexico’s score is not substantively different from Brazil’s score. We know this by looking at the substantial overlap of the “bars” for the two countries (i.e. Mexico’s average score is above the 10th percentile of Brazil’s score). The scores shown also suggest that Mexico’s respect for this right is better than in Saudi Arabia, Kazakhstan, and Angola."
       ],
       "chart_2": {
-        "title": "Right to participate in government",
+        "title": "Droit de participer aux affaires publiques",
         "subtitle": "scores for all 13 countries in HRMI pilot sample"
       },
       "paragraph_4": [
@@ -209,7 +209,7 @@
         "Additionally, to offset the costs of sending children to school, in 1988 Mexico began implementing a program that paid certain families to send their children to school. <a href=\"\">This programme, now called Prospera,</a> tries to tackle inter-generational poverty by giving direct cash transfers to mothers, or other female heads of a household, so that they have sufficient resources to support themselves and to send their children to school. Mexico also implemented a series of administrative measures to make it extremely difficult for a primary school student to fail a course. As a result, it is not surprising that Mexico’s primary completion score is 100% – it is the benchmark setter at its per-capita income level.",
         "Mexico’s score on the combined school enrolment (primary to university level) is 78%. This is one area where Mexico needs to do much better. However, Mexico’s greatest challenge is revealed by looking at the components of the high-income OECD assessment standard. As well as using the combined school enrolment rate, this assessment standard also uses an indicator of school quality – student performance on the International Student Assessment (PISA) tests in science and maths. On the PISA indicator we find that Mexico is only achieving 49% of the benchmark score, telling us that the quality of education in Mexico is significantly below the standard being achieved by other countries with a similar income level."
       ],
-      "subtitle_2": "Right to Education",
+      "subtitle_2": "Droit à l’éducation",
       "radar_1": {
         "title": "Core assessment standard"
       },
@@ -220,7 +220,7 @@
         "Now turning to a comparison of Mexico’s right to education scores with other countries in the Americas, please see the chart below."
       ],
       "chart_3": {
-        "title": "Right to education",
+        "title": "Droit à l’éducation",
         "subtitle": "Mexico compared to rest of the Americas"
       },
       "paragraph_8": [
@@ -233,11 +233,11 @@
     }
   },
   "header_text": {
-    "by_geography": "Human rights performance in"
+    "by_geography": "Respect des droits humains:"
   },
   "footer_text": {
-    "rights_page_esr": "Higher scores indicate greater fulfilment of country obligations for this human right.",
-    "rights_page_cpr": "Higher scores indicate greater respect for this human right.",
+    "rights_page_esr": "FR: Higher scores indicate greater fulfilment of country obligations for this human right.",
+    "rights_page_cpr": "FR: Higher scores indicate greater respect for this human right.",
     "by_geography": "Chaque axe représente un droit. Plus le score est loin dans l’axe, plus la performance du pays dans le domaine de ce droit est élevée.",
     "source": "Source : données 2018 de l’Initiative pour la Mesure des Droits Humains (HRMI),"
   },
@@ -494,8 +494,8 @@
     "CHN": "Chine",
     "COL": "Colombie",
     "COM": "Comores",
-    "COD": "Congo, République démocratique du",
-    "COG": "Congo, République du",
+    "COD": "Congo, Rép dém",
+    "COG": "Congo, Rép",
     "CRI": "Costa Rica",
     "CIV": "Côte d'Ivoire",
     "HRV": "Croatie",
@@ -557,7 +557,7 @@
     "KSV": "Kosovo",
     "KWT": "Koweït",
     "KGZ": "République kirghize",
-    "LAO": "République démocratique populaire lao",
+    "LAO": "Laos",
     "LVA": "Lettonie",
     "LBN": "Liban",
     "LSO": "Lesotho",
@@ -567,7 +567,7 @@
     "LTU": "Lituanie",
     "LUX": "Luxembourg",
     "MAC": "Macao RAS, Chine",
-    "MKD": "Macédoine, ex-République yougoslave de",
+    "MKD": "Macédoine",
     "MDG": "Madagascar",
     "MWI": "Malawi",
     "MYS": "Malaisie",
@@ -578,7 +578,7 @@
     "MRT": "Mauritanie",
     "MUS": "Maurice",
     "MEX": "Mexique",
-    "FSM": "Micronésie, États fédérés de",
+    "FSM": "Micronésie",
     "MDA": "Moldova",
     "MCO": "Monaco",
     "MNG": "Mongolie",
