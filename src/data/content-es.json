@@ -1,5 +1,5 @@
 {
-  "alert": "Please use a device with a <span>larger screen</span><br />to access the website",
+  "alert": "Please use a device with a <span>larger screen</span><br />to access the data website",
   "region_name": {
     "high-income-oecd": "Países con ingresos altos de la OCDE",
     "europe-central-asia": "Europa Central y Oriental y Asia Central",
@@ -66,7 +66,7 @@
   "esr_chart_subtitle": "Percentage level of human right enjoyment achieved, relative to what should be feasible",
   "legend": {
     "esr_barchart": ["Calificación estándar principal de evaluación", "Calificación de evaluación de país de ingresos altos de la OCDE"],
-    "cpr_barchart": ["Mean score", "percentile"]
+    "cpr_barchart": ["Calificación promedio", "percentil"]
   },
   "menu": {
     "about": {
@@ -144,7 +144,7 @@
         "Por favor, dale el crédito a la Iniciativa de Medición de Derechos Humanos e incluye un enlace a nuestro sitio web"
       ],
       "link": "(https://humanrightsmeasurement.org/)",
-      "button": "AGREE"
+      "button": "DE ACUERDO"
     }
   },
   "section": {
@@ -158,33 +158,33 @@
     }
   },
   "story_mexico": {
-    "title": "Respect for human rights in Mexico is far worse than it should be",
-    "chart_title": "A summary picture of Mexico's human rights performance",
+    "title": "Nuevos datos sobre el desempeño de México en derechos humanos evidencian graves problemas",
+    "chart_title": "Desempeño de los derechos humanos: Mexico",
     "country_code": "MEXICO",
     "sections": {
       "paragraph_1": [
-        "<strong>Media stories of disappearances, arbitrary and illegal arrests, and extrajudicial killings are now so commonplace in Mexico that they can start to <a href=\"https://www.amnesty.org/en/countries/americas/mexico/report-mexico/\">seem normal</a>. But the Human Rights Measurement Initiative’s (HRMI) new data measuring respect for civil and political rights in Mexico highlights that this situation is not normal at all.</strong>",
-        "<strong>Indeed, Mexicans know this is far from what they deserve, and protest loudly. For example, there were huge protests when <a href=\"\">43 students from a teacher training college were forcibly disappeared</a> at the hands of police and organised crime in September 2014, and again when leading <a href=\"\">investigative journalist Javier Valdez was killed</a> in broad daylight in May 2017. And these are just a couple of the most prominent cases of serious human rights violations that have occurred in Mexico. In 2017 alone, 12 journalists and media workers were killed and more than 34,000 people remain registered as missing.</strong>"
+        "<strong>Las noticias sobre desapariciones, detenciones arbitrarias e ilegales, y ejecuciones extrajudiciales son tan comunes en México que pueden empezar a <a href=\"https://www.amnesty.org/es/countries/americas/mexico/report-mexico/\">parecer normales</a>. Pero los nuevos datos de la Iniciativa de Medición de los Derechos Humanos (HRMI) que miden el respeto a los derechos civiles y políticos en México ponen de manifiesto que esta situación no es normal en absoluto.</strong>",
+        "<strong>De hecho, los mexicanos saben que la situación no es lo que merecen, y protestan enérgicamente. Por ejemplo, hubo grandes protestas cuando <a href=\"https://www.wola.org/es/analisis/analisis-e-informacion-sobre-el-caso-de-ayotzinapa-en-mexico/\">43 estudiantes de Ayotzinapa (una escuela de formación de profesores) fueron sujetos a desaparición forzada </a> a manos de la policía y del crimen organizado en septiembre de 2014; y de nuevo cuando el destacado <a href=\"http://www.oas.org/es/cidh/expresion/showarticle.asp?artID=1066&lID=2\">periodista de investigación Javier Valdez fue asesinado</a> a plena luz del día en mayo de 2017. Estos son sólo un par de los casos más conocidos de graves violaciones de derechos humanos que se han producido en México. Sólo en 2017, doce periodistas y trabajadores de los medios de comunicación fueron asesinados y más de 34,000 personas siguieron con paradero desconocido.</strong>"
       ],
       "image_1": {
-        "legend": "Relatives of the 43 students of Ayotzinapa School gather to hear the findings of the international experts who investigated the case (April 2016).",
-        "source": "Photo credit: Amnesty International / Sergio Ortiz Borbolla"
+        "legend": "Familiares de los 43 estudiantes de la Escuela Normal de Ayotzinapa se reúnen para escuchar los hallazgos de los expertos internacionales que investigaron el caso (abril 2016).",
+        "source": "Foto: Amnistía Internacional / Sergio Ortiz Borbolla"
       },
       "paragraph_2": [
-        "The chart to the left summarises Mexico’s performance across 12 human rights. In this chart, each axis represents a right. The further from the centre of the circle the country’s score is, the better the performance of the country on that human right. Scores for the seven civil and political human rights are shown around the bottom half of the chart (each in a different shade of blue) and scores for the five economic and social human rights are shown around the top part of the chart (each in a different shade of green). The unbalanced shape of the chart tells us that Mexico is performing much better on economic and social rights than it is on civil and political rights.",
-        "Let’s dig into this in more detail starting with the area of worse performance – civil and political rights. Since there are no objective statistics on most of these rights, we surveyed human rights experts in Mexico and calculated scores based on their responses.<br/>The chart below explores in more detail one area where Mexico performs particularly badly – the right to freedom from disappearance. Mexico’s performance on this human right is compared with that of the 12 other countries in our pilot sample for measuring civil and political rights. (Normally, we would not compare 13 such different countries, and in future iterations, we hope to only present scores for Mexico in comparison with other Latin American countries, as well as Mexico’s past scores. But for the pilot, we only have civil and political rights scores for these 13 countries, and as such, we can only focus on them.) You can see that Mexico’s disappearance score is substantially worse than the score for Brazil (the only other Latin American country in the sample). It is also on par with Saudi Arabia’s score, as shown by the overlap of the blue bars of these two countries."
+        "La gráfica a la izquierda resume el desempeño de México en doce derechos humanos. En esta gráfica, cada eje representa un derecho. Cuanto más lejos del centro del círculo se encuentra la puntuación del país, mejor es el desempeño del país en ese derecho humano. Las puntuaciones de los siete derechos civiles y políticos se muestran alrededor de la mitad inferior de la gráfica (cada uno en un tono de azul diferente) y las puntuaciones de los cinco derechos humanos económicos y sociales se muestran alrededor de la parte superior de la gráfica (cada uno en un tono de verde diferente). La forma desequilibrada de la imagen nos dice que México se está desempeñando mucho mejor en los derechos económicos y sociales que en los derechos civiles y políticos.",
+        "Examinemos esto con más detalle empezando por el área de peor desempeño: los derechos civiles y políticos. Debido a que no existen estadísticas objetivas sobre la mayoría de estos derechos, se realizó una encuesta a expertos en derechos humanos en México y se calcularon las puntuaciones con base en sus respuestas.<br/>La siguiente gráfica explora con más detalle el derecho a no ser sujeto a una desaparición, que es un aspecto en el que México se desempeña particularmente mal. El desempeño de México en este derecho humano se compara con el de los otros 12 países en nuestra muestra piloto para medir los derechos civiles y políticos. Normalmente, no compararíamos 13 países tan diferentes, y en futuras iteraciones, esperamos presentar sólo puntuaciones para México en comparación con otros países latinoamericanos, así como las puntuaciones pasadas de México. Pero en el caso del piloto, sólo tenemos puntajes de derechos civiles y políticos para estos 13 países, y como tal, sólo podemos centrarnos en ellos. Se puede ver que el puntaje de México en desapariciones es sustancialmente peor que el puntaje de Brasil (el único otro país latinoamericano en la muestra). También está a la par con la puntuación de Arabia Saudita, como lo demuestra la superposición de las barras azules de estos dos países."
       ],
       "chart_1": {
-        "title": "Right to freedom from disappearance",
-        "subtitle": "scores for all 13 countries in HRMI pilot sample"
+        "title": "Derecho a vivir libre de desaparición",
+        "subtitle": "puntuaciones para los 13 países en la muestra piloto"
       },
       "paragraph_3": [
-        "This finding is not surprising given that Mexico has experienced a rise in disappearances, perpetrated by both state and non-state actors (as defined by the UN International Convention for the Protection of All Persons from Enforced Disappearance), especially since 2009 when the federal government launched its militarised strategy against drug cartels. Making a person “disappear” has become a common technique for both government authorities and members of organised crime, who often act together (e.g. as documented in the <a href=\"\">Zetas Piedras Negras prison case</a>). The Mexican government has an incomplete register of people who have been subjected to disappearance or who went missing for another reason. According to that <a href=\"\">official source</a>, there were 34,674 missing people in the country as of November 2017.",
-        "By contrast, Mexico’s best score in the area of civil and political rights is for the right to participate in government (mean score 6.1 out of 10). On this human right, Mexico is closer to the middle of the pack when compared to the other 12 countries in the pilot study.<br/>To illustrate this, consider the chart below, which compares scores for the right to participate in government across countries in our civil and political rights pilot study. For this human right Mexico’s score is not substantively different from Brazil’s score. We know this by looking at the substantial overlap of the “bars” for the two countries (i.e. Mexico’s average score is above the 10th percentile of Brazil’s score). The scores shown also suggest that Mexico’s respect for this right is better than in Saudi Arabia, Kazakhstan, and Angola."
+        "Este hallazgo no es sorprendente dado que México ha experimentado un aumento en las desapariciones tanto por parte de actores estatales como no estatales (según la definición de la Convención Internacional para la Protección de Todas las Personas contra las Desapariciones Forzadas, de la ONU). Especialmente desde 2009, a raíz de que el gobierno federal lanzara su estrategia militarizada contra los cárteles de la droga. Hacer que una persona 'desaparezca' se ha convertido en una técnica común tanto para las autoridades como para los miembros del crimen organizado, quienes a menudo actúan juntos (por ejemplo, como se documenta en el caso de la <a href=\"https://es.insightcrime.org/noticias/noticias-del-dia/los-zetas-convirtieron-prision-mexico-fosa-comun/\">prisión de Piedras Negras controlada por Zetas</a>). El gobierno mexicano tiene un registro incompleto de personas que han sido sometidas a desaparición o que han desaparecido por alguna otra razón; pero según esa <a href=\"http://secretariadoejecutivo.gob.mx/rnped/consulta-publica.php\">fuente oficial</a>, en noviembre de 2017 había 34,674 personas desaparecidas en el país.",
+        "En cambio, la mejor puntuación de México en el área de los derechos civiles y políticos corresponde al derecho a participar en el gobierno (puntuación media 6.1 sobre 10). En este derecho humano, México está más cerca del centro del grupo en comparación con los otros 12 países en el estudio piloto.<br/>Para ilustrar esto, consideremos la siguiente gráfica, que compara las puntuaciones para el derecho a participar en el gobierno en todos los países en nuestro estudio piloto sobre derechos civiles y políticos. Para este derecho humano, el puntaje de México no es sustancialmente diferente al de Brasil. Esto lo sabemos al observar la superposición sustancial de las 'barras' para los dos países (es decir, la puntuación promedio de México está por encima del décimo percentil de la puntuación de Brasil). Las puntuaciones mostradas también sugieren que el respeto de México por este derecho es mejor que en Arabia Saudita, Kazajstán y Angola."
       ],
       "chart_2": {
-        "title": "Right to participate in government",
-        "subtitle": "scores for all 13 countries in HRMI pilot sample"
+        "title": "Derecho a participar en el Gobierno",
+        "subtitle": "puntuaciones para los 13 países en la muestra piloto"
       },
       "paragraph_4": [
         "Mexico’s ‘not so bad’ score for the right to participate in government is consistent with the fact that Mexico has a somewhat free and fair electoral system. It has periodic elections regulated by clear rules, and electoral processes that are not usually violent, although they tend to entail distrust in a large part of the population. Survey respondents did, however, highlight regulations and practices that have a disproportionately negative impact on indigenous people, people of low economic and social status, less educated people, immigrants, and people in some regions of the country. If you visit this chart on our data visualisation website, you can see more information about this by clicking on the Mexico bar of the chart.",
@@ -192,21 +192,20 @@
         "The radar chart to the left evaluates Mexico’s performance using our core country assessment standard, which is the default standard set for Mexico since it is not a high-income country. Mexico’s scores across the five economic and social rights range from 82% to 89%. That means that Mexico is ensuring between 82% and 89% of the level of enjoyment that is possible for that right, given Mexico’s available resources. On the core standard, Mexico scores best on the rights to education and health. Mexico’s performance on ensuring economic and social rights for its people is clearly better than its performance on ensuring civil and political rights, but there is still substantial room for improvement even using our core assessment standard.",
         "Although Mexico is not yet a high-income country, it is rapidly approaching this status, so it is interesting to also assess its performance using the high-income OECD country standard. The radar chart below does this. Here we see a much wider range in performance scores."
       ],
-      "subtitle_1": "Mexico – High-income OECD assessment standard",
+      "subtitle_1": "México – Estándar de evaluación para países de renta alta de la OCDE",
       "paragraph_5": [
-        "To dig into this in more detail, let’s take a closer look at how Mexico’s performance on the right to education has changed over time and try to identify those areas where Mexico faces the greatest challenges. The two graphs below show Mexico’s performance over the past decade using the two different assessment standards.",
-        "[note that these charts are indicative only, and don’t show the actual data.]"
-      ],
+        "To dig into this in more detail, let’s take a closer look at how Mexico’s performance on the right to education has changed over time and try to identify those areas where Mexico faces the greatest challenges. The two graphs below show Mexico’s performance over the past decade using the two different assessment standards."
+        ],
       "timeline_1": {
         "title": "Mexico’s decadal performance on the right to education: Core assessment standard"
       },
       "timeline_2": {
-        "title": "Mexico’s decadal performance on the right to education: High-income OECD country assessment standard"
+        "title": "Rendimiento de México en un decenio para el derecho a la educación"
       },
       "paragraph_6": [
         "As you can see, Mexico’s scores on the right to education have increased over the decade from 84% to 89% using the core assessment standard and from 58% to 63% using the high-income OECD assessment standard. Since Mexico’s per-capita income level increased over this time – and hence so too did Mexico’s obligation level – these results imply that enjoyment of the right to education increased more rapidly than per-capita income. In other words, Mexico became more proficient at translating its resources into enjoyment of this particular right.",
         "But why is there such a large difference between Mexico’s scores when using the two standards? The core assessment standard considers two indicators: primary school completion rate, and gross combined school enrolment rate. Mexico recognised the right to free and compulsory primary education in 1917 when it adopted the Constitution after the Mexican Revolution, and the country has achieved greater implementation of this policy in recent decades.",
-        "Additionally, to offset the costs of sending children to school, in 1988 Mexico began implementing a program that paid certain families to send their children to school. <a href=\"\">This programme, now called Prospera,</a> tries to tackle inter-generational poverty by giving direct cash transfers to mothers, or other female heads of a household, so that they have sufficient resources to support themselves and to send their children to school. Mexico also implemented a series of administrative measures to make it extremely difficult for a primary school student to fail a course. As a result, it is not surprising that Mexico’s primary completion score is 100% – it is the benchmark setter at its per-capita income level.",
+        "Adicionalmente, para compensar los costos de enviar a las niñas y niños a la escuela, en 1988 México comenzó a implementar un programa que pagaba a ciertas familias un monto si enviaban a sus hijos a la escuela. Este programa, que ahora se llama <a href=\"http://www.bancomundial.org/es/news/feature/2014/11/19/un-modelo-de-mexico-para-el-mundo\">Prospera,</a> trata de abordar la pobreza intergeneracional mediante transferencias directas de dinero a las madres u otras mujeres jefas de familia, para que dispongan de recursos suficientes para mantenerse y enviar a sus hijos a la escuela. México también implementó una serie de medidas administrativas para hacer extremadamente difícil que un estudiante de primaria repruebe un curso. Como resultado, no es sorprendente que el puntaje de terminación primaria de México sea del 100% - es el punto de referencia en su nivel de ingreso per cápita.",
         "Mexico’s score on the combined school enrolment (primary to university level) is 78%. This is one area where Mexico needs to do much better. However, Mexico’s greatest challenge is revealed by looking at the components of the high-income OECD assessment standard. As well as using the combined school enrolment rate, this assessment standard also uses an indicator of school quality – student performance on the International Student Assessment (PISA) tests in science and maths. On the PISA indicator we find that Mexico is only achieving 49% of the benchmark score, telling us that the quality of education in Mexico is significantly below the standard being achieved by other countries with a similar income level."
       ],
       "subtitle_2": "Right to Education",
@@ -233,11 +232,11 @@
     }
   },
   "header_text": {
-    "by_geography": "Human rights performance in"
+    "by_geography": "Desempeño de los derechos humanos"
   },
   "footer_text": {
-    "rights_page_esr": "Higher scores indicate greater fulfilment of country obligations for this human right.",
-    "rights_page_cpr": "Higher scores indicate greater respect for this human right.",
+    "rights_page_esr": "ESP translation of: Higher scores indicate greater fulfilment of country obligations for this human right.",
+    "rights_page_cpr": "ESP translation of: Higher scores indicate greater respect for this human right.",
     "by_geography": "Cada eje representa un derecho. Cuanto más lejos llegue la calificación en cada eje, mejor es el desempeño del país en ese derecho.",
     "source": "Fuente: conjunto de datos de la Iniciativa de Medición de Derechos Humanos (HRMI) de 2018,"
   },
@@ -535,7 +534,7 @@
     "GUY": "Guyana",
     "HTI": "Haití",
     "HND": "Honduras",
-    "HKG": "Hong Kong, Región Administrativa Especial",
+    "HKG": "Hong Kong RAE, China",
     "HUN": "Hungría",
     "ISL": "Islandia",
     "IND": "India",
@@ -557,7 +556,7 @@
     "KSV": "Kosovo",
     "KWT": "Kuwait",
     "KGZ": "Kirguistán",
-    "LAO": "República Democrática Popular Lao",
+    "LAO": "Laos",
     "LVA": "Letonia",
     "LBN": "Líbano",
     "LSO": "Lesotho",
@@ -567,7 +566,7 @@
     "LTU": "Lituania",
     "LUX": "Luxemburgo",
     "MAC": "Macao RAE, China",
-    "MKD": "Ex República Yugoslava de Macedonia",
+    "MKD": "Macedonia",
     "MDG": "Madagascar",
     "MWI": "Malawi",
     "MYS": "Malasia",
@@ -578,7 +577,7 @@
     "MRT": "Mauritania",
     "MUS": "Mauricio",
     "MEX": "México",
-    "FSM": "Micronesia (Estados Federados de)",
+    "FSM": "Micronesia",
     "MDA": "República de Moldova",
     "MCO": "Mónaco",
     "MNG": "Mongolia",
