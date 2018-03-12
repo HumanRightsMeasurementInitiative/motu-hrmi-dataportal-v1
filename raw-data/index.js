@@ -35,7 +35,7 @@ function readSheet(fileName, sheetIndex = 0) {
 function sheetRows(sheet, columns = 'AZ', startFromRow = 0) {
   const [colStart, rowStart, colEnd, rowEnd] = sheet['!ref'].match(/([A-Z]+)(\d+):([A-Z]+)(\d+)/).slice(1)
 
-  console.assert(colStart === columns[0] && colEnd === columns[1], `Warning! The number of columns has changed from the master format.`)
+    // console.assert(colStart === columns[0] && colEnd === columns[1], `Warning! The number of columns has changed from the master format.`)
 
   const rows = _.range(parseInt(rowStart) + startFromRow, parseInt(rowEnd)).map((rowN) => {
     const row = {}
@@ -108,8 +108,28 @@ function ESRHighIncome() {
       return { ...countryData, ...current, historical }
     })
     .object(rows)
-
+    //console.log('giusto', countries)
   return countries
+}
+
+function getPopulation() {
+  const rows = sheetRows(readSheet('population_data.xlsx'), 'AD', 0).map(row => {
+    const datum = {
+      countryName: row.A,
+      countryCode: row.B,
+      population: row.D,
+    }
+    return datum
+  })
+    const nat = rows.map(datum => { 
+        return ({ datum.countryCode: datum}) 
+    })
+
+  const ll = Object.assign( {}, nat )
+
+const countries = d3.nest().key(d => d.countryCode).object(rows)
+    console.log(ll)
+  return ll
 }
 
 function ESRCore() {
@@ -275,10 +295,12 @@ function CPRRangeAtRisk() {
 }
 
 function calculate() {
+  console.log('Inside calculate function')
   const esrHI = ESRHighIncome()
   const esrCore = ESRCore()
   const cpr = CPR()
   const cprRangeAtRisk = CPRRangeAtRisk()
+  const population = getPopulation()
 
   const countryCodesList = Object.keys(esrHI)
 
@@ -289,6 +311,7 @@ function calculate() {
     const countryEsrCore = esrCore[countryCode]
     const countryCpr = cpr[countryCode] || { rights: null }
     const countryCprRangeAtRisk = cprRangeAtRisk[countryCode]
+    const populationData = population[countryCode]
 
     const countryInfo = _.pick(countryEsrHI, [
       'countryCode',
@@ -296,6 +319,7 @@ function calculate() {
       // 'GDP',
       // 'SERF',
     ])
+
     const rights = {
       esrHI: countryEsrHI.rights,
       esrHIHistorical: countryEsrHI.historical,
@@ -303,6 +327,7 @@ function calculate() {
       esrCoreHistorical: countryEsrCore.historical,
       cpr: countryCpr.rights,
       cprRangeAtRisk: countryCprRangeAtRisk || null,
+      populationN: populationData,
     }
 
     const countryCatalog = _.pick(countryEsrHI, [
