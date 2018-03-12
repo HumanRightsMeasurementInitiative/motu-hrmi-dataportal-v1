@@ -1,3 +1,8 @@
+.sortBy {
+  position: absolute;
+  left:28px;
+}
+
 .rightsPage {
   display: flex;
   flex-direction: column;
@@ -402,9 +407,7 @@
   align-items: center;
   align-content: flex-start;
   height: 50px;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  min-width:800px;
 }
 .esrLegend {
   margin-left: 30px;
