@@ -23,7 +23,7 @@ export default class CountryName extends React.Component {
       <text
         textAnchor='end'
         fontSize='11px'
-        fontWeight={isActive ? 800 : 400}
+        fontWeight={800}
         fill={currCountry === country || !currCountry ? '#212121' : '#616161'}
         onClick={this.onClick}
         className={jcn({ clickable: onItemClick !== undefined }, styles)}
