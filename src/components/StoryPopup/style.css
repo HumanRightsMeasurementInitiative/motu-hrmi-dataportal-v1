@@ -193,32 +193,21 @@
 .esrSubTitle {
   color: #20c273;
 }
-.radarWrapper > div {
-  float: left;
-}
-.radarWrapper:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-.radarCol {
-  display: inline-block;
-  vertical-align: top;
-  padding: 20px;
-  width: 50%;
-  text-align: center;
+
+
+    
+.radarWrapper {
+    display: flex;
+    flex-direction:column;
+    align-content:center;
+    align-items:center;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 .radarCountryName {
   font-size: 16px;
   font-weight: 600;
   margin: 10px;
-}
-.fakeRadar {
-  width: 230px;
-  height: 230px;
-  margin: 10px auto;
-  background: #f3f3f3;
-  border-radius: 50%;
 }
 
 .links {
