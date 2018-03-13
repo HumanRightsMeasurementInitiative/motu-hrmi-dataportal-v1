@@ -8,7 +8,7 @@ import CountryRightsChart from 'components/CountryRightsChart'
 import lineChart from '../../img/line-chart.png'
 import { segsToUrl } from '../utils'
 import rightsByCountry from 'data/rights-by-country.json'
-
+import ESRTimeline from '../ESRTimeline'
 import storyImage from '../../img/story_mex.png'
 
 const AMERICAS = 'americas'
@@ -62,6 +62,9 @@ export default class StoryPopup extends React.Component {
     this.props.urlPush(segsToUrl({ ...this.props.urlSegs, exploreBy: 'Rights', 'region': region, right: right }))
   }
 
+  setCurrYear = (year) => {
+    this.setState({ currYear: year })
+  }
   render() {
     const { data, content } = this.props
     const story = content.story_mexico
@@ -183,7 +186,16 @@ export default class StoryPopup extends React.Component {
                 {story.sections.paragraph_5.map(makeHTMLParagraph)}
               </section>
               <section>
-
+                <ESRTimeline
+                  data={data.rightsByRegion[PILOT].countries.slice().sort((a, b) => getRightValue(a) - getRightValue(b))}
+                  chartHeight={338}
+                  chartWidth={this.state.barchartWidth}
+                  currYear={2015}
+                  currRight={'participate-in-government'}
+                  currCountry={MEXICO}
+                  hoveredCountry={'mexico'}
+                  onItemClick={this.setCurrYear}
+                />
               </section>
               <section>
                 {story.sections.paragraph_6.map(makeHTMLParagraph)}
