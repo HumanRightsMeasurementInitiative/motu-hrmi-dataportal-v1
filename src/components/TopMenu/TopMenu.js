@@ -14,7 +14,6 @@ export default class TopMenu extends React.Component {
     const { isStoryOpen, content } = this.props
     const joinClassName = jcn({
       wrapper: true,
-      isBlur: isStoryOpen,
     }, styles)
     return (
       <div className={joinClassName}>

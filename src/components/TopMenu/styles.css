@@ -6,9 +6,7 @@
   height: 60px;
   border-bottom: 1px solid #9b9b9d;
 }
-.isBlur {
-  filter: blur(2px);
-}
+
 .logo {
   display: inline-block;
   padding: 28px 0 0 32px;
