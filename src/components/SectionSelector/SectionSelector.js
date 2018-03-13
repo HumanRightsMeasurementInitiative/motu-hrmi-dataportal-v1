@@ -28,9 +28,6 @@ export default class SectionSelector extends React.Component {
 
     return (
       <div className={styles.secSelector}>
-        { title &&
-          <div className={styles.title}>{title}</div>
-        }
         <div className={styles.btnContainer}>
           <SectionBtn onItemClick={this.changeUrl} exploreBy='Rights' isSelected={urlSegs.exploreBy === 'Rights'} isStoryMode={isStoryMode}>{content.section.section_name[0]}</SectionBtn>
           <SectionBtn onItemClick={this.changeUrl} exploreBy='Geography' isSelected={urlSegs.exploreBy === 'Geography'} isStoryMode={isStoryMode}>{content.section.section_name[1]}</SectionBtn>

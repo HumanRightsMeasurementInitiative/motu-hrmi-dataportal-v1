@@ -11,7 +11,7 @@ export default class Landing extends React.Component {
     content: PropTypes.object.isRequired,
   }
 
-  componentWillMount() {
+  openStory = () => {
     this.props.openStoryMode()
   }
 
@@ -19,11 +19,36 @@ export default class Landing extends React.Component {
     const { isStoryOpen, content } = this.props
     return (
       <div className={styles.landing}>
-        <div className={styles.pageSelector}><SectionSelector title={content.section.title} /></div>
+        <Title/>
+        <SectionSelector />
+        <ProfileStorySelector openPopup={this.openStory}/>
         { isStoryOpen &&
           <StoryPopup />
         }
       </div>
     )
   }
+}
+
+const Title = () => {
+  return (
+    <div className={styles.titleWrapper}>
+      <h1 className={styles.title}>Welcome to the Human Right<br/>Measurement Initiative's data website</h1>
+      <h3 className={styles.subTitle}>(beta-version for now)</h3>
+    </div>
+  )
+}
+
+const ProfileStorySelector = ({ openPopup }) => {
+  return (
+    <div className={styles.profileStoryWrapper}>
+      <div className={styles.paragraphsWrapper}>
+        <p>View an example of HRMI data</p>
+        <p>being used in a profile story for</p>
+      </div>
+      <a className={styles.countryUnderlined} onClick={openPopup}>Mexico</a>
+      {` or `}
+      <a className={styles.countryUnderlined} href="australia_story_en.pdf" target="_blank">Australia</a>
+    </div>
+  )
 }
