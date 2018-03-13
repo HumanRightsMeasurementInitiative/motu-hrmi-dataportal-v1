@@ -173,34 +173,20 @@ export default class StoryPopup extends React.Component {
                 {story.sections.paragraph_4.map(makeHTMLParagraph)}
               </section>
               <section>
-                <div className={styles.esrCaption}>{story.sections.subtitle_1}</div>
+              </section>
+
+              <section className={styles.radarWrapper}>
+                <div className={styles.esrCaption} style={{ marginBottom: '10px' }}>{story.sections.subtitle_1}</div>
+                <CountryRightsChart size={250} rights={MEXICO.rights} esrStandard="esrHI"/>
               </section>
               <section>
                 {story.sections.paragraph_5.map(makeHTMLParagraph)}
               </section>
               <section>
-                <div className={styles.esrSubTitle}>{story.sections.timeline_1.title}</div>
-                <div className={styles.lineChart}><img src={lineChart} alt="lineChart" style={{ width: '100%' }} /></div>
-              </section>
-              <section>
-                <div className={styles.esrSubTitle}>{story.sections.timeline_2.title}</div>
-                <div className={styles.lineChart}><img src={lineChart} alt="lineChart" style={{ width: '100%' }} /></div>
+
               </section>
               <section>
                 {story.sections.paragraph_6.map(makeHTMLParagraph)}
-              </section>
-              <section>
-                <div className={styles.esrCaption}>{story.sections.subtitle_2}</div>
-                <div className={styles.radarWrapper}>
-                  <div className={styles.radarCol}>
-                    <CountryRightsChart size={250} rights={MEXICO.rights} esrStandard="esrCore" currRight="education" />
-                    <div className={styles.radarCountryName}>{story.sections.radar_1.title}</div>
-                  </div>
-                  <div className={styles.radarCol}>
-                    <CountryRightsChart size={250} rights={MEXICO.rights} esrStandard="esrHI" currRight="education" />
-                    <div className={styles.radarCountryName}>{story.sections.radar_2.title}</div>
-                  </div>
-                </div>
               </section>
               <section>
                 {story.sections.paragraph_7.map(makeHTMLParagraph)}
