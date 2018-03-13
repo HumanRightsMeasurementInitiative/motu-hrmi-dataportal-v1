@@ -108,7 +108,6 @@ function ESRHighIncome() {
       return { ...countryData, ...current, historical }
     })
     .object(rows)
-    //console.log('giusto', countries)
   return countries
 }
 
@@ -121,15 +120,14 @@ function getPopulation() {
     }
     return datum
   })
-    const nat = rows.map(datum => { 
-        return ({ datum.countryCode: datum}) 
-    })
 
-  const ll = Object.assign( {}, nat )
+  const countriesPopulation = d3.nest().key(d => d.countryCode).rollup((v) => {
+    return {
+      population: v[0].population,
+    }
+  }).object(rows)
 
-const countries = d3.nest().key(d => d.countryCode).object(rows)
-    console.log(ll)
-  return ll
+  return countriesPopulation
 }
 
 function ESRCore() {
@@ -300,7 +298,7 @@ function calculate() {
   const esrCore = ESRCore()
   const cpr = CPR()
   const cprRangeAtRisk = CPRRangeAtRisk()
-  const population = getPopulation()
+  const populationData = getPopulation()
 
   const countryCodesList = Object.keys(esrHI)
 
@@ -311,7 +309,8 @@ function calculate() {
     const countryEsrCore = esrCore[countryCode]
     const countryCpr = cpr[countryCode] || { rights: null }
     const countryCprRangeAtRisk = cprRangeAtRisk[countryCode]
-    const populationData = population[countryCode]
+
+    const population = populationData[countryCode] !== undefined ? populationData[countryCode].population : null
 
     const countryInfo = _.pick(countryEsrHI, [
       'countryCode',
@@ -327,7 +326,6 @@ function calculate() {
       esrCoreHistorical: countryEsrCore.historical,
       cpr: countryCpr.rights,
       cprRangeAtRisk: countryCprRangeAtRisk || null,
-      populationN: populationData,
     }
 
     const countryCatalog = _.pick(countryEsrHI, [
@@ -340,7 +338,7 @@ function calculate() {
     countryCatalog.hasCPR = countryCpr.rights !== null
     catalogCountries.push(countryCatalog)
 
-    return { ...countryInfo, rights }
+    return { ...countryInfo, population, rights }
   })
 
   const joinedCountriesByCountry = _.keyBy(joinedCountries, 'countryCode')
