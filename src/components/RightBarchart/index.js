@@ -63,14 +63,14 @@ export default class RightBarchart extends React.Component {
     const yScale = d3.scaleLinear().domain([0, 10 * yAxisRate]).range([0, chartHeight - margin.top - margin.bottom])
 
     return (
-      <div>
+      <div style={{ marginTop: '10px' }}>
         <ReactTooltip id="country-name-tooltip" place="bottom" effect="solid" offset={{ right: 20 }} />
         <ReactTooltip id="bar-chart-tooltip" place="bottom" effect="solid" offset={{ right: 8, bottom: 270 }}/>
 
         <svg height={chartHeight} width={chartWidth}>
           <g transform={'translate(' + margin.left + ',' + margin.top + ')'}>
             { !isESR &&
-              <g transform='rotate(-90)'><text dx={ (margin.left - chartHeight) / 2} dy='-14' fill='#616161' textAnchor='center'fontSize="12px">{score}</text></g>
+              <g transform='rotate(-90)'><text dx={ (margin.left - chartHeight) / 2} dy='-14' fill='#616161' textAnchor='center'fontSize="14px">{score}</text></g>
             }
             <g onClick={this.onBackgroundClick}>
               <rect height={chartHeight} width={chartWidth - margin.left - margin.right} y={-margin.top} opacity='0'></rect>
@@ -94,7 +94,7 @@ export default class RightBarchart extends React.Component {
                   return (
                     <g key={i} transform={'translate(0,' + yScale(i * yAxisRate) + ')'}>
                       { item % 2 === 0 &&
-                        <text dy='-2px' fontSize='10px' fill='#616161'>
+                        <text dy='-2px' fontSize='14px' fill='#616161'>
                           {isESR ? item * 10 + ' %' : item}
                         </text>
                       }

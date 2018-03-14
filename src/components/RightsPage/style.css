@@ -1,3 +1,8 @@
+.sortBy {
+  position: absolute;
+  left:28px;
+}
+
 .rightsPage {
   display: flex;
   flex-direction: column;
@@ -60,7 +65,7 @@
   background: #25a9e0;
   color: #fff;
 }
-.regionSelector.show .regionDropdown{
+.regionSelector.show .regionDropdown {
   display: block;
 }
 
@@ -80,11 +85,11 @@
 }
 .rightsWrapper:before {
   top: 0;
-  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, .2));
+  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.2));
 }
 .rightsWrapper:after {
   bottom: 0;
-  background: linear-gradient(0deg, #fff 20%, rgba(255, 255, 255, .01));
+  background: linear-gradient(0deg, #fff 20%, rgba(255, 255, 255, 0.01));
 }
 .rightList {
   flex: 1;
@@ -113,7 +118,7 @@
   font-size: 18px;
   font-weight: 600;
   color: #616161;
-  letter-spacing: .025em;
+  letter-spacing: 0.025em;
 }
 .CPRTitle {
   margin-top: 20px;
@@ -139,7 +144,7 @@
 .borderLine,
 .subBorderLine {
   border-bottom: 3px solid transparent;
-  transition: border .2s;
+  transition: border 0.2s;
 }
 .rightItemWrapper.selected .borderLine,
 .rightSubItem.selected .subBorderLine {
@@ -168,11 +173,6 @@
 .chartSubtitle {
   min-height: 20px;
 }
-.sortBy {
-  margin-top: 4px;
-  position: absolute;
-  top:  100%;
-}
 .chartsContainer {
   flex: 1 1 auto;
   overflow: hidden;
@@ -185,7 +185,7 @@
   font-size: 12px;
 }
 .chartsFooter .small {
-  font-size: .9em;
+  font-size: 0.9em;
   color: #9a9a9a;
 }
 .downloadPopupWrapper {
@@ -215,7 +215,7 @@
   left: 0;
   bottom: 0;
   z-index: 4000;
-  background: rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, 0.2);
   font-size: 14px;
   color: #fff;
 }
@@ -228,7 +228,7 @@
   padding: 16px;
   width: 222px;
   background: #262261;
-  animation: fadeInDown .4s;
+  animation: fadeInDown 0.4s;
 }
 .button {
   margin-top: 10px;
@@ -283,12 +283,12 @@
 .infoContent:before {
   top: 0;
   height: 26px;
-  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, .2));
+  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.2));
 }
 .infoContent:after {
   bottom: 0;
   height: 30px;
-  background: linear-gradient(0deg, #fff 20%, rgba(255, 255, 255, .01));
+  background: linear-gradient(0deg, #fff 20%, rgba(255, 255, 255, 0.01));
 }
 .textWrapper {
   flex: 1 1 auto;
@@ -326,10 +326,10 @@
   padding-left: 0;
 }
 .defList:before {
-  content: ''; 
+  content: '';
   display: block;
   position: absolute;
-  top: .6em;
+  top: 0.6em;
   left: 0;
   height: 3px;
   width: 3px;
@@ -349,7 +349,7 @@
 .withDot:before {
   content: '';
   position: absolute;
-  top: .6em;
+  top: 0.6em;
   left: -14px;
   height: 4px;
   width: 4px;
@@ -399,15 +399,24 @@
     transform: translateY(0);
   }
 }
-
+.esrLegendContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  align-content: flex-start;
+  height: 50px;
+  min-width:800px;
+}
 .esrLegend {
-  position: absolute;
-  right: 30px;
-  bottom: -28px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
 }
 .esrLegend .text {
-  margin-left: 10px;
-  display: inline-block;
   position: relative;
   padding-left: 20px;
 }
@@ -449,7 +458,7 @@
   margin: 0 4px;
   height: 30px;
   width: 8px;
-  background: #2E65A1;
+  background: #2e65a1;
 }
 .cprLegend .bar:after {
   content: '';
@@ -480,18 +489,19 @@
 }
 .maxText sup,
 .minText sup {
-  font-size: .8em;
+  font-size: 0.8em;
 }
 .maxText {
-  top: -.8em;
+  top: -0.8em;
 }
 .minText {
-  bottom: -.3em;
+  bottom: -0.3em;
 }
 .maxText:before,
 .minText:before {
   content: '\2014 ';
-}.maxText:before,
+}
+.maxText:before,
 .minText:before {
   content: '\2014 ';
 }

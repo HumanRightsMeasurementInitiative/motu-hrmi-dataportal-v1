@@ -82,7 +82,7 @@ export default class ESRRightBar extends React.Component {
               yAxisTicks.map((tick, i) => (
                 <g key={i} transform={'translate(0,' + yScale(tick) + ')'}>
                   {tick % 2 === 0 &&
-                    <text dy='-2px' fontSize='10px' fill='#616161'>{tick + ' %'}</text>
+                    <text dy='-2px' fontSize='12px' fill='#616161'>{tick + ' %'}</text>
                   }
                   <line
                     x1='0'
@@ -116,7 +116,7 @@ export default class ESRRightBar extends React.Component {
                 </g>
               }
               { selectedCode === code &&
-                <text dx={xScale(year) + 8} dy={dyValue} fontSize='10' fill='#00b95f'>{code}</text>
+                <text dx={xScale(year) + 8} dy={dyValue} fontSize='12' fill='#00b95f'>{code}</text>
               }
             </g>)
           })}
@@ -143,7 +143,7 @@ class YearItem extends React.Component {
     const { children, isActive, posX } = this.props
     return (
       <g onClick={this.onItemClick} cursor='pointer'>
-        <text x={posX} fontSize='12px' textAnchor='middle'>{children}</text>
+        <text x={posX} fontSize='12px' textAnchor='middle' style={{ fontWeight: 'bold' }}>{children}</text>
         { isActive &&
           <rect height='3' width='24' y='1' x={posX - 12} fill='#616161'></rect>
         }
