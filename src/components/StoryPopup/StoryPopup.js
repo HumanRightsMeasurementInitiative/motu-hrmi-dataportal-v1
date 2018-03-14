@@ -223,7 +223,13 @@ export default class StoryPopup extends React.Component {
 
               <section className={styles.radarWrapper}>
                 <div className={styles.esrCaption} style={{ marginBottom: '10px' }}>{story.sections.subtitle_1}</div>
-                <CountryRightsChart size={250} rights={MEXICO.rights} esrStandard="esrHI"/>
+                <CountryRightsChart
+                  size={500}
+                  rights={MEXICO.rights}
+                  esrStandard="esrHI"
+                  displayLabels
+                  content={content}
+                />
               </section>
               <section>
                 {story.sections.paragraph_5.map(makeHTMLParagraph)}
@@ -271,7 +277,7 @@ export default class StoryPopup extends React.Component {
                   chartWidth={this.state.barchartWidth}
                   currCountry={MEXICO}
                   score={content.score}
-                  />
+                 />
                 }
                 <div className={styles.footnote}>{content.footer_text.rights_page_esr}</div>
                 <ArrowLink region="americas" right="education" content={content} setRegion={this.setRegion} />
