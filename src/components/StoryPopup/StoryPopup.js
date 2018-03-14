@@ -82,7 +82,9 @@ export default class StoryPopup extends React.Component {
 
     return (
       <div className={styles.storyWrapper} ref='storyWrapper'>
+
         <div className={styles.storyPopup} ref='storyPopup'>
+
           <div className={styles.popupBody}>
 
             <div className={styles.columnLeft} ref='columnLeft'>
@@ -99,12 +101,10 @@ export default class StoryPopup extends React.Component {
                   displayLabels
                 />
               </div>
-              <div>
-                <div className={styles.linkWrapper}>
-                  <div className='arrowLink'>
-                    <div className='text'>{arrowLink.title.all}</div>
-                    <CountryLink in={story.in} region={AMERICAS} code='MEX' onItemClick={this.setCountry}>{story.country_code}</CountryLink>
-                  </div>
+              <div className={styles.linkWrapper}>
+                <div className='arrowLink'>
+                  <div className='text'>{arrowLink.title.all}</div>
+                  <CountryLink in={story.in} region={AMERICAS} code='MEX' onItemClick={this.setCountry}>{story.country_code}</CountryLink>
                 </div>
               </div>
             </div>
@@ -113,11 +113,9 @@ export default class StoryPopup extends React.Component {
               <section>
                 <h1 className={styles.articleTitle}>{story.title}</h1>
               </section>
-
               <section>
                 {story.sections.paragraph_1.map(makeHTMLParagraph)}
               </section>
-
               <section>
                 <div className={styles.imageWrapper}>
                   <img src={storyImage} alt="article image"/>
@@ -129,11 +127,9 @@ export default class StoryPopup extends React.Component {
                   </div>
                 </div>
               </section>
-
               <section>
                 {story.sections.paragraph_2.map(makeHTMLParagraph)}
               </section>
-
               <section>
                 <div className={styles.cprCaption}>{story.sections.chart_1.title}</div>
                 <div className={styles.cprSubTitle}>{story.sections.chart_1.subtitle}</div>
@@ -150,14 +146,11 @@ export default class StoryPopup extends React.Component {
                   </RightBarchart>
                 }
                 <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
-
                 <ArrowLink region="cpr-pilot" right="freedom-from-disappearance" content={content} setRegion={this.setRegion} />
               </section>
-
               <section>
                 {story.sections.paragraph_3.map(makeHTMLParagraph)}
               </section>
-
               <section>
                 <div className={styles.cprCaption}>{story.sections.chart_2.title}</div>
                 <div className={styles.cprSubTitle}>{story.sections.chart_2.subtitle}</div>
@@ -174,22 +167,17 @@ export default class StoryPopup extends React.Component {
                   />
                 }
                 <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
-
                 <ArrowLink region="cpr-pilot" right="participate-in-government" content={content} setRegion={this.setRegion} />
               </section>
-
               <section>
                 {story.sections.paragraph_4.map(makeHTMLParagraph)}
               </section>
-
               <section>
                 <div className={styles.esrCaption}>{story.sections.subtitle_1}</div>
               </section>
-
               <section>
                 {story.sections.paragraph_5.map(makeHTMLParagraph)}
               </section>
-
               <section>
                 <div className={styles.esrSubTitle}>{story.sections.timeline_1.title}</div>
                 <div className={styles.lineChart}><img src={lineChart} alt="lineChart" style={{ width: '100%' }} /></div>
@@ -198,14 +186,11 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.esrSubTitle}>{story.sections.timeline_2.title}</div>
                 <div className={styles.lineChart}><img src={lineChart} alt="lineChart" style={{ width: '100%' }} /></div>
               </section>
-
               <section>
                 {story.sections.paragraph_6.map(makeHTMLParagraph)}
               </section>
-
               <section>
                 <div className={styles.esrCaption}>{story.sections.subtitle_2}</div>
-
                 <div className={styles.radarWrapper}>
                   <div className={styles.radarCol}>
                     <CountryRightsChart size={250} rights={MEXICO.rights} esrStandard="esrCore" currRight="education" />
@@ -217,11 +202,9 @@ export default class StoryPopup extends React.Component {
                   </div>
                 </div>
               </section>
-
               <section>
                 {story.sections.paragraph_7.map(makeHTMLParagraph)}
               </section>
-
               <section>
                 <div className={styles.esrCaption}>{story.sections.chart_3.title}</div>
                 <div className={styles.esrSubTitle}>{story.sections.chart_3.subtitle}</div>
@@ -238,22 +221,15 @@ export default class StoryPopup extends React.Component {
                   />
                 }
                 <div className={styles.footnote}>{content.footer_text.rights_page_esr}</div>
-
                 <ArrowLink region="americas" right="education" content={content} setRegion={this.setRegion} />
               </section>
-
               <section>
                 {story.sections.paragraph_8.map(makeHTMLParagraph)}
               </section>
-
-              <section className={styles.sectionSelector}>
-                <h5 className={styles.title}>{story.sections.ending_text}</h5>
-
-                <h5 className={styles.subtitle}>{content.section.title}</h5>
-                <SectionSelector isStoryMode={true} />
-              </section>
             </div>
+
           </div>
+
           <div className={styles.closeBtn} onClick={this.closeStoryMode}>Skip the story</div>
         </div>
       </div>
