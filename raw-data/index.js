@@ -35,7 +35,7 @@ function readSheet(fileName, sheetIndex = 0) {
 function sheetRows(sheet, columns = 'AZ', startFromRow = 0) {
   const [colStart, rowStart, colEnd, rowEnd] = sheet['!ref'].match(/([A-Z]+)(\d+):([A-Z]+)(\d+)/).slice(1)
 
-  console.assert(colStart === columns[0] && colEnd === columns[1], `Warning! The number of columns has changed from the master format.`)
+    // console.assert(colStart === columns[0] && colEnd === columns[1], `Warning! The number of columns has changed from the master format.`)
 
   const rows = _.range(parseInt(rowStart) + startFromRow, parseInt(rowEnd)).map((rowN) => {
     const row = {}
@@ -108,8 +108,26 @@ function ESRHighIncome() {
       return { ...countryData, ...current, historical }
     })
     .object(rows)
-
   return countries
+}
+
+function getPopulation() {
+  const rows = sheetRows(readSheet('population_data.xlsx'), 'AD', 0).map(row => {
+    const datum = {
+      countryName: row.A,
+      countryCode: row.B,
+      population: row.D,
+    }
+    return datum
+  })
+
+  const countriesPopulation = d3.nest().key(d => d.countryCode).rollup((v) => {
+    return {
+      population: v[0].population,
+    }
+  }).object(rows)
+
+  return countriesPopulation
 }
 
 function ESRCore() {
@@ -275,10 +293,12 @@ function CPRRangeAtRisk() {
 }
 
 function calculate() {
+  console.log('Inside calculate function')
   const esrHI = ESRHighIncome()
   const esrCore = ESRCore()
   const cpr = CPR()
   const cprRangeAtRisk = CPRRangeAtRisk()
+  const populationData = getPopulation()
 
   const countryCodesList = Object.keys(esrHI)
 
@@ -290,12 +310,15 @@ function calculate() {
     const countryCpr = cpr[countryCode] || { rights: null }
     const countryCprRangeAtRisk = cprRangeAtRisk[countryCode]
 
+    const population = populationData[countryCode] !== undefined ? populationData[countryCode].population : null
+
     const countryInfo = _.pick(countryEsrHI, [
       'countryCode',
       'countryName',
       // 'GDP',
       // 'SERF',
     ])
+
     const rights = {
       esrHI: countryEsrHI.rights,
       esrHIHistorical: countryEsrHI.historical,
@@ -315,7 +338,7 @@ function calculate() {
     countryCatalog.hasCPR = countryCpr.rights !== null
     catalogCountries.push(countryCatalog)
 
-    return { ...countryInfo, rights }
+    return { ...countryInfo, population, rights }
   })
 
   const joinedCountriesByCountry = _.keyBy(joinedCountries, 'countryCode')
