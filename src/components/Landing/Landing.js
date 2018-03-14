@@ -11,44 +11,35 @@ export default class Landing extends React.Component {
     content: PropTypes.object.isRequired,
   }
 
-  openStory = () => {
-    this.props.openStoryMode()
-  }
-
   render() {
-    const { isStoryOpen, content } = this.props
+    function makeHTMLParagraph(text, i) {
+      const cleanedText = text.replace(`<a `, `<a target="_blank" rel="noopener noreferrer"`)
+      return <p key={i} className={styles.normalText} dangerouslySetInnerHTML={{ __html: cleanedText }} />
+    }
+    const { isStoryOpen, content, openStoryMode } = this.props
+
     return (
       <div className={styles.landing}>
-        <Title/>
+        <div className={styles.titleWrapper}>
+          <h1 className={styles.title}>{content.section.title.map(makeHTMLParagraph)}</h1>
+          <h3 className={styles.subTitle}>{content.section.subtitle}</h3>
+        </div>
+
         <SectionSelector />
-        <ProfileStorySelector openPopup={this.openStory}/>
+
+        <div className={styles.profileStoryWrapper}>
+          <div className={styles.paragraphsWrapper}>
+            <p>{content.section.paragraphs[0]}</p>
+            <p>{content.section.paragraphs[1]}</p>
+          </div>
+          <a className={styles.countryUnderlined} onClick={openStoryMode}>{content.section.country[0]}</a>
+          {` or `}
+          <a className={styles.countryUnderlined} href="australia_story_en.pdf" target="_blank">{content.section.country[1]}</a>
+        </div>
         { isStoryOpen &&
           <StoryPopup />
         }
       </div>
     )
   }
-}
-
-const Title = () => {
-  return (
-    <div className={styles.titleWrapper}>
-      <h1 className={styles.title}>Welcome to the Human Right<br/>Measurement Initiative's data website</h1>
-      <h3 className={styles.subTitle}>(beta-version for now)</h3>
-    </div>
-  )
-}
-
-const ProfileStorySelector = ({ openPopup }) => {
-  return (
-    <div className={styles.profileStoryWrapper}>
-      <div className={styles.paragraphsWrapper}>
-        <p>View an example of HRMI data</p>
-        <p>being used in a profile story for</p>
-      </div>
-      <a className={styles.countryUnderlined} onClick={openPopup}>Mexico</a>
-      {` or `}
-      <a className={styles.countryUnderlined} href="australia_story_en.pdf" target="_blank">Australia</a>
-    </div>
-  )
 }
