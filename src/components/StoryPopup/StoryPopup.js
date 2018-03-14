@@ -2,10 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './style.css'
 import LangSelector from '../LangSelector'
-import SectionSelector from '../SectionSelector'
 import RightBarchart from '../RightBarchart/'
 import CountryRightsChart from 'components/CountryRightsChart'
-import lineChart from '../../img/line-chart.png'
 import { segsToUrl } from '../utils'
 import rightsByCountry from 'data/rights-by-country.json'
 import ESRTimeline from '../ESRTimeline'
@@ -142,20 +140,19 @@ export default class StoryPopup extends React.Component {
                     <div className={styles.cprSubTitle}>{story.sections.chart_1.subtitle}</div>
                   </div>
 
-                  <div>
-                    <div className={styles.cprLegend}>
-                      <div className={styles.meanText}>{content.legend.cpr_barchart[0]}</div>
-                      <div className={styles.bar}></div>
-                      <div className={styles.textContainer}>
-                        <div className={styles.maxText}>90<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
-                        <div className={styles.minText}>10<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
-                      </div>
-                      <div className={styles.questionTooltip}>
-                        <QuestionTooltip width={238} question={''}>
-                          <p>{content.question_tooltips[2].tooltip.paragraphs[0]}</p>
-                          <p>{content.question_tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{content.question_tooltips[2].tooltip.linkText}</a>.</p>
-                        </QuestionTooltip>
-                      </div>
+                  <div className={styles.cprLegend}>
+                    <div className={styles.meanText}>{content.legend.cpr_barchart[0]}</div>
+                    <div className={styles.bar}></div>
+                    <div className={styles.textContainer}>
+                      <div className={styles.maxText}>90<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
+                      <div className={styles.minText}>10<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
+                    </div>
+
+                    <div className={styles.questionTooltip}>
+                      <QuestionTooltip width={238} question={''}>
+                        <p>{content.question_tooltips[2].tooltip.paragraphs[0]}</p>
+                        <p>{content.question_tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{content.question_tooltips[2].tooltip.linkText}</a>.</p>
+                      </QuestionTooltip>
                     </div>
                   </div>
 
@@ -186,22 +183,22 @@ export default class StoryPopup extends React.Component {
                     <div className={styles.cprSubTitle}>{story.sections.chart_2.subtitle}</div>
                   </div>
 
-                  <div>
-                    <div className={styles.cprLegend}>
-                      <div className={styles.meanText}>{content.legend.cpr_barchart[0]}</div>
-                      <div className={styles.bar}></div>
-                      <div className={styles.textContainer}>
-                        <div className={styles.maxText}>90<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
-                        <div className={styles.minText}>10<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
-                      </div>
-                      <div className={styles.questionTooltip}>
-                        <QuestionTooltip width={238} question={''}>
-                          <p>{content.question_tooltips[2].tooltip.paragraphs[0]}</p>
-                          <p>{content.question_tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{content.question_tooltips[2].tooltip.linkText}</a>.</p>
-                        </QuestionTooltip>
-                      </div>
+                  <div className={styles.cprLegend}>
+                    <div className={styles.meanText}>{content.legend.cpr_barchart[0]}</div>
+                    <div className={styles.bar}></div>
+                    <div className={styles.textContainer}>
+                      <div className={styles.maxText}>90<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
+                      <div className={styles.minText}>10<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
                     </div>
                   </div>
+
+                  <div className={styles.questionTooltip}>
+                    <QuestionTooltip width={238} question={''}>
+                      <p>{content.question_tooltips[2].tooltip.paragraphs[0]}</p>
+                      <p>{content.question_tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{content.question_tooltips[2].tooltip.linkText}</a>.</p>
+                    </QuestionTooltip>
+                  </div>
+
                 </div>
                 { this.state.barchartWidth &&
                   <RightBarchart
