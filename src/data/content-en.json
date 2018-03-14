@@ -287,8 +287,8 @@
       "question": "How should I interpret the uncertainty bands?",
       "tooltip": {
         "paragraphs": [
-          "Our civil and political rights measures methodology produces a range of estimated levels of respect for each human right. The average country score (indicated by the white horizontal line) represents the average estimate in that range. The lower score on the uncertainty band represents the 10th percentile of our estimates; the higher score on the uncertainty band represents the 90th percentile.",
-          "Narrower uncertainty bands tell us that there was more agreement among expert survey respondents about what that country’s score should be, and/or a larger number of respondents. The greater the overlap between two uncertainty bands, the less certain we can be that the level of respect for human rights represented by those bands are truly different from one another. For more detailed information, please see our"
+          "How to interpret the uncertainty bands <br/> <img/>",
+          "For more detailed information, please see our methodology note"
         ],
         "linkText": "methodology note"
       }
