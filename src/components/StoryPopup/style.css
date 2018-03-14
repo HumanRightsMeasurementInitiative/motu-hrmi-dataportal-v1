@@ -1,3 +1,111 @@
+.esrLegend .text {
+  margin-left: 10px;
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+}
+.esrLegend .text:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: 12px;
+  width: 12px;
+  background: #00b95f;
+  border-radius: 6px;
+}
+.esrLegend .text:last-child:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  height: 4px;
+  width: 4px;
+  background: #00b95f;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+.rightBarchartWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.headerWrapper{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+.titles{
+  align-self: center;
+  flex-grow: 2;
+}  
+.cprLegend {
+  display: flex;
+  font-size: 12px;
+  color: #616161;
+}
+.cprLegend .bar {
+  flex: 0 0 auto;
+  position: relative;
+  margin: 0 4px;
+  height: 30px;
+  width: 8px;
+  background: #2E65A1;
+}
+.cprLegend .bar:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  width: 100%;
+  border: 1px solid #fff;
+}
+.meanText {
+  flex: 0 0 auto;
+  line-height: 30px;
+}
+.meanText:after {
+  content: ' \2014';
+}
+.textContainer {
+  flex: 1;
+  position: relative;
+  width: 90px;
+}
+.maxText,
+.minText {
+  position: absolute;
+  line-height: 1em;
+  min-width: 90px;
+}
+.maxText sup,
+.minText sup {
+  font-size: .8em;
+}
+.maxText {
+  top: -.8em;
+}
+.minText {
+  bottom: -.3em;
+}
+.maxText:before,
+.minText:before {
+  content: '\2014 ';
+}.maxText:before,
+.minText:before {
+  content: '\2014 ';
+}
+.questionTooltip {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -4px;
+}
 @keyframes slideInDown {
   from {
     opacity: .6;
