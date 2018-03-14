@@ -11,6 +11,18 @@ import DefinitionFooter from '../DefinitionFooter'
 import { segsToUrl } from '../utils'
 import styles from './style.css'
 
+function formatPopulation(n) {
+  if (!n) return `N/A`
+  if (n < 1e6) return Math.round(n).toLocaleString(undefined, { maximumFractionDigits: 0 })
+  const millions = (n / 1e6).toLocaleString(undefined, { maximumFractionDigits: 2 })
+  return `${millions} millions`
+}
+
+function formatGDP(n) {
+  if (!n) return `N/A`
+  return `$${n.toLocaleString(undefined, { maximumFractionDigits: 0 })} (current PPP dollars)`
+}
+
 export default class CountryPage extends React.Component {
   static propTypes = {
     data: PropTypes.object.isRequired,
@@ -122,9 +134,9 @@ export default class CountryPage extends React.Component {
               <div className={styles.countryInfo}>
                 <div className={styles.detailCountry}>{content.countries[currCountry.countryCode]}</div>
                 <div className={styles.smallTitle}>POPULATION (2015)</div>
-                <div className={styles.smallText2}>{currCountry.population ? Math.round(currCountry.population).toLocaleString() : `ND`}</div>
+                <div className={styles.smallText2}>{formatPopulation(currCountry.population)}</div>
                 <div className={styles.smallTitle}>GDP/CAPITA (2015)</div>
-                <div className={styles.smallText2}>${Math.round(currCountry.rights[`${esrStandard}Historical`][2015].GDP).toLocaleString()} (current PPP dollars)</div>
+                <div className={styles.smallText2}>{formatGDP(currCountry.rights[`${esrStandard}Historical`][2015].GDP)}</div>
               </div>
               <div className={styles.rightInfoWrapper}>
                 <div className={styles.rightInfo}>
