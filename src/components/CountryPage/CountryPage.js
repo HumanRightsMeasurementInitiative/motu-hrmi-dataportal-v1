@@ -124,7 +124,7 @@ export default class CountryPage extends React.Component {
               <div className={styles.countryInfo}>
                 <div className={styles.detailCountry}>{content.countries[currCountry.countryCode]}</div>
                 <div className={styles.smallTitle}>POPULATION (2015)</div>
-                <div className={styles.smallText2}>{currCountry.population} million</div>
+                <div className={styles.smallText2}>{currCountry.population ? Math.round(currCountry.population).toLocaleString() : `ND`}</div>
                 <div className={styles.smallTitle}>GDP/CAPITA (2015)</div>
                 <div className={styles.smallText2}>${Math.round(currCountry.rights[`${esrStandard}Historical`][2015].GDP).toLocaleString()} (current PPP dollars)</div>
               </div>
@@ -132,11 +132,6 @@ export default class CountryPage extends React.Component {
                 <div className={styles.rightInfo}>
                   { (isESRSelected || currRight === 'all') &&
                     <div>
-                      <div className={styles.subtitleESR}>{content.rights_category.esr}</div>
-                      <div className={styles.esrChartSubtitle}>most recent data (2015 or earlier)</div>
-                      <div className={styles.barChartWrapper} style={{ height: 80 }}>
-                        <BarChartESR data={currCountry.rights[esrStandard]} />
-                      </div>
                       { currRight !== 'all' &&
                         <div>
                           <div className={styles.esrRegionValue}>
@@ -159,44 +154,21 @@ export default class CountryPage extends React.Component {
                       }
                     </div>
                   }
-                  { (isCPRSelected || currRight === 'all') &&
-                    <div>
-                      { currCountry.rights.cpr &&
-                        <div>
-                          <div className={styles.subtitleCPR}>{content.rights_category.cpr}</div>
-                          <div className={styles.cprChartSubtitle}>data is for period january - june 2017</div>
-                          <div className={styles.barChartWrapper}>
-                            <BarChartCPR data={currCountry.rights.cpr} height={80} />
-                          </div>
-                          <div className={styles.legend}>
-                            <div className={styles.meanText}>{content.legend.cpr_barchart[0]}</div>
-                            <div className={styles.bar}></div>
-                            <div className={styles.textContainer}>
-                              <div className={styles.maxText}>90<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
-                              <div className={styles.minText}>10<sup>th</sup> {content.legend.cpr_barchart[1]}</div>
-                            </div>
-                            <div className={styles.questionTooltip}>
-                              <QuestionTooltip width={238} question={''}>
-                                <p>{content.question_tooltips[2].tooltip.paragraphs[0]}</p>
-                                <p>{content.question_tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{content.question_tooltips[2].tooltip.linkText}</a>.</p>
-                              </QuestionTooltip>
-                            </div>
-                          </div>
-                        </div>
-                      }
-                      { currRight !== 'all' &&
-                        <div className={styles.cprRegionValue}>
-                          <span className={styles.text}>{content.rights_name[currRight]}</span>
-                          <span className={styles.floatNum}>
-                            {currCountry.rights.cpr
+                  { (isCPRSelected && currRight !== 'all') &&
+                  <div>
+                    <div className={styles.cprRegionValue}>
+                      <span className={styles.text}>{content.rights_name[currRight]}</span>
+                      <span className={styles.floatNum}>
+                        {currCountry.rights.cpr
                               ? displayTenth(currCountry.rights.cpr[currRight].mean)
                               : 'N/A'
                             }
-                          </span>
-                        </div>
-                      }
+                      </span>
                     </div>
-                  }
+                    <div className={styles.cprChartSubtitle}>data is for period january - june 2017</div>
+                  </div>
+                      }
+
                   {
                     currRight === 'all'
                     ? <div className={styles.countryQues}>

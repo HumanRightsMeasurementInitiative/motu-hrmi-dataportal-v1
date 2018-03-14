@@ -376,7 +376,13 @@
 .esrValueList .withDot .text {
   padding-right: 10px;
 }
-
+.esrRegionValue .text,
+.cprRegionValue .text,
+.cprRegionValue .floatNum, 
+.esrRegionValue .floatNum{
+  font-size: 18px;
+  font-weight: bold;
+}
 .link {
   display: block;
   margin: 20px 0;
