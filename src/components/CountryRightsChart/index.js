@@ -90,7 +90,7 @@ export default class CountryRightsChart extends React.Component {
   }
 
   state = {
-    hoveredRight: null,
+    hoveredRightIndex: null,
   }
 
   rightFromEvent = (event) => {
@@ -106,42 +106,67 @@ export default class CountryRightsChart extends React.Component {
     const index = Math.floor(normalizeAngle(angle + sectorAngle / 2) / sectorAngle)
     const right = RIGHTS_ORDER[index]
 
-    return { right, radius, angle }
+    return { right, index, radius, angle }
   }
 
   clickSector = (event) => {
+    const { size, onClickRight } = this.props
+    const { right, radius } = this.rightFromEvent(event)
+    if (radius > 5 && radius < size / 4) {
+      onClickRight(right)
+    } else {
+      if (!this.onLabel) {
+        // Shitty trick
+        onClickRight('all')
+      }
+    }
+  }
+
+  clickLabel = (right) => {
     const { onClickRight } = this.props
-    const { right } = this.rightFromEvent(event)
     onClickRight(right)
   }
 
   hoverSector = (event) => {
     const { size } = this.props
-    const { hoveredRight } = this.state
-    const { right, radius } = this.rightFromEvent(event)
+    const { index, radius } = this.rightFromEvent(event)
 
-    if (hoveredRight === right) return
-
-    if (radius > 10 && radius < size) {
-      this.setState({ hoveredRight: right })
+    if (radius > 5 && radius < size / 4) {
+      event.currentTarget.style.cursor = 'pointer'
+      this.setState({ hoveredRightIndex: index })
     } else {
-      this.setState({ hoveredRight: null })
+      event.currentTarget.style.cursor = ''
+      if (!this.onLabel) {
+        // Shitty trick
+        this.setState({ hoveredRightIndex: null })
+      }
     }
   }
 
-  offHoverSector = () => {
-    this.setState({ hoveredRight: null })
+  offHoverSector = (event) => {
+    event.currentTarget.style.cursor = ''
+    this.setState({ hoveredRightIndex: null })
+  }
+
+  hoverLabel = (right) => {
+    const index = RIGHTS_ORDER.indexOf(right)
+    if (index === -1) return
+
+    this.onLabel = true
+    this.setState({ hoveredRightIndex: index })
+  }
+
+  offHoverLabel = () => {
+    this.onLabel = false
+    this.setState({ hoveredRightIndex: null })
   }
 
   render() {
     const { rights, size, displayLabels, esrStandard, content, currRight } = this.props
-    const { hoveredRight } = this.state
+    const { hoveredRightIndex } = this.state
     const { esrHI, esrCore, cpr } = rights
 
-    const highlightedRight = (!currRight || currRight === 'all')
-      ? hoveredRight
-      : currRight
-
+    const highlightedRight = (currRight && currRight !== 'all') ? currRight : null
     const highlightedRightIndex = RIGHTS_ORDER.includes(highlightedRight)
       ? RIGHTS_ORDER.indexOf(highlightedRight)
       : null
@@ -172,7 +197,7 @@ export default class CountryRightsChart extends React.Component {
 
     return (
       <div
-        style={{ position: 'relative', cursor: 'pointer' }}
+        style={{ position: 'relative' }}
         onClick={this.clickSector}
         onMouseMove={this.hoverSector}
         onMouseLeave={this.offHoverSector}
@@ -193,7 +218,10 @@ export default class CountryRightsChart extends React.Component {
             data={rightsData}
             colors={PETALS_COLORS}
             content={content}
-            currRightIndex={currRightIndex}
+            highlightedRightIndexes={[hoveredRightIndex, currRightIndex]}
+            onClick={this.clickLabel}
+            onMouseEnter={this.hoverLabel}
+            onMouseLeave={this.offHoverLabel}
           />
         }
         {(!displayLabels && highlightedRightIndex !== null) &&
@@ -228,7 +256,7 @@ export default class CountryRightsChart extends React.Component {
   }
 }
 
-function PetalLabels({ size, data, colors, content, currRightIndex, onClick = null }) {
+function PetalLabels({ size, data, colors, content, highlightedRightIndexes, onClick = null, onMouseEnter = null, onMouseLeave = null }) {
   if (!content) throw new Error(`PetalLabels: no translation content passed!`)
 
   const names = RIGHTS_ORDER.map(k => content.rights_name_short[k])
@@ -257,11 +285,13 @@ function PetalLabels({ size, data, colors, content, currRightIndex, onClick = nu
           a={360 / 12 * i}
           correction={corrections[i]}
           style={{
-            fontWeight: currRightIndex === i ? 'bold' : '',
+            fontWeight: highlightedRightIndexes.includes(i) ? 'bold' : '',
             textAlign: i === 0 || i === 6 ? 'center' : i > 6 ? 'right' : 'left',
             cursor: onClick ? 'pointer' : null,
           }}
           onClick={rewriteArgs(onClick, RIGHTS_ORDER[i])}
+          onMouseEnter={rewriteArgs(onMouseEnter, RIGHTS_ORDER[i])}
+          onMouseLeave={rewriteArgs(onMouseLeave, RIGHTS_ORDER[i])}
         >
           {names[i]}
           <br/>
