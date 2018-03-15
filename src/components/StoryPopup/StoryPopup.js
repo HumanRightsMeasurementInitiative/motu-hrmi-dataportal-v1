@@ -9,15 +9,11 @@ import rightsByCountry from 'data/rights-by-country.json'
 import ESRTimeline from '../ESRTimeline'
 import storyImage from '../../img/story_mex.png'
 import QuestionTooltip from '../QuestionTooltip'
+import makeHTMLParagraph from 'lib/make-html-paragraph'
+
 const AMERICAS = 'americas'
 const PILOT = 'cpr-pilot'
 const MEXICO = rightsByCountry.MEX
-
-function makeHTMLParagraph(text, i) {
-  const cleanedText = text
-    .replace(`<a `, `<a target="_blank" rel="noopener noreferrer"`)
-  return <p key={i} className={styles.normalText} dangerouslySetInnerHTML={{ __html: cleanedText }} />
-}
 
 export default class StoryPopup extends React.Component {
   static propTypes = {
