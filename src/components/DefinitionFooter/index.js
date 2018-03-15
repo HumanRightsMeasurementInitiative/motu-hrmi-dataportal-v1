@@ -30,7 +30,7 @@ export default class RightsPage extends React.Component {
         { !isESRSelected && cloudWords.length !== 0 &&
           <div>
             <QuestionTooltip width={214} question={content.cpr_at_risk.title} isTitle={true}>
-              <p>{content.cpr_at_risk.tooltip} <a href='#' target='_blank'>{content.cpr_at_risk.link}</a>.</p>
+              <p>{content.cpr_at_risk.tooltip} <a href='https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Qualitative-responses-HRMI-2017-pilot.pdf' target='_blank'>{content.cpr_at_risk.link}</a>.</p>
             </QuestionTooltip>
             <WordCloudChart words={cloudWords} />
             <QuestionTooltip width={220} question={content.cpr_abuse.title} isTitle={true}>

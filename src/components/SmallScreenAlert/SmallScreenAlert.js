@@ -13,10 +13,8 @@ export default class SmallScreenAlert extends React.Component {
     const { content } = this.props
     return (
       <div className={styles.alert}>
-        <div className={styles.wrapper}>
-          <div className={styles.logo}>
-            <a href='https://humanrightsmeasurement.org/' target='_blank'><BetaLogo /></a>
-          </div>
+        <div className={styles.logo}>
+          <a href='https://humanrightsmeasurement.org/' target='_blank'><BetaLogo /></a>
         </div>
         <div className={styles.alertContainer}>
           <div className={styles.iconWrapper}><ScreenIcon /></div>

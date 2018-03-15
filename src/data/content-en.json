@@ -153,10 +153,19 @@
     }
   },
   "section": {
-    "title": "Explore all the dataset:",
+    "title": ["Welcome to the Human Right <br/> Measurement Initiative's data website"],
+    "subtitle": "(beta-version for now)",
     "section_name": [
       "Explore by Rights",
       "Explore by Geography"
+    ],
+    "paragraphs":[
+        "View an example of HRMI data",
+        "being used in a profile story for"
+    ],
+    "country":[
+        "Mexico",
+        "Australia"
     ]
   },
   "arrow_link": {

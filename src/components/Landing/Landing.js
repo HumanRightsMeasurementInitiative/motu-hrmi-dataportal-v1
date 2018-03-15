@@ -11,15 +11,31 @@ export default class Landing extends React.Component {
     content: PropTypes.object.isRequired,
   }
 
-  componentWillMount() {
-    this.props.openStoryMode()
-  }
-
   render() {
-    const { isStoryOpen, content } = this.props
+    function makeHTMLParagraph(text, i) {
+      const cleanedText = text.replace(`<a `, `<a target="_blank" rel="noopener noreferrer"`)
+      return <p key={i} className={styles.normalText} dangerouslySetInnerHTML={{ __html: cleanedText }} />
+    }
+    const { isStoryOpen, content, openStoryMode } = this.props
+
     return (
       <div className={styles.landing}>
-        <div className={styles.pageSelector}><SectionSelector title={content.section.title} /></div>
+        <div className={styles.titleWrapper}>
+          <h1 className={styles.title}>{content.section.title.map(makeHTMLParagraph)}</h1>
+          <h3 className={styles.subTitle}>{content.section.subtitle}</h3>
+        </div>
+
+        <SectionSelector />
+
+        <div className={styles.profileStoryWrapper}>
+          <div className={styles.paragraphsWrapper}>
+            <p>{content.section.paragraphs[0]}</p>
+            <p>{content.section.paragraphs[1]}</p>
+          </div>
+          <a className={styles.countryUnderlined} onClick={openStoryMode}>{content.section.country[0]}</a>
+          {` or `}
+          <a className={styles.countryUnderlined} href="australia_story_en.pdf" target="_blank">{content.section.country[1]}</a>
+        </div>
         { isStoryOpen &&
           <StoryPopup />
         }

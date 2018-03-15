@@ -1,3 +1,111 @@
+.esrLegend .text {
+  margin-left: 10px;
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+}
+.esrLegend .text:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: 12px;
+  width: 12px;
+  background: #00b95f;
+  border-radius: 6px;
+}
+.esrLegend .text:last-child:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  height: 4px;
+  width: 4px;
+  background: #00b95f;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+.rightBarchartWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.headerWrapper{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+.titles{
+  order:0;
+  align-self: center;
+  flex-grow: 2;
+}  
+.cprLegend {
+  display: flex;
+  font-size: 12px;
+  color: #616161;
+  order:1;
+}
+.cprLegend .bar {
+  flex: 0 0 auto;
+  position: relative;
+  margin: 0 4px;
+  height: 30px;
+  width: 8px;
+  background: #2E65A1;
+}
+.cprLegend .bar:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  width: 100%;
+  border: 1px solid #fff;
+}
+.meanText {
+  flex: 0 0 auto;
+  line-height: 30px;
+}
+.meanText:after {
+  content: ' \2014';
+}
+.textContainer {
+  flex: 1;
+  position: relative;
+  width: 90px;
+}
+.maxText,
+.minText {
+  position: absolute;
+  line-height: 1em;
+  min-width: 90px;
+}
+.maxText sup,
+.minText sup {
+  font-size: .8em;
+}
+.maxText {
+  top: -.8em;
+}
+.minText {
+  bottom: -.3em;
+}
+.maxText:before,
+.minText:before {
+  content: '\2014 ';
+}.maxText:before,
+.minText:before {
+  content: '\2014 ';
+}
+.questionTooltip {
+    align-self: center;
+    order: 2;
+}
 @keyframes slideInDown {
   from {
     opacity: .6;
@@ -31,11 +139,17 @@
   border: 1px solid #a6a6a6;
   transition: all 1s;
   animation: slideInDown 1s;
-}
-
+  display: flex;
+  flex-direction: column;
+ }
+  
 .popupBody {
   height: 100%;
   width: 100%;
+  display:flex;
+  flex-direction: row;
+  justify-content:center;
+  overflow:auto;
 }
 
 .footer,
@@ -54,7 +168,7 @@
   cursor: pointer;
 }
 .closeBtn {
-  top: 0;
+  order:0;
   height: 50px;
 }
 .footer {
@@ -82,17 +196,19 @@
 }
 
 .columnLeft {
-  float: left;
-  padding: 0 30px;
-  height: 100%;
-  text-align: center;
   overflow: hidden;
+  width: calc(100% / 3 * 1);
+  padding: 0 30px;
+  display:flex;
+  flex-flow:column;
+  align-items: center;
 }
 .langSelector {
   padding: 24px 0;
   width: 80px;
   font-size: 12px;
   text-align: left;
+  align-self: flex-start;
 }
 .chartTitle {
   margin: 20px auto 0;
@@ -108,14 +224,18 @@
   display: inline-block;
   margin-top: -20px;
   text-align: left;
+  align-self: flex-start;
 }
 
 .columnRight {
-  float: left;
-  padding: 80px 40px 80px 0;
   height: 100%;
   font-size: 16px;
   overflow: auto;
+  padding: 80px 40px 80px 0;
+  margin: 0 0.5rem;
+  width: calc(100% / 3 * 2);
+  flex-grow:1;
+  text-align:left;
 }
 .columnRight section {
   position: relative;
@@ -182,32 +302,21 @@
 .esrSubTitle {
   color: #20c273;
 }
-.radarWrapper > div {
-  float: left;
-}
-.radarWrapper:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-.radarCol {
-  display: inline-block;
-  vertical-align: top;
-  padding: 20px;
-  width: 50%;
-  text-align: center;
+
+
+    
+.radarWrapper {
+    display: flex;
+    flex-direction:column;
+    align-content:center;
+    align-items:center;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 .radarCountryName {
   font-size: 16px;
   font-weight: 600;
   margin: 10px;
-}
-.fakeRadar {
-  width: 230px;
-  height: 230px;
-  margin: 10px auto;
-  background: #f3f3f3;
-  border-radius: 50%;
 }
 
 .links {
@@ -234,4 +343,16 @@
 
 .footnote {
   font-size: 12px;
+}
+
+
+@media screen and (max-width:1500px){
+    .columnRight{
+        width: 50%;
+        padding:30px 0;
+    }
+    .columnLeft{
+        width: 50%;
+        padding:30px 30px;
+    }
 }
