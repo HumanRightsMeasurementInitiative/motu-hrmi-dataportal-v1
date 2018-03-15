@@ -4,7 +4,7 @@
     "high-income-oecd": "Países con ingresos altos de la OCDE",
     "europe-central-asia": "Europa Central y Oriental y Asia Central",
     "east-asia-pacific": "Asia Oriental y el Pacífico",
-    "americas": "Latinoamérica y el Caribe",
+    "americas": "Las Américas",
     "middle-east-north-africa": "Medio Oriente y Norte de África",
     "south-asia": "Asia del Sur",
     "sub-saharan-africa": "África Subsahariana",
@@ -63,7 +63,7 @@
     "esr": "Derechos económicos y sociales",
     "cpr": "Derechos civiles y políticos"
   },
-  "esr_chart_subtitle": "Percentage level of human right enjoyment achieved, relative to what should be feasible",
+  "esr_chart_subtitle": "Porcentaje de nivel de goce de derecho humano alcanzado, con relación a lo que podría llegar a ser",
   "legend": {
     "esr_barchart": ["Calificación estándar principal de evaluación", "Calificación de evaluación de país de ingresos altos de la OCDE"],
     "cpr_barchart": ["Calificación promedio", "percentil"]
@@ -179,7 +179,7 @@
         "subtitle": "puntuaciones para los 13 países en la muestra piloto"
       },
       "paragraph_3": [
-        "Este hallazgo no es sorprendente dado que México ha experimentado un aumento en las desapariciones tanto por parte de actores estatales como no estatales (según la definición de la Convención Internacional para la Protección de Todas las Personas contra las Desapariciones Forzadas, de la ONU). Especialmente desde 2009, a raíz de que el gobierno federal lanzara su estrategia militarizada contra los cárteles de la droga. Hacer que una persona 'desaparezca' se ha convertido en una técnica común tanto para las autoridades como para los miembros del crimen organizado, quienes a menudo actúan juntos (por ejemplo, como se documenta en el caso de la <a href=\"https://es.insightcrime.org/noticias/noticias-del-dia/los-zetas-convirtieron-prision-mexico-fosa-comun/\">prisión de Piedras Negras controlada por Zetas</a>). El gobierno mexicano tiene un registro incompleto de personas que han sido sometidas a desaparición o que han desaparecido por alguna otra razón; pero según esa <a href=\"http://secretariadoejecutivo.gob.mx/rnped/consulta-publica.php\">fuente oficial</a>, en noviembre de 2017 había 34,674 personas desaparecidas en el país.",
+        "Este hallazgo no es sorprendente dado que México ha experimentado un aumento en las desapariciones tanto por parte de actores estatales como no estatales (según la definición de la Convención Internacional para la Protección de Todas las Personas contra las Desapariciones Forzadas, de la ONU). Especialmente desde 2009, a raíz de que el gobierno federal lanzara su estrategia militarizada contra los cárteles de la droga. Hacer que una persona 'desaparezca' se ha convertido en una técnica común tanto para las autoridades como para los miembros del crimen organizado, quienes a menudo actúan juntos (por ejemplo, como se documenta en el caso de la <a href=\"https://es.insightcrime.org/noticias/noticias-del-dia/los-zetas-convirtieron-prision-mexico-fosa-comun/\">prisión de Piedras Negras controlada por Zetas</a>). El gobierno mexicano tiene un registro incompleto de personas que han sido sometidas a desaparición o que han desaparecido por alguna otra razón; pero según esa <a href=\"http://secretariadoejecutivo.gob.mx/rnped/consulta-publica.php\">fuente oficial</a>, en noviembre de 2017 había 34,674 personas desaparecidas en el país.",   
         "En cambio, la mejor puntuación de México en el área de los derechos civiles y políticos corresponde al derecho a participar en el gobierno (puntuación media 6.1 sobre 10). En este derecho humano, México está más cerca del centro del grupo en comparación con los otros 12 países en el estudio piloto.<br/>Para ilustrar esto, consideremos la siguiente gráfica, que compara las puntuaciones para el derecho a participar en el gobierno en todos los países en nuestro estudio piloto sobre derechos civiles y políticos. Para este derecho humano, el puntaje de México no es sustancialmente diferente al de Brasil. Esto lo sabemos al observar la superposición sustancial de las 'barras' para los dos países (es decir, la puntuación promedio de México está por encima del décimo percentil de la puntuación de Brasil). Las puntuaciones mostradas también sugieren que el respeto de México por este derecho es mejor que en Arabia Saudita, Kazajstán y Angola."
       ],
       "chart_2": {
@@ -187,14 +187,14 @@
         "subtitle": "puntuaciones para los 13 países en la muestra piloto"
       },
       "paragraph_4": [
-        "Mexico’s ‘not so bad’ score for the right to participate in government is consistent with the fact that Mexico has a somewhat free and fair electoral system. It has periodic elections regulated by clear rules, and electoral processes that are not usually violent, although they tend to entail distrust in a large part of the population. Survey respondents did, however, highlight regulations and practices that have a disproportionately negative impact on indigenous people, people of low economic and social status, less educated people, immigrants, and people in some regions of the country. If you visit this chart on our data visualisation website, you can see more information about this by clicking on the Mexico bar of the chart.",
-        "Turning now to economic and social human rights, you can see Mexico’s scores on the five economic and social rights in the green-coloured portion of the radar chart to the left. International law recognises the fact that most countries do not have enough resources to completely and immediately fulfil economic and social rights. Because of this, there is an international legal obligation on all countries to use the “maximum of [their] available resources” to “progressively” fulfil economic and social rights. Two different sets of benchmarks are in use: one designed primarily for rich countries (our high-income OECD country assessment standard) and one designed primarily for poorer countries (our core assessment standard). But all countries are assessed against both assessment standards if the data are available.",
-        "The radar chart to the left evaluates Mexico’s performance using our core country assessment standard, which is the default standard set for Mexico since it is not a high-income country. Mexico’s scores across the five economic and social rights range from 82% to 89%. That means that Mexico is ensuring between 82% and 89% of the level of enjoyment that is possible for that right, given Mexico’s available resources. On the core standard, Mexico scores best on the rights to education and health. Mexico’s performance on ensuring economic and social rights for its people is clearly better than its performance on ensuring civil and political rights, but there is still substantial room for improvement even using our core assessment standard.",
-        "Although Mexico is not yet a high-income country, it is rapidly approaching this status, so it is interesting to also assess its performance using the high-income OECD country standard. The radar chart below does this. Here we see a much wider range in performance scores."
+        "La puntuación 'no tan mala' de México para el derecho a participar en el gobierno es consistente con el hecho de que el país tiene un sistema con elecciones que, en lo general, son libres y justas. México tiene elecciones periódicas reguladas claramente y procesos electorales que no suelen ser violentos, aunque tienden a generar desconfianza en gran parte de la población. Sin embargo, personas encuestadas resaltaron la existencia de reglamentaciones y prácticas que tienen un impacto desproporcionadamente negativo en los pueblos indígenas, las personas de baja condición económica y social, las personas con menos educación, las personas migrantes y las personas que viven en algunas regiones del país. Si usted visita este gráfico en nuestro sitio web de visualización de datos, podrá ver más información seleccionando la barra correspondiente a México.",
+        "Analicemos ahora los derechos humanos económicos y sociales, se puede ver el puntaje de México sobre los cinco derechos económicos y sociales en la parte verde de la gráfica de radar (izquierda). El derecho internacional reconoce el hecho de que la mayoría de los países no cuentan con recursos suficientes para cumplir de manera completa e inmediata los derechos económicos y sociales. Debido a esto, todos los países tienen la obligación bajo el derecho internacional de utilizar el 'máximo de [sus] recursos disponibles' para 'lograr progresivamente' el cumplimiento de los derechos económicos y sociales. Aquí hemos utilizado dos conjuntos de puntos de referencia diferentes: uno diseñado principalmente para los países ricos (nuestro estándar de evaluación para países de renta alta de la OCDE) y otro diseñado principalmente para los países más pobres (nuestro estándar de evaluación básico). Sin embargo, si se dispone de los datos requeridos, todos los países son evaluados en relación con ambos estándares de evaluación.",
+        "La gráfica de radar a la izquierda evalúa el desempeño de México usando nuestro estándar de evaluación básico, que es el estándar predeterminado para México al no tratarse de un país de renta alta. Las puntuaciones de México en los cinco derechos económicos y sociales oscilan entre el 82% y el 89%. Esto significa que México está asegurando entre el 82% y el 89% del nivel de disfrute que es posible para ese derecho, dados los recursos disponibles en México. En cuanto al estándar básico, México es el país con mejor puntuación en los derechos a la educación y la salud. El desempeño de México al garantizar los derechos económicos y sociales de sus ciudadanos es claramente mejor que su desempeño respecto de los derechos civiles y políticos, pero aún queda mucho por mejorar, incluso utilizando nuestro estándar de evaluación básico.",
+        "A pesar de que México aún no es un país de renta alta, se está acercando rápidamente a esta situación, por lo que es interesante evaluar su desempeño utilizando el nuestro estándar de evaluación para países de renta alta de la OCDE. La gráfica de radar de abajo hace esto y nos muestra una gama mucho más amplia en las puntuaciones de rendimiento."
       ],
       "subtitle_1": "México – Estándar de evaluación para países de renta alta de la OCDE",
       "paragraph_5": [
-        "To dig into this in more detail, let’s take a closer look at how Mexico’s performance on the right to education has changed over time and try to identify those areas where Mexico faces the greatest challenges. The two graphs below show Mexico’s performance over the past decade using the two different assessment standards."
+        "Para ahondar más en este tema, examinemos detenidamente cómo el desempeño de México en materia de derecho a la educación ha cambiado con el tiempo e intentemos identificar aquellas áreas en las que México enfrenta los mayores desafíos. La gráfica que se presenta a continuación muestra el desempeño de México en la última década utilizando los dos estándares de evaluación diferentes."
         ],
       "timeline_1": {
         "title": "Mexico’s decadal performance on the right to education: Core assessment standard"
@@ -203,10 +203,10 @@
         "title": "Rendimiento de México en un decenio para el derecho a la educación"
       },
       "paragraph_6": [
-        "As you can see, Mexico’s scores on the right to education have increased over the decade from 84% to 89% using the core assessment standard and from 58% to 63% using the high-income OECD assessment standard. Since Mexico’s per-capita income level increased over this time – and hence so too did Mexico’s obligation level – these results imply that enjoyment of the right to education increased more rapidly than per-capita income. In other words, Mexico became more proficient at translating its resources into enjoyment of this particular right.",
-        "But why is there such a large difference between Mexico’s scores when using the two standards? The core assessment standard considers two indicators: primary school completion rate, and gross combined school enrolment rate. Mexico recognised the right to free and compulsory primary education in 1917 when it adopted the Constitution after the Mexican Revolution, and the country has achieved greater implementation of this policy in recent decades.",
+        "Como se puede ver, las puntuaciones de México sobre el derecho a la educación han aumentado durante la década del 84% al 89% usando el estándar de evaluación básico y del 58% al 63% usando el estándar de evaluación para países de renta alta de la OCDE. Dado que el nivel de ingresos per cápita de México aumentó durante este tiempo —y por lo tanto también creció el nivel de obligaciones internacionales de México— estos resultados implican que el disfrute del derecho a la educación aumentó más rápidamente que el ingreso per cápita. En otras palabras, México se volvió más competente para traducir sus recursos en el disfrute de este derecho en particular.",
+        "Pero por qué hay una diferencia tan grande entre las puntuaciones de México cuando se usan los distintos estándares. La estándar de evaluación básico tiene en cuenta dos indicadores: la tasa de terminación de los estudios de primaria y la tasa bruta combinada de matriculación escolar. México reconoció el derecho a la educación primaria gratuita y obligatoria en 1917 cuando adoptó la Constitución después de la Revolución Mexicana, y el país ha logrado una mayor implementación de esta política en las últimas décadas.",
         "Adicionalmente, para compensar los costos de enviar a las niñas y niños a la escuela, en 1988 México comenzó a implementar un programa que pagaba a ciertas familias un monto si enviaban a sus hijos a la escuela. Este programa, que ahora se llama <a href=\"http://www.bancomundial.org/es/news/feature/2014/11/19/un-modelo-de-mexico-para-el-mundo\">Prospera,</a> trata de abordar la pobreza intergeneracional mediante transferencias directas de dinero a las madres u otras mujeres jefas de familia, para que dispongan de recursos suficientes para mantenerse y enviar a sus hijos a la escuela. México también implementó una serie de medidas administrativas para hacer extremadamente difícil que un estudiante de primaria repruebe un curso. Como resultado, no es sorprendente que el puntaje de terminación primaria de México sea del 100% - es el punto de referencia en su nivel de ingreso per cápita.",
-        "Mexico’s score on the combined school enrolment (primary to university level) is 78%. This is one area where Mexico needs to do much better. However, Mexico’s greatest challenge is revealed by looking at the components of the high-income OECD assessment standard. As well as using the combined school enrolment rate, this assessment standard also uses an indicator of school quality – student performance on the International Student Assessment (PISA) tests in science and maths. On the PISA indicator we find that Mexico is only achieving 49% of the benchmark score, telling us that the quality of education in Mexico is significantly below the standard being achieved by other countries with a similar income level."
+        "El puntaje de México en la matrícula escolar combinada (de primaria a universidad) es del 78%. Este es un área donde México necesita dar mejores resultados. Aun así, el mayor desafío de México se pone de manifiesto al examinar los componentes del estándar de evaluación para países de renta alta de la OCDE. Además de la tasa combinada de matriculación escolar, este estándar de evaluación también utiliza un indicador de la calidad de la escuela: el rendimiento de los estudiantes en las pruebas del programa para la evaluación internacional de alumnos de la OCDE (PISA, por sus siglas en inglés) en ciencias y matemáticas. En el indicador PISA encontramos que México sólo está alcanzando el 49% de la puntuación de referencia, lo que nos dice que la calidad de la educación en México está significativamente por debajo del estándar alcanzado por otros países con un nivel similar de ingresos."
       ],
       "subtitle_2": "Right to Education",
       "radar_1": {
@@ -216,27 +216,27 @@
         "title": "High income OECD country assessment standard"
       },
       "paragraph_7": [
-        "Now turning to a comparison of Mexico’s right to education scores with other countries in the Americas, please see the chart below."
+        "Ahora, en cuanto a la comparación de las puntuaciones de México en materia de derecho a la educación con otros países de las Américas, véase la gráfica siguiente."
       ],
       "chart_3": {
-        "title": "Right to education",
-        "subtitle": "Mexico compared to rest of the Americas"
+        "title": "Derecho a la educación",
+        "subtitle": "México comparado con el resto de los países de las Américas"
       },
       "paragraph_8": [
-        "In this chart we show country scores using both assessment standards when both are available for a country. The completely filled-in green circle is the score using the core assessment standard. The circle with the dot is the country score using the high-income OECD assessment standard. Focusing on the filled-in green dots, it is interesting to see that the best performing country in the region on the right to education is Argentina. However, it is also important to remember that Argentina’s score of 100% does NOT imply that everyone in the country enjoys the right. Rather, it tells us that Argentina’s enjoyment of the right to education is on par with the historically best-performing countries at the same per-capita income level. Bolivia’s score on our right to education metric is nearly as high, at 99%. But given Bolivia’s much lower per capita income level, the proportion of the population enjoying the right to education is substantially lower.",
-        "Even though Argentina scores 100% on our right to education metric, further improvement is of course still possible – it is just that countries such as Argentina with a very high HRMI scores need to innovate to extend human rights enjoyment further than has been done in the past. Argentina’s lower score on the high-income OECD country assessment standard also tells us that there is significant room for improvement in the quality of education.",
-        "One final point worth noting is that the aggregate country economic and social rights metrics as shown tend to mask the fact that the distribution of fulfilment of the right is often very uneven. For example, higher-income people in Mexico are likely to be able to access schools (including private schools) of a much higher quality than people in lower socio-economic groups.",
-        "The overall picture that these data paint about Mexico is one where serious civil and political rights violations are shockingly common. In the area of economic and social rights, the situation looks not so bad, but our data still clearly show that Mexico has enough resources to ensure that its people have access to better health, education, jobs, housing etc."
+        "En esta tabla mostramos las puntuaciones de los países usando ambas mediciones cuando las mismas están disponibles para un país. Los círculos completamente verdes son la puntuación utilizando el estándar de evaluación básico. Los círculos con un punto al centro son la puntuación del país utilizando el estándar de evaluación para países de renta alta de la OCDE. Centrándose en los círculos completamente verdes, es interesante ver que el mejor país de la región en materia de derecho a la educación es Argentina. Sin embargo, también es importante recordar que el puntaje de Argentina de 100% NO implica que todas las personas en ese país gocen del derecho. Más bien, nos dice que el disfrute del derecho a la educación por parte de Argentina está a la par de los países con mejor desempeño histórico en el mismo nivel de ingresos per cápita. La puntuación de Bolivia en nuestra métrica del derecho a la educación es casi igual de alta, del 99%. Sin embargo, dado el nivel de ingresos per cápita mucho más bajo en Bolivia, la proporción de la población que disfruta del derecho a la educación es sustancialmente menor.",
+        "A pesar de que Argentina obtiene un puntaje del 100% en nuestra medición sobre el derecho a la educación, por supuesto todavía le es posible realizar mejoras adicionales. Este puntaje sólo significa que países como Argentina, con puntajes muy altos en el índice HRMI, necesitan innovar para extender el disfrute de los derechos humanos más allá de lo que se ha hecho hasta ahora. La puntuación más baja de Argentina en el estándar de evaluación para países de renta alta de la OCDE también nos dice que hay un margen significativo para mejorar la calidad de la educación.",
+        "Un último aspecto a destacar es que los indicadores económicos y sociales agregados del país tienden a ocultar el hecho de que la distribución del cumplimiento del derecho a menudo es muy desigual. Por ejemplo, es probable que las personas de ingresos más altos en México puedan acceder a escuelas (incluidas las privadas) de una calidad mucho mayor que las personas de grupos socioeconómicos en desventaja.",
+        "El panorama general que estos datos ilustran sobre México es uno en el que las violaciones graves de los derechos civiles y políticos son escandalosamente comunes.  En el ámbito de los derechos económicos y sociales, la situación no parece tan mala, pero nuestros datos siguen mostrando claramente que México cuenta con recursos suficientes para garantizar que sus ciudadanos tengan acceso a una mejor salud, educación, empleo, vivienda, etc."
       ],
-      "ending_text": "This is end of the story"
+      "ending_text": "Este es el final de la historia"
     }
   },
   "header_text": {
     "by_geography": "Desempeño de los derechos humanos"
   },
   "footer_text": {
-    "rights_page_esr": "ESP translation of: Higher scores indicate greater fulfilment of country obligations for this human right.",
-    "rights_page_cpr": "ESP translation of: Higher scores indicate greater respect for this human right.",
+    "rights_page_esr": "Las calificaciones más altas indican mayor cumplimiento de las obligaciones del país de este derecho humano.",
+    "rights_page_cpr": "Las calificaciones más altas indican mayor respeto a este derecho humano.",
     "by_geography": "Cada eje representa un derecho. Cuanto más lejos llegue la calificación en cada eje, mejor es el desempeño del país en ese derecho.",
     "source": "Fuente: conjunto de datos de la Iniciativa de Medición de Derechos Humanos (HRMI) de 2018,"
   },
@@ -268,7 +268,7 @@
         "linkText": "nuestra metodología"
       }
     }, {
-      "question": "¿Cómo ha medido HRMI el derecho a",
+      "question": "¿Cómo ha medido HRMI el",
       "tooltip": {
         "paragraphs": [
           "Cada medición de derecho civil y político se ha elaborado a partir de respuestas a una encuesta de expertos en derechos humanos dentro del país. Las respuestas de los encuestados sobre la frecuencia de violaciones de todos los derechos civiles y políticos se combinaron usando un modelo estadístico que garantiza la comparabilidad de respuestas a través de países. Esto tiene como resultado una distribución de niveles estimados de respeto para cada derecho en cada país, representados por las calificaciones y franjas de incertidumbre mostradas en las visualizaciones de datos. También se preguntó a nuestros encuestados otra información sobre a quién se identificó como en riesgo de abuso de derechos humanos, como se muestra. Para información más detallada, por favor visita nuestro sitio web"
@@ -309,9 +309,9 @@
     ]
   },
   "cpr_alert": {
-    "text": "The data is available only for the",
-    "underline_text": "HRMI Civil and political rights pilot countries",
-    "button_text": "GOT IT"
+    "text": "Los datos están disponibles solamente para ",
+    "underline_text": "los países piloto de HRMI",
+    "button_text": "ENTENDIDO"
   },
   "download": [
     "Descargar gráfico",
@@ -375,7 +375,7 @@
       "high_text": "Nuestro estándar de evaluación de país de ingresos altos de la OCDE usa el siguiente indicador:",
       "high_indicator": [
         "Tasa de matrícula escolar combinada bruta (UNESCO)",
-        "Promedio de calificaciones PISA promedio del país en matemáticas y ciencias (OCDE PISA)"
+        "Promedio de calificaciones PISA del país en matemáticas y ciencias (OCDE PISA)"
       ]
     },
     "health": {
