@@ -15,7 +15,7 @@ function formatPopulation(n) {
   if (!n) return `N/A`
   if (n < 1e6) return Math.round(n).toLocaleString(undefined, { maximumFractionDigits: 0 })
   const millions = (n / 1e6).toLocaleString(undefined, { maximumFractionDigits: 2 })
-  return `${millions} millions`
+  return `${millions} m`
 }
 
 function formatGDP(n) {
