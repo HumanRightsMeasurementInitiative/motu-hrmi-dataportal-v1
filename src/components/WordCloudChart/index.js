@@ -3,6 +3,37 @@ import PropTypes from 'prop-types'
 import * as d3 from 'd3'
 import styles from './style.css'
 
+export default class WordCloudChart extends React.Component {
+  static propTypes = {
+    words: PropTypes.array.isRequired,
+  }
+
+  render() {
+    const { words, content } = this.props
+    const sort = (a, b) => (b[1] - a[1])
+
+    const language = content.word_cloud_language
+    const abuseKeys = content.cpr_abuse.keys
+
+    let sortedWords = words.filter(item => abuseKeys.indexOf(item[0].toLowerCase()) === -1)
+    sortedWords = sortedWords.slice().sort(sort).slice(0, 10)
+
+    const scale = d3.scaleLinear().domain([0, 1]).range([0.5, 1])
+
+    return (
+      <div className={styles.wrapper}>
+        {
+          sortedWords.map((item, i) => (
+            <div key={i} className={styles.listItem} style={{ opacity: scale(item[1]), fontSize: scale(item[1]) * 24 }}>
+              {language === 'EN' ? item[0] : translateWordsCloud(indexOfEnglishWord(item[0]), language)}
+            </div>
+          ))
+        }
+      </div>
+    )
+  }
+}
+
 const EN_WORDS =
   [
     'Suspected Criminal',
@@ -68,33 +99,33 @@ const ES_WORDS =
 const FR_WORDS =
   [
     'Criminel présumé',
-    'Activités politiques non-violente',
-    'Activités politiques violente',
-    'Groupes victimes de discriminatio',
+    'Activités politiques non-violentes',
+    'Activités politiques violentes',
+    'Groupes victimes de discrimination',
     'Non discriminé',
     'Ethnicité',
-    'Rac',
-    'Religio',
+    'Race',
+    'Religion',
     'Nationalité',
     'Appartenance culturelle',
-    'Indigène',
-    'Immigrant',
-    'Réfugiés ou demandeurs d’asil',
+    'Indigènes',
+    'Immigrants',
+    'Réfugiés ou demandeurs d’asile',
     'Personnes de statut social ou économique peu élevé',
-    'Sans-abr',
-    'Personnes moins éduquée',
-    'Criminels présumé',
-    'Activité ou affiliation politiques',
-    'Syndicat',
-    'Journaliste',
-    'Défenseurs des droits de l’homm',
-    'Universitaire',
-    'Professionnel',
+    'Sans-abri',
+    'Personnes moins éduquées',
+    'Criminels présumés',
+    'Activité ou affiliation politique',
+    'Syndicats',
+    'Journalistes',
+    'Défenseurs des droits de l’homme',
+    'Universitaires',
+    'Professionnels',
     'LGBTQIA+',
-    'Femmes et/ou enfant',
-    'Enfant',
-    'Personnes souffrant de handica',
-    'Localisation géographiqu',
+    'Femmes et/ou enfants',
+    'Enfants',
+    'Personnes souffrant de handicap',
+    'Localisation géographique',
   ]
 const PT_WORDS =
   [
@@ -128,7 +159,9 @@ const PT_WORDS =
     'Localização Geográfica',
   ]
 
-const indexOfEnglishWord = word => EN_WORDS.indexOf(word)
+function indexOfEnglishWord(word) {
+  return EN_WORDS.indexOf(word)
+}
 
 function translateWordsCloud(indexOfWord, language) {
   switch (language) {
@@ -140,35 +173,3 @@ function translateWordsCloud(indexOfWord, language) {
       return PT_WORDS[indexOfWord]
   }
 }
-
-export default class WordCloudChart extends React.Component {
-  static propTypes = {
-    words: PropTypes.array.isRequired,
-  }
-
-  render() {
-    const { words, content } = this.props
-    const sort = (a, b) => (b[1] - a[1])
-
-    const language = content.word_cloud_language
-    const abuseKeys = content.cpr_abuse.keys
-
-    let sortedWords = words.filter(item => abuseKeys.indexOf(item[0].toLowerCase()) === -1)
-    sortedWords = sortedWords.slice().sort(sort).slice(0, 10)
-
-    const scale = d3.scaleLinear().domain([0, 1]).range([0.5, 1])
-
-    return (
-      <div className={styles.wrapper}>
-        {
-          sortedWords.map((item, i) => (
-            <div key={i} className={styles.listItem} style={{ opacity: scale(item[1]), fontSize: scale(item[1]) * 24 }}>
-              {language === 'EN' ? item[0] : translateWordsCloud(indexOfEnglishWord(item[0]), language)}
-            </div>
-          ))
-        }
-      </div>
-    )
-  }
-}
-//    const abuseKeys = ['suspected criminals', 'non-violent political', 'violent political', 'discriminated groups', 'indiscriminate']
