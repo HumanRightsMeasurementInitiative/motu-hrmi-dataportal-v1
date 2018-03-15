@@ -32,6 +32,22 @@ export default class DownloadPopup extends React.Component {
     this.setState({ isOpen: !this.state.isOpen })
   }
 
+  downloadRadarChart = () => {
+    window.alert('Not yet implemented.')
+  }
+
+  downloadBarChart = () => {
+    window.alert('Not yet implemented.')
+  }
+
+  downloadLineChart = () => {
+    window.alert('Not yet implemented.')
+  }
+
+  downloadCsv = () => {
+    window.alert('Not yet implemented.')
+  }
+
   render() {
     const { itemList, content } = this.props
     const joinedClass = jcn({
@@ -43,17 +59,16 @@ export default class DownloadPopup extends React.Component {
       <div className={joinedClass} ref='downloadPopup'>
         <div onClick={this.togglePopup}><DownloadIcon color={this.state.isOpen ? '#fff' : '#25a9e0'} /></div>
         <ul className={styles.list}>
-          { itemList.indexOf('chart') > -1 &&
-            <li>{content.download[0]}</li>
+          { itemList.includes('radar chart') &&
+            <li className="link" onClick={this.downloadRadarChart}>{content.download[0]}</li>
           }
-          { itemList.indexOf('bar chart') > -1 &&
-            <li>{content.download[1]}</li>
+          { itemList.includes('bar chart') &&
+            <li className="link" onClick={this.downloadBarChart}>{content.download[1]}</li>
           }
-          { itemList.indexOf('line chart') > -1 &&
-            <li>{content.download[2]}</li>
+          { itemList.includes('line chart') &&
+            <li className="link" onClick={this.downloadLineChart}>{content.download[2]}</li>
           }
-          <li>{content.download[3]}</li>
-          <li>{content.download[4]}</li>
+          <li className="link" onClick={this.downloadCsv}>{content.download[3]}</li>
         </ul>
       </div>
     )
