@@ -66,8 +66,8 @@ export default class RightDefinition extends React.Component {
               <ul>
                 <li>{tooltips[1].tooltip.list[0]}</li>
                 <li>{tooltips[1].tooltip.list[1]}</li>
-                <li style={{ marginBottom: '10px' }}>{tooltips[1].tooltip.list[2]} <a href='https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/' target='_blank'>{tooltips[1].tooltip.linkText}</a>.</li>
-              </ul>
+                <li style={{ marginBottom: '10px' }}>{tooltips[1].tooltip.list[2]} <a href='https://humanrightsmeasurement.org/wp-content/uploads/2018/03/HRMI-Methodology-Note-2018.pdf' target='_blank'>{tooltips[1].tooltip.linkText}</a>.</li>
+              </ul>g
             </QuestionTooltip>
             { right === 'housing' &&
               <QuestionTooltip width={238} question={tooltips[4].question}>
@@ -80,7 +80,7 @@ export default class RightDefinition extends React.Component {
           <div>
             <QuestionTooltip width={293} question={tooltips[2].question}>
               <p>{tooltips[2].tooltip.paragraphs[0]}</p>
-              <p>{tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{tooltips[2].tooltip.linkText}</a>.</p>
+              <p>{tooltips[2].tooltip.paragraphs[1]} <a href='https://humanrightsmeasurement.org/wp-content/uploads/2018/03/HRMI-Methodology-Note-2018.pdf' target='_blank'>{tooltips[2].tooltip.linkText}</a>.</p>
             </QuestionTooltip>
             <QuestionTooltip width={294} question={tooltips[3].question + ' ' + content.rights_name[right].toLowerCase() + '?'}>
               <p>{tooltips[3].tooltip.paragraphs[0]} <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blank'>{tooltips[3].tooltip.linkText}</a>.</p>

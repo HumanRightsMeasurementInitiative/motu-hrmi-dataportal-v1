@@ -44,7 +44,7 @@ export default class TopNav extends React.Component {
               <span className={styles.linkWrapper}><a href='https://humanrightsmeasurement.org/methodology/measuring-civil-political-rights/' target='_blank'>{menuText.methodology.links[1]}</a></span>
             </li>
             <li className={styles.listEl}>
-              <span className={styles.linkWrapper}><a href='#' target='_blank'>{menuText.methodology.links[2]}</a></span>
+              <span className={styles.linkWrapper}><a href='https://humanrightsmeasurement.org/wp-content/uploads/2018/03/HRMI-Methodology-Note-2018.pdf' target='_blank'>{menuText.methodology.links[2]}</a></span>
             </li>
             <li className={styles.listEl}>
               <span className={styles.linkWrapper}><a href='https://humanrightsmeasurement.org/methodology/survey/' target='_blank'>{menuText.methodology.links[3]}</a></span>

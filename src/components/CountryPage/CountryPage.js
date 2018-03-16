@@ -183,7 +183,7 @@ export default class CountryPage extends React.Component {
                     currRight === 'all'
                     ? <div className={styles.countryQues}>
                       <QuestionTooltip width={288} question={content.country_tooltips[0].question}>
-                        <p>{content.country_tooltips[0].paragraphs} <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blink'>{content.country_tooltips[0].linkText}</a>.</p>
+                        <p>{content.country_tooltips[0].paragraphs} <a href='https://humanrightsmeasurement.org/wp-content/uploads/2018/03/HRMI-Methodology-Note-2018.pdf' target='_blank'>{content.country_tooltips[0].linkText}</a>.</p>
                       </QuestionTooltip>
                       <QuestionTooltip width={244} question={content.country_tooltips[1].question}>
                         <p>{content.country_tooltips[1].paragraphs}</p>
