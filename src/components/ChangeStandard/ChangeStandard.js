@@ -43,6 +43,7 @@ export default class ChangeStandard extends React.Component {
 
     return (
       <div className={styles.buttonGroup}>
+        <div className={styles.text}>Select standard: </div>
         <ListItem onItemClick={this.onItemClick} value='esrCore' currentValue={esrStandard}>
           {content.legend.esr_barchart[0]}
         </ListItem>
