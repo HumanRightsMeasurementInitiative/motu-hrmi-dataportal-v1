@@ -402,9 +402,8 @@ export default class RightsPage extends React.Component {
           <div className="column" ref="rightPane">
             <div className={styles.infoHeader}>
               <div className={colorClassName}>
-                <div className={styles.rightName}>Right to {urlSegs.right}</div>
+                <div className={styles.rightName}>{content.rights_name[urlSegs.right]}</div>
                 <div className={styles.regionName}>
-                  {content.in}{' '}
                   {this.state.currCountry
                     ? content.countries[this.state.currCountry.countryCode]
                     : content.region_name[urlSegs.region]}
