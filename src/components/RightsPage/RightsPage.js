@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SubTopNav from '../SubTopNav/'
 import RightsItem from './RightsItem'
+import BarChartCPR from '../BarChartCPR'
 import RegionSelector from './RegionSelector'
 import RightBarchart from '../RightBarchart/'
 import ESRTimeline from '../ESRTimeline/'
@@ -399,6 +400,7 @@ export default class RightsPage extends React.Component {
               </div>
             </div>
           </div>
+
           <div className="column" ref="rightPane">
             <div className={styles.infoHeader}>
               <div className={colorClassName}>
@@ -421,6 +423,13 @@ export default class RightsPage extends React.Component {
                 )}
               </div>
             </div>
+
+            {this.state.currCountry !== null && isCPRSelected && (
+              <div style={{ margin: `25px 25px 0 25px` }}>
+                <BarChartCPR data={this.state.currCountry.rights.cpr} rightCode={urlSegs.right} height={80} />
+              </div>
+            )}
+
             <div className={styles.infoContent}>
               <div className={styles.textWrapper}>
                 <RightDefinition

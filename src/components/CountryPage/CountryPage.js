@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import SubTopNav from '../SubTopNav/'
 import CountryItem from './CountryItem'
 import CountryRightsChart from 'components/CountryRightsChart'
+import BarChartCPR from '../BarChartCPR'
 import QuestionTooltip from '../QuestionTooltip'
 import DownloadPopup from '../DownloadPopup'
 import ChangeStandard from '../ChangeStandard'
@@ -165,22 +166,23 @@ export default class CountryPage extends React.Component {
                     </div>
                   }
                   { (isCPRSelected && currRight !== 'all') &&
-                  <div>
-                    <div className={styles.cprRegionValue}>
-                      <span className={styles.text}>{content.rights_name[currRight]}</span>
-                      <span className={styles.floatNum}>
-                        {currCountry.rights.cpr
-                              ? displayTenth(currCountry.rights.cpr[currRight].mean)
-                              : 'N/A'
-                            }
-                      </span>
+                    <div>
+                      <div className={styles.cprRegionValue}>
+                        <span className={styles.text}>{content.rights_name[currRight]}</span>
+                        <span className={styles.floatNum}>
+                          {currCountry.rights.cpr
+                            ? displayTenth(currCountry.rights.cpr[currRight].mean)
+                            : 'N/A'
+                          }
+                        </span>
+                      </div>
+                      <div style={{ margin: `25px 0` }}>
+                        <BarChartCPR data={currCountry.rights.cpr} rightCode={currRight} height={80} />
+                      </div>
                     </div>
-                    <div className={styles.cprChartSubtitle}>data is for period january - june 2017</div>
-                  </div>
-                      }
+                  }
 
-                  {
-                    currRight === 'all'
+                  {currRight === 'all'
                     ? <div className={styles.countryQues}>
                       <QuestionTooltip width={288} question={content.country_tooltips[0].question}>
                         <p>{content.country_tooltips[0].paragraphs} <a href='https://humanrightsmeasurement.org/wp-content/uploads/2018/03/HRMI-Methodology-Note-2018.pdf' target='_blank'>{content.country_tooltips[0].linkText}</a>.</p>
@@ -198,6 +200,9 @@ export default class CountryPage extends React.Component {
                         <div className='text underline' onClick={this.setExploreBy}>{content.region_name[urlSegs.region]}</div>
                       </div>
                       <RightDefinition isESRSelected={isESRSelected} right={currRight} content={content} />
+
+                      ciao
+
                       { currRight &&
                         <DefinitionFooter
                           isESRSelected={isESRSelected}
