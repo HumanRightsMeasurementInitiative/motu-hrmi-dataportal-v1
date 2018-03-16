@@ -364,6 +364,7 @@
     "subtitle": "Data is for period January - June 2017",
     "tooltip": "This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group.",
     "keys": [
+      "Suspected criminal",
       "Suspected criminals",
       "Non-violent political",
       "Violent political",
