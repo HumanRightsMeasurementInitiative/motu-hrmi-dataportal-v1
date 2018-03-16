@@ -27,8 +27,8 @@ export default class RightsPage extends React.Component {
 
     return (
       <div>
-        { !isESRSelected && cloudWords.length !== 0 &&
-          <div>
+        { !isESRSelected && cloudWords.length !== 0
+          ? (<div>
             <QuestionTooltip width={214} question={content.cpr_at_risk.title} isTitle={true}>
               <p>{content.cpr_at_risk.tooltip} <a href='https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Qualitative-responses-HRMI-2017-pilot.pdf' target='_blank'>{content.cpr_at_risk.link}</a>.</p>
             </QuestionTooltip>
@@ -41,7 +41,8 @@ export default class RightsPage extends React.Component {
             <div className={styles.chartKeys}>
               <strong>A:</strong> {content.cpr_abuse.keys[0]}, <strong>B:</strong> {content.cpr_abuse.keys[1]}, <strong>C:</strong> {content.cpr_abuse.keys[2]}, <strong>D:</strong> {content.cpr_abuse.keys[3]}, <strong>E:</strong> {content.cpr_abuse.keys[4]}
             </div>
-          </div>
+          </div>)
+                : (<div style={{ fontWeight: 'bold', fontSize: '15px' }}>None Selected by Expert Respondents</div>)
         }
         { isESRSelected && currCountry && !isHideTimeline &&
           <div>
