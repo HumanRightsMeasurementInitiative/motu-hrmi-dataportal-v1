@@ -1,5 +1,5 @@
 {
-  "alert": "Please use a device with a <span>larger screen</span><br />to access the data website",
+  "alert": "Por favor, usa un dispositivo con <span>pantalla más grande </span><br />para acceder al sitio web de los datos",
   "region_name": {
     "high-income-oecd": "Países con ingresos altos de la OCDE",
     "europe-central-asia": "Europa Central y Oriental y Asia Central",
@@ -8,7 +8,7 @@
     "middle-east-north-africa": "Medio Oriente y Norte de África",
     "south-asia": "Asia del Sur",
     "sub-saharan-africa": "África Subsahariana",
-    "cpr-pilot": "Derechos civiles y políticos en países piloto"
+    "cpr-pilot": "Países del estudio piloto"
   },
   "rights_name" : {
     "food": "Derecho a la alimentación",
@@ -125,7 +125,7 @@
         "estimulación de competencia para una \"carrera a lo más alto\" (es decir, para alentar a los países a desempeñarse en derechos humanos tan bien como puedan)",
         "Iniciativa de Medición de Derechos Humanos (HRMI). 2018.",
         "Versión 2018.1",
-        "Clay et al, (2018) \"The Human Rights Measurement Initiative (HRMI) Civil and Political Rights Indicators\". Motu Working Paper, próxima aparición.",
+        "K. Chad Clay, Ryan Bakker, Anne-Marie Brook, Daniel W. Hill, and Amanda Murdie, (2018) \"The Human Rights Measurement Initiative (HRMI) Civil and Political Rights Indicators\". Motu Working Paper, próxima aparición.",
         "HRMI Economic and Social Rights Methodology, 2017, Nota técnica.",
         "akiko Fukuda-Parr, Terra Lawson-Remer y Susan Randolph (2015), Fulfilling Social and Economic Rights, Oxford: Oxford University Press."
       ],
@@ -159,7 +159,7 @@
   },
   "story_mexico": {
     "title": "Nuevos datos sobre el desempeño de México en derechos humanos evidencian graves problemas",
-    "chart_title": "Desempeño de los derechos humanos: Mexico",
+    "chart_title": "Desempeño de los derechos humanos: México",
     "country_code": "MEXICO",
     "sections": {
       "paragraph_1": [
@@ -194,10 +194,9 @@
       ],
       "subtitle_1": "México – Estándar de evaluación para países de renta alta de la OCDE",
       "paragraph_5": [
-        "Para ahondar más en este tema, examinemos detenidamente cómo el desempeño de México en materia de derecho a la educación ha cambiado con el tiempo e intentemos identificar aquellas áreas en las que México enfrenta los mayores desafíos. La gráfica que se presenta a continuación muestra el desempeño de México en la última década utilizando los dos estándares de evaluación diferentes."
-        ],
+        "Para ahondar más en este tema, examinemos detenidamente cómo el desempeño de México en materia de derecho a la educación ha cambiado con el tiempo e intentemos identificar aquellas áreas en las que México enfrenta los mayores desafíos. La gráfica que se presenta a continuación muestra el desempeño de México en la última década utilizando los dos estándares de evaluación diferentes."],
       "timeline_1": {
-        "title": "Mexico’s decadal performance on the right to education: Core assessment standard"
+        "title": "Rendimiento de México en un decenio para el derecho a la educación"
       },
       "timeline_2": {
         "title": "Rendimiento de México en un decenio para el derecho a la educación"
@@ -292,7 +291,7 @@
       "paragraphs": "Todas las mediciones presentadas son la información disponible más reciente. Las mediciones de derechos civiles y políticos son entre enero y junio de 2017. Las mediciones de derechos económicos y sociales son de la actualización de 2017 de Índice Internacional de Cumplimiento de Derechos Sociales y Económicos, que abarca el periodo entre 2005 y 2015. La información usada para cada año son los datos disponibles más recientemente para ese año. Los gráficos de HRMI usan la información disponible más reciente del conjunto total de datos."
     }, {
       "question": "¿Cuál es la diferencia entre los estándares de evaluación principales y de países de ingresos altos de la OCDE?",
-      "paragraphs": "Para países evaluados con el estándar principal de evaluación, nuestra metodología usa indicadores estadísticos disponibles para la mayoría de países del mundo, sobretodo países en desarrollo y no miembros de la OCDE. En contraste, el estándar de evaluación de país con ingresos altos de la OCDE usa indicadores que generalmente están disponibles solamente para países con ingresos altos de la OCDE o que mejor reflejen los desafíos de derechos de países con altos ingresos. También usaríamos muchos de estos indicadores en el estándar principal de evaluación  si tuvieran mayor cobertura de país. Todos los países se evalúan usando estándares de evaluación hasta el punto en que la información está disponible."
+      "paragraphs": "Para medir los derechos económicos y sociales tenemos dos estándares de evaluación. El estándar principal de evaluación usa indicadores estadísticos disponibles para la mayoría de países del mundo, sobretodo países en desarrollo y no miembros de la OCDE. En contraste, el estándar de evaluación de país con ingresos altos de la OCDE usa indicadores que generalmente están disponibles solamente para países con ingresos altos de la OCDE o que mejor reflejen los desafíos de derechos de países con altos ingresos. También usaríamos muchos de estos indicadores en el estándar principal de evaluación  si tuvieran mayor cobertura de país. Todos los países se evalúan usando estándares de evaluación hasta el punto en que la información está disponible."
     }
   ],
   "how_to_read": {
@@ -309,8 +308,8 @@
     ]
   },
   "cpr_alert": {
-    "text": "Los datos están disponibles solamente para ",
-    "underline_text": "los países piloto de HRMI",
+    "text": "Los datos para dereches civiles y políticos están disponibles solamente para ",
+    "underline_text": "los 13 países pilotos",
     "button_text": "ENTENDIDO"
   },
   "download": [
@@ -667,5 +666,6 @@
     "YEM": "Yemen, Rep. del",
     "ZMB": "Zambia",
     "ZWE": "Zimbabwe"
-  }
+  },
+  "population":["Población", "PIB/cápita"]
 }

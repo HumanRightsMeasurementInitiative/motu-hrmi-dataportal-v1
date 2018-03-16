@@ -1,14 +1,14 @@
 {
-  "alert": "Please use a device with a <span>larger screen</span><br />to access the website",
+  "alert": "Veuillez utiliser un appareil avec un <span>écran plus grand</span><br />pour accéder au site web des données",
   "region_name": {
     "high-income-oecd": "Pays de l’OCDE à hauts revenus",
     "europe-central-asia": "Europe centrale et orientale et Asie centrale",
     "east-asia-pacific": "Asie orientale et Pacifique",
-    "americas": "Amérique Latine et Caraïbes",
+    "americas": "Les pays d’Amérique",
     "middle-east-north-africa": "Moyen-Orient et Afrique du Nord",
     "south-asia": "Asie du Sud",
     "sub-saharan-africa": "Afrique subsaharienne",
-    "cpr-pilot": "Pays pilotes pour les droits civils et politiques"
+    "cpr-pilot": "Pays de l'étude pilote"
   },
   "rights_name" : {
     "food": "Droit à l’alimentation",
@@ -63,7 +63,7 @@
     "esr": "Droits économiques et sociaux",
     "cpr": "Droits civils et politiques"
   },
-  "esr_chart_subtitle": "Percentage level of human right enjoyment achieved, relative to what should be feasible",
+  "esr_chart_subtitle": "Pourcentage de jouissance des droits humains atteint, par rapport à ce qui est faisable",
   "legend": {
     "esr_barchart": ["Score de standard d’évaluation principal", "Score d’évaluation de pays de l’OCDE à hauts revenus"],
     "cpr_barchart": ["Score moyen", "percentil"]
@@ -125,7 +125,7 @@
         "pour créer une émulation et favoriser une \"course vers l'excellence\" (autrement dit, pour encourager les pays à avoir la meilleure performance possible dans le domaine des droits humains)",
         "Initiative pour la Mesure des Droits Humains (HRMI). 2018.",
         "Version 2018.1",
-        "Clay et al, (2018) \"The Human Rights Measurement Initiative (HRMI) Civil and Political Rights Indicators.\" Motu Working Paper, à paraître.",
+        "K. Chad Clay, Ryan Bakker, Anne-Marie Brook, Daniel W. Hill, and Amanda Murdie, (2018) \"The Human Rights Measurement Initiative (HRMI) Civil and Political Rights Indicators.\" Motu Working Paper, à paraître.",
         "HRMI Economic and Social Rights Methodology, 2017, Note technique.",
         "Sakiko Fukuda-Parr, Terra Lawson-Remer and Susan Randolph (2015), Fulfilling Social and Economic Rights, Oxford: Oxford University Press."
       ],
@@ -158,44 +158,44 @@
     }
   },
   "story_mexico": {
-    "title": "New data on Mexico's human rights performance highlight serious problems",
+    "title": "Les nouvelles données sur la performance du Mexique dans le domaine des droits humains révèlent des problèmes importants",
     "chart_title": "Respect des droits humains: Mexique",
     "country_code": "MEXICO",
     "sections": {
       "paragraph_1": [
-        "<strong>Media stories of disappearances, arbitrary and illegal arrests, and extrajudicial killings are now so commonplace in Mexico that they can start to <a href=\"https://www.amnesty.org/en/countries/americas/mexico/report-mexico/\">seem normal</a>. But the Human Rights Measurement Initiative’s (HRMI) new data measuring respect for civil and political rights in Mexico highlights that this situation is not normal at all.</strong>",
-        "<strong>Indeed, Mexicans know this is far from what they deserve, and protest loudly. For example, there were huge protests when <a href=\"\">43 students from a teacher training college were forcibly disappeared</a> at the hands of police and organised crime in September 2014, and again when leading <a href=\"\">investigative journalist Javier Valdez was killed</a> in broad daylight in May 2017. And these are just a couple of the most prominent cases of serious human rights violations that have occurred in Mexico. In 2017 alone, 12 journalists and media workers were killed and more than 34,000 people remain registered as missing.</strong>"
+        "<strong>Dans les médias mexicains, les récits de disparitions, d’arrestations arbitraires et illégales et d’exécutions extrajudiciaires sont si courants qu’ils en deviennent presque normaux. Mais les nouvelles données de l’Initiative pour la Mesure des Droits Humains (HRMI), qui permettent de mesurer le respect des droits civils et politiques au Mexique, montrent que cette situation est tout à fait anormale.</strong>",
+        "<strong>En effet, les Mexicains savent qu’ils méritent mieux et protestent vigoureusement. Ce fut par exemple le cas lors d’importantes manifestations en septembre 2014 alors que  <a href=\"https://www.wola.org/analysis/analysis-and-information-on-mexicos-ayotzinapa-case/\">43 étudiants d’une école de formation des enseignants avaient subi une disparition forcée</a> à cause de la police et du crime organisé, mais aussi en mai 2017 lorsque <a href=\"http://www.oas.org/en/iachr/expression/showarticle.asp?artID=1066&lID=1\">l’influent journaliste d’investigation Javier Valdez fut tué </a> en pleine rue. Il ne s’agit là que des cas les plus préoccupants de violation des droits humains au Mexique. Durant la seule année 2017, 12 journalistes et personnes travaillant dans les médias furent tués et plus de 34 000 personnes sont toujours comptabilisées comme étant portées disparues.</strong>"
       ],
       "image_1": {
-        "legend": "Relatives of the 43 students of Ayotzinapa School gather to hear the findings of the international experts who investigated the case (April 2016).",
-        "source": "Photo credit: Amnesty International / Sergio Ortiz Borbolla"
+        "legend": "Les proches des 43 étudiants de l’école d’Ayotzinapa se réunissent pour prendre connaissance des conclusions des experts internationaux ayant enquêté sur l’affaire (avril 2016).",
+        "source": "Photo: Amnesty International / Sergio Ortiz Borbolla"
       },
       "paragraph_2": [
-        "The chart to the left summarises Mexico’s performance across 12 human rights. In this chart, each axis represents a right. The further from the centre of the circle the country’s score is, the better the performance of the country on that human right. Scores for the seven civil and political human rights are shown around the bottom half of the chart (each in a different shade of blue) and scores for the five economic and social human rights are shown around the top part of the chart (each in a different shade of green). The unbalanced shape of the chart tells us that Mexico is performing much better on economic and social rights than it is on civil and political rights.",
-        "Let’s dig into this in more detail starting with the area of worse performance – civil and political rights. Since there are no objective statistics on most of these rights, we surveyed human rights experts in Mexico and calculated scores based on their responses.<br/>The chart below explores in more detail one area where Mexico performs particularly badly – the right to freedom from disappearance. Mexico’s performance on this human right is compared with that of the 12 other countries in our pilot sample for measuring civil and political rights. (Normally, we would not compare 13 such different countries, and in future iterations, we hope to only present scores for Mexico in comparison with other Latin American countries, as well as Mexico’s past scores. But for the pilot, we only have civil and political rights scores for these 13 countries, and as such, we can only focus on them.) You can see that Mexico’s disappearance score is substantially worse than the score for Brazil (the only other Latin American country in the sample). It is also on par with Saudi Arabia’s score, as shown by the overlap of the blue bars of these two countries."
+        "Le graphique de gauche résume la performance du Mexique pour 12 droits humains. Sur ce graphique, chaque axe représente un droit. Plus le score du pays est loin du centre, plus la performance du pays pour le droit concerné est bonne. Les scores pour les sept droits humains civils et politiques sont indiqués dans la partie inférieure du graphique (chaque score est représenté dans une nuance de bleu différente) ; les scores pour les cinq droits économiques et sociaux sont indiqués dans la partie supérieure du graphique (dans différentes nuances de vert). L’apparence déséquilibrée du graphique montre que le Mexique a de meilleures performances dans le domaine des droits économiques et sociaux que dans celui des droits civils et politiques.",
+        "Pour commencer, penchons-nous plus sur le domaine dans lequel la performance du Mexique est la moins bonne – celui des droits civils et politiques. Puisque, pour la plupart, nous ne disposons pas de statistiques objectives concernant ces droits, nous avons interrogé des experts des droits de l’homme et calculé les scores en fonction de leurs réponses.<br/>Le graphique ci-dessous explore plus en détail un domaine dans lequel le Mexique a des résultats particulièrement mauvais – le droit de ne pas faire l’objet de disparition forcée. La performance du Mexique pour ce droit humain est comparée à celle de 12 autres pays de notre échantillon pilote pour la mesure des droits civils et politiques. (Normalement, nous ne devrions pas comparer 13 pays si différents, et nous espérons dans le futur ne présenter les scores du Mexique qu’en comparaison avec d’autres pays d’Amérique Latine ainsi qu’avec les scores passés du Mexique. Cependant, pour l’étude pilote, nous disposons seulement des scores relatifs aux droits civils et politiques pour ces 13 pays, c’est pourquoi ce sont sur eux que nous nous penchons.) On peut voir que le score relatif aux disparitions, au Mexique, est bien plus mauvais qu’au Brésil (le seul autre pays d’Amérique Latine de notre échantillon.) Ce score est aussi comparable à celui de l’Arabie Saoudite, comme en témoigne le chevauchement des barres bleues pour ces deux pays."
       ],
       "chart_1": {
         "title": "Droit de ne pas faire l'object de disparition",
-        "subtitle": "scores for all 13 countries in HRMI pilot sample"
+        "subtitle": "scores pour les 13 pays de l’échantillon pilote de HRMI"
       },
       "paragraph_3": [
-        "This finding is not surprising given that Mexico has experienced a rise in disappearances, perpetrated by both state and non-state actors (as defined by the UN International Convention for the Protection of All Persons from Enforced Disappearance), especially since 2009 when the federal government launched its militarised strategy against drug cartels. Making a person “disappear” has become a common technique for both government authorities and members of organised crime, who often act together (e.g. as documented in the <a href=\"\">Zetas Piedras Negras prison case</a>). The Mexican government has an incomplete register of people who have been subjected to disappearance or who went missing for another reason. According to that <a href=\"\">official source</a>, there were 34,674 missing people in the country as of November 2017.",
-        "By contrast, Mexico’s best score in the area of civil and political rights is for the right to participate in government (mean score 6.1 out of 10). On this human right, Mexico is closer to the middle of the pack when compared to the other 12 countries in the pilot study.<br/>To illustrate this, consider the chart below, which compares scores for the right to participate in government across countries in our civil and political rights pilot study. For this human right Mexico’s score is not substantively different from Brazil’s score. We know this by looking at the substantial overlap of the “bars” for the two countries (i.e. Mexico’s average score is above the 10th percentile of Brazil’s score). The scores shown also suggest that Mexico’s respect for this right is better than in Saudi Arabia, Kazakhstan, and Angola."
+        "Cette observation n’est pas étonnante si l’on tient compte du fait que le Mexique a connu une hausse du nombre de disparitions dont les responsables sont des acteurs étatiques et non-étatiques (comme le définit la Convention internationale de l’ONU pour la protection de toutes les personnes contre les disparitions forcées). Cette augmentation est particulièrement sensible depuis 2009, suite au lancement par le gouvernement, un ou deux ans plus tôt, d’une stratégie militaire contre les cartels de la drogue. Faire “disparaître” un individu est alors devenu une technique répandue, à la fois pour les autorités gouvernementales et les membres du crime organisé, qui agissent souvent de concert (comme dans <a href=\"https://www.insightcrime.org/news/brief/zetas-turned-mexico-prison-mass-grave/\">l’affaire de la prison Piedras Negras contrôlée par les Zetas</a>). Le gouvernement mexicain possède une liste incomplète des personnes victimes de disparition ou qui sont portées disparues pour d’autres raisons. D’après cette <a href=\"http://secretariadoejecutivo.gob.mx/rnped/consulta-publica.php\">source officielle</a>, 34 674 personnes étaient portées disparues dans le pays en novembre 2017.",
+        "Par contre, le meilleur score du Mexique dans le domaine des droits civils et politiques est celui qui concerne le droit de participer aux affaires publiques (score moyen de 6,1 sur 10). Pour ce droit humain, le Mexique se rapproche plutôt de la moyenne si on le compare aux autres 12 pays de l’étude pilote.<br/>Pour illustrer ce fait, examinons le graphique ci-dessous, qui compare les scores pour le droit de participer aux affaires publiques entre les pays de notre étude pilote sur les droits civils et politiques. Le score du Mexique n’est pas très différent de celui du Brésil, ce dont témoigne le chevauchement important des barres des deux pays (i.e. le score moyen du Mexique est au-dessus du 10e percentile du score du Brésil). Les scores suggèrent aussi que ce droit est mieux respecté au Mexique qu’en Arabie Saoudite, qu’au Kazakhstan et qu’en Angola."
       ],
       "chart_2": {
         "title": "Droit de participer aux affaires publiques",
-        "subtitle": "scores for all 13 countries in HRMI pilot sample"
+        "subtitle": "scores pour les 13 pays de l’échantillon pilote de HRMI"
       },
       "paragraph_4": [
-        "Mexico’s ‘not so bad’ score for the right to participate in government is consistent with the fact that Mexico has a somewhat free and fair electoral system. It has periodic elections regulated by clear rules, and electoral processes that are not usually violent, although they tend to entail distrust in a large part of the population. Survey respondents did, however, highlight regulations and practices that have a disproportionately negative impact on indigenous people, people of low economic and social status, less educated people, immigrants, and people in some regions of the country. If you visit this chart on our data visualisation website, you can see more information about this by clicking on the Mexico bar of the chart.",
-        "Turning now to economic and social human rights, you can see Mexico’s scores on the five economic and social rights in the green-coloured portion of the radar chart to the left. International law recognises the fact that most countries do not have enough resources to completely and immediately fulfil economic and social rights. Because of this, there is an international legal obligation on all countries to use the “maximum of [their] available resources” to “progressively” fulfil economic and social rights. Two different sets of benchmarks are in use: one designed primarily for rich countries (our high-income OECD country assessment standard) and one designed primarily for poorer countries (our core assessment standard). But all countries are assessed against both assessment standards if the data are available.",
-        "The radar chart to the left evaluates Mexico’s performance using our core country assessment standard, which is the default standard set for Mexico since it is not a high-income country. Mexico’s scores across the five economic and social rights range from 82% to 89%. That means that Mexico is ensuring between 82% and 89% of the level of enjoyment that is possible for that right, given Mexico’s available resources. On the core standard, Mexico scores best on the rights to education and health. Mexico’s performance on ensuring economic and social rights for its people is clearly better than its performance on ensuring civil and political rights, but there is still substantial room for improvement even using our core assessment standard.",
-        "Although Mexico is not yet a high-income country, it is rapidly approaching this status, so it is interesting to also assess its performance using the high-income OECD country standard. The radar chart below does this. Here we see a much wider range in performance scores."
+        "Le score “pas si mauvais” du Mexique concernant le droit de participer aux affaires publiques est conforme avec le fait que ce pays possède un système électoral plutôt libre et juste, avec des élections périodiques encadrées par des règles claires et des processus électoraux généralement non-violents, bien qu’ils tendent à susciter la méfiance d’une large partie de la population. Les répondants d’enquête ont toutefois souligné l’existence de régulations et de pratiques qui ont un impact extrêmement négatif sur les indigènes, sur les personnes de statut économique et social peu élevé, sur les personnes peu diplômées, sur les immigrants et sur les habitants de certaines régions du pays. En allant voir ce graphique sur notre site web de visualisation des données, vous pourrez obtenir plus d’informations en cliquant sur la barre du Mexique sur le graphique.",
+        "En ce qui concerne les droits économiques et sociaux, les scores du Mexique sont représentés dans la portion verte du graphique en étoile, à gauche. Le droit international reconnaît le fait que la plupart des pays n’ont pas assez de ressources pour respecter les droits économiques et sociaux entièrement et immédiatement. Ceci explique l’obligation légale qu’ont les pays, en droit international, d’utiliser “le maximum de [leurs] ressources disponibles” pour remplir “progressivement” les droits économiques et sociaux. Deux ensembles de critères sont utilisés : l’un est principalement conçu pour les pays riches (ce qui correspond à notre standard d’évaluation pour les pays de l’OCDE à hauts revenus), l’autre pour les pays moins riches ou pauvres (ce qui correspond à notre standard d’évaluation principal). Mais lorsque les données le permettent, tous les pays sont évalués à l’aune des deux types de standards d’évaluation.",
+        "Le graphique étoile sur la gauche évalue la performance du Mexique à l’aide de notre standard d’évaluation principal, qui est le standard par défaut pour ce pays puisqu’il ne s’agit pas d’un pays à hauts revenus. Les scores du Mexique pour les cinq droits économiques et sociaux s’élèvent de 82 % à 89 %. Ceci signifie que le Mexique garantit entre 82 % et 89 % du respect possible pour ce droit, dans la mesure de ses ressources. Avec le standard d’évaluation principal, le Mexique obtient un meilleur score pour les droits à l’éducation et à la santé. La performance du Mexique dans la garantie des droits économiques et sociaux est largement meilleure que sa performance concernant les droits civils et politiques, bien que les progrès à faire soient encore importants, même en utilisant notre standard d’évaluation principal.",
+        "Bien que le Mexique ne soit pas encore un pays à hauts revenus, il s’en approche rapidement. Il est donc intéressant d’évaluer sa performance avec standard d’évaluation pour les pays de l’OCDE à hauts revenus. Le graphique étoile ci-dessous montre les résultats obtenus ; on observe un ensemble de scores de performance très divers."
       ],
-      "subtitle_1": "Mexico – High-income OECD assessment standard",
+      "subtitle_1": "Mexique – Standard d’évaluation des pays de l’OCDE à hauts revenus",
       "paragraph_5": [
-        "To dig into this in more detail, let’s take a closer look at how Mexico’s performance on the right to education has changed over time and try to identify those areas where Mexico faces the greatest challenges. The two graphs below show Mexico’s performance over the past decade using the two different assessment standards.",
-        "[note that these charts are indicative only, and don’t show the actual data.]"
+        "Observons de plus près comment la performance du Mexique dans le droit à l’éducation a changé dans le temps et cherchons à identifier les domaines dans lesquels le Mexique est confronté aux plus grands défis. Le  graphique ci-dessous montre la performance du Mexique dans la dernière décennie selon les deux standards d’évaluation.",
+        ""
       ],
       "timeline_1": {
         "title": "Mexico’s decadal performance on the right to education: Core assessment standard"
@@ -204,10 +204,10 @@
         "title": "Mexico’s decadal performance on the right to education: High-income OECD country assessment standard"
       },
       "paragraph_6": [
-        "As you can see, Mexico’s scores on the right to education have increased over the decade from 84% to 89% using the core assessment standard and from 58% to 63% using the high-income OECD assessment standard. Since Mexico’s per-capita income level increased over this time – and hence so too did Mexico’s obligation level – these results imply that enjoyment of the right to education increased more rapidly than per-capita income. In other words, Mexico became more proficient at translating its resources into enjoyment of this particular right.",
-        "But why is there such a large difference between Mexico’s scores when using the two standards? The core assessment standard considers two indicators: primary school completion rate, and gross combined school enrolment rate. Mexico recognised the right to free and compulsory primary education in 1917 when it adopted the Constitution after the Mexican Revolution, and the country has achieved greater implementation of this policy in recent decades.",
-        "Additionally, to offset the costs of sending children to school, in 1988 Mexico began implementing a program that paid certain families to send their children to school. <a href=\"\">This programme, now called Prospera,</a> tries to tackle inter-generational poverty by giving direct cash transfers to mothers, or other female heads of a household, so that they have sufficient resources to support themselves and to send their children to school. Mexico also implemented a series of administrative measures to make it extremely difficult for a primary school student to fail a course. As a result, it is not surprising that Mexico’s primary completion score is 100% – it is the benchmark setter at its per-capita income level.",
-        "Mexico’s score on the combined school enrolment (primary to university level) is 78%. This is one area where Mexico needs to do much better. However, Mexico’s greatest challenge is revealed by looking at the components of the high-income OECD assessment standard. As well as using the combined school enrolment rate, this assessment standard also uses an indicator of school quality – student performance on the International Student Assessment (PISA) tests in science and maths. On the PISA indicator we find that Mexico is only achieving 49% of the benchmark score, telling us that the quality of education in Mexico is significantly below the standard being achieved by other countries with a similar income level."
+        "On observe que les scores du Mexique dans le droit à l’éducation ont augmenté de 84 % à 89 % dans la décennie (standard d’évaluation principal) et de 58 % à 63 % (standard d’évaluation des pays de l’OCDE à hauts revenus). Dans la mesure où le revenu par habitant a augmenté durant cette période – et de fait, le niveau d’obligation de résultats du pays – ces résultats impliquent que l’exercice du droit à l’éducation a augmenté plus rapidement que le revenu par habitant. Autrement dit, le Mexique est devenu plus efficace dans l’utilisation de ses ressources pour garantir le respect de ces droits.",
+        "Mais comment expliquer une telle différence entre les scores des deux standards d’évaluation ? Le standard d’évaluation principal tient compte de deux indicateurs : le taux d’achèvement du cycle du primaire et le taux brut de scolarisation. Le Mexique a reconnu le droit à une éducation primaire gratuite et obligatoire en 1917, lorsqu’il a adopté la Constitution après la Révolution mexicaine, et le pays a fait des progrès dans la mise en application de cette mesure dans les dernières décennies.",
+        "Afin de compenser les coûts de la scolarisation des enfants, le Mexique a également mis en place à partir de 1988 un programme rémunérant les familles pour qu’elles envoient leurs enfants à l’école. Appelé aujourd’hui <a href=\"http://www.worldbank.org/en/news/feature/2014/11/19/un-modelo-de-mexico-para-el-mundo\">Prospera</a>, ce programme cherche à traiter le problème de la pauvreté intergénérationnelle en faisant des virements d’argent aux mères de familles ou autres responsables parentales féminines, afin qu’elles aient suffisamment de moyens pour vivre et scolariser leurs enfants. Le Mexique a aussi mis en place un ensemble de mesures administratives pour réduire au maximum les échecs à l’école primaire. Il n’est donc pas surprenant que le taux d’achèvement du cycle du primaire au Mexique soit de 100 % – le Mexique est le pays de référence pour ce niveau de revenu par habitant.",
+        "Le score du Mexique dans le domaine de la scolarisation primaire et universitaire est de 78 %. Il s’agit d’un domaine dans lequel le pays doit encore faire beaucoup de progrès. Le plus grand défi du Mexique apparaît à la lecture des résultats avec le standard d’évaluation des pays de l’OCDE à hauts revenus. Ce standard d’évaluation utilise le taux de scolarisation primaire et universitaire mais également un indicateur de qualité scolaire – la performance des étudiants au test de sciences et de mathématiques du Programme International pour le Suivi des Acquis des élèves (PISA). D’après l’indicateur PISA, le Mexique n’atteint que 49 % du score de référence, ce qui montre que la qualité de l’éducation est significativement inférieure au standard atteint par les autres pays ayant un niveau de revenu similaire."
       ],
       "subtitle_2": "Droit à l’éducation",
       "radar_1": {
@@ -217,27 +217,27 @@
         "title": "High income OECD country assessment standard"
       },
       "paragraph_7": [
-        "Now turning to a comparison of Mexico’s right to education scores with other countries in the Americas, please see the chart below."
+        "Passons maintenant à une comparaison des scores du Mexique dans le droit à l’éducation avec les autres pays d’Amérique (cf. graphique ci-dessous)."
       ],
       "chart_3": {
         "title": "Droit à l’éducation",
-        "subtitle": "Mexico compared to rest of the Americas"
+        "subtitle": "Le Mexique comparé aux autres pays d’Amérique"
       },
       "paragraph_8": [
-        "In this chart we show country scores using both assessment standards when both are available for a country. The completely filled-in green circle is the score using the core assessment standard. The circle with the dot is the country score using the high-income OECD assessment standard. Focusing on the filled-in green dots, it is interesting to see that the best performing country in the region on the right to education is Argentina. However, it is also important to remember that Argentina’s score of 100% does NOT imply that everyone in the country enjoys the right. Rather, it tells us that Argentina’s enjoyment of the right to education is on par with the historically best-performing countries at the same per-capita income level. Bolivia’s score on our right to education metric is nearly as high, at 99%. But given Bolivia’s much lower per capita income level, the proportion of the population enjoying the right to education is substantially lower.",
-        "Even though Argentina scores 100% on our right to education metric, further improvement is of course still possible – it is just that countries such as Argentina with a very high HRMI scores need to innovate to extend human rights enjoyment further than has been done in the past. Argentina’s lower score on the high-income OECD country assessment standard also tells us that there is significant room for improvement in the quality of education.",
-        "One final point worth noting is that the aggregate country economic and social rights metrics as shown tend to mask the fact that the distribution of fulfilment of the right is often very uneven. For example, higher-income people in Mexico are likely to be able to access schools (including private schools) of a much higher quality than people in lower socio-economic groups.",
-        "The overall picture that these data paint about Mexico is one where serious civil and political rights violations are shockingly common. In the area of economic and social rights, the situation looks not so bad, but our data still clearly show that Mexico has enough resources to ensure that its people have access to better health, education, jobs, housing etc."
+        "Ce graphique indique les scores par pays selon les deux standards d’évaluation (lorsque les deux standards sont disponibles pour un pays). Le cercle vert correspond au score calculé avec le standard d’évaluation principal. Le cercle avec le point correspond au score calculé avec le standard d’évaluation des pays de l’OCDE à hauts revenus. Si l’on examine les cercles avec les points, on note que, dans la région, le pays qui a les meilleurs scores pour le droit à l’éducation est l’Argentine. Il est toutefois important de souligner que le score de 100 % de l’Argentine n’implique PAS que chaque individu dans le pays bénéficie de ce droit. Ce score signifie que les garanties concernant le droit à l’éducation en Argentine correspondent à celles des pays qui, historiquement, ont les meilleures performances avec le même niveau de revenu par habitant. Le score de la Bolivie pour le droit à l’éducation est presque aussi haut, avec 99 %. Mais étant donné que la Bolivie a un revenu par habitant moins élevé, la proportion de la population bénéficiant du droit à l’éducation est significativement moindre.",
+        "Même si l’Argentine obtient un score de 100 % dans nos mesures relatives au droit à l’éducation, des progrès peuvent être faits – les pays qui, comme l’Argentine, ont de très hauts scores HRMI doivent innover pour mieux garantir le respect des droits humains. Le score plus bas obtenu par l’Argentine avec le standard d’évaluation de pays de l’OCDE à hauts revenus nous montre aussi que des améliorations significatives peuvent être apportées à la qualité de l’éducation.",
+        "Pour terminer, soulignons que les mesures agrégées de respect des droits économiques et sociaux tendent à masquer le fait que la distribution du respect de chaque droit est souvent très inégale. Par exemple, au Mexique, les personnes aisées sont plus susceptibles d’avoir accès à des écoles (y compris des écoles privées) de bien meilleure qualité que les personnes appartenant à des groupes sociaux-économiques moins favorisés.",
+        "L’image d’ensemble que ces données nous fournissent sur le Mexique est choquante : celle d’un pays où les graves violations des droits civils et politiques sont banales. La situation ne semble pas aussi catastrophique dans le domaine des droits économiques et sociaux, mais nos données montrent très clairement que le Mexique dispose d’assez de ressources pour garantir à son peuple un meilleur accès à la santé, à l’éducation, à l’emploi, au logement, etc."
       ],
-      "ending_text": "This is end of the story"
+      "ending_text": "C'est la fin de l'article"
     }
   },
   "header_text": {
-    "by_geography": "Respect des droits humains:"
+    "by_geography": "Respect des droits humains"
   },
   "footer_text": {
-    "rights_page_esr": "FR: Higher scores indicate greater fulfilment of country obligations for this human right.",
-    "rights_page_cpr": "FR: Higher scores indicate greater respect for this human right.",
+    "rights_page_esr": "Plus le score est élevé, plus le pays remplit ses obligations concernant ce droit humain.",
+    "rights_page_cpr": "Plus le score est élevé , plus le respect de ce droit humain est important.",
     "by_geography": "Chaque axe représente un droit. Plus le score est loin dans l’axe, plus la performance du pays dans le domaine de ce droit est élevée.",
     "source": "Source : données 2018 de l’Initiative pour la Mesure des Droits Humains (HRMI),"
   },
@@ -269,7 +269,7 @@
         "linkText": "note méthodologique"
       }
     }, {
-      "question": "Comment HRMI a-t-il mesuré le Droit à",
+      "question": "Comment HRMI a-t-il mesuré le",
       "tooltip": {
         "paragraphs": [
           "Chaque indicateur relatif aux droits civils et politiques a été produit sur la base de réponses à une enquête menée par des experts des droits de l’homme présents dans le pays. Les réponses aux questions sur la fréquence des violations de chaque droit civil et politique ont été combinées en utilisant un modèle statistique qui garantit la comparabilité des réponses entre les pays. On obtient une distribution des niveaux estimés de respect de chaque droit dans chaque pays, représenté par les scores et les barres d’incertitudes indiquées dans les visualisations des données. Nos répondants ont aussi collecté des informations concernant les individus identifiés comme pouvant être victimes d’abus de droits humains. Pour plus d’informations, consultez notre site Internet"
@@ -293,7 +293,7 @@
       "paragraphs": "Tous les indicateurs donnés correspondent aux données les plus récentes. Les indicateurs relatifs aux droits civils et politiques sont ceux pour la période allant de janvier 2017 à juin 2017. Les indicateurs relatifs aux droits économiques et sociaux correspondent à la mise à jour 2017 de l’International Social and Economic Rights Fulfilment Index, qui couvre la période 2005-2015. Les données utilisées pour chaque année sont à chaque fois les données disponibles les plus récentes. Les graphiques d’HRMI ont été élaborés avec les données les plus récentes."
     }, {
       "question": "Quelle est la différence entre les standards d’évaluation principaux et les standards d’évaluation des pays de l’OCDE à hauts revenus ?",
-      "paragraphs": "Pour les pays évalués avec le standard d’évaluation principal, notre méthodologie utilise les indicateurs statistiques qui sont disponibles pour la plupart des pays du monde, en particulier les pays en développement et les pays non membres de l’OCDE. Le standard d’évaluation des pays de l’OCDE à hauts revenus fait quant à lui appel à des indicateurs qui sont généralement disponibles uniquement pour les pays de l’OCDE à hauts revenus, et/ou qui reflètent mieux les défis que les pays à hauts revenus rencontrent en matière de droits de l’homme. Nous utiliserions un grand nombre de ces indicateurs dans le standard d’évaluation principal s’ils couvraient un plus grand nombre de pays. Tous les pays sont évalués à l’aide de ces deux types de standards d’évaluation dans la mesure des données disponibles."
+      "paragraphs": "Pour mesurer les droits economiques et sociaux, utilisons deux standards d’évaluation. Le standard d’évaluation principal, utilise les indicateurs statistiques qui sont disponibles pour la plupart des pays du monde, en particulier les pays en développement et les pays non membres de l’OCDE. Le standard d’évaluation des pays de l’OCDE à hauts revenus fait quant à lui appel à des indicateurs qui sont généralement disponibles uniquement pour les pays de l’OCDE à hauts revenus, et/ou qui reflètent mieux les défis que les pays à hauts revenus rencontrent en matière de droits de l’homme. Nous utiliserions un grand nombre de ces indicateurs dans le standard d’évaluation principal s’ils couvraient un plus grand nombre de pays. Tous les pays sont évalués à l’aide de ces deux types de standards d’évaluation dans la mesure des données disponibles."
     }
   ],
   "how_to_read": {
@@ -310,9 +310,9 @@
     ]
   },
   "cpr_alert": {
-    "text": "The data is available only for the",
-    "underline_text": "HRMI Civil and political rights pilot countries",
-    "button_text": "GOT IT"
+    "text": "Les données pour les droits civils et politiques sont disponibles uniquement pour les ",
+    "underline_text": "13 pays pilotes",
+    "button_text": "COMPRIS"
   },
   "download": [
     "Télécharger le diagramme",
@@ -376,7 +376,7 @@
       "high_text": "Notre standard d’évaluation pour les pays de l’OCDE à hauts revenus utilise l’indicateur suivant :",
       "high_indicator": [
         "Taux brut de scolarisation  (UNESCO)",
-        "Moyennes des scores PISA moyens du pays en mathématiques et en sciences (OECD PISA)"
+        "Moyennes des scores PISA du pays en mathématiques et en sciences (OECD PISA)"
       ]
     },
     "health": {
@@ -668,5 +668,6 @@
     "YEM": "Yémen, Rép. du",
     "ZMB": "Zambie",
     "ZWE": "Zimbabwe"
-  }
+  },
+  "population":["Population", "PIB/habitant"]
 }

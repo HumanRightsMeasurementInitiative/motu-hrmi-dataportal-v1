@@ -1,14 +1,14 @@
 {
-  "alert": "Please use a device with a <span>larger screen</span><br />to access the website",
+  "alert": "Use um dispositivo com uma <span>tela maior </span><br />para acessar o site de dados",
   "region_name": {
     "high-income-oecd": "Países da OCDE de alta renda",
     "europe-central-asia": "Leste Europeu, Europa Central e Ásia Central",
     "east-asia-pacific": "Ásia Oriental e Pacífico",
-    "americas": "América Latina e Caribe",
+    "americas": "As Américas",
     "middle-east-north-africa": "Oriente Médio e Norte da África",
     "south-asia": "Sul da Ásia",
     "sub-saharan-africa": "África Subsaariana",
-    "cpr-pilot": "Países Pilotos dos Direitos Civis e Políticos"
+    "cpr-pilot": "Países do Estudo Piloto"
   },
   "rights_name" : {
     "food": "Direito à comida",
@@ -63,10 +63,10 @@
     "esr": "Direitos Econômicos e Sociais",
     "cpr": "Direitos Civis e Políticos"
   },
-  "esr_chart_subtitle": "Percentage level of human right enjoyment achieved, relative to what should be feasible",
+  "esr_chart_subtitle": "Nível percentual de gozo do direito humano alcançado, em relação ao que deveria ser viável",
   "legend": {
     "esr_barchart": ["Pontuação em padrão principal de avaliação", "Pontuação em padrão de avaliação de países da OCDE de alta renda"],
-    "cpr_barchart": ["Mean score", "percentile"]
+    "cpr_barchart": ["pontuação média", "percentil"]
   },
   "menu": {
     "about": {
@@ -125,7 +125,7 @@
         "para incentivar a disputa de uma \"corrida para o topo\" (ou seja, encorajar os países a ter o melhor desempenho em direitos humanos possível)",
         "Iniciativa de Medição dos Direitos Humanos (HRMI). 2018.",
         "Versão 2018.1",
-        "Clay et al, (2018) \"The Human Rights Measurement Initiative (HRMI) Civil and Political Rights Indicators.\" Motu Working Paper, forthcoming.",
+        "K. Chad Clay, Ryan Bakker, Anne-Marie Brook, Daniel W. Hill, and Amanda Murdie (2018) \"The Human Rights Measurement Initiative (HRMI) Civil and Political Rights Indicators.\" Motu Working Paper, forthcoming.",
         "HRMI Economic and Social Rights Methodology, 2017, nota técnica.",
         "Sakiko Fukuda-Parr, Terra Lawson-Remer and Susan Randolph (2015), Fulfilling Social and Economic Rights, Oxford: Oxford University Press."
       ],
@@ -227,7 +227,7 @@
         "Um último ponto a destacar é que as métricas de direitos econômicos e sociais agregadas do país, conforme foram mostradas, tendem a encobrir o fato que a distribuição cumprimento do direito é frequentemente desigual. Por exemplo, provavelmente as pessoas com renda mais alta no México conseguirão ter acesso às escolas (inclusive as escolas particulares) com qualidade superior que as pessoas pertencentes a grupos socioeconômicos mais baixos.",
         "O panorama geral que estes dados ilustram sobre o México é aquele onde as violações graves dos direitos civis e políticos são escandalosamente comuns.  No âmbito dos direitos econômicos e sociais, a situação não parece ser tão ruim, mas nossos dados claramente mostram que o México tem recursos suficientes para garantir que a população tenha melhor acesso à saúde, educação emprego, moradia, etc."
       ],
-      "ending_text": "This is end of the story"
+      "ending_text": "Este é o fim da história"
     }
   },
   "header_text": {
@@ -235,7 +235,7 @@
   },
   "footer_text": {
     "rights_page_esr": "As pontuações mais altas indicam um maior cumprimento das obrigações do país para este direito humano.",
-    "rights_page_cpr": "Higher scores indicate greater respect for this human right.",
+    "rights_page_cpr": "Pontuações mais altas indicam maior respeito a esse direito humano.",
     "by_geography": "Cada eixo representa um direito. Quanto maior for a pontuação de acordo com o eixo, melhor o desempenho do país para este direito.",
     "source": "Fonte: Conjunto de dados de 2018 da Iniciativa de Medição dos Direitos Humanos (HRMI)"
   },
@@ -291,7 +291,7 @@
       "paragraphs": "Todas as métricas apresentadas são dos dados mais recentes disponíveis. As métricas de direitos civis e políticos são de janeiro a junho de 2017. As métricas de direitos econômicos e sociais são da atualização de 2017 do International Social and Economic Rights Fulfilment Index, que cobre o período de 2005 a 2015. Os dados utilizados para cada ano são os mais recentes à disposição para aquele ano. Os gráficos da HRMI usam os dados mais recentes disponíveis do conjunto completo de dados."
     }, {
       "question": "Qual a diferença entre o padrão principal de avaliação e o dos países  da OCDE de alta renda?",
-      "paragraphs": "Para os países avaliados utilizando o padrão principal de avaliação, nossa metodologia utiliza indicadores estatísticos que estão disponíveis na maioria dos países, principalmente países em desenvolvimento e não-membros da OCDE. Em contrapartida, o padrão de avaliação dos países da OCDE de alta renda utiliza indicadores que geralmente estão disponíveis apenas para os países da OCDE de alta renda e/ou melhor refletem os desafios dos direitos humanos em países de alta renda. Gostaríamos também de utilizar muitos dos indicadores do padrão principal de avaliação se cobrissem mais países. Todos os países são avaliados utilizando ambos os padrões de avaliação na medida em que os dados são disponibilizados."
+      "paragraphs": "As medições dos direitos econômicos e sociais utilize dois padrões de avaliação. Os padrão principal de avaliação utiliza indicadores estatísticos que estão disponíveis na maioria dos países, principalmente países em desenvolvimento e não-membros da OCDE. Em contrapartida, o padrão de avaliação dos países da OCDE de alta renda utiliza indicadores que geralmente estão disponíveis apenas para os países da OCDE de alta renda e/ou melhor refletem os desafios dos direitos humanos em países de alta renda. Gostaríamos também de utilizar muitos dos indicadores do padrão principal de avaliação se cobrissem mais países. Todos os países são avaliados utilizando ambos os padrões de avaliação na medida em que os dados são disponibilizados."
     }
   ],
   "how_to_read": {
@@ -308,9 +308,9 @@
     ]
   },
   "cpr_alert": {
-    "text": "The data is available only for the",
-    "underline_text": "HRMI Civil and political rights pilot countries",
-    "button_text": "ENTENDIDO"
+    "text": "Os dados de direitos civis e políticos estão disponíveis apenas para os",
+    "underline_text": "13 países piloto",
+    "button_text": "ENTENDI"
   },
   "download": [
     "Baixar gráfico",
@@ -666,5 +666,6 @@
     "YEM": "Iémen",
     "ZMB": "Zâmbia",
     "ZWE": "Zimbabwe"
-  }
+  },
+  "population":["População", "PIB/capita"]
 }

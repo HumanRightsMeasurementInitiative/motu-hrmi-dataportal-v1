@@ -130,7 +130,7 @@
         "to stimulate competition for a \"race to the top\" (that is, to encourage countries to perform as well in human rights as they possibly can)",
         "Human Rights Measurement Initiative (HRMI). 2018.",
         "Version 2018.1",
-        "Clay et al, (2018) \"The Human Rights Measurement Initiative (HRMI) Civil and Political Rights Indicators.\" Motu Working Paper, forthcoming.",
+        "K. Chad Clay, Ryan Bakker, Anne-Marie Brook, Daniel W. Hill, and Amanda Murdie, (2018) \"The Human Rights Measurement Initiative (HRMI) Civil and Political Rights Indicators.\" Motu Working Paper, forthcoming.",
         "HRMI Economic and Social Rights Methodology 2017 Technical note.",
         "Sakiko Fukuda-Parr, Terra Lawson-Remer and Susan Randolph (2015), Fulfilling Social and Economic Rights, Oxford: Oxford University Press."
       ],
@@ -153,19 +153,21 @@
     }
   },
   "section": {
-    "title": ["Welcome to the Human Right <br/> Measurement Initiative's data website"],
+    "title": [
+      "Welcome to the Human Rights <br/> Measurement Initiative's data website"
+    ],
     "subtitle": "(beta-version for now)",
     "section_name": [
       "Explore by Rights",
       "Explore by Geography"
     ],
-    "paragraphs":[
-        "View an example of HRMI data",
-        "being used in a profile story for"
+    "paragraphs": [
+      "View an example of HRMI data",
+      "being used in a profile story for"
     ],
-    "country":[
-        "Mexico",
-        "Australia"
+    "country": [
+      "Mexico",
+      "Australia"
     ]
   },
   "arrow_link": {
@@ -337,7 +339,7 @@
     ]
   },
   "cpr_alert": {
-    "text": "The data is available only for the",
+    "text": "These data are available only for the",
     "underline_text": "HRMI Civil and political rights pilot countries",
     "button_text": "GOT IT"
   },
@@ -709,5 +711,6 @@
     "YEM": "Yemen",
     "ZMB": "Zambia",
     "ZWE": "Zimbabwe"
-  }
+  },
+  "population":["Population", "GDP/capita"]
 }
