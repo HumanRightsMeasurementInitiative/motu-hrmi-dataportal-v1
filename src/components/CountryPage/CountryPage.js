@@ -73,6 +73,9 @@ export default class CountryPage extends React.Component {
     const countries = rightsByRegion[urlSegs.region].countries
     const currCountry = countries.find(country => country.countryCode === urlSegs.country)
 
+    const isHI = rightsByRegion['high-income-oecd'].countries
+      .some(c => c.countryCode === currCountry.countryCode)
+
     const rights = Object.entries(content.rights_definitions).map(([code, right]) => ({ code, ...right }))
     const ESRs = rights.filter(right => right.type === 'ESR')
     const CPRs = rights.filter(right => right.type === 'CPR')
@@ -107,7 +110,15 @@ export default class CountryPage extends React.Component {
           <div className='column'>
             <div className={styles.countryHeader}>
               <div className={styles.title}>
-                <strong>{content.header_text.by_geography}: {content.countries[currCountry.countryCode]}</strong>
+                <strong>
+                  {content.header_text.by_geography}:
+                  {' '}
+                  <span style={{ color: 'black' }}>{content.countries[currCountry.countryCode]}</span>
+                  {' '}
+                  {isHI &&
+                    <b style={{ color: 'black' }}>*</b>
+                  }
+                </strong>
               </div>
               <ChangeStandard />
             </div>
@@ -125,6 +136,11 @@ export default class CountryPage extends React.Component {
             </div>
             <div className={styles.countryFooter}>
               <div className={styles.downloadPopupWrapper}><DownloadPopup itemList={['radar chart']} content={content} /></div>
+              <div className={styles.text} style={{ marginBottom: 4 }}>
+                <b style={{ fontSize: 14, color: 'black' }}>*</b>
+                {' '}
+                High-income OECD country. For these countries it is best to use the high-income OECD country assessment standard.
+              </div>
               <div className={styles.text}>{content.footer_text.by_geography}</div>
               <div className={styles.source}>{content.footer_text.source} <a className={styles.small} href='https://humanrightsmeasurement.org'>https://humanrightsmeasurement.org</a></div>
             </div>
@@ -200,8 +216,6 @@ export default class CountryPage extends React.Component {
                         <div className='text underline' onClick={this.setExploreBy}>{content.region_name[urlSegs.region]}</div>
                       </div>
                       <RightDefinition isESRSelected={isESRSelected} right={currRight} content={content} />
-
-                      ciao
 
                       { currRight &&
                         <DefinitionFooter

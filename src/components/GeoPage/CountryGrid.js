@@ -56,6 +56,7 @@ export default class GeoPageCountryGrid extends React.Component {
                     />
                     <span>
                       {content.countries[country.countryCode]} {hoverCountry === country.countryCode}
+                      {country.isHI && '*'}
                     </span>
                   </div>
                 ))}
@@ -66,7 +67,14 @@ export default class GeoPageCountryGrid extends React.Component {
             <div className={styles.downloadPopupWrapper}>
               <DownloadPopup itemList={['chart']} content={content} />
             </div>
-            <div className={styles.text}>{content.footer_text.by_geography}</div>
+            <div className={styles.text} style={{ marginBottom: 4 }}>
+              <b style={{ fontSize: 14, color: 'black' }}>*</b>
+              {' '}
+              High-income OECD country. For these countries it is best to use the high-income OECD country assessment standard.
+            </div>
+            <div className={styles.text}>
+              {content.footer_text.by_geography}
+            </div>
             <div className={styles.source}>
               {content.footer_text.source}
               {' '}

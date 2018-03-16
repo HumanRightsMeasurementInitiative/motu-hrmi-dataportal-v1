@@ -70,6 +70,12 @@ export default class GeoPage extends React.Component {
     const regionRights = rightsByRegion[currRegion]
     const countries = regionRights.countries
 
+    // FIXME: Dirty! This mutates the object
+    countries.forEach(country => {
+      country.isHI = rightsByRegion['high-income-oecd'].countries
+        .some(c => c.countryCode === country.countryCode)
+    })
+
     const rights = Object.entries(rightsDefinitions).map(([code, right]) => ({ code, ...right }))
     const rightsESR = rights.filter(right => right.type === 'ESR')
     const rightsCPR = rights.filter(right => right.type === 'CPR')
