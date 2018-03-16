@@ -1,4 +1,4 @@
-.geoPage {
+geoPage {
   display: flex;
   flex-direction: column;
   padding-top: 60px;
@@ -73,6 +73,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   grid-gap: 15px;
+}
+.countriesContainer span{
+    font-weight:bold;
+    font-size: 14px;
 }
 .countriesList::-webkit-scrollbar {
   background: transparent;
