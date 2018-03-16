@@ -3,6 +3,10 @@ import PropTypes from 'prop-types'
 import * as d3 from 'd3'
 import styles from './style.css'
 
+function sort(a, b) {
+  return (b[1] - a[1])
+}
+
 export default class WordCloudChart extends React.Component {
   static propTypes = {
     words: PropTypes.array.isRequired,
@@ -10,20 +14,23 @@ export default class WordCloudChart extends React.Component {
 
   render() {
     const { words, content } = this.props
-    const sort = (a, b) => (b[1] - a[1])
 
     const language = content.word_cloud_language
-    const abuseKeys = content.cpr_abuse.keys
 
-    let sortedWords = words.filter(item => abuseKeys.indexOf(item[0].toLowerCase()) === -1)
-    sortedWords = sortedWords.slice().sort(sort).slice(0, 10)
+    const abuseWordsToExclude = content.cpr_abuse.keys.map(word => word.toLowerCase())
+
+    const filteredWords = words.filter(item => !abuseWordsToExclude.includes(item[0].toLowerCase()))
+
+    const sortedWords = filteredWords.sort(sort)
+
+    const topWords = sortedWords.slice(0, 10)
 
     const scale = d3.scaleLinear().domain([0, 1]).range([0.5, 1])
 
     return (
       <div className={styles.wrapper}>
         {
-          sortedWords.map((item, i) => (
+          topWords.map((item, i) => (
             <div key={i} className={styles.listItem} style={{ opacity: scale(item[1]), fontSize: scale(item[1]) * 24 }}>
               {language === 'EN' ? item[0] : translateWordsCloud(indexOfEnglishWord(item[0]), language)}
             </div>
