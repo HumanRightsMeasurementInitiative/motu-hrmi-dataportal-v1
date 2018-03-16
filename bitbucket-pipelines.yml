@@ -6,6 +6,7 @@ pipelines:
         caches:
           - node
         script:
+          - ln -s /opt/yarn-v1.5.1/bin/yarn /bin/yarn
           - git clone --branch="master" --depth=1 https://bitbucket.org/accurat/accurat_deployer.git ./_deployer
           - ./_deployer/scripts/deploy-ssh.sh --check-env
           - yarn install --no-emoji --no-progress --link-duplicates
