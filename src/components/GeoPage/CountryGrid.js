@@ -8,6 +8,10 @@ function rewriteArgs(fn, ...args) {
   return () => fn(...args)
 }
 
+function async(fn) {
+  return (...a) => setTimeout(() => fn(...a), 10)
+}
+
 export default class GeoPageCountryGrid extends React.Component {
   render() {
     const {
@@ -36,12 +40,13 @@ export default class GeoPageCountryGrid extends React.Component {
           </div>
           <div className={styles.gridWrapper}>
             <div className={styles.countriesList}>
-              <div className={styles.countriesContainer}>
+              <div className={styles.countriesContainer} onMouseLeave={async(unsetHoverCountry)}>
                 {countries.map((country, i) => (
                   <div
                     key={country.countryCode}
                     className={styles.countryCard}
                     onClick={rewriteArgs(setCountry, country.countryCode)}
+                    onMouseEnter={async(rewriteArgs(setHoverCountry, country.countryCode))}
                   >
                     <CountryRightsChart
                       rights={country.rights}
@@ -52,15 +57,6 @@ export default class GeoPageCountryGrid extends React.Component {
                     <span>
                       {content.countries[country.countryCode]} {hoverCountry === country.countryCode}
                     </span>
-                    <div
-                      className={styles.cardCover}
-                      onMouseOver={rewriteArgs(setHoverCountry, country.countryCode)}
-                      onMouseOut={unsetHoverCountry}
-                      style={{
-                        opacity:
-                          hoverCountry === null || hoverCountry === country.countryCode ? 0 : 1,
-                      }}
-                    />
                   </div>
                 ))}
               </div>
