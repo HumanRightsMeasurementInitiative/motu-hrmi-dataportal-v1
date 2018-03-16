@@ -104,7 +104,7 @@
       "links": [
         "Get an overview of our methodology for measuring economic and social rights.",
         "Get an overview of our methodology for measuring civil and political rights.",
-        "Read our more in-depth methodology handbook: [Add hyperlink when available].",
+        "Read our more in-depth methodology handbook:",
         "See the HRMI expert survey for civil and political rights (please note this is a link to a preview of the survey only, and any responses you make will not be collected)."
       ]
     },
@@ -268,7 +268,7 @@
     {
       "question": [
         "How does the HRMI methodology convert the above indicators into the ",
-        " metric?"
+        "metric?"
       ],
       "tooltip": {
         "paragraphs": [
