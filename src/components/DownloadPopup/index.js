@@ -1,13 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { flatMap, omitBy, mapKeys, mapValues } from 'lodash'
+import { csvFormat } from 'd3'
+import fileSaver from 'file-saver'
 import DownloadIcon from '../DownloadIcon'
 import { joinClassName as jcn } from '../utils'
 import styles from './style.css'
 
-export default class DownloadPopup extends React.Component {
+function countryDataTabular(data, countryCode) {
+  const rights = data.rightsByCountry[countryCode].rights
+  const { esrCore, esrHI, cpr } = rights
+  const tabularESR = {
+    ...mapKeys(omitBy(esrCore, (v, k) => k.endsWith('_sub')), (v, k) => `${k}_core`),
+    ...mapKeys(omitBy(esrHI, (v, k) => k.endsWith('_sub')), (v, k) => `${k}_high_income`),
+  }
+  const tabularCPR = mapValues(cpr || {}, v => v.mean)
+  const tabularData = [
+    { country_code: countryCode, ...tabularESR, ...tabularCPR },
+  ]
+  return tabularData
+}
+
+function downloadFileWithContent(fileName, content) {
+  const blob = new window.Blob([content], { type: 'text/plain;charset=utf-8' })
+  fileSaver.saveAs(blob, fileName)
+}
+
+class DownloadPopup extends React.Component {
   static propTypes = {
     itemList: PropTypes.array.isRequired,
     content: PropTypes.object.isRequired,
+    urlSegs: PropTypes.object.isRequired,
+    data: PropTypes.object.isRequired,
   }
 
   constructor() {
@@ -33,19 +58,68 @@ export default class DownloadPopup extends React.Component {
   }
 
   downloadRadarChart = () => {
-    window.alert('Not yet implemented.')
+    this.togglePopup()
+    const { urlSegs } = this.props
+    window.alert('Not yet implemented.', urlSegs)
   }
 
   downloadBarChart = () => {
-    window.alert('Not yet implemented.')
+    this.togglePopup()
+    const { urlSegs } = this.props
+    window.alert('Not yet implemented.', urlSegs)
   }
 
   downloadLineChart = () => {
-    window.alert('Not yet implemented.')
+    this.togglePopup()
+    const { urlSegs } = this.props
+    window.alert('Not yet implemented.', urlSegs)
   }
 
   downloadCsv = () => {
-    window.alert('Not yet implemented.')
+    this.togglePopup()
+    const { urlSegs, data } = this.props
+    const {
+      exploreBy,
+      right: currentRight,
+      country: currentCountryCode,
+      region: currentRegion,
+    } = urlSegs
+
+    if (exploreBy === 'Geography') {
+      if (currentCountryCode) {
+        // Download country data
+        const tabularData = countryDataTabular(data, currentCountryCode)
+        const csv = csvFormat(tabularData)
+        const fileName = `HRMIData_Country_${currentCountryCode}.csv`
+        downloadFileWithContent(fileName, csv)
+      } else {
+        // Download region data, all its countries
+        const countries = data.rightsByRegion[currentRegion].countries
+        const tabularData = flatMap(countries, ({ countryCode }) => countryDataTabular(data, countryCode))
+        const csv = csvFormat(tabularData)
+        const fileName = `HRMIData_Region_${currentRegion}.csv`
+        downloadFileWithContent(fileName, csv)
+      }
+    } else if (exploreBy === 'Rights') {
+      // Download rights data for current regions
+      const countries = data.rightsByRegion[currentRegion].countries
+      const tabularData = countries.map(country => {
+        const { countryCode, rights } = country
+        const isCPR = rights.cpr && rights.cpr.hasOwnProperty(currentRight)
+        if (isCPR) {
+          return { country_code: countryCode, ...rights.cpr[currentRight] }
+        } else {
+          return {
+            country_code: countryCode,
+            high_income: rights.esrHI[currentRight],
+            core: rights.esrCore[currentRight],
+          }
+        }
+      })
+      const csv = csvFormat(tabularData)
+      const fileName = `HRMIData_Right_${currentRight}_Region_${currentRegion}.csv`
+      downloadFileWithContent(fileName, csv)
+    }
   }
 
   render() {
@@ -74,3 +148,14 @@ export default class DownloadPopup extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => (
+  {
+    data: state.data,
+    urlSegs: state.router.urlSegs,
+  }
+)
+
+const mapDispatchToProps = (dispatch) => ({})
+
+export default connect(mapStateToProps, mapDispatchToProps)(DownloadPopup)
