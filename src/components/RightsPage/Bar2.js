@@ -11,6 +11,7 @@ const svgWrapper = {
 }
 const svg = {
   height: '70px',
+  width: '15px',
 }
 const text = {
   flexGrow: 1,
@@ -19,6 +20,7 @@ const text = {
 
 export default class Bar2 extends React.Component {
   render() {
+    const { legend } = this.props
     return (
       <div style={wrapper}>
         <div style={svgWrapper}>
@@ -30,7 +32,7 @@ export default class Bar2 extends React.Component {
           </svg>
         </div>
         <div style={text}>
-          <p>prova</p>
+          <p>{legend}</p>
         </div>
       </div>
     )

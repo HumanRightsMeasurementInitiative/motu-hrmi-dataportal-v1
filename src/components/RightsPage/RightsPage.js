@@ -292,13 +292,13 @@ export default class RightsPage extends React.Component {
                           {content.question_tooltips[2].tooltip.paragraphs[0]}
                         </p>
                         <div style={{ display: 'flex', flexFlow: 'column' }}>
-                          <Bar1 />
-                          <Bar2 />
-                          <Bar3 />
+                          <Bar1 legend={content.question_tooltips[2].tooltip.legend[0]} />
+                          <Bar2 legend={content.question_tooltips[2].tooltip.legend[1]}/>
+                          <Bar3 legend={content.question_tooltips[2].tooltip.legend[2]}/>
                         </div>
                         <p>
                           {content.question_tooltips[2].tooltip.paragraphs[1]}{' '}
-                          <a href="#" target="_blank">
+                          <a href="https://humanrightsmeasurement.org/wp-content/uploads/2018/03/HRMI-Methodology-Note-2018.pdf" target="_blank">
                             {content.question_tooltips[2].tooltip.linkText}
                           </a>.
                         </p>

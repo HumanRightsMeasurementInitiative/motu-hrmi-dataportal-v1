@@ -14,12 +14,13 @@ const svg = {
   height: '70px',
 }
 const text = {
-flexGrow: 1,
+  flexGrow: 1,
   alignSelf: 'center',
 }
 
 export default class Bar1 extends React.Component {
   render() {
+    const { legend } = this.props
     return (
       <div style={wrapper}>
         <div style={svgWrapper}>
@@ -33,7 +34,7 @@ export default class Bar1 extends React.Component {
           </svg>
         </div>
         <div style={text}>
-          <p>prova</p>
+          <p>{legend}</p>
         </div>
       </div>
     )
