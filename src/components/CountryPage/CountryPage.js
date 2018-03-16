@@ -133,9 +133,9 @@ export default class CountryPage extends React.Component {
             <div className={styles.columnRight}>
               <div className={styles.countryInfo}>
                 <div className={styles.detailCountry}>{content.countries[currCountry.countryCode]}</div>
-                <div className={styles.smallTitle}>POPULATION (2015)</div>
+                <div className={styles.smallTitle}>{content.population[0].toUpperCase()} (2015)</div>
                 <div className={styles.smallText2}>{formatPopulation(currCountry.population)}</div>
-                <div className={styles.smallTitle}>GDP/CAPITA (2015)</div>
+                <div className={styles.smallTitle}>{content.population[1].toUpperCase()} (2015)</div>
                 <div className={styles.smallText2}>{formatGDP(currCountry.rights[`${esrStandard}Historical`][2015].GDP)}</div>
               </div>
               <div className={styles.rightInfoWrapper}>
