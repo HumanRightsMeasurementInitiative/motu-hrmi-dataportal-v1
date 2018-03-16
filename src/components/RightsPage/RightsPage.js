@@ -264,7 +264,7 @@ export default class RightsPage extends React.Component {
               </div>
               <div className={styles.esrLegendContainer}>
                 {isESRSelected ? (
-                  <div className={styles.esrLegend}>
+                  <div className={styles.esrLegend} data-legend>
                     <div className={styles.text}>
                       {content.legend.esr_barchart[0]}
                     </div>
@@ -273,7 +273,7 @@ export default class RightsPage extends React.Component {
                     </div>
                   </div>
                 ) : (
-                  <div className={styles.cprLegend}>
+                  <div className={styles.cprLegend} data-legend>
                     <div className={styles.meanText}>
                       {content.legend.cpr_barchart[0]}
                     </div>

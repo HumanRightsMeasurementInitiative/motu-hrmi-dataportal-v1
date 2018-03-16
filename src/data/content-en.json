@@ -349,11 +349,10 @@
     "button_text": "GOT IT"
   },
   "download": [
-    "Download chart",
+    "Download radar chart",
     "Download bar chart",
     "Download line chart",
-    "Download csv",
-    "Download all the above"
+    "Download csv"
   ],
   "esr_trend": {
     "title": "Right trend over time",
