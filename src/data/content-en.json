@@ -364,6 +364,7 @@
     "subtitle": "Data is for period January - June 2017",
     "tooltip": "This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group.",
     "keys": [
+      "Suspected criminal",
       "Suspected criminals",
       "Non-violent political",
       "Violent political",
@@ -377,6 +378,7 @@
   "show_less": "Show less",
   "search_country": "Search Country",
   "lang": "Language",
+  "word_cloud_language":"EN",
   "select_region": "Select Region",
   "in": "in",
   "explore_this_rights_in": "Explore this right in",
