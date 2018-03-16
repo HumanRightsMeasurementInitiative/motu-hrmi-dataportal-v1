@@ -147,11 +147,25 @@
       "button": "DE ACUERDO"
     }
   },
-  "section": {
-    "title": "Explorar todo el conjunto de datos:",
-    "section_name": ["Explorar por derechos", "Explorar por geografía"]
+  "section":
+  { "title": [
+      "Welcome to the Human Rights <br/> Measurement Initiative's data website"
+    ],
+    "subtitle": "(beta-version for now)",
+    "section_name": [
+      "Explore by Rights",
+      "Explore by Geography"
+    ],
+    "paragraphs": [
+      "View an example of HRMI data",
+      "being used in a profile story for"
+    ],
+    "country": [
+      "Mexico",
+      "Australia"
+    ]
   },
-  "arrow_link": {
+   "arrow_link": {
     "title": {
       "all": "Explorar todos los derechos en:",
       "this": "Explorar este derecho en:"

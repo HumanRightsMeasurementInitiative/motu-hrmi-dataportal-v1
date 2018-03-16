@@ -147,9 +147,23 @@
       "button": "JE SUIS D’ACCORD"
     }
   },
-  "section": {
-    "title": "Exploration tout l'ensemble de données:",
-    "section_name": ["Exploration par droits", "Exploration géographique"]
+  "section":
+  { "title": [
+      "Welcome to the Human Rights <br/> Measurement Initiative's data website"
+    ],
+    "subtitle": "(beta-version for now)",
+    "section_name": [
+      "Explore by Rights",
+      "Explore by Geography"
+    ],
+    "paragraphs": [
+      "View an example of HRMI data",
+      "being used in a profile story for"
+    ],
+    "country": [
+      "Mexico",
+      "Australia"
+    ]
   },
   "arrow_link": {
     "title": {
