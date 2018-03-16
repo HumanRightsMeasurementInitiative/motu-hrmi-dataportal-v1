@@ -9,15 +9,14 @@ import rightsByCountry from 'data/rights-by-country.json'
 import ESRTimeline from '../ESRTimeline'
 import storyImage from '../../img/story_mex.png'
 import QuestionTooltip from '../QuestionTooltip'
+import makeHTMLParagraph from 'lib/make-html-paragraph'
+import Bar1 from './Bar1'
+import Bar2 from './Bar2'
+import Bar3 from './Bar3'
+
 const AMERICAS = 'americas'
 const PILOT = 'cpr-pilot'
 const MEXICO = rightsByCountry.MEX
-
-function makeHTMLParagraph(text, i) {
-  const cleanedText = text
-    .replace(`<a `, `<a target="_blank" rel="noopener noreferrer"`)
-  return <p key={i} className={styles.normalText} dangerouslySetInnerHTML={{ __html: cleanedText }} />
-}
 
 export default class StoryPopup extends React.Component {
   static propTypes = {
@@ -150,10 +149,23 @@ export default class StoryPopup extends React.Component {
 
                     <div className={styles.questionTooltip}>
                       <QuestionTooltip width={238} question={''}>
-                        <p>{content.question_tooltips[2].tooltip.paragraphs[0]}</p>
-                        <p>{content.question_tooltips[2].tooltip.paragraphs[1]} <a href='#' target='_blank'>{content.question_tooltips[2].tooltip.linkText}</a>.</p>
+                        <p>
+                          {content.question_tooltips[2].tooltip.paragraphs[0]}
+                        </p>
+                        <div style={{ display: 'flex', flexFlow: 'column' }}>
+                          <Bar1 legend={content.question_tooltips[2].tooltip.legend[0]} />
+                          <Bar2 legend={content.question_tooltips[2].tooltip.legend[1]}/>
+                          <Bar3 legend={content.question_tooltips[2].tooltip.legend[2]}/>
+                        </div>
+                        <p>
+                          {content.question_tooltips[2].tooltip.paragraphs[1]}{' '}
+                          <a href="https://humanrightsmeasurement.org/wp-content/uploads/2018/03/HRMI-Methodology-Note-2018.pdf" target="_blank">
+                            {content.question_tooltips[2].tooltip.linkText}
+                          </a>.
+                        </p>
                       </QuestionTooltip>
                     </div>
+
                   </div>
 
                 </div>

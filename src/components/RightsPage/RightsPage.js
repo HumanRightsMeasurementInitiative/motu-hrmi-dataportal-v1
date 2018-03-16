@@ -15,6 +15,9 @@ import { segsToUrl, joinClassName as jcn } from '../utils'
 import { get } from 'lodash'
 import styles from './style.css'
 import rightsDefinitions from 'data/rights-definitions.json'
+import Bar1 from './Bar1'
+import Bar2 from './Bar2'
+import Bar3 from './Bar3'
 
 export default class RightsPage extends React.Component {
   static propTypes = {
@@ -288,9 +291,14 @@ export default class RightsPage extends React.Component {
                         <p>
                           {content.question_tooltips[2].tooltip.paragraphs[0]}
                         </p>
+                        <div style={{ display: 'flex', flexFlow: 'column' }}>
+                          <Bar1 legend={content.question_tooltips[2].tooltip.legend[0]} />
+                          <Bar2 legend={content.question_tooltips[2].tooltip.legend[1]}/>
+                          <Bar3 legend={content.question_tooltips[2].tooltip.legend[2]}/>
+                        </div>
                         <p>
                           {content.question_tooltips[2].tooltip.paragraphs[1]}{' '}
-                          <a href="#" target="_blank">
+                          <a href="https://humanrightsmeasurement.org/wp-content/uploads/2018/03/HRMI-Methodology-Note-2018.pdf" target="_blank">
                             {content.question_tooltips[2].tooltip.linkText}
                           </a>.
                         </p>

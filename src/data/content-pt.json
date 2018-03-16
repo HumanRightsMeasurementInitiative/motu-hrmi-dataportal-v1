@@ -147,10 +147,25 @@
       "button": "CONCORDO"
     }
   },
-  "section": {
-    "title": "Explore all the dataset:",
-    "section_name": ["Explore por direitos", "Explore geograficamente"]
-  },
+  "section":
+  { "title": [
+      "Welcome to the Human Rights <br/> Measurement Initiative's data website"
+    ],
+    "subtitle": "(beta-version for now)",
+    "section_name": [
+      "Explore by Rights",
+      "Explore by Geography"
+    ],
+    "paragraphs": [
+      "View an example of HRMI data",
+      "being used in a profile story for"
+    ],
+    "country": [
+      "Mexico",
+      "Australia"
+    ]
+  } 
+ ,
   "arrow_link": {
     "title": {
       "all": "Explore todos os direitos em:",
@@ -261,10 +276,15 @@
       "question": "Como posso interpretar as faixas de incerteza?",
       "tooltip": {
         "paragraphs": [
-          "Nossa metodologia de métricas de direitos civis e políticos produz uma variedade de níveis estimados de respeito a cada direito humano. A pontuação média por país (indicada pela linha horizontal branca) representa a média estimada para aquela variedade. A pontuação mais baixa da marcação imprecisa representa o décimo percentil das nossas estimativas; a pontuação mais alta na marcação imprecisa representa o nonagésimo percentil.",
-          "Faixas de incerteza mais estreitas mostram que houve uma maior concordância entre os respondentes especialistas da pesquisa sobre qual deveria ser a pontuação do país e/ou um maior número de respondentes. Quanto maior for a sobreposição entre duas faixas de incerteza, menos certeza poderemos ter de que o nível de respeito aos direitos humanos representado por essas marcações é de fato diferente um do outro. Para informações mais detalhadas, por favor, veja a nota sobre nossa"
+          "Como interpretar as faixas de incerteza",
+          "Para obter informações mais detalhadas, consulte nossa nota de metodologia (disponível apenas em inglês)"
         ],
-        "linkText": "metodologia"
+        "linkText": "metodologia",
+        "legend":[
+            "As barras altas indicam mais incerteza sobre qual é o verdadeiro resultado",
+            "As barras curtas indicam menos incerteza",
+            "Quanto menor a sobreposição, mais provável que as pontuações sejam diferentes"
+        ]
       }
     }, {
       "question": "Como o HRMI mediu o",
