@@ -264,7 +264,12 @@
           "Nuestra metodología de mediciones de derechos civiles y políticos genera un rango de niveles estimados de respeto por cada derecho humano. La calificación promedio del país (indicada por la línea blanca horizontal) representa el estimado promedio en ese rango. La calificación más baja en la franja de incertidumbre representa el percentil 10 de nuestros estimados; la calificación más alta en la franja de incertidumbre representa el percentil 90.",
           "Franjas de incertidumbre más estrechas nos dicen que hubo más acuerdo entre los expertos encuestados sobre cuál debería ser la calificación de ese país, y/o un número mayor de encuestados. Cuanto mayor sea la parte de dos franjas de incertidumbre que se sobrepongan, menos seguros podemos estar de que el nivel de respeto por los derechos humanos representados por esas franjas sean realmente diferentes entre sí. Para información más detallada, por favor, revisa la nota de"
         ],
-        "linkText": "nuestra metodología"
+        "linkText": "nuestra metodología",
+        "legend": [
+            "Las barras altas indican más incertidumbre sobre cuál es la verdadera calificación",
+            "Las barras cortas indican menos incertidumbre",
+            "Cuanto menor sea la superposición, es mayor la probabilidad de que las calificaciones sean diferentes"
+        ]
       }
     }, {
       "question": "¿Cómo ha medido HRMI el",

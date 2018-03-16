@@ -266,7 +266,12 @@
           "Notre méthodologie relative aux droits civils et politiques fournit une fourchette de niveaux estimés de respect de chaque droit humain. Le score moyen du pays (indiqué par la ligne horizontale blanche) représente l’estimation moyenne pour cette fourchette. Le score le plus bas sur la barre d’incertitude représente le 10e percentile de nos estimations ; le score le plus haut représente le 90e percentile.",
           "Les barres d’incertitudes plus fines indiquent un accord plus important entre les répondants d’enquête experts concernant le score de ce pays, et/ou un nombre plus grand de répondants. Plus le chevauchement entre les deux barres d’incertitude est grand, moins nous sommes certains que le niveau de respect des droits humains représenté par ces barres est différent. Pour davantage d’informations, veuillez vous reporter à notre"
         ],
-        "linkText": "note méthodologique"
+        "linkText": "note méthodologique",
+        "legend":[
+            "Des barres longues indiquent plus d'incertitude quant au véritable chiffre",
+            "Des barres courtes indiquent moins d'incertitude",
+            "Plus le recoupement est petit, plus il est possible que les résultats soient différents"
+        ]
       }
     }, {
       "question": "Comment HRMI a-t-il mesuré le",

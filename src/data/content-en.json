@@ -287,10 +287,15 @@
       "question": "How should I interpret the uncertainty bands?",
       "tooltip": {
         "paragraphs": [
-          "How to interpret the uncertainty bands <br/> <img/>",
+          "How to interpret the uncertainty bands",
           "For more detailed information, please see our methodology note"
         ],
-        "linkText": "methodology note"
+        "linkText": "methodology note",
+        "legend": [
+            "Tall bars indicate more uncertainty about what the true score is",
+            "Short bars indicate less uncertainty",
+            "The smaller the overlap the more likely it is that the scores are different"
+        ]
       }
     },
     {
