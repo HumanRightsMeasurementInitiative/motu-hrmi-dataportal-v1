@@ -111,6 +111,7 @@ export default class CountryRightsChart extends React.Component {
 
   clickSector = (event) => {
     const { size, onClickRight } = this.props
+    if (!onClickRight) return
     const { right, radius } = this.rightFromEvent(event)
     if (radius > 5 && radius < size / 4) {
       onClickRight(right)
@@ -124,11 +125,14 @@ export default class CountryRightsChart extends React.Component {
 
   clickLabel = (right) => {
     const { onClickRight } = this.props
+    if (!onClickRight) return
     onClickRight(right)
   }
 
   hoverSector = (event) => {
-    const { size } = this.props
+    const { size, onClickRight } = this.props
+    if (!onClickRight) return
+
     const { index, radius } = this.rightFromEvent(event)
 
     if (radius > 5 && radius < size / 4) {
@@ -144,11 +148,16 @@ export default class CountryRightsChart extends React.Component {
   }
 
   offHoverSector = (event) => {
+    const { onClickRight } = this.props
+    if (!onClickRight) return
     event.currentTarget.style.cursor = ''
     this.setState({ hoveredRightIndex: null })
   }
 
   hoverLabel = (right) => {
+    const { onClickRight } = this.props
+    if (!onClickRight) return
+
     const index = RIGHTS_ORDER.indexOf(right)
     if (index === -1) return
 
@@ -157,6 +166,9 @@ export default class CountryRightsChart extends React.Component {
   }
 
   offHoverLabel = () => {
+    const { onClickRight } = this.props
+    if (!onClickRight) return
+
     this.onLabel = false
     this.setState({ hoveredRightIndex: null })
   }
