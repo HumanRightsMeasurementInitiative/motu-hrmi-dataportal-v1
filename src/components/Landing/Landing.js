@@ -4,6 +4,26 @@ import StoryPopup from '../StoryPopup'
 import SectionSelector from '../SectionSelector'
 import styles from './style.css'
 
+const PDF_LANGS = [
+  'https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Australia-profile-EN.pdf',
+  'https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Australia-profile-ES.pdf',
+  'https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Australia-profile-FR.pdf',
+  'https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Australia-profile-PT.pdf',
+]
+
+function selectPdf(lang) {
+  switch (lang) {
+    case 'EN':
+      return PDF_LANGS[0]
+    case 'ES':
+      return PDF_LANGS[1]
+    case 'FR':
+      return PDF_LANGS[2]
+    case 'PT':
+      return PDF_LANGS[3]
+  }
+}
+
 export default class Landing extends React.Component {
   static propTypes = {
     isStoryOpen: PropTypes.bool.isRequired,
@@ -34,7 +54,7 @@ export default class Landing extends React.Component {
           </div>
           <a className={styles.countryUnderlined} onClick={openStoryMode}>{content.section.country[0]}</a>
           {` or `}
-          <a className={styles.countryUnderlined} href="australia_story_en.pdf" target="_blank">{content.section.country[1]}</a>
+          <a className={styles.countryUnderlined} href={selectPdf(content.word_cloud_language)} target="_blank">{content.section.country[1]}</a>
         </div>
         { isStoryOpen &&
           <StoryPopup />
