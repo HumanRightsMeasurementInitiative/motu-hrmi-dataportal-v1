@@ -261,8 +261,8 @@
       "question": "Como posso interpretar as faixas de incerteza?",
       "tooltip": {
         "paragraphs": [
-          "Nossa metodologia de métricas de direitos civis e políticos produz uma variedade de níveis estimados de respeito a cada direito humano. A pontuação média por país (indicada pela linha horizontal branca) representa a média estimada para aquela variedade. A pontuação mais baixa da marcação imprecisa representa o décimo percentil das nossas estimativas; a pontuação mais alta na marcação imprecisa representa o nonagésimo percentil.",
-          "Faixas de incerteza mais estreitas mostram que houve uma maior concordância entre os respondentes especialistas da pesquisa sobre qual deveria ser a pontuação do país e/ou um maior número de respondentes. Quanto maior for a sobreposição entre duas faixas de incerteza, menos certeza poderemos ter de que o nível de respeito aos direitos humanos representado por essas marcações é de fato diferente um do outro. Para informações mais detalhadas, por favor, veja a nota sobre nossa"
+          "Como interpretar as faixas de incerteza",
+          "Para obter informações mais detalhadas, consulte nossa nota de metodologia (disponível apenas em inglês)"
         ],
         "linkText": "metodologia",
         "legend":[
