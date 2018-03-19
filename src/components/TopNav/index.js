@@ -47,7 +47,8 @@ export default class TopNav extends React.Component {
               <span className={styles.linkWrapper}><a href='https://humanrightsmeasurement.org/wp-content/uploads/2018/03/HRMI-Methodology-Note-2018.pdf' target='_blank'>{menuText.methodology.links[2]}</a></span>
             </li>
             <li className={styles.listEl}>
-              <span className={styles.linkWrapper}><a href='https://humanrightsmeasurement.org/methodology/survey/' target='_blank'>{menuText.methodology.links[3]}</a></span>
+              <span className={styles.linkWrapper}><a href='https://ugeorgia.qualtrics.com/jfe/preview/SV_d71YagJrGqcMq4R?Q_CHL=preview' target='_blank'>{menuText.methodology.links[3]}</a></span>
+              <span> {menuText.methodology.links[4]}</span>
             </li>
           </ul>
         </NavItem>
