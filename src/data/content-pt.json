@@ -688,5 +688,6 @@
     "ZMB": "Zâmbia",
     "ZWE": "Zimbabwe"
   },
-  "population":["População", "PIB/capita"]
+  "population":["População", "PIB/capita"],
+  "rights_trend":"Tendência ao longo do tempo"
 }

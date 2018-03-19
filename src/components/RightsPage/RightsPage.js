@@ -365,6 +365,7 @@ export default class RightsPage extends React.Component {
                   currCountry={this.state.currCountry}
                   hoveredCountry={this.state.hoveredCountry}
                   onItemClick={this.setCurrYear}
+                  content={content}
                 />
               )}
             </div>

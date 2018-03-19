@@ -256,6 +256,7 @@ export default class StoryPopup extends React.Component {
                   currCountry={MEXICO}
                   hoveredCountry={'MEX'}
                   onItemClick={this.setCurrYear}
+                  content={content}
                 />
               </section>
               <section>
