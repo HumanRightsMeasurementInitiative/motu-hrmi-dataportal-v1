@@ -26,12 +26,6 @@ export default class RightsPage extends React.Component {
 
     return (
       <div>
-        {(isESRSelected && currCountry && !isHideTimeline) &&
-        <div>
-          <div className={styles.subtitleESR}>{content.esr_trend.title}</div>
-          <div className={styles.esrChartKey}>{content.esr_trend.subtitle}</div>
-        </div>
-            }
         {!isESRSelected && cloudWords.length !== 0 &&
         <div>
           <QuestionTooltip width={214} question={content.cpr_at_risk.title} isTitle={true}>
