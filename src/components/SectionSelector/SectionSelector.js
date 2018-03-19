@@ -8,7 +8,6 @@ export default class SectionSelector extends React.Component {
     urlSegs: PropTypes.object.isRequired,
     urlPush: PropTypes.func.isRequired,
     content: PropTypes.object.isRequired,
-    title: PropTypes.string,
     isStoryMode: PropTypes.bool,
   }
 
@@ -24,7 +23,7 @@ export default class SectionSelector extends React.Component {
   }
 
   render() {
-    const { title, urlSegs, content, isStoryMode } = this.props
+    const { urlSegs, content, isStoryMode } = this.props
 
     return (
       <div className={styles.secSelector}>

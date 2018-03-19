@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { joinClassName as jcn } from '../utils'
 import styles from './style.css'
-import ReactTooltip from 'react-tooltip'
 
 export default class ESRRects extends React.Component {
   static propTypes = {

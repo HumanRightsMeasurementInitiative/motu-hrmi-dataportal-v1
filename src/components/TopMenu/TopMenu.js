@@ -7,11 +7,10 @@ import styles from './styles.css'
 
 export default class TopMenu extends React.Component {
   static propTypes = {
-    isStoryOpen: PropTypes.bool.isRequired,
     content: PropTypes.object.isRequired,
   }
   render() {
-    const { isStoryOpen, content } = this.props
+    const { content } = this.props
     const joinClassName = jcn({
       wrapper: true,
     }, styles)

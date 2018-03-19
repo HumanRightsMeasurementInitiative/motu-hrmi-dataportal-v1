@@ -35,7 +35,6 @@ export default class CPRRects extends React.Component {
 
   render() {
     const { translateX, translateY, value, maxValue, minValue, currCountry, country, onItemClick } = this.props
-    // const isActive = currCountry && currCountry === country
     return (
       <g
         className={jcn({ cprRect: true, clickable: onItemClick !== undefined }, styles)}

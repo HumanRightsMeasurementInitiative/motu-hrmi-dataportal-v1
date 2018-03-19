@@ -64,8 +64,8 @@ export default class RightBarchart extends React.Component {
 
     return (
       <div style={{ marginTop: '10px' }}>
-        <ReactTooltip id="country-name-tooltip" place="bottom" effect="solid" offset={{ right: 20 }} />
-        <ReactTooltip id="bar-chart-tooltip" place="bottom" effect="solid" offset={{ right: 8, bottom: 270 }}/>
+        <ReactTooltip id="country-name-tooltip" place="bottom" effect="solid" offset={{ right: 20, bottom: 20 }} />
+        <ReactTooltip id="bar-chart-tooltip" place="bottom" effect="solid" offset={{ right: 8, bottom: 20 }}/>
 
         <svg height={chartHeight} width={chartWidth}>
           <g transform={'translate(' + margin.left + ',' + margin.top + ')'}>

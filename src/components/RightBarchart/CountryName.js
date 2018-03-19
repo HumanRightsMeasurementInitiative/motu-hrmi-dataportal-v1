@@ -18,7 +18,6 @@ export default class CountryName extends React.Component {
 
   render() {
     const { children, currCountry, country, onItemClick } = this.props
-    const isActive = currCountry && currCountry === country
     return (
       <text
         textAnchor='end'
