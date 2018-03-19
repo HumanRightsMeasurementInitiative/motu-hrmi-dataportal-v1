@@ -346,7 +346,8 @@
   "cpr_at_risk": {
     "title": "Grupos em risco",
     "tooltip": "Essa nuvem de palavras ilustra os grupos considerados mais em risco de violações a este direito de acordo com os respondentes da pesquisa. Uma maior proeminência é dada aos nomes dos grupos que são frequentemente mais indicados por serem particularmente mais vulneráveis. Para maiores informações sobre os grupos alvos, veja nosso",
-    "link": "sumário das respostas da pesquisa qualitativa"
+    "link": "sumário das respostas da pesquisa qualitativa",
+    "none_selected":"Nenhum selecionado pelos especialistas"
   },
   "cpr_abuse": {
     "title": "Distribuição de abuso",

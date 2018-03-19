@@ -347,7 +347,8 @@
   "cpr_at_risk": {
     "title": "Groupes les plus à risque",
     "tooltip": "Ce nuage de mots représente les groupes considérés par les répondants d’enquête comme étant les plus à risques pour les violations de ce droit. L'accent est mis sur les groupes dont les noms ont été les plus fréquemment cités comme étant particulièrement vulnérables. Pour plus d’information sur ces groupes, reportez-vous à notre",
-    "link": "résumé des réponses aux enquêtes qualitatives"
+    "link": "résumé des réponses aux enquêtes qualitatives",
+    "none_selected":"Aucun sélectionné par les experts"
   },
   "cpr_abuse": {
     "title": "Distribution des abus",

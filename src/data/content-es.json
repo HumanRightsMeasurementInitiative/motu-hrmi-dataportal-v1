@@ -345,7 +345,8 @@
   "cpr_at_risk": {
     "title": "Grupos en riesgo",
     "tooltip": "Esta nube de palabras ilustra los grupos que los encuestados consideran como en mayor riesgo por violaciones de este derecho. Se da mayor importancia a los nombres de los grupos que fueron indicados con mayor frecuencia como especialmente vulnerables. Para más información sobre los grupos específicos, revisa nuestro",
-    "link": "resumen de respuestas cualitativas a la encuesta"
+    "link": "resumen de respuestas cualitativas a la encuesta",
+    "none_selected":"Ninguno seleccionado por los expertos encuestados"
   },
   "cpr_abuse": {
     "title": "Distribución de maltrato",

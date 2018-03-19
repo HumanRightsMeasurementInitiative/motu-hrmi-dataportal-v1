@@ -50,7 +50,7 @@ export default class RightsPage extends React.Component {
         {!isESRSelected && cloudWords.length === 0 &&
         <div>
           <div className={styles.CPRTitle}>{content.cpr_at_risk.title}</div>
-          <div style={{ fontWeight: 'bold', fontSize: '15px', textAlign: 'center' }}>None Selected by Expert Respondents</div>
+          <div style={{ fontWeight: 'bold', fontSize: '15px', textAlign: 'center' }}>{content.cpr_at_risk.none_selected}</div>
         </div>
          }
       </div>

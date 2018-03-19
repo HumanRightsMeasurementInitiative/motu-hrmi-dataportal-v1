@@ -361,7 +361,8 @@
   "cpr_at_risk": {
     "title": "Groups most at risk",
     "tooltip": "This word-cloud illustrates the groups considered by survey respondents to be most at risk for violations of this right. Greater prominence is given to the names of groups that were most frequently indicated as being especially vulnerable. For more information about the targeted groups see our",
-    "link": "summary of qualitative survey responses"
+    "link": "summary of qualitative survey responses",
+    "none_selected":"None Selected by Expert Respondents"
   },
   "cpr_abuse": {
     "title": "Distribution of abuse",
