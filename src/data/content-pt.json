@@ -149,20 +149,20 @@
   },
   "section":
   { "title": [
-      "Welcome to the Human Rights <br/> Measurement Initiative's data website"
+      "Bem-vindos ao site de dados da <br/>Human Right Measurement Initiative"
     ],
-    "subtitle": "(beta-version for now)",
+    "subtitle": "(versão-beta)",
     "section_name": [
-      "Explore by Rights",
-      "Explore by Geography"
+      "Explore por direitos",
+      "Explore geograficamente"
     ],
     "paragraphs": [
-      "View an example of HRMI data",
-      "being used in a profile story for"
+      "Veja um exemplo dos dados da HRMI ",
+      "sendo usados na história de perfil para"
     ],
     "country": [
-      "Mexico",
-      "Australia"
+      "México",
+      "Austrália"
     ]
   } 
  ,
@@ -368,6 +368,7 @@
   "lang": "Língua",
   "word_cloud_language":"PT",
   "select_region": "Selecionar região",
+  "in": "em",
   "explore_this_rights_in": "Explore este direito em",
   "explore_all_rights_in": "Explore todos os direitos em",
   "rights_definitions": {
