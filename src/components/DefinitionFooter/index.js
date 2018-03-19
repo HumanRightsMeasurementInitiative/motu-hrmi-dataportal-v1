@@ -36,8 +36,9 @@ export default class RightsPage extends React.Component {
             </div>
           )
           : (
-            <div style={{ fontWeight: 'bold', fontSize: '15px' }}>
-              None Selected by Expert Respondents
+            <div>
+              <div className={styles.CPRTitle}>{content.cpr_at_risk.title}</div>
+              <div style={{ fontWeight: 'bold', fontSize: '15px', textAlign: 'center' }}>None Selected by Expert Respondents</div>
             </div>
           )
         }

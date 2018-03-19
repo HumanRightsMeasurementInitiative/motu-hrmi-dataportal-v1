@@ -21,3 +21,13 @@
   letter-spacing: 0.025em;
   color: #00af49;
 }
+.CPRTitle {
+  position: relative;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.025em;
+  color: #2e65a1;
+  cursor: pointer;
+}
