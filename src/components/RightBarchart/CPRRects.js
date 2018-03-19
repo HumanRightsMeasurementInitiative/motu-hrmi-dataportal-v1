@@ -42,8 +42,8 @@ export default class CPRRects extends React.Component {
         onClick={this.onClick}
         onMouseOver={this.onMouseOver}
         onMouseOut={this.onMouseOut}
-        opacity={currCountry === country || !currCountry ? 1 : 0.5}>
-        {/* <rect className="-bar-background" y={-value} height={value} width='9' x='-4.5' fill={isActive ? '#abc1d9' : 'rgba(0, 0, 0, .1)'}></rect> */}
+        opacity={currCountry === country || !currCountry ? 1 : 0.5}
+       >
         <rect className="-bar-min-max" y={-maxValue} height={maxValue - minValue} width='9' x='-4.5' fill='#3378ae'></rect>
         <rect className="-bar-center" y={-value - 1} height='2' width='9' x='-4.5' fill='#fff'></rect>
       </g>
