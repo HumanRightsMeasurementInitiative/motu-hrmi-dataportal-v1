@@ -427,7 +427,9 @@ export default class RightsPage extends React.Component {
 
             {this.state.currCountry !== null && isCPRSelected && (
               <div style={{ margin: `25px 25px 0 25px` }}>
-                <BarChartCPR data={this.state.currCountry.rights.cpr} rightCode={urlSegs.right} height={80} />
+                  {this.state.currCountry.rights.cpr &&
+                  <BarChartCPR data={this.state.currCountry.rights.cpr} rightCode={urlSegs.right} height={80} />
+                  }
               </div>
             )}
 
