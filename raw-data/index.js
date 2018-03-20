@@ -242,6 +242,7 @@ function CPRRangeAtRisk() {
   const codebook = sheetRows(readSheet('cpr-range-at-risk-codebook.xlsx'), 'AC', 1).map(row => {
     if (row.A === 'Country' || row.A === 'CountryCode') return null
     if (row.C === 'Do Not Include in Online Visualizations') return null
+    if (row.A.includes('range')) return null // Data removed from website
 
     return {
       wordCode: row.A.replace(`"right"_`, ''),
@@ -257,8 +258,7 @@ function CPRRangeAtRisk() {
     const getWordsValues = rightCode => codebook.map(({ word, wordCode }) => {
       const value = parseFloat(row[`${rightCode}_${wordCode}`])
       if (!value || value === 0) return null
-      if (word === 'Reliigon') word = 'Religion' // WTF?
-      return [ word, value ]
+      return [ wordCode, value ]
     }).filter(Boolean)
 
     const getAverageWordsValues = (rightCode1, rightCode2) => {
