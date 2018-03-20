@@ -159,8 +159,7 @@
   padding-top: 10px;
   padding-right: 30px;
   padding-bottom: 10px;
-  /* width: 30px; */
-  width: calc(100% - 30px);
+  width: calc(100% - 25px);
   background: linear-gradient(180deg, #fff 30px, rgba(255, 255, 255, .01));
   font-size: 16px;
   line-height: 20px;
@@ -347,6 +346,9 @@
 .mobileTitle{
     display: none;
 }
+.langSelectorMobile{
+    display: none;
+}
 
 @media screen  and (min-width : 768px) and (max-width : 1424px)  {
    .hideTitle{
@@ -370,5 +372,18 @@
     .columnLeft{
         flex: none;
         width: 100%;
+    }
+    .langSelector{
+        display: none;
+    }
+    .langSelectorMobile {
+        display: block;
+        position: absolute;
+        top: -20px;
+        padding: 24px 0;
+        width: 80px;
+        font-size: 12px;
+        text-align: left;
+        align-self: flex-start;
     }
 }
