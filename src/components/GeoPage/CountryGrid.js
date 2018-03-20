@@ -70,7 +70,7 @@ export default class GeoPageCountryGrid extends React.Component {
             <div className={styles.text} style={{ marginBottom: 4 }}>
               <b style={{ fontSize: 14, color: 'black' }}>*</b>
               {' '}
-              High-income OECD country. For these countries it is best to use the high-income OECD country assessment standard.
+              {content.high_income_footnote}
             </div>
             <div className={styles.text}>
               {content.footer_text.by_geography}
