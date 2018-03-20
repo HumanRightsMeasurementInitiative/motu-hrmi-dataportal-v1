@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { PetalChart } from 'hrmi-charts'
 import rightsDefinitions from 'data/rights-definitions.json'
+import styles from './style.css'
 
 const RIGHTS_ORDER = [
   'health', // ESR
@@ -288,7 +289,7 @@ function PetalLabels({ size, data, colors, content, highlightedRightIndexes, onC
   ]
 
   return (
-    <div style={{ fontSize: 14, color: '#606163' }}>
+    <div className={styles.labelText} >
       {data.map((d, i) => (
         <LabelRadial
           key={i}
