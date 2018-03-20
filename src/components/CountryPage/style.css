@@ -104,6 +104,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  min-width:500px;
 }
 .countryFooter {
   flex: 0 0 auto;
