@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import QuestionTooltip from '../QuestionTooltip'
 import styles from './style.css'
+import Bar1 from './Bar1'
+import Bar2 from './Bar2'
+import Bar3 from './Bar3'
 
 export default class RightDefinition extends React.Component {
   static propTypes = {
@@ -78,10 +81,24 @@ export default class RightDefinition extends React.Component {
         }
         { !isESRSelected &&
           <div>
-            <QuestionTooltip width={293} question={tooltips[2].question}>
-              <p>{tooltips[2].tooltip.paragraphs[0]}</p>
-              <p>{tooltips[2].tooltip.paragraphs[1]} <a href='https://humanrightsmeasurement.org/wp-content/uploads/2018/03/HRMI-Methodology-Note-2018.pdf' target='_blank'>{tooltips[2].tooltip.linkText}</a>.</p>
-            </QuestionTooltip>
+            <div className={styles.questionTooltip}>
+              <QuestionTooltip width={238} question={tooltips[2].question}>
+                <p>
+                  {content.question_tooltips[2].tooltip.paragraphs[0]}
+                </p>
+                <div style={{ display: 'flex', flexFlow: 'column' }}>
+                  <Bar1 legend={content.question_tooltips[2].tooltip.legend[0]} />
+                  <Bar2 legend={content.question_tooltips[2].tooltip.legend[1]}/>
+                  <Bar3 legend={content.question_tooltips[2].tooltip.legend[2]}/>
+                </div>
+                <p>
+                  {content.question_tooltips[2].tooltip.paragraphs[1]}{' '}
+                  <a href="https://humanrightsmeasurement.org/wp-content/uploads/2018/03/HRMI-Methodology-Note-2018.pdf" target="_blank">
+                    {content.question_tooltips[2].tooltip.linkText}
+                  </a>.
+                        </p>
+              </QuestionTooltip>
+            </div>
             <QuestionTooltip width={294} question={tooltips[3].question + ' ' + content.rights_name[right].toLowerCase() + '?'}>
               <p>{tooltips[3].tooltip.paragraphs[0]} <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blank'>{tooltips[3].tooltip.linkText}</a>.</p>
             </QuestionTooltip>
