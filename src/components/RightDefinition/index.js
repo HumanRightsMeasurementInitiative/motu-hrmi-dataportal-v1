@@ -100,7 +100,7 @@ export default class RightDefinition extends React.Component {
               </QuestionTooltip>
             </div>
             <QuestionTooltip width={294} question={tooltips[3].question + ' ' + content.rights_name[right].toLowerCase() + '?'}>
-              <p>{tooltips[3].tooltip.paragraphs[0]} <a href='https://humanrightsmeasurement.org/methodology/methodology-in-depth/' target='_blank'>{tooltips[3].tooltip.linkText}</a>.</p>
+              <p>{tooltips[3].tooltip.paragraphs[0]} <a href='https://humanrightsmeasurement.org/methodology/measuring-civil-political-rights/' target='_blank'>{tooltips[3].tooltip.linkText}</a>.</p>
             </QuestionTooltip>
           </div>
         }
