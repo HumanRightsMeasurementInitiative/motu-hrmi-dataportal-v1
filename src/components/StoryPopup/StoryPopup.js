@@ -227,24 +227,11 @@ export default class StoryPopup extends React.Component {
                 <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
                 <ArrowLink region="cpr-pilot" right="participate-in-government" content={content} setRegion={this.setRegion} />
               </section>
-              <section>
-                {story.sections.paragraph_4.map(makeHTMLParagraph)}
-              </section>
-              <section>
-              </section>
 
-              <section className={styles.radarWrapper}>
-                <div className={styles.esrCaption} style={{ marginBottom: '10px' }}>{story.sections.subtitle_1}</div>
-                <CountryRightsChart
-                  size={500}
-                  rights={MEXICO.rights}
-                  esrStandard="esrHI"
-                  displayLabels
-                  content={content}
-                />
-              </section>
-              <section>
-                {story.sections.paragraph_5.map(makeHTMLParagraph)}
+              <section className={styles.rightBarchartWrapper}>
+                <div style={{ justifyContent: 'center', justifyItems: 'center', padding: '10px' }}>
+                  <img src="Mexico_education_sub_indicator_scores.JPG" />
+                </div>
               </section>
 
               <section className={styles.rightBarchartWrapper}>
