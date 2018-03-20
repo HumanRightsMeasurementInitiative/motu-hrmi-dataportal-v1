@@ -104,12 +104,11 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  min-height:500px;
 }
 .countryFooter {
   flex: 0 0 auto;
   position: relative;
-  padding: 0 0 30px;
+  padding: 0 0 15px;
   font-size: 12px;
 }
 .countryFooter .small {
@@ -400,4 +399,10 @@
   line-height: 1em;
   text-decoration: underline;
   cursor: pointer;
+}
+
+@media screen and (max-width:1400px) {
+.countryFooter {
+  font-size: 10px;
+}
 }
