@@ -126,7 +126,7 @@ export default class CountryPage extends React.Component {
               <CountryRightsChart
                 rights={currCountry.rights}
                 esrStandard={esrStandard}
-                size={740}
+                size={window.innerHeight - 290}
                 margin={200}
                 currRight={currRight}
                 onClickRight={this.setCurrRight}
