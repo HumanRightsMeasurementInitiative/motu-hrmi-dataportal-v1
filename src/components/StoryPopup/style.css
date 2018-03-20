@@ -238,9 +238,9 @@
   text-align:left;
 }
 .columnRight section {
+  padding-right: 144px;
   position: relative;
   margin: 24px 0;
-  padding-right: 144px;
   min-width: 350px;
 }
 .columnRight a {
@@ -344,15 +344,31 @@
 .footnote {
   font-size: 12px;
 }
+.mobileTitle{
+    display: none;
+}
 
-
-@media screen and (max-width:1500px){
+@media screen  and (min-width : 768px) and (max-width : 1424px)  {
+   .hideTitle{
+        display: none;
+    }
+    .mobileTitle{
+        display: block;
+        margin-top: 40px;
+    }
+    .popupBody{
+       display: flex;
+       flex-direction: column;
+       overflow: auto;
+       justify-content: flex-start;
+    }
     .columnRight{
-        width: 50%;
-        padding:30px 0;
+        flex: none;
+        width: 100% !important;
+        overflow: visible;
     }
     .columnLeft{
-        width: 50%;
-        padding:30px 30px;
+        flex: none;
+        width: 100%;
     }
 }
