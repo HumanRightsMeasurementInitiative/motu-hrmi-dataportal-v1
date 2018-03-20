@@ -19,8 +19,8 @@ export default class Layout extends React.Component {
   }
 
   componentDidMount() {
-    if (window.innerWidth < 1025) this.setState({ isAlertShow: true })
-    else if (window.innerWidth >= 1025) this.setState({ isAlertShow: false })
+    if (window.innerWidth < 1000) this.setState({ isAlertShow: true })
+    else if (window.innerWidth >= 1000) this.setState({ isAlertShow: false })
     window.addEventListener('resize', this.resize)
   }
 
@@ -29,8 +29,8 @@ export default class Layout extends React.Component {
   }
 
   resize = () => {
-    if (!this.state.isAlertShow && window.innerWidth < 1025) this.setState({ isAlertShow: true })
-    else if (this.state.isAlertShow && window.innerWidth >= 1025) this.setState({ isAlertShow: false })
+    if (!this.state.isAlertShow && window.innerWidth < 1000) this.setState({ isAlertShow: true })
+    else if (this.state.isAlertShow && window.innerWidth >= 1000) this.setState({ isAlertShow: false })
   }
 
   render() {
