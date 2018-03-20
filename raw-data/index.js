@@ -27,6 +27,7 @@ function round(float) {
 }
 
 function readSheet(fileName, sheetIndex = 0) {
+  console.log(`Reading ${fileName}`)
   const workbook = XLSX.readFile(fileName)
   const sheet = workbook.Sheets[workbook.SheetNames[sheetIndex]]
   return sheet
@@ -35,7 +36,10 @@ function readSheet(fileName, sheetIndex = 0) {
 function sheetRows(sheet, columns = 'AZ', startFromRow = 0) {
   const [colStart, rowStart, colEnd, rowEnd] = sheet['!ref'].match(/([A-Z]+)(\d+):([A-Z]+)(\d+)/).slice(1)
 
-    // console.assert(colStart === columns[0] && colEnd === columns[1], `Warning! The number of columns has changed from the master format.`)
+  console.assert(
+    colStart === columns[0] && colEnd === columns[1],
+    `Warning! The number of columns has changed from the master format: Expected = ${columns}, Actual = ${colStart + colEnd}`
+  )
 
   const rows = _.range(parseInt(rowStart) + startFromRow, parseInt(rowEnd)).map((rowN) => {
     const row = {}
@@ -112,7 +116,7 @@ function ESRHighIncome() {
 }
 
 function getPopulation() {
-  const rows = sheetRows(readSheet('population_data.xlsx'), 'AD', 0).map(row => {
+  const rows = sheetRows(readSheet('population_data.xlsx'), 'AE', 0).map(row => {
     const datum = {
       countryName: row.A,
       countryCode: row.B,
@@ -293,7 +297,6 @@ function CPRRangeAtRisk() {
 }
 
 function calculate() {
-  console.log('Inside calculate function')
   const esrHI = ESRHighIncome()
   const esrCore = ESRCore()
   const cpr = CPR()
