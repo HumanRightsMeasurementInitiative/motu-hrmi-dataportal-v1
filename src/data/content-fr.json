@@ -692,5 +692,6 @@
     "ZWE": "Zimbabwe"
   },
   "population":["Population", "PIB/habitant"],
-  "rights_trend": "Tendance au fil du temp"
+  "rights_trend": "Tendance au fil du temp",
+  "high_income_footnote":"Pays de l’OCDE à hauts revenus. Pour ces pays, il vaut mieux utiliser le standard d’évaluation des pays de l’OCDE à hauts revenus."
 }

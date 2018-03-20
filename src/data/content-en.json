@@ -720,5 +720,6 @@
     "ZWE": "Zimbabwe"
   },
   "population":["Population", "GDP/capita"],
-  "rights_trend": "Trend over time"
+  "rights_trend": "Trend over time",
+  "high_income_footnote":"High-income OECD country. For these countries it is best to use the high-income OECD country assessment standard."
 }

@@ -691,5 +691,6 @@
     "ZWE": "Zimbabwe"
   },
   "population":["População", "PIB/capita"],
-  "rights_trend":"Tendência ao longo do tempo"
+  "rights_trend":"Tendência ao longo do tempo",
+  "high_income_footnote":"País de renda alta da OCDE Para estes países é melhor usar o padrão de avaliação para países de renda alta da OCDE."
 }
