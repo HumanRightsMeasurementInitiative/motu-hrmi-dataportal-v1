@@ -246,6 +246,23 @@ export default class StoryPopup extends React.Component {
               <section>
                 {story.sections.paragraph_5.map(makeHTMLParagraph)}
               </section>
+
+              <section className={styles.rightBarchartWrapper}>
+                <div className={styles.headerWrapper}>
+                  <div className={styles.titles}>
+                    <div className={styles.esrCaption}>{story.sections.chart_3.title}</div>
+                    <div className={styles.esrSubTitle}>{story.sections.chart_3.subtitle}</div>
+                  </div>
+
+                  <div>
+                    <div className={styles.esrLegend}>
+                      <div className={styles.text}>{content.legend.esr_barchart[0]}</div>
+                      <div className={styles.text}>{content.legend.esr_barchart[1]}</div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
               <section>
                 <ESRTimeline
                   data={data.rightsByRegion[PILOT].countries}
