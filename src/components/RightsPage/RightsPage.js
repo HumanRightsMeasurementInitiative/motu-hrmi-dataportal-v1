@@ -425,14 +425,6 @@ export default class RightsPage extends React.Component {
               </div>
             </div>
 
-            {this.state.currCountry !== null && isCPRSelected && (
-              <div style={{ margin: `25px 25px 0 25px` }}>
-                  {this.state.currCountry.rights.cpr &&
-                  <BarChartCPR data={this.state.currCountry.rights.cpr} rightCode={urlSegs.right} height={80} />
-                  }
-              </div>
-            )}
-
             <div className={styles.infoContent}>
               <div className={styles.textWrapper}>
                 <RightDefinition
