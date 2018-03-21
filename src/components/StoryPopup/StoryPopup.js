@@ -240,6 +240,10 @@ export default class StoryPopup extends React.Component {
                 <ArrowLink region="cpr-pilot" right="participate-in-government" content={content} setRegion={this.setRegion} />
               </section>
 
+              <section>
+                {story.sections.paragraph_4.map(makeHTMLParagraph)}
+              </section>
+
               <section className={styles.radarWrapper}>
                 <div className={styles.esrCaption}>{story.sections.subtitle_1}</div>
                 <CountryRightsChart
