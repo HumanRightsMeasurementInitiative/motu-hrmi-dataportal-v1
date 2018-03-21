@@ -43,7 +43,7 @@
   order:0;
   align-self: center;
   flex-grow: 2;
-}  
+}
 .cprLegend {
   display: flex;
   font-size: 12px;
@@ -142,7 +142,7 @@
   display: flex;
   flex-direction: column;
  }
-  
+
 .popupBody {
   height: 100%;
   width: 100%;
@@ -260,7 +260,7 @@
 }
 
 
-    
+
 .radarWrapper {
     display: flex;
     flex-direction:column;
@@ -277,6 +277,7 @@
 
 .links {
   position: absolute;
+  z-index: 1;
   right: 0;
   bottom: -72px;
   width: 144px;
@@ -379,7 +380,7 @@
     cursor: pointer;
     margin-top: 10px;
     margin-right: 10px;
-} 
+}
 .fixPaddingWrapperChart{
     padding-left: 144px;
 }
