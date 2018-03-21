@@ -172,8 +172,7 @@ export default class StoryPopup extends React.Component {
                   </div>
 
                 </div>
-                <div style={{ paddingLeft: 144 }}>
-                  { this.state.barchartWidth &&
+                { this.state.barchartWidth &&
                   <RightBarchart
                     currYear={2015}
                     isESR={false}
@@ -184,7 +183,7 @@ export default class StoryPopup extends React.Component {
                     currCountry={MEXICO}
                     score={content.score}>
                   </RightBarchart>
-                }</div>
+                }
                 <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
                 <ArrowLink region="cpr-pilot" right="freedom-from-disappearance" content={content} setRegion={this.setRegion} />
               </section>
@@ -216,8 +215,7 @@ export default class StoryPopup extends React.Component {
                   </div>
 
                 </div>
-                <div style={{ paddingLeft: 144 }}>
-                  { this.state.barchartWidth &&
+                { this.state.barchartWidth &&
                   <RightBarchart
                     currYear={2015}
                     isESR={false}
@@ -229,7 +227,6 @@ export default class StoryPopup extends React.Component {
                     score={content.score}
                   />
                 }
-                </div>
                 <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
                 <ArrowLink region="cpr-pilot" right="participate-in-government" content={content} setRegion={this.setRegion} />
               </section>
@@ -256,7 +253,7 @@ export default class StoryPopup extends React.Component {
                 </div>
               </section>
 
-              <section>
+              <section className={styles.rightBarchartWrapper}>
                 <ESRTimeline
                   data={data.rightsByRegion[PILOT].countries}
                   chartHeight={338}
@@ -290,8 +287,7 @@ export default class StoryPopup extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div style={{ paddingLeft: 144 }}>
-                  { this.state.barchartWidth &&
+                { this.state.barchartWidth &&
                   <RightBarchart
                     currYear={2015}
                     isESR={true}
@@ -303,7 +299,6 @@ export default class StoryPopup extends React.Component {
                     score={content.score}
                  />
                 }
-                </div>
                 <div className={styles.footnote}>{content.footer_text.rights_page_esr}</div>
                 <ArrowLink region="americas" right="education" content={content} setRegion={this.setRegion} />
               </section>
@@ -314,7 +309,7 @@ export default class StoryPopup extends React.Component {
 
           </div>
 
-          <div className={styles.closeBtn} onClick={this.closeStoryMode}>
+          <div className={styles.headerPopup} onClick={this.closeStoryMode}>
             <div className={styles.langSelectorMobile}>
               <LangSelector />
             </div>
