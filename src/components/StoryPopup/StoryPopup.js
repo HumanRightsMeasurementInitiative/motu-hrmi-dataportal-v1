@@ -181,7 +181,8 @@ export default class StoryPopup extends React.Component {
                   </div>
 
                 </div>
-                { this.state.barchartWidth &&
+                <div className={styles.fixPaddingWrapperChart}>
+                  { this.state.barchartWidth &&
                   <RightBarchart
                     currYear={2015}
                     isESR={false}
@@ -193,6 +194,7 @@ export default class StoryPopup extends React.Component {
                     score={content.score}>
                   </RightBarchart>
                 }
+                </div>
                 <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
                 <ArrowLink region="cpr-pilot" right="freedom-from-disappearance" content={content} setRegion={this.setRegion} />
               </section>
@@ -224,7 +226,9 @@ export default class StoryPopup extends React.Component {
                   </div>
 
                 </div>
-                { this.state.barchartWidth &&
+
+                <div className={styles.fixPaddingWrapperChart}>
+                  { this.state.barchartWidth &&
                   <RightBarchart
                     currYear={2015}
                     isESR={false}
@@ -236,6 +240,7 @@ export default class StoryPopup extends React.Component {
                     score={content.score}
                   />
                 }
+                </div>
                 <div className={styles.footnote}>{content.footer_text.rights_page_cpr}</div>
                 <ArrowLink region="cpr-pilot" right="participate-in-government" content={content} setRegion={this.setRegion} />
               </section>
@@ -259,17 +264,19 @@ export default class StoryPopup extends React.Component {
               </section>
 
               <section className={styles.rightBarchartWrapper}>
-                <ESRTimeline
-                  data={data.rightsByRegion[PILOT].countries}
-                  chartHeight={338}
-                  chartWidth={this.state.barchartWidth}
-                  currYear={this.state.currYear}
-                  currRight={'education'}
-                  currCountry={MEXICO}
-                  hoveredCountry={'MEX'}
-                  onItemClick={this.setCurrYear}
-                  content={content}
+                <div className={styles.fixPaddingWrapperChart}>
+                  <ESRTimeline
+                    data={data.rightsByRegion[PILOT].countries}
+                    chartHeight={338}
+                    chartWidth={this.state.barchartWidth}
+                    currYear={this.state.currYear}
+                    currRight={'education'}
+                    currCountry={MEXICO}
+                    hoveredCountry={'MEX'}
+                    onItemClick={this.setCurrYear}
+                    content={content}
                 />
+                </div>
               </section>
               <section>
                 {story.sections.paragraph_6.map(makeHTMLParagraph)}
@@ -297,7 +304,8 @@ export default class StoryPopup extends React.Component {
                     </div>
                   </div>
                 </div>
-                { this.state.barchartWidth &&
+                <div className={styles.fixPaddingWrapperChart}>
+                  { this.state.barchartWidth &&
                   <RightBarchart
                     currYear={2015}
                     isESR={true}
@@ -309,6 +317,7 @@ export default class StoryPopup extends React.Component {
                     score={content.score}
                  />
                 }
+                </div>
                 <div className={styles.footnote}>{content.footer_text.rights_page_esr}</div>
                 <ArrowLink region="americas" right="education" content={content} setRegion={this.setRegion} />
               </section>
