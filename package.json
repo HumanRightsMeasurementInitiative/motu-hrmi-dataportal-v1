@@ -8,9 +8,9 @@
     "build": "accurapp-scripts build"
   },
   "devDependencies": {
-    "accurapp-scripts": "^3.2.7",
+    "accurapp-scripts": "^3.2.10",
     "eslint-config-accurapp": "^3.0.1",
-    "webpack-preset-accurapp": "^3.1.7"
+    "webpack-preset-accurapp": "^3.1.12"
   },
   "dependencies": {
     "d3": "^4.12.0",

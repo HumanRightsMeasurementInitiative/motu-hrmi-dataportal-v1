@@ -64,6 +64,8 @@ class Page extends React.Component {
       return <RightsPage />
     } else if (urlSegs.exploreBy === 'Geography') {
       return urlSegs.country ? <CountryPage /> : <GeoPage />
+    } else {
+      return <div>404 - Page not found</div>
     }
   }
 }
