@@ -240,26 +240,18 @@ export default class StoryPopup extends React.Component {
                 <ArrowLink region="cpr-pilot" right="participate-in-government" content={content} setRegion={this.setRegion} />
               </section>
 
-              <section className={styles.rightBarchartWrapper}>
-                <div style={{ justifyContent: 'center', justifyItems: 'center', padding: '10px' }}>
-                  <img src="Mexico_education_sub_indicator_scores.JPG" />
-                </div>
+              <section className={styles.radarWrapper}>
+                <div className={styles.esrCaption}>{story.sections.subtitle_1}</div>
+                <CountryRightsChart
+                  size={500}
+                  rights={MEXICO.rights}
+                  esrStandard="esrHI"
+                  displayLabels
+                  content={content}
+                />
               </section>
-
-              <section className={styles.rightBarchartWrapper}>
-                <div className={styles.headerWrapper}>
-                  <div className={styles.titles}>
-                    <div className={styles.esrCaption}>{story.sections.chart_3.title}</div>
-                    <div className={styles.esrSubTitle}>{story.sections.chart_3.subtitle}</div>
-                  </div>
-
-                  <div>
-                    <div className={styles.esrLegend}>
-                      <div className={styles.text}>{content.legend.esr_barchart[0]}</div>
-                      <div className={styles.text}>{content.legend.esr_barchart[1]}</div>
-                    </div>
-                  </div>
-                </div>
+              <section>
+                {story.sections.paragraph_5.map(makeHTMLParagraph)}
               </section>
 
               <section className={styles.rightBarchartWrapper}>
@@ -277,6 +269,11 @@ export default class StoryPopup extends React.Component {
               </section>
               <section>
                 {story.sections.paragraph_6.map(makeHTMLParagraph)}
+              </section>
+              <section className={styles.rightBarchartWrapper}>
+                <div style={{ justifyContent: 'center', justifyItems: 'center', padding: '10px' }}>
+                  <img src="Mexico_education_sub_indicator_scores.JPG" />
+                </div>
               </section>
               <section>
                 {story.sections.paragraph_7.map(makeHTMLParagraph)}
