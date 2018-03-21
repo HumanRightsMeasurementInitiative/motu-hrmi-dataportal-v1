@@ -46,8 +46,9 @@
   cursor: pointer;
 }
 .popupPane {
+  left: -283px;
+  top: 29px;
   position: absolute;
-  left: 20px;
   z-index: 6000;
   padding: 10px 18px;
   width: 302px;
