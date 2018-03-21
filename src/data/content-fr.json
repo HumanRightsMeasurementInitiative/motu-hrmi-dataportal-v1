@@ -10,7 +10,7 @@
     "sub-saharan-africa": "Afrique subsaharienne",
     "cpr-pilot": "Pays de l'étude pilote"
   },
-  "rights_name" : {
+  "rights_name": {
     "food": "Droit à l’alimentation",
     "education": "Droit à l’éducation",
     "health": "Droit à la santé",
@@ -24,7 +24,7 @@
     "freedom-from-arbitrary-arrest": "Droit de ne pas faire l’objet d’arrestation arbitraire",
     "freedom-from-disappearance": "Droit de ne pas faire l’objet de disparition"
   },
-  "rights_name_short" : {
+  "rights_name_short": {
     "food": "Alimentation",
     "education": "Éducation",
     "health": "Santé",
@@ -65,8 +65,14 @@
   },
   "esr_chart_subtitle": "Pourcentage de jouissance des droits humains atteint, par rapport à ce qui est faisable",
   "legend": {
-    "esr_barchart": ["Score de standard d’évaluation principal", "Score d’évaluation de pays de l’OCDE à hauts revenus"],
-    "cpr_barchart": ["Score moyen", "percentil"]
+    "esr_barchart": [
+      "Score de standard d’évaluation principal",
+      "Score d’évaluation de pays de l’OCDE à hauts revenus"
+    ],
+    "cpr_barchart": [
+      "Score moyen",
+      "percentil"
+    ]
   },
   "menu": {
     "about": {
@@ -148,8 +154,8 @@
       "button": "JE SUIS D’ACCORD"
     }
   },
-  "section":
-  { "title": [
+  "section": {
+    "title": [
       "Bienvenue sur le site web des données de <br/> l'Initiative pour la Mesure des Droits Humains"
     ],
     "subtitle": "(version bêta)",
@@ -260,8 +266,12 @@
     {
       "question": "Pourquoi n’utilisez-vous pas les mêmes indicateurs pour tous les pays ?",
       "tooltip": "Ce ne sont pas nécessairement les mêmes données qui sont collectées pour les différents pays du monde. Le standard d’évaluation principal est principalement utilisé pour les pays en développement et pour les pays non membres de l’OCDE. Le standard d’évaluation des pays de l’OCDE à hauts revenus utilise des indicateurs qui, la plupart du temps, ne sont disponibles que pour les pays de l’OCDE à hauts revenus. Tous les pays sont néanmoins évalués à l’aide des deux ensembles d’indicateurs dans la mesure des données disponibles."
-    }, {
-      "question": ["Comment la méthodologie de HRMI convertit-elle les indicateurs ci-dessus dans les indicateurs ", "?"],
+    },
+    {
+      "question": [
+        "Comment la méthodologie de HRMI convertit-elle les indicateurs ci-dessus dans les indicateurs ",
+        "?"
+      ],
       "tooltip": {
         "paragraphs": [
           "Toutes les mesures d’HRMI relatives aux droits économiques et sociaux ont été produites sur la base de statistiques officielles collectées par les gouvernements nationaux et harmonisées par les organisations internationales. Pour chaque indicateur, notre méthodologie compare le niveau observé de respect de cette dimension des droits humains au niveau de respect que ce pays pourrait atteindre par rapport à son revenu par habitant. Les indicateurs d’HRMI relatifs aux droits économiques et sociaux montrent donc comment l’Etat utilise ses ressources disponibles pour garantir le respect de ces droits.",
@@ -274,7 +284,8 @@
         ],
         "linkText": "ici"
       }
-    }, {
+    },
+    {
       "question": "Comment interpréter les barres d’incertitude ?",
       "tooltip": {
         "paragraphs": [
@@ -282,13 +293,14 @@
           "Pour plus de détails, veuillez consulter notre note de méthodologie (en anglais seulement)."
         ],
         "linkText": "note méthodologique",
-        "legend":[
-            "Des barres longues indiquent plus d'incertitude quant au véritable chiffre",
-            "Des barres courtes indiquent moins d'incertitude",
-            "Plus le recoupement est petit, plus il est possible que les résultats soient différents"
+        "legend": [
+          "Des barres longues indiquent plus d'incertitude quant au véritable chiffre",
+          "Des barres courtes indiquent moins d'incertitude",
+          "Plus le recoupement est petit, plus il est possible que les résultats soient différents"
         ]
       }
-    }, {
+    },
+    {
       "question": "Comment HRMI a-t-il mesuré le",
       "tooltip": {
         "paragraphs": [
@@ -296,10 +308,12 @@
         ],
         "linkText": "ici"
       }
-    }, {
+    },
+    {
       "question": "Pourquoi n’existe-t-il pas de mesure relative au Droit au Logement utilisant le standard d’évaluation pour les pays de l’OCDE à hauts revenus ?",
       "tooltip": "A l’heure actuelle, il n’existe pas de données comparables entre les pays de l’OCDE à hauts revenus qui reflètent les problèmes liés à l’accès au logement. C’est pourquoi les indicateurs relatifs au Droit au Logement ne sont pas disponibles pour les pays de l’OCDE à hauts revenus."
-    }, {
+    },
+    {
       "question": "Comment définissons-nous ce droit humain?"
     }
   ],
@@ -308,10 +322,12 @@
       "question": "Pourquoi les deux types d’indicateurs ne sont-ils pas sur la même échelle ?",
       "paragraphs": "Les indicateurs d’HRMI proviennent de deux méthodologies différentes qui ont des échelles et des interprétations différentes. Les scores pour les indicateurs relatifs aux droits civils et politiques sont des scores sur un total de 10 et indiquent à quel point le gouvernement du pays donné respecte le droit en question. Par contre, les scores pour les indicateurs relatifs aux droits économiques et sociaux sont des pourcentages. Ils indiquent le niveau de respect du droit par rapport à ce qui est normalement faisable pour un pays avec un niveau de revenu similaire. Ce n’est pas la même chose que le niveau auquel les individus de ce pays jouissent de ce droit. Pour plus d’informations, nous vous invitons à consulter la page consacrée à la",
       "linkText": "méthodologie détaillée"
-    }, {
+    },
+    {
       "question": "Pourquoi les deux ensembles d’indicateurs ne correspondent-ils pas à la même année ?",
       "paragraphs": "Tous les indicateurs donnés correspondent aux données les plus récentes. Les indicateurs relatifs aux droits civils et politiques sont ceux pour la période allant de janvier 2017 à juin 2017. Les indicateurs relatifs aux droits économiques et sociaux correspondent à la mise à jour 2017 de l’International Social and Economic Rights Fulfilment Index, qui couvre la période 2005-2015. Les données utilisées pour chaque année sont à chaque fois les données disponibles les plus récentes. Les graphiques d’HRMI ont été élaborés avec les données les plus récentes."
-    }, {
+    },
+    {
       "question": "Quelle est la différence entre les standards d’évaluation principaux et les standards d’évaluation des pays de l’OCDE à hauts revenus ?",
       "paragraphs": "Pour mesurer les droits economiques et sociaux, utilisons deux standards d’évaluation. Le standard d’évaluation principal, utilise les indicateurs statistiques qui sont disponibles pour la plupart des pays du monde, en particulier les pays en développement et les pays non membres de l’OCDE. Le standard d’évaluation des pays de l’OCDE à hauts revenus fait quant à lui appel à des indicateurs qui sont généralement disponibles uniquement pour les pays de l’OCDE à hauts revenus, et/ou qui reflètent mieux les défis que les pays à hauts revenus rencontrent en matière de droits de l’homme. Nous utiliserions un grand nombre de ces indicateurs dans le standard d’évaluation principal s’ils couvraient un plus grand nombre de pays. Tous les pays sont évalués à l’aide de ces deux types de standards d’évaluation dans la mesure des données disponibles."
     }
@@ -349,7 +365,7 @@
     "title": "Groupes les plus à risque",
     "tooltip": "Ce nuage de mots représente les groupes considérés par les répondants d’enquête comme étant les plus à risques pour les violations de ce droit. L'accent est mis sur les groupes dont les noms ont été les plus fréquemment cités comme étant particulièrement vulnérables. Pour plus d’information sur ces groupes, reportez-vous à notre",
     "link": "résumé des réponses aux enquêtes qualitatives",
-    "none_selected":"Aucun sélectionné par les experts"
+    "none_selected": "Aucun sélectionné par les experts"
   },
   "cpr_abuse": {
     "title": "Distribution des abus",
@@ -368,8 +384,8 @@
   "show_more": "Montrer plus",
   "show_less": "Montrer moins",
   "search_country": "Chercher le pays",
-  "lang": "La langue",
-  "word_cloud_language":"FR",
+  "lang": "Langue",
+  "word_cloud_language": "FR",
   "select_region": "Sélectionner la région",
   "in": "dans",
   "explore_this_rights_in": "Explorer ce droit dans",
@@ -446,7 +462,16 @@
     },
     "freedom-from-arbitrary-arrest": {
       "type": "CPR",
-      "measure_list": ["Selon le droit international, tout individu a le droit de ne pas faire l’objet d’arrestation ou de détention pour les motifs suivants :", "des raisons non prévues par la loi ;", "l'incapacité d'exécuter une obligation contractuelle ;", "ses pensées, croyances, sa conscience ou sa religion ;", "ses opinions ainsi que leur expression pacifique ;", "la participation à des réunions pacifiques ;", "l’association pacifique avec d’autres individus, y compris l’appartenance syndicale ; ou", "son identité, y compris “la race, la couleur, le sexe, la langue, la religion, l’opinion politique ou autre, l’origine nationale ou sociale, de fortune, de naissance ou de toute autre situation” (Partie II, Article 2 ; Partie III, Articles 9, 11, 18 19, 21, 22 & 26 du PIDCP)."]
+      "measure_list": [
+        "Selon le droit international, tout individu a le droit de ne pas faire l’objet d’arrestation ou de détention pour les motifs suivants :",
+        "des raisons non prévues par la loi ;",
+        "l'incapacité d'exécuter une obligation contractuelle ;",
+        "ses pensées, croyances, sa conscience ou sa religion ;",
+        "ses opinions ainsi que leur expression pacifique ;",
+        "la participation à des réunions pacifiques ;",
+        "l’association pacifique avec d’autres individus, y compris l’appartenance syndicale ; ou",
+        "son identité, y compris “la race, la couleur, le sexe, la langue, la religion, l’opinion politique ou autre, l’origine nationale ou sociale, de fortune, de naissance ou de toute autre situation” (Partie II, Article 2 ; Partie III, Articles 9, 11, 18 19, 21, 22 & 26 du PIDCP)."
+      ]
     },
     "freedom-from-execution": {
       "type": "CPR",
@@ -460,7 +485,12 @@
     "participate-in-government": {
       "type": "CPR",
       "conclusion_para": "La jouissance de ces droits ne peut faire l’objet de discriminations ni de “restrictions déraisonnables” (Partie III, Article 25 du PIDCP).",
-      "measure_list": ["Selon le droit international, tout individu a le droit :", "\"de prendre part à la direction des affaires publiques, soit directement, soit par l’intermédiaire de représentants librement choisis\";", "\"de voter et d’être élu, au cours d’élections périodiques\" dans lesquelles tout individu peut voter, où tous les votes ont la même valeur, et où le scrutin est secret ;", "\"d'accéder, dans des conditions générales d’égalité, aux fonctions publiques de son pays.\""]
+      "measure_list": [
+        "Selon le droit international, tout individu a le droit :",
+        "\"de prendre part à la direction des affaires publiques, soit directement, soit par l’intermédiaire de représentants librement choisis\";",
+        "\"de voter et d’être élu, au cours d’élections périodiques\" dans lesquelles tout individu peut voter, où tous les votes ont la même valeur, et où le scrutin est secret ;",
+        "\"d'accéder, dans des conditions générales d’égalité, aux fonctions publiques de son pays.\""
+      ]
     },
     "assembly-and-association": {
       "type": "CPR",
@@ -691,7 +721,10 @@
     "ZMB": "Zambie",
     "ZWE": "Zimbabwe"
   },
-  "population":["Population", "PIB/habitant"],
-  "rights_trend": "Tendance au fil du temp",
-  "high_income_footnote":"Pays de l’OCDE à hauts revenus. Pour ces pays, il vaut mieux utiliser le standard d’évaluation des pays de l’OCDE à hauts revenus."
+  "high_income_footnote":"Pays de l’OCDE à hauts revenus. Pour ces pays, il vaut mieux utiliser le standard d’évaluation des pays de l’OCDE à hauts revenus.",
+  "population": [
+    "Population",
+    "PIB/habitant"
+  ],
+  "rights_trend": "Tendance au fil du temp"
 }
