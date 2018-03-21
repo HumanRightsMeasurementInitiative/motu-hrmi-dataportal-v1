@@ -151,7 +151,6 @@
   justify-content:center;
   overflow:auto;
 }
-
 .footer,
 .closeBtn {
   position: absolute;
@@ -174,24 +173,6 @@
   bottom: 0;
   height: 30px;
   background: linear-gradient(0deg, #fff 10px, rgba(255, 255, 255, .01));
-}
-.closeBtn:before,
-.closeBtn:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top:  14px;
-  right: 8px;
-  border-left: 8px solid #616161;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-}
-.closeBtn:before {
-  border-radius: 4px;
-}
-.closeBtn:after {
-  right: 11px;
-  border-left: 8px solid #fff;
 }
 
 .columnLeft {
@@ -237,6 +218,7 @@
   text-align:left;
 }
 .columnRight section {
+  padding-left: 144px;
   padding-right: 144px;
   position: relative;
   margin: 24px 0;
@@ -356,7 +338,7 @@
     }
     .mobileTitle{
         display: block;
-        margin-top: 40px;
+        margin-top: 50px;
     }
     .popupBody{
        display: flex;
@@ -368,22 +350,52 @@
         flex: none;
         width: 100% !important;
         overflow: visible;
+        margin:0;
+        padding: 40px 20px 40px 0;
     }
     .columnLeft{
         flex: none;
         width: 100%;
     }
+    .header{
+        height: 40px;
+    }
     .langSelector{
         display: none;
     }
-    .langSelectorMobile {
-        display: block;
-        position: absolute;
-        top: -20px;
-        padding: 24px 0;
-        width: 80px;
-        font-size: 12px;
-        text-align: left;
-        align-self: flex-start;
+    .lang{
+        visibility: visible !important;
     }
+    .close{
+        margin-top: 0;
+        margin-right: 0;
+    }
+}
+.header{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 35px;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 2;
+    align-items: center;
+    align-content: center;
+    background: linear-gradient(180deg, #fff 30px, rgba(255, 255, 255, .01));
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.lang{
+    visibility: hidden;
+    display: block;
+    align-self: center;
+    font-size: 12px;
+    text-align: left;
+}
+.close{
+    align-self: center;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px;
 }

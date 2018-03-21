@@ -88,6 +88,15 @@ export default class StoryPopup extends React.Component {
 
           <div className={styles.popupBody}>
 
+            <div className={styles.header}>
+              <div className={styles.lang}>
+                <LangSelector />
+              </div>
+              <div className={styles.close} onClick={this.closeStoryMode}>
+                 &#10005;
+              </div>
+            </div>
+
             <div className={styles.columnLeft} ref='columnLeft'>
               <div className={styles.mobileTitle}>
                 <h1 className={styles.articleTitle}>Respect for human rights in Mexico is far worse than it should be</h1>
@@ -309,12 +318,6 @@ export default class StoryPopup extends React.Component {
 
           </div>
 
-          <div className={styles.headerPopup} onClick={this.closeStoryMode}>
-            <div className={styles.langSelectorMobile}>
-              <LangSelector />
-            </div>
-              Skip the story
-          </div>
         </div>
       </div>
     )
