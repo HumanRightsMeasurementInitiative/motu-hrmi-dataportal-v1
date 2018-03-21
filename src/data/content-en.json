@@ -4,7 +4,7 @@
     "high-income-oecd": "High-income OECD countries",
     "europe-central-asia": "Central and Eastern Europe and Central Asia",
     "east-asia-pacific": "East Asia and the Pacific",
-    "americas": "Latin America and the Caribbean",
+    "americas": "The Americas",
     "middle-east-north-africa": "Middle East and Northern Africa",
     "south-asia": "South Asia",
     "sub-saharan-africa": "Sub-Saharan Africa",
@@ -105,9 +105,8 @@
       "links": [
         "Get an overview of our methodology for measuring economic and social rights.",
         "Get an overview of our methodology for measuring civil and political rights.",
-        "Read our more in-depth methodology handbook:",
-        "See the HRMI expert survey for civil and political rights",
-        "(please note this is a link to a preview of the survey only, and any responses you make will not be collected)."
+        "Read our more in-depth methodology handbook.",
+        "See the HRMI expert survey for civil and political rights (please note this is a link to a preview of the survey only, and any responses you make will not be collected)."
       ]
     },
     "howToUse": {
@@ -179,7 +178,7 @@
     }
   },
   "story_mexico": {
-    "title": "Respect for human rights in Mexico is far worse than it should be",
+    "title": "New data highlight Mexico's human rights problems",
     "chart_title": "A summary picture of Mexico's human rights performance",
     "country_code": "MEXICO",
     "sections": {
@@ -189,19 +188,21 @@
       ],
       "image_1": {
         "legend": "Relatives of the 43 students of Ayotzinapa School gather to hear the findings of the international experts who investigated the case (April 2016).",
-        "source": "Photo credit: Amnesty International / Sergio Ortiz Borbolla"
+        "source": "Photo: Amnesty International / Sergio Ortiz Borbolla"
       },
       "paragraph_2": [
         "The chart to the left summarises Mexico’s performance across 12 human rights. In this chart, each axis represents a right. The further from the centre of the circle the country’s score is, the better the performance of the country on that human right. Scores for the seven civil and political human rights are shown around the bottom half of the chart (each in a different shade of blue) and scores for the five economic and social human rights are shown around the top part of the chart (each in a different shade of green). The unbalanced shape of the chart tells us that Mexico is performing much better on economic and social rights than it is on civil and political rights.",
-        "Let’s dig into this in more detail starting with the area of worse performance – civil and political rights. Since there are no objective statistics on most of these rights, we surveyed human rights experts in Mexico and calculated scores based on their responses.<br/>The chart below explores in more detail one area where Mexico performs particularly badly – the right to freedom from disappearance. Mexico’s performance on this human right is compared with that of the 12 other countries in our pilot sample for measuring civil and political rights. (Normally, we would not compare 13 such different countries, and in future iterations, we hope to only present scores for Mexico in comparison with other Latin American countries, as well as Mexico’s past scores. But for the pilot, we only have civil and political rights scores for these 13 countries, and as such, we can only focus on them.) You can see that Mexico’s disappearance score is substantially worse than the score for Brazil (the only other Latin American country in the sample). It is also on par with Saudi Arabia’s score, as shown by the overlap of the blue bars of these two countries."
+        "Let’s dig into this in more detail starting with the area of worse performance – civil and political rights. Since there are no objective statistics on most of these rights, we surveyed human rights experts in Mexico and calculated scores based on their responses.",
+        "The chart below explores in more detail one area where Mexico performs particularly badly – the right to freedom from disappearance. Mexico’s performance on this human right is compared with that of the 12 other countries in our pilot sample for measuring civil and political rights. (Normally, we would not compare 13 such different countries, and in future iterations, we hope to only present scores for Mexico in comparison with other Latin American countries, as well as Mexico’s past scores. But for the pilot, we only have civil and political rights scores for these 13 countries, and as such, we can only focus on them.) You can see that Mexico’s disappearance score is substantially worse than the score for Brazil (the only other Latin American country in the sample). It is also on par with Saudi Arabia’s score, as shown by the overlap of the blue bars of these two countries."
       ],
       "chart_1": {
         "title": "Right to freedom from disappearance",
         "subtitle": "scores for all 13 countries in HRMI pilot sample"
       },
       "paragraph_3": [
-        "This finding is not surprising given that Mexico has experienced a rise in disappearances, perpetrated by both state and non-state actors (as defined by the UN International Convention for the Protection of All Persons from Enforced Disappearance), especially since 2009 when the federal government launched its militarised strategy against drug cartels. Making a person “disappear” has become a common technique for both government authorities and members of organised crime, who often act together (e.g. as documented in the <a href=\"\" target=\"_blank\">Zetas Piedras Negras prison case</a>). The Mexican government has an incomplete register of people who have been subjected to disappearance or who went missing for another reason. According to that <a href=\"\" target=\"_blank\">official source</a>, there were 34,674 missing people in the country as of November 2017.",
-        "By contrast, Mexico’s best score in the area of civil and political rights is for the right to participate in government (average score 6.1 out of 10). On this human right, Mexico is closer to the middle of the pack when compared to the other 12 countries in the pilot study.<br/>To illustrate this, consider the chart below, which compares scores for the right to participate in government across countries in our civil and political rights pilot study. For this human right Mexico’s score is not substantively different from Brazil’s score. We know this by looking at the substantial overlap of the “bars” for the two countries (i.e. Mexico’s average score is above the 10th percentile of Brazil’s score). The scores shown also suggest that Mexico’s respect for this right is better than in Saudi Arabia, Kazakhstan, and Angola."
+        "This finding is not surprising given that Mexico has experienced a rise in disappearances, perpetrated by both state and non-state actors (as defined by the UN International Convention for the Protection of All Persons from Enforced Disappearance). This increase has been especially notable since 2009 following the federal government's launch a year or two earlier, of its militarised strategy against drug cartels. Making a person “disappear” has become a common technique for both government authorities and members of organised crime, who often act together (e.g. as documented in the <a href=\"https://www.insightcrime.org/news/brief/zetas-turned-mexico-prison-mass-grave/\" target=\"_blank\">Zetas Piedras Negras prison case</a>). The Mexican government has an incomplete register of people who have been subjected to disappearance or who went missing for another reason. According to that <a href=\"http://secretariadoejecutivo.gob.mx/rnped/consulta-publica.php\" target=\"_blank\">official source</a>, there were 34,674 missing people in the country as of November 2017.",
+        "By contrast, Mexico’s best score in the area of civil and political rights is for the right to participate in government (average score 6.1 out of 10). On this human right, Mexico is closer to the middle of the pack when compared to the other 12 countries in the pilot study.",
+        "To illustrate this, consider the chart below, which compares scores for the right to participate in government across countries in our civil and political rights pilot study. For this human right Mexico’s score is not substantively different from Brazil’s score. We know this by looking at the substantial overlap of the “bars” for the two countries (i.e. Mexico’s average score is above the 10th percentile of Brazil’s score). The scores shown also suggest that Mexico’s respect for this right is better than in Saudi Arabia, Kazakhstan, and Angola."
       ],
       "chart_2": {
         "title": "Right to participate in government",
@@ -215,19 +216,19 @@
       ],
       "subtitle_1": "Mexico – High-income OECD assessment standard",
       "paragraph_5": [
-        "To dig into this in more detail, let’s take a closer look at how Mexico’s performance on the right to education has changed over time and try to identify those areas where Mexico faces the greatest challenges. The two graphs below show Mexico’s performance over the past decade using the two different assessment standards.",
-        "[note that these charts are indicative only, and don’t show the actual data.]"
+        "To dig into this in more detail, let’s take a closer look at how Mexico’s performance on the right to education has changed over time and try to identify those areas where Mexico faces the greatest challenges. The chart below shows Mexico’s performance over the past decade using the two different assessment standards.",
+        ""
       ],
       "timeline_1": {
-        "title": "Mexico’s decadal performance on the right to education: Core assessment standard"
+        "title": "Mexico’s decadal performance on the right to education"
       },
       "timeline_2": {
-        "title": "Mexico’s decadal performance on the right to education: High-income OECD country assessment standard"
+        "title": "Mexico’s decadal performance on the right to education"
       },
       "paragraph_6": [
         "As you can see, Mexico’s scores on the right to education have increased over the decade from 84% to 89% using the core assessment standard and from 58% to 63% using the high-income OECD assessment standard. Since Mexico’s per-capita income level increased over this time – and hence so too did Mexico’s obligation level – these results imply that enjoyment of the right to education increased more rapidly than per-capita income. In other words, Mexico became more proficient at translating its resources into enjoyment of this particular right.",
         "But why is there such a large difference between Mexico’s scores when using the two standards? The core assessment standard considers two indicators: primary school completion rate, and gross combined school enrolment rate. Mexico recognised the right to free and compulsory primary education in 1917 when it adopted the Constitution after the Mexican Revolution, and the country has achieved greater implementation of this policy in recent decades.",
-        "Additionally, to offset the costs of sending children to school, in 1988 Mexico began implementing a program that paid certain families to send their children to school. <a href=\"\" target=\"_blank\">This programme, now called Prospera,</a> tries to tackle inter-generational poverty by giving direct cash transfers to mothers, or other female heads of a household, so that they have sufficient resources to support themselves and to send their children to school. Mexico also implemented a series of administrative measures to make it extremely difficult for a primary school student to fail a course. As a result, it is not surprising that Mexico’s primary completion score is 100% – it is the benchmark setter at its per-capita income level.",
+        "Additionally, to offset the costs of sending children to school, in 1988 Mexico began implementing a program that paid certain families to send their children to school. <a href=\"http://www.worldbank.org/en/news/feature/2014/11/19/un-modelo-de-mexico-para-el-mundo\" target=\"_blank\">This programme, now called Prospera,</a> tries to tackle inter-generational poverty by giving direct cash transfers to mothers, or other female heads of a household, so that they have sufficient resources to support themselves and to send their children to school. Mexico also implemented a series of administrative measures to make it extremely difficult for a primary school student to fail a course. As a result, it is not surprising that Mexico’s primary completion score is 100% – it is the benchmark setter at its per-capita income level.",
         "Mexico’s score on the combined school enrolment (primary to university level) is 78%. This is one area where Mexico needs to do much better. However, Mexico’s greatest challenge is revealed by looking at the components of the high-income OECD assessment standard. As well as using the combined school enrolment rate, this assessment standard also uses an indicator of school quality – student performance on the International Student Assessment (PISA) tests in science and maths. On the PISA indicator we find that Mexico is only achieving 49% of the benchmark score, telling us that the quality of education in Mexico is significantly below the standard being achieved by other countries with a similar income level."
       ],
       "subtitle_2": "Right to Education",
@@ -270,7 +271,7 @@
     {
       "question": [
         "How does the HRMI methodology convert the above indicators into the ",
-        "metric?"
+        " metric?"
       ],
       "tooltip": {
         "paragraphs": [
@@ -289,8 +290,8 @@
       "question": "How should I interpret the uncertainty bands?",
       "tooltip": {
         "paragraphs": [
-          "How to interpret the uncertainty bands",
-          "For more detailed information, please see our methodology note"
+          "Our civil and political rights measures methodology produces a range of estimated levels of respect for each human right. The average country score (indicated by the white horizontal line) represents the average estimate in that range. The lower score on the uncertainty band represents the 10th percentile of our estimates; the higher score on the uncertainty band represents the 90th percentile.",
+          "Narrower uncertainty bands tell us that there was more agreement among expert survey respondents about what that country’s score should be, and/or a larger number of respondents. The greater the overlap between two uncertainty bands, the less certain we can be that the level of respect for human rights represented by those bands are truly different from one another. For more detailed information, please see our"
         ],
         "linkText": "methodology note",
         "legend": [
@@ -329,7 +330,7 @@
     },
     {
       "question": "What is the difference between the core and the high income OECD country scale?",
-      "paragraphs": "For countries assessed using the core assessment standard, our methodology uses statistical indicators that are available for most countries in the world, particularly developing and non-OECD-member countries.\n\nBy contrast, the high-income OECD country assessment standard uses indicators that are typically available only for the high-income OECD countries, and/or better reflect the human rights challenges of high-income countries. We would also use many of these indicators in the core assessment standard if they had broader country coverage. All countries are evaluated using both assessment standards to the extent data are available."
+      "paragraphs": "For economic and social rights we have two assessment standards. The core assessment standard uses statistical indicators that are available for most countries in the world, particularly developing and non-OECD-member countries.\n\nBy contrast, the high-income OECD country assessment standard uses indicators that are available for fewer countries, and/or better reflect the human rights challenges of high-income countries. All countries are evaluated using both assessment standards to the extent data are available."
     }
   ],
   "how_to_read": {
@@ -351,10 +352,11 @@
     "button_text": "GOT IT"
   },
   "download": [
-    "Download radar chart",
+    "Download chart",
     "Download bar chart",
     "Download line chart",
-    "Download csv"
+    "Download csv",
+    "Download all the above"
   ],
   "esr_trend": {
     "title": "Right trend over time",
@@ -371,7 +373,7 @@
     "subtitle": "Data is for period January - June 2017",
     "tooltip": "This chart indicates how violations of this right are distributed across different groups. Bar heights indicate the percentage of survey respondents who selected each group.",
     "keys": [
-      "Suspected criminal",
+      "Suspected criminals",
       "Non-violent political",
       "Violent political",
       "Discriminated groups",
