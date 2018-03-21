@@ -33,32 +33,42 @@ export default class BarChartCPR extends React.Component {
 
   render() {
     const { height, data, rightCode } = this.props
-    const { containerWidth } = this.state
-    const barWidth = 0.05 * containerWidth
-    const axis = [
-      { height: 0.2 * height, text: '10' },
-      { height: 0.6 * height, text: '5' },
-      { height: height, text: '0' },
-    ]
-    const rightValue = data[rightCode]
-    const x = containerWidth / 2 - barWidth
-    const rectHeight = d3.scaleLinear().domain([0, 10]).range([0.1 * height, 0.8 * height])
+    const { containerWidth: width } = this.state
+    const { mean, percentile10, percentile90 } = data[rightCode]
+    const w = 8
+    const h = 100
 
     return (
       <div ref='chartContainer'>
-        <svg width={containerWidth} height={height}>
-          {axis.map((line, index) => (
-            <g key={index}>
-              <text x='0' y={line.height - 2} fontSize='10px' fill='#616161'>{line.text}</text>
-              <line x1='0' y1={line.height} x2={containerWidth} y2={line.height} stroke='#616161' opacity={index < 2 ? '0.25' : '1'} />
-            </g>
-          ))}
 
-          <g>
-            <rect x={x} y={height - rectHeight(rightValue.mean)} width={barWidth} height={rectHeight(rightValue.mean)} fill='rgba(0, 0, 0, .1)'/>
-            <rect x={x} y={height - rectHeight(rightValue.percentile90) - 1} width={barWidth} height={rectHeight(rightValue.percentile90) - rectHeight(rightValue.percentile10) + 2} fill='#2E65A1'/>
-            <rect x={x} y={height - rectHeight(rightValue.mean) - 1} width={barWidth} height={2} fill='#fff'/>
-          </g>
+        <svg width={width} height={height}>
+          <rect
+            x={(width - w) / 2}
+            y={(height - h) / 2}
+            width="10"
+            height="100"
+            fill="#3378ae"
+          />
+          <rect
+            x={(width - w) / 2}
+            y={(height - 2) / 2}
+            width="10"
+            height="2"
+            fill="white"
+          />
+          <text x={((width - w) / 2) / 2 + 110} y={h} fill='#616161'>90</text>
+          <text x={((width - w) / 2) / 2 + 122} y={h - 5} fill='red' fontSize="0.8em">th</text>
+          <text x={((width - w) / 2) / 2 + 135} y={h} fill='#616161'>perc.</text>
+
+          <text x={((width - w) / 2) / 2 + 110} y={h + 100} fill='#616161'>10</text>
+          <text x={((width - w) / 2) / 2 + 122} y={h + 95} fill='red' fontSize="0.8em">th</text>
+          <text x={((width - w) / 2) / 2 + 135} y={h + 100} fill='#616161'>perc.</text>
+
+          <text x={((width - w) / 2) / 2 - 30} y={h + h / 2} fill='#616161'>Avg. score</text>
+
+          <text x={((width - w) / 2) / 2 + 25} y={(h + h / 2)} fill="#3378ae" fontWeight="bold" fontSize="18">{mean.toFixed(2)}</text>
+          <text x={((width - w) / 2) / 2 + 75} y={h} fill="#3378ae" fontSize="18">{percentile90.toFixed(2)}</text>
+          <text x={((width - w) / 2) / 2 + 75} y={h + 100} fill="#3378ae" fontSize="18">{percentile10.toFixed(2)}</text>
         </svg>
       </div>
     )
