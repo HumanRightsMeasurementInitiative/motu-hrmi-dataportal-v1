@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import * as d3 from 'd3'
 
 export default class BarChartCPR extends React.Component {
   static propTypes = {
@@ -36,41 +35,52 @@ export default class BarChartCPR extends React.Component {
     const { containerWidth: width } = this.state
     const { mean, percentile10, percentile90 } = data[rightCode]
     const w = 8
-    const h = 100
+    const h = 50
+
+    const cx = width / 2
+    const cy = height / 2
 
     return (
       <div ref='chartContainer'>
-
         <svg width={width} height={height}>
           <rect
-            x={(width - w) / 2}
-            y={(height - h) / 2}
-            width="10"
-            height="100"
+            x={cx - w / 2}
+            y={cy - h / 2}
+            width={w}
+            height={h}
             fill="#3378ae"
           />
           <rect
-            x={(width - w) / 2}
-            y={(height - 2) / 2}
-            width="10"
+            x={cx - w / 2}
+            y={cy - 1}
+            width={w}
             height="2"
             fill="white"
           />
-          <text x={((width - w) / 2) / 2 + 110} y={h} fill='#616161'>90</text>
-          <text x={((width - w) / 2) / 2 + 122} y={h - 5} fill='red' fontSize="0.8em">th</text>
-          <text x={((width - w) / 2) / 2 + 135} y={h} fill='#616161'>perc.</text>
+          <Text anchor="cl" x={(cx + w / 2) + 5} y={(cy - h / 2)} fill="#3378ae" fontSize="18">{percentile90.toFixed(2)}</Text>
+          <Text anchor="cl" x={(cx + w / 2) + 45} y={(cy - h / 2)} fill="#616161" fontSize="0.6em">90th perc.</Text>
 
-          <text x={((width - w) / 2) / 2 + 110} y={h + 100} fill='#616161'>10</text>
-          <text x={((width - w) / 2) / 2 + 122} y={h + 95} fill='red' fontSize="0.8em">th</text>
-          <text x={((width - w) / 2) / 2 + 135} y={h + 100} fill='#616161'>perc.</text>
+          <Text anchor="cl" x={(cx + w / 2) + 5} y={(cy + h / 2)} fill="#3378ae" fontSize="18">{percentile10.toFixed(2)}</Text>
+          <Text anchor="cl" x={(cx + w / 2) + 45} y={(cy + h / 2)} fill="#616161" fontSize="0.6em">10th perc.</Text>
 
-          <text x={((width - w) / 2) / 2 - 30} y={h + h / 2} fill='#616161'>Avg. score</text>
-
-          <text x={((width - w) / 2) / 2 + 25} y={(h + h / 2)} fill="#3378ae" fontWeight="bold" fontSize="18">{mean.toFixed(2)}</text>
-          <text x={((width - w) / 2) / 2 + 75} y={h} fill="#3378ae" fontSize="18">{percentile90.toFixed(2)}</text>
-          <text x={((width - w) / 2) / 2 + 75} y={h + 100} fill="#3378ae" fontSize="18">{percentile10.toFixed(2)}</text>
+          <Text anchor="cr" x={(cx - w / 2) - 45} y={(cy + 2)} fill="#616161" fontSize="0.6em">
+            Avg. score
+          </Text>
+          <Text anchor="cr" x={(cx - w / 2) - 5} y={(cy)} fill="#3378ae" fontWeight="bold" fontSize="18">
+            {mean.toFixed(2)}
+          </Text>
         </svg>
       </div>
     )
   }
+}
+
+function Text({ x = 0, y = 0, anchor = 'tl', ...props }) {
+  const [vert, horiz] = anchor.split('')
+  const alignmentBaseline = { t: 'hanging', c: 'central', b: 'baseline' }[vert]
+  const textAnchor = { l: 'start', c: 'middle', r: 'end' }[horiz]
+
+  return (
+    <text fontFamily="sans-serif" {...props} x={x} y={y} alignmentBaseline={alignmentBaseline} textAnchor={textAnchor} />
+  )
 }

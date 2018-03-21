@@ -194,8 +194,8 @@ export default class CountryPage extends React.Component {
                       </div>
                       <div style={{ margin: `25px 0` }}>
                         {currCountry.rights.cpr &&
-                          <BarChartCPR data={currCountry.rights.cpr} rightCode={currRight} height={80} />
-                          }
+                          <BarChartCPR data={currCountry.rights.cpr} rightCode={currRight} height={120} />
+                        }
                       </div>
                     </div>
                   }
