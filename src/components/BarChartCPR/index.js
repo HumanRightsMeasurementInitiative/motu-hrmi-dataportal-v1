@@ -57,17 +57,17 @@ export default class BarChartCPR extends React.Component {
             height="2"
             fill="white"
           />
-          <Text anchor="cl" x={(cx + w / 2) + 5} y={(cy - h / 2)} fill="#3378ae" fontSize="18">{percentile90.toFixed(2)}</Text>
+          <Text anchor="cl" x={(cx + w / 2) + 5} y={(cy - h / 2)} fill="#3378ae" fontSize="18">{percentile90.toFixed(1)}</Text>
           <Text anchor="cl" x={(cx + w / 2) + 45} y={(cy - h / 2)} fill="#616161" fontSize="0.6em">90th perc.</Text>
 
-          <Text anchor="cl" x={(cx + w / 2) + 5} y={(cy + h / 2)} fill="#3378ae" fontSize="18">{percentile10.toFixed(2)}</Text>
+          <Text anchor="cl" x={(cx + w / 2) + 5} y={(cy + h / 2)} fill="#3378ae" fontSize="18">{percentile10.toFixed(1)}</Text>
           <Text anchor="cl" x={(cx + w / 2) + 45} y={(cy + h / 2)} fill="#616161" fontSize="0.6em">10th perc.</Text>
 
           <Text anchor="cr" x={(cx - w / 2) - 45} y={(cy + 2)} fill="#616161" fontSize="0.6em">
             Avg. score
           </Text>
           <Text anchor="cr" x={(cx - w / 2) - 5} y={(cy)} fill="#3378ae" fontWeight="bold" fontSize="18">
-            {mean.toFixed(2)}
+            {mean.toFixed(1)}
           </Text>
         </svg>
       </div>
