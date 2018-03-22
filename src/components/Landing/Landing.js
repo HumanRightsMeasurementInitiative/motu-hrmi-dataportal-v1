@@ -53,7 +53,7 @@ export default class Landing extends React.Component {
             <p>{content.section.paragraphs[1]}</p>
           </div>
           <a className={styles.countryUnderlined} onClick={openStoryMode}>{content.section.country[0]}</a>
-          {` or `}
+          <span className={styles.subTitle}>{' '}{content.section.disjunction}{' '}</span>
           <a className={styles.countryUnderlined} href={selectPdf(content.word_cloud_language)} target="_blank">{content.section.country[1]}</a>
         </div>
         { isStoryOpen &&

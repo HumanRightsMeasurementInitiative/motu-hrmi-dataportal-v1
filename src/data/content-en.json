@@ -113,7 +113,9 @@
       "title": "How To Use",
       "paragraphs": [
         "There are lots of ways that you can use Human Rights Measurement Initiative (HRMI) data. These include:",
-        "As an example, we’ve created country narratives that draw on these data for Mexico and  <a href=\"https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Australia-profile-EN-1.pdf\" target=\"_blank\">Australia</a>. We would love to hear how you are using our data. Please let us know",
+        "As an example, we’ve created country narratives that draw on these data for",
+        "Mexico",
+        "and <a href=\"https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Australia-profile-EN-1.pdf\" target=\"_blank\">Australia</a>. We would love to hear how you are using our data. Please let us know",
         "You can download HRMI charts and data by clicking on the download icon at the bottom left of each screen.",
         "We ask that you take care to ensure that you understand the data and what they are showing, so that you do not misrepresent them.",
         "We want to make our work freely available to everyone, so all HRMI data, charts, and text are licensed under a",
@@ -169,7 +171,8 @@
     "country": [
       "Mexico",
       "Australia"
-    ]
+    ],
+    "disjunction": "or"
   },
   "arrow_link": {
     "title": {
