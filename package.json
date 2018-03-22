@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "accurapp-scripts start",
-    "build": "accurapp-scripts build"
+    "build": "accurapp-scripts build",
+    "build:production": "PUBLIC_URL=data accurapp-scripts build"
   },
   "devDependencies": {
     "accurapp-scripts": "^3.2.10",
