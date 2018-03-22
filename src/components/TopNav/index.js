@@ -4,6 +4,19 @@ import LangSelector from '../LangSelector'
 import NavItem from './NavItem'
 import styles from './styles.css'
 
+function selectPdfByLanguage(lang) {
+  switch (lang) {
+    case 'EN':
+      return ''
+    case 'ES':
+      return 'es'
+    case 'FR':
+      return 'fr'
+    case 'PT':
+      return ''
+  }
+}
+
 export default class TopNav extends React.Component {
   static propTypes = {
     content: PropTypes.object.isRequired,
@@ -27,9 +40,9 @@ export default class TopNav extends React.Component {
           </ul>
           <p className={styles.para}>{menuText.about.paragraphs[3]}</p>
           <p className={styles.para}>{menuText.about.paragraphs[4]}</p>
-          <div className={styles.linkWrapper}><a href='https://humanrightsmeasurement.org/about-hrmi/the-team/' target='_blank'>{menuText.about.links[0]}</a></div>
-          <div className={styles.linkWrapper}><a href='https://humanrightsmeasurement.org/methodology/overview/' target='_blank'>{menuText.about.links[1]}</a></div>
-          <div className={styles.linkWrapper}><a className={styles.link} href='https://humanrightsmeasurement.org/methodology/overview/' target='_blank'>{menuText.about.links[2]}</a></div>
+          <div className={styles.linkWrapper}><a href={`https://humanrightsmeasurement.org/${selectPdfByLanguage(content.word_cloud_language)}/about-hrmi/the-team/`} target='_blank'>{menuText.about.links[0]}</a></div>
+          <div className={styles.linkWrapper}><a href={`https://humanrightsmeasurement.org/${selectPdfByLanguage(content.word_cloud_language)}/methodology/overview/`} target='_blank'>{menuText.about.links[1]}</a></div>
+          <div className={styles.linkWrapper}><a href={`https://humanrightsmeasurement.org/${selectPdfByLanguage(content.word_cloud_language)}/methodology/overview/`} target='_blank' className={styles.link} >{menuText.about.links[2]}</a></div>
         </NavItem>
         <NavItem label={menuText.methodology.title} labelKey='methodology'>
           <p className={styles.para}>{menuText.methodology.paragraphs[0]}</p>
@@ -38,10 +51,10 @@ export default class TopNav extends React.Component {
           <div>{menuText.methodology.paragraphs[3]}</div>
           <ul className={styles.list}>
             <li className={styles.listEl}>
-              <span className={styles.linkWrapper}><a href='https://humanrightsmeasurement.org/methodology/measuring-economic-social-rights/' target='_blank'>{menuText.methodology.links[0]}</a></span>
+              <span className={styles.linkWrapper}><a href={`https://humanrightsmeasurement.org/${selectPdfByLanguage(content.word_cloud_language)}/methodology/measuring-economic-social-rights/`} target='_blank'>{menuText.methodology.links[0]}</a></span>
             </li>
             <li className={styles.listEl}>
-              <span className={styles.linkWrapper}><a href='https://humanrightsmeasurement.org/methodology/measuring-civil-political-rights/' target='_blank'>{menuText.methodology.links[1]}</a></span>
+              <span className={styles.linkWrapper}><a href={`https://humanrightsmeasurement.org/${selectPdfByLanguage(content.word_cloud_language)}/methodology/measuring-civil-political-rights/`} target='_blank'>{menuText.methodology.links[1]}</a></span>
             </li>
             <li className={styles.listEl}>
               <span className={styles.linkWrapper}><a href='https://humanrightsmeasurement.org/wp-content/uploads/2018/03/HRMI-Methodology-Note-2018.pdf' target='_blank'>{menuText.methodology.links[2]}</a></span>
