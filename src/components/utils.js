@@ -40,21 +40,21 @@ export const segsToUrl = (urlSegs) => {
     if (exploreBy) {
       region = region || DEFAULT_REGION
       if (right) {
-        url = '/' + exploreBy + '/' + region + '/' + right + (country ? ('/' + country) : '')
+        url = '/' + exploreBy + '/' + region + '/' + right + (country ? ('/' + country) : '') + '/'
       } else {
-        url = '/' + exploreBy + '/' + region + '/' + 'all'
+        url = '/' + exploreBy + '/' + region + '/' + 'all' + '/'
       }
     }
   } else {
     if (exploreBy) {
       region = region || DEFAULT_REGION
       if (right) {
-        url = '/' + language + '/' + exploreBy + '/' + region + '/' + right + (country ? ('/' + country) : '')
+        url = '/' + language + '/' + exploreBy + '/' + region + '/' + right + (country ? ('/' + country) : '') + '/'
       } else {
-        url = '/' + language + '/' + exploreBy + '/' + region + '/' + 'all'
+        url = '/' + language + '/' + exploreBy + '/' + region + '/' + 'all' + '/'
       }
     } else {
-      url = '/' + language
+      url = '/' + language + '/'
     }
   }
   return url
