@@ -265,6 +265,12 @@ export default class StoryPopup extends React.Component {
 
               <section className={styles.rightBarchartWrapper}>
                 <div className={styles.fixPaddingWrapperChart}>
+                  <div>
+                    <div className={styles.esrLegend}>
+                      <div className={styles.text}>{content.legend.esr_barchart[0]}</div>
+                      <div className={styles.text}>{content.legend.esr_barchart[1]}</div>
+                    </div>
+                  </div>
                   <ESRTimeline
                     data={data.rightsByRegion[PILOT].countries}
                     chartHeight={338}
