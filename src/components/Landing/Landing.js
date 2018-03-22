@@ -5,7 +5,7 @@ import SectionSelector from '../SectionSelector'
 import styles from './style.css'
 
 const PDF_LANGS = [
-  'https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Australia-profile-EN.pdf',
+  'https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Australia-profile-EN-1.pdf',
   'https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Australia-profile-ES.pdf',
   'https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Australia-profile-FR.pdf',
   'https://humanrightsmeasurement.org/wp-content/uploads/2018/03/Australia-profile-PT.pdf',
