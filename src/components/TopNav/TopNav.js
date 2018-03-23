@@ -15,7 +15,7 @@ function selectPdfByLanguage(lang) {
     case 'FR':
       return 'fr'
     case 'PT':
-      return ''
+      return 'pt-pt'
     default:
       return ''
   }
