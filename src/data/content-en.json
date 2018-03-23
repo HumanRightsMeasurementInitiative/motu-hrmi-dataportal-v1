@@ -157,7 +157,7 @@
   },
   "section": {
     "title": [
-      "Welcome to the Human Rights <br/> Measurement Initiative's data website"
+      "Welcome to the Human Rights <br/> Measurement Initiative (HRMI)'s data website"
     ],
     "subtitle": "(beta-version for now)",
     "section_name": [
@@ -182,7 +182,7 @@
   },
   "story_mexico": {
     "title": "New data highlight Mexico's human rights problems",
-    "chart_title": "A summary picture of Mexico's human rights performance",
+    "chart_title": "Figure 1: A summary picture of Mexico's human rights performance",
     "country_code": "MEXICO",
     "sections": {
       "paragraph_1": [
@@ -194,7 +194,7 @@
         "source": "Photo: Amnesty International / Sergio Ortiz Borbolla"
       },
       "paragraph_2": [
-        "The chart to the left summarises Mexico’s performance across 12 human rights. In this chart, each axis represents a right. The further from the centre of the circle the country’s score is, the better the performance of the country on that human right. Scores for the seven civil and political human rights are shown around the bottom half of the chart (each in a different shade of blue) and scores for the five economic and social human rights are shown around the top part of the chart (each in a different shade of green). The unbalanced shape of the chart tells us that Mexico is performing much better on economic and social rights than it is on civil and political rights.",
+        "Figure 1 summarises Mexico’s performance across 12 human rights. In this chart, each axis represents a right. The further from the centre of the circle the country’s score is, the better the performance of the country on that human right. Scores for the seven civil and political human rights are shown around the bottom half of the chart (each in a different shade of blue) and scores for the five economic and social human rights are shown around the top part of the chart (each in a different shade of green). The unbalanced shape of the chart tells us that Mexico is performing much better on economic and social rights than it is on civil and political rights.",
         "Let’s dig into this in more detail starting with the area of worse performance – civil and political rights. Since there are no objective statistics on most of these rights, we surveyed human rights experts in Mexico and calculated scores based on their responses.",
         "The chart below explores in more detail one area where Mexico performs particularly badly – the right to freedom from disappearance. Mexico’s performance on this human right is compared with that of the 12 other countries in our pilot sample for measuring civil and political rights. (Normally, we would not compare 13 such different countries, and in future iterations, we hope to only present scores for Mexico in comparison with other Latin American countries, as well as Mexico’s past scores. But for the pilot, we only have civil and political rights scores for these 13 countries, and as such, we can only focus on them.) You can see that Mexico’s disappearance score is substantially worse than the score for Brazil (the only other Latin American country in the sample). It is also on par with Saudi Arabia’s score, as shown by the overlap of the blue bars of these two countries."
       ],
@@ -213,8 +213,8 @@
       },
       "paragraph_4": [
         "Mexico’s ‘not so bad’ score for the right to participate in government is consistent with the fact that Mexico has a somewhat free and fair electoral system. It has periodic elections regulated by clear rules, and electoral processes that are not usually violent, although they tend to entail distrust in a large part of the population. Survey respondents did, however, highlight regulations and practices that have a disproportionately negative impact on indigenous people, people of low economic and social status, less educated people, immigrants, and people in some regions of the country. If you visit this chart on our data visualisation website, you can see more information about this by clicking on the Mexico bar of the chart.",
-        "Turning now to economic and social human rights, you can see Mexico’s scores on the five economic and social rights in the green-coloured portion of the radar chart to the left. International law recognises the fact that most countries do not have enough resources to completely and immediately fulfil economic and social rights. Because of this, there is an international legal obligation on all countries to use the “maximum of [their] available resources” to “progressively” fulfil economic and social rights. Two different sets of benchmarks are in use: one designed primarily for rich countries (our high-income OECD country assessment standard) and one designed primarily for poorer countries (our core assessment standard). But all countries are assessed against both assessment standards if the data are available.",
-        "The radar chart to the left evaluates Mexico’s performance using our core country assessment standard, which is the default standard set for Mexico since it is not a high-income country. Mexico’s scores across the five economic and social rights range from 82% to 89%. That means that Mexico is ensuring between 82% and 89% of the level of enjoyment that is possible for that right, given Mexico’s available resources. On the core standard, Mexico scores best on the rights to education and health. Mexico’s performance on ensuring economic and social rights for its people is clearly better than its performance on ensuring civil and political rights, but there is still substantial room for improvement even using our core assessment standard.",
+        "Turning now to economic and social human rights, you can see Mexico’s scores on the five economic and social rights in the green-coloured portion of the radar chart in Figure 1. International law recognises the fact that most countries do not have enough resources to completely and immediately fulfil economic and social rights. Because of this, there is an international legal obligation on all countries to use the “maximum of [their] available resources” to “progressively” fulfil economic and social rights. Two different sets of benchmarks are in use: one designed primarily for rich countries (our high-income OECD country assessment standard) and one designed primarily for poorer countries (our core assessment standard). But all countries are assessed against both assessment standards if the data are available.",
+        "The radar chart in Figure 1 evaluates Mexico’s performance using our core country assessment standard, which is the default standard set for Mexico since it is not a high-income country. Mexico’s scores across the five economic and social rights range from 82% to 89%. That means that Mexico is ensuring between 82% and 89% of the level of enjoyment that is possible for that right, given Mexico’s available resources. On the core standard, Mexico scores best on the rights to education and health. Mexico’s performance on ensuring economic and social rights for its people is clearly better than its performance on ensuring civil and political rights, but there is still substantial room for improvement even using our core assessment standard.",
         "Although Mexico is not yet a high-income country, it is rapidly approaching this status, so it is interesting to also assess its performance using the high-income OECD country standard. The radar chart below does this. Here we see a much wider range in performance scores."
       ],
       "subtitle_1": "Mexico – High-income OECD assessment standard",
@@ -293,8 +293,8 @@
       "question": "How should I interpret the uncertainty bands?",
       "tooltip": {
         "paragraphs": [
-          "Our civil and political rights measures methodology produces a range of estimated levels of respect for each human right. The average country score (indicated by the white horizontal line) represents the average estimate in that range. The lower score on the uncertainty band represents the 10th percentile of our estimates; the higher score on the uncertainty band represents the 90th percentile.",
-          "Narrower uncertainty bands tell us that there was more agreement among expert survey respondents about what that country’s score should be, and/or a larger number of respondents. The greater the overlap between two uncertainty bands, the less certain we can be that the level of respect for human rights represented by those bands are truly different from one another. For more detailed information, please see our"
+          "How to interpet the uncertainty bands",
+          "For more detailed information, please see our"
         ],
         "linkText": "methodology note",
         "legend": [
