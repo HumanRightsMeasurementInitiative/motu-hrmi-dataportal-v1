@@ -18,6 +18,21 @@ const AMERICAS = 'americas'
 const PILOT = 'cpr-pilot'
 const MEXICO = rightsByCountry.MEX
 
+function switchEducationIndicatorJPG(lang) {
+  switch (lang) {
+    case 'EN':
+      return 'Mexico_education_sub_scores_EN.JPG'
+    case 'ES':
+      return 'Mexico_education_sub_scores_ES.JPG'
+    case 'FR':
+      return 'Mexico_education_sub_scores_FR.JPG'
+    case 'PT':
+      return 'Mexico_education_sub_scores_PT.JPG'
+    default:
+      return 'Mexico_education_sub_scores_EN.JPG'
+  }
+}
+
 export default class StoryPopup extends React.Component {
   static propTypes = {
     data: PropTypes.object.isRequired,
@@ -289,7 +304,7 @@ export default class StoryPopup extends React.Component {
               </section>
               <section className={styles.rightBarchartWrapper}>
                 <div style={{ justifyContent: 'center', justifyItems: 'center', padding: '10px' }}>
-                  <img src="Mexico_education_sub_indicator_scores.JPG" />
+                  <img src={switchEducationIndicatorJPG(content.word_cloud_language)} />
                 </div>
               </section>
               <section>
