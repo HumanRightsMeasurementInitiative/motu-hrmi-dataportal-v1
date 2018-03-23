@@ -106,6 +106,7 @@ export default class GeoPage extends React.Component {
             setCountry={this.setCountry}
             setHoverCountry={this.setHoverCountry}
             unsetHoverCountry={this.unsetHoverCountry}
+            urlSegs={urlSegs}
           />
           <RightColumn
             regionRights={regionRights}

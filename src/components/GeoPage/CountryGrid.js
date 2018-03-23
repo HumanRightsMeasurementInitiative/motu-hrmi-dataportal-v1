@@ -24,6 +24,7 @@ export default class GeoPageCountryGrid extends React.Component {
       setCountry,
       setHoverCountry,
       unsetHoverCountry,
+      urlSegs,
     } = this.props
     return (
       <div className="column">
@@ -67,11 +68,13 @@ export default class GeoPageCountryGrid extends React.Component {
             <div className={styles.downloadPopupWrapper}>
               <DownloadPopup itemList={['chart']} content={content} />
             </div>
+            {(urlSegs.region !== 'sub-saharan-africa' && urlSegs.region !== 'south-asia') &&
             <div className={styles.text} style={{ marginBottom: 4 }}>
               <b style={{ fontSize: 14, color: 'black' }}>*</b>
               {' '}
               {content.high_income_footnote}
             </div>
+            }
             <div className={styles.text}>
               {content.footer_text.by_geography}
             </div>
