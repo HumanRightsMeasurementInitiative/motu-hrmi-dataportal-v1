@@ -85,6 +85,10 @@ export default class CountryPage extends React.Component {
     const displayPercent = (data) => data !== null ? data.toFixed(0) + '%' : 'N/A'
     const displayTenth = data => data !== null ? data.toFixed(1) + '/10' : 'N/A'
 
+    /* ZWE crashed because lacks 2015 data, now we do not retrieve always
+    2015 year but we search for the latest year available instead */
+    const latestESRCoreHistoricalYearAvailable = Object.keys(currCountry.rights.esrCoreHistorical)[Object.keys(currCountry.rights.esrCoreHistorical).length - 1]
+
     return (
       <div className={styles.countryPage}>
         <SubTopNav content={content} />
@@ -155,7 +159,7 @@ export default class CountryPage extends React.Component {
                 <div className={styles.smallTitle}>{content.population[0].toUpperCase()} (2015)</div>
                 <div className={styles.smallText2}>{formatPopulation(currCountry.population)}</div>
                 <div className={styles.smallTitle}>{content.population[1].toUpperCase()} (2015)</div>
-                <div className={styles.smallText2}>{formatGDP(currCountry.rights[`${esrStandard}Historical`][2015].GDP)}</div>
+                <div className={styles.smallText2}>{formatGDP(currCountry.rights[`${esrStandard}Historical`][latestESRCoreHistoricalYearAvailable].GDP)}</div>
               </div>
               <div className={styles.rightInfoWrapper}>
                 <div className={styles.rightInfo}>
