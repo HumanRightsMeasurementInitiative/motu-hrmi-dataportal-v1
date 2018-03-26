@@ -114,7 +114,7 @@ export default class StoryPopup extends React.Component {
 
             <div className={styles.columnLeft} ref='columnLeft'>
               <div className={styles.mobileTitle}>
-                <h1 className={styles.articleTitle}>Respect for human rights in Mexico is far worse than it should be</h1>
+                <h1 className={styles.articleTitle}>{content.story_mexico.title}</h1>
               </div>
               <div className={styles.langSelector}>
                 <LangSelector />
