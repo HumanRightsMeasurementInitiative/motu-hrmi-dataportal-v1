@@ -8,6 +8,12 @@
 .clickable.esrRect:hover rect:first-child {
   fill: #a1e2bc;
 }
-/*.clickable.cprRect:hover rect:first-child {
-	fill: #abc1d9;
-}*/
+
+@media screen and (max-width:1359px) {
+    rect{
+        width: 7px;
+    }
+    text{
+        font-size: 8px;
+    }
+}
