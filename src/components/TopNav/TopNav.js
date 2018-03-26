@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import LangSelector from '../LangSelector'
 import NavItem from './NavItem'
 import styles from './styles.css'
+import StoryPopup from '../StoryPopup'
 
 function selectPdfByLanguage(lang) {
   switch (lang) {
@@ -28,10 +29,11 @@ export default class TopNav extends React.Component {
   static propTypes = {
     content: PropTypes.object.isRequired,
     openStoryMode: PropTypes.func.isRequired,
+    isStoryOpen: PropTypes.bool.isRequired,
   }
 
   render() {
-    const { content, openStoryMode } = this.props
+    const { content, isStoryOpen, openStoryMode } = this.props
     const menuText = content.menu
     return (
       <div className={styles.nav}>
@@ -121,6 +123,9 @@ export default class TopNav extends React.Component {
           <p className={styles.para}>{menuText.download.paragraphs[0]}</p>
           <p className={styles.para}>{menuText.download.paragraphs[1]} <a href='https://humanrightsmeasurement.org/' target='_blank'>{menuText.download.link}</a>.</p>
         </NavItem>
+        { isStoryOpen &&
+        <StoryPopup />
+        }
       </div>
     )
   }
