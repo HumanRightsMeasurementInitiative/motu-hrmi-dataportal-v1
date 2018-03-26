@@ -24,11 +24,15 @@ export default class CPRRects extends React.Component {
   }
 
   onMouseOver= () => {
+    const isIPad = navigator.userAgent.match(/iPad/i) != null
+    if (isIPad) return null
     const { hoveredCountry, country, onItemHover } = this.props
     if ((!hoveredCountry || country.countryCode !== hoveredCountry) && onItemHover !== undefined) onItemHover(country.countryCode)
   }
 
   onMouseOut= () => {
+    const isIPad = navigator.userAgent.match(/iPad/i) != null
+    if (isIPad) return null
     const { hoveredCountry, resetHoveredCountry } = this.props
     if (hoveredCountry !== null && resetHoveredCountry !== undefined) resetHoveredCountry()
   }
