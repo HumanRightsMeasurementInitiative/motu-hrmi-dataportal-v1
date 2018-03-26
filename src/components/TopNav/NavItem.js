@@ -76,7 +76,7 @@ export default class NavItem extends React.Component {
             { labelKey === 'download' &&
               <div className={styles.agreeBtnWrapper}>
                 <a
-                  href="/Download_HRMI_data_and_codebook_EN_ES_PT_FR.xlsx"
+                  href="Download_HRMI_data_and_codebook_EN_ES_PT_FR.xlsx"
                   className={styles.agreeBtn}
                   onClick={this.onDownloadClick}
                 >
