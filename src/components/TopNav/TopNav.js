@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import LangSelector from '../LangSelector'
 import NavItem from './NavItem'
 import styles from './styles.css'
-import makeHTMLParagraph from 'lib/make-html-paragraph'
-import StoryPopup from '../StoryPopup'
 
 function selectPdfByLanguage(lang) {
   switch (lang) {
@@ -33,7 +31,7 @@ export default class TopNav extends React.Component {
   }
 
   render() {
-    const { content, openStoryMode, closeStoryMode } = this.props
+    const { content, openStoryMode } = this.props
     const menuText = content.menu
     return (
       <div className={styles.nav}>
