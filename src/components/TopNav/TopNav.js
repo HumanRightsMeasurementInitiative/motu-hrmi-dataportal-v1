@@ -126,7 +126,7 @@ export default class TopNav extends React.Component {
               {' '}
               {menuText.howToUse.links[3]}
               {' '}
-              {'https://humanrightsmeasurement.org/'}
+              <a href='https://humanrightsmeasurement.org/' target='_blank'>{'https://humanrightsmeasurement.org/'}</a>
             </li>
           </ul>
           <p className={styles.para}>
@@ -138,7 +138,7 @@ export default class TopNav extends React.Component {
               {' '}
               {menuText.howToUse.links[4]}
               {' '}
-              {'https://humanrightsmeasurement.org/'}
+              <a href='https://humanrightsmeasurement.org/' target='_blank'>{'https://humanrightsmeasurement.org/'}</a>
               {'. '}
               {menuText.howToUse.list[5]}
             </li>
