@@ -549,7 +549,6 @@
     "CHN": "Chine",
     "COL": "Colombie",
     "COM": "Comores",
-    "COD": "Congo, Rép dém",
     "COG": "Congo, Rép",
     "CRI": "Costa Rica",
     "CIV": "Côte d'Ivoire",
@@ -721,6 +720,7 @@
     "VIR": "Îles Vierges (EU)",
     "WBG": "Cisjordanie et Gaza",
     "YEM": "Yémen, Rép. du",
+    "ZAR": "Congo, Rép dém",
     "ZMB": "Zambie",
     "ZWE": "Zimbabwe"
   },

@@ -168,7 +168,7 @@
       "Austrália"
     ],
     "disjunction": "ou"
-  } 
+  }
  ,
   "arrow_link": {
     "title": {
@@ -519,7 +519,6 @@
     "COL": "Colômbia",
     "COM": "Comores",
     "COD": "República Democrática do Congo",
-    "COG": "República do Congo",
     "CRI": "Costa Rica",
     "CIV": "Costa do Marfim",
     "HRV": "Croácia",
@@ -690,6 +689,7 @@
     "VIR": "Ilhas Virgens dos Estados Unidos",
     "WBG": "Cisjordânia e a Faixa de Gaza",
     "YEM": "Iémen",
+    "ZAR": "República do Congo",
     "ZMB": "Zâmbia",
     "ZWE": "Zimbabwe"
   },

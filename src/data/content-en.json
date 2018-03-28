@@ -549,8 +549,7 @@
     "CHN": "China",
     "COL": "Colombia",
     "COM": "Comoros",
-    "COD": "Congo; Dem, Rep,",
-    "COG": "Congo; Rep,",
+    "COG": "Congo, Rep.",
     "CRI": "Costa Rica",
     "CIV": "Cote d'Ivoire",
     "HRV": "Croatia",
@@ -721,6 +720,7 @@
     "VIR": "Virgin Islands (US)",
     "WBG": "West Bank and Gaza",
     "YEM": "Yemen",
+    "ZAR": "Congo, Dem. Rep.",
     "ZMB": "Zambia",
     "ZWE": "Zimbabwe"
   },
