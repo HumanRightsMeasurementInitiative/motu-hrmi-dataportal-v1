@@ -195,8 +195,7 @@ export default class RightsPage extends React.Component {
             }`,
             0
           )
-    const getGDPValue = country =>
-      get(country, `rights.esrHIHistorical.${this.state.currYear}.GDP`, 0)
+    const getGDPValue = country => get(country, `GDP`, 0) || 0
     const sortby = data => {
       switch (this.state.sortby) {
         case 'Core assessment standard score':
