@@ -13,24 +13,22 @@ export default class Layout extends React.Component {
     router: PropTypes.object.isRequired,
   }
 
-  constructor() {
-    super()
-    this.state = { isAlertShow: false }
+  state = {
+    isAlertShow: false,
   }
 
   componentDidMount() {
-    if (window.innerWidth < 1000) this.setState({ isAlertShow: true })
-    else if (window.innerWidth >= 1000) this.setState({ isAlertShow: false })
-    window.addEventListener('resize', this.resize)
+    this.onResize()
+    window.addEventListener('resize', this.onResize)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.resize)
+    window.removeEventListener('resize', this.onResize)
   }
 
-  resize = () => {
-    if (!this.state.isAlertShow && window.innerWidth < 1000) this.setState({ isAlertShow: true })
-    else if (this.state.isAlertShow && window.innerWidth >= 1000) this.setState({ isAlertShow: false })
+  onResize = () => {
+    const isSmall = window.matchMedia('(max-width: 1000px)').matches
+    this.setState({ isAlertShow: isSmall })
   }
 
   render() {
