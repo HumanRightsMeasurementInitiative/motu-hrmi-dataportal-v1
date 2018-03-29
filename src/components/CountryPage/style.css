@@ -179,6 +179,7 @@
   padding-right: 4px;
   color: #58595b;
   line-height: 1.5em;
+  overflow: hidden;
 }
 .rightInfoWrapper:before,
 .rightInfoWrapper:after {
@@ -378,7 +379,7 @@
 }
 .esrRegionValue .text,
 .cprRegionValue .text,
-.cprRegionValue .floatNum, 
+.cprRegionValue .floatNum,
 .esrRegionValue .floatNum{
   font-size: 18px;
   font-weight: bold;
