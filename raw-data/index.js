@@ -3,6 +3,8 @@ const _ = require('lodash')
 const d3 = require('d3')
 const XLSX = require('xlsx')
 
+process.chdir(__dirname)
+
 const CPR_MAPPING = {
   Angola: 'AGO',
   Australia: 'AUS',
@@ -101,7 +103,7 @@ function ESRHighIncome() {
         .key(d => d.year)
         .rollup(ds => {
           console.assert(ds.length === 1, `WARNING: Duplicate year: ${JSON.stringify(ds, null, 2)}`)
-          const d = _.pick(ds[0], 'year GDP SERF rights'.split(' '))
+          const d = _.pick(ds[0], 'year rights'.split(' '))
           return d
         })
         .object(countryYears)
@@ -113,25 +115,6 @@ function ESRHighIncome() {
     })
     .object(rows)
   return countries
-}
-
-function getPopulation() {
-  const rows = sheetRows(readSheet('population_data.xlsx'), 'AE', 0).map(row => {
-    const datum = {
-      countryName: row.A,
-      countryCode: row.B,
-      population: row.D,
-    }
-    return datum
-  })
-
-  const countriesPopulation = d3.nest().key(d => d.countryCode).rollup((v) => {
-    return {
-      population: v[0].population,
-    }
-  }).object(rows)
-
-  return countriesPopulation
 }
 
 function ESRCore() {
@@ -182,7 +165,7 @@ function ESRCore() {
         .key(d => d.year)
         .rollup(ds => {
           console.assert(ds.length === 1, `WARNING: Duplicate year: ${JSON.stringify(ds, null, 2)}`)
-          const d = _.pick(ds[0], 'year GDP SERF rights'.split(' '))
+          const d = _.pick(ds[0], 'year rights'.split(' '))
           return d
         })
         .object(countryYears)
@@ -296,12 +279,36 @@ function CPRRangeAtRisk() {
   return wordsValuesByCountry
 }
 
+function toNumberIfNumber(str, parse = parseInt) {
+  const num = parse(str)
+  return Number.isNaN(num) ? null : num
+}
+
+function CountryData() {
+  const rows = sheetRows(readSheet('country-data.xlsx'), 'AE', 1).map(row => {
+    const datum = {
+      countryName: row.A,
+      countryCode: row.B,
+      population: toNumberIfNumber(row.D),
+      GDP: toNumberIfNumber(row.E, parseFloat),
+    }
+    return datum
+  })
+
+  const countryDataByCountry = d3.nest()
+    .key(d => d.countryCode)
+    .rollup(v => v[0])
+    .object(rows)
+
+  return countryDataByCountry
+}
+
 function calculate() {
   const esrHI = ESRHighIncome()
   const esrCore = ESRCore()
   const cpr = CPR()
   const cprRangeAtRisk = CPRRangeAtRisk()
-  const populationData = getPopulation()
+  const countryDataByCountry = CountryData()
 
   const countryCodesList = Object.keys(esrHI)
 
@@ -313,7 +320,15 @@ function calculate() {
     const countryCpr = cpr[countryCode] || { rights: null }
     const countryCprRangeAtRisk = cprRangeAtRisk[countryCode]
 
-    const population = populationData[countryCode] !== undefined ? populationData[countryCode].population : null
+    const ambiguousCountryCodes = { ADO: 'AND', ZAR: 'COD', IMY: 'IMN', KSV: 'XKX', ROM: 'ROU', TMP: 'TLS', WBG: 'PSE' }
+
+    const { population = null, GDP = null } = countryDataByCountry[countryCode]
+      ? countryDataByCountry[countryCode]
+      : countryDataByCountry[ambiguousCountryCodes[countryCode]]
+
+    if (!population && !GDP) {
+      console.warn(`!!! Missing Population/GDP data for ${countryCode} (${countryEsrHI.countryName})`)
+    }
 
     const countryInfo = _.pick(countryEsrHI, [
       'countryCode',
@@ -341,7 +356,7 @@ function calculate() {
     countryCatalog.hasCPR = countryCpr.rights !== null
     catalogCountries.push(countryCatalog)
 
-    return { ...countryInfo, population, rights }
+    return { ...countryInfo, population, GDP, rights }
   })
 
   const joinedCountriesByCountry = _.keyBy(joinedCountries, 'countryCode')
