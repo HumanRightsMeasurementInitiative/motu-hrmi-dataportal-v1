@@ -77,10 +77,18 @@ export default class BarChartCPR extends React.Component {
 
 function Text({ x = 0, y = 0, anchor = 'tl', ...props }) {
   const [vert, horiz] = anchor.split('')
-  const alignmentBaseline = { t: 'hanging', c: 'central', b: 'baseline' }[vert]
+  const baseline = { t: 'hanging', c: 'central', b: 'baseline' }[vert]
   const textAnchor = { l: 'start', c: 'middle', r: 'end' }[horiz]
 
   return (
-    <text fontFamily="sans-serif" {...props} x={x} y={y} alignmentBaseline={alignmentBaseline} textAnchor={textAnchor} />
+    <text
+      fontFamily="sans-serif"
+      {...props}
+      x={x}
+      y={y}
+      textAnchor={textAnchor}
+      alignmentBaseline={baseline}
+      dominantBaseline={baseline}
+    />
   )
 }
