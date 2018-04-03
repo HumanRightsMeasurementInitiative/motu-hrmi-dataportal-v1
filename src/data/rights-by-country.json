@@ -150797,6 +150797,29 @@
     "population": 15777451,
     "GDP": 2036.3192597349246,
     "rights": {
+      "esrHI": {
+        "food": 91.9,
+        "food_sub": {
+          "normalBirthweightInfants": 91.9
+        },
+        "education": null,
+        "education_sub": {
+          "combinedSchoolEnrollment": 77,
+          "educationQuality": null
+        },
+        "work": null,
+        "work_sub": {
+          "notLongTermUnemployed": null,
+          "notRelativelyPoor": null
+        },
+        "housing": null,
+        "housing_sub": {},
+        "health": 74.9,
+        "health_sub": {
+          "childSurvival": 87.7,
+          "survivalToAge65": 62.2
+        }
+      },
       "esrHIHistorical": {
         "2005": {
           "year": 2005,
@@ -151057,6 +151080,58 @@
               "survivalToAge65": 62.2
             }
           }
+        },
+        "2015": {
+          "year": 2015,
+          "rights": {
+            "food": 91.9,
+            "food_sub": {
+              "normalBirthweightInfants": 91.9
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": 77,
+              "educationQuality": null
+            },
+            "work": null,
+            "work_sub": {
+              "notLongTermUnemployed": null,
+              "notRelativelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {},
+            "health": 74.9,
+            "health_sub": {
+              "childSurvival": 87.7,
+              "survivalToAge65": 62.2
+            }
+          }
+        }
+      },
+      "esrCore": {
+        "food": 81.7,
+        "food_sub": {
+          "childrenNourishment": 81.7
+        },
+        "education": 86.9,
+        "education_sub": {
+          "combinedSchoolEnrollment": 77,
+          "primarySchoolCompletion": 96.9
+        },
+        "work": 79.4,
+        "work_sub": {
+          "notAbsolutelyPoor": 79.4
+        },
+        "housing": 62.3,
+        "housing_sub": {
+          "improvedSanitation": 47.8,
+          "improvedRuralWater": 76.7
+        },
+        "health": 82.7,
+        "health_sub": {
+          "childSurvival": 87.7,
+          "survivalToAge65": 62.2,
+          "contraceptiveUseScore": 98.3
         }
       },
       "esrCoreHistorical": {
@@ -151347,6 +151422,599 @@
               "childSurvival": 86.9,
               "survivalToAge65": 62.2,
               "contraceptiveUseScore": 98.3
+            }
+          }
+        },
+        "2015": {
+          "year": 2015,
+          "rights": {
+            "food": 81.7,
+            "food_sub": {
+              "childrenNourishment": 81.7
+            },
+            "education": 86.9,
+            "education_sub": {
+              "combinedSchoolEnrollment": 77,
+              "primarySchoolCompletion": 96.9
+            },
+            "work": 79.4,
+            "work_sub": {
+              "notAbsolutelyPoor": 79.4
+            },
+            "housing": 62.3,
+            "housing_sub": {
+              "improvedSanitation": 47.8,
+              "improvedRuralWater": 76.7
+            },
+            "health": 82.7,
+            "health_sub": {
+              "childSurvival": 87.7,
+              "survivalToAge65": 62.2,
+              "contraceptiveUseScore": 98.3
+            }
+          }
+        }
+      },
+      "cpr": null,
+      "cprRangeAtRisk": null
+    }
+  },
+  "TWN": {
+    "countryCode": "TWN",
+    "countryName": "Taiwan",
+    "population": 23485755,
+    "GDP": 15694,
+    "rights": {
+      "esrHIHistorical": {
+        "2005": {
+          "year": 2005,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "normalBirthweightInfants": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "educationQuality": null
+            },
+            "work": null,
+            "work_sub": {
+              "notLongTermUnemployed": null,
+              "notRelativelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {},
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null
+            }
+          }
+        },
+        "2006": {
+          "year": 2006,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "normalBirthweightInfants": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "educationQuality": null
+            },
+            "work": null,
+            "work_sub": {
+              "notLongTermUnemployed": null,
+              "notRelativelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {},
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null
+            }
+          }
+        },
+        "2007": {
+          "year": 2007,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "normalBirthweightInfants": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "educationQuality": null
+            },
+            "work": null,
+            "work_sub": {
+              "notLongTermUnemployed": null,
+              "notRelativelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {},
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null
+            }
+          }
+        },
+        "2008": {
+          "year": 2008,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "normalBirthweightInfants": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "educationQuality": null
+            },
+            "work": null,
+            "work_sub": {
+              "notLongTermUnemployed": null,
+              "notRelativelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {},
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null
+            }
+          }
+        },
+        "2009": {
+          "year": 2009,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "normalBirthweightInfants": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "educationQuality": null
+            },
+            "work": null,
+            "work_sub": {
+              "notLongTermUnemployed": null,
+              "notRelativelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {},
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null
+            }
+          }
+        },
+        "2010": {
+          "year": 2010,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "normalBirthweightInfants": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "educationQuality": null
+            },
+            "work": null,
+            "work_sub": {
+              "notLongTermUnemployed": null,
+              "notRelativelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {},
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null
+            }
+          }
+        },
+        "2011": {
+          "year": 2011,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "normalBirthweightInfants": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "educationQuality": null
+            },
+            "work": null,
+            "work_sub": {
+              "notLongTermUnemployed": null,
+              "notRelativelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {},
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null
+            }
+          }
+        },
+        "2012": {
+          "year": 2012,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "normalBirthweightInfants": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "educationQuality": null
+            },
+            "work": null,
+            "work_sub": {
+              "notLongTermUnemployed": null,
+              "notRelativelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {},
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null
+            }
+          }
+        },
+        "2013": {
+          "year": 2013,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "normalBirthweightInfants": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "educationQuality": null
+            },
+            "work": null,
+            "work_sub": {
+              "notLongTermUnemployed": null,
+              "notRelativelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {},
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null
+            }
+          }
+        },
+        "2014": {
+          "year": 2014,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "normalBirthweightInfants": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "educationQuality": null
+            },
+            "work": null,
+            "work_sub": {
+              "notLongTermUnemployed": null,
+              "notRelativelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {},
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null
+            }
+          }
+        }
+      },
+      "esrCoreHistorical": {
+        "2005": {
+          "year": 2005,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "childrenNourishment": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "primarySchoolCompletion": null
+            },
+            "work": null,
+            "work_sub": {
+              "notAbsolutelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {
+              "improvedSanitation": null,
+              "improvedRuralWater": null
+            },
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null,
+              "contraceptiveUseScore": null
+            }
+          }
+        },
+        "2006": {
+          "year": 2006,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "childrenNourishment": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "primarySchoolCompletion": null
+            },
+            "work": null,
+            "work_sub": {
+              "notAbsolutelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {
+              "improvedSanitation": null,
+              "improvedRuralWater": null
+            },
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null,
+              "contraceptiveUseScore": null
+            }
+          }
+        },
+        "2007": {
+          "year": 2007,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "childrenNourishment": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "primarySchoolCompletion": null
+            },
+            "work": null,
+            "work_sub": {
+              "notAbsolutelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {
+              "improvedSanitation": null,
+              "improvedRuralWater": null
+            },
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null,
+              "contraceptiveUseScore": null
+            }
+          }
+        },
+        "2008": {
+          "year": 2008,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "childrenNourishment": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "primarySchoolCompletion": null
+            },
+            "work": null,
+            "work_sub": {
+              "notAbsolutelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {
+              "improvedSanitation": null,
+              "improvedRuralWater": null
+            },
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null,
+              "contraceptiveUseScore": null
+            }
+          }
+        },
+        "2009": {
+          "year": 2009,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "childrenNourishment": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "primarySchoolCompletion": null
+            },
+            "work": null,
+            "work_sub": {
+              "notAbsolutelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {
+              "improvedSanitation": null,
+              "improvedRuralWater": null
+            },
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null,
+              "contraceptiveUseScore": null
+            }
+          }
+        },
+        "2010": {
+          "year": 2010,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "childrenNourishment": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "primarySchoolCompletion": null
+            },
+            "work": null,
+            "work_sub": {
+              "notAbsolutelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {
+              "improvedSanitation": null,
+              "improvedRuralWater": null
+            },
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null,
+              "contraceptiveUseScore": null
+            }
+          }
+        },
+        "2011": {
+          "year": 2011,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "childrenNourishment": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "primarySchoolCompletion": null
+            },
+            "work": null,
+            "work_sub": {
+              "notAbsolutelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {
+              "improvedSanitation": null,
+              "improvedRuralWater": null
+            },
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null,
+              "contraceptiveUseScore": null
+            }
+          }
+        },
+        "2012": {
+          "year": 2012,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "childrenNourishment": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "primarySchoolCompletion": null
+            },
+            "work": null,
+            "work_sub": {
+              "notAbsolutelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {
+              "improvedSanitation": null,
+              "improvedRuralWater": null
+            },
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null,
+              "contraceptiveUseScore": null
+            }
+          }
+        },
+        "2013": {
+          "year": 2013,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "childrenNourishment": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "primarySchoolCompletion": null
+            },
+            "work": null,
+            "work_sub": {
+              "notAbsolutelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {
+              "improvedSanitation": null,
+              "improvedRuralWater": null
+            },
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null,
+              "contraceptiveUseScore": null
+            }
+          }
+        },
+        "2014": {
+          "year": 2014,
+          "rights": {
+            "food": null,
+            "food_sub": {
+              "childrenNourishment": null
+            },
+            "education": null,
+            "education_sub": {
+              "combinedSchoolEnrollment": null,
+              "primarySchoolCompletion": null
+            },
+            "work": null,
+            "work_sub": {
+              "notAbsolutelyPoor": null
+            },
+            "housing": null,
+            "housing_sub": {
+              "improvedSanitation": null,
+              "improvedRuralWater": null
+            },
+            "health": null,
+            "health_sub": {
+              "childSurvival": null,
+              "survivalToAge65": null,
+              "contraceptiveUseScore": null
             }
           }
         }
