@@ -37,6 +37,7 @@ ul {
   width: 20%;
   min-width: 190px;
   max-width: 400px;
+  overflow-y: auto;
 }
 
 :global(.column):nth-child(2) {
@@ -49,6 +50,7 @@ ul {
   width: 20%;
   min-width: 190px;
   max-width: 400px;
+  overflow-y: auto;  
 }
 
 :global(.arrowLink) {
