@@ -85,6 +85,13 @@ export default class CountryPage extends React.Component {
     const displayPercent = (data) => data !== null ? data.toFixed(0) + '%' : 'N/A'
     const displayTenth = data => data !== null ? data.toFixed(1) + '/10' : 'N/A'
 
+    const svgContainerData = {
+      headerConstant: content.header_text.by_geography,
+      headerVariable: content.countries[currCountry.countryCode],
+      footer: content.footer_text.by_geography,
+      source: content.footer_text.source,
+    }
+
     return (
       <div className={styles.countryPage}>
         <SubTopNav content={content} />
@@ -122,7 +129,7 @@ export default class CountryPage extends React.Component {
               </div>
               <ChangeStandard />
             </div>
-            <div className={styles.countryChart}>
+            <div className={styles.countryChart} data-js-png-export-data={JSON.stringify(svgContainerData)}>
               <CountryRightsChart
                 rights={currCountry.rights}
                 esrStandard={esrStandard}

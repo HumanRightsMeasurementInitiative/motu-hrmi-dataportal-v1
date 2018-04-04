@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { flatMap, maxBy } from 'lodash'
+import { flatMap } from 'lodash'
 import { csvFormat } from 'd3'
 import DownloadIcon from '../DownloadIcon'
 import { exportChart, countryDataTabular, downloadFileWithContent } from './lib'
@@ -48,8 +48,10 @@ class DownloadPopup extends React.Component {
       region: currentRegion,
     } = urlSegs
 
-    const svgChart = maxBy(document.querySelectorAll('svg'), svg => svg.width.baseVal.value * svg.height.baseVal.value)
-    const { exportedChart, fileName } = await exportChart({ svgChart, exploreBy, data, currentCountryCode, currentRight, content, currentRegion })
+    const svgContainer = document.querySelectorAll('[data-js-png-export-data]')[0]
+    const dataset = JSON.parse(svgContainer.dataset.jsPngExportData)
+    const svgChart = svgContainer.getElementsByTagName('svg')[0]
+    const { exportedChart, fileName } = await exportChart({ svgChart, exploreBy, data, currentCountryCode, currentRight, content, currentRegion, dataset })
     downloadFileWithContent(fileName, exportedChart, 'image/png')
   }
 

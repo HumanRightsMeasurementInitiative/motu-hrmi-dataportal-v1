@@ -1,23 +1,57 @@
 import { omitBy, mapKeys, mapValues } from 'lodash'
 import fileSaver from 'file-saver'
 
-const exportGeography = ({ svgChart, currentCountryCode, svgChartCloned, data }) => {
+const exportGeography = ({ svgChart, currentCountryCode, svgChartCloned, data, dataset }) => {
   if (!currentCountryCode) return // Makes no sense to download the entire country grid
-  const html = svgChart.parentNode.parentNode.lastChild.outerHTML // NOTE: FRAGILE
-  const svgHtml = `<foreignObject width="100%" height="100%">${html}</foreignObject>`
+  const labelsHtml = svgChart.parentNode.parentNode.lastChild.outerHTML // NOTE: FRAGILE
+  const svgHtml = `<foreignObject width="100%" height="100%">${labelsHtml}</foreignObject>`
+  const currentCountryName = data.rightsByCountry[currentCountryCode].countryName
+  const titleHtml = `
+    <foreignObject width="100%" height="100%">
+      <div style="position: absolute; top: 20px; left: 20px; color: #58595b; font-size: 18px">
+        <strong>${dataset.headerConstant}: <span style="color: #000000;">${dataset.headerVariable}</span></strong>
+      </div>
+    </foreignObject>
+  `
+  const footerHtml = `
+    <foreignObject width="100%" height="100%">
+      <div style="position: absolute; bottom: 20px; left: 20px; color: #58595b; font-size: 12px">
+        <div>${dataset.footer}</div>
+        <div style="color: #9a9a9a;">${dataset.source} https://humanrightsmeasurement.org</div>
+      </div>
+    </foreignObject>
+  `
   svgChartCloned.insertAdjacentHTML('beforeend', svgHtml)
+  svgChartCloned.insertAdjacentHTML('beforeend', footerHtml)
+  svgChartCloned.insertAdjacentHTML('afterbegin', titleHtml)
   const svgString = new window.XMLSerializer().serializeToString(svgChartCloned)
-  const currentCountryName = data.rightsByCountry[currentCountryCode]
   const fileName = `HRMIChart Human rights performance in ${currentCountryName}.png`
   return {
     fileName,
     svgString,
+    width: svgChartCloned.width.baseVal.value,
+    height: svgChartCloned.height.baseVal.value,
   }
 }
 
-const exportRights = ({ svgChart, currentRight, svgChartCloned, data, currentRegion, content }) => {
+const exportRights = ({ svgChart, currentRight, svgChartCloned, data, currentRegion, content, dataset }) => {
   const isCPR = currentRight.includes('-') // FIXME: Dirty
   const width = svgChartCloned.width.baseVal.value
+  const titleHtml = `
+    <foreignObject width="100%" height="100%">
+      <div style="position: absolute; top: 20px; left: 20px; color: #58595b; font-size: 18px;">
+        <strong>${dataset.headerConstant}: <span style="color: #000000;">${dataset.headerVariable}</span></strong>
+      </div>
+    </foreignObject>
+  `
+  const footerHtml = `
+    <foreignObject width="100%" height="100%">
+      <div style="position: absolute; bottom: 20px; left: 20px; color: #58595b; font-size: 12px;">
+        <div>${dataset.footer}</div>
+        <div style="color: #9a9a9a;">${dataset.source} https://humanrightsmeasurement.org</div>
+      </div>
+    </foreignObject>
+  `
   const svgAppend = isCPR
     ? `
       <g class="-legend">
@@ -43,13 +77,21 @@ const exportRights = ({ svgChart, currentRight, svgChartCloned, data, currentReg
         </g>
       </g>
     `
+  svgChartCloned.style.height = svgChartCloned.height.baseVal.value * 1.2
+  svgChartCloned.style.paddingTop = svgChartCloned.height.baseVal.value * 0.1
+  svgChartCloned.height.baseVal.convertToSpecifiedUnits(svgChartCloned.height.baseVal.SVG_LENGTHTYPE_PX)
+  svgChartCloned.height.baseVal.newValueSpecifiedUnits(svgChartCloned.height.baseVal.SVG_LENGTHTYPE_PX, svgChartCloned.height.baseVal.value * 1.4)
   svgChartCloned.insertAdjacentHTML('afterbegin', svgAppend)
+  svgChartCloned.insertAdjacentHTML('beforeend', footerHtml)
+  svgChartCloned.insertAdjacentHTML('afterbegin', titleHtml)
   const svgString = new window.XMLSerializer().serializeToString(svgChartCloned)
   const currentRegionName = content.region_name[currentRegion]
   const fileName = `HRMIChart Right to ${currentRight} in Region ${currentRegionName}.png`
   return {
     fileName,
     svgString,
+    width: svgChartCloned.width.baseVal.value,
+    height: svgChartCloned.height.baseVal.value,
   }
 }
 
@@ -58,7 +100,7 @@ const exporters = {
   Rights: exportRights,
 }
 
-export const exportChart = async ({ svgChart, exploreBy, data, currentCountryCode, currentRight, content, currentRegion }) => {
+export const exportChart = async ({ svgChart, exploreBy, data, currentCountryCode, currentRight, content, currentRegion, dataset }) => {
   const svgChartCloned = svgChart.cloneNode(true)
   const exporter = exporters[exploreBy]
 
@@ -71,14 +113,14 @@ export const exportChart = async ({ svgChart, exploreBy, data, currentCountryCod
     text.setAttribute('font-size', n)
   })
 
-  const { fileName, svgString } = exporter({ svgChart, currentCountryCode, svgChartCloned, data, currentRight, content, currentRegion })
+  const { fileName, svgString, width, height } = exporter({ svgChart, currentCountryCode, svgChartCloned, data, currentRight, content, currentRegion, dataset })
   const svgData = encodeURIComponent(svgString)
   const canvas = await new Promise((resolve, reject) => {
     const image = new window.Image()
     image.onload = () => {
       const canvas = document.createElement('canvas')
-      canvas.width = svgChartCloned.width.baseVal.value * 2
-      canvas.height = svgChartCloned.height.baseVal.value * 2
+      canvas.width = width * 2
+      canvas.height = height * 2
       const ctx = canvas.getContext('2d')
       ctx.fillStyle = 'white'
       ctx.fillRect(0, 0, canvas.width, canvas.height)

@@ -217,6 +217,15 @@ export default class RightsPage extends React.Component {
       rightsByRegion[urlSegs.region].countries
     )
 
+    const svgContainerData = {
+      headerConstant: content.rights_name[urlSegs.right],
+      headerVariable: content.region_name[urlSegs.region],
+      footer: isESRSelected
+        ? content.footer_text.rights_page_esr
+        : content.footer_text.rights_page_cpr,
+      source: content.footer_text.source,
+    }
+
     return (
       <div className={styles.rightsPage}>
         <div className={styles.searchWrapper}>
@@ -322,7 +331,7 @@ export default class RightsPage extends React.Component {
                 )}
               </div>
             </div>
-            <div className={styles.chartsContainer} ref="charts">
+            <div className={styles.chartsContainer} ref="charts" data-js-png-export-data={JSON.stringify(svgContainerData)}>
               {isESRSelected || urlSegs.region === 'cpr-pilot' ? (
                 <RightBarchart
                   isESR={rightsDefinitions[urlSegs.right].type === 'ESR'}
