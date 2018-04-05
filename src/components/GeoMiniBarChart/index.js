@@ -27,6 +27,7 @@ export default class GeoMiniBarChart extends React.Component {
     hoverCountry: PropTypes.string,
     esrStandard: PropTypes.string,
     isWithDot: PropTypes.bool,
+    pointColor: PropTypes.string,
   }
 
   static defaultProps = {
@@ -56,7 +57,7 @@ export default class GeoMiniBarChart extends React.Component {
   }
 
   render() {
-    const { height, data, right, esrStandard, hoverCountry, isESR, isWithDot } = this.props
+    const { height, data, right, esrStandard, hoverCountry, isESR, isWithDot, pointColor } = this.props
     const { containerWidth } = this.state
     const margin = { top: 4, right: 0, bottom: 4, left: 14 }
     const barX = d3
@@ -123,7 +124,7 @@ export default class GeoMiniBarChart extends React.Component {
                   fill={hoverCountry === country.countryCode ? COLORS[right] : '#ddd'}
                 />
                 { isWithDot && Math.round(value) &&
-                  <circle cx={x + barWidth / 2} cy={height - value - margin.top} r={barWidth / 2} fill='#009540'></circle>
+                  <circle cx={x + barWidth / 2} cy={height - value - margin.top} r={barWidth / 2} fill={pointColor}></circle>
                 }
               </g>
             )
