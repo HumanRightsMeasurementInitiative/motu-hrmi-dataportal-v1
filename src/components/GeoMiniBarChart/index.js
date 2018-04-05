@@ -59,7 +59,7 @@ export default class GeoMiniBarChart extends React.Component {
   render() {
     const { height, data, right, esrStandard, hoverCountry, isESR, isWithDot, pointColor } = this.props
     const { containerWidth } = this.state
-    const margin = { top: 4, right: 0, bottom: 4, left: 14 }
+    const margin = { top: isWithDot ? 14 : 4, right: 0, bottom: 4, left: 14 }
     const barX = d3
       .scaleLinear()
       .domain([0, data.countries.length - 1])
@@ -87,7 +87,7 @@ export default class GeoMiniBarChart extends React.Component {
       <div ref="chartContainer">
         <svg height={height} width={containerWidth}>
           <g>
-            <text x="0" y={8} fontSize="10px" fill="#ddd">
+            <text x="0" y={isWithDot ? 18 : 8} fontSize="10px" fill="#ddd">
               {esrStandard ? '100%' : '10'}
             </text>
             <line
@@ -118,13 +118,13 @@ export default class GeoMiniBarChart extends React.Component {
               <g key={i}>
                 <rect
                   x={x}
-                  y={height - value - margin.top}
+                  y={height - value - margin.bottom}
                   height={Math.round(value)}
                   width={barWidth}
                   fill={hoverCountry === country.countryCode ? COLORS[right] : '#ddd'}
                 />
                 { isWithDot && Math.round(value) &&
-                  <circle cx={x + barWidth / 2} cy={height - value - margin.top} r={barWidth / 2} fill={pointColor}></circle>
+                <circle cx={x + barWidth / 2} cy={height - value - margin.bottom} r={barWidth / 2} fill={pointColor}></circle>
                 }
               </g>
             )
