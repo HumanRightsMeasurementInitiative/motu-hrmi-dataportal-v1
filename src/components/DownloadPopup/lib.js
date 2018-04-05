@@ -1,29 +1,37 @@
 import { omitBy, mapKeys, mapValues } from 'lodash'
 import fileSaver from 'file-saver'
 
+const generateTitleFooter = ({ width, height, dataset, titleMarginMultiplier, footerMarginMultiplier }) => {
+  const titleSize = height > 560 ? 22 : 14
+  const title = `
+    <g transform="translate(20, ${titleMarginMultiplier * titleSize * 2})">
+      <text font-size="${titleSize}">
+        <tspan fill="#58595b" font-weight="bold">${dataset.headerConstant}: </tspan>
+        <tspan fill="#000000">${dataset.headerVariable}</tspan>
+      </text>
+    </g>
+  `
+  const footerSize = height > 560 ? 12 : 7
+  const footer = `
+    <g transform="translate(20, ${height - footerMarginMultiplier * footerSize * 2})" font-size="${footerSize}">
+      <text fill="#58595b">${dataset.footer}</text>
+      <text fill="#9a9a9a" transform="translate(0, ${footerSize + 2})">${dataset.source} https://humanrightsmeasurement.org</text>
+    </g>
+  `
+  return { title, footer }
+}
+
 const exportGeography = ({ svgChart, currentCountryCode, svgChartCloned, data, dataset }) => {
   if (!currentCountryCode) return // Makes no sense to download the entire country grid
   const labelsHtml = svgChart.parentNode.parentNode.lastChild.outerHTML // NOTE: FRAGILE
-  const svgHtml = `<foreignObject width="100%" height="100%">${labelsHtml}</foreignObject>`
+  const height = svgChartCloned.height.baseVal.value
+  const width = svgChartCloned.width.baseVal.value
+  const { title, footer } = generateTitleFooter({ height, dataset, width, titleMarginMultiplier: +1, footerMarginMultiplier: 1 })
+  const svgHtml = `<g>${labelsHtml}</g>`
   const currentCountryName = data.rightsByCountry[currentCountryCode].countryName
-  const titleHtml = `
-    <foreignObject width="100%" height="100%">
-      <div style="position: absolute; top: 20px; left: 20px; color: #58595b; font-size: 18px">
-        <strong>${dataset.headerConstant}: <span style="color: #000000;">${dataset.headerVariable}</span></strong>
-      </div>
-    </foreignObject>
-  `
-  const footerHtml = `
-    <foreignObject width="100%" height="100%">
-      <div style="position: absolute; bottom: 20px; left: 20px; color: #58595b; font-size: 12px">
-        <div>${dataset.footer}</div>
-        <div style="color: #9a9a9a;">${dataset.source} https://humanrightsmeasurement.org</div>
-      </div>
-    </foreignObject>
-  `
   svgChartCloned.insertAdjacentHTML('beforeend', svgHtml)
-  svgChartCloned.insertAdjacentHTML('beforeend', footerHtml)
-  svgChartCloned.insertAdjacentHTML('afterbegin', titleHtml)
+  svgChartCloned.insertAdjacentHTML('beforeend', footer)
+  svgChartCloned.insertAdjacentHTML('afterbegin', title)
   const svgString = new window.XMLSerializer().serializeToString(svgChartCloned)
   const fileName = `HRMIChart Human rights performance in ${currentCountryName}.png`
   return {
@@ -37,21 +45,8 @@ const exportGeography = ({ svgChart, currentCountryCode, svgChartCloned, data, d
 const exportRights = ({ svgChart, currentRight, svgChartCloned, data, currentRegion, content, dataset }) => {
   const isCPR = currentRight.includes('-') // FIXME: Dirty
   const width = svgChartCloned.width.baseVal.value
-  const titleHtml = `
-    <foreignObject width="100%" height="100%">
-      <div style="position: absolute; top: 20px; left: 20px; color: #58595b; font-size: 18px;">
-        <strong>${dataset.headerConstant}: <span style="color: #000000;">${dataset.headerVariable}</span></strong>
-      </div>
-    </foreignObject>
-  `
-  const footerHtml = `
-    <foreignObject width="100%" height="100%">
-      <div style="position: absolute; bottom: 20px; left: 20px; color: #58595b; font-size: 12px;">
-        <div>${dataset.footer}</div>
-        <div style="color: #9a9a9a;">${dataset.source} https://humanrightsmeasurement.org</div>
-      </div>
-    </foreignObject>
-  `
+  const height = svgChartCloned.height.baseVal.value
+  const { title, footer } = generateTitleFooter({ height, dataset, width, titleMarginMultiplier: -0.5, footerMarginMultiplier: -1 })
   const svgAppend = isCPR
     ? `
       <g class="-legend">
@@ -82,8 +77,8 @@ const exportRights = ({ svgChart, currentRight, svgChartCloned, data, currentReg
   svgChartCloned.height.baseVal.convertToSpecifiedUnits(svgChartCloned.height.baseVal.SVG_LENGTHTYPE_PX)
   svgChartCloned.height.baseVal.newValueSpecifiedUnits(svgChartCloned.height.baseVal.SVG_LENGTHTYPE_PX, svgChartCloned.height.baseVal.value * 1.4)
   svgChartCloned.insertAdjacentHTML('afterbegin', svgAppend)
-  svgChartCloned.insertAdjacentHTML('beforeend', footerHtml)
-  svgChartCloned.insertAdjacentHTML('afterbegin', titleHtml)
+  svgChartCloned.insertAdjacentHTML('beforeend', footer)
+  svgChartCloned.insertAdjacentHTML('afterbegin', title)
   const svgString = new window.XMLSerializer().serializeToString(svgChartCloned)
   const currentRegionName = content.region_name[currentRegion]
   const fileName = `HRMIChart Right to ${currentRight} in Region ${currentRegionName}.png`
