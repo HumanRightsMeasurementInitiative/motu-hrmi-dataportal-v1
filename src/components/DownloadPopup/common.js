@@ -4,7 +4,7 @@ import { exportGeography } from './geography'
 import { exportRights } from './rights'
 
 const sizes = () => (
-  window.innerHeight > 960
+  Math.min(window.innerHeight, window.innerWidth) > 1100
     ? { title: 22, footer: 12, text: 14, width: 100 }
     : { title: 14, footer: 7, text: 10, width: 60 }
 )
