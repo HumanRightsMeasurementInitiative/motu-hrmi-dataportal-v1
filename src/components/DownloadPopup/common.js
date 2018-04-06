@@ -3,21 +3,25 @@ import fileSaver from 'file-saver'
 import { exportGeography } from './geography'
 import { exportRights } from './rights'
 
-export const generateTitleFooter = ({ width, height, dataset, titleMarginMultiplier, footerMarginMultiplier }) => {
-  const titleSize = height > 560 ? 22 : 14
+const sizes = () => (
+  window.innerHeight > 960
+    ? { title: 22, footer: 12, text: 14, width: 100 }
+    : { title: 14, footer: 7, text: 10, width: 60 }
+)
+
+export const generateTitleFooter = ({ width, height, dataset, titleMarginMultiplier, footerMarginMultiplier, fontSizes }) => {
   const title = `
-    <g transform="translate(20, ${titleMarginMultiplier * titleSize * 2})">
-      <text font-size="${titleSize}">
+    <g transform="translate(20, ${titleMarginMultiplier * fontSizes.title * 2})">
+      <text font-size="${fontSizes.title}">
         <tspan fill="#58595b" font-weight="bold">${dataset.headerConstant}: </tspan>
         <tspan fill="#000000">${dataset.headerVariable}</tspan>
       </text>
     </g>
   `
-  const footerSize = height > 560 ? 12 : 7
   const footer = `
-    <g transform="translate(20, ${height - footerMarginMultiplier * footerSize * 2})" font-size="${footerSize}">
+    <g transform="translate(20, ${height - footerMarginMultiplier * fontSizes.footer * 2})" font-size="${fontSizes.footer}">
       <text fill="#58595b">${dataset.footer}</text>
-      <text fill="#9a9a9a" transform="translate(0, ${footerSize + 2})">${dataset.source} https://humanrightsmeasurement.org</text>
+      <text fill="#9a9a9a" transform="translate(0, ${fontSizes.footer + 2})">${dataset.source} https://humanrightsmeasurement.org</text>
     </g>
   `
   return { title, footer }
@@ -31,6 +35,7 @@ const exporters = {
 export const exportChart = async ({ svgChart, exploreBy, data, currentCountryCode, currentRight, content, currentRegion, dataset }) => {
   const svgChartCloned = svgChart.cloneNode(true)
   const exporter = exporters[exploreBy]
+  const fontSizes = sizes()
 
   svgChartCloned.setAttribute('version', '1.1')
   svgChartCloned.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
@@ -41,7 +46,7 @@ export const exportChart = async ({ svgChart, exploreBy, data, currentCountryCod
     text.setAttribute('font-size', n)
   })
 
-  const { fileName, svgString, width, height } = exporter({ svgChart, currentCountryCode, svgChartCloned, data, currentRight, content, currentRegion, dataset })
+  const { fileName, svgString, width, height } = exporter({ svgChart, currentCountryCode, svgChartCloned, data, currentRight, content, currentRegion, dataset, fontSizes })
   const svgData = encodeURIComponent(svgString)
   const canvas = await new Promise((resolve, reject) => {
     const image = new window.Image()

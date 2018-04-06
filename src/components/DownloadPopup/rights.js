@@ -1,10 +1,10 @@
 import { generateTitleFooter } from './common'
 
-export const exportRights = ({ svgChart, currentRight, svgChartCloned, data, currentRegion, content, dataset }) => {
+export const exportRights = ({ svgChart, currentRight, svgChartCloned, data, currentRegion, content, dataset, fontSizes }) => {
   const isCPR = currentRight.includes('-') // FIXME: Dirty
   const width = svgChartCloned.width.baseVal.value
   const height = svgChartCloned.height.baseVal.value
-  const { title, footer } = generateTitleFooter({ height, dataset, width, titleMarginMultiplier: -0.5, footerMarginMultiplier: -1 })
+  const { title, footer } = generateTitleFooter({ height, dataset, width, titleMarginMultiplier: -0.5, footerMarginMultiplier: -1, fontSizes })
   const svgAppend = isCPR
     ? `
       <g class="-legend">
@@ -16,7 +16,7 @@ export const exportRights = ({ svgChart, currentRight, svgChartCloned, data, cur
       <g class="-legend">
         <g class="-circle-core" transform="translate(${width * 0.42}, 15)">
           <circle r="7" fill="#00b95f" />
-          <text x="13" y="4" font-size="12" fill="#58595b">
+          <text x="13" y="4" font-size=${fontSizes.text} fill="#58595b">
             Core assessment standard
           </text>
         </g>
@@ -24,7 +24,7 @@ export const exportRights = ({ svgChart, currentRight, svgChartCloned, data, cur
         <g class="-circle-high-income" transform="translate(${width * 0.62}, 15)">
           <circle r="8" fill="#00b95f" />
           <circle r="4" fill="#00b95f" stroke-width="3" stroke="#fff" />
-          <text x="13" y="4" font-size="12" fill="#58595b">
+          <text x="13" y="4" font-size=${fontSizes.text} fill="#58595b">
             High income OECD country assessment standard
           </text>
         </g>

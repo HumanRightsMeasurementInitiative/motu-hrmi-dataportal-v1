@@ -37,12 +37,12 @@ const wrapperCreator = width => text => {
   return { height, html }
 }
 
-const generateLabel = (content, fontSize) => {
+const generateLabel = (content, fontSizes) => {
   const names = RIGHTS_ORDER.map(k => content.rights_name_short[k])
   const surfaceSize = SIZE
   const o = surfaceSize / 2
   const r = surfaceSize / 4 + 30
-  const wrapper = wrapperCreator(100)
+  const wrapper = wrapperCreator(fontSizes.width)
   return (datum, idx, allData) => {
     const name = names[idx]
     const anchor = idx === 0 || idx === 6 ? 'middle' : idx > 6 ? 'end' : 'start'
@@ -61,7 +61,7 @@ const generateLabel = (content, fontSize) => {
     const valueDy = `${height}em`
     return (
       `
-        <g transform="translate(${x}, ${y})" font-size=${fontSize}>
+        <g transform="translate(${x}, ${y})" font-size=${fontSizes.text}>
           ${html}
           <text dy=${valueDy} fill="${color}" font-weight="bold" text-anchor=${anchor}>${value}</text>
         </g>
@@ -70,13 +70,12 @@ const generateLabel = (content, fontSize) => {
   }
 }
 
-export const exportGeography = ({ svgChart, currentCountryCode, svgChartCloned, data, dataset, content }) => {
+export const exportGeography = ({ svgChart, currentCountryCode, svgChartCloned, data, dataset, content, fontSizes }) => {
   if (!currentCountryCode) return // Makes no sense to download the entire country grid
   const height = svgChartCloned.height.baseVal.value
   const width = svgChartCloned.width.baseVal.value
-  const fontSize = height > 560 ? 14 : 10
-  const labels = dataset.rightsData.map(generateLabel(content, fontSize))
-  const { title, footer } = generateTitleFooter({ height, dataset, width, titleMarginMultiplier: +1, footerMarginMultiplier: 1 })
+  const labels = dataset.rightsData.map(generateLabel(content, fontSizes))
+  const { title, footer } = generateTitleFooter({ height, dataset, width, titleMarginMultiplier: +1, footerMarginMultiplier: 1, fontSizes })
   const svgHtml = `<g>${labels}</g>`
   const currentCountryName = data.rightsByCountry[currentCountryCode].countryName
   svgChartCloned.insertAdjacentHTML('beforeend', svgHtml)
