@@ -1,5 +1,5 @@
 import { generateTitleFooter } from './common'
-import { CORRECTIONS, RIGHTS_ORDER, PETALS_COLORS } from 'lib/constants'
+import { RIGHTS_ORDER, PETALS_COLORS } from 'lib/constants'
 import { displayRightValue } from 'components/utils'
 import * as d3 from 'd3'
 
@@ -45,16 +45,17 @@ const generateLabel = (content, fontSize) => {
   const wrapper = wrapperCreator(100)
   return (datum, idx, allData) => {
     const name = names[idx]
-    const [cx, cy] = CORRECTIONS[idx]
+    const anchor = idx === 0 || idx === 6 ? 'middle' : idx > 6 ? 'end' : 'start'
     const value = displayRightValue(allData, idx)
     const color = PETALS_COLORS[idx]
     const a = 360 / 12 * idx
     const radA = a / 360 * 2 * Math.PI
-    const x = o + cx + Math.sin(radA) * r
-    const y = o + cy - Math.cos(radA) * r
+    const x = o + Math.sin(radA) * r
+    const y = o - Math.cos(radA) * r
     const text = document.createElementNS('http://www.w3.org/2000/svg', 'text')
     text.setAttribute('y', 0)
     text.setAttribute('dy', 0)
+    text.setAttribute('text-anchor', anchor)
     text.textContent = name
     const { height, html } = wrapper(text)
     const valueDy = `${height}em`
@@ -62,7 +63,7 @@ const generateLabel = (content, fontSize) => {
       `
         <g transform="translate(${x}, ${y})" font-size=${fontSize}>
           ${html}
-          <text dy=${valueDy} fill="${color}" font-weight="bold">${value}</text>
+          <text dy=${valueDy} fill="${color}" font-weight="bold" text-anchor=${anchor}>${value}</text>
         </g>
       `
     )
