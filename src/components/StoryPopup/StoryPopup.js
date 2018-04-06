@@ -13,6 +13,7 @@ import makeHTMLParagraph from 'lib/make-html-paragraph'
 import Bar1 from './Bar1'
 import Bar2 from './Bar2'
 import Bar3 from './Bar3'
+import { getRightsData } from 'components/utils'
 
 const AMERICAS = 'americas'
 const PILOT = 'cpr-pilot'
@@ -122,8 +123,7 @@ export default class StoryPopup extends React.Component {
               <div className={styles.chartTitle}>{content.story_mexico.chart_title}</div>
               <div className={styles.graph} style={{ lineHeight: '0.9rem' }}>
                 <CountryRightsChart
-                  rights={MEXICO.rights}
-                  esrStandard="esrCore"
+                  rightsData={getRightsData(MEXICO.rights, 'esrCore')}
                   size={500}
                   content={content}
                   displayLabels
