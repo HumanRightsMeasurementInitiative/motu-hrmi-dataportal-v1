@@ -115,7 +115,6 @@
 
 .chartsFooter {
   flex: 0 0 auto;
-  position: relative;
   padding: 6px 0 30px;
   font-size: 12px;
 }
@@ -125,10 +124,8 @@
 }
 .downloadPopupWrapper {
   position: absolute;
-  top: 6px;
   height: 32px;
   width: 32px;
-  z-index: 20;
 }
 .chartsFooter .source {
   padding-left: 42px;
@@ -296,12 +293,6 @@
   display: block;
   opacity: 1;
 }
-/*.esrRightHeader {
-  color: #00b95f;
-}
-.cprRightHeader {
-  color: #2e65a1;
-}*/
 .rightName {
   font-size: 16px;
 }

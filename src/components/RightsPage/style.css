@@ -176,7 +176,6 @@
 }
 .chartsFooter {
   flex: 0 0 auto;
-  position: relative;
   padding: 0 30px 30px;
   min-height: 60px;
   font-size: 12px;
@@ -187,10 +186,8 @@
 }
 .downloadPopupWrapper {
   position: absolute;
-  top: 0;
   height: 32px;
   width: 32px;
-  z-index: 20;
 }
 .chartsFooter .source {
   padding-left: 42px;
@@ -201,7 +198,6 @@
   color: #616161;
 }
 .cprFooter {
-  position: relative;
   width: 100%;
 }
 
