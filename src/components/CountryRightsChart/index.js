@@ -1,57 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { PetalChart } from 'hrmi-charts'
-import rightsDefinitions from 'data/rights-definitions.json'
 import styles from './style.css'
-
-const RIGHTS_ORDER = [
-  'health', // ESR
-  'housing', // ESR
-  'work', // ESR
-
-  'freedom-from-disappearance', // CPR
-  'freedom-from-arbitrary-arrest', // CPR
-  'freedom-from-execution', // CPR
-  'freedom-from-torture', // CPR
-  'participate-in-government', // CPR
-  'assembly-and-association', // CPR
-  'opinion-and-expression', // CPR
-
-  'food', // ESR
-  'education', // ESR
-]
-
-const PETALS_COLORS = [
-  '#00c852', // health
-  '#00d556', // housing
-  '#00e25b', // work
-  '#51c9f0', // freedom from disap
-  '#46b3e0', // freedom from arbitrary
-  '#3c9dd1', // freedom from exec
-  '#3187c1', // freedom from torture
-  '#2e65a1', // participate in gov
-  '#2a4482', // assembly and assoc
-  '#262262', // opinion and exp
-  '#009540', // food
-  '#00af49', // edu
-]
-
-function isRightIndexAnESR(i) {
-  return [0, 1, 2, 10, 11].includes(i)
-}
-
-function displayRightValue(rightData, rightIndex) {
-  const val = rightData[rightIndex]
-  if (val === null) return 'N/A'
-
-  const isPercent = isRightIndexAnESR(rightIndex)
-
-  if (isPercent) {
-    return (val * 100).toFixed(0) + '%'
-  } else {
-    return (val * 10).toFixed(1) + '/10'
-  }
-}
+import { CORRECTIONS, RIGHTS_ORDER, PETALS_COLORS } from 'lib/constants'
+import { isRightIndexAnESR, displayRightValue } from 'components/utils'
 
 function rewriteArgs(fn, ...args) {
   if (fn === null) return null
@@ -76,9 +28,8 @@ function cartesianToPolar([x, y]) {
 
 export default class CountryRightsChart extends React.Component {
   static propTypes = {
-    rights: PropTypes.object.isRequired,
+    rightsData: PropTypes.array.isRequired,
     displayLabels: PropTypes.bool.isRequired,
-    esrStandard: PropTypes.string.isRequired,
     size: PropTypes.number.isRequired,
     content: PropTypes.object,
     currRight: PropTypes.string,
@@ -175,9 +126,8 @@ export default class CountryRightsChart extends React.Component {
   }
 
   render() {
-    const { rights, size, displayLabels, esrStandard, content, currRight } = this.props
+    const { rightsData, size, displayLabels, content, currRight } = this.props
     const { hoveredRightIndex } = this.state
-    const { esrHI, esrCore, cpr } = rights
 
     const highlightedRight = (currRight && currRight !== 'all') ? currRight : null
     const highlightedRightIndex = RIGHTS_ORDER.includes(highlightedRight)
@@ -186,25 +136,6 @@ export default class CountryRightsChart extends React.Component {
     const currRightIndex = RIGHTS_ORDER.includes(currRight)
       ? RIGHTS_ORDER.indexOf(currRight)
       : null
-
-    const rightsData = RIGHTS_ORDER.map(rightCode => {
-      const { type } = rightsDefinitions[rightCode]
-      const NO_DATA = null
-      if (type === 'ESR' && esrStandard === 'esrHI') {
-        if (!esrHI) return NO_DATA
-        if (esrHI[rightCode] === null) return NO_DATA
-        return esrHI[rightCode] / 100
-      } else if (type === 'ESR' && esrStandard === 'esrCore') {
-        if (!esrCore) return NO_DATA
-        if (esrCore[rightCode] === null) return NO_DATA
-        return esrCore[rightCode] / 100
-      } else if (type === 'CPR') {
-        if (!cpr || !cpr[rightCode]) return NO_DATA
-        if (cpr[rightCode] === null || cpr[rightCode].mean === null) return NO_DATA
-        return cpr[rightCode].mean / 10
-      }
-      throw new Error(`Right '${rightCode}' with no type! Check rightDefinitions`)
-    })
 
     const areCPRMissing = rightsData.filter((r, i) => !isRightIndexAnESR(i)).every(v => v === null)
 
@@ -273,20 +204,6 @@ function PetalLabels({ size, data, colors, content, highlightedRightIndexes, onC
   if (!content) throw new Error(`PetalLabels: no translation content passed!`)
 
   const names = RIGHTS_ORDER.map(k => content.rights_name_short[k])
-  const corrections = [
-    [-50, -20],
-    [0, -20],
-    [0, -15],
-    [-10, -20],
-    [-10, -10],
-    [0, -15],
-    [-52, -20],
-    [-105, -15],
-    [-100, -10],
-    [-95, -20],
-    [-105, -15],
-    [-110, -20],
-  ]
 
   return (
     <div className={styles.labelText} >
@@ -296,7 +213,7 @@ function PetalLabels({ size, data, colors, content, highlightedRightIndexes, onC
           surfaceSize={size}
           r={size / 4 + 30}
           a={360 / 12 * i}
-          correction={corrections[i]}
+          correction={CORRECTIONS[i]}
           style={{
             fontWeight: highlightedRightIndexes.includes(i) ? 'bold' : '',
             textAlign: i === 0 || i === 6 ? 'center' : i > 6 ? 'right' : 'left',

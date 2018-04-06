@@ -10,6 +10,7 @@ import ChangeStandard from '../ChangeStandard'
 import RightDefinition from '../RightDefinition'
 import DefinitionFooter from '../DefinitionFooter'
 import { segsToUrl } from '../utils'
+import { getRightsData } from 'components/utils'
 import styles from './style.css'
 
 function formatPopulation(n) {
@@ -72,6 +73,7 @@ export default class CountryPage extends React.Component {
     const { currRight } = this.state
     const countries = rightsByRegion[urlSegs.region].countries
     const currCountry = countries.find(country => country.countryCode === urlSegs.country)
+    const rightsData = getRightsData(currCountry.rights, esrStandard)
 
     const isHI = rightsByRegion['high-income-oecd'].countries
       .some(c => c.countryCode === currCountry.countryCode)
@@ -90,6 +92,7 @@ export default class CountryPage extends React.Component {
       headerVariable: content.countries[currCountry.countryCode],
       footer: content.footer_text.by_geography,
       source: content.footer_text.source,
+      rightsData: rightsData,
     }
 
     return (
@@ -131,8 +134,7 @@ export default class CountryPage extends React.Component {
             </div>
             <div className={styles.countryChart} data-js-png-export-data={JSON.stringify(svgContainerData)}>
               <CountryRightsChart
-                rights={currCountry.rights}
-                esrStandard={esrStandard}
+                rightsData={rightsData}
                 size={window.innerHeight - 290}
                 margin={200}
                 currRight={currRight}

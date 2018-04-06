@@ -3,6 +3,7 @@ import CountryRightsChart from 'components/CountryRightsChart'
 import DownloadPopup from '../DownloadPopup'
 import ChangeStandard from '../ChangeStandard'
 import styles from './style.css'
+import { getRightsData } from 'components/utils'
 
 function rewriteArgs(fn, ...args) {
   return () => fn(...args)
@@ -50,9 +51,8 @@ export default class GeoPageCountryGrid extends React.Component {
                     onMouseEnter={async(rewriteArgs(setHoverCountry, country.countryCode))}
                   >
                     <CountryRightsChart
-                      rights={country.rights}
+                      rightsData={getRightsData(country.rights, esrStandard)}
                       currRight={currRight === 'all' ? null : currRight}
-                      esrStandard={esrStandard}
                       size={165}
                     />
                     <span>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { flatMap } from 'lodash'
 import { csvFormat } from 'd3'
 import DownloadIcon from '../DownloadIcon'
-import { exportChart, countryDataTabular, downloadFileWithContent } from './lib'
+import { exportChart, countryDataTabular, downloadFileWithContent } from './common'
 import { joinClassName as jcn } from '../utils'
 import styles from './style.css'
 
@@ -21,13 +21,9 @@ class DownloadPopup extends React.Component {
     this.state = { isOpen: false }
   }
 
-  componentDidMount() {
-    document.addEventListener('click', this.documentClick)
-  }
+  componentDidMount() { document.addEventListener('click', this.documentClick) }
 
-  componentWillUnmount() {
-    document.removeEventListener('click', this.documentClick)
-  }
+  componentWillUnmount() { document.removeEventListener('click', this.documentClick) }
 
   documentClick = (e) => {
     if (this.refs.downloadPopup.contains(e.target)) return
