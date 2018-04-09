@@ -19,7 +19,7 @@ export const generateTitleFooter = ({ width, height, dataset, titleMarginMultipl
     </g>
   `
   const footer = `
-    <g transform="translate(20, ${height - footerMarginMultiplier * fontSizes.footer * 2})" font-size="${fontSizes.footer}">
+    <g transform="translate(20, ${height - footerMarginMultiplier * fontSizes.footer * 2})" font-size="${fontSizes.footer * 1.3}">
       <text fill="#58595b">${dataset.footer}</text>
       <text fill="#9a9a9a" transform="translate(0, ${fontSizes.footer + 2})">${dataset.source} https://humanrightsmeasurement.org</text>
     </g>
