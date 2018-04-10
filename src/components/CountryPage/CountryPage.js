@@ -12,6 +12,7 @@ import DefinitionFooter from '../DefinitionFooter'
 import { segsToUrl } from '../utils'
 import { getRightsData } from 'components/utils'
 import styles from './style.css'
+import rerenderOnResize from 'lib/rerenderOnResize'
 
 function formatPopulation(n) {
   if (!n) return `N/A`
@@ -25,6 +26,7 @@ function formatGDP(n) {
   return `$${n.toLocaleString(undefined, { maximumFractionDigits: 0 })} (current PPP dollars)`
 }
 
+@rerenderOnResize
 export default class CountryPage extends React.Component {
   static propTypes = {
     data: PropTypes.object.isRequired,
