@@ -52,16 +52,37 @@ export const exportChart = async ({ svgChart, exploreBy, data, currentCountryCod
     const image = new window.Image()
     image.onload = () => {
       const canvas = document.createElement('canvas')
-      canvas.width = width * 2
       canvas.height = height * 2
+      canvas.width = width * 2
+      var scale = { x: 1, y: 1 }
+      scale.x = (window.innerWidth - 10) / canvas.width
+      scale.y = (window.innerHeight - 10) / canvas.height
+
+      if (scale.x < 1 || scale.y < 1) {
+        scale = '1, 1'
+      } else if (scale.x < scale.y) {
+        scale = scale.x + ', ' + scale.x
+      } else {
+        scale = scale.y + ', ' + scale.y
+      }
+      canvas.setAttribute('style', 'margin-top 50px; -ms-transform-origin: center top; -webkit-transform-origin: center top; -moz-transform-origin: center top; -o-transform-origin: center top; transform-origin: center top; -ms-transform: scale(' + scale + '); -webkit-transform: scale3d(' + scale + ', 1); -moz-transform: scale(' + scale + '); -o-transform: scale(' + scale + '); transform: scale(' + scale + ');')
+
       const ctx = canvas.getContext('2d')
       ctx.fillStyle = 'white'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
       ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
+      ctx.fillStyle = '#58595b'
+	  ctx.font = 'bold 22pt Source Sans Pro'
+	  ctx.fillText(`${dataset.headerConstant}:`, 20, 40)
+      ctx.fillStyle = '#000000'
+	  ctx.font = '22pt Source Sans Pro'
+	  ctx.fillText(dataset.headerVariable, ctx.measureText(dataset.headerVariable).width + 48, 40)
       resolve(canvas)
     }
     image.src = `data:image/svg+xml,${svgData}`
   })
+  document.body.innerHTML = ''
+  document.body.appendChild(canvas)
   const blob = await new Promise((resolve, reject) => canvas.toBlob(resolve))
   return {
     fileName,
