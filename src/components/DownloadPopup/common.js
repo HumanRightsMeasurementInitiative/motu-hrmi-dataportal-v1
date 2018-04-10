@@ -10,21 +10,21 @@ const sizes = () => (
 )
 
 export const generateTitleFooter = ({ width, height, dataset, titleMarginMultiplier, footerMarginMultiplier, fontSizes }) => {
-  const title = `
-    <g transform="translate(20, ${titleMarginMultiplier * fontSizes.title * 2})">
-      <text font-size="${fontSizes.title}">
-        <tspan fill="#58595b" font-weight="bold">${dataset.headerConstant}: </tspan>
-        <tspan fill="#000000">${dataset.headerVariable}</tspan>
-      </text>
-    </g>
-  `
+//  const title = `
+//    <g transform="translate(20, ${titleMarginMultiplier})">
+//      <text font-size="${fontSizes.title}">
+//        <tspan fill="#58595b" font-weight="bold">${dataset.headerConstant}: </tspan>
+//        <tspan fill="#000000">${dataset.headerVariable}</tspan>
+//      </text>
+//    </g>
+//  `
   const footer = `
-    <g transform="translate(20, ${height - footerMarginMultiplier * fontSizes.footer * 2})" font-size="${fontSizes.footer * 1.3}">
+    <g transform="translate(0, ${height - footerMarginMultiplier * fontSizes.footer * 2})" font-size="${fontSizes.footer * 1.1}">
       <text fill="#58595b">${dataset.footer}</text>
       <text fill="#9a9a9a" transform="translate(0, ${fontSizes.footer + 2})">${dataset.source} https://humanrightsmeasurement.org</text>
     </g>
   `
-  return { title, footer }
+  return { footer }
 }
 
 const exporters = {
