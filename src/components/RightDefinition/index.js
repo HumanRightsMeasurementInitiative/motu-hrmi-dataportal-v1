@@ -19,7 +19,7 @@ export default class RightDefinition extends React.Component {
     const rightsDefinitions = content.rights_definitions
 
     return (
-      <div style={{ height: '100%' }}>
+      <div>
         <QuestionTooltip width={238} question={tooltips[5].question}>
           { rightsDefinitions[right].definition
             ? <p className={styles.definition}>{rightsDefinitions[right].definition}</p>
