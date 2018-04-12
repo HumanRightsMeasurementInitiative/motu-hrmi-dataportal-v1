@@ -13,7 +13,7 @@ const esrLegend = ({ content, fontSizes, width }) => {
   return (
     `
       <g class="-legend">
-        <g class="-circle-core" transform="translate(${width - totalWidth}, 30)">
+      <g class="-circle-core" transform="translate(${width - totalWidth}, 15)">
           <circle r="7" fill="#00b95f" />
           <circle r="7" fill="#00b95f" />
           <text x=${sum(widths.slice(0, 1))} y="4" font-size=${fontSizes.text} fill="#58595b">
@@ -30,7 +30,7 @@ const esrLegend = ({ content, fontSizes, width }) => {
   )
 }
 
-const cprLegend = ({ content, fontSizes, width, height }) => {
+const cprLegend = ({ content, fontSizes, width }) => {
   const barHeight = 22
   const barVerticalBuffer = 2
   const barWidth = 8
@@ -48,7 +48,7 @@ const cprLegend = ({ content, fontSizes, width, height }) => {
   return (
     `
       <g class="-legend">
-        <g class="-circle-core" transform="translate(${width - totalWidth}, ${height + barHeight * 1.5})">
+         <g class="-circle-core" transform="translate(${width - totalWidth}, 0)">
           <text alignment-baseline="middle" text-anchor="start" font-size=${fontSizes.text} fill="#58595b">
             ${firstLegend}
           </text>
@@ -95,11 +95,10 @@ export const exportRights = ({ svgChart, currentRight, svgChartCloned, data, cur
   const isCPR = currentRight.includes('-') // FIXME: Dirty
   const width = svgChartCloned.width.baseVal.value
   const height = svgChartCloned.height.baseVal.value
-  console.log(height)
   const { title, footer } = generateTitleFooter({ height, dataset, width, titleMarginMultiplier: -0.5, footerMarginMultiplier: -1, fontSizes })
 
   const svgAppend = isCPR
-    ? cprLegend({ content, fontSizes, width, height })
+    ? cprLegend({ content, fontSizes, width })
     : esrLegend({ content, fontSizes, width })
 
   svgChartCloned.style.height = svgChartCloned.height.baseVal.value * 1.2
