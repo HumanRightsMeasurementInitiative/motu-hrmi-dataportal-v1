@@ -137,6 +137,7 @@ export default class CountryRightsChart extends React.Component {
       ? RIGHTS_ORDER.indexOf(currRight)
       : null
 
+    if (!rightsData) return null
     const areCPRMissing = rightsData.filter((r, i) => !isRightIndexAnESR(i)).every(v => v === null)
 
     return (
