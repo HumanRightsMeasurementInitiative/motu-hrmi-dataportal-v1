@@ -62,6 +62,14 @@ export const exportChart = async ({ svgChart, exploreBy, data, currentCountryCod
     }
     image.src = `data:image/svg+xml,${svgData}`
   })
+  // trick for checking downloadable svg's correctness
+  if (window.location.search === '?test-download') {
+    document.body.innerHTML = ''
+    document.body.append(canvas)
+    document.body.firstChild.style.width = window.innerWidth + 'px'
+    return null
+  }
+
   const blob = await new Promise((resolve, reject) => canvas.toBlob(resolve))
   return {
     fileName,

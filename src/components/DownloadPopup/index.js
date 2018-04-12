@@ -110,6 +110,27 @@ class DownloadPopup extends React.Component {
       active: this.state.isOpen,
     }, styles)
 
+    if (window.location.search === '?test-download') {
+      const { urlSegs, data, content } = this.props
+      const {
+        exploreBy,
+        right: currentRight,
+        country: currentCountryCode,
+        region: currentRegion,
+      } = urlSegs
+
+      setTimeout(() => {
+        const svgContainer = document.querySelectorAll('[data-js-png-export-data]')[0]
+        const dataset = JSON.parse(svgContainer.dataset.jsPngExportData)
+        const svgChart = svgContainer.getElementsByTagName('svg')[0]
+        exportChart({ svgChart, exploreBy, data, currentCountryCode, currentRight, content, currentRegion, dataset }).then(({ exportedChart, fileName }) => {
+          downloadFileWithContent(fileName, exportedChart, 'image/png')
+        })
+      }, 1000)
+
+      return null
+    }
+
     return (
       <div className={joinedClass} ref='downloadPopup'>
         <div onClick={this.togglePopup}><DownloadIcon color={this.state.isOpen ? '#fff' : '#25a9e0'} /></div>
