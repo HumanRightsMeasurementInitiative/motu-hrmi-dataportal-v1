@@ -18,7 +18,9 @@ import rightsDefinitions from 'data/rights-definitions.json'
 import Bar1 from './Bar1'
 import Bar2 from './Bar2'
 import Bar3 from './Bar3'
+import rerenderOnResize from 'lib/rerenderOnResize'
 
+@rerenderOnResize
 export default class RightsPage extends React.Component {
   static propTypes = {
     data: PropTypes.object.isRequired,
@@ -42,6 +44,14 @@ export default class RightsPage extends React.Component {
   }
 
   componentDidMount() {
+    this.updateSize()
+  }
+
+  componentWillReceiveProps() {
+    this.updateSize()
+  }
+
+  updateSize() {
     const { charts, rightPane } = this.refs
     this.setState({
       chartHeight: charts.offsetHeight,
@@ -338,7 +348,7 @@ export default class RightsPage extends React.Component {
                   currYear={this.state.currYear}
                   currRight={urlSegs.right}
                   rightsByRegionCountries={rightsByRegionCountries}
-                  chartHeight={this.state.chartHeight * 0.6}
+                  chartHeight={this.state.chartHeight * (isESRSelected ? 0.6 : 0.9)}
                   chartWidth={this.state.chartWidth}
                   currCountry={this.state.currCountry}
                   onItemClick={this.setCurrCountry}
