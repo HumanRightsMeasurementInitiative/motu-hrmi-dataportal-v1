@@ -49,6 +49,8 @@ export default class RightBarchart extends React.Component {
     } = this.props
     const yAxisRange = Array.from(Array(11).keys()).reverse()
     const yAxisRate = isESR ? 10 : 1
+    // Fixes BUG when passing from Regions to Provinces:
+    ReactTooltip.rebuild()
 
     if (chartHeight === 0) return null
 
